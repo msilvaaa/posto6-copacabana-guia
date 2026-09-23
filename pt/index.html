@@ -4,15 +4,21 @@
   const source = new Image();
   source.onload = function(){
     document.querySelectorAll('.cover-icon-image[data-crop-x]').forEach(function(img){
-      const x = parseFloat(img.dataset.cropX)/100*source.naturalWidth;
-      const y = parseFloat(img.dataset.cropY)/100*source.naturalHeight;
-      const w = parseFloat(img.dataset.cropW)/100*source.naturalWidth;
-      const h = parseFloat(img.dataset.cropH)/100*source.naturalHeight;
+      const cropX = parseFloat(img.dataset.cropX);
+      const cropY = parseFloat(img.dataset.cropY);
+      const cropW = parseFloat(img.dataset.cropW);
+      const cropH = parseFloat(img.dataset.cropH);
+      const refW = 100;
+      const refH = 58.6;
+      const sx = Math.round((cropX / refW) * source.naturalWidth);
+      const sy = Math.round((cropY / refH) * source.naturalHeight);
+      const sw = Math.max(1, Math.round((cropW / refW) * source.naturalWidth));
+      const sh = Math.max(1, Math.round((cropH / refH) * source.naturalHeight));
       const canvas = document.createElement('canvas');
-      canvas.width = Math.max(1,Math.round(w));
-      canvas.height = Math.max(1,Math.round(h));
+      canvas.width = sw;
+      canvas.height = sh;
       const ctx = canvas.getContext('2d');
-      ctx.drawImage(source,Math.round(x),Math.round(y),Math.round(w),Math.round(h),0,0,canvas.width,canvas.height);
+      ctx.drawImage(source, sx, sy, sw, sh, 0, 0, sw, sh);
       img.src = canvas.toDataURL('image/png');
     });
   };
