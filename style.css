@@ -753,3 +753,24 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .pdf-toolbar .detail-modern-flag.active{
   box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
 }
+
+
+/* ================================================================
+   MAIN PAGE — hide the baked-in language flags behind the real HTML flags
+   The white panel is already part of the original design, so this
+   only cleans the old raster flags without changing the page artwork.
+   ================================================================ */
+.main-html-topbar::after{
+  content:""!important;
+  position:absolute!important;
+  left:75.55%!important;
+  top:.45%!important;
+  width:18.65%!important;
+  height:10.75%!important;
+  background:#fff!important;
+  pointer-events:none!important;
+  z-index:1!important;
+}
+.main-html-topbar > a{
+  z-index:2!important;
+}
