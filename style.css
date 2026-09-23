@@ -916,3 +916,11 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 .home-page .hotspots > .cover-html-button:active{transform:translate(-50%,calc(-50% - 1px)) scale(.985)!important;}
 @media(max-width:650px){.home-page .hotspots > .cover-html-button{width:40px!important;height:40px!important;}}
+
+
+/* TESTE BEM-VINDOS — imagem da casa dentro do circulo branco. */
+.home-page .cover-html-button .cover-icon-layer{
+ display:block!important;width:92%!important;height:92%!important;border-radius:50%!important;overflow:hidden!important;flex:0 0 auto!important;
+ background-image:url('/assets/pt-01.jpg')!important;background-repeat:no-repeat!important;
+ background-size:1898% 1113% !important;background-position:78.1% 18.45%!important;
+}
