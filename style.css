@@ -861,3 +861,29 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   transform:translate(-50%,calc(-50% - 1px))!important;
   box-shadow:0 9px 20px rgba(0,0,0,.18)!important;
 }
+
+/* MENU DA CAPA — mesma sensação de elevação das bandeiras, sem alterar a arte dos ícones. */
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot){
+  transition:transform .18s ease,filter .18s ease;
+}
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot)::after{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  background:rgba(255,255,255,0);
+  box-shadow:0 7px 17px rgba(0,0,0,0);
+  pointer-events:none;
+  transition:background .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot):hover,
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot):focus-visible{
+  transform:translateY(-2px);
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.14));
+}
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot):hover::after,
+.home-page .hotspots > .hotspot:not(.modern-ui-hotspot):focus-visible::after{
+  background:rgba(255,255,255,.10);
+  box-shadow:0 7px 17px rgba(0,0,0,.16);
+  transform:translateY(2px);
+}
