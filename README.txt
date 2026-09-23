@@ -1,0 +1,1 @@
+Versão com o cabeçalho padronizado nas páginas de Comodidades: Home + bandeiras na mesma linha. Os destinos das bandeiras apontam para a mesma comodidade em cada idioma; Home aponta para a raiz do idioma. Conteúdo e links PREV/NEXT de cada página foram preservados.

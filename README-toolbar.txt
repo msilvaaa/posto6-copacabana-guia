@@ -1,0 +1,1 @@
+PDF-referenced toolbar update: Home and flags are real HTML controls. Main pages use the original PDF top-right flag coordinate band; detail/Comodidades pages anchor Home to the original PDF Home link and place flags to its left on the same line.
