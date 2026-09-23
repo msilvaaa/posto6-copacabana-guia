@@ -889,41 +889,58 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 
 
-/* CAPA — efeito igual às bandeiras: o círculo visual inteiro sobe. */
-.home-page .hotspots > .hotspot.cover-icon-hotspot{
-  position:absolute!important;
+
+/* CAPA — botões HTML reais, independentes da imagem de fundo. */
+.home-page .cover-html-button{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
   overflow:visible!important;
-  transform:none!important;
-  transition:transform .18s ease,box-shadow .18s ease!important;
-  background:transparent!important;
-  border-radius:50%!important;
-  z-index:12!important;
+  text-decoration:none!important;
+  z-index:20!important;
 }
-.home-page .hotspot.cover-icon-hotspot .cover-icon-hole{
-  position:absolute!important;
-  inset:-1px!important;
-  border-radius:50%!important;
-  background:#fff!important;
-  box-shadow:0 0 0 4px rgba(255,255,255,.96)!important;
-  pointer-events:none!important;
-  z-index:0!important;
-}
-.home-page .hotspot.cover-icon-hotspot .cover-icon{
-  position:absolute!important;
-  inset:0!important;
+.home-page .cover-html-circle{
   width:100%!important;
   height:100%!important;
-  display:block!important;
+  min-width:44px!important;
+  min-height:44px!important;
+  box-sizing:border-box!important;
   border-radius:50%!important;
-  object-fit:fill!important;
-  pointer-events:none!important;
-  z-index:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  padding:5px!important;
+  color:#fff!important;
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
 }
-.home-page .hotspot.cover-icon-hotspot:hover,
-.home-page .hotspot.cover-icon-hotspot:focus-visible{
+.home-page .cover-html-circle svg{
+  width:42%!important;
+  height:42%!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.7!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  flex:0 0 auto!important;
+}
+.home-page .cover-html-label{
+  display:block!important;
+  max-width:92%!important;
+  font:700 clamp(5px,.62vw,9px)/1 Arial,sans-serif!important;
+  letter-spacing:.15px!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+.home-page .cover-html-button:hover .cover-html-circle,
+.home-page .cover-html-button:focus-visible .cover-html-circle{
   transform:translateY(-2px)!important;
   box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
 }
-.home-page .hotspot.cover-icon-hotspot:active{
+.home-page .cover-html-button:active .cover-html-circle{
   transform:translateY(-1px) scale(.985)!important;
 }
