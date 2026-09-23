@@ -890,52 +890,38 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 
 
-/* CAPA — botões HTML reais, independentes da imagem de fundo. */
+/* CAPA — mesma mecânica das bandeiras, aplicada aos botões HTML. */
 .home-page .cover-html-button{
+  position:absolute!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
   overflow:visible!important;
   text-decoration:none!important;
   z-index:20!important;
+  transition:none!important;
 }
-.home-page .cover-html-circle{
-  width:100%!important;
-  height:100%!important;
-  min-width:44px!important;
-  min-height:44px!important;
-  box-sizing:border-box!important;
-  border-radius:50%!important;
+.home-page .cover-html-button .cover-html-circle{
+  position:relative!important;
   display:flex!important;
-  flex-direction:column!important;
   align-items:center!important;
   justify-content:center!important;
-  gap:2px!important;
-  padding:5px!important;
-  color:#fff!important;
+  width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+  border-radius:50%!important;
+  overflow:visible!important;
   background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
   border:1px solid rgba(255,255,255,.22)!important;
   box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
   transition:transform .18s ease,box-shadow .18s ease!important;
+  isolation:isolate!important;
 }
-.home-page .cover-html-circle svg{
-  width:42%!important;
-  height:42%!important;
-  fill:none!important;
-  stroke:currentColor!important;
-  stroke-width:1.7!important;
-  stroke-linecap:round!important;
-  stroke-linejoin:round!important;
-  flex:0 0 auto!important;
-}
-.home-page .cover-html-label{
-  display:block!important;
-  max-width:92%!important;
-  font:700 clamp(5px,.62vw,9px)/1 Arial,sans-serif!important;
-  letter-spacing:.15px!important;
-  text-align:center!important;
-  white-space:nowrap!important;
-}
+.home-page .cover-html-button .cover-html-circle::before{content:none!important;}
 .home-page .cover-html-button:hover .cover-html-circle,
 .home-page .cover-html-button:focus-visible .cover-html-circle{
   transform:translateY(-2px)!important;
@@ -943,4 +929,20 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 .home-page .cover-html-button:active .cover-html-circle{
   transform:translateY(-1px) scale(.985)!important;
+}
+.home-page .cover-html-button .cover-html-circle svg{
+  width:58%!important;
+  height:58%!important;
+  fill:none!important;
+  stroke:#fff!important;
+  stroke-width:1.7!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+.home-page .cover-html-button .cover-html-label{display:none!important;}
+@media(max-width:650px){
+  .home-page .cover-html-button .cover-html-circle{
+    width:40px!important;
+    height:40px!important;
+  }
 }
