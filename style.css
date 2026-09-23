@@ -685,3 +685,71 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 
 /* Os botões de idioma continuam levando para a mesma página no idioma correspondente. */
+
+
+/* === PADRÃO FINAL APROVADO PARA TODAS AS BANDEIRAS ===
+   Mesmo efeito do Home: aro branco no estado normal;
+   ao passar o mouse, o aro desaparece e o botão sobe. */
+.detail-modern-flag{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:50%!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+}
+.detail-modern-flag::before{
+  content:none!important;
+}
+.detail-modern-flag img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+  position:relative!important;
+  z-index:1!important;
+}
+.detail-modern-flag:hover,
+.detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
+.detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
+.detail-modern-flag.active{
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+
+/* Mantém as dimensões já aprovadas em cada contexto; somente o efeito é padronizado. */
+.main-html-topbar .detail-modern-flag,
+.pdf-toolbar .detail-modern-flag{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+.main-html-topbar .detail-modern-flag img,
+.pdf-toolbar .detail-modern-flag img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+.main-html-topbar .detail-modern-flag:hover,
+.main-html-topbar .detail-modern-flag:focus-visible,
+.pdf-toolbar .detail-modern-flag:hover,
+.pdf-toolbar .detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
+.main-html-topbar .detail-modern-flag.active,
+.pdf-toolbar .detail-modern-flag.active{
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
