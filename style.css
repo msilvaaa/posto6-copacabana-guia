@@ -774,3 +774,26 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
   color:#fff!important;
 }
+
+/* Correção definitiva do Home: o botão permanece preto também durante hover/focus.
+   O aro branco fica isolado atrás do círculo, sem alterar a cor do botão. */
+.main-html-topbar .detail-modern-home,
+.pdf-toolbar .detail-modern-home{
+  isolation:isolate!important;
+  position:relative!important;
+  background:#111112!important;
+  background-image:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  color:#fff!important;
+}
+.main-html-topbar .detail-modern-home::before,
+.pdf-toolbar .detail-modern-home::before{
+  z-index:-1!important;
+}
+.main-html-topbar .detail-modern-home:hover,
+.main-html-topbar .detail-modern-home:focus-visible,
+.pdf-toolbar .detail-modern-home:hover,
+.pdf-toolbar .detail-modern-home:focus-visible{
+  background:#111112!important;
+  background-image:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  color:#fff!important;
+}
