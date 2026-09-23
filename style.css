@@ -765,3 +765,12 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   pointer-events:none!important;
   z-index:55!important;
 }
+
+/* Home: mantém exatamente a mesma cor ao passar o mouse. */
+.main-html-topbar .detail-modern-home:hover,
+.main-html-topbar .detail-modern-home:focus-visible,
+.pdf-toolbar .detail-modern-home:hover,
+.pdf-toolbar .detail-modern-home:focus-visible{
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  color:#fff!important;
+}
