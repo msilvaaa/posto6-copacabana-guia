@@ -887,3 +887,11 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   box-shadow:0 7px 17px rgba(0,0,0,.16);
   transform:translateY(2px);
 }
+
+
+/* CAPA — ícones separados da arte, com movimento real da peça visual. */
+.home-page .hotspots > .hotspot.cover-icon-hotspot{transform:none!important;transition:none!important;overflow:visible!important;}
+.home-page .cover-icon-hole{position:absolute!important;inset:0!important;border-radius:50%!important;background:#fff!important;z-index:0!important;pointer-events:none!important;}
+.home-page .cover-icon{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;border-radius:50%!important;z-index:1!important;object-fit:fill!important;transition:transform .18s ease,filter .18s ease!important;pointer-events:none!important;}
+.home-page .hotspot.cover-icon-hotspot:hover .cover-icon,
+.home-page .hotspot.cover-icon-hotspot:focus-visible .cover-icon{transform:translateY(-2px)!important;filter:drop-shadow(0 8px 12px rgba(0,0,0,.20))!important;}
