@@ -823,3 +823,41 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   transform:translateY(-2px)!important;
   box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
 }
+
+/* BOTOES INFERIORES — mesmo acabamento visual do Home, mantendo formato retangular.
+   Preto constante, aro branco e hover apenas com elevação/sombra. */
+.modern-prev .modern-ui,
+.modern-next .modern-ui,
+.detail-modern-prev,
+.detail-modern-next{
+  color:#fff!important;
+  background:#111112!important;
+  background-image:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  isolation:isolate!important;
+}
+.modern-prev .modern-ui::before,
+.modern-next .modern-ui::before,
+.detail-modern-prev::before,
+.detail-modern-next::before{
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid rgba(0,0,0,.08)!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.10)!important;
+  z-index:-1!important;
+}
+.modern-prev:hover .modern-ui,
+.modern-next:hover .modern-ui,
+.modern-prev:focus-visible .modern-ui,
+.modern-next:focus-visible .modern-ui,
+.detail-modern-prev:hover,
+.detail-modern-next:hover,
+.detail-modern-prev:focus-visible,
+.detail-modern-next:focus-visible{
+  color:#fff!important;
+  background:#111112!important;
+  background-image:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
