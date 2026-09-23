@@ -589,3 +589,99 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   .pdf-toolbar .detail-modern-home{width:40px!important;height:40px!important;}
   .pdf-toolbar .detail-modern-home svg{width:18px!important;height:18px!important;}
 }
+
+
+/* === EFEITO APROVADO: bandeiras iguais ao efeito do botão Home === */
+.detail-modern-flag{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+  border-radius:50%!important;
+  overflow:visible!important;
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  text-decoration:none!important;
+  isolation:isolate!important;
+}
+.detail-modern-flag::before{
+  content:none!important;
+}
+.detail-modern-flag img{
+  display:block!important;
+  width:82%!important;
+  height:82%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+  flex:0 0 auto!important;
+  position:relative!important;
+  z-index:1!important;
+}
+.detail-modern-flag:hover,
+.detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
+.detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
+.detail-modern-flag.active{
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+
+/* Página principal: mesmo efeito, preservando o posicionamento já calibrado */
+.main-html-topbar .detail-modern-flag{
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:visible!important;
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+.main-html-topbar .detail-modern-flag img{
+  width:82%!important;
+  height:82%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+.main-html-topbar .detail-modern-flag:hover,
+.main-html-topbar .detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
+
+/* Comodidades: mesmas medidas visuais, efeito idêntico ao Home */
+.pdf-toolbar .detail-modern-flag{
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:visible!important;
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+.pdf-toolbar .detail-modern-flag img{
+  width:82%!important;
+  height:82%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+.pdf-toolbar .detail-modern-flag:hover,
+.pdf-toolbar .detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
+}
+
+@media(max-width:650px){
+  .detail-modern-flag{
+    width:40px!important;
+    height:40px!important;
+  }
+}
+
+/* Os botões de idioma continuam levando para a mesma página no idioma correspondente. */
