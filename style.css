@@ -876,7 +876,9 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 
 
-/* CAPA — círculo branco é o botão; a imagem original é recortada e colocada dentro dele. */
+
+
+/* CAPA — o círculo branco é o botão; o ícone é recortado da arte e colado dentro via canvas. */
 .home-page .hotspots > .cover-html-button{
   position:absolute!important;display:flex!important;align-items:center!important;justify-content:center!important;
   width:46px!important;height:46px!important;padding:0!important;box-sizing:border-box!important;
@@ -889,20 +891,8 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   transform:translate(-50%,calc(-50% - 2px))!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
 }
 .home-page .hotspots > .cover-html-button:active{transform:translate(-50%,calc(-50% - 1px)) scale(.985)!important;}
-.home-page .cover-icon-crop{
-  position:relative!important;display:block!important;width:90%!important;height:90%!important;
-  border-radius:50%!important;overflow:hidden!important;flex:0 0 auto!important;
-}
-.home-page .cover-icon-crop img{
-  position:absolute!important;max-width:none!important;max-height:none!important;display:block!important;
-  object-fit:fill!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;
+.home-page .hotspots > .cover-icon-image{
+  display:block!important;width:100%!important;height:100%!important;object-fit:fill!important;
+  border-radius:50%!important;flex:0 0 auto!important;position:relative!important;z-index:1!important;
 }
 @media(max-width:650px){.home-page .hotspots > .cover-html-button{width:40px!important;height:40px!important;}}
-
-
-/* TESTE BEM-VINDOS — círculo branco é o botão; recorte inline da arte dentro dele. */
-.home-page .cover-html-button{position:absolute!important;display:flex!important;align-items:center!important;justify-content:center!important;width:46px!important;height:46px!important;padding:0!important;box-sizing:border-box!important;border-radius:50%!important;background:#fff!important;border:1px solid rgba(18,18,18,.10)!important;box-shadow:0 8px 20px rgba(0,0,0,.16)!important;overflow:hidden!important;z-index:50!important;transform:translate(-50%,-50%)!important;transition:transform .18s ease,box-shadow .18s ease!important;}
-.home-page .cover-inline-crop{display:block!important;width:94%!important;height:94%!important;overflow:hidden!important;}
-.home-page .cover-html-button:hover,.home-page .cover-html-button:focus-visible{transform:translate(-50%,calc(-50% - 2px))!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;}
-.home-page .cover-html-button:active{transform:translate(-50%,calc(-50% - 1px)) scale(.985)!important;}
-@media(max-width:650px){.home-page .cover-html-button{width:40px!important;height:40px!important;}}
