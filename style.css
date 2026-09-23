@@ -868,43 +868,46 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 
 
-/* CAPA — imagens reais da própria arte colocadas DENTRO dos círculos dos botões. */
+
+
+/* CAPA — os ícones entram dentro dos círculos brancos já aprovados. */
 .home-page .hotspots > .cover-html-button{
-  position:absolute!important;display:flex!important;align-items:center!important;justify-content:center!important;
-  width:46px!important;height:46px!important;padding:0!important;box-sizing:border-box!important;
-  border-radius:50%!important;background:#fff!important;border:1px solid rgba(18,18,18,.10)!important;
-  box-shadow:0 8px 20px rgba(0,0,0,.16)!important;overflow:hidden!important;isolation:isolate!important;
-  transition:transform .18s ease,box-shadow .18s ease!important;text-decoration:none!important;z-index:50!important;
-  filter:none!important;
-  transform:translate(-50%,-50%)!important;
+  position:absolute!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  box-sizing:border-box!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  border:1px solid rgba(18,18,18,.10)!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.16)!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  text-decoration:none!important;
+  z-index:50!important;
 }
-.home-page .hotspots > .cover-html-button::before{content:none!important;}
-.home-page .hotspots > .cover-html-button::after{
-  content:""!important;position:absolute!important;inset:9%!important;border-radius:50%!important;
-  background-image:url('/assets/pt-01.jpg')!important;background-repeat:no-repeat!important;
-  background-color:transparent!important;pointer-events:none!important;z-index:2!important;
+.home-page .hotspots > .cover-html-button::before,
+.home-page .hotspots > .cover-html-button::after{content:none!important;}
+.home-page .hotspots > .cover-html-button .cover-icon-html{
+  display:block!important;
+  width:88%!important;
+  height:88%!important;
+  object-fit:contain!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  position:relative!important;
+  z-index:2!important;
 }
-.home-page .hotspots > .cover-html-button .cover-icon-html{display:none!important;}
 .home-page .hotspots > .cover-html-button:hover,
 .home-page .hotspots > .cover-html-button:focus-visible{
-  transform:translate(-50%,calc(-50% - 2px))!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;filter:none!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
 }
 .home-page .hotspots > .cover-html-button:active{
-  transform:translate(-50%,calc(-50% - 1px)) scale(.985)!important;
+  transform:translateY(-1px) scale(.985)!important;
 }
-.home-page .hotspots > .cover-html-button[aria-label="BEM-VINDOS"]::after{background-size:18.972% 11.130%!important;background-position:78.056% 18.465%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="CHECK-IN"]::after{background-size:18.712% 11.130%!important;background-position:86.044% 18.465%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="LOCALIZAÇÃO"]::after{background-size:18.459% 10.817%!important;background-position:94.011% 18.518%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="WIFI"]::after{background-size:17.291% 10.105%!important;background-position:78.044% 34.670%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="REGRAS"]::after{background-size:17.291% 10.105%!important;background-position:86.174% 34.486%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="TRANSPORTES"]::after{background-size:17.075% 9.974%!important;background-position:94.268% 34.720%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="COMODIDADES"]::after{background-size:18.972% 11.130%!important;background-position:77.607% 51.037%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="ATIVIDADES"]::after{background-size:17.513% 10.240%!important;background-position:86.506% 51.479%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="INFORMAÇÕES"]::after{background-size:18.972% 11.130%!important;background-position:94.488% 51.037%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="BARES"]::after{background-size:16.458% 9.722%!important;background-position:78.287% 67.848%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="RESTAURANTES"]::after{background-size:17.974% 10.521%!important;background-position:86.646% 67.262%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="SHOPPING"]::after{background-size:17.513% 10.240%!important;background-position:94.379% 67.744%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"]::after{background-size:18.213% 10.667%!important;background-position:77.726% 84.222%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="CONTATO"]::after{background-size:16.659% 9.722%!important;background-position:94.833% 84.089%!important;}
-.home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"]::after{background-size:20.388% 12.000%!important;background-position:86.533% 94.843%!important;}
 @media(max-width:650px){.home-page .hotspots > .cover-html-button{width:40px!important;height:40px!important;}}
