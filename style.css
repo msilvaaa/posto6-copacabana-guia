@@ -913,3 +913,21 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     flex-basis:40px!important;
   }
 }
+
+
+/* TESTE BEM-VINDOS — botão reconstruído por cima da arte original */
+.home-page .cover-test-bem{
+  width:46px!important;height:46px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  border-radius:50%!important;background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  overflow:visible!important;isolation:isolate!important;transition:transform .18s ease,box-shadow .18s ease!important;z-index:50!important;
+}
+.home-page .cover-test-bem::before{
+  content:""!important;position:absolute!important;inset:-4px!important;border-radius:50%!important;background:#fff!important;z-index:-1!important;
+}
+.home-page .cover-test-bem .cover-icon-html{
+  display:block!important;width:82%!important;height:82%!important;object-fit:contain!important;border-radius:50%!important;position:relative!important;z-index:1!important;
+}
+.home-page .cover-test-bem:hover,.home-page .cover-test-bem:focus-visible{transform:translateY(-2px)!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;}
+.home-page .cover-test-bem:active{transform:translateY(-1px) scale(.985)!important;}
