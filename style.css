@@ -553,3 +553,39 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   transform:translateY(-2px)!important;
   box-shadow:0 12px 26px rgba(0,0,0,.22)!important;
 }
+
+
+/* === CORREÇÃO HOME: tamanho real e efeito limpo === */
+.pdf-toolbar .detail-modern-home{
+  width:46px!important;
+  height:46px!important;
+  aspect-ratio:auto!important;
+  padding:0!important;
+  border-radius:50%!important;
+  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 7px 17px rgba(0,0,0,.16)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+.pdf-toolbar .detail-modern-home::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-3px!important;
+  width:auto!important;
+  height:auto!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.96)!important;
+  border:1px solid rgba(0,0,0,.08)!important;
+  box-shadow:0 7px 18px rgba(0,0,0,.10)!important;
+  z-index:-1!important;
+}
+.pdf-toolbar .detail-modern-home svg{width:21px!important;height:21px!important;display:block!important;}
+.pdf-toolbar .detail-modern-home:hover,
+.pdf-toolbar .detail-modern-home:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.22)!important;
+}
+@media(max-width:650px){
+  .pdf-toolbar .detail-modern-home{width:40px!important;height:40px!important;}
+  .pdf-toolbar .detail-modern-home svg{width:18px!important;height:18px!important;}
+}
