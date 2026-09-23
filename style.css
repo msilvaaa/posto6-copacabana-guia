@@ -864,70 +864,20 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 
 
-/* CAPA — mesma estrutura visual das bandeiras: o próprio <a> é o círculo que sobe. */
-.home-page .cover-html-button.detail-modern-flag{
-  position:absolute!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:46px!important;
-  height:46px!important;
-  min-width:46px!important;
-  flex:0 0 46px!important;
-  padding:0!important;
-  box-sizing:border-box!important;
-  border-radius:50%!important;
-  overflow:visible!important;
-  background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
-  border:1px solid rgba(255,255,255,.22)!important;
-  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
-  transition:transform .18s ease,box-shadow .18s ease!important;
-  text-decoration:none!important;
-  isolation:isolate!important;
-  z-index:40!important;
-}
-.home-page .cover-html-button.detail-modern-flag::before{content:none!important;}
-.home-page .cover-html-button.detail-modern-flag img.cover-icon-html{
-  display:block!important;
-  width:82%!important;
-  height:82%!important;
-  object-fit:contain!important;
-  border-radius:50%!important;
-  flex:0 0 auto!important;
-  position:relative!important;
-  z-index:1!important;
-}
-.home-page .cover-html-button.detail-modern-flag:hover,
-.home-page .cover-html-button.detail-modern-flag:focus-visible{
-  transform:translateY(-2px)!important;
-  box-shadow:0 12px 26px rgba(0,0,0,.24)!important;
-}
-.home-page .cover-html-button.detail-modern-flag:active{
-  transform:translateY(-1px) scale(.985)!important;
-}
-@media(max-width:650px){
-  .home-page .cover-html-button.detail-modern-flag{
-    width:40px!important;
-    height:40px!important;
-    min-width:40px!important;
-    flex-basis:40px!important;
-  }
-}
 
 
-/* TESTE BEM-VINDOS — botão reconstruído por cima da arte original */
-.home-page .cover-test-bem{
-  width:46px!important;height:46px!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;
+/* CAPA — botões reconstruídos do zero sobre a arte, com o mesmo efeito das bandeiras. */
+.home-page .cover-html-button{
+  position:absolute!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  width:46px!important;height:46px!important;padding:0!important;box-sizing:border-box!important;
   border-radius:50%!important;background:linear-gradient(180deg,#2a2a2c 0%,#111112 100%)!important;
   border:1px solid rgba(255,255,255,.22)!important;
   box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
-  overflow:visible!important;isolation:isolate!important;transition:transform .18s ease,box-shadow .18s ease!important;z-index:50!important;
+  overflow:visible!important;isolation:isolate!important;transition:transform .18s ease,box-shadow .18s ease!important;
+  text-decoration:none!important;z-index:50!important;
 }
-.home-page .cover-test-bem::before{
-  content:""!important;position:absolute!important;inset:-4px!important;border-radius:50%!important;background:#fff!important;z-index:-1!important;
-}
-.home-page .cover-test-bem .cover-icon-html{
-  display:block!important;width:82%!important;height:82%!important;object-fit:contain!important;border-radius:50%!important;position:relative!important;z-index:1!important;
-}
-.home-page .cover-test-bem:hover,.home-page .cover-test-bem:focus-visible{transform:translateY(-2px)!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;}
-.home-page .cover-test-bem:active{transform:translateY(-1px) scale(.985)!important;}
+.home-page .cover-html-button::before{content:""!important;position:absolute!important;inset:-4px!important;border-radius:50%!important;background:#fff!important;z-index:-1!important;}
+.home-page .cover-html-button .cover-icon-html{display:block!important;width:82%!important;height:82%!important;object-fit:contain!important;border-radius:50%!important;position:relative!important;z-index:1!important;}
+.home-page .cover-html-button:hover,.home-page .cover-html-button:focus-visible{transform:translateY(-2px)!important;box-shadow:0 12px 26px rgba(0,0,0,.24)!important;}
+.home-page .cover-html-button:active{transform:translateY(-1px) scale(.985)!important;}
+@media(max-width:650px){.home-page .cover-html-button{width:40px!important;height:40px!important;}}
