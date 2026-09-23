@@ -753,3 +753,15 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .pdf-toolbar .detail-modern-flag.active{
   box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
 }
+
+/* Limpeza exclusivamente das bandeiras antigas incorporadas na imagem da página principal. */
+.main-html-flag-clean{
+  position:absolute!important;
+  left:75.55%!important;
+  top:.45%!important;
+  width:18.65%!important;
+  height:10.75%!important;
+  background:#fff!important;
+  pointer-events:none!important;
+  z-index:55!important;
+}
