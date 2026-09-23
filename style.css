@@ -335,3 +335,94 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   .pdf-toolbar .detail-modern-home::before{inset:-18%!important;}
   .pdf-toolbar .detail-modern-flag::before{inset:-8%!important;}
 }
+
+
+/* === PADRÃO APROVADO: bandeiras como botões HTML, mesmo efeito do NEXT/PREV === */
+.detail-modern-flag{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background:linear-gradient(180deg,#ffffff 0%,#f4f4f4 100%)!important;
+  border:1px solid rgba(18,18,18,.14)!important;
+  box-shadow:0 7px 17px rgba(0,0,0,.16)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+.detail-modern-flag::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-3px!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid rgba(0,0,0,.08)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.12)!important;
+  z-index:-1!important;
+}
+.detail-modern-flag img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+.detail-modern-flag:hover,
+.detail-modern-flag:focus-visible{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.22)!important;
+}
+.detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
+.detail-modern-flag.active{
+  box-shadow:0 0 0 2px rgba(18,18,18,.16),0 9px 20px rgba(0,0,0,.18)!important;
+}
+
+/* As barras posicionadas sobre as páginas mantêm o mesmo tamanho do Home */
+.main-html-topbar .detail-modern-flag{
+  width:4.79%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+}
+.main-html-topbar .detail-modern-flag::before{
+  inset:-10%!important;
+}
+.main-html-topbar .detail-modern-flag img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+
+.pdf-toolbar .detail-modern-flag{
+  width:9.35%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+}
+.pdf-toolbar .detail-modern-flag::before{
+  inset:-10%!important;
+}
+.pdf-toolbar .detail-modern-flag img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+
+@media(max-width:650px){
+  .detail-modern-flag{
+    width:40px!important;
+    height:40px!important;
+  }
+}
