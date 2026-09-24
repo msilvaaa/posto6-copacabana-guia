@@ -967,3 +967,5 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .pdf-toolbar .detail-modern-flag:active{
   transform:translateY(-1px) scale(.985)!important;
 }
+
+/* Deploy Vercel — sincronização de teste */
