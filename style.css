@@ -969,3 +969,106 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 
 /* Deploy Vercel — sincronização de teste */
+
+/* =========================================================
+   CAPA LIMPA — fundo da arte oculto, mantendo a geometria
+   dos hotspots para preservar as posições já calibradas.
+   Os ícones continuam sendo recortes da arte original.
+   ========================================================= */
+.home-page .guide-page{
+  opacity:0!important;
+  pointer-events:none!important;
+}
+.home-page .main-html-flag-clean{
+  display:none!important;
+}
+.home-page .page-stage{
+  background:#fff!important;
+  overflow:visible!important;
+}
+.home-page .page-stage::before{
+  content:"Sinta-se em casa";
+  position:absolute;
+  z-index:45;
+  left:50%;
+  top:10.2%;
+  transform:translateX(-50%);
+  color:#111827;
+  font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive;
+  font-size:clamp(42px,5vw,78px);
+  line-height:1;
+  font-weight:500;
+  white-space:nowrap;
+  pointer-events:none;
+  text-align:center;
+}
+.home-page .hotspots > .cover-html-button{
+  width:clamp(54px,4.5vw,72px)!important;
+  height:clamp(54px,4.5vw,72px)!important;
+  overflow:visible!important;
+  background:#fff!important;
+  border:1px solid rgba(18,18,18,.08)!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.14)!important;
+}
+.home-page .hotspots > .cover-html-button::after{
+  content:attr(aria-label);
+  position:absolute;
+  left:50%;
+  top:calc(100% + 9px);
+  transform:translateX(-50%);
+  color:#171717;
+  font:400 clamp(11px,1.05vw,15px)/1.05 Arial,Helvetica,sans-serif;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+  text-align:center;
+  pointer-events:none;
+  z-index:60;
+}
+.home-page .hotspots > .cover-html-button:hover,
+.home-page .hotspots > .cover-html-button:focus-visible{
+  transform:translate(-50%,calc(-50% - 3px))!important;
+  box-shadow:0 13px 28px rgba(0,0,0,.23)!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  width:92%!important;
+  height:92%!important;
+  border-radius:50%!important;
+  background-image:url('/assets/pt-01.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-color:transparent!important;
+  object-fit:none!important;
+  font-size:0!important;
+  color:transparent!important;
+}
+
+/* Recortes dos ícones da capa. */
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-size:18.9722% 11.1304%!important;background-position:77.6072% 51.0369%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-size:17.5128% 10.2400%!important;background-position:86.5057% 51.4788%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-size:17.9737% 10.5205%!important;background-position:86.6460% 67.2622%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-size:18.7123% 11.1304%!important;background-position:86.0436% 18.4646%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-size:18.9722% 11.1304%!important;background-position:94.4881% 51.0369%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-size:16.4578% 9.7215%!important;background-position:78.2874% 67.8479%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-size:17.5128% 10.2400%!important;background-position:94.3791% 67.4563%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-size:18.2133% 10.6667%!important;background-position:77.7264% 84.2220%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-size:17.2911% 10.1053%!important;background-position:78.0441% 34.6698%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-size:17.0750% 9.9740%!important;background-position:94.2679% 34.7200%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-size:18.4594% 10.8169%!important;background-position:94.0110% 18.5175%!important;}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-size:17.2911% 10.1053%!important;background-position:86.1738% 34.4855%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-size:16.6585% 9.7215%!important;background-position:94.8328% 84.0890%!important;}
+.home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-size:20.3881% 12.0000%!important;background-position:86.5328% 94.8435%!important;}
+
+@media(max-width:650px){
+  .home-page .page-stage::before{
+    top:10.4%;
+    font-size:clamp(34px,9vw,48px);
+  }
+  .home-page .hotspots > .cover-html-button{
+    width:54px!important;
+    height:54px!important;
+  }
+  .home-page .hotspots > .cover-html-button::after{
+    top:calc(100% + 7px);
+    font-size:11px;
+  }
+}
