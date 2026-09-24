@@ -1072,3 +1072,29 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     font-size:11px;
   }
 }
+
+
+/* =========================================================
+   CORREÇÃO DOS RECORTES DOS ÍCONES DA CAPA
+   Os valores anteriores estavam 100x menores no background-size,
+   deixando o fundo branco do botão aparecer no centro do ícone.
+   ========================================================= */
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  object-fit:none!important;
+}
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-size:1897.22% 1113.04%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-size:1751.28% 1024.00%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-size:1797.37% 1052.05%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-size:1871.23% 1113.04%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-size:1897.22% 1113.04%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-size:1645.78% 972.15%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-size:1751.28% 1024.00%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-size:1821.33% 1066.67%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-size:1729.11% 1010.53%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-size:1707.50% 997.40%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-size:1845.94% 1081.69%!important;}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-size:1729.11% 1010.53%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-size:1665.85% 972.15%!important;}
+.home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-size:2038.81% 1200.00%!important;}
