@@ -924,3 +924,46 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
  background-image:url('/assets/pt-01.jpg')!important;background-repeat:no-repeat!important;
  background-size:1898% 1113% !important;background-position:78.1% 18.45%!important;
 }
+
+
+/* === ANIMAÇÃO FINAL DAS BANDEIRAS — mesmo comportamento aprovado do Home ===
+   Normal: bandeira colorida + um único aro branco.
+   Hover: aro branco desaparece, botão sobe e a sombra aumenta.
+   O estado ativo também perde o aro durante o hover. */
+.detail-modern-flag,
+.main-html-topbar .detail-modern-flag,
+.pdf-toolbar .detail-modern-flag{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  will-change:transform,box-shadow;
+}
+
+.detail-modern-flag:hover,
+.detail-modern-flag:focus-visible,
+.main-html-topbar .detail-modern-flag:hover,
+.main-html-topbar .detail-modern-flag:focus-visible,
+.pdf-toolbar .detail-modern-flag:hover,
+.pdf-toolbar .detail-modern-flag:focus-visible,
+.detail-modern-flag.active:hover,
+.detail-modern-flag.active:focus-visible,
+.main-html-topbar .detail-modern-flag.active:hover,
+.main-html-topbar .detail-modern-flag.active:focus-visible,
+.pdf-toolbar .detail-modern-flag.active:hover,
+.pdf-toolbar .detail-modern-flag.active:focus-visible{
+  transform:translateY(-3px)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.28)!important;
+}
+
+.detail-modern-flag img,
+.main-html-topbar .detail-modern-flag img,
+.pdf-toolbar .detail-modern-flag img{
+  border-radius:50%!important;
+}
+
+.detail-modern-flag:active,
+.main-html-topbar .detail-modern-flag:active,
+.pdf-toolbar .detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
