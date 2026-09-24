@@ -1129,3 +1129,10 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-size:1729.11% 1010.53%!important;background-position:86.1738% 34.4855%!important;}
 .home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-size:1665.85% 972.15%!important;background-position:94.8328% 84.0890%!important;}
 .home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-size:2038.81% 1200.00%!important;background-position:86.5328% 94.8435%!important;}
+
+
+/* === CAPA: restaurar a foto original ao lado dos botões === */
+.home-page .guide-page{
+  opacity:1!important;
+  visibility:visible!important;
+}
