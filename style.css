@@ -2328,3 +2328,47 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .lang-es .hotspots > .cover-html-button::after{
   z-index:20!important;
 }
+
+
+/* =========================================================
+   PADRÃO DE IMAGENS IGUAL À PÁGINA PT (BRASIL)
+   EN e ES usam exatamente os mesmos 15 arquivos de imagem
+   da página PT. Somente o texto e o link mudam.
+   ========================================================= */
+.lang-en .hotspots > .cover-html-button > .cover-icon-image,
+.lang-es .hotspots > .cover-html-button > .cover-icon-image{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background-image:none!important;
+  background:none!important;
+}
+.lang-en .hotspots > .cover-html-button > .cover-icon-image img,
+.lang-es .hotspots > .cover-html-button > .cover-icon-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  object-fit:fill!important;
+  object-position:center!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.lang-en .hotspots > .cover-html-button > .cover-icon-layer,
+.lang-es .hotspots > .cover-html-button > .cover-icon-layer{
+  display:none!important;
+}
