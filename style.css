@@ -1674,3 +1674,29 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     width:48px!important;height:48px!important;
   }
 }
+
+
+/* Ajuste fino — somente posição das bandeiras no topo da capa. */
+@media(min-width:701px){
+  .home-page .main-html-topbar{
+    left:74.9%!important;
+    right:4.1%!important;
+    top:2.05%!important;
+    gap:10px!important;
+    justify-content:center!important;
+  }
+  .home-page .detail-modern-home{
+    flex:0 0 58px!important;
+    width:58px!important;
+    height:58px!important;
+  }
+  .home-page .detail-modern-flag{
+    flex:0 0 62px!important;
+    width:62px!important;
+    height:62px!important;
+  }
+  .home-page .detail-modern-flag img{
+    width:62px!important;
+    height:62px!important;
+  }
+}
