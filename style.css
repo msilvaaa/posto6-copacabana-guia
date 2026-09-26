@@ -1700,3 +1700,59 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     height:62px!important;
   }
 }
+
+
+/* Correção: somente alinhamento do conjunto casa + bandeiras no topo. */
+.home-page .main-html-topbar{
+  left:72.35%!important;
+  right:1.8%!important;
+  top:1.7%!important;
+  width:25.85%!important;
+  height:82px!important;
+}
+.home-page .main-html-topbar .detail-modern-home{
+  left:2%!important;
+  top:0!important;
+  width:58px!important;
+  height:58px!important;
+}
+.home-page .main-html-topbar .detail-modern-flag{
+  top:0!important;
+  width:58px!important;
+  height:58px!important;
+  transform:translateX(-50%)!important;
+}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:27%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:55%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:83%!important;}
+.home-page .main-html-topbar .detail-modern-flag img{
+  width:58px!important;
+  height:58px!important;
+  object-fit:contain!important;
+}
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    left:72.35%!important;
+    right:1.8%!important;
+    top:1.7%!important;
+    width:25.85%!important;
+    height:66px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    left:2%!important;
+    top:0!important;
+    width:48px!important;
+    height:48px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    top:0!important;
+    width:50px!important;
+    height:50px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:27%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:55%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:83%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:50px!important;height:50px!important;
+  }
+}
