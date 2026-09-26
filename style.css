@@ -2044,3 +2044,50 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     transform:translateX(-18px)!important;
   }
 }
+
+
+/* =========================================================
+   BOTÕES DA CAPA — imagens aprovadas pelo usuário.
+   Somente a aparência dos botões é substituída.
+   Posições, bandeiras e demais elementos permanecem intactos.
+   ========================================================= */
+.home-page .hotspots > .cover-html-button{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image,
+.home-page .hotspots > .cover-html-button > .cover-icon-layer{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  border-radius:50%!important;
+  background-image:url('/assets/cover-buttons-sprite.webp')!important;
+  background-repeat:no-repeat!important;
+  background-size:300% 500%!important;
+  background-color:transparent!important;
+  object-fit:none!important;
+  overflow:hidden!important;
+}
+.home-page .hotspots > .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-layer{background-position:0% 0%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-position:50% 0%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-position:100% 0%!important;}
+
+.home-page .hotspots > .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-position:0% 25%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-position:50% 25%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-position:100% 25%!important;}
+
+.home-page .hotspots > .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-position:0% 50%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-position:50% 50%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-position:100% 50%!important;}
+
+.home-page .hotspots > .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-position:0% 75%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-position:50% 75%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-position:100% 75%!important;}
+
+.home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-position:0% 100%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-position:50% 100%!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-position:100% 100%!important;}
