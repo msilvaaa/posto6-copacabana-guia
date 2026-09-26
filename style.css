@@ -2024,3 +2024,11 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     top:clamp(-135px,-8vw,-75px)!important;
   }
 }
+
+
+/* Ajuste fino solicitado — mover o conjunto superior na direção do BEM-VINDOS. */
+@media(min-width:701px){
+  .home-page .main-html-topbar{
+    left:72.93%!important;
+  }
+}
