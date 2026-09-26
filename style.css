@@ -1756,3 +1756,65 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     width:50px!important;height:50px!important;
   }
 }
+
+
+/* Ajuste solicitado: aproximar as bandeiras e manter o conjunto compacto. */
+.home-page .main-html-topbar{
+  left:72.35%!important;
+  right:1.8%!important;
+  top:1.7%!important;
+  width:25.85%!important;
+  height:70px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:6px!important;
+}
+.home-page .main-html-topbar .detail-modern-home{
+  position:relative!important;
+  left:auto!important;
+  top:auto!important;
+  flex:0 0 58px!important;
+  width:58px!important;
+  height:58px!important;
+}
+.home-page .main-html-topbar .detail-modern-flag{
+  position:relative!important;
+  left:auto!important;
+  top:auto!important;
+  flex:0 0 58px!important;
+  width:58px!important;
+  height:58px!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+}
+.home-page .main-html-topbar .detail-modern-flag img{
+  width:58px!important;
+  height:58px!important;
+  object-fit:contain!important;
+}
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    left:72.35%!important;
+    right:1.8%!important;
+    top:1.7%!important;
+    width:25.85%!important;
+    height:54px!important;
+    gap:4px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    flex:0 0 46px!important;
+    width:46px!important;
+    height:46px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    flex:0 0 46px!important;
+    width:46px!important;
+    height:46px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:46px!important;
+    height:46px!important;
+  }
+}
