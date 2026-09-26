@@ -1962,3 +1962,57 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     top:clamp(-72px,-5.2vw,-42px)!important;
   }
 }
+
+
+/* Alinhamento final — somente eixo horizontal dos atalhos e bandeiras. */
+@media(min-width:701px){
+  /* 3 colunas equilibradas dentro do painel direito */
+  .home-page .hotspots > .cover-html-button[aria-label="BEM-VINDOS"],
+  .home-page .hotspots > .cover-html-button[aria-label="WIFI"],
+  .home-page .hotspots > .cover-html-button[aria-label="COMODIDADES"],
+  .home-page .hotspots > .cover-html-button[aria-label="BARES"],
+  .home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"]{
+    left:77.35%!important;
+  }
+  .home-page .hotspots > .cover-html-button[aria-label="CHECK-IN"],
+  .home-page .hotspots > .cover-html-button[aria-label="REGRAS"],
+  .home-page .hotspots > .cover-html-button[aria-label="ATIVIDADES"],
+  .home-page .hotspots > .cover-html-button[aria-label="RESTAURANTES"],
+  .home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"]{
+    left:84.95%!important;
+  }
+  .home-page .hotspots > .cover-html-button[aria-label="LOCALIZAÇÃO"],
+  .home-page .hotspots > .cover-html-button[aria-label="TRANSPORTES"],
+  .home-page .hotspots > .cover-html-button[aria-label="INFORMAÇÕES"],
+  .home-page .hotspots > .cover-html-button[aria-label="SHOPPING"],
+  .home-page .hotspots > .cover-html-button[aria-label="CONTATO"]{
+    left:92.55%!important;
+  }
+
+  /* conjunto superior centrado no mesmo eixo do painel */
+  .home-page .main-html-topbar{
+    left:72.35%!important;
+    right:auto!important;
+    width:27.65%!important;
+    height:68px!important;
+    display:block!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    left:16%!important;
+    top:0!important;
+    width:58px!important;
+    height:58px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    top:0!important;
+    width:58px!important;
+    height:58px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:39%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:59%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:79%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:58px!important;
+    height:58px!important;
+  }
+}
