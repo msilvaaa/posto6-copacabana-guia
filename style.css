@@ -1902,3 +1902,15 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   font-weight:400!important;
   color:#171717!important;
 }
+
+
+/* ÚLTIMA ALTERAÇÃO SOLICITADA: somente a imagem de fundo da capa. */
+.home-page .home-cover-photo{
+  background-image:
+    linear-gradient(90deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,0) 38%,rgba(255,255,255,0) 100%),
+    linear-gradient(0deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.04) 25%,rgba(0,0,0,0) 52%),
+    url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Carlos_DA_2.jpg')!important;
+  background-size:100% 100%,100% 100%,cover!important;
+  background-position:center,center,center 48%!important;
+  background-repeat:no-repeat!important;
+}
