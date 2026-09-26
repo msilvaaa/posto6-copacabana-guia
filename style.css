@@ -1262,3 +1262,19 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     height:60px!important;
   }
 }
+
+/* CENTRALIZAÇÃO FINAL — pequenos ajustes individuais para alinhar o conteúdo visual de cada ícone dentro do círculo. */
+.home-page .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-image{background-position:77.64% 51.14%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-position:86.16% 19.39%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-position:94.05% 18.87%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-position:78.09% 35.59%!important;}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-position:86.18% 34.45%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-position:94.44% 35.23%!important;}
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-position:77.49% 51.51%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-position:86.42% 51.49%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-position:94.62% 51.31%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-position:78.15% 68.12%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-position:86.59% 67.17%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-position:94.70% 68.02%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-position:77.97% 84.34%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-position:94.89% 84.07%!important;}
