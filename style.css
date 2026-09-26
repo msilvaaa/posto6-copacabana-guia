@@ -1296,3 +1296,210 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-position:78.0441% 36.2112%!important;}
 .home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-position:94.2679% 36.2636%!important;}
 .home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-position:77.6072% 52.5629%!important;}
+
+/* =========================================================
+   CAPA MODERNA PT — foto clássica de Copacabana
+   ========================================================= */
+.home-page .guide-page{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+.home-page .page-stage{
+  background:#f6f2ea!important;
+  overflow:visible!important;
+}
+.home-page .page-stage::before{content:none!important;}
+.home-page .page-stage::after{
+  content:""!important;
+  position:absolute!important;
+  left:69.25%!important;
+  top:0!important;
+  width:30.75%!important;
+  height:100%!important;
+  background:#f7f4ee!important;
+  box-shadow:-18px 0 42px rgba(0,0,0,.12)!important;
+  pointer-events:none!important;
+  z-index:9!important;
+}
+.home-page .home-cover-hero{
+  position:absolute!important;
+  inset:0!important;
+  z-index:55!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+.home-page .home-cover-photo{
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:69.25%!important;
+  height:100%!important;
+  background-image:
+    linear-gradient(90deg,rgba(255,251,243,.90) 0%,rgba(255,251,243,.56) 34%,rgba(255,251,243,.08) 68%,rgba(255,251,243,0) 100%),
+    linear-gradient(0deg,rgba(0,0,0,.56) 0%,rgba(0,0,0,.16) 25%,rgba(0,0,0,0) 50%),
+    url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Carlos_DA_2.jpg')!important;
+  background-size:100% 100%,100% 100%,cover!important;
+  background-position:center,center,center center!important;
+  background-repeat:no-repeat!important;
+}
+.home-page .home-cover-copy{
+  position:absolute!important;
+  left:5.0%!important;
+  top:7.0%!important;
+  width:58%!important;
+  color:#111!important;
+  text-align:left!important;
+}
+.home-page .home-cover-brand{
+  display:flex!important;
+  flex-direction:column!important;
+  width:max-content!important;
+  margin:0 0 5.5%!important;
+  color:#111!important;
+  text-transform:uppercase!important;
+}
+.home-page .home-cover-brand strong{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(22px,2.35vw,38px)!important;
+  line-height:.9!important;
+  letter-spacing:-.03em!important;
+  font-weight:700!important;
+}
+.home-page .home-cover-brand span{
+  margin-top:7px!important;
+  font-size:clamp(10px,.85vw,14px)!important;
+  line-height:1!important;
+  letter-spacing:.42em!important;
+  font-weight:500!important;
+}
+.home-page .home-cover-brand small{
+  margin-top:7px!important;
+  font-size:clamp(8px,.65vw,11px)!important;
+  line-height:1!important;
+  letter-spacing:.20em!important;
+  font-weight:500!important;
+}
+.home-page .home-cover-copy h1{
+  margin:0!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(42px,5.15vw,80px)!important;
+  line-height:.91!important;
+  letter-spacing:-.045em!important;
+  font-weight:600!important;
+  color:#111!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.28)!important;
+}
+.home-page .home-cover-subtitle{
+  margin:2.2% 0 0!important;
+  max-width:78%!important;
+  font-size:clamp(13px,1.28vw,20px)!important;
+  line-height:1.27!important;
+  letter-spacing:-.015em!important;
+  color:#151515!important;
+  font-weight:500!important;
+}
+.home-page .home-cover-cta{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:16px!important;
+  margin-top:3.3%!important;
+  min-width:210px!important;
+  height:50px!important;
+  padding:0 24px!important;
+  border-radius:999px!important;
+  background:#0c3b34!important;
+  color:#fff!important;
+  text-decoration:none!important;
+  font:700 12px/1 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.12em!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.20)!important;
+  pointer-events:auto!important;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important;
+}
+.home-page .home-cover-cta span{font-size:23px!important;line-height:1!important;font-weight:300!important;margin-top:-1px!important}
+.home-page .home-cover-cta:hover,.home-page .home-cover-cta:focus-visible{
+  transform:translateY(-2px)!important;
+  background:#0a302b!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.24)!important;
+}
+.home-page .home-cover-stats{
+  position:absolute!important;
+  left:4.9%!important;
+  right:31.2%!important;
+  bottom:5.5%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:1.4%!important;
+  color:#fff!important;
+}
+.home-page .home-cover-stats > div{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0!important;
+  padding:0 1.5%!important;
+}
+.home-page .home-cover-stats > div + div{border-left:1px solid rgba(255,255,255,.45)!important}
+.home-page .home-cover-stats b{flex:0 0 auto!important;font-size:24px!important;line-height:1!important;color:#fff!important;font-weight:600!important}
+.home-page .home-cover-stats span{
+  font-size:clamp(9px,.78vw,13px)!important;
+  line-height:1.2!important;
+  letter-spacing:.01em!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.45)!important;
+}
+.home-page .home-cover-credit{
+  position:absolute!important;
+  left:5%!important;
+  bottom:.9%!important;
+  color:rgba(255,255,255,.82)!important;
+  font:400 7px/1.1 Arial,Helvetica,sans-serif!important;
+  text-decoration:none!important;
+  letter-spacing:.01em!important;
+  text-shadow:0 1px 4px rgba(0,0,0,.55)!important;
+  pointer-events:auto!important;
+}
+.home-page .home-cover-credit:hover{text-decoration:underline!important;color:#fff!important}
+.home-page .home-menu-title{
+  position:absolute!important;
+  left:69.25%!important;
+  top:10.7%!important;
+  width:30.75%!important;
+  z-index:20!important;
+  text-align:center!important;
+  color:#2b2b2b!important;
+  font:700 clamp(11px,.85vw,14px)/1 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.28em!important;
+  text-transform:uppercase!important;
+  pointer-events:none!important;
+}
+.home-page .home-menu-rule{
+  position:absolute!important;
+  left:72.4%!important;
+  top:15%!important;
+  width:24.5%!important;
+  height:1px!important;
+  background:rgba(35,35,35,.22)!important;
+  z-index:20!important;
+  pointer-events:none!important;
+}
+@media(max-width:700px){
+ .home-page .home-cover-copy{left:4.5%!important;top:7%!important;width:61%!important}
+ .home-page .home-cover-copy h1{font-size:clamp(28px,7.2vw,54px)!important}
+ .home-page .home-cover-brand{margin-bottom:5%!important}
+ .home-page .home-cover-brand strong{font-size:clamp(17px,3.2vw,28px)!important}
+ .home-page .home-cover-brand span{font-size:8px!important;letter-spacing:.30em!important}
+ .home-page .home-cover-brand small{font-size:7px!important;letter-spacing:.13em!important}
+ .home-page .home-cover-subtitle{font-size:clamp(9px,1.8vw,13px)!important;max-width:88%!important}
+ .home-page .home-cover-cta{min-width:150px!important;height:38px!important;padding:0 15px!important;gap:9px!important;font-size:9px!important}
+ .home-page .home-cover-cta span{font-size:17px!important}
+ .home-page .home-cover-stats{bottom:4.6%!important;right:31.2%!important;gap:0!important}
+ .home-page .home-cover-stats > div{gap:4px!important;padding:0 1%!important}
+ .home-page .home-cover-stats b{font-size:15px!important}
+ .home-page .home-cover-stats span{font-size:7px!important}
+ .home-page .home-cover-credit{font-size:6px!important;bottom:.7%!important}
+ .home-page .home-menu-title{top:10.5%!important;font-size:9px!important}
+ .home-page .home-menu-rule{top:14.8%!important}
+}
