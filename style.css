@@ -1952,3 +1952,13 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     object-fit:contain!important;
   }
 }
+
+
+/* Ajuste solicitado — mover somente o logo para o canto superior esquerdo. */
+@media(min-width:701px){
+  .home-page .home-cover-brand{
+    position:relative!important;
+    left:clamp(-72px,-4.3vw,-45px)!important;
+    top:clamp(-72px,-5.2vw,-42px)!important;
+  }
+}
