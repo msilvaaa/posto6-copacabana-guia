@@ -2078,3 +2078,25 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-position:0% 100%!important;}
 .home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-position:50% 100%!important;}
 .home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-position:100% 100%!important;}
+
+
+/* Correção: restaurar a mesma animação do conjunto superior.
+   Não altera posições, tamanhos ou imagens. */
+.home-page .main-html-topbar > .detail-modern-home,
+.home-page .main-html-topbar > .detail-modern-flag{
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  will-change:transform,box-shadow!important;
+}
+.home-page .main-html-topbar > .detail-modern-home:hover,
+.home-page .main-html-topbar > .detail-modern-home:focus-visible,
+.home-page .main-html-topbar > .detail-modern-flag:hover,
+.home-page .main-html-topbar > .detail-modern-flag:focus-visible,
+.home-page .main-html-topbar > .detail-modern-flag.active:hover,
+.home-page .main-html-topbar > .detail-modern-flag.active:focus-visible{
+  transform:translateY(-3px)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.28)!important;
+}
+.home-page .main-html-topbar > .detail-modern-home:active,
+.home-page .main-html-topbar > .detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
