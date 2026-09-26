@@ -1872,3 +1872,83 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     padding-bottom:5px!important;
   }
 }
+
+
+/* Correção final do cabeçalho superior — somente casa + bandeiras. */
+.home-page .home-menu-title{display:none!important;}
+
+@media(min-width:701px){
+  .home-page .main-html-topbar{
+    position:absolute!important;
+    left:72.35%!important;
+    right:auto!important;
+    top:1.7%!important;
+    width:27.65%!important;
+    height:72px!important;
+    display:block!important;
+    z-index:90!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    position:absolute!important;
+    left:17.1%!important;
+    top:0!important;
+    width:58px!important;
+    height:58px!important;
+    transform:none!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    position:absolute!important;
+    top:0!important;
+    width:58px!important;
+    height:58px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:36.7%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:57.3%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:76%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:58px!important;
+    height:58px!important;
+    object-fit:contain!important;
+  }
+}
+
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    position:absolute!important;
+    left:72.35%!important;
+    right:auto!important;
+    top:1.7%!important;
+    width:27.65%!important;
+    height:60px!important;
+    display:block!important;
+    z-index:90!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    position:absolute!important;
+    left:11%!important;
+    top:0!important;
+    width:46px!important;
+    height:46px!important;
+    transform:none!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    position:absolute!important;
+    top:0!important;
+    width:48px!important;
+    height:48px!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:31%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:51.5%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:71.5%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:48px!important;
+    height:48px!important;
+    object-fit:contain!important;
+  }
+}
