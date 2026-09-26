@@ -2100,3 +2100,37 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .main-html-topbar > .detail-modern-flag:active{
   transform:translateY(-1px) scale(.985)!important;
 }
+
+
+/* Versão definitiva dos ícones: usar os SVGs de recorte em alta qualidade, em vez do sprite. */
+.home-page .hotspots > .cover-html-button > .cover-icon-image,
+.home-page .hotspots > .cover-html-button > .cover-icon-layer{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  border-radius:50%!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:100% 100%!important;
+  background-color:transparent!important;
+  object-fit:fill!important;
+  overflow:hidden!important;
+  image-rendering:auto!important;
+}
+.home-page .hotspots > .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-layer{background-image:url('/assets/cover-icons/bem-vindos.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-layer{background-image:url('/assets/cover-icons/checkin.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-layer{background-image:url('/assets/cover-icons/localizacao.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="WIFI"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="WIFI"] > .cover-icon-layer{background-image:url('/assets/cover-icons/wifi.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="REGRAS"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="REGRAS"] > .cover-icon-layer{background-image:url('/assets/cover-icons/regras.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/transportes.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/comodidades.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/atividades.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/informacoes.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="BARES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="BARES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/bares.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-layer{background-image:url('/assets/cover-icons/restaurantes.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="SHOPPING"] > .cover-icon-layer{background-image:url('/assets/cover-icons/estabelecimentos.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-layer{background-image:url('/assets/cover-icons/emergencia.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-layer{background-image:url('/assets/cover-icons/checkout.svg')!important;}
+.home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-layer{background-image:url('/assets/cover-icons/contato.svg')!important;}
