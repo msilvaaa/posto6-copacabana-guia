@@ -1612,3 +1612,65 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 /* Somente a imagem de fundo foi alterada. */
 .home-page .home-cover-photo{background-image:linear-gradient(90deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 42%,rgba(255,255,255,0) 100%),linear-gradient(0deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.06) 24%,rgba(0,0,0,0) 52%),url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Carlos_DA_2.jpg')!important;background-size:100% 100%,100% 100%,cover!important;background-position:center,center,center center!important;background-repeat:no-repeat!important;}
+
+
+/* Ajuste fino — somente posição das bandeiras no topo da capa. */
+.home-page .main-html-topbar{
+  position:absolute!important;
+  left:72.35%!important;
+  right:1.8%!important;
+  top:1.7%!important;
+  width:auto!important;
+  height:70px!important;
+  display:block!important;
+  z-index:90!important;
+}
+.home-page .main-html-topbar .detail-modern-home{
+  position:absolute!important;
+  left:19%!important;
+  top:0!important;
+  width:58px!important;
+  height:58px!important;
+  transform:none!important;
+}
+.home-page .main-html-topbar .detail-modern-flag{
+  position:absolute!important;
+  top:0!important;
+  width:68px!important;
+  height:68px!important;
+  margin:0!important;
+  padding:0!important;
+  transform:translateX(-50%)!important;
+}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:42%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:63%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:83%!important;}
+.home-page .main-html-topbar .detail-modern-flag img{
+  width:68px!important;
+  height:68px!important;
+  object-fit:contain!important;
+}
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    left:72.35%!important;
+    right:1.2%!important;
+    top:1.7%!important;
+    height:52px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    left:19%!important;
+    width:46px!important;
+    height:46px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    top:0!important;
+    width:48px!important;
+    height:48px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:42%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:63%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:83%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:48px!important;height:48px!important;
+  }
+}
