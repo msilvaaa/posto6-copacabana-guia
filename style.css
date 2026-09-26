@@ -2209,3 +2209,36 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   background-position:center!important;
   background-repeat:no-repeat!important;
 }
+
+
+/* Correção: mostrar os SVGs diretamente — elimina o fundo branco dos botões.
+   Não altera posições, bandeiras ou animações. */
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  padding:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background:none!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image img{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  object-fit:fill!important;
+  object-position:center!important;
+}
