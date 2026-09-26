@@ -2016,3 +2016,11 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     height:58px!important;
   }
 }
+
+
+/* Ajuste solicitado — logo na mesma linha vertical dos atalhos superiores. */
+@media(min-width:701px){
+  .home-page .home-cover-brand{
+    top:clamp(-135px,-8vw,-75px)!important;
+  }
+}
