@@ -2310,3 +2310,62 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     background-size:300% 500%!important;
   }
 }
+
+
+/* =========================================================
+   BOTÕES PT — BLOCO ÚNICO FINAL
+   Usa o PNG 3x5 aprovado pelo usuário (222x370), com cada
+   ícone em seu próprio quadrante. Este bloco substitui todos
+   os fundos anteriores somente nos 15 botões.
+   ========================================================= */
+.home-page .hotspots > .cover-html-button > .cover-icon-image,
+.home-page .hotspots > .cover-html-button > .cover-icon-layer{
+  display:block!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background-image:url('/assets/cover-buttons-sprite.png?v=20260926-04')!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  background-size:300% 500%!important;
+  object-fit:none!important;
+  image-rendering:auto!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image img,
+.home-page .hotspots > .cover-html-button > .cover-icon-layer img{
+  display:none!important;
+}
+.home-page .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="BEM-VINDOS"] > .cover-icon-layer{background-position:0% 0%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-layer{background-position:50% 0%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-layer{background-position:100% 0%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-layer{background-position:0% 25%!important;}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-layer{background-position:50% 25%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-layer{background-position:100% 25%!important;}
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-layer{background-position:0% 50%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-layer{background-position:50% 50%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-layer{background-position:100% 50%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-layer{background-position:0% 75%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-layer{background-position:50% 75%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-layer{background-position:100% 75%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-layer{background-position:0% 100%!important;}
+.home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-layer{background-position:50% 100%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image,
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-layer{background-position:100% 100%!important;}
