@@ -2167,3 +2167,45 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   opacity:1!important;
   visibility:visible!important;
 }
+
+
+/* =========================================================
+   CORREÇÃO DEFINITIVA DOS 15 BOTÕES — PT
+   Volta a usar os recortes exatos da imagem PT-01.
+   Não altera posição, bandeiras, Home ou animações.
+   ========================================================= */
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  display:block!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background-image:url('/assets/pt-01.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  font-size:0!important;
+  color:transparent!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image img{
+  display:none!important;
+}
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-size:1897.22% 1113.04%!important;background-position:77.6072% 51.0369%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-size:1751.28% 1024.00%!important;background-position:86.5057% 51.4788%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-size:1797.37% 1052.05%!important;background-position:86.6460% 67.2622%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-size:1871.23% 1113.04%!important;background-position:86.0436% 18.4646%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-size:1897.22% 1113.04%!important;background-position:94.4881% 51.0369%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-size:1645.78% 972.15%!important;background-position:78.2874% 67.8479%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-size:1751.28% 1024.00%!important;background-position:94.3791% 67.4563%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-size:1821.33% 1066.67%!important;background-position:77.7264% 84.2220%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-size:1729.11% 1010.53%!important;background-position:78.0441% 34.6698%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-size:1707.50% 997.40%!important;background-position:94.2679% 34.7200%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-size:1845.94% 1081.69%!important;background-position:94.0110% 18.5175%!important;}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-size:1729.11% 1010.53%!important;background-position:86.1738% 34.4855%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-size:1665.85% 972.15%!important;background-position:94.8328% 84.0890%!important;}
+.home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{
+  background-image:url('/assets/check-out-novo.png?v=2')!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
