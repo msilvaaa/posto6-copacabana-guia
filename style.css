@@ -2032,3 +2032,15 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
     left:72.93%!important;
   }
 }
+
+
+/* Correção solicitada — mover somente o conjunto CASA + BANDEIRAS para a esquerda,
+   mantendo exatamente o espaçamento interno e sem tocar nos botões da grade. */
+.home-page .main-html-topbar{
+  transform:translateX(-20px)!important;
+}
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    transform:translateX(-18px)!important;
+  }
+}
