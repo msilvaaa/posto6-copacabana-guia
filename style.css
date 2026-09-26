@@ -1243,8 +1243,8 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 /* AJUSTE FINAL DOS BOTÕES DA CAPA — maiores, borda branca mais delicada e imagem em destaque. */
 .home-page .hotspots > .cover-html-button{
-  width:clamp(60px,5vw,80px)!important;
-  height:clamp(60px,5vw,80px)!important;
+  width:clamp(64px,5.3vw,84px)!important;
+  height:clamp(64px,5.3vw,84px)!important;
   border:0!important;
   box-shadow:0 0 0 2px rgba(255,255,255,.96),0 8px 22px rgba(0,0,0,.14)!important;
 }
@@ -1258,8 +1258,8 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 @media(max-width:650px){
   .home-page .hotspots > .cover-html-button{
-    width:60px!important;
-    height:60px!important;
+    width:64px!important;
+    height:64px!important;
   }
 }
 
