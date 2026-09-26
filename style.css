@@ -1278,3 +1278,21 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-position:94.70% 68.02%!important;}
 .home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-position:77.97% 84.34%!important;}
 .home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-position:94.89% 84.07%!important;}
+
+/* CENTRALIZAÇÃO DEFINITIVA — alinhamento vertical do círculo visual ao padrão do CHECK-OUT. */
+.home-page .cover-html-button .cover-icon-layer{
+  background-position:78.0692% 19.8633%!important;
+}
+.home-page .cover-html-button[aria-label="REGRAS"] > .cover-icon-image{background-position:86.1738% 36.0269%!important;}
+.home-page .cover-html-button[aria-label="ATIVIDADES"] > .cover-icon-image{background-position:86.5057% 53.0180%!important;}
+.home-page .cover-html-button[aria-label="INFORMAÇÕES"] > .cover-icon-image{background-position:94.4881% 52.5629%!important;}
+.home-page .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-position:78.2874% 69.3960%!important;}
+.home-page .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-position:86.6460% 68.7969%!important;}
+.home-page .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-position:94.3791% 68.9955%!important;}
+.home-page .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image{background-position:77.7264% 85.7545%!important;}
+.home-page .cover-html-button[aria-label="CONTATO"] > .cover-icon-image{background-position:94.8328% 85.6372%!important;}
+.home-page .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-position:86.0436% 19.9905%!important;}
+.home-page .cover-html-button[aria-label="LOCALIZAÇÃO"] > .cover-icon-image{background-position:94.0110% 20.0479%!important;}
+.home-page .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-position:78.0441% 36.2112%!important;}
+.home-page .cover-html-button[aria-label="TRANSPORTES"] > .cover-icon-image{background-position:94.2679% 36.2636%!important;}
+.home-page .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-position:77.6072% 52.5629%!important;}
