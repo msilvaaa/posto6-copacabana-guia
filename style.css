@@ -2275,3 +2275,225 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   .lang-en .main-html-topbar .detail-modern-flag img,
   .lang-es .main-html-topbar .detail-modern-flag img{width:46px!important;height:46px!important;}
 }
+
+
+/* =========================================================
+   PADRÃO ÚNICO FINAL — PT / EN / ES
+   Um único bloco para Home + bandeiras + 15 atalhos.
+   Nas telas EN/ES, a página original fica à esquerda e o
+   painel branco é reconstruído à direita. Na PT, somente
+   os elementos da navegação recebem este padrão.
+   ========================================================= */
+
+/* TOPO: Casa + Espanha + Brasil + EUA */
+.home-page .main-html-topbar{
+  position:absolute!important;
+  left:72.35%!important;
+  right:auto!important;
+  top:1.7%!important;
+  width:27.65%!important;
+  height:70px!important;
+  display:block!important;
+  z-index:200!important;
+  transform:none!important;
+}
+.home-page .main-html-topbar > a{
+  position:absolute!important;
+  top:0!important;
+  margin:0!important;
+}
+.home-page .main-html-topbar .detail-modern-home{
+  left:16%!important;
+  width:58px!important;
+  height:58px!important;
+  flex:none!important;
+  transform:none!important;
+}
+.home-page .main-html-topbar .detail-modern-flag{
+  width:58px!important;
+  height:58px!important;
+  flex:none!important;
+  padding:0!important;
+  border-radius:50%!important;
+  transform:none!important;
+}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:39%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:59%!important;}
+.home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:79%!important;}
+.home-page .main-html-topbar .detail-modern-flag img{
+  width:58px!important;
+  height:58px!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+}
+.home-page .main-html-topbar .detail-modern-home:hover,
+.home-page .main-html-topbar .detail-modern-home:focus-visible,
+.home-page .main-html-topbar .detail-modern-flag:hover,
+.home-page .main-html-topbar .detail-modern-flag:focus-visible{
+  transform:translateY(-3px)!important;
+}
+.home-page .main-html-topbar .detail-modern-home:active,
+.home-page .main-html-topbar .detail-modern-flag:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
+
+/* EN + ES: mesmo painel lateral e mesma grade da PT */
+.lang-en .page-stage,
+.lang-es .page-stage{
+  position:relative!important;
+  width:100%!important;
+  max-width:1672px!important;
+  overflow:visible!important;
+  background:#f8f6f2!important;
+}
+.lang-en .guide-page,
+.lang-es .guide-page{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  object-fit:initial!important;
+}
+.lang-en .page-stage::after,
+.lang-es .page-stage::after{
+  content:""!important;
+  position:absolute!important;
+  left:72.35%!important;
+  top:0!important;
+  width:27.65%!important;
+  height:100%!important;
+  background:#faf8f3!important;
+  box-shadow:-10px 0 26px rgba(0,0,0,.06)!important;
+  pointer-events:none!important;
+  z-index:9!important;
+}
+
+/* Grade: 3 colunas x 5 linhas, igual nas três telas */
+.lang-en .hotspots > .cover-html-button,
+.lang-es .hotspots > .cover-html-button{
+  position:absolute!important;
+  width:clamp(68px,5.45vw,94px)!important;
+  height:clamp(68px,5.45vw,94px)!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.98),0 7px 20px rgba(0,0,0,.12)!important;
+  overflow:visible!important;
+  z-index:80!important;
+  transform:translate(-50%,-50%)!important;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+.lang-en .hotspots > .cover-html-button:hover,
+.lang-en .hotspots > .cover-html-button:focus-visible,
+.lang-es .hotspots > .cover-html-button:hover,
+.lang-es .hotspots > .cover-html-button:focus-visible{
+  transform:translate(-50%,calc(-50% - 3px))!important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.98),0 13px 28px rgba(0,0,0,.23)!important;
+}
+.lang-en .hotspots > .cover-html-button::after,
+.lang-es .hotspots > .cover-html-button::after{
+  content:attr(aria-label)!important;
+  position:absolute!important;
+  left:50%!important;
+  top:calc(100% + 11px)!important;
+  transform:translateX(-50%)!important;
+  color:#181818!important;
+  font:400 clamp(10px,.78vw,14px)/1 Arial,Helvetica,sans-serif!important;
+  white-space:nowrap!important;
+  text-align:center!important;
+  pointer-events:none!important;
+  z-index:90!important;
+}
+.lang-en .hotspots > .cover-html-button .cover-icon-image,
+.lang-es .hotspots > .cover-html-button .cover-icon-image{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  background:none!important;
+  border:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+}
+.lang-en .hotspots > .cover-html-button .cover-icon-image img,
+.lang-es .hotspots > .cover-html-button .cover-icon-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* Coordenadas padronizadas */
+.lang-en .cover-html-button[aria-label="WELCOME"],
+.lang-es .cover-html-button[aria-label="BIENVENIDO"]{left:77.20%!important;top:20.72%!important;}
+.lang-en .cover-html-button[aria-label="CHECK-IN"],
+.lang-es .cover-html-button[aria-label="CHECK-IN"]{left:84.20%!important;top:20.72%!important;}
+.lang-en .cover-html-button[aria-label="LOCATION"],
+.lang-es .cover-html-button[aria-label="UBICACIÓN"]{left:91.43%!important;top:20.72%!important;}
+
+.lang-en .cover-html-button[aria-label="WIFI"],
+.lang-es .cover-html-button[aria-label="WIFI"]{left:77.20%!important;top:33.50%!important;}
+.lang-en .cover-html-button[aria-label="RULES"],
+.lang-es .cover-html-button[aria-label="NORMAS"]{left:84.20%!important;top:33.50%!important;}
+.lang-en .cover-html-button[aria-label="TRANSPORTATION"],
+.lang-es .cover-html-button[aria-label="TRANSPORTE"]{left:91.43%!important;top:33.50%!important;}
+
+.lang-en .cover-html-button[aria-label="AMENITIES"],
+.lang-es .cover-html-button[aria-label="COMODIDADES"]{left:77.20%!important;top:45.05%!important;}
+.lang-en .cover-html-button[aria-label="ACTIVITIES"],
+.lang-es .cover-html-button[aria-label="ACTIVIDADES"]{left:84.20%!important;top:45.05%!important;}
+.lang-en .cover-html-button[aria-label="INFORMATION"],
+.lang-es .cover-html-button[aria-label="INFORMACIÓN"]{left:91.43%!important;top:45.05%!important;}
+
+.lang-en .cover-html-button[aria-label="BARS"],
+.lang-es .cover-html-button[aria-label="BARES"]{left:77.20%!important;top:56.50%!important;}
+.lang-en .cover-html-button[aria-label="RESTAURANTS"],
+.lang-es .cover-html-button[aria-label="RESTAURANTES"]{left:84.20%!important;top:56.50%!important;}
+.lang-en .cover-html-button[aria-label="SHOPPING"],
+.lang-es .cover-html-button[aria-label="SHOPPING"]{left:91.43%!important;top:56.50%!important;}
+
+.lang-en .cover-html-button[aria-label="EMERGENCY"],
+.lang-es .cover-html-button[aria-label="EMERGENCIA"]{left:77.20%!important;top:68.15%!important;}
+.lang-en .cover-html-button[aria-label="CHECK-OUT"],
+.lang-es .cover-html-button[aria-label="CHECK-OUT"]{left:84.20%!important;top:68.15%!important;}
+.lang-en .cover-html-button[aria-label="CONTACT"],
+.lang-es .cover-html-button[aria-label="CONTACTO"]{left:91.43%!important;top:68.15%!important;}
+
+/* A mesma família visual de imagens aprovada nas três telas. */
+.lang-en .cover-html-button .cover-icon-image img,
+.lang-es .cover-html-button .cover-icon-image img{
+  image-rendering:auto!important;
+}
+@media(max-width:700px){
+  .home-page .main-html-topbar{
+    left:72.35%!important;right:auto!important;top:1.7%!important;
+    width:27.65%!important;height:56px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-home{
+    left:12%!important;width:46px!important;height:46px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag{
+    width:48px!important;height:48px!important;
+  }
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(2){left:31%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(3){left:51.5%!important;}
+  .home-page .main-html-topbar .detail-modern-flag:nth-child(4){left:72%!important;}
+  .home-page .main-html-topbar .detail-modern-flag img{
+    width:48px!important;height:48px!important;
+  }
+  .lang-en .hotspots > .cover-html-button,
+  .lang-es .hotspots > .cover-html-button{
+    width:64px!important;height:64px!important;
+  }
+}
