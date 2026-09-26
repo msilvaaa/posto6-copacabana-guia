@@ -1136,3 +1136,17 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   opacity:1!important;
   visibility:visible!important;
 }
+
+/* CAPA PT — esconder somente os ícones e rótulos antigos incorporados na arte,
+   mantendo foto, título, bandeiras e os novos botões HTML por cima. */
+.home-page .page-stage::after{
+  content:""!important;
+  position:absolute!important;
+  left:69.25%!important;
+  top:18.1%!important;
+  width:30.75%!important;
+  height:72.0%!important;
+  background:#fff!important;
+  pointer-events:none!important;
+  z-index:35!important;
+}
