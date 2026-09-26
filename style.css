@@ -1017,7 +1017,7 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   top:calc(100% + 9px);
   transform:translateX(-50%);
   color:#171717;
-  font:400 clamp(11px,1.05vw,15px)/1.05 Arial,Helvetica,sans-serif;
+  font:400 clamp(10px,0.95vw,13px)/1.05 Arial,Helvetica,sans-serif;
   letter-spacing:-.02em;
   white-space:nowrap;
   text-align:center;
@@ -1069,7 +1069,7 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   }
   .home-page .hotspots > .cover-html-button::after{
     top:calc(100% + 7px);
-    font-size:11px;
+    font-size:10px;
   }
 }
 
