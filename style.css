@@ -1003,8 +1003,8 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   text-align:center;
 }
 .home-page .hotspots > .cover-html-button{
-  width:clamp(54px,4.5vw,72px)!important;
-  height:clamp(54px,4.5vw,72px)!important;
+  width:clamp(58px,4.8vw,76px)!important;
+  height:clamp(58px,4.8vw,76px)!important;
   overflow:visible!important;
   background:#fff!important;
   border:1px solid rgba(18,18,18,.08)!important;
