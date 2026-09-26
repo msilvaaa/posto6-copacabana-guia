@@ -1224,3 +1224,19 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   background-position:center!important;
   background-repeat:no-repeat!important;
 }
+
+/* CAPA — acabamento unificado: todos os botões usam exatamente o mesmo contorno branco do CHECK-OUT. */
+.home-page .hotspots > .cover-html-button{
+  background:#fff!important;
+  border:0!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 22px rgba(0,0,0,.14)!important;
+}
+.home-page .hotspots > .cover-html-button:hover,
+.home-page .hotspots > .cover-html-button:focus-visible{
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 13px 28px rgba(0,0,0,.23)!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  width:92%!important;
+  height:92%!important;
+  border-radius:50%!important;
+}
