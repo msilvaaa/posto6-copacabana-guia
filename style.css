@@ -2118,3 +2118,18 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .main-html-topbar .detail-modern-flag:active{
   transform:translateY(-1px) scale(.985)!important;
 }
+
+
+/* Mesmo acabamento das bandeiras no botão Home — somente o efeito visual. */
+.home-page .main-html-topbar .detail-modern-home{
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.96),0 8px 20px rgba(0,0,0,.18)!important;
+}
+.home-page .main-html-topbar .detail-modern-home:hover,
+.home-page .main-html-topbar .detail-modern-home:focus-visible{
+  transform:translateY(-3px)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.28)!important;
+}
+.home-page .main-html-topbar .detail-modern-home:active{
+  transform:translateY(-1px) scale(.985)!important;
+}
