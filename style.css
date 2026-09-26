@@ -2102,3 +2102,176 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 }
 
 
+
+
+/* =========================================================
+   EN + ES — PADRÃO FINAL DAS TELAS DE IDIOMA
+   Restaurado em bloco único para manter imagens, posições,
+   bandeiras e animações consistentes com a tela PT.
+   ========================================================= */
+.lang-en .main-html-topbar,
+.lang-es .main-html-topbar{
+  position:absolute!important;
+  left:72.35%!important;
+  right:1.8%!important;
+  top:1.7%!important;
+  width:auto!important;
+  height:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:13px!important;
+  z-index:90!important;
+}
+.lang-en .main-html-topbar .detail-modern-home,
+.lang-es .main-html-topbar .detail-modern-home{
+  flex:0 0 58px!important;
+  width:58px!important;
+  height:58px!important;
+  position:relative!important;
+}
+.lang-en .main-html-topbar .detail-modern-flag,
+.lang-es .main-html-topbar .detail-modern-flag{
+  flex:0 0 58px!important;
+  width:58px!important;
+  height:58px!important;
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0!important;
+  border-radius:50%!important;
+}
+.lang-en .main-html-topbar .detail-modern-flag img,
+.lang-es .main-html-topbar .detail-modern-flag img{
+  display:block!important;
+  width:58px!important;
+  height:58px!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+.lang-en .main-html-topbar .detail-modern-home:hover,
+.lang-en .main-html-topbar .detail-modern-home:focus-visible,
+.lang-en .main-html-topbar .detail-modern-flag:hover,
+.lang-en .main-html-topbar .detail-modern-flag:focus-visible,
+.lang-es .main-html-topbar .detail-modern-home:hover,
+.lang-es .main-html-topbar .detail-modern-home:focus-visible,
+.lang-es .main-html-topbar .detail-modern-flag:hover,
+.lang-es .main-html-topbar .detail-modern-flag:focus-visible{
+  transform:translateY(-3px)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.28)!important;
+}
+.lang-en .main-html-topbar .detail-modern-home,
+.lang-en .main-html-topbar .detail-modern-flag,
+.lang-es .main-html-topbar .detail-modern-home,
+.lang-es .main-html-topbar .detail-modern-flag{
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  will-change:transform,box-shadow!important;
+}
+
+/* painel direito */
+.lang-en .page-stage::after,
+.lang-es .page-stage::after{
+  content:""!important;
+  position:absolute!important;
+  left:72.35%!important;
+  top:0!important;
+  width:27.65%!important;
+  height:100%!important;
+  background:#faf8f3!important;
+  box-shadow:-10px 0 26px rgba(0,0,0,.06)!important;
+  pointer-events:none!important;
+  z-index:9!important;
+}
+.lang-en .guide-page,
+.lang-es .guide-page{
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* EN — recortes exatos da tela aprovada */
+.lang-en .cover-html-button > .cover-icon-image{
+  display:block!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background-image:url('/assets/en-01.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  object-fit:none!important;
+  font-size:0!important;
+  color:transparent!important;
+}
+.lang-en .cover-html-button[aria-label="WELCOME"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:77.8608% 18.1355%!important;}
+.lang-en .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-size:1871.2330% 1097.1433%!important;background-position:85.8482% 18.1615%!important;}
+.lang-en .cover-html-button[aria-label="LOCATION"] > .cover-icon-image{background-size:1845.9448% 1081.6903%!important;background-position:93.8154% 18.1875%!important;}
+.lang-en .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-size:1729.1136% 1010.5267%!important;background-position:77.8478% 34.3374%!important;}
+.lang-en .cover-html-button[aria-label="RULES"] > .cover-icon-image{background-size:1729.1166% 1010.5267%!important;background-position:85.9775% 34.1531%!important;}
+.lang-en .cover-html-button[aria-label="TRANSPORTATION"] > .cover-icon-image{background-size:1707.4987% 997.4028%!important;background-position:94.0714% 34.3871%!important;}
+.lang-en .cover-html-button[aria-label="AMENITIES"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:77.4119% 50.7078%!important;}
+.lang-en .cover-html-button[aria-label="ACTIVITIES"] > .cover-icon-image{background-size:1751.2828% 1024.0005%!important;background-position:86.3095% 51.1469%!important;}
+.lang-en .cover-html-button[aria-label="INFORMATION"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:94.2928% 50.7078%!important;}
+.lang-en .cover-html-button[aria-label="BARS"] > .cover-icon-image{background-size:1645.7844% 972.1517%!important;background-position:78.0905% 67.5140%!important;}
+.lang-en .cover-html-button[aria-label="RESTAURANTS"] > .cover-icon-image{background-size:1797.3683% 1052.0546%!important;background-position:86.4501% 66.9312%!important;}
+.lang-en .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-size:1751.2828% 1024.0005%!important;background-position:94.1830% 67.1243%!important;}
+.lang-en .cover-html-button[aria-label="EMERGENCY"] > .cover-icon-image{background-size:1821.3344% 1066.6667%!important;background-position:77.5307% 83.8915%!important;}
+.lang-en .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-image:url('/assets/check-out-novo.png?v=2')!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;}
+.lang-en .cover-html-button[aria-label="CONTACT"] > .cover-icon-image{background-size:1665.8560% 972.1517%!important;background-position:94.8812% 84.7438%!important;}
+
+/* ES — recortes exatos da tela aprovada */
+.lang-es .cover-html-button > .cover-icon-image{
+  display:block!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background-image:url('/assets/es-01.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-color:transparent!important;
+  object-fit:none!important;
+  font-size:0!important;
+  color:transparent!important;
+}
+.lang-es .cover-html-button[aria-label="BIENVENIDO"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:78.4325% 18.9585%!important;}
+.lang-es .cover-html-button[aria-label="CHECK-IN"] > .cover-icon-image{background-size:1871.2330% 1097.1433%!important;background-position:86.4204% 18.9857%!important;}
+.lang-es .cover-html-button[aria-label="UBICACIÓN"] > .cover-icon-image{background-size:1845.9448% 1081.6903%!important;background-position:94.3880% 19.0129%!important;}
+.lang-es .cover-html-button[aria-label="WIFI"] > .cover-icon-image{background-size:1729.1136% 1010.5267%!important;background-position:78.4226% 35.1687%!important;}
+.lang-es .cover-html-button[aria-label="NORMAS"] > .cover-icon-image{background-size:1729.1136% 1010.5267%!important;background-position:86.5523% 34.9844%!important;}
+.lang-es .cover-html-button[aria-label="TRANSPORTE"] > .cover-icon-image{background-size:1707.4987% 997.4028%!important;background-position:94.6467% 35.2196%!important;}
+.lang-es .cover-html-button[aria-label="COMODIDADES"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:77.9836% 51.5309%!important;}
+.lang-es .cover-html-button[aria-label="ACTIVIDADES"] > .cover-icon-image{background-size:1751.2828% 1024.0005%!important;background-position:86.5166% 52.0069%!important;}
+.lang-es .cover-html-button[aria-label="INFORMACIÓN"] > .cover-icon-image{background-size:1897.2236% 1113.0429%!important;background-position:94.8645% 51.5309%!important;}
+.lang-es .cover-html-button[aria-label="BARES"] > .cover-icon-image{background-size:1645.7844% 972.1517%!important;background-position:78.6671% 68.3490%!important;}
+.lang-es .cover-html-button[aria-label="RESTAURANTES"] > .cover-icon-image{background-size:1797.3683% 1052.0546%!important;background-position:86.9295% 67.7589%!important;}
+.lang-es .cover-html-button[aria-label="SHOPPING"] > .cover-icon-image{background-size:1751.2828% 1024.0005%!important;background-position:94.7573% 67.9545%!important;}
+.lang-es .cover-html-button[aria-label="EMERGENCIA"] > .cover-icon-image{background-size:1821.3344% 1066.6667%!important;background-position:78.1037% 84.7180%!important;}
+.lang-es .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{background-image:url('/assets/check-out-novo.png?v=2')!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;}
+.lang-es .cover-html-button[aria-label="CONTACTO"] > .cover-icon-image{background-size:1665.8532% 972.1517%!important;background-position:95.0525% 84.4885%!important;}
+
+/* acabamento dos círculos — mesmo padrão entre os três idiomas */
+.lang-en .hotspots > .cover-html-button,
+.lang-es .hotspots > .cover-html-button{
+  background:#fff!important;
+  border:0!important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.98),0 8px 20px rgba(0,0,0,.12)!important;
+  overflow:visible!important;
+  z-index:80!important;
+}
+.lang-en .hotspots > .cover-html-button::after,
+.lang-es .hotspots > .cover-html-button::after{
+  top:calc(100% + 10px)!important;
+  color:#171717!important;
+}
+@media(max-width:700px){
+  .lang-en .main-html-topbar,
+  .lang-es .main-html-topbar{left:72.35%!important;right:1.2%!important;gap:5px!important;}
+  .lang-en .main-html-topbar .detail-modern-home,
+  .lang-es .main-html-topbar .detail-modern-home{width:46px!important;height:46px!important;flex-basis:46px!important;}
+  .lang-en .main-html-topbar .detail-modern-flag,
+  .lang-es .main-html-topbar .detail-modern-flag{width:46px!important;height:46px!important;flex-basis:46px!important;}
+  .lang-en .main-html-topbar .detail-modern-flag img,
+  .lang-es .main-html-topbar .detail-modern-flag img{width:46px!important;height:46px!important;}
+}
