@@ -2134,3 +2134,36 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 .home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="EMERGÊNCIA"] > .cover-icon-layer{background-image:url('/assets/cover-icons/emergencia.svg')!important;}
 .home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-layer{background-image:url('/assets/cover-icons/checkout.svg')!important;}
 .home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-image,.home-page .hotspots > .cover-html-button[aria-label="CONTATO"] > .cover-icon-layer{background-image:url('/assets/cover-icons/contato.svg')!important;}
+
+
+/* Correção definitiva: exibir os SVGs dos 15 botões como imagem real.
+   Não altera posições, bandeiras ou animações. */
+.home-page .hotspots > .cover-html-button > .cover-icon-image{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  border-radius:50%!important;
+  background:none!important;
+  overflow:hidden!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image::before{
+  content:none!important;
+}
+.home-page .hotspots > .cover-html-button > .cover-icon-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  border:0!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
