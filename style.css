@@ -2107,3 +2107,79 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 
 /* EN/ES restaurados ao padrão original aprovado. Não duplicar a navegação nestas telas. */
+
+
+/* =========================================================
+   EN/ES — mesmas imagens dos botões da PT
+   Somente idioma/texto/links mudam.
+   ========================================================= */
+.lang-en .hotspots > .cover-html-button > .cover-icon-image,
+.lang-es .hotspots > .cover-html-button > .cover-icon-image{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:92%!important;
+  height:92%!important;
+  margin:auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background:none!important;
+}
+.lang-en .hotspots > .cover-html-button > .cover-icon-image img,
+.lang-es .hotspots > .cover-html-button > .cover-icon-image img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  object-fit:fill!important;
+  object-position:center!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* Mesmo mapeamento visual da PT */
+.lang-en .cover-html-button[aria-label="WELCOME"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="BIENVENIDO"] .cover-icon-image img{content:url('/assets/cover-icons/bem-vindos.svg')!important;}
+.lang-en .cover-html-button[aria-label="CHECK-IN"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="CHECK-IN"] .cover-icon-image img{content:url('/assets/cover-icons/checkin.svg')!important;}
+.lang-en .cover-html-button[aria-label="LOCATION"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="UBICACIÓN"] .cover-icon-image img{content:url('/assets/cover-icons/localizacao.svg')!important;}
+.lang-en .cover-html-button[aria-label="WIFI"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="WIFI"] .cover-icon-image img{content:url('/assets/cover-icons/wifi.svg')!important;}
+.lang-en .cover-html-button[aria-label="RULES"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="NORMAS"] .cover-icon-image img{content:url('/assets/cover-icons/regras.svg')!important;}
+.lang-en .cover-html-button[aria-label="TRANSPORTATION"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="TRANSPORTE"] .cover-icon-image img{content:url('/assets/cover-icons/transportes.svg')!important;}
+.lang-en .cover-html-button[aria-label="AMENITIES"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="COMODIDADES"] .cover-icon-image img{content:url('/assets/cover-icons/comodidades.svg')!important;}
+.lang-en .cover-html-button[aria-label="ACTIVITIES"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="ACTIVIDADES"] .cover-icon-image img{content:url('/assets/cover-icons/atividades.svg')!important;}
+.lang-en .cover-html-button[aria-label="INFORMATION"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="INFORMACIÓN"] .cover-icon-image img{content:url('/assets/cover-icons/informacoes.svg')!important;}
+.lang-en .cover-html-button[aria-label="BARS"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="BARES"] .cover-icon-image img{content:url('/assets/cover-icons/bares.svg')!important;}
+.lang-en .cover-html-button[aria-label="RESTAURANTS"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="RESTAURANTES"] .cover-icon-image img{content:url('/assets/cover-icons/restaurantes.svg')!important;}
+.lang-en .cover-html-button[aria-label="SHOPPING"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="SHOPPING"] .cover-icon-image img{content:url('/assets/cover-icons/estabelecimentos.svg')!important;}
+.lang-en .cover-html-button[aria-label="EMERGENCY"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="EMERGENCIA"] .cover-icon-image img{content:url('/assets/cover-icons/emergencia.svg')!important;}
+.lang-en .cover-html-button[aria-label="CHECK-OUT"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="CHECK-OUT"] .cover-icon-image img{content:url('/assets/cover-icons/checkout.svg')!important;}
+.lang-en .cover-html-button[aria-label="CONTACT"] .cover-icon-image img,
+.lang-es .cover-html-button[aria-label="CONTACTO"] .cover-icon-image img{content:url('/assets/cover-icons/contato.svg')!important;}
+
+/* Fim: retirar fundos antigos de en-01/es-01 dos ícones */
+.lang-en .hotspots > .cover-html-button > .cover-icon-image,
+.lang-es .hotspots > .cover-html-button > .cover-icon-image{
+  background-image:none!important;
+}
