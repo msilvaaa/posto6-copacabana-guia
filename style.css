@@ -991,7 +991,7 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
   position:absolute;
   z-index:45;
   left:50%;
-  top:10.2%;
+  top:9.4%;
   transform:translateX(-50%);
   color:#111827;
   font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive;
@@ -1060,7 +1060,7 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 @media(max-width:650px){
   .home-page .page-stage::before{
-    top:10.4%;
+    top:9.6%;
     font-size:clamp(34px,9vw,48px);
   }
   .home-page .hotspots > .cover-html-button{
