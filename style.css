@@ -1153,7 +1153,7 @@ html,body{margin:0;padding:0;background:#f3f1ed;color:#222;font-family:Arial,Hel
 
 /* CHECK-OUT — novo ícone fornecido pelo usuário. */
 .home-page .cover-html-button[aria-label="CHECK-OUT"] > .cover-icon-image{
-  background-image:url('/assets/check-out-novo.png')!important;
+  background-image:url('/assets/check-out-novo.png?v=2')!important;
   background-size:100% 100%!important;
   background-position:center!important;
   background-repeat:no-repeat!important;
