@@ -18,9 +18,10 @@ body.site-page { height: 100vh; height: 100dvh; overflow: hidden; }
 .site-round:hover, .site-round:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px #00000047; }
 .site-reading { min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; background: #fff; }
 .site-pagination { display: flex; align-items: center; justify-content: center; justify-self: center; gap: 18px; width: max-content; max-width: calc(100% - 16px); min-height: 44px; padding: 0; margin: 6px auto max(6px,env(safe-area-inset-bottom)); background: transparent; border: 0; z-index: 2; }
-.site-pagination a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 132px; min-height: 44px; padding: 12px 20px; border-radius: 14px; border: 1px solid #ffffff2e; background: linear-gradient(#2a2a2c,#111112); color: #fff; box-shadow: 0 0 0 3px white,0 5px 12px #0002; text-decoration: none; font: 700 14px/1.2 Arial,sans-serif; }
+.site-pagination a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 132px; min-height: 44px; padding: 12px 20px; border-radius: 14px; border: 1px solid #ffffff2e; background: linear-gradient(#2a2a2c,#111112); color: #fff; box-shadow: 0 0 0 3px white,0 5px 12px #0002; text-decoration: none; font: 700 14px/1.2 Arial,sans-serif; transition: transform .18s ease,box-shadow .18s ease; }
 .site-pagination svg { width: 18px; height: 18px; flex-shrink: 0; }
-.site-pagination a:hover { box-shadow: 0 0 0 3px white,0 8px 18px #0003; }
+.site-pagination a:hover, .site-pagination a:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px #00000047; }
+.site-pagination a:active { transform: translateY(-1px) scale(.985); }
 .site-utilities { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; }
 .site-weather { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 5px 10px; border: 0; border-radius: 10px; background: transparent; text-align: left; color: #163b42; cursor: pointer; font: 13px/1.2 Arial,sans-serif; }
 .site-weather>span:first-child { font-size: 28px; color: #b26d00; }
@@ -76,7 +77,7 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
  .site-controls { top: -56px; }
  .guide-information .site-controls .site-toolbar { top: 8px; right: 12px; }
 }
-@media(prefers-reduced-motion:reduce) { .site-round,.site-whatsapp { transition: none; } }
+@media(prefers-reduced-motion:reduce) { .site-round,.site-whatsapp,.site-pagination a { transition: none; } }
 
 .photo-stage.has-guide { display: block; }
 .photo-stage.has-guide .guide-canvas { width: 100%; max-width: 100%; }
