@@ -101,3 +101,36 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
 @media(max-width:1100px) { .guide-description-navigation { width: 100%; } }
 
 @media(min-width:701px) and (max-width:1100px) { .home-page .home-cover-hero>.site-utilities { top: 108px; right: 6%; } }
+
+/* Reading-page controls share the cover's circular toolbar and compact navigation. */
+.site-pagination { gap: 12px; min-height: 32px; }
+.site-pagination a { min-width: 98px; min-height: 32px; height: 32px; padding: 6px 12px; font-size: 11px; border-radius: 12px; }
+.site-pagination svg { width: 14px; height: 14px; }
+.guide-page-content { position: relative; }
+.guide-page-content>.site-contact-corner { position: absolute; right: 14px; bottom: 12px; width: auto; padding: 0; z-index: 4; }
+.section-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
+.section-panel .section-actions .site-pagination { width: auto; max-width: none; margin: 0; gap: 12px; }
+.section-panel .section-actions .site-pagination a { flex: none; min-width: 88px; }
+.section-actions .site-contact-corner { width: auto; padding: 0; margin: 0; }
+@media(min-width:1101px) {
+ .site-round { width: 58px; height: 58px; flex-shrink: 0; }
+ .site-controls .site-toolbar { top: clamp(12px,1.7vh,20px); right: 0; width: 27.65%; min-width: 274px; height: 68px; justify-content: space-evenly; gap: 0; }
+ .guide-information .site-controls .site-toolbar { right: 34%; }
+ .guide-detail .site-controls .site-toolbar { width: 320px; }
+ .guide-category .guide-canvas { min-height: 100dvh; }
+ .guide-category .guide-image { position: absolute; inset: 0; height: 100%; }
+ .guide-description-navigation { position: absolute; right: 90px; bottom: 20px; width: auto; padding: 0; }
+ .guide-description-navigation .site-pagination { margin: 0; }
+ .guide-detail .guide-description-navigation { top: 92px; bottom: auto; right: 30px; width: auto; }
+ .guide-detail .guide-page-content>.site-contact-corner { top: 154px; bottom: auto; right: 30px; }
+}
+@media(max-width:1100px) {
+ .site-toolbar { gap: 14px; }
+ .guide-description-navigation { padding-right: 82px; min-height: 68px; display: flex; align-items: center; justify-content: center; }
+ .site-pagination a { min-width: 84px; min-height: 44px; height: 44px; padding: 6px 10px; }
+ .section-panel .section-actions .site-pagination a { min-width: 78px; }
+}
+
+.site-round.guide-home { border: 1px solid #ffffff2e; }
+.site-round:active { transform: translateY(-1px) scale(.985); }
+@media(min-width:1101px) { .site-round svg { width: 26px; height: 26px; } }
