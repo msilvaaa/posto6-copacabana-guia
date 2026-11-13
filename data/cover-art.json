@@ -1,0 +1,65 @@
+{
+  "wifi": {
+    "src": "/assets/cover-icons/wifi-clear.svg",
+    "kind": "symbol"
+  },
+  "regras": {
+    "src": "/assets/cover-icons/regras-clear.svg",
+    "kind": "symbol"
+  },
+  "transportes": {
+    "src": "/assets/cover-icons/transportes-clear.svg",
+    "kind": "symbol"
+  },
+  "atividades": {
+    "src": "/assets/cover-icons/atividades-clear.svg",
+    "kind": "symbol"
+  },
+  "informacoes": {
+    "src": "/assets/cover-icons/informacoes-clear.svg",
+    "kind": "symbol"
+  },
+  "bares": {
+    "src": "/assets/cover-icons/bares-clear.svg",
+    "kind": "symbol"
+  },
+  "restaurantes": {
+    "src": "/assets/cover-icons/restaurantes-clear.svg",
+    "kind": "symbol"
+  },
+  "estabelecimentos": {
+    "src": "/assets/cover-icons/estabelecimentos-clear.svg",
+    "kind": "symbol"
+  },
+  "emergencia": {
+    "src": "/assets/cover-icons/emergencia-clear.svg",
+    "kind": "symbol"
+  },
+  "checkout": {
+    "src": "/assets/cover-icons/checkout-clear.svg",
+    "kind": "symbol"
+  },
+  "contato": {
+    "src": "/assets/cover-icons/contato-clear.svg",
+    "kind": "symbol"
+  },
+  "bem-vindos": {
+    "src": "/assets/apartment/photo-01-small.jpg",
+    "kind": "photo",
+    "position": "58% 50%"
+  },
+  "checkin": {
+    "src": "/assets/pt-03.jpg",
+    "kind": "lock"
+  },
+  "localizacao": {
+    "src": "/assets/copacabana-drummond.jpg",
+    "kind": "photo",
+    "position": "20% 50%"
+  },
+  "comodidades": {
+    "src": "/assets/apartment/photo-03-small.jpg",
+    "kind": "photo",
+    "position": "50% 64%"
+  }
+}

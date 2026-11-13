@@ -10,6 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
 page_content=json.loads((ROOT/'templates/apartment-content.json').read_text())
 photos=json.loads((ROOT/'data/apartment-photos.json').read_text())
+cover_art=json.loads((ROOT/'data/cover-art.json').read_text())
 guide=json.loads((ROOT/'data/guide-pages.json').read_text())
 rating=json.loads((ROOT/'data/airbnb-rating.json').read_text())
 score=Decimal(rating['rating'])
@@ -71,7 +72,9 @@ for lang,values in content.items():
  buttons=[]
  for index,button in enumerate(values['buttons']):
   key,label,href=(e(button[k]) for k in ['key','label','href'])
-  buttons.append(f'<a class="cover-html-button" data-row="{index//3+1}" data-column="{index%3+1}" aria-label="{label}" href="{href}"><img src="/assets/cover-icons/{key}.png" width="70" height="70" alt=""/></a>')
+  art=cover_art[button['key']]
+  position=e(art.get('position','50% 50%'))
+  buttons.append(f'<a class="cover-html-button" data-row="{index//3+1}" data-column="{index%3+1}" aria-label="{label}" href="{href}"><span class="cover-button-art art-{e(art["kind"])}"><img src="{e(art["src"])}" style="object-position:{position}" width="70" height="70" alt=""/></span></a>')
  text={k:e(v) for k,v in values.items() if isinstance(v,str)};text['heading']=values['heading']
  stats=values['stats']+[rating_label(lang)]
  output=cover_template.substitute(lang=lang,**text,nav_links=navigation(lang),flags=cover_flags(lang),**{f'stat_{i}':v for i,v in enumerate(stats)},buttons='\n'.join(buttons),next_href=values['buttons'][0]['href'],utilities=utilities(lang),whatsapp=whatsapp(lang),dialogs=dialogs(lang))
