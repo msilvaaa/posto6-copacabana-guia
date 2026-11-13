@@ -1,0 +1,31 @@
+{
+  "location": "Copacabana, Rio de Janeiro",
+  "latitude": -22.9842,
+  "longitude": -43.1918,
+  "provider": "wttr.in",
+  "source": "https://wttr.in/-22.9842,-43.1918?format=j1",
+  "updated_at": "2026-11-13T17:23:48.533567+00:00",
+  "days": [
+    {
+      "date": "2026-11-13",
+      "min": 22,
+      "max": 25,
+      "rain_probability": 41,
+      "code": "116"
+    },
+    {
+      "date": "2026-11-14",
+      "min": 22,
+      "max": 24,
+      "rain_probability": 27,
+      "code": "176"
+    },
+    {
+      "date": "2026-11-15",
+      "min": 21,
+      "max": 24,
+      "rain_probability": 79,
+      "code": "176"
+    }
+  ]
+}

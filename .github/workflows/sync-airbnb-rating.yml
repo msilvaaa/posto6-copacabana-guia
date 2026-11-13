@@ -23,17 +23,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Read confirmed listing data and rebuild translated pages
-        run: |
-          python scripts/sync-airbnb-rating.py
-          python scripts/build-covers.py
+      - name: Read Airbnb data without discarding the last confirmed rating
+        continue-on-error: true
+        run: python scripts/sync-airbnb-rating.py
+      - name: Read Copacabana forecast without discarding the last confirmed forecast
+        continue-on-error: true
+        run: python scripts/sync-weather.py
+      - name: Rebuild translated pages
+        run: python scripts/build-covers.py
       - name: Save only changed rating and generated pages
         run: |
-          git add data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html
+          git add data/weather.json data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html pt/comodidades/index.html en/amenities/index.html en/comodidades/index.html es/comodidades/index.html
           if git diff --cached --quiet; then
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Atualizar avaliação pública do Airbnb'
+          git commit -m 'Atualizar avaliação Airbnb e previsão de Copacabana'
           git push origin HEAD:main

@@ -9,7 +9,9 @@
     "view_gallery": "Ver todas as fotos",
     "view_listing": "Ver anúncio no Airbnb",
     "amenities_intro": "Consulte os equipamentos e as orientações de uso na página de comodidades.",
-    "site_label": "Guia Posto 6 Copacabana"
+    "site_label": "Guia Posto 6 Copacabana",
+    "amenities_title": "Comodidades",
+    "open_photo": "Toque em uma foto para ampliar. Use o botão Voltar ao guia para fechar a imagem."
   },
   "en": {
     "apartment_title": "The apartment",
@@ -21,7 +23,9 @@
     "view_gallery": "View all photos",
     "view_listing": "View listing on Airbnb",
     "amenities_intro": "See the amenities page for equipment and instructions.",
-    "site_label": "Posto 6 Copacabana guide"
+    "site_label": "Posto 6 Copacabana guide",
+    "amenities_title": "Amenities",
+    "open_photo": "Select a photo to enlarge it. Use Back to the guide to close the image."
   },
   "es": {
     "apartment_title": "El apartamento",
@@ -33,6 +37,8 @@
     "view_gallery": "Ver todas las fotos",
     "view_listing": "Ver anuncio en Airbnb",
     "amenities_intro": "Consulta los equipos y las instrucciones de uso en la página de comodidades.",
-    "site_label": "Guía Posto 6 Copacabana"
+    "site_label": "Guía Posto 6 Copacabana",
+    "amenities_title": "Comodidades",
+    "open_photo": "Toca una foto para ampliarla. Usa Volver a la guía para cerrar la imagen."
   }
 }

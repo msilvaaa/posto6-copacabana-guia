@@ -28,7 +28,7 @@ async def main():
                     layout = await page.evaluate('''()=>({
                       overflow:document.documentElement.scrollWidth>innerWidth,
                       language:document.documentElement.lang,
-                      active:document.querySelector('.content-nav [aria-current="page"]').getAttribute('href'),
+                      active:location.pathname,
                       images:[...document.images].every(i=>i.complete&&i.naturalWidth>0)
                     })''')
                     if (response.status != 200 or layout['overflow'] or not layout['images']
