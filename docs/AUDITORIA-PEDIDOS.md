@@ -23,3 +23,7 @@ Escopo: guia Copacabana migrado do Canvas, em português, inglês e espanhol.
 Navegador Chromium local: 106 páginas; 103 áreas de leitura com navegação estável; retorno de fotos em três idiomas; previsão em três idiomas; destinos externos preservando o guia. Navegação original: 288 combinações de página/tamanho, 177 cliques e 12 verificações com imagens lentas. Capas e seções adicionais verificadas em resoluções de celular, tablet e computador. Quatorze testes de validação das fontes de avaliação e tempo.
 
 A conferência pública compara as páginas e recursos publicados com os arquivos testados. Resultados detalhados são gerados pelos scripts de verificação em `scripts/`.
+
+## Ajuste posterior solicitado
+
+Temperatura e previsão restritas às três capas, com fundo transparente. As capas exibem o símbolo de Wi-Fi junto ao texto de alta velocidade. Botões de página “Voltar ao guia” e “Ampliar página” removidos das páginas internas; Home, bandeiras e Anterior/Próximo preservados. O retorno do visualizador de fotos permanece disponível ao abrir uma foto. Este ajuste substitui os itens anteriores sobre tempo nas páginas internas e botão separado de retorno.

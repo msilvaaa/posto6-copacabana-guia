@@ -32,7 +32,7 @@ body.site-page { height: 100vh; height: 100dvh; overflow: hidden; }
 .site-whatsapp:hover,.site-whatsapp:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px #00000047; }
 .site-whatsapp:active { transform: translateY(-1px) scale(.985); }
 .home-page { position: relative; }
-.home-page>.site-utilities { position: absolute; top: 6px; left: max(12px,calc((100vw - 1664px)/2 + 12px)); z-index: 90; width: max-content; margin: 0; padding: 0; border-radius: 14px; background: #ffffffde; }
+.home-page>.site-utilities { position: absolute; top: 6px; left: max(12px,calc((100vw - 1664px)/2 + 12px)); z-index: 90; width: max-content; margin: 0; padding: 0; border-radius: 14px; background: transparent; }
 .site-dialog { border: 0; padding: 0; border-radius: 16px; background: #f8f6f2; color: #111; box-shadow: 0 20px 80px #0005; }
 .site-dialog::backdrop { background: #000a; }
 .dialog-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 12px; background: #f8f6f2; border-bottom: 1px solid #ddd; }
@@ -84,7 +84,10 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
 
 .site-contact-corner .site-utilities { padding: 0; margin-right: auto; }
 @media(max-width:700px) {
- .home-page>.site-utilities .site-weather { width: 44px; padding: 5px; justify-content: center; }
- .home-page>.site-utilities .site-weather>span:nth-child(2) { display: none; }
+ .home-page>.site-utilities .site-weather { width: 64px; padding: 0; justify-content: center; flex-direction: column; gap: 0; }
+ .home-page>.site-utilities { left: 6px; top: 16px; }
+ .home-page>.site-utilities .site-weather>span:first-child { font-size: 20px; }
+ .home-page>.site-utilities .site-weather b { display: none; }
+ .home-page>.site-utilities .site-weather small { margin: 0; font-size: 9px; white-space: nowrap; }
  .guide-information .site-controls .site-toolbar { right: 6px; }
 }
