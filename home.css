@@ -7,8 +7,7 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .home-cover-hero { position: absolute; inset: 0; pointer-events: none; }
 .home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff66,#ffffff26 45%,transparent 75%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.jpg'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
 .home-cover-copy { position: absolute; left: 4.7%; top: calc(7.4% + 36px); width: 65%; }
-.home-cover-brand { position: absolute; left: 6px; top: 2%; display: flex; align-items: flex-start; gap: 10px; width: max-content; margin: 0 0 4px; text-transform: uppercase; }
-.home-cover-logo-mark { margin-top: 6px; font: 58px/.62 Georgia,"Times New Roman",serif; letter-spacing: -.14em; transform: rotate(-4deg); color: #161616; }
+.home-cover-brand { position: absolute; left: 4.7%; top: 2%; display: flex; align-items: flex-start; gap: 10px; width: max-content; margin: 0 0 4px; text-transform: uppercase; }
 .home-cover-logo-text { display: flex; flex-direction: column; }
 .home-cover-logo-text strong { font: 700 clamp(24px,2.35vw,38px)/.9 Georgia,"Times New Roman",serif; letter-spacing: -.04em; }
 .home-cover-logo-text span { margin-top: 7px; font-size: clamp(9px,.8vw,13px); line-height: 1; letter-spacing: .42em; }
@@ -68,7 +67,6 @@ a:focus-visible { outline: 2px solid #0078ff; outline-offset: 5px; }
   .home-cover-photo { width: 100%; background-image: linear-gradient(90deg,#ffffffb3,transparent 90%),linear-gradient(0deg,#0009,transparent 60%),url('/assets/copacabana-drummond.jpg'); }
   .home-cover-copy { position: relative; left: auto; top: auto; width: 100%; max-width: 650px; }
   .home-cover-brand { position: static; margin: 0 0 12px; }
-  .home-cover-logo-mark { font-size: 42px; }
   .home-cover-copy h1 { font-size: clamp(22px,5.6vw,48px); line-height: clamp(26px,6.1vw,58px); min-height: 0; }
   .home-cover-subtitle { margin-top: 2px; max-width: 520px; min-height: 3.75em; font-size: 13px; }
   .home-cover-cta { position: relative; left: auto; bottom: auto; margin-top: 24px; min-width: min(100%,190px); max-width: 100%; height: 48px; font-size: 12px; }
