@@ -15,8 +15,9 @@ async def main():
   page=await context.new_page()
   for path in paths:
    await page.goto(BASE+'/'+path,wait_until='load')
-   if await page.locator('[data-weather-open]').count()!=1 or await page.locator('.site-whatsapp').count()!=1:
+   if await page.locator('[data-weather-open]').count()!=(1 if path.count('/')==1 else 0) or await page.locator('.site-whatsapp').count()!=1:
     report['failures'].append(path+': missing utilities');continue
+   if await page.locator('.site-back,.site-enlarge').count():report['failures'].append(path+': removed page controls still present')
    wa=page.locator('.site-whatsapp')
    props=await wa.evaluate('e=>({circle:getComputedStyle(e).borderRadius,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,footer:!!e.closest("footer,nav,.site-header"),number:e.getAttribute("href")})')
    if props['w']!=props['h'] or props['circle']!='50%' or props['footer'] or props['number']!='https://wa.me/5521981020150':
@@ -37,7 +38,7 @@ async def main():
   for lang,apartment,gallery,amenities in [('pt','apartamento','galeria','comodidades'),('en','apartment','gallery','amenities'),('es','apartamento','galeria','comodidades')]:
    for section in [apartment,gallery,amenities]:
     await page.goto(f'{BASE}/{lang}/{section}/')
-    if await page.locator('.section-layout').count()!=1 or await page.locator('.site-back').get_attribute('href')!=f'/{lang}/':report['failures'].append(lang+'/'+section+': inconsistent section')
+    if await page.locator('.section-layout').count()!=1 or await page.locator('.guide-home').get_attribute('href')!=f'/{lang}/':report['failures'].append(lang+'/'+section+': inconsistent section')
    await page.goto(f'{BASE}/{lang}/{amenities}/')
    if await page.locator('.amenity-card').count()!=16:report['failures'].append(lang+': amenities missing')
    await page.goto(f'{BASE}/{lang}/{gallery}/')
@@ -50,15 +51,13 @@ async def main():
    await page.locator('[data-photo-close]').click()
    if page.url!=url or await page.locator('[data-photo-dialog]').is_visible():report['failures'].append(lang+': gallery return failed')
    report['gallery_returns']+=1
+   await page.goto(f'{BASE}/{lang}/')
    await page.locator('[data-weather-open]').click()
    await page.wait_for_function("document.querySelectorAll('.weather-day').length===3")
    if not await page.locator('[data-weather-dialog]').is_visible():report['failures'].append(lang+': forecast dialog missing')
    await page.locator('[data-weather-close]').click();report['forecast_checks']+=1
    restaurants={'pt':'restaurantes','en':'restaurants','es':'restaurantes'}[lang]
    await page.goto(f'{BASE}/{lang}/{restaurants}/')
-   await page.locator('.site-enlarge').click()
-   if await page.locator('[data-photo-stage] .guide-canvas').count()!=1:report['failures'].append(lang+': document enlargement lost clean art')
-   await page.locator('[data-photo-close]').click()
    # Do not contact the external site: verify the new-tab boundary using a local response.
    external=page.locator('.guide-link[href^="https://"]').first
    destination=await external.get_attribute('href')
