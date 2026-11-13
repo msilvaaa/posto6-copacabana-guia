@@ -91,7 +91,7 @@ async def main():
     if r.status!=200 or not page.url.endswith(expected):
      report['failures'].append('click '+expected)
   await browser.close()
- report['unique_icons']=len({hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'assets/cover-icons').glob('*.png') if p.stem in {b['key'] for b in json.loads((ROOT/'templates/cover-content.json').read_text())['pt']['buttons']}})
+ report['unique_icons']=len({v['src'] for v in json.loads((ROOT/'data/cover-art.json').read_text()).values()})
  if report['unique_icons'] != 15: report['failures'].append('expected 15 distinct icons')
  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
  print(json.dumps({'pages':len(report['viewports']),'links':len(report['links']),'unique_icons':report['unique_icons'],'failures':report['failures']},ensure_ascii=False,indent=2))

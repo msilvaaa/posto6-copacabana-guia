@@ -41,8 +41,10 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .home-menu-rule { position: absolute; left: 74.7%; top: 14.1%; width: 22.7%; height: 1px; background: #23232338; }
 .cover-menu { position: absolute; inset: 0; pointer-events: none; }
 .cover-html-button { position: absolute; display: flex; align-items: center; justify-content: center; width: clamp(66px,5vw,84px); height: clamp(66px,5vw,84px); border-radius: 50%; background: white; box-shadow: 0 0 0 3px white,0 8px 20px #0003; transform: translate(-50%,-50%); text-decoration: none; pointer-events: auto; transition: transform .18s ease,box-shadow .18s ease; }
-/* The supplied photos contain a gold rim. Show only the inner photo; the white rim matches the flags. */
-.cover-html-button img { display: block; width: 100%; height: 100%; border-radius: 50%; clip-path: circle(40%); transform: scale(1.25); }
+.cover-button-art { display: block; position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 50%; }
+.cover-button-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cover-button-art.art-symbol img { object-fit: contain; }
+.cover-button-art.art-lock img { position: absolute; width: 569.26%; height: 320%; max-width: none; left: -296.30%; top: -103.70%; }
 .cover-html-button::after { content: attr(aria-label); position: absolute; left: 50%; top: calc(100% + 9px); transform: translateX(-50%); color: #171717; font: 400 clamp(10px,.95vw,13px)/1.05 Arial,Helvetica,sans-serif; letter-spacing: -.02em; white-space: nowrap; text-align: center; }
 .cover-html-button:hover, .cover-html-button:focus-visible { transform: translate(-50%,calc(-50% - 3px)); box-shadow: 0 12px 28px #00000047; }
 .cover-html-button:active { transform: translate(-50%,calc(-50% - 1px)) scale(.985); }
