@@ -69,3 +69,9 @@ Consulta da previsão programada aos minutos23 e53 de cada hora; a avaliação A
 ## Mesmo botão da capa em toda a navegação
 
 Anterior/Próximo usam um único estilo compartilhado com Próxima da capa:84x27px, fonte10px em maiúsculas, fundo preto em degradê, borda arredondada, contorno branco, sombra, elevação ao focar/passar o cursor e resposta ao pressionar. O CSS da capa mantém apenas o posicionamento do botão; aparência e efeitos são definidos no estilo comum para evitar diferenças futuras.
+
+## Área clicável dos links externos
+
+Links nas artes do guia ganham uma margem de clique ao redor da palavra, buscando uma área de44px quando há espaço. A margem se ajusta ao tamanho da página e termina antes da área de outro destino ou de controles de navegação. Links para o mesmo endereço podem compartilhar a margem; o destino permanece o mesmo. Recalcula ao redimensionar a tela. Uma indicação discreta ao passar o cursor mostra a região clicável, e o foco do teclado recebe contorno ampliado. Links pequenos nas informações da previsão também recebem margem de toque; botões e cartões nativos já mantêm áreas maiores.
+
+Verificação:66 combinações de página/resolução,712 áreas verificadas,700 ampliadas; nenhuma sobreposição nova entre destinos diferentes. Nove cliques reais fora do texto, nos três idiomas, abriram os links externos preservando o guia.

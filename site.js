@@ -14,6 +14,53 @@
    anchor.title = anchor.title ? `${anchor.title} — ${strings.external}` : strings.external;
   }
  }
+ // Grow invisible link targets without changing the artwork or crossing another destination.
+ const guideCanvases = document.querySelectorAll('.guide-canvas');
+ function expandGuideLinks(canvas) {
+  const links = [...canvas.querySelectorAll('.guide-link,.guide-americanas')].filter(a => /^(https?:|tel:|mailto:)/.test(a.href));
+  if (!links.length) return;
+  const bounds = canvas.getBoundingClientRect();
+  const rect = e => { const r=e.getBoundingClientRect(); return {left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height}; };
+  const originals = links.map(rect);
+  const desired = originals.map(r => {
+   const x=Math.max(12,(44-r.width)/2), y=Math.max(8,(44-r.height)/2);
+   return {left:Math.max(bounds.left,r.left-x),right:Math.min(bounds.right,r.right+x),top:Math.max(bounds.top,r.top-y),bottom:Math.min(bounds.bottom,r.bottom+y)};
+  });
+  const controls = [...document.querySelectorAll('.site-step,.site-round,.site-whatsapp')].map(e => ({rect:rect(e),desired:rect(e)}));
+  const intersects = (a,b) => a.left<b.right && a.right>b.left && a.top<b.bottom && a.bottom>b.top;
+  links.forEach((link,index) => {
+   const original=originals[index], target={...desired[index]};
+   const obstacles=links.flatMap((other,j) => j===index || other.href===link.href ? [] : [{rect:originals[j],desired:desired[j]}]).concat(controls);
+   for (const obstacle of obstacles) {
+    if (!intersects(target,obstacle.desired)) continue;
+    const other=obstacle.rect;
+    if (intersects(original,other)) {
+     target.left=original.left; target.right=original.right; target.top=original.top; target.bottom=original.bottom;
+     continue;
+    }
+    const xGap=Math.max(other.left-original.right,original.left-other.right);
+    const yGap=Math.max(other.top-original.bottom,original.top-other.bottom);
+    if (xGap>=0 && xGap>=yGap) {
+     if (original.right<=other.left) target.right=Math.min(target.right,(original.right+other.left)/2);
+     else target.left=Math.max(target.left,(original.left+other.right)/2);
+    } else if (yGap>=0) {
+     if (original.bottom<=other.top) target.bottom=Math.min(target.bottom,(original.bottom+other.top)/2);
+     else target.top=Math.max(target.top,(original.top+other.bottom)/2);
+    }
+   }
+   for (const [side,value] of Object.entries({left:original.left-target.left,right:target.right-original.right,top:original.top-target.top,bottom:target.bottom-original.bottom})) {
+    link.style.setProperty(`--hit-${side}`,`${Math.max(0,value).toFixed(2)}px`);
+   }
+   link.dataset.expandedHit='true';
+  });
+ }
+ for (const canvas of guideCanvases) {
+  let scheduled;
+  const update=()=>{ cancelAnimationFrame(scheduled); scheduled=requestAnimationFrame(()=>expandGuideLinks(canvas)); };
+  new ResizeObserver(update).observe(canvas);
+  window.addEventListener('resize',update);
+  update();
+ }
  const viewer = document.querySelector('[data-photo-dialog]');
  const stage = document.querySelector('[data-photo-stage]');
  let trigger = null;
