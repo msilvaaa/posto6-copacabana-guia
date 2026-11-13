@@ -1,16 +1,23 @@
 # Correção preparada em 13/11/2026
 
-- `pt/index.html`, `en/index.html`, `es/index.html`: gerados pelo mesmo template, com traduções e destinos próprios.
-- `home.css`: estilos consolidados das capas, sem `!important` e sem seletores dependentes do idioma. Desktop preserva a composição PT; até 1100 px o menu fica abaixo da foto para evitar sobreposições.
-- `assets/cover-icons/*.png`: 15 imagens independentes extraídas do sprite aprovado, resolução original de 70 × 70.
-- `assets/copacabana-drummond.jpg` e `assets/PHOTO-CREDITS.txt`: fotografia local com autoria, fonte e licença registradas.
-- `templates/` e `scripts/build-covers.py`: fonte única do layout e textos dos três idiomas.
-- `scripts/verify-covers.py`: verificação automatizada em Chromium/Playwright, com código de saída de erro quando alguma verificação falha.
-- Menu superior no celular: os seis links ficam visíveis em linhas, sem depender de rolagem horizontal.
-- Créditos da fotografia: link no rodapé, fora da capa, traduzido nos três idiomas.
+As capas PT, EN e ES compartilham um único template e CSS. Os 15 botões usam as mesmas imagens locais e conservam a geometria aprovada no desktop; no celular, o painel passa para baixo da foto e os seis links do menu ficam visíveis.
 
-Foram verificados 24 cenários (3 idiomas × 8 larguras), 49 destinos internos HTTP 200, 15 imagens distintas carregadas, alinhamento idêntico dos botões e cabeçalho entre idiomas, ausência de rolagem horizontal e animação do cabeçalho. Os 45 atalhos e as nove combinações de troca de idioma foram abertos com cliques reais no navegador. A fotografia de fundo também foi carregada e decodificada no teste. A verificação final da geometria não apresentou falhas. A geração dos HTML é reproduzível; `git diff --check` passou.
+## Revisão solicitada
 
-Os links superiores Apartamento/Galeria não tinham páginas correspondentes. Foram direcionados às páginas existentes de boas-vindas/comodidades, respectivamente. Essa escolha deve ser revisada antes da publicação.
+- O aro dourado que fazia parte das imagens fica oculto pelo recorte circular em CSS. Contorno branco, sombra e hover seguem o padrão das bandeiras.
+- Início abre a capa do idioma; Apartamento e Galeria agora têm páginas próprias. Comodidades, Localização e Contato continuam apontando para suas páginas existentes.
+- As novas páginas de apartamento e galeria estão traduzidas e mantêm a seção ao trocar o idioma. A galeria usa oito fotos reais do anúncio, armazenadas localmente com origem registrada.
+- Nota 4,98 e 120 avaliações confirmadas no HTML público do anúncio Airbnb 48382177. Um JSON compartilhado alimenta todos os idiomas.
+- Workflow preparado para verificar a nota a cada seis horas e regenerar as páginas somente quando houver alteração. A rotina só começa após entrar na main e depende do GitHub Actions e das permissões da branch. Não é sincronização em tempo real nem API oficial.
+- Se o Airbnb não fornecer uma leitura válida para esse anúncio, o último valor confirmado é preservado.
 
-O CSS legado das páginas internas foi preservado. A correção está preparada para revisão em uma branch separada; não houve deploy de produção. A validação do site público depois da publicação permanece pendente; este relatório cobre somente a cópia local.
+## Validação
+
+- 24 cenários de capa, 55 destinos internos HTTP 200, 15 imagens diferentes e fotografia carregada; geometria idêntica dos controles entre idiomas e ausência de rolagem horizontal.
+- 45 cliques nos atalhos e nove trocas de idioma das capas.
+- 24 cenários de conteúdo em celular, tablet e desktop, 18 cliques nos links superiores e 18 trocas de idioma mantendo Apartamento/Galeria.
+- Nove testes da sincronização, incluindo falhas de leitura, nota inválida, anúncio diferente, ausência de mudanças e reconstrução dos textos nos três idiomas após uma mudança simulada.
+- Leitura real do Airbnb concluída com 4,98 e 120; segunda leitura não alterou arquivos.
+- Geração das nove páginas reproduzível; YAML do workflow válido e git diff --check sem erros.
+
+O CSS legado das outras páginas internas foi preservado. A publicação de produção no Cloudflare e a execução agendada após integração à main permanecem pendentes; os testes relatados são locais. O envio da branch também aciona as integrações Vercel já existentes no repositório.

@@ -94,7 +94,7 @@
       },
       {
         "label": "APARTAMENTO",
-        "href": "/pt/bem-vindos/"
+        "href": "/pt/apartamento/"
       },
       {
         "label": "COMODIDADES",
@@ -106,7 +106,7 @@
       },
       {
         "label": "GALERIA",
-        "href": "/pt/comodidades/"
+        "href": "/pt/galeria/"
       },
       {
         "label": "CONTATO",
@@ -117,11 +117,11 @@
     "stats": [
       "A poucos passos<br />da praia (Posto 6)",
       "Apartamento<br />completo",
-      "Wi‑Fi<br />de alta velocidade",
-      "4,97 no Airbnb<br />+ de 114 avaliações"
+      "Wi‑Fi<br />de alta velocidade"
     ],
     "home_label": "Início",
-    "credits_label": "Créditos da fotografia"
+    "credits_label": "Créditos da fotografia",
+    "rating_template": "{rating} no Airbnb<br />{review_count} avaliações"
   },
   "en": {
     "title": "Posto 6 Copacabana — EN — page 1",
@@ -218,7 +218,7 @@
       },
       {
         "label": "APARTMENT",
-        "href": "/en/welcome/"
+        "href": "/en/apartment/"
       },
       {
         "label": "AMENITIES",
@@ -230,7 +230,7 @@
       },
       {
         "label": "GALLERY",
-        "href": "/en/amenities/"
+        "href": "/en/gallery/"
       },
       {
         "label": "CONTACT",
@@ -241,11 +241,11 @@
     "stats": [
       "A few steps<br />from Posto 6 beach",
       "Fully equipped<br />apartment",
-      "High-speed<br />Wi‑Fi",
-      "4.97 on Airbnb<br />+ 114 reviews"
+      "High-speed<br />Wi‑Fi"
     ],
     "home_label": "Home",
-    "credits_label": "Photo credits"
+    "credits_label": "Photo credits",
+    "rating_template": "{rating} on Airbnb<br />{review_count} reviews"
   },
   "es": {
     "title": "Posto 6 Copacabana — ES — página 1",
@@ -342,7 +342,7 @@
       },
       {
         "label": "APARTAMENTO",
-        "href": "/es/bienvenido/"
+        "href": "/es/apartamento/"
       },
       {
         "label": "COMODIDADES",
@@ -354,7 +354,7 @@
       },
       {
         "label": "GALERÍA",
-        "href": "/es/comodidades/"
+        "href": "/es/galeria/"
       },
       {
         "label": "CONTACTO",
@@ -365,10 +365,10 @@
     "stats": [
       "A pocos pasos<br />de la playa (Posto 6)",
       "Apartamento<br />completo",
-      "Wi‑Fi<br />de alta velocidad",
-      "4,97 en Airbnb<br />+ de 114 reseñas"
+      "Wi‑Fi<br />de alta velocidad"
     ],
     "home_label": "Inicio",
-    "credits_label": "Créditos de la fotografía"
+    "credits_label": "Créditos de la fotografía",
+    "rating_template": "{rating} en Airbnb<br />{review_count} reseñas"
   }
 }
