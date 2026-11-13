@@ -105,3 +105,5 @@ body.home-page { background: #f8f6f2; }
 .home-page .page-stage>.site-contact-corner { position: absolute; right: 16px; bottom: 16px; width: auto; margin: 0; padding: 0; z-index: 3; }
 
 @media(max-width:700px) { .home-cover-nav { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); column-gap: 8px; } .home-cover-nav a { width: max-content; } }
+
+.cover-button-art.art-bus img { position: absolute; width: 279.45%; height: 157.09%; max-width: none; left: -85.45%; top: -40%; }

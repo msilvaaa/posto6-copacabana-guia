@@ -53,3 +53,7 @@ Título elevado, reduzindo o intervalo abaixo da marca e ajustando a posição s
 ## Organização em duas fases e alinhamento superior
 
 Orientação do usuário: fase1 concentra a composição para computador; fase2 será dedicada às adaptações para telas de celulares. A marca Posto6Copacabana sobe para o alto da foto e título/subtítulo passam a começar logo abaixo do índice no computador. Marca e texto ficam independentes na estrutura para permitir esse alinhamento; o fluxo atual em celulares é preservado até a segunda fase.
+
+## Remoção de Contato e novos ícones
+
+Página e botão circular Contato removidos em português, inglês e espanhol. A navegação que apontava para Contato retorna ao início; WhatsApp permanece como canal de comunicação. Check-out usa mala, Transportes usa a foto do ônibus do Rio já presente no guia e Wi-Fi usa símbolo branco nítido sobre degradê azul e verde. A capa passa a ter14 botões e o site103 páginas.
