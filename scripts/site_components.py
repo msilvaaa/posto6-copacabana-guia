@@ -37,9 +37,9 @@ def arrow(previous=False):
 def pagination(lang, previous=None, following=None):
  labels=LABELS[lang]
  links=[]
- if previous: links.append(f'<a class="guide-previous" rel="prev" href="{e(previous)}">{arrow(True)}<span>{labels["previous"]}</span></a>')
- if following: links.append(f'<a class="guide-next" rel="next" href="{e(following)}"><span>{labels["next"]}</span>{arrow()}</a>')
- if not links: links.append(f'<a href="/{lang}/">{arrow(True)}<span>{labels["back"]}</span></a>')
+ if previous: links.append(f'<a class="site-step guide-previous" rel="prev" href="{e(previous)}">{arrow(True)}<span>{labels["previous"]}</span></a>')
+ if following: links.append(f'<a class="site-step guide-next" rel="next" href="{e(following)}"><span>{labels["next"]}</span>{arrow()}</a>')
+ if not links: links.append(f'<a class="site-step" href="/{lang}/">{arrow(True)}<span>{labels["back"]}</span></a>')
  return ''.join(links)
 
 

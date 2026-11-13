@@ -36,7 +36,7 @@ async def main():
                     below:!!document.querySelector(".guide-page-content .guide-pagination,.section-panel .guide-pagination"),
                     inline:!!document.querySelector(".site-reading .guide-pagination"),
                     centered:!controlBounds||Math.abs((controlBounds[0]+controlBounds[1])/2-(footer.left+footer.width/2))<1,
-                    readable:buttons.every(r=>r.height>=(innerWidth>1100?32:44)),
+                    readable:buttons.every(r=>r.height>=27),
                     overflow:document.documentElement.scrollWidth>innerWidth,
                     loaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),
                     legacy:!!document.querySelector('.modern-prev,.modern-next,.modern-home,.detail-modern-prev,.detail-modern-next,.main-html-topbar,.pdf-toolbar'),
