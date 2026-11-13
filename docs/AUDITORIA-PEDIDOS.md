@@ -65,3 +65,7 @@ Bandeiras e Home com58px no computador, mesma ordem, alinhamento horizontal, con
 ## Previsão a cada30 minutos
 
 Consulta da previsão programada aos minutos23 e53 de cada hora; a avaliação Airbnb mantém sua consulta a cada6 horas. A janela explica que o horário exibido corresponde à última alteração dos dados da previsão, preservado quando a fonte retorna os mesmos valores. Páginas abertas revalidam o arquivo após30 minutos e ao voltar para a aba se esse período já passou. Só há commit e publicação automática quando dados mudam; falha na fonte preserva a última previsão válida. Execuções programadas dependem da disponibilidade do agendador do GitHub e podem atrasar.
+
+## Mesmo botão da capa em toda a navegação
+
+Anterior/Próximo usam um único estilo compartilhado com Próxima da capa:84x27px, fonte10px em maiúsculas, fundo preto em degradê, borda arredondada, contorno branco, sombra, elevação ao focar/passar o cursor e resposta ao pressionar. O CSS da capa mantém apenas o posicionamento do botão; aparência e efeitos são definidos no estilo comum para evitar diferenças futuras.
