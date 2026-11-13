@@ -49,3 +49,7 @@ Título elevado, reduzindo o intervalo abaixo da marca e ajustando a posição s
 ## Índice da capa e temperatura
 
 Índice superior com cinco itens: Início, Apartamento (abre Bem-vindos), Comodidades (abre Comodidades), Localização e Emergência (substitui Galeria). Contato retirado do índice superior. Temperatura deslocada para a região superior direita da foto, acima da posição anteriormente ocupada por Contato; no celular usa o espaço livre da segunda linha do índice. Rotas equivalentes em português, inglês e espanhol. Páginas e botões circulares do guia continuam disponíveis.
+
+## Organização em duas fases e alinhamento superior
+
+Orientação do usuário: fase1 concentra a composição para computador; fase2 será dedicada às adaptações para telas de celulares. A marca Posto6Copacabana sobe para o alto da foto e título/subtítulo passam a começar logo abaixo do índice no computador. Marca e texto ficam independentes na estrutura para permitir esse alinhamento; o fluxo atual em celulares é preservado até a segunda fase.
