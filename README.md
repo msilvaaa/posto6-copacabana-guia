@@ -70,3 +70,24 @@ python scripts/verify-guide-navigation.py
 Home e bandeiras ficam em uma barra própria; Anterior/Próximo ficam centralizados após a imagem, sem posicionamento absoluto ou transformação no hover. Os atributos width/height e a proporção do quadro reservam o espaço antes do download da imagem. As regiões que continham controles desenhados na arte são ocultadas por áreas de apresentação delimitadas, sem alterar os arquivos de foto ou cobrir os textos. O bloco Americanas usa a marca vetorial oficial e conserva o destino do mapa.
 
 A verificação percorre as 96 páginas em três larguras, clica em cada destino Anterior/Próximo e segura respostas de imagens para conferir a estabilidade do rodapé durante o carregamento.
+
+## Experiência unificada, fotos, tempo e contato
+
+Todas as páginas internas usam `site-shell.css` e `scripts/site_components.py`: cabeçalho de retorno/idiomas, previsão regional de Copacabana, área de leitura com rolagem e barra Anterior/Próximo sempre visível fora da área de leitura. Restaurantes mantém a navegação acessível antes de chegar ao fim das três partes.
+
+Apartamento, Galeria e Comodidades compartilham `templates/content-page.html` e o mesmo layout de fotografia com painel lateral. Comodidades foi convertida para HTML com os 16 atalhos e as ilustrações originais; seus textos deixam de depender da imagem comprimida. O endereço antigo `/en/comodidades/` acompanha o mesmo modelo.
+
+As oito fotografias do anúncio têm variantes fornecidas pelo CDN original em 720, 1200 e 2560 px, selecionadas por `srcset`. A galeria abre o arquivo maior em um visualizador dentro do site, com retorno, Esc e visualização em tamanho original. As artes antigas continuam limitadas aos pixels disponíveis nos arquivos de origem; não foram ampliadas artificialmente nem gerados detalhes inexistentes. A largura exibida dessas artes respeita a largura original, e a ampliação preserva as áreas de limpeza dos controles antigos.
+
+`site.js` faz os links externos abrirem em outra aba, preservando o guia e a posição de leitura. Não é possível inserir um controle dentro de páginas de terceiros que não administramos. O contato usa o número já publicado no guia; aparece como círculo da marca WhatsApp no canto direito após as imagens/conteúdo, fora do cabeçalho e da barra de navegação.
+
+O crédito visível abaixo da capa foi retirado. Autoria e licença da fotografia continuam disponíveis em Sobre o guia dentro da janela de previsão e no arquivo de créditos, preservando a atribuição sem exibi-la na composição da capa.
+
+`data/weather.json` guarda uma previsão regional de três dias obtida de wttr.in para as coordenadas de Copacabana. É previsão diária, não leitura meteorológica em tempo real. O workflow existente consulta a previsão e o Airbnb a cada seis horas de modo independente; falhas em uma fonte preservam os últimos dados e não impedem a outra atualização. O componente informa quando a previsão está antiga e não mostra dias já encerrados como previsão de hoje.
+
+```sh
+python scripts/sync-weather.py
+python scripts/verify-site-experience.py
+```
+
+`verify-site-experience.py` confere as 106 páginas, a barra fixa fora da leitura, o posicionamento circular do WhatsApp, a previsão, o retorno do visualizador e a abertura externa em outra aba. A capa mantém as 15 imagens e recebeu os ajustes solicitados de título mais alto e claro, com a reserva perto da base da fotografia.

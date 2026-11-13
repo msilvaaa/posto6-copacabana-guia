@@ -28,7 +28,7 @@ async def main():
                 path = route(item)
                 response = await page.goto(BASE + path, wait_until='load')
                 geometry = await page.evaluate('''()=>{
-                  const image=document.querySelector('.guide-image').getBoundingClientRect();
+                  const image=document.querySelector('.site-reading').getBoundingClientRect();
                   const footer=document.querySelector('.guide-pagination').getBoundingClientRect();
                   const buttons=[...document.querySelectorAll('.guide-pagination a')].map(e=>e.getBoundingClientRect());
                   const controlBounds=buttons.length?[Math.min(...buttons.map(r=>r.left)),Math.max(...buttons.map(r=>r.right))]:null;

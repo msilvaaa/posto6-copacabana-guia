@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-11-13T14:52:46.481243+00:00",
+  "verified_at": "2026-11-13T17:39:54.034683+00:00",
   "viewports": [
     {
       "language": "pt",
@@ -383,7 +383,6 @@
     "/pt/estabelecimentos/": 200,
     "/pt/emergencia/": 200,
     "/pt/checkout/": 200,
-    "/assets/PHOTO-CREDITS.txt": 200,
     "/en/apartment/": 200,
     "/en/amenities/": 200,
     "/en/location/": 200,

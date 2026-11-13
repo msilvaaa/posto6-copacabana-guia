@@ -1,34 +1,194 @@
 [
   {
     "src": "/assets/apartment/photo-01.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/fd037ae0-7252-4ef2-bc75-6116067bf2f4.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/fd037ae0-7252-4ef2-bc75-6116067bf2f4.jpeg",
+    "width": 1200,
+    "height": 795,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-01-small.jpg",
+        "width": 720,
+        "height": 477
+      },
+      {
+        "src": "/assets/apartment/photo-01.jpg",
+        "width": 1200,
+        "height": 795
+      },
+      {
+        "src": "/assets/apartment/photo-01-large.jpg",
+        "width": 2560,
+        "height": 1697
+      }
+    ],
+    "full_src": "/assets/apartment/photo-01-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-02.jpg",
-    "source": "https://a0.muscache.com/im/pictures/miso/Hosting-48382177/original/56a71458-93d4-4c62-8ced-f87191cb7f12.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/miso/Hosting-48382177/original/56a71458-93d4-4c62-8ced-f87191cb7f12.jpeg",
+    "width": 1200,
+    "height": 801,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-02-small.jpg",
+        "width": 720,
+        "height": 481
+      },
+      {
+        "src": "/assets/apartment/photo-02.jpg",
+        "width": 1200,
+        "height": 801
+      },
+      {
+        "src": "/assets/apartment/photo-02-large.jpg",
+        "width": 2560,
+        "height": 1709
+      }
+    ],
+    "full_src": "/assets/apartment/photo-02-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-03.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/81cb4de0-669a-496e-aaa2-0521cd263b99.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/81cb4de0-669a-496e-aaa2-0521cd263b99.jpeg",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-03-small.jpg",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "src": "/assets/apartment/photo-03.jpg",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "src": "/assets/apartment/photo-03-large.jpg",
+        "width": 2560,
+        "height": 1706
+      }
+    ],
+    "full_src": "/assets/apartment/photo-03-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-04.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/bcc06a53-dce9-4afe-921c-06de0a19fa6c.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/bcc06a53-dce9-4afe-921c-06de0a19fa6c.jpeg",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-04-small.jpg",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "src": "/assets/apartment/photo-04.jpg",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "src": "/assets/apartment/photo-04-large.jpg",
+        "width": 2560,
+        "height": 1706
+      }
+    ],
+    "full_src": "/assets/apartment/photo-04-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-05.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/0fac3f2c-4f78-4632-bb45-42502483fc19.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/0fac3f2c-4f78-4632-bb45-42502483fc19.jpeg",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-05-small.jpg",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "src": "/assets/apartment/photo-05.jpg",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "src": "/assets/apartment/photo-05-large.jpg",
+        "width": 2560,
+        "height": 1706
+      }
+    ],
+    "full_src": "/assets/apartment/photo-05-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-06.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/9512f927-8ee4-4ae9-8c04-025930664aa6.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/9512f927-8ee4-4ae9-8c04-025930664aa6.jpeg",
+    "width": 1200,
+    "height": 1801,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-06-small.jpg",
+        "width": 720,
+        "height": 1080
+      },
+      {
+        "src": "/assets/apartment/photo-06.jpg",
+        "width": 1200,
+        "height": 1801
+      },
+      {
+        "src": "/assets/apartment/photo-06-large.jpg",
+        "width": 2560,
+        "height": 3841
+      }
+    ],
+    "full_src": "/assets/apartment/photo-06-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-07.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/571888eb-44dd-4d2b-a649-55bf2ac336d3.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/571888eb-44dd-4d2b-a649-55bf2ac336d3.jpeg",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-07-small.jpg",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "src": "/assets/apartment/photo-07.jpg",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "src": "/assets/apartment/photo-07-large.jpg",
+        "width": 2560,
+        "height": 1706
+      }
+    ],
+    "full_src": "/assets/apartment/photo-07-large.jpg"
   },
   {
     "src": "/assets/apartment/photo-08.jpg",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aaeb0717-b0ee-4588-b849-db9bcb08060a.jpeg"
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aaeb0717-b0ee-4588-b849-db9bcb08060a.jpeg",
+    "width": 1200,
+    "height": 799,
+    "variants": [
+      {
+        "src": "/assets/apartment/photo-08-small.jpg",
+        "width": 720,
+        "height": 480
+      },
+      {
+        "src": "/assets/apartment/photo-08.jpg",
+        "width": 1200,
+        "height": 799
+      },
+      {
+        "src": "/assets/apartment/photo-08-large.jpg",
+        "width": 2560,
+        "height": 1705
+      }
+    ],
+    "full_src": "/assets/apartment/photo-08-large.jpg"
   }
 ]

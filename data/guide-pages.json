@@ -1973,8 +1973,8 @@
         "style": "left:90.54105%;top:90.95620%;width:6.88141%;height:4.16667%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/en/transportation/",
+    "next": "/en/activities/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -2165,8 +2165,8 @@
         "style": "left:78.98748%;top:81.47524%;width:12.66471%;height:2.47396%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/en/emergency/",
+    "next": "/en/contact/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -2723,7 +2723,7 @@
         "style": "left:73.68042%;top:61.37966%;width:8.05271%;height:2.08333%"
       }
     ],
-    "previous": null,
+    "previous": "/en/check-out/",
     "next": null,
     "back": null,
     "source_text": "",
@@ -2828,8 +2828,8 @@
         "style": "left:78.47147%;top:89.56989%;width:3.70843%;height:1.87833%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/en/establishments/",
+    "next": "/en/check-out/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -2993,8 +2993,8 @@
         "style": "left:78.94517%;top:82.03475%;width:19.32650%;height:0.97656%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/en/restaurants/",
+    "next": "/en/emergency/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -3298,8 +3298,8 @@
         "style": "left:72.13404%;top:85.88295%;width:19.12270%;height:0.61174%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/en/bars/",
+    "next": "/en/establishments/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -3749,8 +3749,8 @@
         "style": "left:78.33012%;top:78.05600%;width:12.73792%;height:2.47396%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/es/emergencia/",
+    "next": "/es/contacto/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4029,8 +4029,8 @@
         "style": "left:90.44478%;top:92.12808%;width:6.88140%;height:4.16667%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/es/transporte/",
+    "next": "/es/actividades/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4431,7 +4431,7 @@
         "style": "left:73.68042%;top:61.37966%;width:8.05271%;height:2.08333%"
       }
     ],
-    "previous": null,
+    "previous": "/es/checkout/",
     "next": null,
     "back": null,
     "source_text": "",
@@ -4531,8 +4531,8 @@
         "style": "left:77.85008%;top:87.88122%;width:5.49048%;height:1.95312%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/es/establecimientos/",
+    "next": "/es/checkout/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4706,8 +4706,8 @@
         "style": "left:79.11875%;top:81.34713%;width:19.32650%;height:0.97656%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/es/restaurantes/",
+    "next": "/es/emergencia/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4990,8 +4990,8 @@
         "style": "left:72.13404%;top:85.88295%;width:19.12270%;height:0.61174%"
       }
     ],
-    "previous": null,
-    "next": null,
+    "previous": "/es/verja/",
+    "next": "/es/establecimientos/",
     "back": null,
     "source_text": "",
     "masks": [
