@@ -89,9 +89,12 @@ for lang,values in content.items():
    visual=f'<a href="{e(photos[photo_index].get("full_src",photos[photo_index]["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, 66vw")} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
    if section==2:copy=amenity_cards(lang)
    else:copy=(f'<h2>{e(labels["intro"])}</h2><p>{e(labels["description"])}</p><p class="listing-rating">★ {rating_label(lang)}</p><p>{e(labels["amenities_intro"])}</p><div class="content-links"><a href="{values["nav"][2]["href"]}">{e(values["nav"][2]["label"])}</a><a href="{values["nav"][4]["href"]}">{e(labels["view_gallery"])}</a></div>')
-  copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{e(labels["view_listing"])}</a></div>'
+  if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{e(labels["view_listing"])}</a></div>'
   previous,following=('/'+lang+'/',values['nav'][2]['href']) if section==1 else (values['nav'][2]['href'],'/'+lang+'/') if section==4 else (next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['previous'],next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['next'])
-  body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel"><h1 class="section-title">{e(title)}</h1>{copy}<nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></section>'
+  title_html=f'<h1 class="section-title">{e(title)}</h1>'
+  if section==2:
+   title_html=f'<h1 class="section-title original-title"><span class="title-text">{e(title)}</span><svg viewBox="1140 150 350 84" role="presentation" aria-hidden="true"><image href="/assets/{lang}-08.jpg" width="1537" height="864"/></svg></h1>'
+  body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></section>'
   destinations={code:content[code]['nav'][section]['href'] for code in content}
   output=page_template.substitute(lang=lang,title=e(title),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
   destination=ROOT/values['nav'][section]['href'].lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(output)
