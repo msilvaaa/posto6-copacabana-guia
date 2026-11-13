@@ -90,7 +90,7 @@ for lang,values in content.items():
   body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel"><h1 class="section-title">{e(title)}</h1>{copy}</div></section>'
   previous,following=('/'+lang+'/',values['nav'][2]['href']) if section==1 else (values['nav'][2]['href'],values['nav'][5]['href']) if section==4 else (next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['previous'],next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['next'])
   destinations={code:content[code]['nav'][section]['href'] for code in content}
-  output=page_template.substitute(lang=lang,title=e(title),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
+  output=page_template.substitute(lang=lang,title=e(title),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang, weather=True),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
   destination=ROOT/values['nav'][section]['href'].lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(output)
   if lang=='en' and section==2:
    alias=ROOT/'en/comodidades/index.html';alias.parent.mkdir(parents=True,exist_ok=True);alias.write_text(output)
