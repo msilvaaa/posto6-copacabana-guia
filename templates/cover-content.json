@@ -121,7 +121,29 @@
     ],
     "home_label": "Início",
     "credits_label": "Créditos da fotografia",
-    "rating_template": "{rating} no Airbnb<br />{review_count} avaliações"
+    "rating_template": "{rating} no Airbnb<br />{review_count} avaliações",
+    "cover_nav": [
+      {
+        "label": "INÍCIO",
+        "href": "/pt/"
+      },
+      {
+        "label": "APARTAMENTO",
+        "href": "/pt/bem-vindos/"
+      },
+      {
+        "label": "COMODIDADES",
+        "href": "/pt/comodidades/"
+      },
+      {
+        "label": "LOCALIZAÇÃO",
+        "href": "/pt/localizacao/"
+      },
+      {
+        "label": "EMERGÊNCIA",
+        "href": "/pt/emergencia/"
+      }
+    ]
   },
   "en": {
     "title": "Posto 6 Copacabana — EN — page 1",
@@ -245,7 +267,29 @@
     ],
     "home_label": "Home",
     "credits_label": "Photo credits",
-    "rating_template": "{rating} on Airbnb<br />{review_count} reviews"
+    "rating_template": "{rating} on Airbnb<br />{review_count} reviews",
+    "cover_nav": [
+      {
+        "label": "HOME",
+        "href": "/en/"
+      },
+      {
+        "label": "APARTMENT",
+        "href": "/en/welcome/"
+      },
+      {
+        "label": "AMENITIES",
+        "href": "/en/amenities/"
+      },
+      {
+        "label": "LOCATION",
+        "href": "/en/location/"
+      },
+      {
+        "label": "EMERGENCY",
+        "href": "/en/emergency/"
+      }
+    ]
   },
   "es": {
     "title": "Posto 6 Copacabana — ES — página 1",
@@ -369,6 +413,28 @@
     ],
     "home_label": "Inicio",
     "credits_label": "Créditos de la fotografía",
-    "rating_template": "{rating} en Airbnb<br />{review_count} reseñas"
+    "rating_template": "{rating} en Airbnb<br />{review_count} reseñas",
+    "cover_nav": [
+      {
+        "label": "INICIO",
+        "href": "/es/"
+      },
+      {
+        "label": "APARTAMENTO",
+        "href": "/es/bienvenido/"
+      },
+      {
+        "label": "COMODIDADES",
+        "href": "/es/comodidades/"
+      },
+      {
+        "label": "UBICACIÓN",
+        "href": "/es/ubicacion/"
+      },
+      {
+        "label": "EMERGENCIA",
+        "href": "/es/emergencia/"
+      }
+    ]
   }
 }
