@@ -74,11 +74,6 @@
         "key": "checkout",
         "label": "CHECK-OUT",
         "href": "/pt/checkout/"
-      },
-      {
-        "key": "contato",
-        "label": "CONTATO",
-        "href": "/pt/contato/"
       }
     ],
     "hero_label": "Apresentação do Posto 6 Copacabana",
@@ -107,10 +102,6 @@
       {
         "label": "GALERIA",
         "href": "/pt/galeria/"
-      },
-      {
-        "label": "CONTATO",
-        "href": "/pt/contato/"
       }
     ],
     "stats_label": "Destaques",
@@ -220,11 +211,6 @@
         "key": "checkout",
         "label": "CHECK-OUT",
         "href": "/en/check-out/"
-      },
-      {
-        "key": "contato",
-        "label": "CONTACT",
-        "href": "/en/contact/"
       }
     ],
     "hero_label": "Posto 6 Copacabana presentation",
@@ -253,10 +239,6 @@
       {
         "label": "GALLERY",
         "href": "/en/gallery/"
-      },
-      {
-        "label": "CONTACT",
-        "href": "/en/contact/"
       }
     ],
     "stats_label": "Highlights",
@@ -366,11 +348,6 @@
         "key": "checkout",
         "label": "CHECK-OUT",
         "href": "/es/checkout/"
-      },
-      {
-        "key": "contato",
-        "label": "CONTACTO",
-        "href": "/es/contacto/"
       }
     ],
     "hero_label": "Presentación de Posto 6 Copacabana",
@@ -399,10 +376,6 @@
       {
         "label": "GALERÍA",
         "href": "/es/galeria/"
-      },
-      {
-        "label": "CONTACTO",
-        "href": "/es/contacto/"
       }
     ],
     "stats_label": "Destacados",

@@ -38,7 +38,7 @@ async def main():
       catch { return false; }
     }""")
     checks={
-      'http':response.status==200,'images':result['images'], '15_buttons':len(result['buttons'])==15,
+      'http':response.status==200,'images':result['images'], '14_buttons':len(result['buttons'])==14,
       'no_horizontal_scroll':result['scrollWidth']==width,'controls_in_viewport':not result['overflow'],
       'requests':not errors, 'background_photo':photo_ok,
     }
@@ -81,7 +81,7 @@ async def main():
      report['failures'].append(f'language {lang} -> {target}')
   # Every menu destination must be reached by an actual browser click once.
   for lang in ['pt','en','es']:
-   for index in range(15):
+   for index in range(14):
     await page.goto('http://127.0.0.1:8000/'+lang+'/')
     link=page.locator('.cover-html-button').nth(index)
     expected=await link.get_attribute('href')
@@ -92,7 +92,7 @@ async def main():
      report['failures'].append('click '+expected)
   await browser.close()
  report['unique_icons']=len({v['src'] for v in json.loads((ROOT/'data/cover-art.json').read_text()).values()})
- if report['unique_icons'] != 15: report['failures'].append('expected 15 distinct icons')
+ if report['unique_icons'] != 14: report['failures'].append('expected 14 distinct icons')
  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
  print(json.dumps({'pages':len(report['viewports']),'links':len(report['links']),'unique_icons':report['unique_icons'],'failures':report['failures']},ensure_ascii=False,indent=2))
  return 1 if report['failures'] else 0

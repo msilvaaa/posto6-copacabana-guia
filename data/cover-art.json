@@ -8,8 +8,8 @@
     "kind": "symbol"
   },
   "transportes": {
-    "src": "/assets/cover-icons/transportes-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/pt-07.jpg",
+    "kind": "bus"
   },
   "atividades": {
     "src": "/assets/cover-icons/atividades-clear.svg",
@@ -37,10 +37,6 @@
   },
   "checkout": {
     "src": "/assets/cover-icons/checkout-clear.svg",
-    "kind": "symbol"
-  },
-  "contato": {
-    "src": "/assets/cover-icons/contato-clear.svg",
     "kind": "symbol"
   },
   "bem-vindos": {

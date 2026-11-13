@@ -311,7 +311,7 @@
       }
     ],
     "previous": "/pt/emergencia/",
-    "next": "/pt/contato/",
+    "next": "/pt/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -940,66 +940,6 @@
     },
     "source_text": "<div class=\"sr-only\"><p>Uber aeroport Saia pela portão 🅰️ do desembarque doméstico Vire à esquerda na calçada Siga a placa estacionamento Administrativo para virar novamente à esquerda</p><ul class=\"source-links\"><li><a href=\"/pt/comodidades/\" rel=\"noopener\">Link original</a></li></ul></div>",
     "masks": []
-  },
-  {
-    "path": "pt/contato/index.html",
-    "lang": "pt",
-    "title": "Posto 6 Copacabana — PT — página 16",
-    "description": "Guia online Posto 6 Copacabana",
-    "heading": null,
-    "kind": "category",
-    "home": "/pt/",
-    "languages": {
-      "es": "/es/contacto/",
-      "pt": "/pt/contato/",
-      "en": "/en/contact/"
-    },
-    "image": {
-      "src": "/assets/pt-16.jpg",
-      "alt": "Página 16 do guia Posto 6 Copacabana",
-      "width": 1537,
-      "height": 864
-    },
-    "links": [
-      {
-        "aria-label": "Abrir link",
-        "href": "http://airbnb.com.br/h/posto6copa",
-        "style": "left:73.64851%;top:62.44285%;width:14.42167%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "http://wa.me/5521981020150/?text=Ol%C3%A1,%20eu%20gostaria%20de%20saber%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana,%20para%20aluguel%20por%20temporada.",
-        "style": "left:73.64851%;top:55.60207%;width:8.85798%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "mailto:msilvawork@gmail.com",
-        "style": "left:73.64851%;top:58.98961%;width:12.22548%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "https://www.instagram.com/marcus_silva_?igsh=dzVuYWt6cjRtb2F6&utm_source=qr",
-        "style": "left:73.64851%;top:65.83040%;width:8.05271%;height:2.08333%"
-      }
-    ],
-    "previous": "/pt/checkout/",
-    "next": null,
-    "back": null,
-    "source_text": "",
-    "masks": [
-      [
-        1070,
-        0,
-        467,
-        80
-      ],
-      [
-        1100,
-        816,
-        420,
-        48
-      ]
-    ]
   },
   {
     "path": "pt/emergencia/index.html",
@@ -2166,7 +2106,7 @@
       }
     ],
     "previous": "/en/emergency/",
-    "next": "/en/contact/",
+    "next": "/en/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -2681,66 +2621,6 @@
     },
     "source_text": "<div class=\"sr-only\"><p>Uber a th airpor Exit through gate 🅰️ of the domestic arrivals area. Turn left onto the walkway. Follow the sign for Administrative Parking and make another left turn.</p><ul class=\"source-links\"><li><a href=\"/en/amenities/\" rel=\"noopener\">Link original</a></li></ul></div>",
     "masks": []
-  },
-  {
-    "path": "en/contact/index.html",
-    "lang": "en",
-    "title": "Posto 6 Copacabana — EN — página 16",
-    "description": "Guia online Posto 6 Copacabana",
-    "heading": null,
-    "kind": "category",
-    "home": "/en/",
-    "languages": {
-      "es": "/es/contacto/",
-      "pt": "/pt/contato/",
-      "en": "/en/contact/"
-    },
-    "image": {
-      "src": "/assets/en-16.jpg",
-      "alt": "Página 16 do guia Posto 6 Copacabana",
-      "width": 1537,
-      "height": 864
-    },
-    "links": [
-      {
-        "aria-label": "Abrir link",
-        "href": "http://airbnb.com.br/h/posto6copa",
-        "style": "left:73.68042%;top:57.99211%;width:14.27525%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "http://wa.me/5521981020150/?text=Ol%C3%A1,%20eu%20gostaria%20de%20saber%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana,%20para%20aluguel%20por%20temporada.",
-        "style": "left:73.68042%;top:51.15133%;width:8.85798%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "mailto:msilvawork@gmail.com",
-        "style": "left:73.68042%;top:54.53888%;width:12.15226%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "https://www.instagram.com/marcus_silva_?igsh=dzVuYWt6cjRtb2F6&utm_source=qr",
-        "style": "left:73.68042%;top:61.37966%;width:8.05271%;height:2.08333%"
-      }
-    ],
-    "previous": "/en/check-out/",
-    "next": null,
-    "back": null,
-    "source_text": "",
-    "masks": [
-      [
-        1070,
-        0,
-        467,
-        80
-      ],
-      [
-        1100,
-        816,
-        420,
-        48
-      ]
-    ]
   },
   {
     "path": "en/emergency/index.html",
@@ -3750,7 +3630,7 @@
       }
     ],
     "previous": "/es/emergencia/",
-    "next": "/es/contacto/",
+    "next": "/es/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4389,66 +4269,6 @@
     },
     "source_text": "<div class=\"sr-only\"><p>Uber Aeropuert Salga por la puerta 🅰️ de llegadas nacionales. Gire a la izquierda hacia la acera. Siga la señal de Aparcamiento Administrativo para girar a la izquierda otra vez.</p><ul class=\"source-links\"><li><a href=\"/es/comodidades/\" rel=\"noopener\">Link original</a></li></ul></div>",
     "masks": []
-  },
-  {
-    "path": "es/contacto/index.html",
-    "lang": "es",
-    "title": "Posto 6 Copacabana — ES — página 16",
-    "description": "Guia online Posto 6 Copacabana",
-    "heading": null,
-    "kind": "category",
-    "home": "/es/",
-    "languages": {
-      "es": "/es/contacto/",
-      "pt": "/pt/contato/",
-      "en": "/en/contact/"
-    },
-    "image": {
-      "src": "/assets/es-16.jpg",
-      "alt": "Página 16 do guia Posto 6 Copacabana",
-      "width": 1537,
-      "height": 864
-    },
-    "links": [
-      {
-        "aria-label": "Abrir link",
-        "href": "http://airbnb.com.br/h/posto6copa",
-        "style": "left:73.68042%;top:57.99211%;width:14.27525%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "http://wa.me/5521981020150/?text=Ol%C3%A1,%20eu%20gostaria%20de%20saber%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana,%20para%20aluguel%20por%20temporada.",
-        "style": "left:73.68042%;top:51.15133%;width:8.56515%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "mailto:msilvawork@gmail.com",
-        "style": "left:73.68042%;top:54.53888%;width:12.15226%;height:2.08333%"
-      },
-      {
-        "aria-label": "Abrir link",
-        "href": "https://www.instagram.com/marcus_silva_?igsh=dzVuYWt6cjRtb2F6&utm_source=qr",
-        "style": "left:73.68042%;top:61.37966%;width:8.05271%;height:2.08333%"
-      }
-    ],
-    "previous": "/es/checkout/",
-    "next": null,
-    "back": null,
-    "source_text": "",
-    "masks": [
-      [
-        1070,
-        0,
-        467,
-        80
-      ],
-      [
-        1100,
-        816,
-        420,
-        48
-      ]
-    ]
   },
   {
     "path": "es/emergencia/index.html",
