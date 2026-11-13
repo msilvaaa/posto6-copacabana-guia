@@ -30,7 +30,7 @@ def build():
   lang=page['lang'];labels=LABELS[lang]
   back=page['back'] or {'href':page['home'],'label':labels['back']}
   back_html=f'<a class="site-back" href="{e(back["href"])}" aria-label="{e(back["label"])}">← <span>{e(back["label"].removeprefix("← "))}</span></a>'
-  links=''.join(f'<a class="guide-link" {attrs(link)}></a>' for link in page['links'] if not(page.get('americanas') and link['href']==page['americanas']['href']))
+  links=''.join(f'<a class="guide-link" {attrs(link)}></a>' for link in page['links'] if not(page['kind']=='detail' and link['href']==back['href']) and not(page.get('americanas') and link['href']==page['americanas']['href']))
   masks=''.join(f'<span class="guide-mask" aria-hidden="true" style="{percentage_rect(rect,image["width"],image["height"])}"></span>' for rect in page['masks'])
   americanas=''
   if page.get('americanas'):

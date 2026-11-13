@@ -94,7 +94,7 @@ for lang,values in content.items():
   title_html=f'<h1 class="section-title">{e(title)}</h1>'
   if section==2:
    title_html=f'<h1 class="section-title original-title"><span class="title-text">{e(title)}</span><svg viewBox="1140 150 350 84" role="presentation" aria-hidden="true"><image href="/assets/{lang}-08.jpg" width="1537" height="864"/></svg></h1>'
-  body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></section>'
+  body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<div class="section-actions"><nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav>{whatsapp(lang)}</div></div></section>'
   destinations={code:content[code]['nav'][section]['href'] for code in content}
   output=page_template.substitute(lang=lang,title=e(title),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
   destination=ROOT/values['nav'][section]['href'].lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(output)

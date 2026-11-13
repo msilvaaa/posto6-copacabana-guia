@@ -57,3 +57,7 @@ Orientação do usuário: fase1 concentra a composição para computador; fase2 
 ## Remoção de Contato e novos ícones
 
 Página e botão circular Contato removidos em português, inglês e espanhol. A navegação que apontava para Contato retorna ao início; WhatsApp permanece como canal de comunicação. Check-out usa mala, Transportes usa a foto do ônibus do Rio já presente no guia e Wi-Fi usa símbolo branco nítido sobre degradê azul e verde. A capa passa a ter14 botões e o site103 páginas.
+
+## Controles das páginas internas no padrão da capa
+
+Bandeiras e Home com58px no computador, mesma ordem, alinhamento horizontal, contorno, sombra e efeito de elevação da capa. Anterior/Próximo compactos dentro da arte das páginas principais, em vez de uma linha externa abaixo da imagem. As páginas de instruções usam a região superior livre para preservar o conteúdo; nas seções nativas, navegação e WhatsApp compartilham a área de descrição. Não há mais uma linha exclusiva abaixo do conteúdo para o WhatsApp nas páginas internas. Fotos das páginas principais preenchem a altura disponível quando a janela é mais alta. Links invisíveis duplicados de Home nas instruções removidos.
