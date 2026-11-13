@@ -3,9 +3,9 @@
  const lang = document.documentElement.lang || 'pt';
  const locale = {pt:'pt-BR',en:'en-US',es:'es-ES'}[lang] || 'pt-BR';
  const strings = {
-  pt:{external:'Abre em outra aba',unavailable:'Previsão indisponível no momento',rain:'Chance de chuva',updated:'Previsão atualizada em',region:'Previsão regional para Copacabana, Rio de Janeiro.',stale:'Esta é a última previsão disponível; os dados podem estar desatualizados.'},
-  en:{external:'Opens in a new tab',unavailable:'Forecast currently unavailable',rain:'Chance of rain',updated:'Forecast updated on',region:'Regional forecast for Copacabana, Rio de Janeiro.',stale:'This is the last available forecast; the data may be outdated.'},
-  es:{external:'Abre en otra pestaña',unavailable:'Pronóstico no disponible por el momento',rain:'Probabilidad de lluvia',updated:'Pronóstico actualizado el',region:'Pronóstico regional para Copacabana, Río de Janeiro.',stale:'Este es el último pronóstico disponible; los datos pueden estar desactualizados.'}
+  pt:{external:'Abre em outra aba',unavailable:'Previsão indisponível no momento',rain:'Chance de chuva',updated:'Dados da previsão atualizados em',refresh:'Consulta automática a cada 30 minutos. O horário acima muda quando a previsão muda.',region:'Previsão regional para Copacabana, Rio de Janeiro.',stale:'Esta é a última previsão disponível; os dados podem estar desatualizados.'},
+  en:{external:'Opens in a new tab',unavailable:'Forecast currently unavailable',rain:'Chance of rain',updated:'Forecast data updated on',refresh:'Automatically checked every 30 minutes. The time above changes when the forecast changes.',region:'Regional forecast for Copacabana, Rio de Janeiro.',stale:'This is the last available forecast; the data may be outdated.'},
+  es:{external:'Abre en otra pestaña',unavailable:'Pronóstico no disponible por el momento',rain:'Probabilidad de lluvia',updated:'Datos del pronóstico actualizados el',refresh:'Consulta automática cada 30 minutos. La hora anterior cambia cuando cambia el pronóstico.',region:'Pronóstico regional para Copacabana, Río de Janeiro.',stale:'Este es el último pronóstico disponible; los datos pueden estar desactualizados.'}
  }[lang] || {};
  for (const anchor of document.querySelectorAll('a[href]')) {
   const url = new URL(anchor.href, location.href);
@@ -43,8 +43,11 @@
  viewer?.addEventListener('close', () => { stage.replaceChildren(); trigger?.focus(); });
  const weatherDialog = document.querySelector('[data-weather-dialog]');
  let weatherRequest;
+ let weatherReadAt = 0;
+ const weatherRefreshMs = 30 * 60 * 1000;
  async function loadWeather() {
-  if (weatherRequest) return weatherRequest;
+  if (weatherRequest && Date.now() - weatherReadAt < weatherRefreshMs) return weatherRequest;
+  weatherReadAt = Date.now();
   weatherRequest = fetch('/data/weather.json', {cache:'no-cache'}).then(response => {
    if (!response.ok) throw new Error('Forecast unavailable'); return response.json();
   }).then(data => {
@@ -65,12 +68,14 @@
    }
    const note = document.createElement('p'); note.textContent = strings.region;
    const updated = document.createElement('p'); updated.textContent = `${strings.updated} ${new Intl.DateTimeFormat(locale,{dateStyle:'short',timeStyle:'short',timeZone:'America/Sao_Paulo'}).format(new Date(data.updated_at))}`;
-   content.append(grid,note,updated);
+   const refresh = document.createElement('p'); refresh.textContent = strings.refresh;
+   content.append(grid,note,updated,refresh);
    const old = Date.now()-Date.parse(data.updated_at)>24*60*60*1000;
    if (old) { const warning=document.createElement('p'); warning.textContent=strings.stale; content.append(warning); }
    for (const summary of document.querySelectorAll('[data-weather-summary]')) summary.textContent = old ? strings.stale : `${upcoming[0].min}° – ${upcoming[0].max}°C`;
    return data;
   }).catch(() => {
+   weatherRequest = null;
    const content=document.querySelector('[data-weather-content]');
    if (content) content.textContent = strings.unavailable;
    for (const summary of document.querySelectorAll('[data-weather-summary]')) summary.textContent = strings.unavailable;
@@ -79,5 +84,9 @@
  }
  document.querySelector('[data-weather-open]')?.addEventListener('click', () => { weatherDialog?.showModal(); loadWeather(); });
  document.querySelector('[data-weather-close]')?.addEventListener('click', () => weatherDialog.close());
- if (document.querySelector('[data-weather-summary]')) loadWeather();
+ if (document.querySelector('[data-weather-summary]')) {
+  loadWeather();
+  setInterval(() => { if (document.visibilityState === 'visible') loadWeather(); }, weatherRefreshMs);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') loadWeather(); });
+ }
 })();

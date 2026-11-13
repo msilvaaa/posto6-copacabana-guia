@@ -61,3 +61,7 @@ Página e botão circular Contato removidos em português, inglês e espanhol. A
 ## Controles das páginas internas no padrão da capa
 
 Bandeiras e Home com58px no computador, mesma ordem, alinhamento horizontal, contorno, sombra e efeito de elevação da capa. Anterior/Próximo compactos dentro da arte das páginas principais, em vez de uma linha externa abaixo da imagem. As páginas de instruções usam a região superior livre para preservar o conteúdo; nas seções nativas, navegação e WhatsApp compartilham a área de descrição. Não há mais uma linha exclusiva abaixo do conteúdo para o WhatsApp nas páginas internas. Fotos das páginas principais preenchem a altura disponível quando a janela é mais alta. Links invisíveis duplicados de Home nas instruções removidos.
+
+## Previsão a cada30 minutos
+
+Consulta da previsão programada aos minutos23 e53 de cada hora; a avaliação Airbnb mantém sua consulta a cada6 horas. A janela explica que o horário exibido corresponde à última alteração dos dados da previsão, preservado quando a fonte retorna os mesmos valores. Páginas abertas revalidam o arquivo após30 minutos e ao voltar para a aba se esse período já passou. Só há commit e publicação automática quando dados mudam; falha na fonte preserva a última previsão válida. Execuções programadas dependem da disponibilidade do agendador do GitHub e podem atrasar.

@@ -1,8 +1,9 @@
-name: Update Airbnb rating
+name: Update Airbnb rating and Copacabana forecast
 
 on:
   schedule:
     - cron: '23 */6 * * *'
+    - cron: '23,53 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,9 +25,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Read Airbnb data without discarding the last confirmed rating
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '23 */6 * * *'
         continue-on-error: true
         run: python scripts/sync-airbnb-rating.py
       - name: Read Copacabana forecast without discarding the last confirmed forecast
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '23,53 * * * *'
         continue-on-error: true
         run: python scripts/sync-weather.py
       - name: Rebuild translated pages
