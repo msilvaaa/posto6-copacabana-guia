@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Verify persistent navigation, common sections, forecast, photo return and WhatsApp."""
 import asyncio,json,sys
+from urllib.parse import urlparse, parse_qs
+from site_components import WHATSAPP_MESSAGES
 from pathlib import Path
 from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT.parent/'work/site-experience';OUT.mkdir(parents=True,exist_ok=True)
 BASE='http://127.0.0.1:8000'
 async def main():
- report={'pages':0,'fixed_footer_checks':0,'gallery_returns':0,'forecast_checks':0,'external_tabs':0,'failures':[]}
+ report={'pages':0,'inline_navigation_checks':0,'gallery_returns':0,'forecast_checks':0,'external_tabs':0,'failures':[]}
  paths=sorted({str(p.parent.relative_to(ROOT))+'/' for lang in ['pt','en','es'] for p in (ROOT/lang).rglob('index.html')})
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
@@ -20,19 +22,17 @@ async def main():
    if await page.locator('.site-back,.site-enlarge').count():report['failures'].append(path+': removed page controls still present')
    wa=page.locator('.site-whatsapp')
    props=await wa.evaluate('e=>({circle:getComputedStyle(e).borderRadius,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,footer:!!e.closest("footer,nav,.site-header"),number:e.getAttribute("href")})')
-   if props['w']!=props['h'] or props['circle']!='50%' or props['footer'] or props['number']!='https://wa.me/5521981020150':
+   if props['w']!=props['h'] or props['circle']!='50%' or props['footer'] or urlparse(props['number']).path!='/5521981020150' or parse_qs(urlparse(props['number']).query).get('text')!=[WHATSAPP_MESSAGES[path[:2]]]:
     report['failures'].append(path+': WhatsApp location/shape')
    if await page.locator('.site-frame').count():
     await page.locator('.site-reading').evaluate('e=>e.scrollTop=e.scrollHeight')
     footer=await page.locator('.site-pagination').evaluate('e=>e.getBoundingClientRect().toJSON()')
     wa_rect=await wa.evaluate('e=>e.getBoundingClientRect().toJSON()')
     reading=await page.locator('.site-reading').evaluate('e=>e.getBoundingClientRect().toJSON()')
-    if footer['bottom']>845 or footer['top']<reading['bottom']-.5 or wa_rect['bottom']>reading['bottom']+.5:
-     report['failures'].append(path+': footer overlaps content/contact')
-    before=footer['top'];await page.locator('.site-reading').evaluate('e=>e.scrollTop=0')
-    after=await page.locator('.site-pagination').evaluate('e=>e.getBoundingClientRect().top')
-    if abs(before-after)>.5:report['failures'].append(path+': footer moves on scroll')
-    report['fixed_footer_checks']+=1
+    if not await page.locator('.site-pagination').evaluate('e=>!!e.closest(".site-reading") && !!e.closest(".section-panel,.guide-description-navigation")'):
+     report['failures'].append(path+': navigation outside description')
+    if wa_rect['bottom']>reading['bottom']+.5:report['failures'].append(path+': contact clipped at end of content')
+    report['inline_navigation_checks']+=1
    if await page.evaluate('document.documentElement.scrollWidth>innerWidth'):report['failures'].append(path+': overflow')
    report['pages']+=1
   for lang,apartment,gallery,amenities in [('pt','apartamento','galeria','comodidades'),('en','apartment','gallery','amenities'),('es','apartamento','galeria','comodidades')]:

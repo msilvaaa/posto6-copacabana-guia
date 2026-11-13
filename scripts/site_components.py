@@ -1,5 +1,6 @@
 """Shared navigation and utilities for all internal guide sections."""
 from html import escape
+from urllib.parse import quote
 
 LABELS = {
  'pt': {'home':'Início','back':'Voltar ao guia','previous':'Anterior','next':'Próximo','navigation':'Navegação do guia','zoom':'Ampliar página','close':'Voltar ao guia','native':'Ver tamanho original','fit':'Ajustar à tela','weather':'Previsão de Copacabana','weather_hint':'Ver previsão','whatsapp':'Contato pelo WhatsApp','about':'Sobre o guia','reading':'Conteúdo do guia'},
@@ -8,6 +9,11 @@ LABELS = {
 }
 HOME_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 10.8 12 3l9 7.8v8.3a1.9 1.9 0 0 1-1.9 1.9H4.9A1.9 1.9 0 0 1 3 19.1z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/><path d="M8 20.9v-6.1h8v6.1" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/></svg>'
 WHATSAPP = 'https://wa.me/5521981020150'
+WHATSAPP_MESSAGES = {
+ 'pt': 'Olá, eu gostaria de saber a disponibilidade do apartamento em Copacabana, para aluguel por temporada.',
+ 'en': 'Hello, I would like to check the availability of the apartment in Copacabana for a vacation rental.',
+ 'es': 'Hola, me gustaría consultar la disponibilidad del apartamento en Copacabana para un alquiler vacacional.',
+}
 
 
 def e(value):
@@ -44,7 +50,7 @@ def utilities(lang):
 
 def whatsapp(lang):
  label=LABELS[lang]['whatsapp']
- return (f'<div class="site-contact-corner"><a class="site-whatsapp" aria-label="{label}" title="{label}" href="{WHATSAPP}" target="_blank" rel="noopener noreferrer">'
+ return (f'<div class="site-contact-corner"><a class="site-whatsapp" aria-label="{label}" title="{label}" href="{WHATSAPP}?text={quote(WHATSAPP_MESSAGES[lang], safe="")}" target="_blank" rel="noopener noreferrer">'
  '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 3.5A11.2 11.2 0 0 0 3 17L1.5 22.5 7 21a11.2 11.2 0 0 0 13.5-17.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 6.5c-.5 0-1.5 1-1.5 2.5 0 3 4 7 7 7 1.5 0 2.5-1 2.5-1.5l-2.5-1.5-1 1c-1.5-.5-3.5-2.5-4-4l1-1Z" fill="currentColor"/></svg></a></div>')
 
 

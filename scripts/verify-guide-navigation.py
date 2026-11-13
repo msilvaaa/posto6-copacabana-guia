@@ -28,13 +28,14 @@ async def main():
                 path = route(item)
                 response = await page.goto(BASE + path, wait_until='load')
                 geometry = await page.evaluate('''()=>{
-                  const image=document.querySelector('.site-reading').getBoundingClientRect();
+                  const image=document.querySelector('.guide-canvas,.section-title').getBoundingClientRect();
                   const footer=document.querySelector('.guide-pagination').getBoundingClientRect();
                   const buttons=[...document.querySelectorAll('.guide-pagination a')].map(e=>e.getBoundingClientRect());
                   const controlBounds=buttons.length?[Math.min(...buttons.map(r=>r.left)),Math.max(...buttons.map(r=>r.right))]:null;
                   return {
                     below:footer.top>=image.bottom-.5 && buttons.every(r=>r.top>=image.bottom),
-                    centered:!controlBounds||Math.abs((controlBounds[0]+controlBounds[1])/2-(image.left+image.width/2))<1,
+                    inline:!!document.querySelector(".site-reading .guide-pagination"),
+                    centered:!controlBounds||Math.abs((controlBounds[0]+controlBounds[1])/2-(footer.left+footer.width/2))<1,
                     readable:buttons.every(r=>r.height>=44),
                     overflow:document.documentElement.scrollWidth>innerWidth,
                     loaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),
@@ -43,7 +44,7 @@ async def main():
                     flags:document.querySelectorAll('.guide-flag').length
                   };
                 }''')
-                if (response.status != 200 or not all(geometry[k] for k in ['below', 'centered', 'readable', 'loaded'])
+                if (response.status != 200 or not all(geometry[k] for k in ['below', 'inline', 'centered', 'readable', 'loaded'])
                         or geometry['overflow'] or geometry['legacy'] or geometry['home'] != 1 or geometry['flags'] != 3):
                     report['failures'].append({'path': path, 'width': width, 'geometry': geometry, 'http': response.status})
                 for selector, href in [('.guide-previous', item['previous']), ('.guide-next', item['next'])]:

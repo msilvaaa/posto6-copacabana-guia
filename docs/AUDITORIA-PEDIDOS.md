@@ -27,3 +27,13 @@ A conferência pública compara as páginas e recursos publicados com os arquivo
 ## Ajuste posterior solicitado
 
 Temperatura e previsão restritas às três capas, com fundo transparente. As capas exibem o símbolo de Wi-Fi junto ao texto de alta velocidade. Botões de página “Voltar ao guia” e “Ampliar página” removidos das páginas internas; Home, bandeiras e Anterior/Próximo preservados. O retorno do visualizador de fotos permanece disponível ao abrir uma foto. Este ajuste substitui os itens anteriores sobre tempo nas páginas internas e botão separado de retorno.
+
+## Navegação dentro do conteúdo e mensagem do WhatsApp
+
+Por novo pedido, Anterior/Próximo deixam de ocupar uma linha fixa fora da leitura. Nas seções nativas ficam ao final da descrição; nas artes antigas ficam junto ao fim da coluna de descrição, com largura total em telas pequenas para manter a legibilidade. O guia passa a usar toda a altura disponível, sem faixa inferior reservada. Esse comportamento substitui a navegação fixa dos itens anteriores.
+
+WhatsApp abre uma conversa com texto sugerido, sem envio automático:
+
+- Português: Olá, eu gostaria de saber a disponibilidade do apartamento em Copacabana, para aluguel por temporada.
+- Inglês: Hello, I would like to check the availability of the apartment in Copacabana for a vacation rental.
+- Espanhol: Hola, me gustaría consultar la disponibilidad del apartamento en Copacabana para un alquiler vacacional.

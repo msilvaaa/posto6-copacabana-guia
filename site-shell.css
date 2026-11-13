@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 html,body { margin: 0; padding: 0; font-family: Arial,Helvetica,sans-serif; color: #111; background: #f3f1ed; }
 body.site-page { height: 100vh; height: 100dvh; overflow: hidden; }
-.site-frame { display: grid; grid-template-rows: minmax(0,1fr) auto; width: 100%; max-width: 1664px; height: 100%; margin: auto; }
+.site-frame { display: grid; grid-template-rows: minmax(0,1fr); width: 100%; max-width: 1664px; height: 100%; margin: auto; }
 .site-controls { position: relative; height: 0; max-width: 100%; margin: 0 auto; z-index: 3; }
 .site-controls .site-toolbar { position: absolute; top: 8px; right: 12px; }
 .site-controls .site-back { position: absolute; top: 8px; left: 12px; }
@@ -91,3 +91,10 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
  .home-page>.site-utilities .site-weather small { margin: 0; font-size: 9px; white-space: nowrap; }
  .guide-information .site-controls .site-toolbar { right: 6px; }
 }
+
+.guide-page-content { margin: 0 auto; }
+.guide-description-navigation { width: 30.6%; margin-left: auto; padding: 8px; }
+.guide-detail .guide-description-navigation { width: 100%; }
+.section-panel .site-pagination { width: 100%; max-width: 100%; gap: 12px; margin-top: 24px; }
+.section-panel .site-pagination a { min-width: 0; flex: 1; padding: 12px 10px; }
+@media(max-width:1100px) { .guide-description-navigation { width: 100%; } }
