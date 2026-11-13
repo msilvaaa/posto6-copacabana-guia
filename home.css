@@ -101,3 +101,5 @@ html[lang="en"] .home-cover-copy h1 { font-size: clamp(24px,3.5vw,56px); }
 
 body.home-page { background: #f8f6f2; }
 .home-page .page-stage>.site-contact-corner { position: absolute; right: 16px; bottom: 16px; width: auto; margin: 0; padding: 0; z-index: 3; }
+
+@media(max-width:700px) { .home-cover-nav { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); column-gap: 8px; } .home-cover-nav a { width: max-content; } }

@@ -27,7 +27,7 @@ def e(value):return escape(str(value),quote=True)
 
 
 def navigation(lang):
- return ''.join(f'<a href="{e(n["href"])}"'+(' aria-current="page"' if i==0 else '')+f'>{e(n["label"])}</a>' for i,n in enumerate(content[lang]['nav']))
+ return ''.join(f'<a href="{e(n["href"])}"'+(' aria-current="page"' if i==0 else '')+f'>{e(n["label"])}</a>' for i,n in enumerate(content[lang]['cover_nav']))
 
 
 def cover_flags(lang):

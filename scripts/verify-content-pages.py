@@ -40,7 +40,7 @@ async def main():
                     report['pages'] += 1
         await page.set_viewport_size({'width': 1440, 'height': 1000})
         for lang in content:
-            for index, link in enumerate(content[lang]['nav']):
+            for index, link in enumerate(content[lang]['cover_nav']):
                 await page.goto(f'http://127.0.0.1:8000/{lang}/')
                 async with page.expect_navigation() as navigation:
                     await page.locator('.home-cover-nav a').nth(index).click()
