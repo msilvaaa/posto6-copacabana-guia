@@ -37,3 +37,7 @@ WhatsApp abre uma conversa com texto sugerido, sem envio automático:
 - Português: Olá, eu gostaria de saber a disponibilidade do apartamento em Copacabana, para aluguel por temporada.
 - Inglês: Hello, I would like to check the availability of the apartment in Copacabana for a vacation rental.
 - Espanhol: Hola, me gustaría consultar la disponibilidad del apartamento en Copacabana para un alquiler vacacional.
+
+## Ajuste da composição da capa
+
+Símbolo de pessoa caminhando no primeiro destaque, com legenda “A poucos passos da praia de Copacabana” e traduções correspondentes. Botão de reserva reduzido de372 para280px de largura mínima no computador e de280 para230px no celular. Título em uma única linha, sem quebra inserida, com descrição imediatamente abaixo e tamanhos ajustados por idioma e resolução.
