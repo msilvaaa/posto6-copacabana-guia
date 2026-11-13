@@ -41,3 +41,7 @@ WhatsApp abre uma conversa com texto sugerido, sem envio automático:
 ## Ajuste da composição da capa
 
 Símbolo de pessoa caminhando no primeiro destaque, com legenda “A poucos passos da praia de Copacabana” e traduções correspondentes. Botão de reserva reduzido de372 para280px de largura mínima no computador e de280 para230px no celular. Título em uma única linha, sem quebra inserida, com descrição imediatamente abaixo e tamanhos ajustados por idioma e resolução.
+
+## Título acima da estátua e fim da capa
+
+Título elevado, reduzindo o intervalo abaixo da marca e ajustando a posição superior. Símbolo de cama junto a Apartamento completo. WhatsApp incorporado ao canto inferior da própria capa, eliminando sua linha separada; no computador a capa preenche a altura da janela para evitar sobra inferior. Próxima foi deslocado lateralmente para não colidir com WhatsApp. Conferência visual em320,390,1440,1920px: fim da página coincide com a capa, WhatsApp dentro dela e sem colisão com Próxima.
