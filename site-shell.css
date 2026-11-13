@@ -134,3 +134,7 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
 .site-round.guide-home { border: 1px solid #ffffff2e; }
 .site-round:active { transform: translateY(-1px) scale(.985); }
 @media(min-width:1101px) { .site-round svg { width: 26px; height: 26px; } }
+
+.weather-dialog .dialog-bar { flex-wrap: nowrap; gap: 8px; }
+.weather-dialog .dialog-bar h2 { min-width: 0; }
+.weather-dialog [data-weather-close] { flex: 0 0 auto; min-height: 28px; padding: 5px 8px; border-radius: 7px; font-size: 11px; line-height: 16px; white-space: nowrap; }
