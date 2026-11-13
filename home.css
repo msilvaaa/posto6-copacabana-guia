@@ -1,0 +1,96 @@
+/* Shared cover for PT, EN and ES. Detail pages continue to use style.css. */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-family: Arial, Helvetica, sans-serif; }
+.page-shell { display: flex; justify-content: center; width: 100%; }
+.page-stage { position: relative; width: 100%; max-width: 1664px; aspect-ratio: 1537 / 864; background: #f8f6f2; }
+.page-stage::after { content: ""; position: absolute; inset: 0 0 0 72.1%; box-shadow: -15px 0 34px #00000014; pointer-events: none; }
+.home-cover-hero { position: absolute; inset: 0; pointer-events: none; }
+.home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff1a,transparent 42%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.jpg'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
+.home-cover-copy { position: absolute; left: 4.7%; top: 22%; width: 42%; }
+.home-cover-brand { position: relative; left: clamp(-72px,-4.3vw,-45px); top: clamp(-135px,-8vw,-75px); display: flex; align-items: flex-start; gap: 10px; width: max-content; margin: 0 0 9%; text-transform: uppercase; }
+.home-cover-logo-mark { margin-top: 6px; font: 58px/.62 Georgia,"Times New Roman",serif; letter-spacing: -.14em; transform: rotate(-4deg); color: #161616; }
+.home-cover-logo-text { display: flex; flex-direction: column; }
+.home-cover-logo-text strong { font: 700 clamp(24px,2.35vw,38px)/.9 Georgia,"Times New Roman",serif; letter-spacing: -.04em; }
+.home-cover-logo-text span { margin-top: 7px; font-size: clamp(9px,.8vw,13px); line-height: 1; letter-spacing: .42em; }
+.home-cover-logo-text small { margin-top: 7px; font-size: clamp(7px,.58vw,10px); line-height: 1; letter-spacing: .22em; }
+.home-cover-copy h1 { margin: 0; font: 600 clamp(48px,5.6vw,92px)/.88 Georgia,"Times New Roman",serif; letter-spacing: -.05em; text-shadow: 0 1px 1px #ffffff47; }
+.home-cover-subtitle { margin: 2.5% 0 0; max-width: 86%; font-size: clamp(16px,1.55vw,24px); line-height: 1.25; letter-spacing: -.015em; font-weight: 500; color: #151515; }
+.home-cover-cta { display: inline-flex; align-items: center; justify-content: center; gap: 18px; margin-top: 4.2%; min-width: 372px; height: 62px; padding: 0 24px; border-radius: 999px; background: #0c3b34; color: white; text-decoration: none; font-size: 15px; font-weight: 700; line-height: 1; letter-spacing: .12em; box-shadow: 0 10px 24px #0003; pointer-events: auto; transition: transform .18s ease,box-shadow .18s ease,background .18s ease; }
+.home-cover-cta span { font-size: 28px; line-height: 1; font-weight: 300; margin-top: -1px; }
+.home-cover-cta:hover, .home-cover-cta:focus-visible { transform: translateY(-2px); background: #0a302b; box-shadow: 0 14px 30px #0000003d; }
+.home-cover-nav { position: absolute; left: 25.8%; top: 7.4%; width: 43.4%; display: flex; align-items: center; justify-content: space-between; gap: 18px; pointer-events: auto; }
+.home-cover-nav a { position: relative; color: #111; text-decoration: none; white-space: nowrap; font: 500 14px/1 Arial,Helvetica,sans-serif; letter-spacing: .01em; padding: 0 0 11px; }
+.home-cover-nav a:first-child::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #111; }
+.home-cover-nav a:hover { opacity: .72; }
+.home-cover-stats { position: absolute; left: 4.7%; right: 28.6%; bottom: 3.4%; display: flex; align-items: center; justify-content: space-between; color: white; }
+.home-cover-stats > div { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 2.3%; }
+.home-cover-stats > div + div { border-left: 1px solid #ffffff73; }
+.home-cover-stats b { flex: 0 0 auto; font-size: 28px; line-height: 1; font-weight: 600; }
+.home-cover-stats span { font-size: clamp(10px,.78vw,14px); line-height: 1.2; letter-spacing: .01em; text-shadow: 0 2px 8px #00000073; }
+.main-html-topbar { position: absolute; left: calc(72.93% - 20px); top: 1.7%; width: 27.65%; height: 68px; z-index: 2; }
+.main-html-topbar a { position: absolute; top: 0; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; text-decoration: none; box-shadow: 0 0 0 3px white,0 8px 20px #0003; transition: transform .18s ease,box-shadow .18s ease; }
+.detail-modern-home { left: 16%; background: linear-gradient(#2a2a2c,#111112); color: white; border: 1px solid #ffffff2e; }
+.detail-modern-home::before { content: ""; position: absolute; inset: -5px; border: 1px solid #00000014; border-radius: 50%; box-shadow: 0 8px 20px #0000001a; }
+.detail-modern-home svg { width: 26px; height: 26px; }
+.detail-modern-flag { background: white; }
+.detail-modern-flag:nth-child(2) { left: 39%; }
+.detail-modern-flag:nth-child(3) { left: 59%; }
+.detail-modern-flag:nth-child(4) { left: 79%; }
+.detail-modern-flag img { display: block; width: 58px; height: 58px; object-fit: contain; border-radius: 50%; }
+.main-html-topbar a:hover, .main-html-topbar a:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px #00000047; }
+.main-html-topbar a:active { transform: translateY(-1px) scale(.985); }
+.home-menu-rule { position: absolute; left: 74.7%; top: 14.1%; width: 22.7%; height: 1px; background: #23232338; }
+.cover-menu { position: absolute; inset: 0; pointer-events: none; }
+.cover-html-button { position: absolute; display: flex; align-items: center; justify-content: center; width: clamp(66px,5vw,84px); height: clamp(66px,5vw,84px); border-radius: 50%; background: white; box-shadow: 0 0 0 3px white,0 8px 20px #0003; transform: translate(-50%,-50%); text-decoration: none; pointer-events: auto; transition: transform .18s ease,box-shadow .18s ease; }
+/* The supplied photos contain a gold rim. Show only the inner photo; the white rim matches the flags. */
+.cover-html-button img { display: block; width: 100%; height: 100%; border-radius: 50%; clip-path: circle(40%); transform: scale(1.25); }
+.cover-html-button::after { content: attr(aria-label); position: absolute; left: 50%; top: calc(100% + 9px); transform: translateX(-50%); color: #171717; font: 400 clamp(10px,.95vw,13px)/1.05 Arial,Helvetica,sans-serif; letter-spacing: -.02em; white-space: nowrap; text-align: center; }
+.cover-html-button:hover, .cover-html-button:focus-visible { transform: translate(-50%,calc(-50% - 3px)); box-shadow: 0 12px 28px #00000047; }
+.cover-html-button:active { transform: translate(-50%,calc(-50% - 1px)) scale(.985); }
+.cover-html-button[data-column="1"] { left: 77.35%; }
+.cover-html-button[data-column="2"] { left: 84.95%; }
+.cover-html-button[data-column="3"] { left: 92.55%; }
+.cover-html-button[data-row="1"] { top: 21.79783%; }
+.cover-html-button[data-row="2"] { top: 35.836845%; }
+.cover-html-button[data-row="3"] { top: 51.393755%; }
+.cover-html-button[data-row="4"] { top: 65.971355%; }
+.cover-html-button[data-row="5"] { top: 80.56367%; }
+.cover-next { position: absolute; right: 4.4%; bottom: 3.3%; display: flex; align-items: center; justify-content: center; gap: 4px; width: 84px; height: 27px; border-radius: 12px; background: linear-gradient(#2a2a2c,#111112); color: white; border: 1px solid #ffffff2e; box-shadow: 0 0 0 5px white,0 8px 18px #0000003d; font: 700 10px/1 Arial,Helvetica,sans-serif; text-decoration: none; }
+a:focus-visible { outline: 2px solid #0078ff; outline-offset: 5px; }
+/* Keep the approved desktop composition; let the same content flow on smaller screens. */
+@media (max-width: 1100px) {
+  .page-stage { aspect-ratio: auto; }
+  .page-stage::after, .home-menu-rule { display: none; }
+  .home-cover-hero { position: relative; padding: 156px 6% 30px; }
+  .home-cover-photo { width: 100%; background-image: linear-gradient(90deg,#ffffffb3,transparent 90%),linear-gradient(0deg,#0009,transparent 60%),url('/assets/copacabana-drummond.jpg'); }
+  .home-cover-copy { position: relative; left: auto; top: auto; width: 100%; max-width: 650px; }
+  .home-cover-brand { position: static; margin: 0 0 36px; }
+  .home-cover-logo-mark { font-size: 42px; }
+  .home-cover-copy h1 { font-size: clamp(38px,7.1vw,70px); min-height: 2.64em; }
+  .home-cover-subtitle { margin-top: 18px; max-width: 520px; min-height: 3.75em; font-size: 16px; }
+  .home-cover-cta { margin-top: 24px; min-width: min(100%,280px); max-width: 100%; height: 48px; font-size: 12px; }
+  .home-cover-nav { left: 6%; top: 86px; width: 88%; gap: 12px 16px; flex-wrap: wrap; padding-bottom: 6px; }
+  .home-cover-nav a { font-size: 11px; padding-bottom: 8px; }
+  .home-cover-stats { position: relative; left: auto; right: auto; bottom: auto; margin-top: 48px; flex-wrap: wrap; gap: 18px 0; }
+  .home-cover-stats > div { width: 50%; min-height: 54px; gap: 8px; padding: 0 10px; }
+  .home-cover-stats > div:nth-child(3) { border-left: 0; }
+  .home-cover-stats b { font-size: 22px; }
+  .home-cover-stats span { font-size: 11px; }
+  .main-html-topbar { display: flex; align-items: center; justify-content: flex-end; gap: 14px; top: 16px; left: 6%; width: 88%; height: 48px; }
+  .main-html-topbar a { position: relative; top: auto; left: auto; flex: 0 0 44px; width: 44px; height: 44px; }
+  .main-html-topbar .detail-modern-flag { left: auto; }
+  .detail-modern-flag img { width: 44px; height: 44px; }
+  .detail-modern-home svg { width: 22px; height: 22px; }
+  .cover-menu { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 44px 10px; padding: 38px 14px 50px; pointer-events: auto; }
+  .cover-menu .cover-html-button { position: relative; left: auto; top: auto; width: clamp(60px,12vw,84px); height: clamp(60px,12vw,84px); margin: 0 auto; transform: none; }
+  .cover-html-button::after { top: calc(100% + 10px); font-size: clamp(9px,2.4vw,12px); }
+  .cover-menu .cover-html-button:hover, .cover-menu .cover-html-button:focus-visible { transform: translateY(-3px); }
+  .cover-menu .cover-html-button:active { transform: translateY(-1px) scale(.985); }
+  .cover-next { position: relative; right: auto; bottom: auto; margin: 8px 24px 24px auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-html-button, .main-html-topbar a, .home-cover-cta { transition: none; }
+}
+
+.image-credits { margin: 16px auto; text-align: center; font-size: 12px; }
+.image-credits a { color: #555; text-underline-offset: 3px; }

@@ -1,0 +1,374 @@
+{
+  "pt": {
+    "title": "Posto 6 Copacabana — PT — página 1",
+    "description": "Guia online Posto 6 Copacabana",
+    "menu_label": "Guia do hóspede",
+    "next_label": "PRÓXIMA",
+    "buttons": [
+      {
+        "key": "bem-vindos",
+        "label": "BEM-VINDOS",
+        "href": "/pt/bem-vindos/"
+      },
+      {
+        "key": "checkin",
+        "label": "CHECK-IN",
+        "href": "/pt/checkin/"
+      },
+      {
+        "key": "localizacao",
+        "label": "LOCALIZAÇÃO",
+        "href": "/pt/localizacao/"
+      },
+      {
+        "key": "wifi",
+        "label": "WIFI",
+        "href": "/pt/wifi/"
+      },
+      {
+        "key": "regras",
+        "label": "REGRAS",
+        "href": "/pt/regras/"
+      },
+      {
+        "key": "transportes",
+        "label": "TRANSPORTES",
+        "href": "/pt/transportes/"
+      },
+      {
+        "key": "comodidades",
+        "label": "COMODIDADES",
+        "href": "/pt/comodidades/"
+      },
+      {
+        "key": "atividades",
+        "label": "ATIVIDADES",
+        "href": "/pt/atividades/"
+      },
+      {
+        "key": "informacoes",
+        "label": "INFORMAÇÕES",
+        "href": "/pt/informacoes/"
+      },
+      {
+        "key": "bares",
+        "label": "BARES",
+        "href": "/pt/bares/"
+      },
+      {
+        "key": "restaurantes",
+        "label": "RESTAURANTES",
+        "href": "/pt/restaurantes/"
+      },
+      {
+        "key": "estabelecimentos",
+        "label": "SHOPPING",
+        "href": "/pt/estabelecimentos/"
+      },
+      {
+        "key": "emergencia",
+        "label": "EMERGÊNCIA",
+        "href": "/pt/emergencia/"
+      },
+      {
+        "key": "checkout",
+        "label": "CHECK-OUT",
+        "href": "/pt/checkout/"
+      },
+      {
+        "key": "contato",
+        "label": "CONTATO",
+        "href": "/pt/contato/"
+      }
+    ],
+    "hero_label": "Apresentação do Posto 6 Copacabana",
+    "tagline": "SEU APARTAMENTO NO RIO",
+    "heading": "Viva o melhor<br/>de Copacabana",
+    "subtitle": "Conforto, localização privilegiada e uma experiência inesquecível no Rio de Janeiro.",
+    "cta": "RESERVE AGORA",
+    "nav_label": "Navegação principal",
+    "nav": [
+      {
+        "label": "INÍCIO",
+        "href": "/pt/"
+      },
+      {
+        "label": "APARTAMENTO",
+        "href": "/pt/apartamento/"
+      },
+      {
+        "label": "COMODIDADES",
+        "href": "/pt/comodidades/"
+      },
+      {
+        "label": "LOCALIZAÇÃO",
+        "href": "/pt/localizacao/"
+      },
+      {
+        "label": "GALERIA",
+        "href": "/pt/galeria/"
+      },
+      {
+        "label": "CONTATO",
+        "href": "/pt/contato/"
+      }
+    ],
+    "stats_label": "Destaques",
+    "stats": [
+      "A poucos passos<br />da praia (Posto 6)",
+      "Apartamento<br />completo",
+      "Wi‑Fi<br />de alta velocidade"
+    ],
+    "home_label": "Início",
+    "credits_label": "Créditos da fotografia",
+    "rating_template": "{rating} no Airbnb<br />{review_count} avaliações"
+  },
+  "en": {
+    "title": "Posto 6 Copacabana — EN — page 1",
+    "description": "Posto 6 Copacabana online guest guide",
+    "menu_label": "Guest guide",
+    "next_label": "NEXT",
+    "buttons": [
+      {
+        "key": "bem-vindos",
+        "label": "WELCOME",
+        "href": "/en/welcome/"
+      },
+      {
+        "key": "checkin",
+        "label": "CHECK-IN",
+        "href": "/en/check-in/"
+      },
+      {
+        "key": "localizacao",
+        "label": "LOCATION",
+        "href": "/en/location/"
+      },
+      {
+        "key": "wifi",
+        "label": "WIFI",
+        "href": "/en/wifi/"
+      },
+      {
+        "key": "regras",
+        "label": "RULES",
+        "href": "/en/rules/"
+      },
+      {
+        "key": "transportes",
+        "label": "TRANSPORTATION",
+        "href": "/en/transportation/"
+      },
+      {
+        "key": "comodidades",
+        "label": "AMENITIES",
+        "href": "/en/amenities/"
+      },
+      {
+        "key": "atividades",
+        "label": "ACTIVITIES",
+        "href": "/en/activities/"
+      },
+      {
+        "key": "informacoes",
+        "label": "INFORMATION",
+        "href": "/en/information/"
+      },
+      {
+        "key": "bares",
+        "label": "BARS",
+        "href": "/en/bars/"
+      },
+      {
+        "key": "restaurantes",
+        "label": "RESTAURANTS",
+        "href": "/en/restaurants/"
+      },
+      {
+        "key": "estabelecimentos",
+        "label": "SHOPPING",
+        "href": "/en/establishments/"
+      },
+      {
+        "key": "emergencia",
+        "label": "EMERGENCY",
+        "href": "/en/emergency/"
+      },
+      {
+        "key": "checkout",
+        "label": "CHECK-OUT",
+        "href": "/en/check-out/"
+      },
+      {
+        "key": "contato",
+        "label": "CONTACT",
+        "href": "/en/contact/"
+      }
+    ],
+    "hero_label": "Posto 6 Copacabana presentation",
+    "tagline": "YOUR APARTMENT IN RIO",
+    "heading": "Experience the best<br/>of Copacabana",
+    "subtitle": "Comfort, a privileged location and an unforgettable experience in Rio de Janeiro.",
+    "cta": "BOOK NOW",
+    "nav_label": "Main navigation",
+    "nav": [
+      {
+        "label": "HOME",
+        "href": "/en/"
+      },
+      {
+        "label": "APARTMENT",
+        "href": "/en/apartment/"
+      },
+      {
+        "label": "AMENITIES",
+        "href": "/en/amenities/"
+      },
+      {
+        "label": "LOCATION",
+        "href": "/en/location/"
+      },
+      {
+        "label": "GALLERY",
+        "href": "/en/gallery/"
+      },
+      {
+        "label": "CONTACT",
+        "href": "/en/contact/"
+      }
+    ],
+    "stats_label": "Highlights",
+    "stats": [
+      "A few steps<br />from Posto 6 beach",
+      "Fully equipped<br />apartment",
+      "High-speed<br />Wi‑Fi"
+    ],
+    "home_label": "Home",
+    "credits_label": "Photo credits",
+    "rating_template": "{rating} on Airbnb<br />{review_count} reviews"
+  },
+  "es": {
+    "title": "Posto 6 Copacabana — ES — página 1",
+    "description": "Guía online Posto 6 Copacabana",
+    "menu_label": "Guía del huésped",
+    "next_label": "SIGUIENTE",
+    "buttons": [
+      {
+        "key": "bem-vindos",
+        "label": "BIENVENIDO",
+        "href": "/es/bienvenido/"
+      },
+      {
+        "key": "checkin",
+        "label": "CHECK-IN",
+        "href": "/es/check-in/"
+      },
+      {
+        "key": "localizacao",
+        "label": "UBICACIÓN",
+        "href": "/es/ubicacion/"
+      },
+      {
+        "key": "wifi",
+        "label": "WIFI",
+        "href": "/es/wifi/"
+      },
+      {
+        "key": "regras",
+        "label": "NORMAS",
+        "href": "/es/normas/"
+      },
+      {
+        "key": "transportes",
+        "label": "TRANSPORTE",
+        "href": "/es/transporte/"
+      },
+      {
+        "key": "comodidades",
+        "label": "COMODIDADES",
+        "href": "/es/comodidades/"
+      },
+      {
+        "key": "atividades",
+        "label": "ACTIVIDADES",
+        "href": "/es/actividades/"
+      },
+      {
+        "key": "informacoes",
+        "label": "INFORMACIÓN",
+        "href": "/es/informacion/"
+      },
+      {
+        "key": "bares",
+        "label": "BARES",
+        "href": "/es/verja/"
+      },
+      {
+        "key": "restaurantes",
+        "label": "RESTAURANTES",
+        "href": "/es/restaurantes/"
+      },
+      {
+        "key": "estabelecimentos",
+        "label": "SHOPPING",
+        "href": "/es/establecimientos/"
+      },
+      {
+        "key": "emergencia",
+        "label": "EMERGENCIA",
+        "href": "/es/emergencia/"
+      },
+      {
+        "key": "checkout",
+        "label": "CHECK-OUT",
+        "href": "/es/checkout/"
+      },
+      {
+        "key": "contato",
+        "label": "CONTACTO",
+        "href": "/es/contacto/"
+      }
+    ],
+    "hero_label": "Presentación de Posto 6 Copacabana",
+    "tagline": "TU APARTAMENTO EN RÍO",
+    "heading": "Vive lo mejor<br/>de Copacabana",
+    "subtitle": "Comodidad, ubicación privilegiada y una experiencia inolvidable en Río de Janeiro.",
+    "cta": "RESERVA AHORA",
+    "nav_label": "Navegación principal",
+    "nav": [
+      {
+        "label": "INICIO",
+        "href": "/es/"
+      },
+      {
+        "label": "APARTAMENTO",
+        "href": "/es/apartamento/"
+      },
+      {
+        "label": "COMODIDADES",
+        "href": "/es/comodidades/"
+      },
+      {
+        "label": "UBICACIÓN",
+        "href": "/es/ubicacion/"
+      },
+      {
+        "label": "GALERÍA",
+        "href": "/es/galeria/"
+      },
+      {
+        "label": "CONTACTO",
+        "href": "/es/contacto/"
+      }
+    ],
+    "stats_label": "Destacados",
+    "stats": [
+      "A pocos pasos<br />de la playa (Posto 6)",
+      "Apartamento<br />completo",
+      "Wi‑Fi<br />de alta velocidad"
+    ],
+    "home_label": "Inicio",
+    "credits_label": "Créditos de la fotografía",
+    "rating_template": "{rating} en Airbnb<br />{review_count} reseñas"
+  }
+}

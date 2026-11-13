@@ -1,0 +1,424 @@
+{
+  "verified_at": "2026-11-13T14:52:46.481243+00:00",
+  "viewports": [
+    {
+      "language": "pt",
+      "width": 320,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 320,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 320,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 390,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 390,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 768,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 768,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 768,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 1100,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 1100,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 1100,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 1280,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 1280,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 1280,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 1440,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 1440,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 1664,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 1664,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 1664,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "pt",
+      "width": 1920,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true
+      }
+    },
+    {
+      "language": "en",
+      "width": 1920,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    },
+    {
+      "language": "es",
+      "width": 1920,
+      "checks": {
+        "http": true,
+        "images": true,
+        "15_buttons": true,
+        "no_horizontal_scroll": true,
+        "controls_in_viewport": true,
+        "requests": true,
+        "background_photo": true,
+        "same_button_geometry": true,
+        "same_toolbar_geometry": true,
+        "same_images": true
+      }
+    }
+  ],
+  "links": {
+    "/pt/": 200,
+    "/es/": 200,
+    "/en/": 200,
+    "/pt/apartamento/": 200,
+    "/pt/comodidades/": 200,
+    "/pt/localizacao/": 200,
+    "/pt/galeria/": 200,
+    "/pt/contato/": 200,
+    "/pt/bem-vindos/": 200,
+    "/pt/checkin/": 200,
+    "/pt/wifi/": 200,
+    "/pt/regras/": 200,
+    "/pt/transportes/": 200,
+    "/pt/atividades/": 200,
+    "/pt/informacoes/": 200,
+    "/pt/bares/": 200,
+    "/pt/restaurantes/": 200,
+    "/pt/estabelecimentos/": 200,
+    "/pt/emergencia/": 200,
+    "/pt/checkout/": 200,
+    "/assets/PHOTO-CREDITS.txt": 200,
+    "/en/apartment/": 200,
+    "/en/amenities/": 200,
+    "/en/location/": 200,
+    "/en/gallery/": 200,
+    "/en/contact/": 200,
+    "/en/welcome/": 200,
+    "/en/check-in/": 200,
+    "/en/wifi/": 200,
+    "/en/rules/": 200,
+    "/en/transportation/": 200,
+    "/en/activities/": 200,
+    "/en/information/": 200,
+    "/en/bars/": 200,
+    "/en/restaurants/": 200,
+    "/en/establishments/": 200,
+    "/en/emergency/": 200,
+    "/en/check-out/": 200,
+    "/es/apartamento/": 200,
+    "/es/comodidades/": 200,
+    "/es/ubicacion/": 200,
+    "/es/galeria/": 200,
+    "/es/contacto/": 200,
+    "/es/bienvenido/": 200,
+    "/es/check-in/": 200,
+    "/es/wifi/": 200,
+    "/es/normas/": 200,
+    "/es/transporte/": 200,
+    "/es/actividades/": 200,
+    "/es/informacion/": 200,
+    "/es/verja/": 200,
+    "/es/restaurantes/": 200,
+    "/es/establecimientos/": 200,
+    "/es/emergencia/": 200,
+    "/es/checkout/": 200
+  },
+  "failures": [],
+  "unique_icons": 15
+}

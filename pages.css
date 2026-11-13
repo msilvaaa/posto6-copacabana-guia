@@ -1,0 +1,34 @@
+.content-page { background: #f8f6f2; }
+.site-header, .content-main, .site-footer { max-width: 1140px; margin: auto; padding: 24px; }
+.site-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.site-brand { font: 700 32px/1 Georgia, serif; color: #111; text-decoration: none; }
+.site-brand span { display: block; margin-top: 8px; font: 11px/1 Arial, sans-serif; letter-spacing: .3em; }
+.content-page .main-html-topbar { display: flex; position: static; width: auto; height: auto; gap: 16px; }
+.content-page .main-html-topbar a { position: relative; top: auto; left: auto; flex: 0 0 44px; width: 44px; height: 44px; }
+.content-page .detail-modern-flag img { width: 44px; height: 44px; }
+.content-nav { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 28px; border-bottom: 1px solid #ddd; }
+.content-nav a { display: flex; align-items: center; min-height: 44px; padding: 8px 0; color: #111; text-decoration: none; font-size: 12px; }
+.content-nav a[aria-current="page"] { border-bottom: 2px solid #111; }
+.content-main { padding-top: 12px; }
+.content-main h1 { font: 600 clamp(32px,5vw,52px)/1.1 Georgia, serif; margin: 16px 0 24px; }
+.content-main p { line-height: 1.65; max-width: 780px; }
+.apartment-hero { display: block; width: 100%; max-height: 600px; object-fit: cover; border-radius: 16px; }
+.content-main h2 { font: 600 28px/1.2 Georgia, serif; margin: 28px 0 12px; }
+.content-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+.content-links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 12px 18px; border: 1px solid #0c3b34; border-radius: 999px; color: #0c3b34; text-decoration: none; }
+.content-links a:first-child { background: #0c3b34; color: white; }
+.listing-rating { color: #222; }
+.photo-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin: 28px 0; }
+.photo-grid figure { margin: 0; }
+.photo-grid a { display: block; border-radius: 12px; }
+.photo-grid img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; border-radius: 12px; }
+.photo-grid figcaption { font-size: 13px; line-height: 1.4; color: #555; margin-top: 8px; }
+.site-footer { border-top: 1px solid #ddd; font-size: 13px; }
+.site-footer a { color: #333; }
+@media (max-width: 600px) {
+  .site-header, .content-main, .site-footer { padding-left: 18px; padding-right: 18px; }
+  .site-heading { align-items: flex-start; }
+  .content-page .main-html-topbar { gap: 12px; }
+  .content-nav { gap: 8px 18px; }
+  .photo-grid { grid-template-columns: 1fr; }
+}

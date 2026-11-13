@@ -1,0 +1,38 @@
+{
+  "pt": {
+    "apartment_title": "O apartamento",
+    "gallery_title": "Galeria de fotos",
+    "intro": "Seu apartamento em Copacabana",
+    "description": "Apartamento em um condomínio residencial, a duas quadras da praia e próximo ao metrô, supermercados, farmácias, Forte de Copacabana, Arpoador e Ipanema.",
+    "gallery_intro": "Conheça os ambientes do apartamento nas fotos do anúncio.",
+    "photo_label": "Foto {number} do apartamento em Copacabana",
+    "view_gallery": "Ver todas as fotos",
+    "view_listing": "Ver anúncio no Airbnb",
+    "amenities_intro": "Consulte os equipamentos e as orientações de uso na página de comodidades.",
+    "site_label": "Guia Posto 6 Copacabana"
+  },
+  "en": {
+    "apartment_title": "The apartment",
+    "gallery_title": "Photo gallery",
+    "intro": "Your apartment in Copacabana",
+    "description": "An apartment in a residential building, two blocks from the beach and close to the metro, supermarkets, pharmacies, Copacabana Fort, Arpoador and Ipanema.",
+    "gallery_intro": "Explore the apartment with photos from the listing.",
+    "photo_label": "Photo {number} of the apartment in Copacabana",
+    "view_gallery": "View all photos",
+    "view_listing": "View listing on Airbnb",
+    "amenities_intro": "See the amenities page for equipment and instructions.",
+    "site_label": "Posto 6 Copacabana guide"
+  },
+  "es": {
+    "apartment_title": "El apartamento",
+    "gallery_title": "Galería de fotos",
+    "intro": "Tu apartamento en Copacabana",
+    "description": "Apartamento en un edificio residencial, a dos cuadras de la playa y cerca del metro, supermercados, farmacias, Fuerte de Copacabana, Arpoador e Ipanema.",
+    "gallery_intro": "Conoce los espacios del apartamento en las fotos del anuncio.",
+    "photo_label": "Foto {number} del apartamento en Copacabana",
+    "view_gallery": "Ver todas las fotos",
+    "view_listing": "Ver anuncio en Airbnb",
+    "amenities_intro": "Consulta los equipos y las instrucciones de uso en la página de comodidades.",
+    "site_label": "Guía Posto 6 Copacabana"
+  }
+}
