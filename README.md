@@ -16,7 +16,7 @@ Os HTML gerados estão versionados: a hospedagem não precisa executar Python. A
 - Galeria: `/pt/galeria/`, `/en/gallery/`, `/es/galeria/`.
 - Comodidades, localização e contato: páginas internas existentes, no idioma correspondente.
 
-As novas páginas de conteúdo usam `pages.css` e o mesmo padrão de Home e bandeiras da capa. A folha legada `style.css` continua atendendo às demais páginas internas.
+As novas páginas de conteúdo usam `pages.css` e o mesmo padrão de Home e bandeiras da capa. As 96 páginas antigas do guia usam `guide.css` e o template `templates/guide-page.html`; `style.css` fica apenas como histórico, sem ser carregado nessas páginas.
 
 Os 15 ícones vêm do sprite aprovado e conservam os mesmos arquivos locais. O recorte circular em CSS oculta o aro dourado incorporado às imagens; o contorno branco, a sombra e o movimento de hover seguem as bandeiras. A foto de Copacabana é local, com autoria e licença em `assets/PHOTO-CREDITS.txt`, acessíveis pelo rodapé fora da capa.
 
@@ -57,3 +57,16 @@ Os testes de navegador cobrem 24 cenários de capa e 24 cenários das novas pág
 ## Publicação
 
 As correções são apresentadas na PR #1, branch `fix/capas-compartilhadas`. A validação local e os previews de revisão não confirmam a publicação de produção no Cloudflare. Após integrar a PR, confira as três capas e os destinos no endereço público, além da primeira execução do workflow de sincronização.
+
+## Navegação das páginas do guia
+
+`data/guide-pages.json` preserva as imagens, dimensões, links do conteúdo e destinos de cada página. Para reconstruir essas páginas:
+
+```sh
+python scripts/build-guide-pages.py
+python scripts/verify-guide-navigation.py
+```
+
+Home e bandeiras ficam em uma barra própria; Anterior/Próximo ficam centralizados após a imagem, sem posicionamento absoluto ou transformação no hover. Os atributos width/height e a proporção do quadro reservam o espaço antes do download da imagem. As regiões que continham controles desenhados na arte são ocultadas por áreas de apresentação delimitadas, sem alterar os arquivos de foto ou cobrir os textos. O bloco Americanas usa a marca vetorial oficial e conserva o destino do mapa.
+
+A verificação percorre as 96 páginas em três larguras, clica em cada destino Anterior/Próximo e segura respostas de imagens para conferir a estabilidade do rodapé durante o carregamento.
