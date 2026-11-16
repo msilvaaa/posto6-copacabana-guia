@@ -1,0 +1,19 @@
+{
+  "-09.jpg": {
+    "src": "/assets/activities/tom-jobim-enhanced.webp",
+    "width": 1536,
+    "height": 1024,
+    "rect": [
+      0,
+      0,
+      1068,
+      864
+    ],
+    "alt": {
+      "pt": "Estátua de Tom Jobim com violão à beira-mar em Ipanema",
+      "en": "Statue of Tom Jobim with a guitar by the sea in Ipanema",
+      "es": "Estatua de Tom Jobim con guitarra junto al mar en Ipanema"
+    },
+    "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16; original generated PNG retained in workspace."
+  }
+}

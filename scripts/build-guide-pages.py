@@ -23,6 +23,7 @@ def build():
  template=Template((ROOT/'templates/guide-page.html').read_text())
  pages=json.loads((ROOT/'data/guide-pages.json').read_text())
  photos=json.loads((ROOT/'data/apartment-photos.json').read_text())
+ photo_upgrades=json.loads((ROOT/'data/guide-photo-upgrades.json').read_text())
  count=0
  for page in pages:
   image=page['image']
@@ -41,6 +42,10 @@ def build():
    if variants:
     srcset=', '.join(f'{v["src"]} {v["width"]}w' for v in variants)
     upgraded=f'<img class="guide-photo-upgrade" src="{photo["src"]}" srcset="{srcset}" sizes="70vw" alt="" aria-hidden="true" width="{photo["width"]}" height="{photo["height"]}"/>'
+  for suffix,photo in photo_upgrades.items():
+   if image['src'].endswith(suffix):
+    style=percentage_rect(photo['rect'],image['width'],image['height'])
+    upgraded=f'<img class="guide-photo-upgrade" src="{e(photo["src"])}" alt="{e(photo["alt"][lang])}" width="{photo["width"]}" height="{photo["height"]}" style="{style};object-position:50% 50%" decoding="async"/>'
   output=template.substitute(lang=lang,title=e(page['title']),description=e(page['description']),kind='guide-'+page['kind']+(' guide-information' if image['src'].endswith('-10.jpg') else ''),back=back_html,toolbar=toolbar(lang,page['languages']),utilities=utilities(lang),whatsapp=whatsapp(lang),heading=f'<h1 class="guide-heading sr-only">{e(page["heading"])}</h1>' if page['heading'] else '',reading_label=labels['reading'],zoom_label=labels['zoom'],src=e(image['src']),alt=e(image['alt']),width=image['width'],height=image['height'],masks=masks,americanas=americanas,photo_upgrade=upgraded,links=links,pagination_label=labels['navigation'],pagination=pagination(lang,page['previous'],page['next']),source_text=page['source_text'],dialogs=dialogs(lang))
   (ROOT/page['path']).write_text('\n'.join(line.rstrip() for line in output.splitlines())+'\n');count+=1
  print(f'Generated {count} original guide sections with persistent navigation.')
