@@ -19,6 +19,9 @@ class TitleArtTests(unittest.TestCase):
                 self.assertGreaterEqual(y,0)
                 self.assertLessEqual(x+w,title['width'])
                 self.assertLessEqual(y+h,title['height'])
+                wx,wy,ww,wh=title['word']
+                self.assertTrue(x<=wx and y<=wy and wx+ww<=x+w and wy+wh<=y+h)
+                self.assertLess(ww*title['scale']+32,w)
                 self.assertGreater(title['scale'],0.5)
                 self.assertLessEqual(title['scale'],0.85)
                 self.assertIn('class="guide-title-art"',(ROOT/page['path']).read_text())

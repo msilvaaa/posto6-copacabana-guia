@@ -35,8 +35,8 @@
 .native-guide .site-frame { max-width: none; }
 
 /* Keep the original guest-guide illustrations and photographic title artwork. */
-.original-heading { border: 0; border-radius: 0; padding: 0; max-width: 395px; margin: 0 auto 24px; }
-.original-heading>.original-art { display: block; width: 100%; height: auto; }
+.original-heading { display: flex; align-items: center; justify-content: center; width: fit-content; max-width: 90%; padding: 7px 14px; border: 2px solid #111; border-radius: 999px; margin: 0 auto 24px; }
+.original-heading>.compact-title-art { display: block; width: auto; height: 34px; max-width: 100%; }
 .native-title-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .native-icon.original-illustration { flex-basis: 76px; width: 76px; height: 76px; border: 0; border-radius: 0; background: transparent; color: #111; }
 .native-icon.original-illustration>svg { display: block; width: 100%; height: 100%; }
@@ -81,5 +81,5 @@
 .native-art-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
 
 /* Reduce the original title and its frame together, keeping their proportions. */
-.original-heading { width: 85%; max-width: 336px; }
+
 .native-chapter-title { font-size: 23px; }

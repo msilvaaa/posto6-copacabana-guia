@@ -10,7 +10,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 37,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      293,
+      334,
+      342,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 338,
+    "blue_left": "#2b7bfa",
+    "blue_right": "#123cb2"
   },
   "/detail-assets/pt-banheiro-1.jpg": {
     "rect": [
@@ -23,7 +33,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      387,
+      340,
+      186,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/pt-cofre-1.jpg": {
     "rect": [
@@ -36,7 +56,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      425,
+      340,
+      109,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 340,
+    "blue_left": "#3284ff",
+    "blue_right": "#0c2da1"
   },
   "/comod-assets/pt-fechadura-1.jpg": {
     "rect": [
@@ -49,7 +79,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 37,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      376,
+      340,
+      213,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/pt-geladeira-1.jpg": {
     "rect": [
@@ -62,7 +102,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      358,
+      350,
+      194,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 352,
+    "blue_left": "#287afa",
+    "blue_right": "#103db0"
   },
   "/comod-assets/pt-lavabo-1.jpg": {
     "rect": [
@@ -75,7 +125,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      387,
+      340,
+      186,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/pt-louca-1.jpg": {
     "rect": [
@@ -88,7 +148,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 45,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      273,
+      336,
+      379,
+      49
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#287afa",
+    "blue_right": "#103db0"
   },
   "/comod-assets/pt-luminaria-1.jpg": {
     "rect": [
@@ -101,7 +171,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.7917
+    "scale": 0.7917,
+    "word": [
+      320,
+      312,
+      261,
+      52
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 337,
+    "blue_left": "#9ec5fd",
+    "blue_right": "#1648c1"
   },
   "/comod-assets/pt-luzquarto-1.jpg": {
     "rect": [
@@ -114,7 +194,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 55,
-    "scale": 0.7091
+    "scale": 0.7091,
+    "word": [
+      317,
+      312,
+      269,
+      62
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2c7fff",
+    "blue_right": "#174bc3"
   },
   "/comod-assets/pt-portao-1.jpg": {
     "rect": [
@@ -127,7 +217,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      331,
+      340,
+      276,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2777f5",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/pt-roupas-1.jpg": {
     "rect": [
@@ -140,7 +240,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      225,
+      341,
+      490,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#287afa",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/pt-sofacama-1.jpg": {
     "rect": [
@@ -153,7 +263,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      366,
+      340,
+      203,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3887fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/pt-tabua-1.jpg": {
     "rect": [
@@ -166,7 +286,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      244,
+      336,
+      451,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#3787fe",
+    "blue_right": "#0c31a4"
   },
   "/comod-assets/pt-tvquarto-1.jpg": {
     "rect": [
@@ -179,7 +309,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 43,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      367,
+      340,
+      203,
+      47
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/pt-tvsala-1.jpg": {
     "rect": [
@@ -192,7 +332,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      392,
+      340,
+      152,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/pt-uber-1.jpg": {
     "rect": [
@@ -205,7 +355,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      332,
+      341,
+      294,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-arcondicionado-1.jpg": {
     "rect": [
@@ -218,7 +378,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      309,
+      334,
+      320,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 338,
+    "blue_left": "#2b7bfa",
+    "blue_right": "#123cb2"
   },
   "/detail-assets/en-banheiro-1.jpg": {
     "rect": [
@@ -231,7 +401,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      379,
+      340,
+      203,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/en-cofre-1.jpg": {
     "rect": [
@@ -244,7 +424,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      433,
+      340,
+      92,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 340,
+    "blue_left": "#3284ff",
+    "blue_right": "#0c2da1"
   },
   "/comod-assets/en-fechadura-1.jpg": {
     "rect": [
@@ -257,7 +447,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.8125
+    "scale": 0.8125,
+    "word": [
+      345,
+      340,
+      274,
+      53
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-geladeira-1.jpg": {
     "rect": [
@@ -270,7 +470,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 49,
-    "scale": 0.7959
+    "scale": 0.7959,
+    "word": [
+      329,
+      350,
+      259,
+      53
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 352,
+    "blue_left": "#287afa",
+    "blue_right": "#103db0"
   },
   "/comod-assets/en-lavabo-1.jpg": {
     "rect": [
@@ -283,7 +493,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      379,
+      340,
+      203,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/en-louca-1.jpg": {
     "rect": [
@@ -296,7 +516,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      348,
+      335,
+      228,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#297afb",
+    "blue_right": "#103db2"
   },
   "/comod-assets/en-luminaria-1.jpg": {
     "rect": [
@@ -309,7 +539,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 55,
-    "scale": 0.6909
+    "scale": 0.6909,
+    "word": [
+      345,
+      312,
+      211,
+      65
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 337,
+    "blue_left": "#9ec5fd",
+    "blue_right": "#1648c1"
   },
   "/comod-assets/en-luzquarto-1.jpg": {
     "rect": [
@@ -322,7 +562,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 56,
-    "scale": 0.6964
+    "scale": 0.6964,
+    "word": [
+      324,
+      336,
+      248,
+      52
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#297bfb",
+    "blue_right": "#123fb6"
   },
   "/comod-assets/en-portao-1.jpg": {
     "rect": [
@@ -335,7 +585,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 45,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      328,
+      340,
+      281,
+      49
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2777f5",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-roupas-1.jpg": {
     "rect": [
@@ -348,7 +608,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.8125
+    "scale": 0.8125,
+    "word": [
+      293,
+      341,
+      350,
+      52
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#287afa",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-sofacama-1.jpg": {
     "rect": [
@@ -361,7 +631,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 47,
-    "scale": 0.8298
+    "scale": 0.8298,
+    "word": [
+      348,
+      340,
+      239,
+      51
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-tabua-1.jpg": {
     "rect": [
@@ -374,7 +654,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 47,
-    "scale": 0.8298
+    "scale": 0.8298,
+    "word": [
+      333,
+      336,
+      268,
+      52
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#3887ff",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/en-tvquarto-1.jpg": {
     "rect": [
@@ -387,7 +677,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      286,
+      340,
+      228,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/en-tvsala-1.jpg": {
     "rect": [
@@ -400,7 +700,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      317,
+      340,
+      304,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/en-uber-1.jpg": {
     "rect": [
@@ -413,7 +723,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      299,
+      341,
+      364,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/es-arcondicionado-1.jpg": {
     "rect": [
@@ -426,7 +746,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 37,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      270,
+      334,
+      373,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 338,
+    "blue_left": "#2a7dff",
+    "blue_right": "#123cb2"
   },
   "/detail-assets/es-banheiro-1.jpg": {
     "rect": [
@@ -439,7 +769,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      426,
+      340,
+      108,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/es-cofre-1.jpg": {
     "rect": [
@@ -452,7 +792,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.8125
+    "scale": 0.8125,
+    "word": [
+      365,
+      340,
+      228,
+      53
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 340,
+    "blue_left": "#3284ff",
+    "blue_right": "#0c2da1"
   },
   "/comod-assets/es-fechadura-1.jpg": {
     "rect": [
@@ -465,7 +815,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.8125
+    "scale": 0.8125,
+    "word": [
+      311,
+      340,
+      351,
+      53
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/es-geladeira-1.jpg": {
     "rect": [
@@ -478,7 +838,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 49,
-    "scale": 0.7959
+    "scale": 0.7959,
+    "word": [
+      324,
+      350,
+      269,
+      53
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 352,
+    "blue_left": "#287afa",
+    "blue_right": "#103db0"
   },
   "/comod-assets/es-lavabo-1.jpg": {
     "rect": [
@@ -491,7 +861,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 39,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      426,
+      340,
+      108,
+      43
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786ff",
+    "blue_right": "#0e33a8"
   },
   "/comod-assets/es-louca-1.jpg": {
     "rect": [
@@ -504,7 +884,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 47,
-    "scale": 0.8298
+    "scale": 0.8298,
+    "word": [
+      346,
+      336,
+      234,
+      51
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#287afa",
+    "blue_right": "#103db0"
   },
   "/comod-assets/es-luminaria-1.jpg": {
     "rect": [
@@ -517,7 +907,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 48,
-    "scale": 0.7917
+    "scale": 0.7917,
+    "word": [
+      314,
+      312,
+      311,
+      52
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 337,
+    "blue_left": "#7fb0fc",
+    "blue_right": "#1241b7"
   },
   "/comod-assets/es-luzquarto-1.jpg": {
     "rect": [
@@ -530,7 +930,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 49,
-    "scale": 0.7959
+    "scale": 0.7959,
+    "word": [
+      259,
+      314,
+      425,
+      54
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 343,
+    "blue_left": "#3183ff",
+    "blue_right": "#113bb1"
   },
   "/comod-assets/es-portao-1.jpg": {
     "rect": [
@@ -543,7 +953,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      279,
+      340,
+      379,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2777f5",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/es-roupas-1.jpg": {
     "rect": [
@@ -556,7 +976,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      374,
+      341,
+      186,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#287afa",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/es-sofacama-1.jpg": {
     "rect": [
@@ -569,7 +999,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      361,
+      340,
+      203,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3887fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/es-tabua-1.jpg": {
     "rect": [
@@ -582,7 +1022,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      326,
+      336,
+      284,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 339,
+    "blue_left": "#3787fe",
+    "blue_right": "#0c31a4"
   },
   "/comod-assets/es-tvquarto-1.jpg": {
     "rect": [
@@ -595,7 +1045,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      280,
+      340,
+      363,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/es-tvsala-1.jpg": {
     "rect": [
@@ -608,7 +1068,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 38,
-    "scale": 0.85
+    "scale": 0.85,
+    "word": [
+      337,
+      340,
+      262,
+      42
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#2571ef",
+    "blue_right": "#123cb2"
   },
   "/comod-assets/es-uber-1.jpg": {
     "rect": [
@@ -621,7 +1091,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 46,
-    "scale": 0.8478
+    "scale": 0.8478,
+    "word": [
+      314,
+      341,
+      330,
+      50
+    ],
+    "body_color": "#ffffff",
+    "blue_end": 344,
+    "blue_left": "#3786fe",
+    "blue_right": "#0d32a7"
   },
   "/comod-assets/pt-lixeira-1.jpg": {
     "rect": [
@@ -634,7 +1114,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 53,
-    "scale": 0.717
+    "scale": 0.717,
+    "word": [
+      371,
+      313,
+      190,
+      57
+    ],
+    "body_color": "#fafafa",
+    "blue_end": 333,
+    "blue_left": "#297bfb",
+    "blue_right": "#1446bf"
   },
   "/comod-assets/en-lixeira-1.jpg": {
     "rect": [
@@ -647,7 +1137,17 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 52,
-    "scale": 0.7308
+    "scale": 0.7308,
+    "word": [
+      392,
+      313,
+      155,
+      56
+    ],
+    "body_color": "#fafafa",
+    "blue_end": 333,
+    "blue_left": "#297bfb",
+    "blue_right": "#1446bf"
   },
   "/comod-assets/es-lixeira-1.jpg": {
     "rect": [
@@ -660,6 +1160,16 @@
     "width": 900,
     "height": 1350,
     "glyph_height": 53,
-    "scale": 0.717
+    "scale": 0.717,
+    "word": [
+      367,
+      312,
+      200,
+      57
+    ],
+    "body_color": "#fafafa",
+    "blue_end": 333,
+    "blue_left": "#297bfb",
+    "blue_right": "#1446bf"
   }
 }

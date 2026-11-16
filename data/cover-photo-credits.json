@@ -68,5 +68,14 @@
     "source": "/assets/cover-photos/transporte-vlt.webp",
     "source_label": "Imagem do botão",
     "presentation": "AI-assisted reframing of the user-provided reference for circular display"
+  },
+  {
+    "key": "checkout-aviao",
+    "path": "/assets/cover-photos/checkout-aviao.webp",
+    "title": "Avião no aeroporto à noite, referência enviada pelo anfitrião",
+    "author": "Imagem adaptada com IA a partir da foto enviada pelo anfitrião",
+    "source": "/assets/cover-photos/checkout-aviao.webp",
+    "source_label": "Imagem do botão",
+    "presentation": "AI-assisted reframing of the user-provided reference for circular display"
   }
 ]
