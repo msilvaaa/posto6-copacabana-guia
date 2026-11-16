@@ -33,8 +33,9 @@
     "kind": "symbol"
   },
   "emergencia": {
-    "src": "/assets/cover-icons/emergencia-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/emergencia-pmerj.jpg",
+    "kind": "photo",
+    "position": "30% 50%"
   },
   "checkout": {
     "src": "/assets/cover-icons/checkout-clear.svg",

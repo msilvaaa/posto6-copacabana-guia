@@ -57,10 +57,15 @@ def whatsapp(lang):
 
 
 def cover_photo_credits(lang):
- names={'pt':['Cristo Redentor','Calçadão de Copacabana','Praia de Ipanema'],'en':['Christ the Redeemer','Copacabana promenade','Ipanema beach'],'es':['Cristo Redentor','Paseo de Copacabana','Playa de Ipanema']}[lang]
+ names={'pt':['Cristo Redentor','Calçadão de Copacabana','Praia de Ipanema','Emergência'],'en':['Christ the Redeemer','Copacabana promenade','Ipanema beach','Emergency'],'es':['Cristo Redentor','Paseo de Copacabana','Playa de Ipanema','Emergencia']}[lang]
  credits=json.loads((Path(__file__).resolve().parents[1]/'data/cover-photo-credits.json').read_text())
  notice={'pt':'Fotos exibidas em recorte circular nos botões.','en':'Photos displayed with a circular crop in the buttons.','es':'Fotos mostradas con recorte circular en los botones.'}[lang]
- return f'<p>{notice}</p>'+''.join(f'<p>{e(name)}: {e(item["author"])} · <a href="{e(item["source"])}" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href="{e(item["license_url"])}" target="_blank" rel="noopener noreferrer">{e(item["license"])}</a>.</p>' for name,item in zip(names,credits))
+ result=[f'<p>{notice}</p>']
+ for name,item in zip(names,credits):
+  license_link=f' · <a href="{e(item["license_url"])}" target="_blank" rel="noopener noreferrer">{e(item["license"])}</a>' if item.get('license_url') else ''
+  result.append(f'<p>{e(name)}: {e(item["author"])} · <a href="{e(item["source"])}" target="_blank" rel="noopener noreferrer">{e(item.get("source_label","Wikimedia Commons"))}</a>{license_link}.</p>')
+ return ''.join(result)
+
 
 
 def dialogs(lang, cover=False):
