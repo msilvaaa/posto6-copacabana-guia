@@ -1,6 +1,8 @@
 """Shared navigation and utilities for all internal guide sections."""
 from html import escape
 from urllib.parse import quote
+from pathlib import Path
+import json
 
 LABELS = {
  'pt': {'weather_close':'Fechar','home':'Início','back':'Voltar ao guia','previous':'Anterior','next':'Próximo','navigation':'Navegação do guia','zoom':'Ampliar página','close':'Voltar ao guia','native':'Ver tamanho original','fit':'Ajustar à tela','weather':'Previsão de Copacabana','weather_hint':'Ver previsão','whatsapp':'Contato pelo WhatsApp','about':'Sobre o guia','reading':'Conteúdo do guia'},
@@ -54,10 +56,18 @@ def whatsapp(lang):
  '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 3.5A11.2 11.2 0 0 0 3 17L1.5 22.5 7 21a11.2 11.2 0 0 0 13.5-17.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 6.5c-.5 0-1.5 1-1.5 2.5 0 3 4 7 7 7 1.5 0 2.5-1 2.5-1.5l-2.5-1.5-1 1c-1.5-.5-3.5-2.5-4-4l1-1Z" fill="currentColor"/></svg></a></div>')
 
 
-def dialogs(lang):
+def cover_photo_credits(lang):
+ names={'pt':['Cristo Redentor','Calçadão de Copacabana','Praia de Ipanema'],'en':['Christ the Redeemer','Copacabana promenade','Ipanema beach'],'es':['Cristo Redentor','Paseo de Copacabana','Playa de Ipanema']}[lang]
+ credits=json.loads((Path(__file__).resolve().parents[1]/'data/cover-photo-credits.json').read_text())
+ notice={'pt':'Fotos exibidas em recorte circular nos botões.','en':'Photos displayed with a circular crop in the buttons.','es':'Fotos mostradas con recorte circular en los botones.'}[lang]
+ return f'<p>{notice}</p>'+''.join(f'<p>{e(name)}: {e(item["author"])} · <a href="{e(item["source"])}" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href="{e(item["license_url"])}" target="_blank" rel="noopener noreferrer">{e(item["license"])}</a>.</p>' for name,item in zip(names,credits))
+
+
+def dialogs(lang, cover=False):
  labels=LABELS[lang]
+ photo_credits=cover_photo_credits(lang) if cover else ''
  return (f'<dialog class="site-dialog photo-viewer" data-photo-dialog aria-label="{labels["zoom"]}"><header class="dialog-bar"><button type="button" data-photo-close>← {labels["close"]}</button><button type="button" data-photo-native data-native-label="{labels["native"]}" data-fit-label="{labels["fit"]}">{labels["native"]}</button></header><div class="photo-stage" data-photo-stage></div></dialog>'
- f'<dialog class="site-dialog weather-dialog" data-weather-dialog aria-label="{labels["weather"]}"><header class="dialog-bar"><h2>{labels["weather"]}</h2><button type="button" data-weather-close aria-label="{labels["weather_close"]}">× {labels["weather_close"]}</button></header><div class="weather-content" data-weather-content></div><details class="site-about"><summary>{labels["about"]}</summary><p>Copacabana: Donatas Dabravolskas · <a href="https://commons.wikimedia.org/wiki/File:Carlos_DA_2.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p><p>Weather: <a href="https://wttr.in/-22.9842,-43.1918" target="_blank" rel="noopener noreferrer">wttr.in</a>.</p></details></dialog>')
+ f'<dialog class="site-dialog weather-dialog" data-weather-dialog aria-label="{labels["weather"]}"><header class="dialog-bar"><h2>{labels["weather"]}</h2><button type="button" data-weather-close aria-label="{labels["weather_close"]}">× {labels["weather_close"]}</button></header><div class="weather-content" data-weather-content></div><details class="site-about"><summary>{labels["about"]}</summary><p>Copacabana: Donatas Dabravolskas · <a href="https://commons.wikimedia.org/wiki/File:Carlos_DA_2.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p><p>Weather: <a href="https://wttr.in/-22.9842,-43.1918" target="_blank" rel="noopener noreferrer">wttr.in</a>.</p>{photo_credits}</details></dialog>')
 
 
 def external_attrs(link):

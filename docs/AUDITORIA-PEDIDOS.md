@@ -80,3 +80,7 @@ Verificação:66 combinações de página/resolução,712 áreas verificadas,700
 ## Consulta diária da nota Airbnb —16/11/2026
 
 Consulta automática da nota e quantidade de avaliações do Airbnb passa para uma vez a cada24 horas, às06h23 no horário de Fortaleza/Rio (09h23UTC). A previsão mantém consultas aos minutos23 e53 de cada hora. A publicação continua ocorrendo somente quando os dados mudam. O agendador pode apresentar atrasos.
+
+## Fotos dos botões da capa —16/11/2026
+
+Bem-vindos: Cristo Redentor; Localização: calçadão de Copacabana; Atividades: praia de Ipanema com Dois Irmãos. Fotos originais licenciadas do Wikimedia Commons, com autor, fonte e licença em data/cover-photo-credits.json e na seção Sobre o guia da janela de previsão, sem acrescentar rodapé. Check-in exibe a fechadura eletrônica do apartamento usando a fotografia original sem setas do guia, com enquadramento que mostra mais do aparelho. Regras usa escudo com marca de confirmação e Informações usa símbolo de informação mais nítido, ambos com degradê e contorno branco comum dos botões. Os destinos e os efeitos dos botões são preservados nos três idiomas.
