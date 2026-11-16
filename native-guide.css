@@ -69,3 +69,8 @@
 .native-title-text { top: 0; left: 0; }
 .native-icon:empty { display: none; }
 .illustrated-card:has(.native-icon:empty) .native-card-copy { padding-left: 0; }
+
+/* Preserve the complete original Wi-Fi access block as requested by the host. */
+.native-wifi-access { width: 100%; max-width: 330px; margin: 0 auto 24px; }
+.native-wifi-access>svg { display: block; width: 100%; height: auto; }
+.native-wifi-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }

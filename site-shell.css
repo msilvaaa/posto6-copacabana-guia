@@ -155,18 +155,13 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
  body.site-page .site-contact-corner,body.home-page .site-contact-corner,.home-page .page-stage>.site-contact-corner { right: max(16px,env(safe-area-inset-right)); bottom: max(16px,env(safe-area-inset-bottom)); }
 }
 
-/* A quiet pulse around WhatsApp, without moving or resizing the button. */
-.site-whatsapp { position: relative; isolation: isolate; }
-.site-whatsapp::after {
- content: ""; position: absolute; inset: -3px; border: 2px solid #16ae615c;
- border-radius: 50%; pointer-events: none; z-index: -1;
- animation: whatsapp-soft-pulse 3.6s ease-out infinite;
+/* Match the gentle floating motion of the location phone illustration. */
+.site-contact-corner { animation: whatsapp-soft-float 2.6s ease-in-out infinite; }
+@keyframes whatsapp-soft-float {
+ 0%,100% { transform: translateY(0); }
+ 50% { transform: translateY(-4px); }
 }
-@keyframes whatsapp-soft-pulse {
- 0% { transform: scale(.98); opacity: 0; }
- 15% { transform: scale(1); opacity: .45; }
- 65%,100% { transform: scale(1.25); opacity: 0; }
-}
+.site-contact-corner:hover,.site-contact-corner:focus-within { animation-play-state: paused; }
 @media(prefers-reduced-motion:reduce) {
- .site-whatsapp::after { animation: none; opacity: 0; }
+ .site-contact-corner { animation: none; }
 }
