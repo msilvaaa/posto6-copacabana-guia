@@ -1,0 +1,197 @@
+{
+  "topics": {
+    "bem-vindos": {
+      "pt": "a minha estadia",
+      "en": "my stay",
+      "es": "mi estancia"
+    },
+    "apartamento": {
+      "pt": "o apartamento",
+      "en": "the apartment",
+      "es": "el apartamento"
+    },
+    "galeria": {
+      "pt": "as fotos do apartamento",
+      "en": "the apartment photos",
+      "es": "las fotos del apartamento"
+    },
+    "checkin": {
+      "pt": "o check-in e a entrada no apartamento",
+      "en": "check-in and entering the apartment",
+      "es": "el check-in y la entrada al apartamento"
+    },
+    "checkout": {
+      "pt": "o check-out",
+      "en": "check-out",
+      "es": "el check-out"
+    },
+    "localizacao": {
+      "pt": "a localização",
+      "en": "the location",
+      "es": "la ubicación"
+    },
+    "wifi": {
+      "pt": "a conexão Wi-Fi",
+      "en": "the Wi-Fi connection",
+      "es": "la conexión Wi-Fi"
+    },
+    "regras": {
+      "pt": "as regras da casa",
+      "en": "the house rules",
+      "es": "las reglas de la casa"
+    },
+    "transportes": {
+      "pt": "os transportes na região",
+      "en": "transport in the area",
+      "es": "el transporte en la zona"
+    },
+    "comodidades": {
+      "pt": "as comodidades do apartamento",
+      "en": "the apartment amenities",
+      "es": "las comodidades del apartamento"
+    },
+    "atividades": {
+      "pt": "as atividades e os passeios na região",
+      "en": "activities and sightseeing in the area",
+      "es": "las actividades y los paseos en la zona"
+    },
+    "informacoes": {
+      "pt": "as informações e os serviços da região",
+      "en": "local information and services",
+      "es": "la información y los servicios de la zona"
+    },
+    "bares": {
+      "pt": "os bares recomendados",
+      "en": "the recommended bars",
+      "es": "los bares recomendados"
+    },
+    "restaurantes": {
+      "pt": "os restaurantes recomendados",
+      "en": "the recommended restaurants",
+      "es": "los restaurantes recomendados"
+    },
+    "estabelecimentos": {
+      "pt": "os estabelecimentos e as lojas da região",
+      "en": "local shops and services",
+      "es": "los establecimientos y las tiendas de la zona"
+    },
+    "emergencia": {
+      "pt": "os contatos e serviços de emergência",
+      "en": "emergency contacts and services",
+      "es": "los contactos y servicios de emergencia"
+    },
+    "arcondicionado": {
+      "pt": "o ar-condicionado",
+      "en": "the air conditioning",
+      "es": "el aire acondicionado"
+    },
+    "banheiro": {
+      "pt": "o banheiro",
+      "en": "the bathroom",
+      "es": "el baño"
+    },
+    "cofre": {
+      "pt": "o cofre",
+      "en": "the safe",
+      "es": "la caja fuerte"
+    },
+    "fechadura": {
+      "pt": "a fechadura eletrônica",
+      "en": "the electronic door lock",
+      "es": "la cerradura electrónica"
+    },
+    "geladeira": {
+      "pt": "a geladeira",
+      "en": "the refrigerator",
+      "es": "el refrigerador"
+    },
+    "lavabo": {
+      "pt": "o lavabo",
+      "en": "the washroom",
+      "es": "el aseo"
+    },
+    "lixeira": {
+      "pt": "o descarte de lixo",
+      "en": "waste disposal",
+      "es": "la eliminación de basura"
+    },
+    "louca": {
+      "pt": "a lava-louças",
+      "en": "the dishwasher",
+      "es": "el lavavajillas"
+    },
+    "luminaria": {
+      "pt": "a luminária",
+      "en": "the lamp",
+      "es": "la lámpara"
+    },
+    "luzquarto": {
+      "pt": "a iluminação do quarto",
+      "en": "the bedroom lighting",
+      "es": "la iluminación del dormitorio"
+    },
+    "portao": {
+      "pt": "o portão do edifício",
+      "en": "the building gate",
+      "es": "la puerta de entrada del edificio"
+    },
+    "roupas": {
+      "pt": "a máquina de lavar roupas",
+      "en": "the washing machine",
+      "es": "la lavadora"
+    },
+    "sofacama": {
+      "pt": "o sofá-cama",
+      "en": "the sofa bed",
+      "es": "el sofá cama"
+    },
+    "tabua": {
+      "pt": "a tábua e o ferro de passar",
+      "en": "the ironing board and iron",
+      "es": "la tabla y la plancha"
+    },
+    "tvquarto": {
+      "pt": "a TV do quarto",
+      "en": "the bedroom TV",
+      "es": "el televisor del dormitorio"
+    },
+    "tvsala": {
+      "pt": "a TV da sala",
+      "en": "the living-room TV",
+      "es": "el televisor de la sala"
+    },
+    "uber": {
+      "pt": "o ponto de encontro com o Uber no aeroporto",
+      "en": "the Uber pickup point at the airport",
+      "es": "el punto de recogida de Uber en el aeropuerto"
+    }
+  },
+  "aliases": {
+    "welcome": "bem-vindos",
+    "bienvenido": "bem-vindos",
+    "bienvenidos": "bem-vindos",
+    "apartment": "apartamento",
+    "gallery": "galeria",
+    "check-in": "checkin",
+    "check-out": "checkout",
+    "location": "localizacao",
+    "ubicacion": "localizacao",
+    "rules": "regras",
+    "normas": "regras",
+    "transport": "transportes",
+    "transportation": "transportes",
+    "transporte": "transportes",
+    "amenities": "comodidades",
+    "activities": "atividades",
+    "actividades": "atividades",
+    "information": "informacoes",
+    "informacion": "informacoes",
+    "bars": "bares",
+    "verja": "bares",
+    "restaurants": "restaurantes",
+    "establishments": "estabelecimentos",
+    "establecimientos": "estabelecimentos",
+    "emergency": "emergencia",
+    "emergencias": "emergencia"
+  }
+}

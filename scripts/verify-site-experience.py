@@ -2,7 +2,7 @@
 """Verify persistent navigation, common sections, forecast, photo return and WhatsApp."""
 import asyncio,json,sys
 from urllib.parse import urlparse, parse_qs
-from site_components import WHATSAPP_MESSAGES
+from site_components import whatsapp_message
 from pathlib import Path
 from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[1]
@@ -22,7 +22,7 @@ async def main():
    if await page.locator('.site-back,.site-enlarge').count():report['failures'].append(path+': removed page controls still present')
    wa=page.locator('.site-whatsapp')
    props=await wa.evaluate('e=>({circle:getComputedStyle(e).borderRadius,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,footer:!!e.closest("footer,nav,.site-header"),number:e.getAttribute("href")})')
-   if props['w']!=props['h'] or props['circle']!='50%' or props['footer'] or urlparse(props['number']).path!='/5521981020150' or parse_qs(urlparse(props['number']).query).get('text')!=[WHATSAPP_MESSAGES[path[:2]]]:
+   if props['w']!=props['h'] or props['circle']!='50%' or props['footer'] or urlparse(props['number']).path!='/5521981020150' or parse_qs(urlparse(props['number']).query).get('text')!=[whatsapp_message(path[:2],path)]:
     report['failures'].append(path+': WhatsApp location/shape')
    if await page.locator('.site-frame').count():
     await page.locator('.site-reading').evaluate('e=>e.scrollTop=e.scrollHeight')
