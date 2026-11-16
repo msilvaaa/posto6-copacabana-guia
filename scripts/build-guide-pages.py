@@ -20,6 +20,25 @@ def percentage_rect(rect,width,height):
  return f'left:{100*x/width:.6f}%;top:{100*y/height:.6f}%;width:{100*w/width:.6f}%;height:{100*h/height:.6f}%'
 
 
+def compact_detail_title(image,title):
+ x,y,w,h=title['rect'];wx,wy,ww,wh=title['word'];scale=title['scale']
+ target_height=38 if any(key in image['src'] for key in ['-lixeira-','-luminaria-']) else 39
+ scale=min(scale,target_height/wh)
+ tw=ww*scale+32;th=wh*scale+16
+ style=percentage_rect([x+w/2-tw/2,y+h/2-th/2,tw,th],image['width'],image['height'])
+ cover_style=percentage_rect([x-3,y-3,w+6,h+6],image['width'],image['height'])
+ blue_height=max(0,title['blue_end']-(y-3))
+ cover=(f'<svg class="guide-title-cover" viewBox="{x-3} {y-3} {w+6} {h+6}" style="{cover_style}" aria-hidden="true">'
+  f'<defs><linearGradient id="title-banner-gradient"><stop stop-color="{title["blue_left"]}"/><stop offset="1" stop-color="{title["blue_right"]}"/></linearGradient></defs>'
+  f'<rect x="{x-3}" y="{y-3}" width="{w+6}" height="{h+6}" fill="{title["body_color"]}"/>'
+  f'<rect x="{x-3}" y="{y-3}" width="{w+6}" height="{blue_height}" fill="url(#title-banner-gradient)"/></svg>')
+ art=(f'<svg class="guide-title-art" data-title-scale="{scale}" viewBox="0 0 {tw} {th}" style="{style}" aria-hidden="true">'
+  f'<rect x=".7" y=".7" width="{tw-1.4}" height="{th-1.4}" rx="{min(title["radius"]*scale,th/2)}" fill="white" stroke="#111" stroke-width="1.4"/>'
+  f'<svg class="guide-title-word" x="16" y="8" width="{ww*scale}" height="{wh*scale}" viewBox="{wx} {wy} {ww} {wh}">'
+  f'<image href="{e(image["src"])}" width="{title["width"]}" height="{title["height"]}"/></svg></svg>')
+ return cover+art
+
+
 def build():
  template=Template((ROOT/'templates/guide-page.html').read_text())
  pages=json.loads((ROOT/'data/guide-pages.json').read_text())
@@ -54,10 +73,7 @@ def build():
     style=percentage_rect(photo['rect'],image['width'],image['height'])
     upgraded=f'<img class="guide-photo-upgrade" src="{e(photo["src"])}" alt="{e(photo["alt"][lang])}" width="{photo["width"]}" height="{photo["height"]}" style="{style};object-position:50% 50%" decoding="async"/>'
   if image['src'] in detail_titles:
-   title=detail_titles[image['src']];x,y,w,h=title['rect'];radius=title['radius'];scale=title['scale']
-   reduced_style=percentage_rect([x+w*(1-scale)/2,y+h*(1-scale)/2,w*scale,h*scale],image['width'],image['height'])
-   upgraded+=(f'<svg class="guide-title-cover" viewBox="{x-3} {y-3} {w+6} {h+6}" style="{percentage_rect([x-3,y-3,w+6,h+6],image["width"],image["height"])}" aria-hidden="true"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="white" stroke="white" stroke-width="5"/></svg>'
-    f'<svg class="guide-title-art" data-title-scale="{scale}" viewBox="{x} {y} {w} {h}" style="{reduced_style}" aria-hidden="true"><defs><clipPath id="detail-title-clip"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}"/></clipPath></defs><image href="{e(image["src"])}" width="{title["width"]}" height="{title["height"]}" clip-path="url(#detail-title-clip)"/></svg>')
+   upgraded+=compact_detail_title(image,detail_titles[image['src']])
   output=template.substitute(lang=lang,title=e(page['title']),description=e(page['description']),kind='guide-'+page['kind']+(' guide-information' if image['src'].endswith('-10.jpg') else ''),back=back_html,toolbar=toolbar(lang,page['languages']),utilities=utilities(lang),whatsapp=whatsapp(lang,page['path']),heading=f'<h1 class="guide-heading sr-only">{e(page["heading"])}</h1>' if page['heading'] else '',reading_label=labels['reading'],zoom_label=labels['zoom'],src=e(image['src']),alt=e(image['alt']),width=image['width'],height=image['height'],masks=masks,americanas=americanas,photo_upgrade=upgraded,links=links,pagination_label=labels['navigation'],pagination=pagination(lang,page['previous'],page['next']),source_text=page['source_text'],dialogs=dialogs(lang))
   (ROOT/page['path']).write_text('\n'.join(line.rstrip() for line in output.splitlines())+'\n');count+=1
  print(f'Generated {count} original guide sections with persistent navigation.')

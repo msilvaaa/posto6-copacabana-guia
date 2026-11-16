@@ -14,6 +14,13 @@ def artwork(source, rect, css=''):
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
 
 
+def title_word_art(source):
+    x,y,w,h=ORIGINAL_ART[source]['word']
+    height=2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864
+    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
+            f'<image href="{e(source)}" width="1537" height="{height}"/></svg>')
+
+
 def illustration(name):
     item=ORIGINAL_ART['_illustrations'].get(name)
     if name=='wifi-monitor':
@@ -179,7 +186,7 @@ def build_native(page, content, upgrades, photos):
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
             if page['image']['src'].endswith('-15.jpg') and lang=='pt':
                 navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
-        title_art=artwork(page['image']['src'],ORIGINAL_ART[page['image']['src']]['title'])
+        title_art=title_word_art(page['image']['src'])
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{artwork(page["image"]["src"],[1135,180,310,463])}</div>'

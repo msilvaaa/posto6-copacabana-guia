@@ -38,8 +38,8 @@
     "position": "30% 50%"
   },
   "checkout": {
-    "src": "/assets/cover-icons/checkout-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/checkout-aviao.webp",
+    "kind": "photo"
   },
   "bem-vindos": {
     "src": "/assets/cover-photos/cristo-redentor.jpg",
