@@ -15,5 +15,22 @@
       "es": "Estatua de Tom Jobim con guitarra junto al mar en Ipanema"
     },
     "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16; original generated PNG retained in workspace."
+  },
+  "-10.jpg": {
+    "src": "/assets/information/tourist-information-enhanced.webp",
+    "width": 1448,
+    "height": 1086,
+    "rect": [
+      0,
+      0,
+      1067,
+      864
+    ],
+    "alt": {
+      "pt": "Posto de informações turísticas junto ao Posto 5, na praia de Copacabana",
+      "en": "Tourist information booth beside Posto 5 on Copacabana beach",
+      "es": "Puesto de información turística junto al Posto 5, en la playa de Copacabana"
+    },
+    "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16. No footer caption; original generated PNG retained in workspace."
   }
 }
