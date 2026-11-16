@@ -16,6 +16,26 @@ WHATSAPP_MESSAGES = {
  'en': 'Hello, I would like to check the availability of the apartment in Copacabana for a vacation rental.',
  'es': 'Hola, me gustaría consultar la disponibilidad del apartamento en Copacabana para un alquiler vacacional.',
 }
+WHATSAPP_CONTEXT = json.loads((Path(__file__).resolve().parents[1]/'data/whatsapp-topics.json').read_text())
+WHATSAPP_GUEST_MESSAGES = {
+ 'pt': 'Olá, estou hospedado(a) no apartamento de temporada em Copacabana e tenho dúvidas sobre {topic}.',
+ 'en': 'Hello, I am staying at the vacation apartment in Copacabana and have a question about {topic}.',
+ 'es': 'Hola, estoy alojado(a) en el apartamento vacacional de Copacabana y tengo dudas sobre {topic}.',
+}
+
+
+def whatsapp_topic_key(context):
+ if not context:return None
+ slug=str(context).strip('/').removesuffix('index.html').strip('/').split('/')[-1]
+ if slug in LABELS:return None
+ return WHATSAPP_CONTEXT['aliases'].get(slug,slug)
+
+
+def whatsapp_message(lang,context=None):
+ key=whatsapp_topic_key(context)
+ if key is None:return WHATSAPP_MESSAGES[lang]
+ topic=WHATSAPP_CONTEXT['topics'].get(key,WHATSAPP_CONTEXT['topics']['bem-vindos'])[lang]
+ return WHATSAPP_GUEST_MESSAGES[lang].format(topic=topic)
 
 
 def e(value):
@@ -50,9 +70,9 @@ def utilities(lang):
  return f'<div class="site-utilities"><button class="site-weather" type="button" data-weather-open aria-label="{labels["weather"]}"><span aria-hidden="true">☀</span><span><b>Copacabana</b><small data-weather-summary>{labels["weather_hint"]}</small></span></button></div>'
 
 
-def whatsapp(lang):
+def whatsapp(lang,context=None):
  label=LABELS[lang]['whatsapp']
- return (f'<div class="site-contact-corner"><a class="site-whatsapp" aria-label="{label}" title="{label}" href="{WHATSAPP}?text={quote(WHATSAPP_MESSAGES[lang], safe="")}" target="_blank" rel="noopener noreferrer">'
+ return (f'<div class="site-contact-corner"><a class="site-whatsapp" aria-label="{label}" title="{label}" href="{WHATSAPP}?text={quote(whatsapp_message(lang,context), safe="")}" target="_blank" rel="noopener noreferrer">'
  '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 3.5A11.2 11.2 0 0 0 3 17L1.5 22.5 7 21a11.2 11.2 0 0 0 13.5-17.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 6.5c-.5 0-1.5 1-1.5 2.5 0 3 4 7 7 7 1.5 0 2.5-1 2.5-1.5l-2.5-1.5-1 1c-1.5-.5-3.5-2.5-4-4l1-1Z" fill="currentColor"/></svg></a></div>')
 
 

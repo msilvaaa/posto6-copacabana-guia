@@ -200,7 +200,7 @@ def build_native(page, content, upgrades, photos):
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>
-  {whatsapp(lang)}
+  {whatsapp(lang,page['path'])}
   {dialogs(lang)}
 </body>
 </html>
