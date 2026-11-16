@@ -47,8 +47,8 @@
     "position": "50% 30%"
   },
   "checkin": {
-    "src": "/assets/pt-03.jpg",
-    "kind": "lock"
+    "src": "/assets/cover-photos/checkin-porta-apartamento.jpg",
+    "kind": "door-lock"
   },
   "localizacao": {
     "src": "/assets/cover-photos/calcadao-copacabana.jpg",
