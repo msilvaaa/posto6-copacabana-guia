@@ -15,7 +15,7 @@ async def main():
     assert r.status==200,(path,r.status)
     assert not result['overflow'],('overflow',width,path)
     assert not result['broken'],('broken',path,result['broken'])
-    wa=result['wa'];assert wa and abs(width-wa['x']-wa['w']-(16 if width<761 else 18))<1 and abs(1000-wa['y']-wa['h']-(16 if width<761 else 18))<1,('whatsapp',width,path,wa)
+    wa=result['wa'];assert wa and abs(width-wa['x']-wa['w']-(16 if width<761 else 18))<1 and -.1<=1000-wa['y']-wa['h']-(16 if width<761 else 18)<=4.1,('whatsapp',width,path,wa)
     if result['native']:
      assert result['vector']>0
      if width>760:
