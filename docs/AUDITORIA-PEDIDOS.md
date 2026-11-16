@@ -75,3 +75,8 @@ Anterior/Próximo usam um único estilo compartilhado com Próxima da capa:84x27
 Links nas artes do guia ganham uma margem de clique ao redor da palavra, buscando uma área de44px quando há espaço. A margem se ajusta ao tamanho da página e termina antes da área de outro destino ou de controles de navegação. Links para o mesmo endereço podem compartilhar a margem; o destino permanece o mesmo. Recalcula ao redimensionar a tela. Uma indicação discreta ao passar o cursor mostra a região clicável, e o foco do teclado recebe contorno ampliado. Links pequenos nas informações da previsão também recebem margem de toque; botões e cartões nativos já mantêm áreas maiores.
 
 Verificação:66 combinações de página/resolução,712 áreas verificadas,700 ampliadas; nenhuma sobreposição nova entre destinos diferentes. Nove cliques reais fora do texto, nos três idiomas, abriram os links externos preservando o guia.
+
+
+## Consulta diária da nota Airbnb —16/11/2026
+
+Consulta automática da nota e quantidade de avaliações do Airbnb passa para uma vez a cada24 horas, às06h23 no horário de Fortaleza/Rio (09h23UTC). A previsão mantém consultas aos minutos23 e53 de cada hora. A publicação continua ocorrendo somente quando os dados mudam. O agendador pode apresentar atrasos.
