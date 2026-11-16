@@ -136,3 +136,21 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
 @media(prefers-reduced-motion:reduce) { .site-step { transition: none; } }
 
 .site-about a { display: inline-block; padding: 6px 2px; margin: -2px 0; }
+
+/* Shared positioning for all guide chapters and the cover. */
+body.site-page .site-toolbar { gap: 16px; justify-content: center; }
+body.site-page .site-toolbar .site-round { width: 58px; height: 58px; flex: 0 0 58px; }
+.main-html-topbar { gap: 16px; }
+body.content-page .site-controls .site-toolbar { right: 0; width: max(33.333%,340px); justify-content: center; margin: 0; top: 16px; }
+body.content-page .section-panel { padding-top: 100px; }
+.section-actions { display: flex; justify-content: center; width: 100%; gap: 0; }
+.section-panel .section-actions .site-pagination { margin: 0 auto; gap: 16px; }
+body.site-page .site-contact-corner,body.home-page .site-contact-corner,.home-page .page-stage>.site-contact-corner {
+ position: fixed; inset: auto 18px 18px auto; width: 56px; height: 56px; padding: 0; margin: 0; z-index: 100; background: transparent;
+}
+body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-corner .site-whatsapp { width: 56px; height: 56px; flex-basis: 56px; }
+@media(max-width:760px) {
+ body.content-page .site-controls .site-toolbar { width: 100%; right: 0; }
+ body.site-page .site-toolbar .site-round { width: 52px; height: 52px; flex-basis: 52px; }
+ body.site-page .site-contact-corner,body.home-page .site-contact-corner,.home-page .page-stage>.site-contact-corner { right: max(16px,env(safe-area-inset-right)); bottom: max(16px,env(safe-area-inset-bottom)); }
+}

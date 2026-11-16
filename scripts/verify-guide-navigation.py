@@ -28,12 +28,12 @@ async def main():
                 path = route(item)
                 response = await page.goto(BASE + path, wait_until='load')
                 geometry = await page.evaluate('''()=>{
-                  const image=document.querySelector('.guide-canvas,.section-title').getBoundingClientRect();
+                  const image=document.querySelector('.guide-canvas,.section-title,.native-title').getBoundingClientRect();
                   const footer=document.querySelector('.guide-pagination').getBoundingClientRect();
                   const buttons=[...document.querySelectorAll('.guide-pagination a')].map(e=>e.getBoundingClientRect());
                   const controlBounds=buttons.length?[Math.min(...buttons.map(r=>r.left)),Math.max(...buttons.map(r=>r.right))]:null;
                   return {
-                    below:!!document.querySelector(".guide-page-content .guide-pagination,.section-panel .guide-pagination"),
+                    below:!!document.querySelector(".guide-page-content .guide-pagination,.section-panel .guide-pagination,.native-panel .guide-pagination"),
                     inline:!!document.querySelector(".site-reading .guide-pagination"),
                     centered:!controlBounds||Math.abs((controlBounds[0]+controlBounds[1])/2-(footer.left+footer.width/2))<1,
                     readable:buttons.every(r=>r.height>=27),
@@ -76,9 +76,10 @@ async def main():
                 await page.route(pattern, delay_image)
                 await page.goto(BASE + route(item), wait_until='domcontentloaded')
                 await page.wait_for_function("getComputedStyle(document.querySelector('.guide-pagination')).display==='flex'")
+                await page.evaluate('document.fonts.ready')
                 before = await page.locator('.guide-pagination').evaluate('e=>e.getBoundingClientRect().top+scrollY')
                 gate.set()
-                await page.locator('.guide-image').evaluate('i=>i.decode()')
+                await page.wait_for_load_state('load')
                 after = await page.locator('.guide-pagination').evaluate('e=>e.getBoundingClientRect().top+scrollY')
                 if abs(before - after) > .5:
                     report['failures'].append({'path': route(item), 'width': width, 'reason': 'footer moved on image load', 'before': before, 'after': after})

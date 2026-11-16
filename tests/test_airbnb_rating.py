@@ -86,6 +86,7 @@ class AirbnbRatingTests(unittest.TestCase):
             (root / 'scripts').mkdir()
             shutil.copy(ROOT / 'scripts/build-covers.py', root / 'scripts/build-covers.py')
             shutil.copy(ROOT / 'scripts/site_components.py', root / 'scripts/site_components.py')
+            shutil.copy(ROOT / 'scripts/guide_native.py', root / 'scripts/guide_native.py')
             for lang in ['pt', 'en', 'es']:
                 (root / lang).mkdir()
             html = root / 'changed.html'

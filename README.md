@@ -33,7 +33,7 @@ python scripts/build-covers.py
 
 O script valida tanto a URL canônica quanto o identificador do anúncio. Dados ausentes, inválidos, conflitantes ou falhas de acesso fazem o comando falhar sem sobrescrever o último valor confirmado. Uma leitura sem mudança não altera arquivos nem cria commits.
 
-O workflow `.github/workflows/sync-airbnb-rating.yml` consulta o anúncio a cada seis horas e permite execução manual. Quando os números mudam, atualiza o JSON e os HTML gerados na `main`. A publicação depende da integração GitHub → hospedagem já configurada.
+O workflow `.github/workflows/sync-airbnb-rating.yml` consulta o anúncio a cada 12 horas e permite execução manual. Quando os números mudam, atualiza o JSON e os HTML gerados na `main`. A publicação depende da integração GitHub → hospedagem já configurada.
 
 A rotina só é ativada depois de o workflow entrar na branch principal. Requer GitHub Actions habilitado e permissão de escrita do token padrão do workflow. Se a proteção da branch impedir commits automáticos, será preciso adaptar o fluxo para PRs. Agendamentos do GitHub podem atrasar e, em repositórios públicos inativos, ser desativados pela plataforma após 60 dias.
 
@@ -91,3 +91,21 @@ python scripts/verify-site-experience.py
 ```
 
 `verify-site-experience.py` confere as 106 páginas, a barra fixa fora da leitura, o posicionamento circular do WhatsApp, a previsão, o retorno do visualizador e a abertura externa em outra aba. A capa mantém as 15 imagens e recebeu os ajustes solicitados de título mais alto e claro, com a reserva perto da base da fotografia.
+
+## Texto nítido e fotografias independentes
+
+Os 13 capítulos principais do guia, em três idiomas (39 páginas), agora são gerados em HTML por `scripts/guide_native.py`, com conteúdo em `data/guide-native-content.json`. Fotos, texto selecionável, ícones SVG, títulos e links são elementos independentes. A reconstrução preserva todos os destinos do guia anterior. Restaurantes tem três seções e Estabelecimentos duas, cada uma com sua foto, sem controles antigos incorporados entre as seções.
+
+A foto de Check-in é o original do anúncio em 2560×1739. Comodidades usa a mesma foto da cama enviada pelo anfitrião, com variantes até2560px; a seleção leva em conta também a altura do recorte para evitar ampliar uma variante pequena. A vista aérea de Localização foi aprimorada com IA a partir da referência fornecida. Os arquivos de origem e enquadramentos estão em `data/guide-photo-upgrades.json`. As demais fotos do guia conservam os pixels disponíveis na fonte; a migração para HTML elimina a limitação de resolução das letras e dos ícones. As ilustrações técnicas antigas de Comodidades continuam separadas desta migração dos capítulos principais.
+
+O menu fica centralizado na coluna direita, com16px entre os botões. Anterior/Próximo de Comodidades ficam centralizados após os atalhos. O WhatsApp é um único elemento no corpo da página, fixo no canto inferior direito em todos os103endereços, incluindo a capa. A fonte local Courgette é distribuída sobOFL, conforme `assets/fonts/OFL-Courgette.txt` (origem: repositório oficial google/fonts).
+
+Validação da nova composição e navegação:
+
+```sh
+python scripts/build-covers.py
+python scripts/build-guide-pages.py
+python -m unittest discover -s tests -q
+python scripts/verify-native-guide.py
+python scripts/verify-guide-navigation.py
+```

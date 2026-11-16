@@ -32,5 +32,41 @@
       "es": "Puesto de información turística junto al Posto 5, en la playa de Copacabana"
     },
     "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16. No footer caption; original generated PNG retained in workspace."
+  },
+  "-04.jpg": {
+    "src": "/assets/location/copacabana-aerial.webp",
+    "width": 1536,
+    "height": 1024,
+    "rect": [
+      0,
+      0,
+      1067,
+      864
+    ],
+    "alt": {
+      "pt": "Vista aérea de Copacabana, Arpoador e Ipanema",
+      "en": "Aerial view of Copacabana, Arpoador and Ipanema",
+      "es": "Vista aérea de Copacabana, Arpoador e Ipanema"
+    },
+    "provenance": "AI-enhanced version of the aerial photograph supplied by the host on 2026-11-16; full-bleed without white border."
+  },
+  "-03.jpg": {
+    "src": "/assets/checkin/entrada-fechadura.jpg",
+    "width": 2560,
+    "height": 1739,
+    "rect": [
+      0,
+      0,
+      1067,
+      864
+    ],
+    "position": "100% 50%",
+    "alt": {
+      "pt": "Fechadura eletrônica e entrada do apartamento",
+      "en": "Electronic lock and apartment entrance",
+      "es": "Cerradura electrónica y entrada del apartamento"
+    },
+    "provenance": "Original higher-resolution version of the exact photo supplied by the host, retrieved from their Airbnb listing.",
+    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aea0a8e2-77e3-4ba3-a00b-36d240d12d9d.jpeg?im_w=2560"
   }
 }
