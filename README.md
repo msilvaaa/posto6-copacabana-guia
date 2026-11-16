@@ -83,7 +83,7 @@ As oito fotografias do anúncio têm variantes fornecidas pelo CDN original em 7
 
 O crédito visível abaixo da capa foi retirado. Autoria e licença da fotografia continuam disponíveis em Sobre o guia dentro da janela de previsão e no arquivo de créditos, preservando a atribuição sem exibi-la na composição da capa.
 
-`data/weather.json` guarda uma previsão regional de três dias obtida de wttr.in para as coordenadas de Copacabana. É previsão diária, não leitura meteorológica em tempo real. O workflow existente consulta a previsão e o Airbnb a cada seis horas de modo independente; falhas em uma fonte preservam os últimos dados e não impedem a outra atualização. O componente informa quando a previsão está antiga e não mostra dias já encerrados como previsão de hoje.
+`data/weather.json` guarda uma previsão regional de três dias obtida de wttr.in para as coordenadas de Copacabana. É previsão diária, não leitura meteorológica em tempo real. O workflow consulta a previsão a cada 3 horas (00h23, 03h23, 06h23, 09h23, 12h23, 15h23, 18h23 e 21h23 no horário de Fortaleza) e a avaliação do Airbnb a cada 12 horas (06h23 e 18h23), de modo independente; falhas em uma fonte preservam os últimos dados e não impedem a outra atualização. O componente informa quando a previsão está antiga e não mostra dias já encerrados como previsão de hoje.
 
 ```sh
 python scripts/sync-weather.py
