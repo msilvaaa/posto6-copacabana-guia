@@ -114,6 +114,10 @@ def build_native(page, content, upgrades, photos):
                 accessible=' '.join(e(item['text'][lang]) for item in section['items'])
                 parts.append(f'<section class="native-card native-wifi-accessible"><h2>{e(section["title"][lang])}</h2><p>{accessible}</p></section>')
                 continue
+            if page['image']['src'].endswith('-06.jpg') and section_index==0:
+                accessible=' '.join(e(item['text'][lang]) for item in section['items'])
+                parts.append(f'<section class="native-card native-art-accessible"><h2>{e(section["title"][lang])}</h2><p>{accessible}</p></section>')
+                continue
             nodes = []
             descriptions=[]
             for item in section['items']:
@@ -179,6 +183,8 @@ def build_native(page, content, upgrades, photos):
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{artwork(page["image"]["src"],[1135,180,310,463])}</div>'
+        if index==0 and page['image']['src'].endswith('-06.jpg'):
+            top+=f'<div class="native-rules-grid">{artwork(page["image"]["src"],[1104,210,411,435])}</div>'
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     return f'''<!DOCTYPE html>
