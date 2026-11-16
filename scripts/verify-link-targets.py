@@ -16,9 +16,9 @@ async def main():
    await page.set_viewport_size({'width':width,'height':1000})
    for item in pages:
     path='/'+item['path'].removesuffix('index.html')
-    await page.goto(BASE+path);await page.wait_for_function('document.querySelector("[data-expanded-hit]")')
+    await page.goto(BASE+path);await page.wait_for_function('document.querySelector("[data-expanded-hit],.native-link")')
     result=await page.evaluate('''()=>{
-     const targets=[...document.querySelectorAll('[data-expanded-hit]')].map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e),pad=n=>parseFloat(s.getPropertyValue('--hit-'+n))||0;return {href:e.href,base:{l:r.left,t:r.top,r:r.right,b:r.bottom},hit:{l:r.left-pad('left'),t:r.top-pad('top'),r:r.right+pad('right'),b:r.bottom+pad('bottom')}}});
+     const targets=[...document.querySelectorAll('[data-expanded-hit],.native-link')].map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e),pad=n=>parseFloat(s.getPropertyValue('--hit-'+n))||0;return {href:e.href,base:{l:r.left,t:r.top,r:r.right,b:r.bottom},hit:{l:r.left-pad('left'),t:r.top-pad('top'),r:r.right+pad('right'),b:r.bottom+pad('bottom')}}});
      const overlap=(a,b)=>Math.min(a.r,b.r)-Math.max(a.l,b.l)>.1&&Math.min(a.b,b.b)-Math.max(a.t,b.t)>.1;
      let collisions=0;
      targets.forEach((a,i)=>targets.slice(i+1).forEach(b=>{if(a.href!==b.href&&!overlap(a.base,b.base)&&overlap(a.hit,b.hit))collisions++}));
@@ -28,10 +28,10 @@ async def main():
     report['layouts']+=1;report['targets']+=result['count'];report['expanded']+=result['expanded']
   for lang,sections in [('pt',['bares','restaurantes','transportes']),('en',['bars','restaurants','transportation']),('es',['verja','restaurantes','transporte'])]:
    for section in sections:
-    await page.goto(f'{BASE}/{lang}/{section}/');await page.wait_for_function('document.querySelector("[data-expanded-hit]")')
-    link=page.locator('.guide-link[data-expanded-hit][href^="http"]').first
+    await page.goto(f'{BASE}/{lang}/{section}/');await page.wait_for_function('document.querySelector("[data-expanded-hit],.native-link")')
+    link=page.locator('.guide-link[data-expanded-hit][href^="http"],.native-link[href^="http"]').first
     await link.scroll_into_view_if_needed()
-    target=await link.evaluate('e=>{let r=e.getBoundingClientRect(),s=getComputedStyle(e),l=parseFloat(s.getPropertyValue("--hit-left")),b=parseFloat(s.getPropertyValue("--hit-bottom"));return {href:e.href,x:l>1?r.left-l/2:r.left+r.width/2,y:l>1?r.top+r.height/2:r.bottom+b/2}}')
+    target=await link.evaluate('e=>{let r=e.getBoundingClientRect(),s=getComputedStyle(e),l=parseFloat(s.getPropertyValue("--hit-left")),b=parseFloat(s.getPropertyValue("--hit-bottom"));if(e.classList.contains("native-link"))return {href:e.href,x:r.left+3,y:r.top+r.height/2};return {href:e.href,x:l>1?r.left-l/2:r.left+r.width/2,y:l>1?r.top+r.height/2:r.bottom+b/2}}')
     await context.route(target['href'],lambda route:route.fulfill(status=200,body='<title>External link test</title>'))
     before=page.url
     async with page.expect_popup() as popup_event:await page.mouse.click(target['x'],target['y'])

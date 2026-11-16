@@ -34,3 +34,15 @@
 .original-title { position: relative; width: 100%; max-width: 350px; padding: 0; border: 0; border-radius: 0; margin: 0 auto 24px; }
 .original-title svg { display: block; width: 100%; height: auto; aspect-ratio: 350/84; }
 .original-title .title-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Sharp native headings and amenity symbols, independent of the old page image. */
+@font-face { font-family: 'Guide Script'; src: url('/assets/fonts/courgette.ttf') format('truetype'); font-display: swap; }
+.section-title { font-family: 'Guide Script',Georgia,serif; font-style: normal; font-weight: 400; }
+.section-visual { overflow: hidden; border: 0; }
+.section-photo-link { display: block; width: 100%; height: 100%; }
+.section-photo { border: 0; margin: 0; }
+.amenity-icon { display: flex; align-items: center; justify-content: center; color: #173f45; background: white; border: 1px solid #d7e3df; border-radius: 50%; }
+.amenity-icon svg { width: 31px; height: 31px; }
+.content-page .site-frame { max-width: none; }
+
+.content-page .site-reading { scrollbar-gutter: auto; }

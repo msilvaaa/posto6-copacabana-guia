@@ -1,0 +1,1779 @@
+{
+  "-02.jpg": {
+    "title": {
+      "pt": "Bem-vindos",
+      "en": "Welcome",
+      "es": "Bienvenidos"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Sua estadia no Rio",
+              "en": "Your stay in Rio",
+              "es": "Tu estancia en Río"
+            },
+            "icon": "home",
+            "items": [
+              {
+                "text": {
+                  "pt": "Tenho o prazer de recebê-lo em minha acomodação e espero que você tenha uma estadia inesquecível.",
+                  "en": "I am delighted to host you and hope you have a memorable stay.",
+                  "es": "Es un placer recibirte en mi alojamiento y espero que tengas una estancia inolvidable."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Desejo uma excelente estadia no Rio de Janeiro e espero vê-lo em breve novamente!",
+                  "en": "Enjoy your stay in Rio de Janeiro. I look forward to welcoming you again!",
+                  "es": "¡Te deseo una excelente estancia en Río de Janeiro y espero volver a recibirte pronto!"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Sala de estar",
+              "en": "Living room",
+              "es": "Sala de estar"
+            },
+            "icon": "sofa",
+            "items": [
+              {
+                "text": {
+                  "pt": "Sala espaçosa e luminosa, com conforto e decoração moderna para relaxar.",
+                  "en": "A spacious, bright living room with comfortable, modern decor for relaxing.",
+                  "es": "Sala amplia y luminosa, con comodidad y decoración moderna para relajarse."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Quarto",
+              "en": "Bedroom",
+              "es": "Dormitorio"
+            },
+            "icon": "bed",
+            "items": [
+              {
+                "text": {
+                  "pt": "Quarto tranquilo e elegante, com cama macia e decoração refinada.",
+                  "en": "A peaceful, elegant bedroom with a comfortable bed and tasteful decor.",
+                  "es": "Dormitorio tranquilo y elegante, con cama cómoda y decoración cuidada."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Cozinha",
+              "en": "Kitchen",
+              "es": "Cocina"
+            },
+            "icon": "kitchen",
+            "items": [
+              {
+                "text": {
+                  "pt": "Cozinha prática, com layout moderno e eletrodomésticos para preparar suas refeições.",
+                  "en": "A practical, modern kitchen with appliances for preparing your meals.",
+                  "es": "Cocina práctica y moderna, con electrodomésticos para preparar tus comidas."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Banheiro",
+              "en": "Bathroom",
+              "es": "Baño"
+            },
+            "icon": "water",
+            "items": [
+              {
+                "text": {
+                  "pt": "Banheiro limpo e iluminado, com ducha forte e água quente e fria.",
+                  "en": "A clean, bright bathroom with a strong shower and hot and cold water.",
+                  "es": "Baño limpio e iluminado, con ducha potente y agua caliente y fría."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-03.jpg": {
+    "title": {
+      "pt": "Check-in",
+      "en": "Check-in",
+      "es": "Check-in"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Self check-in flexível",
+              "en": "Flexible self check-in",
+              "es": "Self check-in flexible"
+            },
+            "icon": "key",
+            "items": [
+              {
+                "text": {
+                  "pt": "O edifício possui porteiros 24 horas, todos os dias. Há duas entradas na esquina das ruas Raul Pompéia e Júlio de Castilhos, uma em cada rua. Pressione a campainha em uma das portas para entrar.",
+                  "en": "The building has doormen 24 hours a day. There are two entrances at the corner of Raul Pompéia and Júlio de Castilhos streets, one on each street. Ring either doorbell to enter.",
+                  "es": "El edificio cuenta con porteros las 24 horas. Hay dos entradas en la esquina de las calles Raul Pompéia y Júlio de Castilhos, una en cada calle. Pulsa el timbre de cualquiera de las puertas para entrar."
+                }
+              },
+              {
+                "text": {
+                  "pt": "O código da porta será enviado por WhatsApp até 48 horas antes da data do check-in.",
+                  "en": "The door code will be sent by WhatsApp up to 48 hours before your check-in date.",
+                  "es": "El código de la puerta se enviará por WhatsApp hasta 48 horas antes de la fecha de check-in."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Estacionamento",
+              "en": "Parking",
+              "es": "Estacionamiento"
+            },
+            "icon": "car",
+            "items": [
+              {
+                "text": {
+                  "pt": "Estacionamento gratuito na rua e opções de estacionamento pago.",
+                  "en": "Free on-street parking and paid parking options.",
+                  "es": "Estacionamiento gratuito en la calle y opciones de estacionamiento de pago."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Rio2 Parking — Rua Raul Pompéia, 94",
+                  "en": "Rio2 Parking — Rua Raul Pompéia, 94",
+                  "es": "Rio2 Parking — Rua Raul Pompéia, 94"
+                },
+                "href": "https://maps.app.goo.gl/X4f2KwakruPqYVuEA"
+              },
+              {
+                "text": {
+                  "pt": "Estacionamento Shopping Cassino Atlântico",
+                  "en": "Shopping Cassino Atlântico parking",
+                  "es": "Estacionamiento Shopping Cassino Atlântico"
+                },
+                "href": "https://maps.app.goo.gl/borefrxJ8uMDKGyLA"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-04.jpg": {
+    "title": {
+      "pt": "Localização",
+      "en": "Location",
+      "es": "Ubicación"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Rua Raul Pompéia, 131",
+              "en": "Rua Raul Pompéia, 131",
+              "es": "Rua Raul Pompéia, 131"
+            },
+            "icon": "pin",
+            "items": [
+              {
+                "text": {
+                  "pt": "Abrir localização no Google Maps",
+                  "en": "Open location in Google Maps",
+                  "es": "Abrir ubicación en Google Maps"
+                },
+                "href": "https://maps.app.goo.gl/zrtb2NrT3WyvjNPdA"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Como chegar",
+              "en": "Getting here",
+              "es": "Cómo llegar"
+            },
+            "icon": "transport",
+            "items": [
+              {
+                "text": {
+                  "pt": "Uber: custo estimado entre R$ 60 e R$ 80, conforme o horário e o trânsito.",
+                  "en": "Uber: estimated cost R$60–R$80, depending on time and traffic.",
+                  "es": "Uber: coste estimado entre R$60 y R$80, según el horario y el tráfico."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Ônibus executivo: portão C, à direita do desembarque nacional. Linha 2024 Leblon (Intersul), valor indicado de R$ 25.",
+                  "en": "Executive bus: gate C, to the right of domestic arrivals. Line 2024 Leblon (Intersul), listed fare R$25.",
+                  "es": "Autobús ejecutivo: puerta C, a la derecha de llegadas nacionales. Línea 2024 Leblon (Intersul), tarifa indicada de R$25."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Táxi: solicite pelo aplicativo Taxi.Rio. Pagamento em dinheiro ou cartão ao motorista; custo estimado de R$ 80 a R$ 120.",
+                  "en": "Taxi: request through Taxi.Rio. Pay the driver by cash or card; estimated cost R$80–R$120.",
+                  "es": "Taxi: solicita por Taxi.Rio. Paga en efectivo o con tarjeta al conductor; coste estimado de R$80 a R$120."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Distância dos aeroportos",
+              "en": "Airport distances",
+              "es": "Distancia de los aeropuertos"
+            },
+            "icon": "plane",
+            "items": [
+              {
+                "text": {
+                  "pt": "Aeroporto Santos Dumont — 8,3 km",
+                  "en": "Santos Dumont Airport — 8.3 km",
+                  "es": "Aeropuerto Santos Dumont — 8,3 km"
+                },
+                "href": "https://maps.app.goo.gl/RT7GMYay3J4vLoMr9"
+              },
+              {
+                "text": {
+                  "pt": "Aeroporto Internacional do Galeão — 20 km",
+                  "en": "Galeão International Airport — 20 km",
+                  "es": "Aeropuerto Internacional de Galeão — 20 km"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-05.jpg": {
+    "title": {
+      "pt": "Wi-Fi",
+      "en": "Wi-Fi",
+      "es": "Wi-Fi"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Rede",
+              "en": "Network",
+              "es": "Red"
+            },
+            "icon": "wifi",
+            "items": [
+              {
+                "text": {
+                  "pt": "Marcus Silva",
+                  "en": "Marcus Silva",
+                  "es": "Marcus Silva"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Senha",
+              "en": "Password",
+              "es": "Contraseña"
+            },
+            "icon": "key",
+            "items": [
+              {
+                "text": {
+                  "pt": "braziliansoul",
+                  "en": "braziliansoul",
+                  "es": "braziliansoul"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Problemas de conexão",
+              "en": "Connection problems",
+              "es": "Problemas de conexión"
+            },
+            "icon": "info",
+            "items": [
+              {
+                "text": {
+                  "pt": "Verificar a velocidade da internet",
+                  "en": "Check internet speed",
+                  "es": "Comprobar la velocidad de internet"
+                },
+                "href": "https://www.speedtest.net/pt"
+              },
+              {
+                "text": {
+                  "pt": "Entre em contato comigo para verificar com o provedor se há indisponibilidade no serviço.",
+                  "en": "Contact me so I can check with the provider for a service outage.",
+                  "es": "Ponte en contacto conmigo para que pueda consultar al proveedor si hay una interrupción del servicio."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-06.jpg": {
+    "title": {
+      "pt": "Regras da casa",
+      "en": "House rules",
+      "es": "Reglas de la casa"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Durante sua estadia",
+              "en": "During your stay",
+              "es": "Durante tu estancia"
+            },
+            "icon": "shield",
+            "items": [
+              {
+                "text": {
+                  "pt": "Desligue o ar-condicionado sempre que sair do apartamento.",
+                  "en": "Turn off the air conditioning whenever you leave the apartment.",
+                  "es": "Apaga el aire acondicionado cada vez que salgas del apartamento."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Respeite o silêncio entre 22h e 9h.",
+                  "en": "Observe quiet hours from 10 pm to 9 am.",
+                  "es": "Respeta el horario de silencio de 22:00 a 9:00."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Não são permitidos animais de estimação.",
+                  "en": "Pets are not allowed.",
+                  "es": "No se admiten mascotas."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Não convide hóspedes adicionais sem autorização prévia.",
+                  "en": "Do not invite additional guests without prior approval.",
+                  "es": "No invites huéspedes adicionales sin autorización previa."
+                }
+              },
+              {
+                "text": {
+                  "pt": "É proibido fumar dentro do apartamento.",
+                  "en": "Smoking is prohibited inside the apartment.",
+                  "es": "Está prohibido fumar dentro del apartamento."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Comunique imediatamente qualquer dano ocorrido durante a estadia.",
+                  "en": "Report any damage during your stay immediately.",
+                  "es": "Comunica inmediatamente cualquier daño durante tu estancia."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Hóspedes e visitas",
+              "en": "Guests and visitors",
+              "es": "Huéspedes y visitas"
+            },
+            "icon": "people",
+            "items": [
+              {
+                "text": {
+                  "pt": "Hóspedes adicionais estão sujeitos à taxa de R$ 280 por hóspede, por noite. Visitas não cadastradas no controle do edifício devem ser comunicadas.",
+                  "en": "Additional guests are subject to a charge of R$280 per guest, per night. Visitors not registered with the building must be reported.",
+                  "es": "Los huéspedes adicionales están sujetos a una tarifa de R$280 por huésped y noche. Deben comunicarse las visitas no registradas en el edificio."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-07.jpg": {
+    "title": {
+      "pt": "Transportes",
+      "en": "Transport",
+      "es": "Transportes"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Metrô — General Osório",
+              "en": "Metro — General Osório",
+              "es": "Metro — General Osório"
+            },
+            "icon": "transport",
+            "items": [
+              {
+                "text": {
+                  "pt": "Acesso D — Sá Ferreira",
+                  "en": "Access D — Sá Ferreira",
+                  "es": "Acceso D — Sá Ferreira"
+                },
+                "href": "https://maps.app.goo.gl/XGKp1kRCJ7QPTxHF8"
+              },
+              {
+                "text": {
+                  "pt": "Segunda a sábado: 5h à meia-noite. Domingos e feriados: 7h às 23h.",
+                  "en": "Monday–Saturday: 5 am to midnight. Sundays and holidays: 7 am–11 pm.",
+                  "es": "Lunes a sábado: de 5:00 a medianoche. Domingos y festivos: de 7:00 a 23:00."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Acesso A — Praça General Osório",
+                  "en": "Access A — General Osório Square",
+                  "es": "Acceso A — Plaza General Osório"
+                },
+                "href": "https://maps.app.goo.gl/ticXHBt5opGRzxQU9"
+              },
+              {
+                "text": {
+                  "pt": "Segunda a sábado: 5h à meia-noite. Domingos e feriados: 7h às 23h.",
+                  "en": "Monday–Saturday: 5 am to midnight. Sundays and holidays: 7 am–11 pm.",
+                  "es": "Lunes a sábado: de 5:00 a medianoche. Domingos y festivos: de 7:00 a 23:00."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Rodoviária e ônibus",
+              "en": "Bus terminals and buses",
+              "es": "Terminales y autobuses"
+            },
+            "icon": "bus",
+            "items": [
+              {
+                "text": {
+                  "pt": "Rodoviária Novo Rio",
+                  "en": "Novo Rio bus terminal",
+                  "es": "Terminal Novo Rio"
+                },
+                "href": "https://maps.app.goo.gl/V2A5v8iFr4Ffr9KR9"
+              },
+              {
+                "text": {
+                  "pt": "Buser",
+                  "en": "Buser",
+                  "es": "Buser"
+                },
+                "href": "https://www.buser.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "Pontos de ônibus BRS 2 e BRS 13.",
+                  "en": "Bus stops BRS 2 and BRS 13.",
+                  "es": "Paradas de autobús BRS 2 y BRS 13."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Aeroportos",
+              "en": "Airports",
+              "es": "Aeropuertos"
+            },
+            "icon": "plane",
+            "items": [
+              {
+                "text": {
+                  "pt": "Aeroporto Internacional do Galeão — GIG",
+                  "en": "Galeão International Airport — GIG",
+                  "es": "Aeropuerto Internacional de Galeão — GIG"
+                },
+                "href": "https://maps.app.goo.gl/fYKyHM98FECg4Rh37"
+              },
+              {
+                "text": {
+                  "pt": "Aeroporto Santos Dumont — SDU",
+                  "en": "Santos Dumont Airport — SDU",
+                  "es": "Aeropuerto Santos Dumont — SDU"
+                },
+                "href": "https://maps.app.goo.gl/iq6CcoLazX9RHe7dA"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Uber nos aeroportos",
+              "en": "Uber at the airports",
+              "es": "Uber en los aeropuertos"
+            },
+            "icon": "car",
+            "items": [
+              {
+                "text": {
+                  "pt": "Galeão (GIG): siga em direção ao desembarque doméstico e às placas de Uber no estacionamento Administrativo.",
+                  "en": "Galeão (GIG): head towards domestic arrivals and follow the Uber signs to the Administrative parking area.",
+                  "es": "Galeão (GIG): dirígete a llegadas nacionales y sigue las señales de Uber al estacionamiento Administrativo."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Santos Dumont (SDU): siga as placas em direção ao Shopping Bossa Nova Mall.",
+                  "en": "Santos Dumont (SDU): follow the signs towards Bossa Nova Mall.",
+                  "es": "Santos Dumont (SDU): sigue las señales hacia Bossa Nova Mall."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-09.jpg": {
+    "title": {
+      "pt": "Atividades",
+      "en": "Activities",
+      "es": "Actividades"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Forte de Copacabana",
+              "en": "Copacabana Fort",
+              "es": "Fuerte de Copacabana"
+            },
+            "icon": "landmark",
+            "items": [
+              {
+                "text": {
+                  "pt": "Forte de Copacabana",
+                  "en": "Forte de Copacabana",
+                  "es": "Forte de Copacabana"
+                },
+                "href": "https://maps.app.goo.gl/qCLcaRsKFsPj7ujY6",
+                "href_by_lang": {
+                  "en": "https://maps.app.goo.gl/usPwAX4m68TupqMs6",
+                  "es": "https://maps.app.goo.gl/usPwAX4m68TupqMs6"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Confeitaria Colombo",
+                  "en": "Confeitaria Colombo",
+                  "es": "Confeitaria Colombo"
+                },
+                "href": "https://maps.app.goo.gl/exM4m8DQCLWNctyCA",
+                "href_by_lang": {
+                  "en": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2",
+                  "es": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Entrada gratuita às terças-feiras, exceto feriados. Valores indicados no guia: R$ 10 (inteira) e R$ 5 (meia-entrada). Pagamento apenas em dinheiro.",
+                  "en": "Free entry on Tuesdays, except holidays. Listed admission: R$10 (full price) and R$5 (reduced). Cash payment only.",
+                  "es": "Entrada gratuita los martes, excepto festivos. Precios indicados en la guía: R$10 (general) y R$5 (reducida). Pago solo en efectivo."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Pão de Açúcar",
+              "en": "Sugarloaf Mountain",
+              "es": "Pan de Azúcar"
+            },
+            "icon": "mountain",
+            "items": [
+              {
+                "text": {
+                  "pt": "Pão de Açúcar",
+                  "en": "Sugarloaf Mountain",
+                  "es": "Pan de Azúcar"
+                },
+                "href": "https://maps.app.goo.gl/qX3YfpSo3CTeh9Ee7"
+              },
+              {
+                "text": {
+                  "pt": "Pão de Açúcar — localização",
+                  "en": "Sugarloaf Mountain — location",
+                  "es": "Pan de Azúcar — ubicación"
+                },
+                "href": "https://maps.app.goo.gl/imZYbmEEZMEBJauH9"
+              },
+              {
+                "text": {
+                  "pt": "Segunda a domingo: 8h30 às 20h. Valores indicados: adultos R$ 85 e crianças R$ 42. Pagamento on-line, cartão, PIX e dinheiro.",
+                  "en": "Monday–Sunday: 8:30 am–8 pm. Listed admission: adults R$85, children R$42. Online, card, PIX and cash payments.",
+                  "es": "Lunes a domingo: de 8:30 a 20:00. Precios indicados: adultos R$85 y niños R$42. Pago en línea, tarjeta, PIX y efectivo."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Bicicleta Itaú",
+              "en": "Itaú bikes",
+              "es": "Bicicletas Itaú"
+            },
+            "icon": "bike",
+            "items": [
+              {
+                "text": {
+                  "pt": "Estação de bicicletas Itaú",
+                  "en": "Itaú bike station",
+                  "es": "Estación de bicicletas Itaú"
+                },
+                "href": "https://maps.app.goo.gl/RTW3dHe7SXRDCPxb6"
+              },
+              {
+                "text": {
+                  "pt": "Horário indicado: 8h às 22h.",
+                  "en": "Listed hours: 8 am–10 pm.",
+                  "es": "Horario indicado: de 8:00 a 22:00."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Bike Itaú — Tembici",
+                  "en": "Bike Itaú — Tembici",
+                  "es": "Bike Itaú — Tembici"
+                },
+                "href": "https://www.tembici.com.br/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Academia",
+              "en": "Gym",
+              "es": "Gimnasio"
+            },
+            "icon": "fitness",
+            "items": [
+              {
+                "text": {
+                  "pt": "Smart Fit — Rua Francisco Sá, 41",
+                  "en": "Smart Fit — Rua Francisco Sá, 41",
+                  "es": "Smart Fit — Rua Francisco Sá, 41"
+                },
+                "href": "https://maps.app.goo.gl/infS3pCMii5sRV3M6",
+                "href_by_lang": {
+                  "en": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8",
+                  "es": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Smart Fit — Rua Visconde de Pirajá, 138",
+                  "en": "Smart Fit — Rua Visconde de Pirajá, 138",
+                  "es": "Smart Fit — Rua Visconde de Pirajá, 138"
+                },
+                "href": "https://maps.app.goo.gl/5vWSPofpSnwqATEY6",
+                "href_by_lang": {
+                  "en": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8",
+                  "es": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Bodytech",
+                  "en": "Bodytech",
+                  "es": "Bodytech"
+                },
+                "href": "https://maps.app.goo.gl/HQUu7pJ1jCzC9VyT7"
+              },
+              {
+                "text": {
+                  "pt": "Bodytech aceita pagamento de diárias.",
+                  "en": "Bodytech accepts day passes.",
+                  "es": "Bodytech permite el pago de pases diarios."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-10.jpg": {
+    "title": {
+      "pt": "Informações",
+      "en": "Information",
+      "es": "Información"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Bancos",
+              "en": "Banks",
+              "es": "Bancos"
+            },
+            "icon": "bank",
+            "items": [
+              {
+                "text": {
+                  "pt": "Banco Itaú",
+                  "en": "Banco Itaú",
+                  "es": "Banco Itaú"
+                },
+                "href": "https://maps.app.goo.gl/bmj4Y2QBSSyNWCKF8"
+              },
+              {
+                "text": {
+                  "pt": "Banco Santander",
+                  "en": "Banco Santander",
+                  "es": "Banco Santander"
+                },
+                "href": "https://maps.app.goo.gl/4mU4g6BEkhpWK7eL9"
+              },
+              {
+                "text": {
+                  "pt": "Banco do Brasil",
+                  "en": "Banco do Brasil",
+                  "es": "Banco do Brasil"
+                },
+                "href": "https://maps.app.goo.gl/LfBjDrsDpUoKh34t6"
+              },
+              {
+                "text": {
+                  "pt": "Caixa Econômica Federal",
+                  "en": "Caixa Econômica Federal",
+                  "es": "Caixa Econômica Federal"
+                },
+                "href": "https://maps.app.goo.gl/NcpfUoFF1y3YV8wv7"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "ATM / Câmbio",
+              "en": "ATM / Currency exchange",
+              "es": "Cajero / Cambio"
+            },
+            "icon": "money",
+            "items": [
+              {
+                "text": {
+                  "pt": "Caixa 24 horas — Shopping Cassino Atlântico",
+                  "en": "24-hour ATM — Shopping Cassino Atlântico",
+                  "es": "Cajero 24 horas — Shopping Cassino Atlântico"
+                },
+                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98"
+              },
+              {
+                "text": {
+                  "pt": "Casa de câmbio — Shopping Cassino Atlântico",
+                  "en": "Currency exchange — Shopping Cassino Atlântico",
+                  "es": "Casa de cambio — Shopping Cassino Atlântico"
+                },
+                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98"
+              },
+              {
+                "text": {
+                  "pt": "Segunda a sábado: 9h às 21h. Domingo: 14h às 18h.",
+                  "en": "Monday–Saturday: 9 am–9 pm. Sunday: 2 pm–6 pm.",
+                  "es": "Lunes a sábado: de 9:00 a 21:00. Domingo: de 14:00 a 18:00."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Papelaria",
+              "en": "Stationery",
+              "es": "Papelería"
+            },
+            "icon": "pencil",
+            "items": [
+              {
+                "text": {
+                  "pt": "Papelaria Da Bela",
+                  "en": "Papelaria Da Bela",
+                  "es": "Papelaria Da Bela"
+                },
+                "href": "https://maps.app.goo.gl/YvRL6gWupeCMPs3S7"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Correios",
+              "en": "Post office",
+              "es": "Correos"
+            },
+            "icon": "mail",
+            "items": [
+              {
+                "text": {
+                  "pt": "Agência dos Correios",
+                  "en": "Post office",
+                  "es": "Oficina de Correos"
+                },
+                "href": "https://maps.app.goo.gl/kmV2KPYovArY2sfZ6"
+              },
+              {
+                "text": {
+                  "pt": "CEP do apartamento: 22080-001",
+                  "en": "Apartment postal code: 22080-001",
+                  "es": "Código postal del apartamento: 22080-001"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Agências de turismo",
+              "en": "Travel agencies",
+              "es": "Agencias de turismo"
+            },
+            "icon": "case",
+            "items": [
+              {
+                "text": {
+                  "pt": "City Rio Turismo",
+                  "en": "City Rio Turismo",
+                  "es": "City Rio Turismo"
+                },
+                "href": "https://city.rio.br/"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — City Rio Turismo",
+                  "en": "Instagram — City Rio Turismo",
+                  "es": "Instagram — City Rio Turismo"
+                },
+                "href": "https://www.instagram.com/cityrioturismo/"
+              },
+              {
+                "text": {
+                  "pt": "+55 21 3066-0269",
+                  "en": "+55 21 3066-0269",
+                  "es": "+55 21 3066-0269"
+                },
+                "href": "tel:+55213066-0269"
+              },
+              {
+                "text": {
+                  "pt": "Live Rio Tour",
+                  "en": "Live Rio Tour",
+                  "es": "Live Rio Tour"
+                },
+                "href": "https://maps.app.goo.gl/zK2PxtaeeHgbK5Wu7"
+              },
+              {
+                "text": {
+                  "pt": "(21) 7847-4197",
+                  "en": "(21) 7847-4197",
+                  "es": "(21) 7847-4197"
+                },
+                "href": "tel:(21)7847-4197"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-11.jpg": {
+    "title": {
+      "pt": "Bares",
+      "en": "Bars",
+      "es": "Bares"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Minhas recomendações",
+              "en": "My recommendations",
+              "es": "Mis recomendaciones"
+            },
+            "icon": "glass",
+            "items": [
+              {
+                "text": {
+                  "pt": "Boteco Belmonte",
+                  "en": "Boteco Belmonte",
+                  "es": "Boteco Belmonte"
+                },
+                "href": "https://maps.app.goo.gl/w6MaQtLco1SCjhwC7"
+              },
+              {
+                "text": {
+                  "pt": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema",
+                  "en": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema",
+                  "es": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema"
+                },
+                "href": "https://maps.app.goo.gl/Us8V4UhyPFq7CxSw9"
+              },
+              {
+                "text": {
+                  "pt": "Boteco Belmonte — Rua Domingos Ferreira, 242",
+                  "en": "Boteco Belmonte — Rua Domingos Ferreira, 242",
+                  "es": "Boteco Belmonte — Rua Domingos Ferreira, 242"
+                },
+                "href": "https://maps.app.goo.gl/sCiVkZfR1Fatwhdy9"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Boteco Belmonte",
+                  "en": "Instagram — Boteco Belmonte",
+                  "es": "Instagram — Boteco Belmonte"
+                },
+                "href": "https://www.instagram.com/boteco_belmonte/?hl=pt-br"
+              },
+              {
+                "text": {
+                  "pt": "Boteco Boa Praça",
+                  "en": "Boteco Boa Praça",
+                  "es": "Boteco Boa Praça"
+                },
+                "href": "https://maps.app.goo.gl/nLWZqoGuUGa5NCgU9"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Boteco Boa Praça",
+                  "en": "Instagram — Boteco Boa Praça",
+                  "es": "Instagram — Boteco Boa Praça"
+                },
+                "href": "https://www.instagram.com/botecoboapraca?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              },
+              {
+                "text": {
+                  "pt": "Sindicato do Chopp",
+                  "en": "Sindicato do Chopp",
+                  "es": "Sindicato do Chopp"
+                },
+                "href": "https://maps.app.goo.gl/fHc9zuFndJz7P8VA6"
+              },
+              {
+                "text": {
+                  "pt": "Site — Sindicato do Chopp",
+                  "en": "Website — Sindicato do Chopp",
+                  "es": "Web — Sindicato do Chopp"
+                },
+                "href": "https://www.sindicatodochopp.com.br/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Precisa de um café?",
+              "en": "Time for coffee?",
+              "es": "¿Te apetece un café?"
+            },
+            "icon": "coffee",
+            "items": [
+              {
+                "text": {
+                  "pt": "Apetite Café",
+                  "en": "Apetite Café",
+                  "es": "Apetite Café"
+                },
+                "href": "https://maps.app.goo.gl/EZtzSazB4E8xd2AaA"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Apetite Café",
+                  "en": "Instagram — Apetite Café",
+                  "es": "Instagram — Apetite Café"
+                },
+                "href": "https://www.instagram.com/apetitecafe.rj/"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-12.jpg": {
+    "title": {
+      "pt": "Restaurantes",
+      "en": "Restaurants",
+      "es": "Restaurantes"
+    },
+    "chapters": [
+      {
+        "title": {
+          "pt": "Minhas recomendações",
+          "en": "My recommendations",
+          "es": "Mis recomendaciones"
+        },
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Galetos Copa Rio",
+              "en": "Galetos Copa Rio",
+              "es": "Galetos Copa Rio"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Galetos Copa Rio",
+                  "en": "Galetos Copa Rio",
+                  "es": "Galetos Copa Rio"
+                },
+                "href": "https://maps.app.goo.gl/BRMtrQuKAoKnMoR3A"
+              },
+              {
+                "text": {
+                  "pt": "A 60 metros de distância.",
+                  "en": "60 metres away.",
+                  "es": "A 60 metros de distancia."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Site — Galetos Copa Rio",
+                  "en": "Website — Galetos Copa Rio",
+                  "es": "Web — Galetos Copa Rio"
+                },
+                "href": "https://www.galetoscopario.com.br/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Famiglia Marinho",
+              "en": "Famiglia Marinho",
+              "es": "Famiglia Marinho"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Famiglia Marinho",
+                  "en": "Famiglia Marinho",
+                  "es": "Famiglia Marinho"
+                },
+                "href": "https://maps.app.goo.gl/rEdZu1CFr3dMucoeA"
+              },
+              {
+                "text": {
+                  "pt": "Site — Famiglia Marinho",
+                  "en": "Website — Famiglia Marinho",
+                  "es": "Web — Famiglia Marinho"
+                },
+                "href": "https://www.famigliamarinho.com/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Pasta & Vino",
+              "en": "Pasta & Vino",
+              "es": "Pasta & Vino"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Pasta & Vino",
+                  "en": "Pasta & Vino",
+                  "es": "Pasta & Vino"
+                },
+                "href": "https://maps.app.goo.gl/QSqNE4KcNhkpK4nY9"
+              },
+              {
+                "text": {
+                  "pt": "Site — Pasta & Vino",
+                  "en": "Website — Pasta & Vino",
+                  "es": "Web — Pasta & Vino"
+                },
+                "href": "https://pastaevino.com.br/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": {
+          "pt": "Mais sabores",
+          "en": "More places to eat",
+          "es": "Más sabores"
+        },
+        "tile": 1,
+        "sections": [
+          {
+            "title": {
+              "pt": "TT Burger",
+              "en": "TT Burger",
+              "es": "TT Burger"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "TT Burger",
+                  "en": "TT Burger",
+                  "es": "TT Burger"
+                },
+                "href": "https://maps.app.goo.gl/ZRR6PTDNYgW7uhH58"
+              },
+              {
+                "text": {
+                  "pt": "Site — TT Burger",
+                  "en": "Website — TT Burger",
+                  "es": "Web — TT Burger"
+                },
+                "href": "https://ttburger.com.br/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Garota de Ipanema",
+              "en": "Garota de Ipanema",
+              "es": "Garota de Ipanema"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Restaurante e Bar Garota de Ipanema",
+                  "en": "Restaurante e Bar Garota de Ipanema",
+                  "es": "Restaurante e Bar Garota de Ipanema"
+                },
+                "href": "https://maps.app.goo.gl/J4ZBPwMZKUXwW47f9"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Garota de Ipanema",
+                  "en": "Instagram — Garota de Ipanema",
+                  "es": "Instagram — Garota de Ipanema"
+                },
+                "href": "https://www.instagram.com/restaurantesgarota/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Eclipse Gastronomia",
+              "en": "Eclipse Gastronomia",
+              "es": "Eclipse Gastronomia"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Eclipse Gastronomia",
+                  "en": "Eclipse Gastronomia",
+                  "es": "Eclipse Gastronomia"
+                },
+                "href": "https://maps.app.goo.gl/RTr1c8roFyWEHoP67"
+              },
+              {
+                "text": {
+                  "pt": "Aberto 24 horas.",
+                  "en": "Open 24 hours.",
+                  "es": "Abierto las 24 horas."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Site — Eclipse",
+                  "en": "Website — Eclipse",
+                  "es": "Web — Eclipse"
+                },
+                "href": "https://www.bareclipse.com.br/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": {
+          "pt": "Outras opções",
+          "en": "Other options",
+          "es": "Otras opciones"
+        },
+        "tile": 2,
+        "sections": [
+          {
+            "title": {
+              "pt": "Venga",
+              "en": "Venga",
+              "es": "Venga"
+            },
+            "icon": "food",
+            "items": [
+              {
+                "text": {
+                  "pt": "Venga",
+                  "en": "Venga",
+                  "es": "Venga"
+                },
+                "href": "https://maps.app.goo.gl/DMedjYZGDtrSosbU7"
+              },
+              {
+                "text": {
+                  "pt": "Site — Venga",
+                  "en": "Website — Venga",
+                  "es": "Web — Venga"
+                },
+                "href": "https://venga.com.br/restaurantes/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Teva Deli",
+              "en": "Teva Deli",
+              "es": "Teva Deli"
+            },
+            "icon": "leaf",
+            "items": [
+              {
+                "text": {
+                  "pt": "Teva Deli — restaurante vegano",
+                  "en": "Teva Deli — vegan restaurant",
+                  "es": "Teva Deli — restaurante vegano"
+                },
+                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Teva Deli",
+                  "en": "Instagram — Teva Deli",
+                  "es": "Instagram — Teva Deli"
+                },
+                "href": "https://www.instagram.com/tevadelivegetal/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Serviço de entrega",
+              "en": "Delivery services",
+              "es": "Servicio de entrega"
+            },
+            "icon": "bag",
+            "items": [
+              {
+                "text": {
+                  "pt": "Pedidos de restaurantes, farmácias e aplicativos devem ser retirados na portaria. As regras do condomínio não permitem a entrada de entregadores.",
+                  "en": "Collect restaurant, pharmacy and app deliveries at the building entrance. Building rules do not permit delivery personnel inside.",
+                  "es": "Recoge los pedidos de restaurantes, farmacias y aplicaciones en la portería. Las normas del edificio no permiten la entrada de repartidores."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-13.jpg": {
+    "title": {
+      "pt": "Estabelecimentos",
+      "en": "Shops and services",
+      "es": "Establecimientos"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Lojas Americanas",
+              "en": "Lojas Americanas",
+              "es": "Lojas Americanas"
+            },
+            "icon": "bag",
+            "items": [
+              {
+                "text": {
+                  "pt": "Lojas Americanas",
+                  "en": "Lojas Americanas",
+                  "es": "Lojas Americanas"
+                },
+                "href": "https://maps.app.goo.gl/4oSdAEbpj1TTyMG76"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Supermercados",
+              "en": "Supermarkets",
+              "es": "Supermercados"
+            },
+            "icon": "cart",
+            "items": [
+              {
+                "text": {
+                  "pt": "Supermercado Zona Sul",
+                  "en": "Supermercado Zona Sul",
+                  "es": "Supermercado Zona Sul"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Rua Francisco Sá, 35 — Copacabana",
+                  "en": "Rua Francisco Sá, 35 — Copacabana",
+                  "es": "Rua Francisco Sá, 35 — Copacabana"
+                },
+                "href": "https://maps.app.goo.gl/14bbzSfMGoZmZEFn7"
+              },
+              {
+                "text": {
+                  "pt": "Av. Nossa Senhora de Copacabana, 1369",
+                  "en": "Av. Nossa Senhora de Copacabana, 1369",
+                  "es": "Av. Nossa Senhora de Copacabana, 1369"
+                },
+                "href": "https://maps.app.goo.gl/SvBjNeQGZ3u6SFXw8"
+              },
+              {
+                "text": {
+                  "pt": "Av. Rainha Elisabeth, 325",
+                  "en": "Av. Rainha Elisabeth, 325",
+                  "es": "Av. Rainha Elisabeth, 325"
+                },
+                "href": "https://maps.app.goo.gl/fw5pwaBFojaXjtzg9"
+              },
+              {
+                "text": {
+                  "pt": "Site — Zona Sul",
+                  "en": "Website — Zona Sul",
+                  "es": "Web — Zona Sul"
+                },
+                "href": "https://www.zonasul.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "Big Market",
+                  "en": "Big Market",
+                  "es": "Big Market"
+                },
+                "href": "https://maps.app.goo.gl/F61cWQLUyK8P9T6X9"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Big Market",
+                  "en": "Instagram — Big Market",
+                  "es": "Instagram — Big Market"
+                },
+                "href": "https://www.instagram.com/redebigmarket/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Feira de rua",
+              "en": "Street market",
+              "es": "Mercado callejero"
+            },
+            "icon": "leaf",
+            "items": [
+              {
+                "text": {
+                  "pt": "Rua Rainha Elizabeth, 33",
+                  "en": "Rua Rainha Elizabeth, 33",
+                  "es": "Rua Rainha Elizabeth, 33"
+                },
+                "href": "https://maps.app.goo.gl/dGMnDWpghWgSuNSEA"
+              },
+              {
+                "text": {
+                  "pt": "Domingos, das 8h às 14h, exceto quando a cidade recebe eventos importantes.",
+                  "en": "Sundays, 8 am–2 pm, except during major city events.",
+                  "es": "Domingos, de 8:00 a 14:00, excepto durante grandes eventos en la ciudad."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": {
+          "pt": "Café da manhã",
+          "en": "Breakfast",
+          "es": "Desayuno"
+        },
+        "tile": 1,
+        "sections": [
+          {
+            "title": {
+              "pt": "Padarias",
+              "en": "Bakeries",
+              "es": "Panaderías"
+            },
+            "icon": "bread",
+            "items": [
+              {
+                "text": {
+                  "pt": "Padero",
+                  "en": "Padero",
+                  "es": "Padero"
+                },
+                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
+              },
+              {
+                "text": {
+                  "pt": "La Parisiense",
+                  "en": "La Parisiense",
+                  "es": "La Parisiense"
+                },
+                "href": "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Café da manhã",
+              "en": "Breakfast",
+              "es": "Desayuno"
+            },
+            "icon": "coffee",
+            "items": [
+              {
+                "text": {
+                  "pt": "ARP Bar",
+                  "en": "ARP Bar",
+                  "es": "ARP Bar"
+                },
+                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — ARP Bar",
+                  "en": "Instagram — ARP Bar",
+                  "es": "Instagram — ARP Bar"
+                },
+                "href": "https://www.instagram.com/arpbar/"
+              },
+              {
+                "text": {
+                  "pt": "Starbucks",
+                  "en": "Starbucks",
+                  "es": "Starbucks"
+                },
+                "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
+              },
+              {
+                "text": {
+                  "pt": "Apetite Café Copacabana",
+                  "en": "Apetite Café Copacabana",
+                  "es": "Apetite Café Copacabana"
+                },
+                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Apetite Café",
+                  "en": "Instagram — Apetite Café",
+                  "es": "Instagram — Apetite Café"
+                },
+                "href": "https://www.instagram.com/apetitecafe.rj/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Feira de artesanato",
+              "en": "Craft fair",
+              "es": "Feria de artesanía"
+            },
+            "icon": "gift",
+            "items": [
+              {
+                "text": {
+                  "pt": "Praça General Osório",
+                  "en": "General Osório Square",
+                  "es": "Plaza General Osório"
+                },
+                "href": "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9"
+              },
+              {
+                "text": {
+                  "pt": "Domingos, das 8h às 18h, exceto durante eventos importantes na cidade.",
+                  "en": "Sundays, 8 am–6 pm, except during major city events.",
+                  "es": "Domingos, de 8:00 a 18:00, excepto durante grandes eventos en la ciudad."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-14.jpg": {
+    "title": {
+      "pt": "Emergência",
+      "en": "Emergency",
+      "es": "Emergencia"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "SAMU",
+              "en": "SAMU",
+              "es": "SAMU"
+            },
+            "icon": "medical",
+            "items": [
+              {
+                "text": {
+                  "pt": "Ligar 192 — emergência médica",
+                  "en": "Call 192 — medical emergency",
+                  "es": "Llamar al 192 — emergencia médica"
+                },
+                "href": "tel:192"
+              },
+              {
+                "text": {
+                  "pt": "Em caso de emergências e acidentes, ligue imediatamente. Atendimento 24 horas.",
+                  "en": "Call immediately in a medical emergency or accident. Available 24 hours.",
+                  "es": "En caso de emergencia médica o accidente, llama inmediatamente. Atención las 24 horas."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Polícia",
+              "en": "Police",
+              "es": "Policía"
+            },
+            "icon": "shield",
+            "items": [
+              {
+                "text": {
+                  "pt": "Ligar 190",
+                  "en": "Call 190",
+                  "es": "Llamar al 190"
+                },
+                "href": "tel:190"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Hospitais próximos",
+              "en": "Nearby hospitals",
+              "es": "Hospitales cercanos"
+            },
+            "icon": "medical",
+            "items": [
+              {
+                "text": {
+                  "pt": "Hospital Copa D’Or — particular",
+                  "en": "Hospital Copa D’Or — private",
+                  "es": "Hospital Copa D’Or — privado"
+                },
+                "href": "https://maps.app.goo.gl/Ln3fcou14Pt2jr8n8"
+              },
+              {
+                "text": {
+                  "pt": "Hospital Municipal Miguel Couto — público",
+                  "en": "Hospital Municipal Miguel Couto — public",
+                  "es": "Hospital Municipal Miguel Couto — público"
+                },
+                "href": "https://maps.app.goo.gl/aWzNQkcHLEEktidVA"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Farmácias",
+              "en": "Pharmacies",
+              "es": "Farmacias"
+            },
+            "icon": "medical",
+            "items": [
+              {
+                "text": {
+                  "pt": "Drogaria Pacheco",
+                  "en": "Drogaria Pacheco",
+                  "es": "Drogaria Pacheco"
+                },
+                "href": "https://maps.app.goo.gl/MUDvFesuZq94ubQt5"
+              },
+              {
+                "text": {
+                  "pt": "Drogaria Cristal",
+                  "en": "Drogaria Cristal",
+                  "es": "Drogaria Cristal"
+                },
+                "href": "https://maps.app.goo.gl/eTyuY5Lw5uzm5bmc8"
+              },
+              {
+                "text": {
+                  "pt": "Drogaria Drogasmil",
+                  "en": "Drogaria Drogasmil",
+                  "es": "Drogaria Drogasmil"
+                },
+                "href": "https://maps.app.goo.gl/gbWD5TnKaqUZj29e9"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Bombeiros",
+              "en": "Fire department",
+              "es": "Bomberos"
+            },
+            "icon": "fire",
+            "items": [
+              {
+                "text": {
+                  "pt": "Ligar 193",
+                  "en": "Call 193",
+                  "es": "Llamar al 193"
+                },
+                "href": "tel:193"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "-15.jpg": {
+    "title": {
+      "pt": "Check-out",
+      "en": "Check-out",
+      "es": "Check-out"
+    },
+    "chapters": [
+      {
+        "title": null,
+        "tile": 0,
+        "sections": [
+          {
+            "title": {
+              "pt": "Saída mais tarde",
+              "en": "Late check-out",
+              "es": "Salida más tarde"
+            },
+            "icon": "clock",
+            "items": [
+              {
+                "text": {
+                  "pt": "Se quiser sair mais tarde, entre em contato comigo para verificar a possibilidade de late check-out.",
+                  "en": "If you would like to leave later, contact me to check whether late check-out is possible.",
+                  "es": "Si quieres salir más tarde, ponte en contacto conmigo para comprobar si es posible un late check-out."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Antes de sair",
+              "en": "Before you leave",
+              "es": "Antes de salir"
+            },
+            "icon": "check",
+            "items": [
+              {
+                "text": {
+                  "pt": "Desligue o ar-condicionado.",
+                  "en": "Turn off the air conditioning.",
+                  "es": "Apaga el aire acondicionado."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Feche as janelas.",
+                  "en": "Close the windows.",
+                  "es": "Cierra las ventanas."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Esvazie as lixeiras e descarte todo o lixo.",
+                  "en": "Empty the bins and dispose of all rubbish.",
+                  "es": "Vacía los cubos y desecha toda la basura."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Guarda-volumes",
+              "en": "Luggage storage",
+              "es": "Consigna de equipaje"
+            },
+            "icon": "case",
+            "items": [
+              {
+                "text": {
+                  "pt": "Rio Storage Cube",
+                  "en": "Rio Storage Cube",
+                  "es": "Rio Storage Cube"
+                },
+                "href": "https://www.riostoragecube.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+              },
+              {
+                "text": {
+                  "pt": "Av. Atlântica, 4240",
+                  "en": "Av. Atlântica, 4240",
+                  "es": "Av. Atlântica, 4240"
+                }
+              },
+              {
+                "text": {
+                  "pt": "Bounce — guarda-volumes",
+                  "en": "Bounce — luggage storage",
+                  "es": "Bounce — consigna de equipaje"
+                },
+                "href": "https://pt.bounce.com/"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

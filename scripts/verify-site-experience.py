@@ -29,7 +29,7 @@ async def main():
     footer=await page.locator('.site-pagination').evaluate('e=>e.getBoundingClientRect().toJSON()')
     wa_rect=await wa.evaluate('e=>e.getBoundingClientRect().toJSON()')
     reading=await page.locator('.site-reading').evaluate('e=>e.getBoundingClientRect().toJSON()')
-    if not await page.locator('.site-pagination').evaluate('e=>!!e.closest(".site-reading") && !!e.closest(".section-panel,.guide-description-navigation")'):
+    if not await page.locator('.site-pagination').evaluate('e=>!!e.closest(".site-reading") && !!e.closest(".section-panel,.guide-description-navigation,.native-panel")'):
      report['failures'].append(path+': navigation outside description')
     if wa_rect['bottom']>reading['bottom']+.5:report['failures'].append(path+': contact clipped at end of content')
     report['inline_navigation_checks']+=1
@@ -59,7 +59,7 @@ async def main():
    restaurants={'pt':'restaurantes','en':'restaurants','es':'restaurantes'}[lang]
    await page.goto(f'{BASE}/{lang}/{restaurants}/')
    # Do not contact the external site: verify the new-tab boundary using a local response.
-   external=page.locator('.guide-link[href^="https://"]').first
+   external=page.locator('.guide-link[href^="https://"],.native-link[href^="https://"]').first
    destination=await external.get_attribute('href')
    await context.route(destination,lambda request_route:request_route.fulfill(status=200,body='<title>External destination</title>'))
    original=page.url
