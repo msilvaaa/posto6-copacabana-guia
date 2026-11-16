@@ -1,0 +1,821 @@
+{
+  "/assets/pt-09.jpg": {
+    "title": [
+      1150,
+      84,
+      312,
+      75
+    ]
+  },
+  "/assets/pt-11.jpg": {
+    "title": [
+      1140,
+      95,
+      357,
+      85
+    ]
+  },
+  "/assets/pt-02.jpg": {
+    "title": [
+      1144,
+      98,
+      355,
+      85
+    ]
+  },
+  "/assets/pt-03.jpg": {
+    "title": [
+      1117,
+      84,
+      350,
+      84
+    ]
+  },
+  "/assets/pt-15.jpg": {
+    "title": [
+      1148,
+      105,
+      344,
+      83
+    ]
+  },
+  "/assets/pt-08.jpg": {
+    "title": [
+      1142,
+      151,
+      348,
+      83
+    ]
+  },
+  "/assets/pt-14.jpg": {
+    "title": [
+      1123,
+      119,
+      359,
+      85
+    ]
+  },
+  "/assets/pt-13.jpg": {
+    "title": [
+      1131,
+      103,
+      358,
+      85
+    ]
+  },
+  "/assets/pt-10.jpg": {
+    "title": [
+      1105,
+      10,
+      395,
+      94
+    ]
+  },
+  "/assets/pt-04.jpg": {
+    "title": [
+      1175,
+      101,
+      312,
+      75
+    ]
+  },
+  "/assets/pt-06.jpg": {
+    "title": [
+      1130,
+      121,
+      340,
+      81
+    ]
+  },
+  "/assets/pt-12.jpg": {
+    "title": [
+      1128,
+      100,
+      364,
+      87
+    ]
+  },
+  "/assets/pt-07.jpg": {
+    "title": [
+      1141,
+      84,
+      363,
+      87
+    ]
+  },
+  "/assets/pt-05.jpg": {
+    "title": [
+      1138,
+      95,
+      337,
+      80
+    ]
+  },
+  "/assets/en-09.jpg": {
+    "title": [
+      1150,
+      84,
+      312,
+      75
+    ]
+  },
+  "/assets/en-08.jpg": {
+    "title": [
+      1142,
+      151,
+      348,
+      83
+    ]
+  },
+  "/assets/en-11.jpg": {
+    "title": [
+      1140,
+      95,
+      357,
+      85
+    ]
+  },
+  "/assets/en-03.jpg": {
+    "title": [
+      1117,
+      84,
+      350,
+      84
+    ]
+  },
+  "/assets/en-15.jpg": {
+    "title": [
+      1148,
+      105,
+      344,
+      83
+    ]
+  },
+  "/assets/en-14.jpg": {
+    "title": [
+      1123,
+      119,
+      359,
+      85
+    ]
+  },
+  "/assets/en-13.jpg": {
+    "title": [
+      1124,
+      98,
+      358,
+      86
+    ]
+  },
+  "/assets/en-10.jpg": {
+    "title": [
+      1105,
+      10,
+      395,
+      94
+    ]
+  },
+  "/assets/en-04.jpg": {
+    "title": [
+      1189,
+      88,
+      298,
+      71
+    ]
+  },
+  "/assets/en-12.jpg": {
+    "title": [
+      1128,
+      100,
+      364,
+      87
+    ]
+  },
+  "/assets/en-06.jpg": {
+    "title": [
+      1130,
+      121,
+      340,
+      81
+    ]
+  },
+  "/assets/en-07.jpg": {
+    "title": [
+      1141,
+      84,
+      363,
+      87
+    ]
+  },
+  "/assets/en-02.jpg": {
+    "title": [
+      1144,
+      98,
+      355,
+      85
+    ]
+  },
+  "/assets/en-05.jpg": {
+    "title": [
+      1138,
+      95,
+      337,
+      80
+    ]
+  },
+  "/assets/es-09.jpg": {
+    "title": [
+      1150,
+      84,
+      312,
+      75
+    ]
+  },
+  "/assets/es-02.jpg": {
+    "title": [
+      1144,
+      98,
+      355,
+      85
+    ]
+  },
+  "/assets/es-03.jpg": {
+    "title": [
+      1157,
+      103,
+      318,
+      76
+    ]
+  },
+  "/assets/es-15.jpg": {
+    "title": [
+      1148,
+      105,
+      344,
+      83
+    ]
+  },
+  "/assets/es-08.jpg": {
+    "title": [
+      1142,
+      151,
+      348,
+      83
+    ]
+  },
+  "/assets/es-14.jpg": {
+    "title": [
+      1115,
+      119,
+      359,
+      85
+    ]
+  },
+  "/assets/es-13.jpg": {
+    "title": [
+      1135,
+      96,
+      358,
+      85
+    ]
+  },
+  "/assets/es-10.jpg": {
+    "title": [
+      1105,
+      10,
+      395,
+      94
+    ]
+  },
+  "/assets/es-06.jpg": {
+    "title": [
+      1117,
+      98,
+      345,
+      83
+    ]
+  },
+  "/assets/es-12.jpg": {
+    "title": [
+      1128,
+      100,
+      364,
+      87
+    ]
+  },
+  "/assets/es-07.jpg": {
+    "title": [
+      1141,
+      84,
+      363,
+      87
+    ]
+  },
+  "/assets/es-04.jpg": {
+    "title": [
+      1153,
+      78,
+      323,
+      74
+    ]
+  },
+  "/assets/es-11.jpg": {
+    "title": [
+      1140,
+      95,
+      357,
+      85
+    ]
+  },
+  "/assets/es-05.jpg": {
+    "title": [
+      1135,
+      97,
+      337,
+      81
+    ]
+  },
+  "_illustrations": {
+    "bank": {
+      "src": "/assets/pt-10.jpg",
+      "rect": [
+        1077,
+        113,
+        86,
+        85
+      ]
+    },
+    "money": {
+      "src": "/assets/pt-10.jpg",
+      "rect": [
+        1077,
+        323,
+        86,
+        85
+      ]
+    },
+    "pencil": {
+      "src": "/assets/pt-10.jpg",
+      "rect": [
+        1077,
+        474,
+        86,
+        85
+      ]
+    },
+    "mail": {
+      "src": "/assets/pt-10.jpg",
+      "rect": [
+        1077,
+        567,
+        86,
+        85
+      ]
+    },
+    "case": {
+      "src": "/assets/pt-10.jpg",
+      "rect": [
+        1077,
+        679,
+        86,
+        86
+      ]
+    },
+    "phone-map": {
+      "src": "/assets/pt-04.jpg",
+      "rect": [
+        1298,
+        176,
+        78,
+        74
+      ]
+    },
+    "plane-trail": {
+      "src": "/assets/pt-04.jpg",
+      "rect": [
+        1137,
+        473,
+        90,
+        188
+      ]
+    },
+    "travel-clock": {
+      "src": "/assets/pt-04.jpg",
+      "rect": [
+        1278,
+        678,
+        44,
+        37
+      ]
+    },
+    "wifi-monitor": {
+      "src": "/assets/pt-05.jpg",
+      "rect": [
+        1170,
+        182,
+        271,
+        220
+      ]
+    },
+    "wifi": {
+      "src": "/assets/pt-05.jpg",
+      "rect": [
+        1138,
+        377,
+        91,
+        58
+      ]
+    },
+    "wifi-qr": {
+      "src": "/assets/pt-05.jpg",
+      "rect": [
+        1257,
+        547,
+        101,
+        98
+      ]
+    },
+    "rules-strip": {
+      "src": "/assets/pt-06.jpg",
+      "rect": [
+        1115,
+        285,
+        381,
+        72
+      ]
+    },
+    "transport": {
+      "src": "/assets/pt-07.jpg",
+      "rect": [
+        1130,
+        229,
+        76,
+        78
+      ]
+    },
+    "bus": {
+      "src": "/assets/pt-07.jpg",
+      "rect": [
+        1131,
+        414,
+        79,
+        64
+      ]
+    },
+    "plane": {
+      "src": "/assets/pt-07.jpg",
+      "rect": [
+        1128,
+        570,
+        80,
+        59
+      ]
+    },
+    "uber": {
+      "src": "/assets/pt-07.jpg",
+      "rect": [
+        1105,
+        694,
+        111,
+        70
+      ]
+    },
+    "landmark": {
+      "src": "/assets/pt-09.jpg",
+      "rect": [
+        1134,
+        173,
+        110,
+        129
+      ]
+    },
+    "mountain": {
+      "src": "/assets/pt-09.jpg",
+      "rect": [
+        1134,
+        346,
+        121,
+        139
+      ]
+    },
+    "bike": {
+      "src": "/assets/pt-09.jpg",
+      "rect": [
+        1112,
+        582,
+        67,
+        67
+      ]
+    },
+    "fitness": {
+      "src": "/assets/pt-09.jpg",
+      "rect": [
+        1113,
+        677,
+        68,
+        66
+      ]
+    },
+    "cart": {
+      "src": "/assets/pt-13.jpg",
+      "rect": [
+        1104,
+        362,
+        88,
+        104
+      ]
+    },
+    "market": {
+      "src": "/assets/pt-13.jpg",
+      "rect": [
+        1126,
+        643,
+        167,
+        163
+      ]
+    },
+    "bread": {
+      "src": "/assets/pt-13.jpg",
+      "rect": [
+        1107,
+        1095,
+        86,
+        94
+      ]
+    },
+    "coffee": {
+      "src": "/assets/pt-13.jpg",
+      "rect": [
+        1106,
+        1260,
+        87,
+        79
+      ]
+    },
+    "craft": {
+      "src": "/assets/pt-13.jpg",
+      "rect": [
+        1124,
+        1502,
+        166,
+        167
+      ]
+    },
+    "medical": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1120,
+        337,
+        75,
+        75
+      ]
+    },
+    "fire": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1083,
+        739,
+        78,
+        78
+      ]
+    },
+    "shield": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1078,
+        349,
+        78,
+        77
+      ]
+    },
+    "bag": {
+      "src": "/assets/pt-12.jpg",
+      "rect": [
+        1104,
+        2390,
+        110,
+        121
+      ]
+    },
+    "checkin": {
+      "src": "/assets/pt-03.jpg",
+      "rect": [
+        1120,
+        183,
+        118,
+        96
+      ]
+    },
+    "glass": {
+      "src": "/assets/pt-11.jpg",
+      "rect": [
+        1111,
+        231,
+        97,
+        94
+      ]
+    },
+    "coffee-bars": {
+      "src": "/assets/pt-11.jpg",
+      "rect": [
+        1118,
+        644,
+        93,
+        148
+      ]
+    },
+    "samu": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1347,
+        246,
+        152,
+        83
+      ]
+    },
+    "hospital": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1078,
+        468,
+        78,
+        78
+      ]
+    },
+    "pharmacy": {
+      "src": "/assets/pt-14.jpg",
+      "rect": [
+        1078,
+        585,
+        78,
+        78
+      ]
+    },
+    "check": {
+      "src": "/assets/pt-15.jpg",
+      "rect": [
+        1454,
+        372,
+        61,
+        53
+      ]
+    },
+    "people": {
+      "src": "/assets/pt-06.jpg",
+      "rect": [
+        1354,
+        290,
+        62,
+        65
+      ]
+    },
+    "rule": {
+      "src": "/assets/pt-06.jpg",
+      "rect": [
+        1115,
+        290,
+        62,
+        65
+      ]
+    },
+    "food": {
+      "src": "/assets/pt-12.jpg",
+      "rect": [
+        100,
+        100,
+        400,
+        400
+      ]
+    },
+    "leaf": {
+      "src": "/assets/pt-12.jpg",
+      "rect": [
+        100,
+        1820,
+        400,
+        400
+      ]
+    },
+    "info": {
+      "src": "/assets/pt-05.jpg",
+      "rect": [
+        1137,
+        375,
+        96,
+        65
+      ]
+    },
+    "clock": {
+      "src": "/assets/pt-04.jpg",
+      "rect": [
+        1278,
+        678,
+        44,
+        37
+      ]
+    },
+    "car": {
+      "src": "/assets/pt-07.jpg",
+      "rect": [
+        1131,
+        414,
+        79,
+        64
+      ]
+    },
+    "parking": {
+      "src": "/assets/pt-03.jpg",
+      "rect": [
+        1117,
+        538,
+        83,
+        77
+      ]
+    },
+    "thanks": {
+      "src": "/assets/pt-15.jpg",
+      "rect": [
+        1154,
+        725,
+        320,
+        62
+      ]
+    }
+  },
+  "_restaurants": [
+    [
+      [
+        1103,
+        229,
+        304,
+        191
+      ],
+      [
+        1101,
+        424,
+        310,
+        192
+      ],
+      [
+        1101,
+        623,
+        310,
+        192
+      ]
+    ],
+    [
+      [
+        1110,
+        1087,
+        288,
+        179
+      ],
+      [
+        1110,
+        1273,
+        288,
+        179
+      ],
+      [
+        1112,
+        1470,
+        290,
+        182
+      ]
+    ],
+    [
+      [
+        1107,
+        1947,
+        298,
+        189
+      ],
+      [
+        1107,
+        2144,
+        298,
+        184
+      ]
+    ]
+  ],
+  "_bar_photos": [
+    [
+      1111,
+      231,
+      97,
+      94
+    ],
+    [
+      1111,
+      360,
+      98,
+      94
+    ],
+    [
+      1114,
+      472,
+      95,
+      94
+    ]
+  ]
+}

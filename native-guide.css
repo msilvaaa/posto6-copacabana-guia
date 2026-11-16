@@ -33,3 +33,39 @@
 }
 @media print { .native-chapter { break-before: page; min-height: auto; } .native-photo { position: relative; height: 24cm; } .native-toolbar,.native-actions { display: none; } }
 .native-guide .site-frame { max-width: none; }
+
+/* Keep the original guest-guide illustrations and photographic title artwork. */
+.original-heading { border: 0; border-radius: 0; padding: 0; max-width: 395px; margin: 0 auto 24px; }
+.original-heading>.original-art { display: block; width: 100%; height: auto; }
+.native-title-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.native-icon.original-illustration { flex-basis: 76px; width: 76px; height: 76px; border: 0; border-radius: 0; background: transparent; color: #111; }
+.native-icon.original-illustration>svg { display: block; width: 100%; height: 100%; }
+.native-room-thumb { width: 76px; height: 76px; object-fit: cover; border-radius: 50%; }
+.illustrated-card .native-card-heading { gap: 14px; }
+.illustrated-card .native-card-copy { padding-left: 90px; }
+.native-art-hero { width: 78%; max-width: 300px; margin: 0 auto 24px; }
+.native-art-hero>svg,.native-art-strip>svg { display: block; width: 100%; height: auto; }
+.native-art-strip { margin: 0 0 20px; }
+.native-icon.plane-trail { height: 145px; }
+.native-icon.landmark,.native-icon.mountain { height: 100px; }
+.native-icon.phone-map>svg { animation: original-map-float 2.6s ease-in-out infinite; }
+@keyframes original-map-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@media(prefers-reduced-motion:reduce) { .native-icon.phone-map>svg { animation: none; } }
+@media(max-width:760px) { .illustrated-card .native-card-copy { padding-left: 0; } }
+.native-restaurant-card { margin: 0 auto 24px; max-width: 330px; }
+.native-photo-recommendation { position: relative; overflow: hidden; }
+.native-photo-recommendation>.original-art { display: block; width: 100%; height: auto; }
+.native-photo-caption { position: absolute; left: 0; right: 0; top: 28%; padding: 2px 6px; background: #fff; }
+.native-photo-caption .native-link { font-size: 14px; min-height: 40px; padding: 5px 2px; }
+.native-restaurant-card>p { font-size: 14px; line-height: 1.4; }
+.native-bar-photos { display: flex; justify-content: space-around; gap: 12px; margin-bottom: 20px; }
+.native-bar-photos>svg { width: 28%; height: auto; }
+.original-brand { width: 76px; height: auto; }
+.native-thanks { margin-top: 24px; }
+.native-photo-caption { top: 25%; min-height: 55%; }
+.native-photo-caption .native-link { min-height: 44px; }
+
+.native-title,.native-card { position: relative; }
+.native-title-text { top: 0; left: 0; }
+.native-icon:empty { display: none; }
+.illustrated-card:has(.native-icon:empty) .native-card-copy { padding-left: 0; }
