@@ -57,7 +57,7 @@ def whatsapp(lang):
 
 
 def cover_photo_credits(lang):
- names={'pt':['Cristo Redentor','Calçadão de Copacabana','Praia de Ipanema','Emergência','Check-in','Shopping'],'en':['Christ the Redeemer','Copacabana promenade','Ipanema beach','Emergency','Check-in','Shopping'],'es':['Cristo Redentor','Paseo de Copacabana','Playa de Ipanema','Emergencia','Check-in','Shopping']}[lang]
+ names={'pt':['Cristo Redentor','Calçadão de Copacabana','Atividades','Emergência','Check-in','Shopping','Transporte'],'en':['Christ the Redeemer','Copacabana promenade','Activities','Emergency','Check-in','Shopping','Transport'],'es':['Cristo Redentor','Paseo de Copacabana','Actividades','Emergencia','Check-in','Shopping','Transporte']}[lang]
  credits=json.loads((Path(__file__).resolve().parents[1]/'data/cover-photo-credits.json').read_text())
  notice={'pt':'Fotos exibidas em recorte circular nos botões.','en':'Photos displayed with a circular crop in the buttons.','es':'Fotos mostradas con recorte circular en los botones.'}[lang]
  result=[f'<p>{notice}</p>']

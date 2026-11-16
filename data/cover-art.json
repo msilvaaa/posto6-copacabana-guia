@@ -8,13 +8,12 @@
     "kind": "symbol"
   },
   "transportes": {
-    "src": "/assets/pt-07.jpg",
-    "kind": "bus"
+    "src": "/assets/cover-photos/transporte-vlt.webp",
+    "kind": "photo"
   },
   "atividades": {
-    "src": "/assets/cover-photos/praia-ipanema.jpg",
-    "kind": "photo",
-    "position": "48% 48%"
+    "src": "/assets/cover-photos/atividades-copacabana.webp",
+    "kind": "photo"
   },
   "informacoes": {
     "src": "/assets/cover-icons/informacoes-clear.svg",
