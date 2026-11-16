@@ -3,9 +3,9 @@
  const lang = document.documentElement.lang || 'pt';
  const locale = {pt:'pt-BR',en:'en-US',es:'es-ES'}[lang] || 'pt-BR';
  const strings = {
-  pt:{external:'Abre em outra aba',unavailable:'Previsão indisponível no momento',rain:'Chance de chuva',updated:'Dados da previsão atualizados em',refresh:'Consulta automática a cada 30 minutos. O horário acima muda quando a previsão muda.',region:'Previsão regional para Copacabana, Rio de Janeiro.',stale:'Esta é a última previsão disponível; os dados podem estar desatualizados.'},
-  en:{external:'Opens in a new tab',unavailable:'Forecast currently unavailable',rain:'Chance of rain',updated:'Forecast data updated on',refresh:'Automatically checked every 30 minutes. The time above changes when the forecast changes.',region:'Regional forecast for Copacabana, Rio de Janeiro.',stale:'This is the last available forecast; the data may be outdated.'},
-  es:{external:'Abre en otra pestaña',unavailable:'Pronóstico no disponible por el momento',rain:'Probabilidad de lluvia',updated:'Datos del pronóstico actualizados el',refresh:'Consulta automática cada 30 minutos. La hora anterior cambia cuando cambia el pronóstico.',region:'Pronóstico regional para Copacabana, Río de Janeiro.',stale:'Este es el último pronóstico disponible; los datos pueden estar desactualizados.'}
+  pt:{external:'Abre em outra aba',unavailable:'Previsão indisponível no momento',rain:'Chance de chuva',updated:'Dados da previsão atualizados em',refresh:'Consulta automática a cada 3 horas. O horário acima muda quando a previsão muda.',region:'Previsão regional para Copacabana, Rio de Janeiro.',stale:'Esta é a última previsão disponível; os dados podem estar desatualizados.'},
+  en:{external:'Opens in a new tab',unavailable:'Forecast currently unavailable',rain:'Chance of rain',updated:'Forecast data updated on',refresh:'Automatically checked every 3 hours. The time above changes when the forecast changes.',region:'Regional forecast for Copacabana, Rio de Janeiro.',stale:'This is the last available forecast; the data may be outdated.'},
+  es:{external:'Abre en otra pestaña',unavailable:'Pronóstico no disponible por el momento',rain:'Probabilidad de lluvia',updated:'Datos del pronóstico actualizados el',refresh:'Consulta automática cada 3 horas. La hora anterior cambia cuando cambia el pronóstico.',region:'Pronóstico regional para Copacabana, Río de Janeiro.',stale:'Este es el último pronóstico disponible; los datos pueden estar desactualizados.'}
  }[lang] || {};
  for (const anchor of document.querySelectorAll('a[href]')) {
   const url = new URL(anchor.href, location.href);
@@ -91,7 +91,7 @@
  const weatherDialog = document.querySelector('[data-weather-dialog]');
  let weatherRequest;
  let weatherReadAt = 0;
- const weatherRefreshMs = 30 * 60 * 1000;
+ const weatherRefreshMs = 3 * 60 * 60 * 1000;
  async function loadWeather() {
   if (weatherRequest && Date.now() - weatherReadAt < weatherRefreshMs) return weatherRequest;
   weatherReadAt = Date.now();
