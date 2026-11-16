@@ -29,8 +29,9 @@
     "kind": "symbol"
   },
   "estabelecimentos": {
-    "src": "/assets/cover-icons/estabelecimentos-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/shopping-botafogo.jpg",
+    "kind": "photo",
+    "position": "40% 50%"
   },
   "emergencia": {
     "src": "/assets/cover-photos/emergencia-pmerj.jpg",

@@ -51,5 +51,15 @@
     "source_label": "Anúncio do apartamento",
     "downloaded_from": "https://a0.muscache.com/im/pictures/6fade211-9de5-42bf-99c1-d2bd5b163fc5.jpg?im_w=1440",
     "presentation": "Circular display focused on the lock; source file unchanged"
+  },
+  {
+    "key": "shopping-botafogo",
+    "path": "/assets/cover-photos/shopping-botafogo.jpg",
+    "title": "Praça de alimentação do Botafogo Praia Shopping, foto indicada pelo usuário",
+    "author": "Botafogo Praia Shopping",
+    "source": "https://www.botafogopraiashopping.com.br/gastronomia",
+    "source_label": "Botafogo Praia Shopping",
+    "downloaded_from": "https://www.botafogopraiashopping.com.br/sites/botafogo-praia/files/styles/galeria_interna_768_x_516/public/shopping-media/O%20Shopping/Carrousel/BPS%20-%20Pra%C3%A7a%20-%20013.JPG?itok=M8awUk-G",
+    "presentation": "Circular display; source file unchanged"
   }
 ]
