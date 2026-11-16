@@ -1,0 +1,35 @@
+[
+  {
+    "key": "cristo-redentor",
+    "path": "/assets/cover-photos/cristo-redentor.jpg",
+    "title": "File:Cristo Redentor vista de frente.jpg",
+    "author": "Cleber Vallin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cristo_Redentor_vista_de_frente.jpg",
+    "downloaded_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cristo_Redentor_vista_de_frente.jpg/330px-Cristo_Redentor_vista_de_frente.jpg",
+    "presentation": "Circular display; original file unchanged"
+  },
+  {
+    "key": "calcadao-copacabana",
+    "path": "/assets/cover-photos/calcadao-copacabana.jpg",
+    "title": "File:Copacabana Beach Mosaic and Palm Trees.jpg",
+    "author": "Donatas Dabravolskas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Copacabana_Beach_Mosaic_and_Palm_Trees.jpg",
+    "downloaded_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Copacabana_Beach_Mosaic_and_Palm_Trees.jpg/330px-Copacabana_Beach_Mosaic_and_Palm_Trees.jpg",
+    "presentation": "Circular display; original file unchanged"
+  },
+  {
+    "key": "praia-ipanema",
+    "path": "/assets/cover-photos/praia-ipanema.jpg",
+    "title": "File:Ipanema e o Morro Dois Irmãos.JPG",
+    "author": "Mteixeira62",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ipanema_e_o_Morro_Dois_Irm%C3%A3os.JPG",
+    "downloaded_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Ipanema_e_o_Morro_Dois_Irm%C3%A3os.JPG/330px-Ipanema_e_o_Morro_Dois_Irm%C3%A3os.JPG",
+    "presentation": "Circular display; original file unchanged"
+  }
+]
