@@ -74,3 +74,8 @@
 .native-wifi-access { width: 100%; max-width: 330px; margin: 0 auto 24px; }
 .native-wifi-access>svg { display: block; width: 100%; height: auto; }
 .native-wifi-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
+
+/* Preserve the six numbered rule panels and their original pictograms. */
+.native-rules-grid { width: 100%; max-width: 420px; margin: 0 auto 24px; }
+.native-rules-grid>svg { display: block; width: 100%; height: auto; }
+.native-art-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
