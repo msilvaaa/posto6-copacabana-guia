@@ -109,3 +109,7 @@ python -m unittest discover -s tests -q
 python scripts/verify-native-guide.py
 python scripts/verify-guide-navigation.py
 ```
+
+### Identidade visual preservada
+
+Após a revisão visual do anfitrião, as artes originais dos títulos, as ilustrações coloridas, as miniaturas dos cômodos e as fotos de recomendações foram recolocadas na composição HTML. `data/guide-original-art.json` define os recortes dos arquivos originais; os arquivos de origem permanecem intactos. Localização recupera o celular com marcador (movimento leve desativado por preferência de movimento reduzido) e o avião com trajeto. Wi-Fi recupera monitor, logotipo e QR Code. Comodidades volta aos atalhos ilustrados e ao título original. O texto selecionável, os destinos, as fotos grandes atualizadas, a navegação centralizada e o WhatsApp fixo permanecem.

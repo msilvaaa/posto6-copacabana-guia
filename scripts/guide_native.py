@@ -1,6 +1,27 @@
 """Render readable guide chapters with HTML copy and independent photographs."""
 from html import escape
+import json
+from pathlib import Path
 from site_components import LABELS, toolbar, pagination, whatsapp, dialogs
+
+ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
+
+
+def artwork(source, rect, css=''):
+    x,y,w,h=rect
+    # The SVG viewport displays the original artwork without resampling or editing it.
+    return (f'<svg class="original-art {e(css)}" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
+            f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
+
+
+def illustration(name):
+    item=ORIGINAL_ART['_illustrations'].get(name)
+    if name=='wifi-monitor':
+        # Exclude the overlapping Wi-Fi badge from the original monitor's corner.
+        return ('<svg class="original-art wifi-monitor" viewBox="1170 182 271 220" aria-hidden="true">'
+                '<defs><clipPath id="wifi-monitor-clip"><path d="M1170 182H1441V402H1240V372H1170Z"/></clipPath></defs>'
+                '<image href="/assets/pt-05.jpg" width="1537" height="864" clip-path="url(#wifi-monitor-clip)"/></svg>')
+    return artwork(item['src'],item['rect'],name) if item else icon(name)
 
 
 def e(value):
@@ -88,8 +109,9 @@ def build_native(page, content, upgrades, photos):
     chapters = []
     for index, chapter in enumerate(content['chapters']):
         parts = []
-        for section in chapter['sections']:
+        for section_index, section in enumerate(chapter['sections']):
             nodes = []
+            descriptions=[]
             for item in section['items']:
                 text = e(item['text'][lang])
                 if item.get('href'):
@@ -98,11 +120,61 @@ def build_native(page, content, upgrades, photos):
                     nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
                 else:
                     nodes.append(f'<p>{text}</p>')
-            parts.append(f'<section class="native-card"><div class="native-card-heading"><span class="native-icon">{icon(section["icon"])}</span><h2>{e(section["title"][lang])}</h2></div><div class="native-card-copy">{"".join(nodes)}</div></section>')
+                    descriptions.append(f'<p>{text}</p>')
+            if page['image']['src'].endswith('-12.jpg') and section_index<len(ORIGINAL_ART['_restaurants'][index]):
+                photo_art=artwork('/assets/pt-12.jpg',ORIGINAL_ART['_restaurants'][index][section_index])
+                links=''.join(node for node in nodes if node.startswith('<a '))
+                parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2><div class="native-photo-recommendation">{photo_art}<div class="native-photo-caption">{links}</div></div>{"".join(descriptions)}</section>')
+                continue
+            name=section['icon']
+            if page['image']['src'].endswith('-04.jpg'):
+                name=['phone-map','plane-trail','travel-clock'][section_index]
+            elif page['image']['src'].endswith('-05.jpg'):
+                name=['wifi','wifi-qr','info'][section_index]
+            elif page['image']['src'].endswith('-07.jpg') and section_index==3:
+                name='uber'
+            elif page['image']['src'].endswith('-09.jpg'):
+                name=['landmark','mountain','bike','fitness'][section_index]
+            elif page['image']['src'].endswith('-13.jpg'):
+                name=(['bag','cart','market'] if index==0 else ['bread','coffee','craft'])[section_index]
+            elif page['image']['src'].endswith('-14.jpg'):
+                name=['samu','shield','hospital','pharmacy','fire'][section_index]
+            elif page['image']['src'].endswith('-11.jpg'):
+                name=['glass','coffee-bars'][section_index]
+            elif page['image']['src'].endswith('-06.jpg'):
+                name=['rule','people'][section_index]
+            elif page['image']['src'].endswith('-03.jpg') and section_index==1:
+                name='parking'
+            room_index=None
+            if page['image']['src'].endswith('-02.jpg'):
+                room_index=[0,0,2,4,3][section_index]
+            if room_index is not None:
+                room=photos[room_index]
+                image_src=next((v['src'] for v in room.get('variants',[]) if v['width']==720),room['src'])
+                art=f'<img class="native-room-thumb" src="{e(image_src)}" alt="{e(section["title"][lang])}" width="100" height="100"/>'
+            else:
+                art=illustration(name)
+                if page['image']['src'].endswith('-05.jpg') and section_index==2:
+                    art=''
+                if page['image']['src'].endswith('-03.jpg') and section_index==0:
+                    art='<img class="native-room-thumb" src="/assets/cover-photos/checkin-porta-apartamento.jpg" width="76" height="76" alt=""/>'
+                elif page['image']['src'].endswith('-13.jpg') and index==0 and section_index==0:
+                    art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
+            extra=''
+            if page['image']['src'].endswith('-06.jpg') and section_index==0:
+                extra=f'<div class="native-art-strip">{illustration("rules-strip")}</div>'
+            elif page['image']['src'].endswith('-11.jpg') and section_index==0:
+                extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
+            parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span><h2>{e(section["title"][lang])}</h2></div><div class="native-card-copy">{"".join(nodes)}</div></section>')
         navigation = ''
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
-        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title">{e(title)}</h1>' if index == 0 else ''
+            if page['image']['src'].endswith('-15.jpg') and lang=='pt':
+                navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
+        title_art=artwork(page['image']['src'],ORIGINAL_ART[page['image']['src']]['title'])
+        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>' if index == 0 else ''
+        if index==0 and page['image']['src'].endswith('-05.jpg'):
+            top+=f'<div class="native-art-hero">{illustration("wifi-monitor")}</div>'
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     return f'''<!DOCTYPE html>

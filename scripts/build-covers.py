@@ -55,13 +55,15 @@ def photo_card(lang,index):
 
 
 def amenity_cards(lang):
- from guide_native import icon
  source=next(p for p in guide if p['path']==content[lang]['nav'][2]['href'].lstrip('/')+'index.html')
  links=[p for p in source['links'] if '/comodidades/' in p['href']][:16]
  result=[]
  for i,link in enumerate(links):
-  symbols=['bin','tv','snow','fridge','bulb','tv','iron','wash','wash','sofa','safe','water','lamp','car','key','door']
-  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true">{icon(symbols[i])}</span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
+  rect={k:float(v) for k,v in re.findall(r'(left|top|width|height):([\d.]+)%',link['style'])}
+  x=(rect['left']+rect['width']*.1)*1537/100;y=(rect['top']+rect['height']*.07)*864/100
+  w=rect['width']*.8*1537/100;h=rect['height']*.65*864/100
+  style=f"background-image:url('/assets/pt-08.jpg');background-size:{1537/w*100:.4f}% {864/h*100:.4f}%;background-position:{x/(1537-w)*100:.4f}% {y/(864-h)*100:.4f}%"
+  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true" style="{style}"></span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
  return '<div class="amenities-grid">'+''.join(result)+'</div>'
 
 
@@ -90,6 +92,8 @@ for lang,values in content.items():
   if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{e(labels["view_listing"])}</a></div>'
   previous,following=('/'+lang+'/',values['nav'][2]['href']) if section==1 else (values['nav'][2]['href'],'/'+lang+'/') if section==4 else (next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['previous'],next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['next'])
   title_html=f'<h1 class="section-title">{e(title)}</h1>'
+  if section==2:
+   title_html=f'<h1 class="section-title original-title"><span class="title-text">{e(title)}</span><svg viewBox="1140 150 350 84" role="presentation" aria-hidden="true"><image href="/assets/{lang}-08.jpg" width="1537" height="864"/></svg></h1>'
   body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<div class="section-actions"><nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></div></section>'
   destinations={code:content[code]['nav'][section]['href'] for code in content}
   output=page_template.substitute(lang=lang,title=e(title),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
