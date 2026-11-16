@@ -1,0 +1,665 @@
+{
+  "/comod-assets/pt-arcondicionado-1.jpg": {
+    "rect": [
+      281,
+      309,
+      370,
+      90
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 37,
+    "scale": 0.85
+  },
+  "/detail-assets/pt-banheiro-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-cofre-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-fechadura-1.jpg": {
+    "rect": [
+      211,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 37,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-geladeira-1.jpg": {
+    "rect": [
+      261,
+      324,
+      386,
+      94
+    ],
+    "radius": 12,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-lavabo-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-louca-1.jpg": {
+    "rect": [
+      258,
+      310,
+      403,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 45,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-luminaria-1.jpg": {
+    "rect": [
+      296,
+      288,
+      309,
+      97
+    ],
+    "radius": 17,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.7917
+  },
+  "/comod-assets/pt-luzquarto-1.jpg": {
+    "rect": [
+      296,
+      288,
+      308,
+      97
+    ],
+    "radius": 17,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 55,
+    "scale": 0.7091
+  },
+  "/comod-assets/pt-portao-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-roupas-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-sofacama-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-tabua-1.jpg": {
+    "rect": [
+      200,
+      310,
+      514,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-tvquarto-1.jpg": {
+    "rect": [
+      278,
+      314,
+      376,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 43,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-tvsala-1.jpg": {
+    "rect": [
+      278,
+      314,
+      376,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/pt-uber-1.jpg": {
+    "rect": [
+      207,
+      314,
+      520,
+      93
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/en-arcondicionado-1.jpg": {
+    "rect": [
+      281,
+      309,
+      370,
+      90
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/detail-assets/en-banheiro-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/en-cofre-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/en-fechadura-1.jpg": {
+    "rect": [
+      211,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.8125
+  },
+  "/comod-assets/en-geladeira-1.jpg": {
+    "rect": [
+      261,
+      324,
+      386,
+      94
+    ],
+    "radius": 12,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 49,
+    "scale": 0.7959
+  },
+  "/comod-assets/en-lavabo-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/en-louca-1.jpg": {
+    "rect": [
+      258,
+      310,
+      403,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/en-luminaria-1.jpg": {
+    "rect": [
+      296,
+      288,
+      309,
+      97
+    ],
+    "radius": 17,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 55,
+    "scale": 0.6909
+  },
+  "/comod-assets/en-luzquarto-1.jpg": {
+    "rect": [
+      282,
+      312,
+      363,
+      97
+    ],
+    "radius": 19,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 56,
+    "scale": 0.6964
+  },
+  "/comod-assets/en-portao-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 45,
+    "scale": 0.85
+  },
+  "/comod-assets/en-roupas-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.8125
+  },
+  "/comod-assets/en-sofacama-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 47,
+    "scale": 0.8298
+  },
+  "/comod-assets/en-tabua-1.jpg": {
+    "rect": [
+      200,
+      310,
+      514,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 47,
+    "scale": 0.8298
+  },
+  "/comod-assets/en-tvquarto-1.jpg": {
+    "rect": [
+      278,
+      314,
+      376,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/en-tvsala-1.jpg": {
+    "rect": [
+      278,
+      314,
+      376,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/en-uber-1.jpg": {
+    "rect": [
+      207,
+      314,
+      520,
+      93
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/es-arcondicionado-1.jpg": {
+    "rect": [
+      266,
+      309,
+      385,
+      90
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 37,
+    "scale": 0.85
+  },
+  "/detail-assets/es-banheiro-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/es-cofre-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.8125
+  },
+  "/comod-assets/es-fechadura-1.jpg": {
+    "rect": [
+      211,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.8125
+  },
+  "/comod-assets/es-geladeira-1.jpg": {
+    "rect": [
+      261,
+      324,
+      386,
+      94
+    ],
+    "radius": 12,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 49,
+    "scale": 0.7959
+  },
+  "/comod-assets/es-lavabo-1.jpg": {
+    "rect": [
+      208,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 39,
+    "scale": 0.85
+  },
+  "/comod-assets/es-louca-1.jpg": {
+    "rect": [
+      258,
+      310,
+      403,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 47,
+    "scale": 0.8298
+  },
+  "/comod-assets/es-luminaria-1.jpg": {
+    "rect": [
+      296,
+      288,
+      356,
+      97
+    ],
+    "radius": 17,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 48,
+    "scale": 0.7917
+  },
+  "/comod-assets/es-luzquarto-1.jpg": {
+    "rect": [
+      254,
+      288,
+      434,
+      97
+    ],
+    "radius": 17,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 49,
+    "scale": 0.7959
+  },
+  "/comod-assets/es-portao-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/es-roupas-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/es-sofacama-1.jpg": {
+    "rect": [
+      197,
+      314,
+      520,
+      93
+    ],
+    "radius": 13,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/es-tabua-1.jpg": {
+    "rect": [
+      200,
+      310,
+      514,
+      91
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/es-tvquarto-1.jpg": {
+    "rect": [
+      278,
+      314,
+      377,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/es-tvsala-1.jpg": {
+    "rect": [
+      278,
+      314,
+      376,
+      92
+    ],
+    "radius": 15,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 38,
+    "scale": 0.85
+  },
+  "/comod-assets/es-uber-1.jpg": {
+    "rect": [
+      207,
+      314,
+      520,
+      93
+    ],
+    "radius": 14,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 46,
+    "scale": 0.8478
+  },
+  "/comod-assets/pt-lixeira-1.jpg": {
+    "rect": [
+      310,
+      291,
+      300,
+      97
+    ],
+    "radius": 16,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 53,
+    "scale": 0.717
+  },
+  "/comod-assets/en-lixeira-1.jpg": {
+    "rect": [
+      310,
+      291,
+      300,
+      97
+    ],
+    "radius": 16,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 52,
+    "scale": 0.7308
+  },
+  "/comod-assets/es-lixeira-1.jpg": {
+    "rect": [
+      310,
+      291,
+      300,
+      97
+    ],
+    "radius": 16,
+    "width": 900,
+    "height": 1350,
+    "glyph_height": 53,
+    "scale": 0.717
+  }
+}

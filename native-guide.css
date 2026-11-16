@@ -79,3 +79,7 @@
 .native-rules-grid { width: 100%; max-width: 420px; margin: 0 auto 24px; }
 .native-rules-grid>svg { display: block; width: 100%; height: auto; }
 .native-art-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
+
+/* Reduce the original title and its frame together, keeping their proportions. */
+.original-heading { width: 85%; max-width: 336px; }
+.native-chapter-title { font-size: 23px; }
