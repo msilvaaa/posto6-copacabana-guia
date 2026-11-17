@@ -68,5 +68,16 @@
     },
     "provenance": "Original higher-resolution version of the exact photo supplied by the host, retrieved from their Airbnb listing.",
     "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aea0a8e2-77e3-4ba3-a00b-36d240d12d9d.jpeg?im_w=2560"
+  },
+  "-13.jpg": {
+    "src": "/assets/establishments/calcadao-copacabana.webp",
+    "width": 1537,
+    "height": 1023,
+    "alt": {
+      "pt": "Vista aérea do calçadão de Copacabana com ondas em preto e branco e coqueiros",
+      "en": "Aerial view of the Copacabana wave-pattern promenade and palm trees",
+      "es": "Vista aérea del paseo de Copacabana con ondas blancas y negras y palmeras"
+    },
+    "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders."
   }
 }
