@@ -79,5 +79,17 @@
       "es": "Vista aérea del paseo de Copacabana con ondas blancas y negras y palmeras"
     },
     "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders."
+  },
+  "-07.jpg": {
+    "src": "/assets/transport/onibus-rio.webp",
+    "width": 1123,
+    "height": 1401,
+    "preserve_ratio": true,
+    "alt": {
+      "pt": "Ônibus do Rio de Janeiro com coqueiros e o Morro Dois Irmãos ao fundo",
+      "en": "Rio de Janeiro bus with palm trees and Dois Irmãos mountain in the background",
+      "es": "Autobús de Río de Janeiro con palmeras y el Morro Dois Irmãos al fondo"
+    },
+    "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17, preserving the original portrait proportions and full composition."
   }
 }

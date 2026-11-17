@@ -83,3 +83,5 @@
 /* Reduce the original title and its frame together, keeping their proportions. */
 
 .native-chapter-title { font-size: 23px; }
+.native-photo:has(>img[data-preserve-ratio]) { height: auto; min-height: 0; }
+.native-photo>img[data-preserve-ratio] { height: auto; object-fit: contain; }
