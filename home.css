@@ -106,25 +106,25 @@ body.home-page { background: #f8f6f2; }
 
 .cover-button-art.art-door-lock img { position: absolute; width: 545.45%; height: 818.56%; max-width: none; left: -93.18%; top: -409.09%; }
 
-/* Share the same half-photo, half-information composition on desktop. */
+/* Use 70% photo and 30% menu on the cover only. */
 @media(min-width:1101px) {
- .page-stage::after { left: 50%; }
- .home-cover-photo { width: 50%; }
+ .page-stage::after { left: 70%; }
+ .home-cover-photo { width: 70%; }
  .home-cover-brand,.home-cover-cta { left: 3.2%; }
- .home-cover-nav { left: 3.2%; top: 11%; width: 43.6%; gap: 12px; }
+ .home-cover-nav { left: 3.2%; top: 11%; width: 63.6%; gap: 12px; }
  .home-cover-nav a { font-size: clamp(11px,.9vw,14px); }
- .home-cover-copy { left: 3.2%; top: calc(11% + 42px); width: 43.6%; }
- .home-cover-copy h1 { font-size: clamp(24px,2.65vw,48px); }
- html[lang="en"] .home-cover-copy h1 { font-size: clamp(22px,2.4vw,44px); }
+ .home-cover-copy { left: 3.2%; top: calc(11% + 42px); width: 63.6%; }
+ .home-cover-copy h1 { font-size: clamp(24px,3.8vw,60px); }
+ html[lang="en"] .home-cover-copy h1 { font-size: clamp(24px,3.5vw,56px); }
  .home-cover-subtitle { max-width: 100%; }
- .home-cover-stats { left: 3.2%; right: 52%; }
+ .home-cover-stats { left: 3.2%; right: 32%; }
  .home-cover-stats>div { gap: 8px; padding: 0 1.5%; }
- .main-html-topbar { left: 50%; width: 50%; display: flex; justify-content: center; gap: 16px; }
+ .main-html-topbar { left: 70%; width: 30%; display: flex; justify-content: center; gap: 16px; }
  .main-html-topbar a,.main-html-topbar .detail-modern-flag { position: relative; left: auto; top: auto; flex: 0 0 58px; }
- .home-menu-rule { left: 54%; width: 42%; }
- .cover-html-button[data-column="1"] { left: 58.5%; }
- .cover-html-button[data-column="2"] { left: 75%; }
- .cover-html-button[data-column="3"] { left: 91.5%; }
- .cover-next { right: calc(25% - 50px); }
- .home-page .page-stage .home-cover-hero>.site-utilities { right: calc(50% + 20px); }
+ .home-menu-rule { left: 72%; width: 26%; }
+ .cover-html-button[data-column="1"] { left: 75.1%; }
+ .cover-html-button[data-column="2"] { left: 85%; }
+ .cover-html-button[data-column="3"] { left: 94.9%; }
+ .cover-next { right: calc(15% - 50px); }
+ .home-page .page-stage .home-cover-hero>.site-utilities { right: calc(30% + 20px); }
 }
