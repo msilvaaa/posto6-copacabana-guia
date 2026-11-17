@@ -138,9 +138,8 @@ def build_native(page, content, upgrades, photos):
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
             if page['image']['src'].endswith('-12.jpg') and section_index<len(ORIGINAL_ART['_restaurants'][index]):
-                photo_art=artwork('/assets/pt-12.jpg',ORIGINAL_ART['_restaurants'][index][section_index])
                 links=''.join(node for node in nodes if node.startswith('<a '))
-                parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2><div class="native-photo-recommendation">{photo_art}<div class="native-photo-caption">{links}</div></div>{"".join(descriptions)}</section>')
+                parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2>{links}{"".join(descriptions)}</section>')
                 continue
             name=section['icon']
             if page['image']['src'].endswith('-04.jpg'):
