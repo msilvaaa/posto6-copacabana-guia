@@ -1,9 +1,9 @@
-const SOURCE = 'https://economia.awesomeapi.com.br/json/last/USD-BRLT,ARS-BRL,EUR-BRL,BRL-USD';
+const SOURCE = 'https://economia.awesomeapi.com.br/json/last/USD-BRLT,USD-ARS,USD-EUR,USD-BRL';
 const PAIRS = [
   {id: 'usd-tourism', key: 'USDBRLT', base: 'USD', target: 'BRL'},
-  {id: 'ars', key: 'ARSBRL', base: 'ARS', target: 'BRL'},
-  {id: 'eur', key: 'EURBRL', base: 'EUR', target: 'BRL'},
-  {id: 'brl', key: 'BRLUSD', base: 'BRL', target: 'USD'}
+  {id: 'ars', key: 'USDARS', base: 'USD', target: 'ARS'},
+  {id: 'eur', key: 'USDEUR', base: 'USD', target: 'EUR'},
+  {id: 'brl', key: 'USDBRL', base: 'USD', target: 'BRL'}
 ];
 const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(data), {
   headers: {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': cacheControl}
@@ -11,11 +11,11 @@ const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(da
 export async function onRequestGet(context) {
   const {request} = context;
   const cache = globalThis.caches?.default;
-  const cacheKey = new Request(new URL('/api/exchange-rates', request.url));
+  const cacheKey = new Request(new URL('/api/exchange-rates?basis=usd-buy-v2', request.url));
   const cached = await cache?.match(cacheKey);
   if (cached) {
     const data = await cached.clone().json();
-    if (Date.parse(data.expiresAt) > Date.now()) return cached;
+    if (data.side === 'buy' && data.basis === 'USD' && Date.parse(data.expiresAt) > Date.now()) return cached;
   }
   try {
     const response = await fetch(SOURCE, {headers: {'Accept': 'application/json'}, signal: AbortSignal.timeout(10000)});
@@ -23,13 +23,13 @@ export async function onRequestGet(context) {
     const raw = await response.json();
     const quotes = PAIRS.map(pair => {
       const quote = raw[pair.key];
-      const ask = Number(quote?.ask);
+      const bid = Number(quote?.bid);
       const quotedAt = Number(quote?.timestamp) * 1000;
-      if (!Number.isFinite(ask) || ask <= 0 || !Number.isFinite(quotedAt) || quotedAt <= 0) throw new Error('Invalid quote');
-      return {id: pair.id, base: pair.base, target: pair.target, ask, quotedAt: new Date(quotedAt).toISOString()};
+      if (!Number.isFinite(bid) || bid <= 0 || !Number.isFinite(quotedAt) || quotedAt <= 0) throw new Error('Invalid quote');
+      return {id: pair.id, base: pair.base, target: pair.target, bid, quotedAt: new Date(quotedAt).toISOString()};
     });
     const now = Date.now();
-    const data = {available: true, source: 'AwesomeAPI', quotes, checkedAt: new Date(now).toISOString(), expiresAt: new Date(now + 86400000).toISOString()};
+    const data = {available: true, source: 'AwesomeAPI', side: 'buy', basis: 'USD', quotes, checkedAt: new Date(now).toISOString(), expiresAt: new Date(now + 86400000).toISOString()};
     const result = json(data, 'public, max-age=86400');
     if (cache) {
       try { context.waitUntil(cache.put(cacheKey, result.clone())); }

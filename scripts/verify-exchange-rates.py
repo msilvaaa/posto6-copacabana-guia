@@ -13,8 +13,8 @@ with sync_playwright() as p:
         calls = []
         def reply(route):
             calls.append(route.request.url)
-            quotes = [dict(id=key, base=base, target=target, ask=ask, quotedAt=now.isoformat()) for key, base, target, ask in [('usd-tourism','USD','BRL',6.2),('ars','ARS','BRL',0.003725),('eur','EUR','BRL',6.36),('brl','BRL','USD',0.173)]]
-            route.fulfill(content_type='application/json', body=json.dumps({'available': True, 'quotes': quotes, 'checkedAt': now.isoformat(), 'expiresAt': (now + timedelta(hours=24)).isoformat()}))
+            quotes = [dict(id=key, base=base, target=target, bid=bid, quotedAt=now.isoformat()) for key, base, target, bid in [('usd-tourism','USD','BRL',5.7),('ars','USD','ARS',1552.23),('eur','USD','EUR',0.90911),('brl','USD','BRL',5.7792)]]
+            route.fulfill(content_type='application/json', body=json.dumps({'available': True, 'side': 'buy', 'basis': 'USD', 'quotes': quotes, 'checkedAt': now.isoformat(), 'expiresAt': (now + timedelta(hours=24)).isoformat()}))
         page.route('**/economia.awesomeapi.com.br/**', lambda route: route.fulfill(status=429, body='', headers={'Access-Control-Allow-Origin':'*'}))
         page.route('**/api/exchange-rates', reply)
         page.goto(f'http://127.0.0.1:8000/{lang}/{route}/')
@@ -25,8 +25,9 @@ with sync_playwright() as p:
         assert cards.nth(0).locator('[data-exchange-rates]').count() == 0
         assert cards.nth(1).locator('[data-exchange-rates]').count() == 1
         assert all(text != '—' for text in page.locator('.exchange-rate output').all_text_contents())
-        assert '003725' in page.locator('[data-exchange-id="ars"] output').inner_text()
-        assert 'US$' in page.locator('[data-exchange-id="brl"] output').inner_text()
+        assert '155223' in page.locator('[data-exchange-id="ars"] .exchange-value').inner_text().replace('.', '').replace(',', '')
+        assert 'R$' in page.locator('[data-exchange-id="brl"] .exchange-value').inner_text()
+        assert all('US$ 1 = ' in text for text in page.locator('.exchange-rate output').all_text_contents())
         for width in (390, 1440):
             page.set_viewport_size({'width': width, 'height': 1000})
             rects = [a.bounding_box() for a in page.locator('.bank-links a').all()]
@@ -51,11 +52,12 @@ with sync_playwright() as p:
     direct_calls = []
     def direct_reply(route):
         direct_calls.append(route.request.url)
-        raw = {key: {'ask': str(ask), 'timestamp': str(int(now.timestamp()))} for key, ask in [('USDBRLT',6.2),('ARSBRL',0.003725),('EURBRL',6.36),('BRLUSD',0.173)]}
+        raw = {key: {'bid': str(bid), 'ask': str(bid+1), 'timestamp': str(int(now.timestamp()))} for key, bid in [('USDBRLT',5.7),('USDARS',1552.23),('USDEUR',0.90911),('USDBRL',5.7792)]}
         route.fulfill(content_type='application/json', body=json.dumps(raw), headers={'Access-Control-Allow-Origin':'*'})
     page.route('**/economia.awesomeapi.com.br/**', direct_reply)
     page.goto('http://127.0.0.1:8000/pt/informacoes/')
     page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
+    assert '5,70' in page.locator('[data-exchange-id="usd-tourism"] .exchange-value').inner_text()
     page.reload()
     page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
     assert len(direct_calls) == 1, direct_calls
