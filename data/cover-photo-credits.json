@@ -77,5 +77,14 @@
     "source": "/assets/cover-photos/checkout-aviao.webp",
     "source_label": "Imagem do botão",
     "presentation": "AI-assisted reframing of the user-provided reference for circular display"
+  },
+  {
+    "key": "bares-copacabana",
+    "path": "/assets/cover-photos/bares-copacabana.webp",
+    "title": "Chope à beira da praia de Copacabana",
+    "author": "Imagem adaptada com IA a partir da foto enviada pelo anfitrião",
+    "source": "/assets/cover-photos/bares-copacabana.webp",
+    "source_label": "Imagem do botão",
+    "presentation": "AI-assisted reframing of the user-provided reference for circular display"
   }
 ]

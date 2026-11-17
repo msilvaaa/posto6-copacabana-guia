@@ -20,8 +20,8 @@
     "kind": "symbol"
   },
   "bares": {
-    "src": "/assets/cover-icons/bares-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/bares-copacabana.webp",
+    "kind": "photo"
   },
   "restaurantes": {
     "src": "/assets/cover-icons/restaurantes-clear.svg",
