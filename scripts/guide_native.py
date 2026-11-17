@@ -131,13 +131,25 @@ def airport_transfers(lang):
         'en': ('To Rua Raul Pompéia, 131 — Copacabana', 'View route to the building', 'Check the current travel time on Google Maps.', 'Santos Dumont Airport — SDU', 'Galeão International Airport — GIG'),
         'es': ('Hasta Rua Raul Pompéia, 131 — Copacabana', 'Ver trayecto hasta el edificio', 'Consulta el tiempo actual en Google Maps.', 'Aeropuerto Santos Dumont — SDU', 'Aeropuerto Internacional de Galeão — GIG'),
     }
-    destination, action, fallback, sdu, gig = labels[lang]
+    _destination, action, fallback, sdu, gig = labels[lang]
     airports = [('sdu', sdu, 'Aeroporto Santos Dumont (SDU), Rio de Janeiro, RJ, Brasil', 'https://maps.app.goo.gl/iq6CcoLazX9RHe7dA'), ('gig', gig, 'Aeroporto Internacional do Galeão (GIG), Terminal 2, Rio de Janeiro, RJ, Brasil', 'https://maps.app.goo.gl/fYKyHM98FECg4Rh37')]
     rows = []
     for airport_id, name, origin, place in airports:
         route = 'https://www.google.com/maps/dir/?' + urlencode({'api': '1', 'origin': origin, 'destination': 'Rua Raul Pompéia, 131, Copacabana, Rio de Janeiro, RJ, Brasil', 'travelmode': 'driving'})
         rows.append(f'<div class="airport-transfer"><a class="native-link" href="{place}" target="_blank" rel="noopener noreferrer">{icon("pin")}<span>{e(name)}</span></a><output data-transfer-time="{airport_id}"></output><a class="airport-route" href="{e(route)}" target="_blank" rel="noopener noreferrer">{e(action)}</a></div>')
-    return f'<div class="airport-transfers" data-airport-transfers><p>{e(destination)}</p>{"".join(rows)}<p class="transfer-status" data-transfer-status>{e(fallback)}</p><p class="transfer-status" data-transfer-note></p></div>'
+    return f'<div class="airport-transfers" data-airport-transfers>{"".join(rows)}<p class="transfer-status" data-transfer-status>{e(fallback)}</p><p class="transfer-status" data-transfer-note></p></div>'
+
+
+def exchange_rates(lang):
+    labels = {
+        'pt': ('Cotações', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real'], 'Valores indicativos de venda da fonte. IOF e tarifas podem variar conforme a instituição.', 'Carregando cotações…', 'Fonte'),
+        'en': ('Exchange rates', ['Tourist US dollar', 'Argentine peso', 'Euro', 'Brazilian real'], 'Indicative sell rates from the source. Taxes and fees may vary by provider.', 'Loading exchange rates…', 'Source'),
+        'es': ('Cotizaciones', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real brasileño'], 'Valores indicativos de venta de la fuente. Los impuestos y las comisiones pueden variar según la entidad.', 'Cargando cotizaciones…', 'Fuente'),
+    }
+    heading, names, note, loading, source = labels[lang]
+    ids = ['usd-tourism', 'ars', 'eur', 'brl']
+    cards = ''.join(f'<div class="exchange-rate" data-exchange-id="{key}"><h4>{e(name)}</h4><output>—</output><small data-exchange-unit></small><time></time></div>' for key, name in zip(ids, names))
+    return f'<section class="exchange-rates" data-exchange-rates aria-labelledby="exchange-title"><h3 id="exchange-title">{e(heading)}</h3><div class="exchange-grid">{cards}</div><p data-exchange-status>{e(loading)}</p><p>{e(note)} <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">{e(source)}: AwesomeAPI</a></p></section>'
 
 
 def build_native(page, content, upgrades, photos):
@@ -166,6 +178,8 @@ def build_native(page, content, upgrades, photos):
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
+            if page['image']['src'].endswith('-10.jpg') and section_index == 0:
+                nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>', exchange_rates(lang)]
             if page['image']['src'].endswith('-04.jpg') and section_index == 2:
                 nodes = [airport_transfers(lang)]
             if page['image']['src'].endswith('-12.jpg') and section_index<len(ORIGINAL_ART['_restaurants'][index]):
@@ -215,7 +229,7 @@ def build_native(page, content, upgrades, photos):
                 extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
             heading = f'<h2>{e(section["title"][lang])}</h2>'
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
-                weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>{e(LABELS[lang]["weather"])}</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
+                weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>Copacabana</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
             parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div></section>')
         if page['image']['src'].endswith('-04.jpg'):
@@ -234,6 +248,7 @@ def build_native(page, content, upgrades, photos):
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
+    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -243,7 +258,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
   <link rel="stylesheet" href="/native-guide.css?v=20261116-34"/>
-  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}
+  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>
