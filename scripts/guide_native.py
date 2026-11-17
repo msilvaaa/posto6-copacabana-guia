@@ -195,7 +195,11 @@ def build_native(page, content, upgrades, photos):
                 extra=f'<div class="native-art-strip">{illustration("rules-strip")}</div>'
             elif page['image']['src'].endswith('-11.jpg') and section_index==0:
                 extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
-            parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span><h2>{e(section["title"][lang])}</h2></div><div class="native-card-copy">{"".join(nodes)}</div></section>')
+            heading = f'<h2>{e(section["title"][lang])}</h2>'
+            if page['image']['src'].endswith('-09.jpg') and section_index == 0:
+                weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>{e(LABELS[lang]["weather"])}</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
+                heading = f'<div class="native-heading-text">{heading}{weather}</div>'
+            parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div></section>')
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
