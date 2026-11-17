@@ -111,6 +111,18 @@ def photograph(page, chapter, upgrades, photos):
             f'<image href="{e(image["src"])}" width="{image["width"]}" height="{image["height"]}"/></svg>')
 
 
+def local_clocks(lang):
+    labels = {
+        'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
+        'en': ('Local times', ['Brazil — Brasília', 'USA — Washington, D.C.', 'Italy — Rome', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Time zones and daylight saving time adjust automatically for the cities shown.'),
+        'es': ('Horas locales', ['Brasil — Brasilia', 'EE. UU. — Washington, D. C.', 'Italia — Roma', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Las zonas horarias y el horario de verano se ajustan automáticamente para las ciudades indicadas.'),
+    }
+    heading, cities, note = labels[lang]
+    zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'America/Santiago']
+    clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3>{e(city)}</h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone in zip(cities, zones))
+    return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
+
+
 def build_native(page, content, upgrades, photos):
     lang = page['lang']
     title = content['title'][lang]
@@ -183,6 +195,8 @@ def build_native(page, content, upgrades, photos):
             elif page['image']['src'].endswith('-11.jpg') and section_index==0:
                 extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
             parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span><h2>{e(section["title"][lang])}</h2></div><div class="native-card-copy">{"".join(nodes)}</div></section>')
+        if page['image']['src'].endswith('-04.jpg'):
+            parts.append(local_clocks(lang))
         navigation = ''
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
@@ -196,6 +210,7 @@ def build_native(page, content, upgrades, photos):
             top+=f'<div class="native-rules-grid">{artwork(page["image"]["src"],[1104,210,411,435])}</div>'
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
+    clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -205,7 +220,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
   <link rel="stylesheet" href="/native-guide.css?v=20261116-34"/>
-  <script src="/site.js?v=20261116-34" defer></script>
+  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>
