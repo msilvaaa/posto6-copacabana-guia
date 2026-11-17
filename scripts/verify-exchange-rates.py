@@ -28,6 +28,8 @@ with sync_playwright() as p:
         assert '155223' in page.locator('[data-exchange-id="ars"] .exchange-value').inner_text().replace('.', '').replace(',', '')
         assert 'R$' in page.locator('[data-exchange-id="brl"] .exchange-value').inner_text()
         assert all('US$ 1 = ' in text for text in page.locator('.exchange-rate output').all_text_contents())
+        caption = 'buy rate · tourism' if lang == 'en' else 'compra · turismo'
+        assert page.locator('[data-exchange-unit]').all_text_contents() == [caption] * 4
         for width in (390, 1440):
             page.set_viewport_size({'width': width, 'height': 1000})
             rects = [a.bounding_box() for a in page.locator('.bank-links a').all()]

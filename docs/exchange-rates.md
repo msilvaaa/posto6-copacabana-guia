@@ -7,3 +7,5 @@ A fonte permite CORS. O navegador consulta diretamente os quatro pares em um ún
 A função Cloudflare `/api/exchange-rates` fica como alternativa, com cache de 24 horas. A consulta direta evita a limitação HTTP 429 observada nos endereços de saída compartilhados do servidor. Sem acesso às duas fontes e sem cache válido, a página informa a indisponibilidade e não inventa valores.
 
 Não há horário fixo diário nem consultas em segundo plano sem visitantes. Os horários das cotações são os fornecidos pela fonte e podem permanecer iguais quando o mercado não muda. Não é necessária uma chave da Google Routes API para as cotações; essa chave pertence apenas à integração opcional dos tempos de trânsito dos aeroportos.
+
+A legenda uniforme “compra · turismo” indica a finalidade de consulta para viagem. A série específica de dólar turismo continua sendo USD-BRLT; as demais equivalências usam compra comercial da fonte, conforme a observação exibida na página. A padronização visual não aplica margens inventadas de uma casa de câmbio.

@@ -142,9 +142,9 @@ def airport_transfers(lang):
 
 def exchange_rates(lang):
     labels = {
-        'pt': ('Cotações', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real'], 'Valores indicativos de compra da fonte. Base: US$ 1. IOF e tarifas podem variar conforme a instituição.', 'Carregando cotações…', 'Fonte'),
-        'en': ('Exchange rates', ['Tourist US dollar', 'Argentine peso', 'Euro', 'Brazilian real'], 'Indicative buy rates from the source. Base: US$ 1. Taxes and fees may vary by provider.', 'Loading exchange rates…', 'Source'),
-        'es': ('Cotizaciones', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real brasileño'], 'Valores indicativos de compra de la fuente. Base: US$ 1. Los impuestos y las comisiones pueden variar según la entidad.', 'Cargando cotizaciones…', 'Fuente'),
+        'pt': ('Cotações', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real'], 'Referências para turismo: dólar turismo; demais moedas, compra comercial. Base: US$ 1. IOF e tarifas podem variar.', 'Carregando cotações…', 'Fonte'),
+        'en': ('Exchange rates', ['Tourist US dollar', 'Argentine peso', 'Euro', 'Brazilian real'], 'Travel references: tourist dollar; other currencies use market buy rates. Base: US$ 1. Taxes and fees may vary.', 'Loading exchange rates…', 'Source'),
+        'es': ('Cotizaciones', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real brasileño'], 'Referencias para turismo: dólar turismo; demás monedas, compra comercial. Base: US$ 1. Los impuestos y las comisiones pueden variar.', 'Cargando cotizaciones…', 'Fuente'),
     }
     heading, names, note, loading, source = labels[lang]
     ids = ['usd-tourism', 'ars', 'eur', 'brl']
@@ -251,7 +251,7 @@ def build_native(page, content, upgrades, photos):
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
-    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-3" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
+    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-4" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>

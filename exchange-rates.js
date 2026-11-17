@@ -82,7 +82,7 @@
         value.className = 'exchange-value';
         value.textContent = `${currency} ${new Intl.NumberFormat(locale, {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(quote.bid)}`;
         card.querySelector('output').replaceChildren(base, value);
-        card.querySelector('[data-exchange-unit]').textContent = quote.id === 'usd-tourism' ? `${words.unit} · ${words.tourism}` : words.unit;
+        card.querySelector('[data-exchange-unit]').textContent = `${words.unit} · ${words.tourism}`;
         const time = card.querySelector('time');
         time.dateTime = quote.quotedAt;
         time.textContent = `${dateFormat.format(new Date(quote.quotedAt))} (Brasília)`;
