@@ -134,3 +134,5 @@
 .exchange-rate small,.exchange-rate time { color: #666; font: 400 10px/1.3 Arial,Helvetica,sans-serif; }
 .exchange-rates>p { font-size: 11px; margin: 8px 0; }
 .exchange-rates>p>a { color: #173f45; }
+
+.exchange-flag { display: block; width: 28px; height: 28px; object-fit: cover; border-radius: 50%; border: 1px solid white; box-shadow: 0 1px 4px #0002; }

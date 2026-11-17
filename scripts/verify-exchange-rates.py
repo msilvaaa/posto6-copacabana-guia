@@ -1,4 +1,4 @@
-"""Check the 2x2 bank layout, quote precision and three-hour refresh."""
+"""Check the 2x2 bank layout, quote precision and daily refresh."""
 from datetime import datetime, timedelta, timezone
 from playwright.sync_api import sync_playwright
 import json
@@ -14,11 +14,15 @@ with sync_playwright() as p:
         def reply(route):
             calls.append(route.request.url)
             quotes = [dict(id=key, base=base, target=target, ask=ask, quotedAt=now.isoformat()) for key, base, target, ask in [('usd-tourism','USD','BRL',6.2),('ars','ARS','BRL',0.003725),('eur','EUR','BRL',6.36),('brl','BRL','USD',0.173)]]
-            route.fulfill(content_type='application/json', body=json.dumps({'available': True, 'quotes': quotes, 'checkedAt': now.isoformat(), 'expiresAt': (now + timedelta(hours=3)).isoformat()}))
+            route.fulfill(content_type='application/json', body=json.dumps({'available': True, 'quotes': quotes, 'checkedAt': now.isoformat(), 'expiresAt': (now + timedelta(hours=24)).isoformat()}))
         page.route('**/api/exchange-rates', reply)
         page.goto(f'http://127.0.0.1:8000/{lang}/{route}/')
         page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
         assert page.locator('.exchange-rate').count() == 4
+        assert page.locator('.exchange-rate h4 img').count() == 4
+        cards = page.locator('.native-card.illustrated-card')
+        assert cards.nth(0).locator('[data-exchange-rates]').count() == 0
+        assert cards.nth(1).locator('[data-exchange-rates]').count() == 1
         assert all(text != '—' for text in page.locator('.exchange-rate output').all_text_contents())
         assert '003725' in page.locator('[data-exchange-id="ars"] output').inner_text()
         assert 'US$' in page.locator('[data-exchange-id="brl"] output').inner_text()
@@ -31,7 +35,7 @@ with sync_playwright() as p:
             assert page.locator('body').evaluate('(e)=>e.scrollWidth<=innerWidth')
             for link in page.locator('.bank-links a').all():link.click(trial=True)
         with page.expect_response('**/api/exchange-rates'):
-            page.clock.run_for(3*3600000+1000)
+            page.clock.run_for(24*3600000+1000)
         assert len(calls) == 2
         page.close()
     page = browser.new_page()
@@ -44,4 +48,4 @@ with sync_playwright() as p:
     page.goto('http://127.0.0.1:8000/pt/informacoes/')
     page.locator('.bank-links').locator('..').screenshot(path='/workspace/work/banks-and-exchange.png')
     browser.close()
-print('3 languages: bank links in 2x2, quote precision, 3-hour refresh; unavailable rates never fabricated.')
+print('3 languages: bank links in 2x2, quote precision, daily refresh; unavailable rates never fabricated.')

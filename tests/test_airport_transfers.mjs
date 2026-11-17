@@ -65,3 +65,17 @@ test('provider failures do not reuse old or fabricated travel times', async () =
   assert.ok(data.routes.every(route => !route.available && !('minutes' in route)));
   assert.equal(cached.size, 0);
 });
+
+test('Cloudflare waitUntil retains its execution context', async () => {
+  const ctx = context();
+  ctx.waitUntil = function(promise) {assert.equal(this, ctx); pending.push(promise);};
+  const data = await (await onRequestGet(ctx)).json();
+  assert.equal(data.available, true);
+});
+
+test('cache scheduling failure does not hide valid traffic data', async () => {
+  const ctx = context();
+  ctx.waitUntil = () => {throw new Error('cache context unavailable');};
+  const data = await (await onRequestGet(ctx)).json();
+  assert.equal(data.available, true);
+});

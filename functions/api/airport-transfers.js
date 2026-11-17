@@ -8,7 +8,8 @@ const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(da
   headers: {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': cacheControl}
 });
 
-export async function onRequestGet({request, env, waitUntil}) {
+export async function onRequestGet(context) {
+  const {request, env} = context;
   const key = env.GOOGLE_MAPS_ROUTES_API_KEY;
   if (!key) return json({available: false, reason: 'not_configured'});
   const cache = globalThis.caches?.default;
@@ -47,6 +48,9 @@ export async function onRequestGet({request, env, waitUntil}) {
   const data = {available, routes, updatedAt: updatedAt.toISOString(), expiresAt: new Date(updatedAt.getTime() + REFRESH_MS).toISOString()};
   if (!available) return json(data);
   const response = json(data, 'public, max-age=1800');
-  if (cache) waitUntil(cache.put(cacheKey, response.clone()));
+  if (cache) {
+    try { context.waitUntil(cache.put(cacheKey, response.clone())); }
+    catch { console.warn('Response cache unavailable'); }
+  }
   return response;
 }

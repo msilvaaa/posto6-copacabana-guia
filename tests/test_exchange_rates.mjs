@@ -26,11 +26,11 @@ test('tourist dollar comes from USD-BRLT sell quote; each currency has an explic
   assert.equal(data.quotes[0].ask, 6.2);
   assert.deepEqual(data.quotes.map(q => [q.base, q.target]), [['USD','BRL'],['ARS','BRL'],['EUR','BRL'],['BRL','USD']]);
   assert.equal(data.quotes[1].ask, 0.003725);
-  assert.equal(Date.parse(data.expiresAt) - Date.parse(data.checkedAt), 10800000);
+  assert.equal(Date.parse(data.expiresAt) - Date.parse(data.checkedAt), 86400000);
 });
-test('rates stay cached for three hours and URL queries do not bypass cache', async () => {
+test('rates stay cached for 24 hours and URL queries do not bypass cache', async () => {
   await onRequestGet(context()); await Promise.all(pending);
-  now += 3 * 3600000 - 1;
+  now += 24 * 3600000 - 1;
   await onRequestGet(context('?refresh=1')); assert.equal(calls.length, 1);
   now += 2;
   await onRequestGet(context()); assert.equal(calls.length, 2);
@@ -39,4 +39,18 @@ test('incomplete data is never presented as a current complete quote set', async
   globalThis.fetch = async () => Response.json({USDBRLT: sample.USDBRLT});
   const data = await (await onRequestGet(context())).json();
   assert.equal(data.available, false); assert.equal(stored.size, 0);
+});
+
+test('Cloudflare waitUntil retains its execution context', async () => {
+  const ctx = context();
+  ctx.waitUntil = function(promise) {assert.equal(this, ctx); pending.push(promise);};
+  const data = await (await onRequestGet(ctx)).json();
+  assert.equal(data.available, true);
+});
+
+test('cache scheduling failure does not hide valid source quotes', async () => {
+  const ctx = context();
+  ctx.waitUntil = () => {throw new Error('cache context unavailable');};
+  const data = await (await onRequestGet(ctx)).json();
+  assert.equal(data.available, true);
 });
