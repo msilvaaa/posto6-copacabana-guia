@@ -1,6 +1,6 @@
 @font-face { font-family: 'Guide Script'; src: url('/assets/fonts/courgette.ttf') format('truetype'); font-display: swap; }
 .native-guide .site-reading { background: white; scrollbar-gutter: auto; }
-.native-chapter { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(390px,1fr); min-height: 0; margin: 0; border: 0; }
+.native-chapter { display: grid; grid-template-columns: minmax(0,2fr) minmax(390px,1fr); min-height: 0; margin: 0; border: 0; }
 .native-visual { min-width: 0; background: #e9e6e0; }
 .native-photo { position: sticky; top: 0; height: min(78dvh,720px); width: 100%; overflow: hidden; border: 0; margin: 0; }
 .native-photo>img,.native-photo>svg { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; margin: 0; }
@@ -21,7 +21,7 @@
 .native-link:hover,.native-link:focus-visible { background: #edf5f3; color: #075c4f; }
 .native-actions { display: flex; justify-content: center; padding: 8px 0 12px; }
 .native-actions .site-pagination { margin: 0; gap: 16px; }
-@media(min-width:1664px) { .native-chapter { grid-template-columns: minmax(0,1.4fr) minmax(430px,1fr); } }
+@media(min-width:1664px) { .native-chapter { grid-template-columns: minmax(0,2fr) minmax(430px,1fr); } }
 @media(max-width:1100px) { .native-chapter { grid-template-columns: minmax(0,1.3fr) minmax(360px,1fr); } .native-panel { padding: 20px 18px; } }
 @media(max-width:760px) {
  .native-chapter { display: flex; flex-direction: column; min-height: auto; }
@@ -83,8 +83,6 @@
 /* Reduce the original title and its frame together, keeping their proportions. */
 
 .native-chapter-title { font-size: 23px; }
-.native-photo:has(>img[data-preserve-ratio]) { height: auto; min-height: 0; }
-.native-photo>img[data-preserve-ratio] { height: auto; object-fit: contain; }
 
 /* Keep illustrations beside their text instead of adding an empty row. */
 @media(min-width:761px) {
@@ -96,16 +94,8 @@
  .illustrated-card:has(.native-icon:empty) { grid-template-columns: minmax(0,1fr); }
  .illustrated-card:has(.native-icon:empty) h2,.illustrated-card:has(.native-icon:empty) .native-card-copy { grid-column: 1; }
 }
-/* Show portrait photos in full without making the page taller than necessary. */
-.native-photo:has(>img[data-preserve-ratio]) { height: min(78dvh,720px); }
-.native-photo>img[data-preserve-ratio] { height: 100%; object-fit: contain; }
 @media(min-width:761px) {
  .native-chapter { min-height: min(78dvh,720px); }
  .native-visual { position: relative; }
  .native-photo { position: absolute; inset: 0; height: 100%; }
- .native-chapter:has(img[data-preserve-ratio]) { grid-template-columns: minmax(0,.95fr) minmax(390px,1fr); }
- .native-photo:has(>img[data-preserve-ratio]) { height: 100%; }
-}
-@media(max-width:760px) {
- .native-photo:has(>img[data-preserve-ratio]) { height: min(48dvh,500px); }
 }
