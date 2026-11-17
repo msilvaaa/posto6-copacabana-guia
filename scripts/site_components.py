@@ -42,6 +42,10 @@ def e(value):
  return escape(str(value), quote=True)
 
 
+def page_title(lang,name):
+ return f'Posto 6 Copacabana — {lang.upper()} — {name}'
+
+
 def toolbar(lang, destinations):
  labels=LABELS[lang]
  out=f'<nav class="site-toolbar guide-toolbar" aria-label="{labels["navigation"]}"><a class="site-round guide-home" href="/{lang}/" aria-label="{labels["home"]}" title="{labels["home"]}">{HOME_ICON}</a>'

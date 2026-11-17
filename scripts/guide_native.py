@@ -2,7 +2,7 @@
 from html import escape
 import json
 from pathlib import Path
-from site_components import LABELS, toolbar, pagination, whatsapp, dialogs
+from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
 
@@ -199,7 +199,7 @@ def build_native(page, content, upgrades, photos):
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <title>Posto 6 Copacabana — {e(title)}</title>
+  <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
   <link rel="stylesheet" href="/native-guide.css?v=20261116-34"/>

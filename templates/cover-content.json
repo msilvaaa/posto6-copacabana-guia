@@ -1,6 +1,6 @@
 {
   "pt": {
-    "title": "Posto 6 Copacabana — PT — página 1",
+    "title": "Posto 6 Copacabana — PT — Principal",
     "description": "Guia online Posto 6 Copacabana",
     "menu_label": "Guia do hóspede",
     "next_label": "PRÓXIMA",
@@ -137,7 +137,7 @@
     ]
   },
   "en": {
-    "title": "Posto 6 Copacabana — EN — page 1",
+    "title": "Posto 6 Copacabana — EN — Home",
     "description": "Posto 6 Copacabana online guest guide",
     "menu_label": "Guest guide",
     "next_label": "NEXT",
@@ -274,7 +274,7 @@
     ]
   },
   "es": {
-    "title": "Posto 6 Copacabana — ES — página 1",
+    "title": "Posto 6 Copacabana — ES — Inicio",
     "description": "Guía online Posto 6 Copacabana",
     "menu_label": "Guía del huésped",
     "next_label": "SIGUIENTE",

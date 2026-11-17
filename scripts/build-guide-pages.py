@@ -4,7 +4,7 @@ import json
 from html import escape
 from pathlib import Path
 from string import Template
-from site_components import LABELS,toolbar,pagination,utilities,dialogs,whatsapp,external_attrs
+from site_components import LABELS,toolbar,pagination,utilities,dialogs,whatsapp,external_attrs,page_title
 from guide_native import build_native
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -74,7 +74,7 @@ def build():
     upgraded=f'<img class="guide-photo-upgrade" src="{e(photo["src"])}" alt="{e(photo["alt"][lang])}" width="{photo["width"]}" height="{photo["height"]}" style="{style};object-position:50% 50%" decoding="async"/>'
   if image['src'] in detail_titles:
    upgraded+=compact_detail_title(image,detail_titles[image['src']])
-  output=template.substitute(lang=lang,title=e(page['title']),description=e(page['description']),kind='guide-'+page['kind']+(' guide-information' if image['src'].endswith('-10.jpg') else ''),back=back_html,toolbar=toolbar(lang,page['languages']),utilities=utilities(lang),whatsapp=whatsapp(lang,page['path']),heading=f'<h1 class="guide-heading sr-only">{e(page["heading"])}</h1>' if page['heading'] else '',reading_label=labels['reading'],zoom_label=labels['zoom'],src=e(image['src']),alt=e(image['alt']),width=image['width'],height=image['height'],masks=masks,americanas=americanas,photo_upgrade=upgraded,links=links,pagination_label=labels['navigation'],pagination=pagination(lang,page['previous'],page['next']),source_text=page['source_text'],dialogs=dialogs(lang))
+  output=template.substitute(lang=lang,title=e(page_title(lang,page['title'].rsplit(' — ',1)[-1])),description=e(page['description']),kind='guide-'+page['kind']+(' guide-information' if image['src'].endswith('-10.jpg') else ''),back=back_html,toolbar=toolbar(lang,page['languages']),utilities=utilities(lang),whatsapp=whatsapp(lang,page['path']),heading=f'<h1 class="guide-heading sr-only">{e(page["heading"])}</h1>' if page['heading'] else '',reading_label=labels['reading'],zoom_label=labels['zoom'],src=e(image['src']),alt=e(image['alt']),width=image['width'],height=image['height'],masks=masks,americanas=americanas,photo_upgrade=upgraded,links=links,pagination_label=labels['navigation'],pagination=pagination(lang,page['previous'],page['next']),source_text=page['source_text'],dialogs=dialogs(lang))
   (ROOT/page['path']).write_text('\n'.join(line.rstrip() for line in output.splitlines())+'\n');count+=1
  print(f'Generated {count} original guide sections with persistent navigation.')
 if __name__=='__main__':build()
