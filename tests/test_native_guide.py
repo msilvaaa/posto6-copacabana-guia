@@ -27,8 +27,13 @@ class NativeGuideTests(unittest.TestCase):
                 continue
             parser = Links()
             parser.feed((ROOT / page['path']).read_text())
+            expected = {item['href'] for item in page['links']}
+            if page['image']['src'].endswith('-04.jpg'):
+                # The original Santos Dumont shortcut incorrectly led to the apartment.
+                expected.discard('https://maps.app.goo.gl/RT7GMYay3J4vLoMr9')
+                expected.add('https://maps.app.goo.gl/iq6CcoLazX9RHe7dA')
             with self.subTest(page=page['path']):
-                self.assertTrue({item['href'] for item in page['links']} <= parser.destinations)
+                self.assertTrue(expected <= parser.destinations)
 
     def test_content_and_photographs_are_available_in_all_languages(self):
         content = json.loads((ROOT / 'data/guide-native-content.json').read_text())
