@@ -1,6 +1,6 @@
 # Cotações em Informações
 
-As quatro cotações ficam depois das casas de câmbio em ATM / Câmbio. A fonte é AwesomeAPI: USD-BRLT (dólar turismo), ARS-BRL (peso argentino), EUR-BRL (euro) e BRL-USD (equivalente de um real em dólar). Mostramos a taxa indicativa de venda e o instante de cada cotação, sem estimar IOF ou tarifas de uma casa de câmbio.
+As quatro cotações ficam depois das casas de câmbio em ATM / Câmbio. A fonte é AwesomeAPI: USD-BRLT (dólar turismo), USD-ARS (peso argentino), USD-EUR (euro) e USD-BRL (real). Todos usam um dólar como base e o campo bid (compra) da fonte. O cartão com bandeira dos EUA mostra dólar turismo em reais, separado do cartão do real, que mostra o dólar comercial em reais. Mostramos a taxa indicativa de compra e o instante de cada cotação, sem estimar IOF ou tarifas de uma casa de câmbio.
 
 A fonte permite CORS. O navegador consulta diretamente os quatro pares em um único pedido e guarda somente esses dados públicos por 24 horas em armazenamento local. Reabrir a página ou trocar o idioma não faz nova consulta antes do vencimento. Se a aba continuar aberta, a consulta é refeita quando o cache vence; ao voltar para uma aba com dados vencidos, a atualização também é retomada.
 
