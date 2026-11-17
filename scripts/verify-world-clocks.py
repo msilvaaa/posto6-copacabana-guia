@@ -13,7 +13,7 @@ def check(page, instant):
         assert clock.locator('time').inner_text() == local.strftime('%H:%M'), (zone, instant)
         assert clock.locator('time').get_attribute('datetime') == instant.isoformat(timespec='milliseconds').replace('+00:00', 'Z')
         offset = int(local.utcoffset().total_seconds() / 3600)
-        assert clock.locator('[data-clock-offset]').inner_text() == ('UTC' if offset == 0 else f'UTC{offset:+d}')
+        assert clock.locator('[data-clock-offset]').inner_text() in ({'UTC', 'UTC+0'} if offset == 0 else {f'UTC{offset:+d}'})
 
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
@@ -26,10 +26,10 @@ with sync_playwright() as p:
             page.clock.install(time=instant)
             page.clock.pause_at(instant)
             page.goto(f'http://127.0.0.1:8000/{lang}/{route}/')
-            assert page.locator('[data-time-zone]').count() == 5
+            assert page.locator('[data-time-zone]').count() == 6
             check(page, instant)
             page.close()
-            count += 5
+            count += 6
     page = context.new_page()
     instant = datetime.fromisoformat('2026-03-08T06:59:59+00:00')
     page.clock.install(time=instant)

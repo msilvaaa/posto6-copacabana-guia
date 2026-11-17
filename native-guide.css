@@ -116,3 +116,10 @@
 .activity-weather small { font-size: 11px; }
 .activity-weather:hover,.activity-weather:focus-visible { background: #e8f1ed; }
 @media(min-width:761px) { .illustrated-card .native-heading-text { grid-column: 2; } }
+
+.airport-transfer { margin: 8px 0 12px; }
+.airport-transfer output { display: block; color: #173f45; font: 600 15px/1.4 Arial,Helvetica,sans-serif; }
+.airport-transfer output:empty { display: none; }
+.airport-route { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 4px; color: #173f45; font: 400 13px/1.4 Arial,Helvetica,sans-serif; text-underline-offset: 3px; }
+.airport-transfers .transfer-status { font-size: 12px; color: #666; }
+.airport-transfers .transfer-status:empty { display: none; }

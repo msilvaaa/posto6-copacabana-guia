@@ -2,6 +2,7 @@
 from html import escape
 import json
 from pathlib import Path
+from urllib.parse import urlencode
 from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
@@ -113,15 +114,30 @@ def photograph(page, chapter, upgrades, photos):
 
 def local_clocks(lang):
     labels = {
-        'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
-        'en': ('Local times', ['Brazil — Brasília', 'USA — Washington, D.C.', 'Italy — Rome', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Time zones and daylight saving time adjust automatically for the cities shown.'),
-        'es': ('Horas locales', ['Brasil — Brasilia', 'EE. UU. — Washington, D. C.', 'Italia — Roma', 'Argentina — Buenos Aires', 'Chile — Santiago'], 'Las zonas horarias y el horario de verano se ajustan automáticamente para las ciudades indicadas.'),
+        'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Singapura — Singapura', 'Reino Unido — Londres'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
+        'en': ('Local times', ['Brazil — Brasília', 'USA — Washington, D.C.', 'Italy — Rome', 'Argentina — Buenos Aires', 'Singapore — Singapore', 'United Kingdom — London'], 'Time zones and daylight saving time adjust automatically for the cities shown.'),
+        'es': ('Horas locales', ['Brasil — Brasilia', 'EE. UU. — Washington, D. C.', 'Italia — Roma', 'Argentina — Buenos Aires', 'Singapur — Singapur', 'Reino Unido — Londres'], 'Las zonas horarias y el horario de verano se ajustan automáticamente para las ciudades indicadas.'),
     }
     heading, cities, note = labels[lang]
-    zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'America/Santiago']
-    flags = ['/assets/flag-pt.png', '/assets/flag-en.png', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/cl.svg']
+    zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'Asia/Singapore', 'Europe/London']
+    flags = ['/assets/flag-pt.png', '/assets/flag-en.png', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
     clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3><img class="local-clock-flag" src="{flag}" alt="{e(city.split(" — ")[0])}" width="32" height="32"/><span>{e(city.split(" — ")[1])}</span></h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone, flag in zip(cities, zones, flags))
     return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
+
+
+def airport_transfers(lang):
+    labels = {
+        'pt': ('Até Rua Raul Pompéia, 131 — Copacabana', 'Ver trajeto até o prédio', 'Consulte o tempo atual no Google Maps.', 'Aeroporto Santos Dumont — SDU', 'Aeroporto Internacional do Galeão — GIG'),
+        'en': ('To Rua Raul Pompéia, 131 — Copacabana', 'View route to the building', 'Check the current travel time on Google Maps.', 'Santos Dumont Airport — SDU', 'Galeão International Airport — GIG'),
+        'es': ('Hasta Rua Raul Pompéia, 131 — Copacabana', 'Ver trayecto hasta el edificio', 'Consulta el tiempo actual en Google Maps.', 'Aeropuerto Santos Dumont — SDU', 'Aeropuerto Internacional de Galeão — GIG'),
+    }
+    destination, action, fallback, sdu, gig = labels[lang]
+    airports = [('sdu', sdu, 'Aeroporto Santos Dumont (SDU), Rio de Janeiro, RJ, Brasil', 'https://maps.app.goo.gl/iq6CcoLazX9RHe7dA'), ('gig', gig, 'Aeroporto Internacional do Galeão (GIG), Terminal 2, Rio de Janeiro, RJ, Brasil', 'https://maps.app.goo.gl/fYKyHM98FECg4Rh37')]
+    rows = []
+    for airport_id, name, origin, place in airports:
+        route = 'https://www.google.com/maps/dir/?' + urlencode({'api': '1', 'origin': origin, 'destination': 'Rua Raul Pompéia, 131, Copacabana, Rio de Janeiro, RJ, Brasil', 'travelmode': 'driving'})
+        rows.append(f'<div class="airport-transfer"><a class="native-link" href="{place}" target="_blank" rel="noopener noreferrer">{icon("pin")}<span>{e(name)}</span></a><output data-transfer-time="{airport_id}"></output><a class="airport-route" href="{e(route)}" target="_blank" rel="noopener noreferrer">{e(action)}</a></div>')
+    return f'<div class="airport-transfers" data-airport-transfers><p>{e(destination)}</p>{"".join(rows)}<p class="transfer-status" data-transfer-status>{e(fallback)}</p><p class="transfer-status" data-transfer-note></p></div>'
 
 
 def build_native(page, content, upgrades, photos):
@@ -150,6 +166,8 @@ def build_native(page, content, upgrades, photos):
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
+            if page['image']['src'].endswith('-04.jpg') and section_index == 2:
+                nodes = [airport_transfers(lang)]
             if page['image']['src'].endswith('-12.jpg') and section_index<len(ORIGINAL_ART['_restaurants'][index]):
                 links=''.join(node for node in nodes if node.startswith('<a '))
                 parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2>{links}{"".join(descriptions)}</section>')
@@ -215,7 +233,7 @@ def build_native(page, content, upgrades, photos):
             top+=f'<div class="native-rules-grid">{artwork(page["image"]["src"],[1104,210,411,435])}</div>'
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
-    clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
+    clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
