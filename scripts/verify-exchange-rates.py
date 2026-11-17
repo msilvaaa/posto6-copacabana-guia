@@ -15,6 +15,7 @@ with sync_playwright() as p:
             calls.append(route.request.url)
             quotes = [dict(id=key, base=base, target=target, ask=ask, quotedAt=now.isoformat()) for key, base, target, ask in [('usd-tourism','USD','BRL',6.2),('ars','ARS','BRL',0.003725),('eur','EUR','BRL',6.36),('brl','BRL','USD',0.173)]]
             route.fulfill(content_type='application/json', body=json.dumps({'available': True, 'quotes': quotes, 'checkedAt': now.isoformat(), 'expiresAt': (now + timedelta(hours=24)).isoformat()}))
+        page.route('**/economia.awesomeapi.com.br/**', lambda route: route.fulfill(status=429, body='', headers={'Access-Control-Allow-Origin':'*'}))
         page.route('**/api/exchange-rates', reply)
         page.goto(f'http://127.0.0.1:8000/{lang}/{route}/')
         page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
@@ -39,13 +40,28 @@ with sync_playwright() as p:
         assert len(calls) == 2
         page.close()
     page = browser.new_page()
+    page.route('**/economia.awesomeapi.com.br/**', lambda route: route.fulfill(status=429, body='', headers={'Access-Control-Allow-Origin':'*'}))
     page.route('**/api/exchange-rates', lambda route: route.fulfill(content_type='application/json', body='{"available":false}'))
     page.goto('http://127.0.0.1:8000/pt/informacoes/')
     page.wait_for_function("document.querySelector('[data-exchange-status]').textContent.includes('indisponíveis')")
     assert all(text == '—' for text in page.locator('.exchange-rate output').all_text_contents())
     page = browser.new_page()
-    page.route('**/api/exchange-rates', reply)
+    page.clock.install(time=now)
+    page.clock.pause_at(now)
+    direct_calls = []
+    def direct_reply(route):
+        direct_calls.append(route.request.url)
+        raw = {key: {'ask': str(ask), 'timestamp': str(int(now.timestamp()))} for key, ask in [('USDBRLT',6.2),('ARSBRL',0.003725),('EURBRL',6.36),('BRLUSD',0.173)]}
+        route.fulfill(content_type='application/json', body=json.dumps(raw), headers={'Access-Control-Allow-Origin':'*'})
+    page.route('**/economia.awesomeapi.com.br/**', direct_reply)
     page.goto('http://127.0.0.1:8000/pt/informacoes/')
-    page.locator('.bank-links').locator('..').screenshot(path='/workspace/work/banks-and-exchange.png')
+    page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
+    page.reload()
+    page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
+    assert len(direct_calls) == 1, direct_calls
+    with page.expect_response('**/economia.awesomeapi.com.br/**'):
+        page.clock.run_for(24*3600000+1000)
+    assert len(direct_calls) == 2
+    page.locator('[data-exchange-rates]').screenshot(path='/workspace/work/daily-exchange-flags.png')
     browser.close()
 print('3 languages: bank links in 2x2, quote precision, daily refresh; unavailable rates never fabricated.')
