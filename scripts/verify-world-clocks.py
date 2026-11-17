@@ -10,7 +10,7 @@ def check(page, instant):
     for clock in page.locator('[data-time-zone]').all():
         zone = clock.get_attribute('data-time-zone')
         local = instant.astimezone(ZoneInfo(zone))
-        assert clock.locator('time').inner_text() == local.strftime('%H:%M:%S'), (zone, instant)
+        assert clock.locator('time').inner_text() == local.strftime('%H:%M'), (zone, instant)
         assert clock.locator('time').get_attribute('datetime') == instant.isoformat(timespec='milliseconds').replace('+00:00', 'Z')
         offset = int(local.utcoffset().total_seconds() / 3600)
         assert clock.locator('[data-clock-offset]').inner_text() == ('UTC' if offset == 0 else f'UTC{offset:+d}')
@@ -38,7 +38,7 @@ with sync_playwright() as p:
     check(page, instant)
     page.clock.run_for(1000)
     check(page, instant + timedelta(seconds=1))
-    assert page.locator('[data-time-zone="America/New_York"] time').inner_text() == '03:00:00'
+    assert page.locator('[data-time-zone="America/New_York"] time').inner_text() == '03:00'
     for width in (390, 1440):
         page.set_viewport_size({'width': width, 'height': 1000})
         assert page.locator('body').evaluate('(e)=>e.scrollWidth<=innerWidth')
