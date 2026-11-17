@@ -111,8 +111,6 @@ body.home-page { background: #f8f6f2; }
  .page-stage::after { left: 70%; }
  .home-cover-photo { width: 70%; }
  .home-cover-brand,.home-cover-cta { left: 3.2%; }
- .home-cover-nav { left: 3.2%; top: 11%; width: 63.6%; gap: 12px; }
- .home-cover-nav a { font-size: clamp(11px,.9vw,14px); }
  .home-cover-copy { left: 3.2%; top: calc(11% + 42px); width: 63.6%; }
  .home-cover-copy h1 { font-size: clamp(24px,3.8vw,60px); }
  html[lang="en"] .home-cover-copy h1 { font-size: clamp(24px,3.5vw,56px); }
