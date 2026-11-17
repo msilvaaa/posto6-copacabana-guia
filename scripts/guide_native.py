@@ -251,7 +251,7 @@ def build_native(page, content, upgrades, photos):
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
-    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
+    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-2" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
