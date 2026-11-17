@@ -8,7 +8,8 @@ const PAIRS = [
 const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(data), {
   headers: {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': cacheControl}
 });
-export async function onRequestGet({request, waitUntil}) {
+export async function onRequestGet(context) {
+  const {request} = context;
   const cache = globalThis.caches?.default;
   const cacheKey = new Request(new URL('/api/exchange-rates', request.url));
   const cached = await cache?.match(cacheKey);
@@ -18,7 +19,7 @@ export async function onRequestGet({request, waitUntil}) {
   }
   try {
     const response = await fetch(SOURCE, {headers: {'Accept': 'application/json'}, signal: AbortSignal.timeout(10000)});
-    if (!response.ok) throw new Error('Unavailable');
+    if (!response.ok) return json({available: false, reason: `source_http_${response.status}`});
     const raw = await response.json();
     const quotes = PAIRS.map(pair => {
       const quote = raw[pair.key];
@@ -28,11 +29,14 @@ export async function onRequestGet({request, waitUntil}) {
       return {id: pair.id, base: pair.base, target: pair.target, ask, quotedAt: new Date(quotedAt).toISOString()};
     });
     const now = Date.now();
-    const data = {available: true, source: 'AwesomeAPI', quotes, checkedAt: new Date(now).toISOString(), expiresAt: new Date(now + 10800000).toISOString()};
-    const result = json(data, 'public, max-age=10800');
-    if (cache) waitUntil(cache.put(cacheKey, result.clone()));
+    const data = {available: true, source: 'AwesomeAPI', quotes, checkedAt: new Date(now).toISOString(), expiresAt: new Date(now + 86400000).toISOString()};
+    const result = json(data, 'public, max-age=86400');
+    if (cache) {
+      try { context.waitUntil(cache.put(cacheKey, result.clone())); }
+      catch { console.warn('Response cache unavailable'); }
+    }
     return result;
   } catch {
-    return json({available: false});
+    return json({available: false, reason: 'source_unavailable'});
   }
 }

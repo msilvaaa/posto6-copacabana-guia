@@ -148,7 +148,8 @@ def exchange_rates(lang):
     }
     heading, names, note, loading, source = labels[lang]
     ids = ['usd-tourism', 'ars', 'eur', 'brl']
-    cards = ''.join(f'<div class="exchange-rate" data-exchange-id="{key}"><h4>{e(name)}</h4><output>—</output><small data-exchange-unit></small><time></time></div>' for key, name in zip(ids, names))
+    flags = ['/assets/flag-en.png', '/assets/flags/ar.svg', '/assets/flags/eu.svg', '/assets/flag-pt.png']
+    cards = ''.join(f'<div class="exchange-rate" data-exchange-id="{key}"><h4><img class="exchange-flag" src="{flag}" alt="{e(name)}" title="{e(name)}" width="28" height="28"/></h4><output>—</output><small data-exchange-unit></small><time></time></div>' for key, name, flag in zip(ids, names, flags))
     return f'<section class="exchange-rates" data-exchange-rates aria-labelledby="exchange-title"><h3 id="exchange-title">{e(heading)}</h3><div class="exchange-grid">{cards}</div><p data-exchange-status>{e(loading)}</p><p>{e(note)} <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">{e(source)}: AwesomeAPI</a></p></section>'
 
 
@@ -179,7 +180,9 @@ def build_native(page, content, upgrades, photos):
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
             if page['image']['src'].endswith('-10.jpg') and section_index == 0:
-                nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>', exchange_rates(lang)]
+                nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>']
+            if page['image']['src'].endswith('-10.jpg') and section_index == 1:
+                nodes.append(exchange_rates(lang))
             if page['image']['src'].endswith('-04.jpg') and section_index == 2:
                 nodes = [airport_transfers(lang)]
             if page['image']['src'].endswith('-12.jpg') and section_index<len(ORIGINAL_ART['_restaurants'][index]):

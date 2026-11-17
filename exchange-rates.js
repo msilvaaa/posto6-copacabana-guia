@@ -5,9 +5,9 @@
   const lang = document.documentElement.lang;
   const locale = {pt: 'pt-BR', en: 'en-US', es: 'es-ES'}[lang] || 'pt-BR';
   const words = {
-    pt: {unavailable: 'Cotações indisponíveis no momento.', unit: 'venda', checked: 'Consulta em', refresh: 'Consulta automática a cada 3 horas.'},
-    en: {unavailable: 'Exchange rates currently unavailable.', unit: 'sell rate', checked: 'Checked at', refresh: 'Automatically checked every 3 hours.'},
-    es: {unavailable: 'Cotizaciones no disponibles por el momento.', unit: 'venta', checked: 'Consulta a las', refresh: 'Consulta automática cada 3 horas.'}
+    pt: {unavailable: 'Cotações indisponíveis no momento.', unit: 'venda', checked: 'Consulta em', refresh: 'Consulta automática diária.'},
+    en: {unavailable: 'Exchange rates currently unavailable.', unit: 'sell rate', checked: 'Checked at', refresh: 'Automatically checked daily.'},
+    es: {unavailable: 'Cotizaciones no disponibles por el momento.', unit: 'venta', checked: 'Consulta a las', refresh: 'Consulta automáticdiária.'}
   }[lang];
   const dateFormat = new Intl.DateTimeFormat(locale, {timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'});
   const status = box.querySelector('[data-exchange-status]');
@@ -51,6 +51,6 @@
     }
   }
   refresh();
-  setInterval(() => {if (!document.hidden) refresh();}, 10800000);
+  setInterval(() => {if (!document.hidden) refresh();}, 86400000);
   document.addEventListener('visibilitychange', () => {if (!document.hidden && expiresAt <= Date.now()) refresh();});
 })();
