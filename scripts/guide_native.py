@@ -102,7 +102,8 @@ def photograph(page, chapter, upgrades, photos):
         variants = upgrade.get('variants', [])
         srcset = ' srcset="' + e(', '.join(f'{v["src"]} {v["width"]}w' for v in variants)) + '" sizes="(max-width:760px) 100vw, max(70vw,150vh)"' if variants else ''
         position=e(upgrade.get('position','50% 50%'))
-        return f'<img src="{e(upgrade["src"])}" width="{upgrade["width"]}" height="{upgrade["height"]}" alt="{e(label)}" style="object-position:{position}"{srcset}/>'
+        preserve_ratio=' data-preserve-ratio' if upgrade.get('preserve_ratio') else ''
+        return f'<img src="{e(upgrade["src"])}" width="{upgrade["width"]}" height="{upgrade["height"]}" alt="{e(label)}" style="object-position:{position}"{srcset}{preserve_ratio}/>'
     # Crop only the photograph. The old text, icons and page seams are excluded.
     y = chapter.get('tile', 0) * 864 + 2
     return (f'<svg viewBox="2 {y} 1063 860" preserveAspectRatio="xMidYMid slice" '
