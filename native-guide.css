@@ -95,7 +95,7 @@
  .illustrated-card:has(.native-icon:empty) h2,.illustrated-card:has(.native-icon:empty) .native-card-copy { grid-column: 1; }
 }
 @media(min-width:761px) {
- .native-chapter { min-height: min(78dvh,720px); }
+ .native-chapter { min-height: 100dvh; }
  .native-visual { position: relative; }
  .native-photo { position: absolute; inset: 0; height: 100%; }
 }
