@@ -175,6 +175,8 @@ def build_native(page, content, upgrades, photos):
                     art='<img class="native-room-thumb" src="/assets/cover-photos/checkin-porta-apartamento.jpg" width="76" height="76" alt=""/>'
                 elif page['image']['src'].endswith('-13.jpg') and index==0 and section_index==0:
                     art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
+            if page['image']['src'].endswith('-02.jpg') and section_index==0:
+                art=''
             extra=''
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
                 extra=f'<div class="native-art-strip">{illustration("rules-strip")}</div>'
