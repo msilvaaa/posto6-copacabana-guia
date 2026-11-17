@@ -46,9 +46,11 @@ def page_title(lang,name):
  return f'Posto 6 Copacabana — {lang.upper()} — {name}'
 
 
-def toolbar(lang, destinations):
+def toolbar(lang, destinations, home_href=None, home_label=None):
  labels=LABELS[lang]
- out=f'<nav class="site-toolbar guide-toolbar" aria-label="{labels["navigation"]}"><a class="site-round guide-home" href="/{lang}/" aria-label="{labels["home"]}" title="{labels["home"]}">{HOME_ICON}</a>'
+ home_href=home_href or f'/{lang}/'
+ home_label=home_label or labels['home']
+ out=f'<nav class="site-toolbar guide-toolbar" aria-label="{labels["navigation"]}"><a class="site-round guide-home" href="{e(home_href)}" aria-label="{e(home_label)}" title="{e(home_label)}">{HOME_ICON}</a>'
  for code,name in [('es','Español'),('pt','Português'),('en','English')]:
   current=' aria-current="page"' if code==lang else ''
   out+=f'<a class="site-round guide-flag" href="{e(destinations[code])}" aria-label="{name}" title="{name}"{current}><img src="/assets/flag-{code}.png" width="48" height="48" alt="{name}"/></a>'
