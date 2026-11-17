@@ -2,7 +2,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-family: Arial, Helvetica, sans-serif; }
 .page-shell { display: flex; justify-content: center; width: 100%; }
-.page-stage { position: relative; width: 100%; max-width: 1664px; min-height: 100dvh; aspect-ratio: 1537 / 864; background: #f8f6f2; }
+.page-stage { position: relative; width: 100%; min-height: 100dvh; aspect-ratio: 1537 / 864; background: #f8f6f2; }
 .page-stage::after { content: ""; position: absolute; inset: 0 0 0 72.1%; box-shadow: -15px 0 34px #00000014; pointer-events: none; }
 .home-cover-hero { position: absolute; inset: 0; pointer-events: none; }
 .home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff66,#ffffff26 45%,transparent 75%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.jpg'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
