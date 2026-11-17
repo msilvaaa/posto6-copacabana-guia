@@ -119,7 +119,8 @@ def local_clocks(lang):
     }
     heading, cities, note = labels[lang]
     zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'America/Santiago']
-    clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3>{e(city)}</h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone in zip(cities, zones))
+    flags = ['/assets/flag-pt.png', '/assets/flag-en.png', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/cl.svg']
+    clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3><img class="local-clock-flag" src="{flag}" alt="{e(city.split(" — ")[0])}" width="32" height="32"/><span>{e(city.split(" — ")[1])}</span></h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone, flag in zip(cities, zones, flags))
     return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
 
 
