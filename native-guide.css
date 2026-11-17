@@ -106,3 +106,7 @@
 .local-clock time { color: #173f45; font: 600 clamp(20px,2vw,27px)/1.2 Arial,Helvetica,sans-serif; font-variant-numeric: tabular-nums; }
 .local-clock span,.local-clock small { color: #444; font: 400 12px/1.35 Arial,Helvetica,sans-serif; }
 .local-clocks>p { font-size: 12px; }
+
+.local-clock h3 { display: flex; align-items: center; gap: 8px; }
+.local-clock h3>span { color: inherit; font: inherit; }
+.local-clock-flag { display: block; flex: 0 0 32px; width: 32px; height: 32px; object-fit: cover; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 5px #0002; }
