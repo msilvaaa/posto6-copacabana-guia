@@ -24,8 +24,8 @@
     "kind": "photo"
   },
   "restaurantes": {
-    "src": "/assets/cover-icons/restaurantes-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/restaurante-copacabana.webp",
+    "kind": "photo"
   },
   "estabelecimentos": {
     "src": "/assets/cover-photos/shopping-botafogo.jpg",
