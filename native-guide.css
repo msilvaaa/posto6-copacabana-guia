@@ -1,32 +1,32 @@
 @font-face { font-family: 'Guide Script'; src: url('/assets/fonts/courgette.ttf') format('truetype'); font-display: swap; }
 .native-guide .site-reading { background: white; scrollbar-gutter: auto; }
-.native-chapter { display: grid; grid-template-columns: minmax(0,2fr) minmax(390px,1fr); min-height: 100dvh; margin: 0; border: 0; }
+.native-chapter { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(390px,1fr); min-height: 0; margin: 0; border: 0; }
 .native-visual { min-width: 0; background: #e9e6e0; }
-.native-photo { position: sticky; top: 0; height: 100dvh; width: 100%; overflow: hidden; border: 0; margin: 0; }
+.native-photo { position: sticky; top: 0; height: min(78dvh,720px); width: 100%; overflow: hidden; border: 0; margin: 0; }
 .native-photo>img,.native-photo>svg { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; margin: 0; }
-.native-panel { min-width: 0; padding: 20px 24px 24px; background: white; }
-.native-toolbar { display: flex; justify-content: center; margin: 0 0 24px; min-height: 58px; }
+.native-panel { min-width: 0; padding: 16px 24px 18px; background: white; }
+.native-toolbar { display: flex; justify-content: center; margin: 0 0 16px; min-height: 58px; }
 .native-toolbar .site-toolbar { justify-content: center; margin: 0; gap: 16px; }
 .native-title { border: 2px solid #111; border-radius: 999px; padding: 13px 8px; margin: 0 0 28px; text-align: center; font: 400 clamp(28px,2.3vw,38px)/1.25 'Guide Script',Georgia,serif; overflow-wrap: anywhere; }
 .native-chapter-title { margin: 16px 0 26px; text-align: center; font: 400 27px/1.3 'Guide Script',Georgia,serif; }
-.native-card { margin: 0 0 24px; break-inside: avoid; }
+.native-card { margin: 0 0 16px; break-inside: avoid; }
 .native-card-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .native-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 42px; width: 42px; height: 42px; border: 1.5px solid #171717; border-radius: 50%; color: #173f45; background: white; }
 .native-icon svg { width: 25px; height: 25px; }
 .native-card h2 { margin: 0; font: 700 17px/1.3 Arial,Helvetica,sans-serif; overflow-wrap: anywhere; }
 .native-card-copy { padding-left: 54px; }
-.native-card p { margin: 8px 0 12px; font: 400 15px/1.55 Arial,Helvetica,sans-serif; color: #333; overflow-wrap: anywhere; }
+.native-card p { margin: 4px 0 8px; font: 400 15px/1.5 Arial,Helvetica,sans-serif; color: #333; overflow-wrap: anywhere; }
 .native-link { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 9px 4px; color: #151515; text-underline-offset: 3px; font: 400 15px/1.4 Arial,Helvetica,sans-serif; overflow-wrap: anywhere; border-radius: 5px; }
 .native-link>svg { width: 17px; height: 20px; flex: 0 0 17px; }
 .native-link:hover,.native-link:focus-visible { background: #edf5f3; color: #075c4f; }
-.native-actions { display: flex; justify-content: center; padding: 12px 0 64px; }
+.native-actions { display: flex; justify-content: center; padding: 8px 0 12px; }
 .native-actions .site-pagination { margin: 0; gap: 16px; }
-@media(min-width:1664px) { .native-chapter { grid-template-columns: minmax(0,2fr) minmax(430px,1fr); } }
+@media(min-width:1664px) { .native-chapter { grid-template-columns: minmax(0,1.4fr) minmax(430px,1fr); } }
 @media(max-width:1100px) { .native-chapter { grid-template-columns: minmax(0,1.3fr) minmax(360px,1fr); } .native-panel { padding: 20px 18px; } }
 @media(max-width:760px) {
  .native-chapter { display: flex; flex-direction: column; min-height: auto; }
- .native-photo { position: relative; height: 42vh; min-height: 220px; }
- .native-panel { padding: 20px 20px 28px; }
+ .native-photo { position: relative; height: 32vh; min-height: 200px; }
+ .native-panel { padding: 16px 20px 18px; }
  .native-title { font-size: 31px; }
  .native-card h2 { font-size: 18px; }
  .native-card p,.native-link { font-size: 16px; }
@@ -35,7 +35,7 @@
 .native-guide .site-frame { max-width: none; }
 
 /* Keep the original guest-guide illustrations and photographic title artwork. */
-.original-heading { display: flex; align-items: center; justify-content: center; width: fit-content; max-width: 90%; padding: 7px 14px; border: 2px solid #111; border-radius: 999px; margin: 0 auto 24px; }
+.original-heading { display: flex; align-items: center; justify-content: center; width: fit-content; max-width: 90%; padding: 7px 14px; border: 2px solid #111; border-radius: 999px; margin: 0 auto 18px; }
 .original-heading>.compact-title-art { display: block; width: auto; height: 34px; max-width: 100%; }
 .native-title-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .native-icon.original-illustration { flex-basis: 76px; width: 76px; height: 76px; border: 0; border-radius: 0; background: transparent; color: #111; }
@@ -43,7 +43,7 @@
 .native-room-thumb { width: 76px; height: 76px; object-fit: cover; border-radius: 50%; }
 .illustrated-card .native-card-heading { gap: 14px; }
 .illustrated-card .native-card-copy { padding-left: 90px; }
-.native-art-hero { width: 78%; max-width: 300px; margin: 0 auto 24px; }
+.native-art-hero { width: 78%; max-width: 300px; margin: 0 auto 18px; }
 .native-art-hero>svg,.native-art-strip>svg { display: block; width: 100%; height: auto; }
 .native-art-strip { margin: 0 0 20px; }
 .native-icon.plane-trail { height: 145px; }
@@ -52,7 +52,7 @@
 @keyframes original-map-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 @media(prefers-reduced-motion:reduce) { .native-icon.phone-map>svg { animation: none; } }
 @media(max-width:760px) { .illustrated-card .native-card-copy { padding-left: 0; } }
-.native-restaurant-card { margin: 0 auto 24px; max-width: 330px; }
+.native-restaurant-card { margin: 0 auto 18px; max-width: 330px; }
 .native-photo-recommendation { position: relative; overflow: hidden; }
 .native-photo-recommendation>.original-art { display: block; width: 100%; height: auto; }
 .native-photo-caption { position: absolute; left: 0; right: 0; top: 28%; padding: 2px 6px; background: #fff; }
@@ -71,12 +71,12 @@
 .illustrated-card:has(.native-icon:empty) .native-card-copy { padding-left: 0; }
 
 /* Preserve the complete original Wi-Fi access block as requested by the host. */
-.native-wifi-access { width: 100%; max-width: 330px; margin: 0 auto 24px; }
+.native-wifi-access { width: 100%; max-width: 330px; margin: 0 auto 18px; }
 .native-wifi-access>svg { display: block; width: 100%; height: auto; }
 .native-wifi-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
 
 /* Preserve the six numbered rule panels and their original pictograms. */
-.native-rules-grid { width: 100%; max-width: 420px; margin: 0 auto 24px; }
+.native-rules-grid { width: 100%; max-width: 420px; margin: 0 auto 18px; }
 .native-rules-grid>svg { display: block; width: 100%; height: auto; }
 .native-art-accessible { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; overflow: hidden; clip-path: inset(50%); }
 
@@ -85,3 +85,27 @@
 .native-chapter-title { font-size: 23px; }
 .native-photo:has(>img[data-preserve-ratio]) { height: auto; min-height: 0; }
 .native-photo>img[data-preserve-ratio] { height: auto; object-fit: contain; }
+
+/* Keep illustrations beside their text instead of adding an empty row. */
+@media(min-width:761px) {
+ .illustrated-card { display: grid; grid-template-columns: 76px minmax(0,1fr); column-gap: 14px; row-gap: 4px; align-items: start; }
+ .illustrated-card .native-card-heading { display: contents; }
+ .illustrated-card .native-icon { grid-column: 1; grid-row: span 2; }
+ .illustrated-card h2,.illustrated-card .native-card-copy { grid-column: 2; padding-left: 0; }
+ .illustrated-card>.native-art-strip,.illustrated-card>.native-bar-photos { grid-column: 1 / -1; }
+ .illustrated-card:has(.native-icon:empty) { grid-template-columns: minmax(0,1fr); }
+ .illustrated-card:has(.native-icon:empty) h2,.illustrated-card:has(.native-icon:empty) .native-card-copy { grid-column: 1; }
+}
+/* Show portrait photos in full without making the page taller than necessary. */
+.native-photo:has(>img[data-preserve-ratio]) { height: min(78dvh,720px); }
+.native-photo>img[data-preserve-ratio] { height: 100%; object-fit: contain; }
+@media(min-width:761px) {
+ .native-chapter { min-height: min(78dvh,720px); }
+ .native-visual { position: relative; }
+ .native-photo { position: absolute; inset: 0; height: 100%; }
+ .native-chapter:has(img[data-preserve-ratio]) { grid-template-columns: minmax(0,.95fr) minmax(390px,1fr); }
+ .native-photo:has(>img[data-preserve-ratio]) { height: 100%; }
+}
+@media(max-width:760px) {
+ .native-photo:has(>img[data-preserve-ratio]) { height: min(48dvh,500px); }
+}
