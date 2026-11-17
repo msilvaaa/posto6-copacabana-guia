@@ -98,6 +98,6 @@
  .native-chapter { min-height: 100dvh; }
  .native-visual { position: relative; }
  .native-photo { position: absolute; inset: 0; height: 100%; }
- /* Match the portrait photo column to its shape instead of enlarging it across a landscape column. */
- .native-chapter:has(img[data-preserve-ratio]) { grid-template-columns: minmax(0,min(66.666%,80dvh,calc(100% - 390px))) minmax(390px,1fr); }
+ /* Split Transportes evenly between its photo and information. */
+ .native-chapter:has(img[data-preserve-ratio]) { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
