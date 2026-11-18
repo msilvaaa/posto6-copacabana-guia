@@ -27,6 +27,11 @@ def illustration(name):
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                 '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
+    if name == 'checkout-clock':
+        return ('<svg class="checkout-clock" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" aria-hidden="true">'
+                '<circle cx="39" cy="39" r="33" fill="white" stroke="#111"/>'
+                '<path d="M39 13v3m26 23h-3M39 65v-3M13 39h3M39 23v16l13 9"/>'
+                '<circle cx="39" cy="39" r="2.5" fill="#173f45" stroke="none"/></svg>')
     if name == 'phone-map':
         # Clip to the pictogram itself: the square SVG viewport otherwise reveals the source-page rule above it.
         return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
@@ -269,6 +274,8 @@ def build_native(page, content, upgrades, photos):
                 name=['landmark','mountain','bike','fitness'][section_index]
             elif page['image']['src'].endswith('-13.jpg'):
                 name=(['bag','cart','market'] if index==0 else ['bread','coffee','craft'])[section_index]
+            elif page['image']['src'].endswith('-15.jpg') and section_index==0:
+                name='checkout-clock'
             elif page['image']['src'].endswith('-14.jpg'):
                 name=['samu','shield','hospital','pharmacy','fire'][section_index]
             elif page['image']['src'].endswith('-11.jpg'):
