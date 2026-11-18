@@ -128,6 +128,23 @@ def photograph(page, chapter, upgrades, photos):
             f'<image href="{e(image["src"])}" width="{image["width"]}" height="{image["height"]}"/></svg>')
 
 
+def wifi_access(lang, source):
+    scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
+    return (f'<svg class="original-art wifi-access-art" viewBox="1135 180 310 463" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
+            '<defs><clipPath id="wifi-upper-art"><rect x="1135" y="180" width="310" height="368"/></clipPath>'
+            '<clipPath id="wifi-original-qr"><rect x="1258" y="548" width="98" height="95"/></clipPath></defs>'
+            f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-upper-art)"/>'
+            '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
+            '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
+            '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
+            '<path d="M1401 225q3-2 6 0"/></g><circle cx="1404" cy="229" r="1.5" fill="white"/></g>'
+            '<g class="wifi-scan-group">'
+            f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-original-qr)"/>'
+            '<path d="M1162 582h59v-7l18 16-18 16v-7h-59Z" fill="#f0273e"/>'
+            f'<text x="1191" y="594" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="700">{scan}</text>'
+            '</g></svg>')
+
+
 def local_clocks(lang):
     labels = {
         'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Singapura — Singapura', 'Reino Unido — Londres'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
@@ -279,7 +296,7 @@ def build_native(page, content, upgrades, photos):
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
-            top+=f'<div class="native-wifi-access">{artwork(page["image"]["src"],[1135,180,310,463])}</div>'
+            top+=f'<div class="native-wifi-access">{wifi_access(lang,page["image"]["src"])}</div>'
         if index==0 and page['image']['src'].endswith('-06.jpg'):
             top+=f'<div class="native-rules-grid">{artwork(page["image"]["src"],[1104,210,411,435])}</div>'
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
@@ -294,7 +311,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
