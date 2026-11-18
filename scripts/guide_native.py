@@ -27,6 +27,11 @@ def illustration(name):
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                 '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
+    if name == 'phone-map':
+        # Clip to the pictogram itself: the square SVG viewport otherwise reveals the source-page rule above it.
+        return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
+                '<defs><clipPath id="location-icon-art"><rect x="1298" y="176" width="78" height="74"/></clipPath></defs>'
+                '<image href="/assets/pt-04.jpg" width="1537" height="864" clip-path="url(#location-icon-art)"/></svg>')
     if name == 'plane-trail':
         # Reveal the original right wing beyond the old viewport, without nearby text or bullets.
         return ('<svg class="original-art plane-trail" viewBox="1137 473 90 188" style="overflow:visible" aria-hidden="true">'
