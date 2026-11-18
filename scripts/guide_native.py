@@ -23,6 +23,15 @@ def title_word_art(source, word=None):
 
 
 def illustration(name):
+    if name == 'fast-clock':
+        return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
+                '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
+    if name == 'plane-trail-clean':
+        # A crisp outline and dashed trail replace the clipped raster artwork and stray marks.
+        return ('<svg viewBox="0 0 90 188" fill="none" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<path d="M28 87 40 72 53 37C58 20 62 7 68 7c9 0 5 15 3 25L67 56l17 19v9L61 71 48 87l7 15-7 1-11-9-16 2Z"/>'
+                '<path d="M33 111c-4 20-10 30-20 28-12-3-8-19 2-15 20 8 6 38-8 54" stroke-dasharray="6 6"/></svg>')
     item=ORIGINAL_ART['_illustrations'].get(name)
     if name=='wifi-monitor':
         # Exclude the overlapping Wi-Fi badge from the original monitor's corner.
@@ -100,6 +109,10 @@ def photograph(page, chapter, upgrades, photos):
     if upgrade:
         label = upgrade.get('alt', {})
         label = label.get(page['lang'], '') if isinstance(label, dict) else label
+        if upgrade.get('crop'):
+            viewport = ' '.join(str(value) for value in upgrade['crop'])
+            return (f'<svg class="native-cropped-photo" viewBox="{viewport}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{e(label)}">'
+                    f'<image href="{e(upgrade["src"])}" width="{upgrade["width"]}" height="{upgrade["height"]}"/></svg>')
         variants = upgrade.get('variants', [])
         srcset = ' srcset="' + e(', '.join(f'{v["src"]} {v["width"]}w' for v in variants)) + '" sizes="(max-width:760px) 100vw, max(70vw,150vh)"' if variants else ''
         position=e(upgrade.get('position','50% 50%'))
@@ -191,7 +204,7 @@ def build_native(page, content, upgrades, photos):
                 continue
             name=section['icon']
             if page['image']['src'].endswith('-04.jpg'):
-                name=['phone-map','plane-trail','travel-clock'][section_index]
+                name=['phone-map','plane-trail','fast-clock'][section_index]
             elif page['image']['src'].endswith('-05.jpg'):
                 name=['wifi','wifi-qr','info'][section_index]
             elif page['image']['src'].endswith('-07.jpg') and section_index==3:
@@ -225,6 +238,8 @@ def build_native(page, content, upgrades, photos):
                     art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
             if page['image']['src'].endswith('-02.jpg') and section_index==0:
                 art=''
+            if page['image']['src'].endswith('-04.jpg') and section_index==1:
+                art=''
             extra=''
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
                 extra=f'<div class="native-art-strip">{illustration("rules-strip")}</div>'
@@ -234,7 +249,10 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
                 weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>Copacabana</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
-            parts.append(f'<section class="native-card illustrated-card">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div></section>')
+            airport = page['image']['src'].endswith('-04.jpg') and section_index==2
+            card_class = ' airport-card' if airport else ''
+            plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail-clean")}</div>' if airport else ''
+            parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
@@ -263,7 +281,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261116-34"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-1" if page["image"]["src"].endswith(("-03.jpg", "-04.jpg")) else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
