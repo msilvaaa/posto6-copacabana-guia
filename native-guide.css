@@ -231,3 +231,10 @@
  .house-rules-grid p { font-size: 12px; }
  .native-title.original-heading { font-size: 28px; }
 }
+
+/* Preserve the owner's original signature artwork; normalize only its visible lettering height. */
+.native-thanks.signature-original { display: flex; align-items: center; justify-content: center; container-type: inline-size; width: 100%; max-width: none; margin: 24px auto 18px; padding: 0; line-height: 0; }
+.signature-original>.signature-lettering { display: block; width: auto; max-width: 100%; height: calc(clamp(40px,5vw,72px) * 1.12); }
+@supports(width:1cqw) {
+ .signature-original>.signature-lettering { height: calc(min(72px,16cqw) * 1.12); }
+}
