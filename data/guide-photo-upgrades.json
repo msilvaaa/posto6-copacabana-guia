@@ -97,5 +97,17 @@
       "es": "Autobús de Río de Janeiro con palmeras y el Morro Dois Irmãos al fondo"
     },
     "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17, preserving the original portrait proportions and full composition."
+  },
+  "-14.jpg": {
+    "src": "/assets/emergency/resgate-copacabana.webp",
+    "width": 1536,
+    "height": 1024,
+    "position": "55% 50%",
+    "alt": {
+      "pt": "Resgate com helicóptero dos Bombeiros na praia de Copacabana",
+      "en": "Fire brigade helicopter rescue on Copacabana beach",
+      "es": "Rescate con helicóptero de los bomberos en la playa de Copacabana"
+    },
+    "provenance": "Exposure and clarity enhanced from the host supplied rescue photograph on 2026-11-18; original generated PNG retained in workspace."
   }
 }

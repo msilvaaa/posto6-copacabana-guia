@@ -145,6 +145,20 @@ def wifi_access(lang, source):
             '</g></svg>')
 
 
+def sea_conditions(lang):
+    title, waves, wind, gusts, loading, note = {
+        'pt': ('Mar e ventos · Copacabana', 'Ondas', 'Vento', 'Rajadas', 'Consultando previsão…', 'Previsão regional para a orla. Siga a sinalização dos guarda-vidas.'),
+        'en': ('Sea and wind · Copacabana', 'Waves', 'Wind', 'Gusts', 'Checking forecast…', 'Regional coastal forecast. Follow the lifeguards’ beach flags and instructions.'),
+        'es': ('Mar y viento · Copacabana', 'Olas', 'Viento', 'Ráfagas', 'Consultando previsión…', 'Previsión regional para la costa. Sigue las banderas e indicaciones de los socorristas.'),
+    }[lang]
+    return (f'<section class="sea-conditions native-card" data-sea-conditions aria-labelledby="sea-title"><h2 id="sea-title">{e(title)}</h2>'
+            f'<dl class="sea-values"><div><dt>{e(waves)}</dt><dd><strong data-sea-value="waveHeight">—</strong> <small data-sea-period></small></dd></div>'
+            f'<div><dt>{e(wind)}</dt><dd><strong data-sea-value="windSpeed">—</strong> <small data-sea-direction></small></dd></div>'
+            f'<div><dt>{e(gusts)}</dt><dd><strong data-sea-value="windGusts">—</strong></dd></div></dl>'
+            f'<p class="sea-status" data-sea-status role="status">{e(loading)}</p><p class="sea-note">{e(note)} '
+            '<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p></section>')
+
+
 def local_clocks(lang):
     labels = {
         'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Singapura — Singapura', 'Reino Unido — Londres'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
@@ -295,6 +309,8 @@ def build_native(page, content, upgrades, photos):
                          '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
+        if index==0 and page['image']['src'].endswith('-14.jpg'):
+            top+=sea_conditions(lang)
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{wifi_access(lang,page["image"]["src"])}</div>'
         if index==0 and page['image']['src'].endswith('-06.jpg'):
@@ -303,6 +319,7 @@ def build_native(page, content, upgrades, photos):
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-4" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
+    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261118-1"></script>' if page['image']['src'].endswith('-14.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -311,8 +328,8 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261116-34"}"/>
-  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-9" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
+  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>
