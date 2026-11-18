@@ -992,6 +992,24 @@
         320,
         89
       ]
+    },
+    "thanks-en": {
+      "src": "/assets/en-15.jpg",
+      "rect": [
+        1094,
+        736,
+        430,
+        80
+      ]
+    },
+    "thanks-es": {
+      "src": "/assets/es-15.jpg",
+      "rect": [
+        1136,
+        708,
+        354,
+        98
+      ]
     }
   },
   "_restaurants": [

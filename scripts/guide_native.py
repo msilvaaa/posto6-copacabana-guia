@@ -344,8 +344,10 @@ def build_native(page, content, upgrades, photos):
         navigation = ''
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
-            if page['image']['src'].endswith('-15.jpg') and lang=='pt':
-                navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
+            if page['image']['src'].endswith('-15.jpg'):
+                signature = 'thanks' if lang == 'pt' else f'thanks-{lang}'
+                label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
+                navigation=f'<div class="native-art-hero native-thanks" role="img" aria-label="{e(label)}">{illustration(signature)}</div>'+navigation
         title_art=title_word_art(page['image']['src'])
         if page['image']['src'].endswith('-03.jpg'):
             # Reuse the original handwritten Check- and in glyphs, with an uppercase C.
