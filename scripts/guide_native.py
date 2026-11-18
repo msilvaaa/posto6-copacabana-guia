@@ -27,11 +27,6 @@ def illustration(name):
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                 '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
-    if name == 'plane-trail-clean':
-        # A crisp outline and dashed trail replace the clipped raster artwork and stray marks.
-        return ('<svg viewBox="0 0 90 188" fill="none" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<path d="M28 87 40 72 53 37C58 20 62 7 68 7c9 0 5 15 3 25L67 56l17 19v9L61 71 48 87l7 15-7 1-11-9-16 2Z"/>'
-                '<path d="M33 111c-4 20-10 30-20 28-12-3-8-19 2-15 20 8 6 38-8 54" stroke-dasharray="6 6"/></svg>')
     item=ORIGINAL_ART['_illustrations'].get(name)
     if name=='wifi-monitor':
         # Exclude the overlapping Wi-Fi badge from the original monitor's corner.
@@ -251,7 +246,7 @@ def build_native(page, content, upgrades, photos):
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
             airport = page['image']['src'].endswith('-04.jpg') and section_index==2
             card_class = ' airport-card' if airport else ''
-            plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail-clean")}</div>' if airport else ''
+            plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail")}</div>' if airport else ''
             parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
