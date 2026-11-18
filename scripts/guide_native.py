@@ -65,6 +65,16 @@ def illustration(name):
     return artwork(item['src'],item['rect'],name) if item else icon(name)
 
 
+def information_illustration(name):
+    item = ORIGINAL_ART['_illustrations'][name]
+    x,y,w,h = item['rect']
+    cut = ('<path d="M1109 701H1127V713H1137V764H1100V713H1109Z"/>' if name == 'case' else
+           f'<circle cx="{x+39}" cy="{y+h/2}" r="31"/>')
+    return (f'<svg class="information-pictogram" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
+            f'<defs><clipPath id="information-{name}">{cut}</clipPath></defs>'
+            f'<image href="{e(item["src"])}" width="1537" height="864" clip-path="url(#information-{name})"/></svg>')
+
+
 def emergency_illustration(name):
     centers = {'shield': (1117,386), 'hospital': (1117,507), 'pharmacy': (1117,624), 'fire': (1122,778)}
     if name in centers:
@@ -166,14 +176,22 @@ def photograph(page, chapter, upgrades, photos):
 
 def wifi_access(lang, source):
     scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
+    network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
     return (f'<svg class="original-art wifi-access-art" viewBox="1135 180 310 463" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
-            '<defs><clipPath id="wifi-upper-art"><rect x="1135" y="180" width="310" height="368"/></clipPath>'
+            '<defs><clipPath id="wifi-upper-art"><path d="M1135 180H1445V410H1230V440H1135Z"/></clipPath>'
             '<clipPath id="wifi-original-qr"><rect x="1258" y="548" width="98" height="95"/></clipPath></defs>'
             f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-upper-art)"/>'
             '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
             '<path d="M1401 225q3-2 6 0"/></g><circle cx="1404" cy="229" r="1.5" fill="white"/></g>'
+            '<g class="wifi-credentials" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" fill="#111">'
+            f'<text x="1305" y="431" font-size="17" font-weight="700">{network}</text>'
+            '<rect x="1180" y="441" width="250" height="31" rx="15.5" fill="#eae3da" stroke="#111" stroke-width="2"/>'
+            '<text x="1305" y="463" font-size="20">Marcus Silva</text>'
+            f'<text x="1305" y="495" font-size="17" font-weight="700">{password}</text>'
+            '<rect x="1180" y="505" width="250" height="31" rx="15.5" fill="#e3d5c6" stroke="#111" stroke-width="2"/>'
+            '<text x="1305" y="527" font-size="20">braziliansoul</text></g>'
             '<g class="wifi-scan-group">'
             f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-original-qr)"/>'
             '<path d="M1162 582h59v-7l18 16-18 16v-7h-59Z" fill="#f0273e"/>'
@@ -303,7 +321,7 @@ def build_native(page, content, upgrades, photos):
                 image_src=next((v['src'] for v in room.get('variants',[]) if v['width']==720),room['src'])
                 art=f'<img class="native-room-thumb" src="{e(image_src)}" alt="{e(section["title"][lang])}" width="100" height="100"/>'
             else:
-                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else illustration(name)
+                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else information_illustration(name) if page['image']['src'].endswith('-10.jpg') else illustration(name)
                 if page['image']['src'].endswith('-05.jpg') and section_index==2:
                     art=''
                 if page['image']['src'].endswith('-03.jpg') and section_index==0:
