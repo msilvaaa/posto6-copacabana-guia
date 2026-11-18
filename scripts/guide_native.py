@@ -297,6 +297,11 @@ def build_native(page, content, upgrades, photos):
             elif page['image']['src'].endswith('-11.jpg') and section_index==0:
                 extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
             heading = f'<h2>{e(section["title"][lang])}</h2>'
+            if page['image']['src'].endswith('-14.jpg') and section_index == 0:
+                art = ''
+                hours = {'pt': '24 horas', 'en': '24 hours', 'es': '24 horas'}[lang]
+                heading = f'<h2 class="samu-heading">{e(section["title"][lang])}<span class="service-hours">{icon("clock")}{hours}</span></h2>'
+
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
                 weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>Copacabana</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
@@ -345,7 +350,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-11" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-12" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
