@@ -294,6 +294,8 @@ def build_native(page, content, upgrades, photos):
                 icon_markup = (f'<a class="native-icon original-illustration {e(name)}" href="{e(address["href"])}" '
                                f'target="_blank" rel="noopener noreferrer" aria-label="{e(address["text"][lang])}">{art}</a>')
             parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading">{icon_markup}{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
+        if page['image']['src'].endswith('-14.jpg'):
+            parts = [parts[0], '<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4]]
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
@@ -328,7 +330,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-9" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-10" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
