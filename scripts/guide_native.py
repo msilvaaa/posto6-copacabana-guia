@@ -310,7 +310,7 @@ def build_native(page, content, upgrades, photos):
                                f'target="_blank" rel="noopener noreferrer" aria-label="{e(address["text"][lang])}">{art}</a>')
             parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading">{icon_markup}{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
         if page['image']['src'].endswith('-14.jpg'):
-            parts = [parts[0], '<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4]]
+            parts = ['<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4], parts[0]]
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
