@@ -196,3 +196,6 @@
 .samu-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .service-hours { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; background: #edf5f3; color: #173f45; font: 600 12px/1.4 Arial,Helvetica,sans-serif; white-space: nowrap; }
 .service-hours>svg { width: 14px; height: 14px; }
+
+/* One shared typeface and size for every localized Check-out signature. */
+.native-thanks { width: 100%; max-width: none; margin: 24px auto 18px; text-align: center; color: #111; font: 400 36px/1.4 'Guide Script',Georgia,serif; }

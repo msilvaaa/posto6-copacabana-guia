@@ -345,9 +345,8 @@ def build_native(page, content, upgrades, photos):
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
             if page['image']['src'].endswith('-15.jpg'):
-                signature = 'thanks' if lang == 'pt' else f'thanks-{lang}'
-                label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
-                navigation=f'<div class="native-art-hero native-thanks" role="img" aria-label="{e(label)}">{illustration(signature)}</div>'+navigation
+                signature = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Muchas gracias'}[lang]
+                navigation=f'<p class="native-thanks">{e(signature)}</p>'+navigation
         title_art=title_word_art(page['image']['src'])
         if page['image']['src'].endswith('-03.jpg'):
             # Reuse the original handwritten Check- and in glyphs, with an uppercase C.
@@ -375,7 +374,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-12" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-12" if page["image"]["src"].endswith("-14.jpg") else "20261118-13" if page["image"]["src"].endswith("-15.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
