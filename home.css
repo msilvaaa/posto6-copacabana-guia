@@ -126,3 +126,5 @@ body.home-page { background: #f8f6f2; }
  .cover-next { right: calc(15% - 50px); }
  .home-page .page-stage .home-cover-hero>.site-utilities { right: calc(30% + 20px); }
 }
+
+.detail-modern-flag img { object-fit: cover; }

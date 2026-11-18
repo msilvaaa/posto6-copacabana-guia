@@ -3,6 +3,7 @@ from html import escape
 import json
 from pathlib import Path
 from urllib.parse import urlencode
+from guide_symbols import symbol as sharp_symbol
 from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
@@ -11,15 +12,8 @@ ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-ori
 def artwork(source, rect, css=''):
     x,y,w,h=rect
     # The SVG viewport displays the original artwork without resampling or editing it.
-    return (f'<svg class="original-art {e(css)}" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
+    return (f'<svg class="original-art {e(css)}" viewBox="{x} {y} {w} {h}" style="max-width:{w}px" aria-hidden="true">'
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
-
-
-def title_word_art(source, word=None):
-    x,y,w,h=word or ORIGINAL_ART[source]['word']
-    height=2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864
-    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
-            f'<image href="{e(source)}" width="1537" height="{height}"/></svg>')
 
 
 def illustration(name):
@@ -44,10 +38,7 @@ def illustration(name):
                 '<path d="M31 31v24m16-24v24M58 34h5v13h-5M29 67v4m20-4v4"/>'
                 '<path d="M34 13h10" stroke-width="4"/></svg>')
     if name == 'phone-map':
-        # Clip to the pictogram itself: the square SVG viewport otherwise reveals the source-page rule above it.
-        return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
-                '<defs><clipPath id="location-icon-art"><rect x="1298" y="176" width="78" height="74"/></clipPath></defs>'
-                '<image href="/assets/pt-04.jpg" width="1537" height="864" clip-path="url(#location-icon-art)"/></svg>')
+        return sharp_symbol(name, PATHS)
     if name == 'plane-trail':
         # Reveal the original right wing beyond the old viewport, without nearby text or bullets.
         return ('<svg class="original-art plane-trail" viewBox="1137 473 90 188" style="overflow:visible" aria-hidden="true">'
@@ -56,38 +47,16 @@ def illustration(name):
                 '<rect x="1223" y="495" width="13" height="13" fill="black"/>'
                 '<rect x="1223" y="586" width="13" height="14" fill="black"/></mask></defs>'
                 '<image href="/assets/pt-04.jpg" width="1537" height="864" mask="url(#airport-plane-art)"/></svg>')
-    item=ORIGINAL_ART['_illustrations'].get(name)
-    if name=='wifi-monitor':
-        # Exclude the overlapping Wi-Fi badge from the original monitor's corner.
-        return ('<svg class="original-art wifi-monitor" viewBox="1170 182 271 220" aria-hidden="true">'
-                '<defs><clipPath id="wifi-monitor-clip"><path d="M1170 182H1441V402H1240V372H1170Z"/></clipPath></defs>'
-                '<image href="/assets/pt-05.jpg" width="1537" height="864" clip-path="url(#wifi-monitor-clip)"/></svg>')
-    return artwork(item['src'],item['rect'],name) if item else icon(name)
-
-
-def information_illustration(name):
-    item = ORIGINAL_ART['_illustrations'][name]
-    x,y,w,h = item['rect']
-    cut = ('<path d="M1109 701H1127V713H1137V764H1100V713H1109Z"/>' if name == 'case' else
-           f'<circle cx="{x+39}" cy="{y+h/2}" r="31"/>')
-    return (f'<svg class="information-pictogram" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
-            f'<defs><clipPath id="information-{name}">{cut}</clipPath></defs>'
-            f'<image href="{e(item["src"])}" width="1537" height="864" clip-path="url(#information-{name})"/></svg>')
+    return sharp_symbol(name, PATHS)
 
 
 def emergency_illustration(name):
-    centers = {'shield': (1117,386), 'hospital': (1117,507), 'pharmacy': (1117,624), 'fire': (1122,778)}
-    if name in centers:
-        x,y = centers[name]
-        drawing = (f'<svg x="7" y="7" width="64" height="64" viewBox="{x-32} {y-32} 64 64">'
-                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
-    else:
-        drawing = ('<svg x="7" y="21" width="64" height="36" viewBox="1350 248 145 77">'
-                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
-    return (f'<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
-            f'<defs><clipPath id="emergency-{name}"><circle cx="39" cy="39" r="28"/></clipPath></defs>'
+    glyph = sharp_symbol(name, PATHS)
+    if name == 'pharmacy':
+        glyph = glyph.replace('#d54e55', '#3e9168')
+    return ('<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
             '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>'
-            f'<g clip-path="url(#emergency-{name})">{drawing}</g></svg>')
+            f'<svg x="17" y="17" width="44" height="44" viewBox="0 0 24 24">{glyph}</svg></svg>')
 
 
 def e(value):
@@ -163,7 +132,7 @@ def photograph(page, chapter, upgrades, photos):
             return (f'<svg class="native-cropped-photo" viewBox="{viewport}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{e(label)}">'
                     f'<image href="{e(upgrade["src"])}" width="{upgrade["width"]}" height="{upgrade["height"]}"/></svg>')
         variants = upgrade.get('variants', [])
-        srcset = ' srcset="' + e(', '.join(f'{v["src"]} {v["width"]}w' for v in variants)) + '" sizes="(max-width:760px) 100vw, max(70vw,150vh)"' if variants else ''
+        srcset = ' srcset="' + e(', '.join(f'{v["src"]} {v["width"]}w' for v in variants)) + '" sizes="(max-width:760px) 100vw, 50vw"' if variants else ''
         position=e(upgrade.get('position','50% 50%'))
         preserve_ratio=' data-preserve-ratio' if upgrade.get('preserve_ratio') else ''
         return f'<img src="{e(upgrade["src"])}" width="{upgrade["width"]}" height="{upgrade["height"]}" alt="{e(label)}" style="object-position:{position}"{srcset}{preserve_ratio}/>'
@@ -178,9 +147,13 @@ def wifi_access(lang, source):
     scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
     network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
     return (f'<svg class="original-art wifi-access-art" viewBox="1135 180 310 463" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
-            '<defs><clipPath id="wifi-upper-art"><path d="M1135 180H1445V410H1230V440H1135Z"/></clipPath>'
-            '<clipPath id="wifi-original-qr"><rect x="1258" y="548" width="98" height="95"/></clipPath></defs>'
-            f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-upper-art)"/>'
+            '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath></defs>'
+            '<rect x="1173" y="182" width="268" height="173" rx="10" fill="#111"/>'
+            '<image href="/assets/location/copacabana-aerial.webp" x="1183" y="193" width="248" height="139" preserveAspectRatio="xMidYMid slice" clip-path="url(#wifi-screen-photo)"/>'
+            '<path d="M1173 343h268v20q0 12-12 12h-244q-12 0-12-12Z" fill="#e7e7e7"/>'
+            '<path d="M1280 375h54l8 23h-70Z" fill="#c8c8c8"/><path d="M1264 400h86" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>'
+            '<rect x="1139" y="383" width="91" height="46" rx="12" fill="#111"/>'
+            '<text x="1184" y="416" fill="white" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="900">WiFi</text>'
             '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
@@ -193,10 +166,17 @@ def wifi_access(lang, source):
             '<rect x="1180" y="505" width="250" height="31" rx="15.5" fill="#e3d5c6" stroke="#111" stroke-width="2"/>'
             '<text x="1305" y="527" font-size="20">braziliansoul</text></g>'
             '<g class="wifi-scan-group">'
-            f'<image href="{e(source)}" width="1537" height="864" clip-path="url(#wifi-original-qr)"/>'
+            '<image href="/assets/quality/wifi-qr.svg" x="1258" y="548" width="95" height="95"/>'
             '<path d="M1162 582h59v-7l18 16-18 16v-7h-59Z" fill="#f0273e"/>'
             f'<text x="1191" y="594" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="700">{scan}</text>'
             '</g></svg>')
+
+
+def native_rules(lang, section):
+    symbols = ['snow', 'moon', 'dog', 'people', 'smoke', 'shield']
+    intro = {'pt':'Agradeço sua adesão às regras da casa, por favor', 'en':'Thank you for following the house rules', 'es':'Gracias por respetar las normas de la casa'}[lang]
+    cards = ''.join(f'<li><span class="rule-number">{i+1:02d}</span><span class="rule-symbol">{sharp_symbol(symbols[i], PATHS)}</span><p>{e(item["text"][lang])}</p></li>' for i,item in enumerate(section['items']))
+    return f'<section class="native-card native-house-rules"><h2>{intro}</h2><ol class="house-rules-grid">{cards}</ol></section>'
 
 
 def sea_conditions(lang):
@@ -221,7 +201,7 @@ def local_clocks(lang):
     }
     heading, cities, note = labels[lang]
     zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'Asia/Singapore', 'Europe/London']
-    flags = ['/assets/flag-pt.png', '/assets/flag-en.png', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
+    flags = ['/assets/flags/pt.svg', '/assets/flags/en.svg', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
     clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3><img class="local-clock-flag" src="{flag}" alt="{e(city.split(" — ")[0])}" width="32" height="32"/><span>{e(city.split(" — ")[1])}</span></h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone, flag in zip(cities, zones, flags))
     return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
 
@@ -249,7 +229,7 @@ def exchange_rates(lang):
     }
     heading, names, note, loading, source = labels[lang]
     ids = ['usd-tourism', 'ars', 'eur', 'brl']
-    flags = ['/assets/flag-en.png', '/assets/flags/ar.svg', '/assets/flags/eu.svg', '/assets/flag-pt.png']
+    flags = ['/assets/flags/en.svg', '/assets/flags/ar.svg', '/assets/flags/eu.svg', '/assets/flags/pt.svg']
     cards = ''.join(f'<div class="exchange-rate" data-exchange-id="{key}"><h4><img class="exchange-flag" src="{flag}" alt="{e(name)}" title="{e(name)}" width="28" height="28"/></h4><output>—</output><small data-exchange-unit></small><time></time></div>' for key, name, flag in zip(ids, names, flags))
     return f'<section class="exchange-rates" data-exchange-rates aria-labelledby="exchange-title"><h3 id="exchange-title">{e(heading)}</h3><div class="exchange-grid">{cards}</div><p data-exchange-status>{e(loading)}</p><p>{e(note)} <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">{e(source)}: AwesomeAPI</a></p></section>'
 
@@ -266,8 +246,7 @@ def build_native(page, content, upgrades, photos):
                 parts.append(f'<section class="native-card native-wifi-accessible"><h2>{e(section["title"][lang])}</h2><p>{accessible}</p></section>')
                 continue
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
-                accessible=' '.join(e(item['text'][lang]) for item in section['items'])
-                parts.append(f'<section class="native-card native-art-accessible"><h2>{e(section["title"][lang])}</h2><p>{accessible}</p></section>')
+                parts.append(native_rules(lang, section))
                 continue
             nodes = []
             descriptions=[]
@@ -321,7 +300,7 @@ def build_native(page, content, upgrades, photos):
                 image_src=next((v['src'] for v in room.get('variants',[]) if v['width']==720),room['src'])
                 art=f'<img class="native-room-thumb" src="{e(image_src)}" alt="{e(section["title"][lang])}" width="100" height="100"/>'
             else:
-                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else information_illustration(name) if page['image']['src'].endswith('-10.jpg') else illustration(name)
+                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else illustration(name)
                 if page['image']['src'].endswith('-05.jpg') and section_index==2:
                     art=''
                 if page['image']['src'].endswith('-03.jpg') and section_index==0:
@@ -334,7 +313,7 @@ def build_native(page, content, upgrades, photos):
                 art=''
             extra=''
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
-                extra=f'<div class="native-art-strip">{illustration("rules-strip")}</div>'
+                extra=''
             elif page['image']['src'].endswith('-11.jpg') and section_index==0:
                 extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
             heading = f'<h2>{e(section["title"][lang])}</h2>'
@@ -365,20 +344,14 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-15.jpg'):
                 signature = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Muchas gracias'}[lang]
                 navigation=f'<p class="native-thanks">{e(signature)}</p>'+navigation
-        title_art=title_word_art(page['image']['src'])
-        if page['image']['src'].endswith('-03.jpg'):
-            # Reuse the original handwritten Check- and in glyphs, with an uppercase C.
-            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" aria-hidden="true">'
-                         '<svg x="0" y="0" width="102" height="32" viewBox="1246 132 102 32"><image href="/assets/pt-15.jpg" width="1537" height="864"/></svg>'
-                         '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
-        heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
+        heading = e(title)
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-14.jpg'):
             top+=sea_conditions(lang)
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{wifi_access(lang,page["image"]["src"])}</div>'
         if index==0 and page['image']['src'].endswith('-06.jpg'):
-            top+=f'<div class="native-rules-grid">{artwork(page["image"]["src"],[1104,210,411,435])}</div>'
+            pass
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
@@ -391,8 +364,8 @@ def build_native(page, content, upgrades, photos):
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
-  <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-12" if page["image"]["src"].endswith("-14.jpg") else "20261118-13" if page["image"]["src"].endswith("-15.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261118-quality"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
