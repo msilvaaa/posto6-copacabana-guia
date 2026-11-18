@@ -139,12 +139,23 @@
 
 .exchange-base,.exchange-value { white-space: nowrap; }
 
-/* Keep the airport illustration in the free space beside the route details. */
-.airport-plane { position: absolute; right: 0; top: 88px; width: 60px; height: 145px; transform: translateX(-12px); pointer-events: none; }
+/* Align the original airplane with the Italy row without covering clock values. */
+.local-clocks-grid { grid-template-columns: repeat(2,minmax(0,1fr)) 70px; }
+.local-clocks-grid>.local-clock { align-content: start; }
+.local-clocks-grid>.local-clock:nth-child(odd) { grid-column: 1; }
+.local-clocks-grid>.local-clock:nth-child(even) { grid-column: 2; }
+.local-clocks-grid>.local-clock:nth-child(-n+2) { grid-row: 1; }
+.local-clocks-grid>.local-clock:nth-child(n+3):nth-child(-n+4) { grid-row: 2; }
+.local-clocks-grid>.local-clock:nth-child(n+5) { grid-row: 3; }
+.airport-plane { grid-column: 3; grid-row: 2 / span 2; align-self: start; width: 70px; height: 145px; margin-top: 6px; pointer-events: none; }
 .airport-plane>svg { display: block; width: 100%; height: 100%; }
-.airport-card .native-card-copy { padding-right: 76px; }
-@media(min-width:761px) {
- .illustrated-card.airport-card { grid-template-columns: 76px minmax(0,1fr) 70px; }
- .airport-card .native-card-copy { padding-right: 0; }
- .airport-card .airport-plane { position: static; grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 70px; }
+@media(max-width:1300px) {
+ .local-clocks-grid { grid-template-columns: minmax(0,1fr) 70px; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(1) { grid-column: 1; grid-row: 1; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(2) { grid-column: 1; grid-row: 2; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(3) { grid-column: 1; grid-row: 3; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(4) { grid-column: 1; grid-row: 4; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(5) { grid-column: 1; grid-row: 5; }
+ .local-clocks .local-clocks-grid>.local-clock:nth-child(6) { grid-column: 1; grid-row: 6; }
+ .airport-plane { grid-column: 2; grid-row: 3 / span 3; }
 }
