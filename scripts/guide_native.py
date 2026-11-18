@@ -243,7 +243,10 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-15.jpg') and lang=='pt':
                 navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
         title_art=title_word_art(page['image']['src'])
-        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>' if index == 0 else ''
+        checkin = page['image']['src'].endswith('-03.jpg')
+        heading = e(title) if checkin else f'<span class="native-title-text">{e(title)}</span>{title_art}'
+        heading_class = ' checkin-heading' if checkin else ''
+        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading{heading_class}">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{artwork(page["image"]["src"],[1135,180,310,463])}</div>'
         if index==0 and page['image']['src'].endswith('-06.jpg'):
