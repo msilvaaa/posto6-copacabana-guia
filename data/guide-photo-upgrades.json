@@ -109,5 +109,17 @@
       "es": "Rescate con helicóptero de los bomberos en la playa de Copacabana"
     },
     "provenance": "Exposure and clarity enhanced from the host supplied rescue photograph on 2026-11-18; original generated PNG retained in workspace."
+  },
+  "-06.jpg": {
+    "src": "/assets/rules/edificio-copacabana.webp",
+    "width": 1001,
+    "height": 1570,
+    "position": "50% 0%",
+    "alt": {
+      "pt": "Fachada do prédio do apartamento em Copacabana",
+      "en": "Exterior of the apartment building in Copacabana",
+      "es": "Fachada del edificio del apartamento en Copacabana"
+    },
+    "provenance": "Photo supplied by the host on 2026-11-18, enhanced for clarity and balanced daylight; original generated PNG retained in workspace."
   }
 }
