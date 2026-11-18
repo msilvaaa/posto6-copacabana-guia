@@ -138,5 +138,3 @@
 .exchange-flag { display: block; width: 22px; height: 22px; object-fit: cover; border-radius: 50%; border: 1px solid white; box-shadow: 0 1px 4px #0002; }
 
 .exchange-base,.exchange-value { white-space: nowrap; }
-
-.native-title.checkin-heading { font-size: 34px; line-height: 1; }
