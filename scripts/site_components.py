@@ -46,6 +46,10 @@ def page_title(lang,name):
  return f'Posto 6 Copacabana — {lang.upper()} — {name}'
 
 
+def flag_src(code):
+ return '/assets/flags/en-round.svg' if code=='en' else f'/assets/flags/{code}.svg'
+
+
 def toolbar(lang, destinations, home_href=None, home_label=None):
  labels=LABELS[lang]
  home_href=home_href or f'/{lang}/'
@@ -53,7 +57,7 @@ def toolbar(lang, destinations, home_href=None, home_label=None):
  out=f'<nav class="site-toolbar guide-toolbar" aria-label="{labels["navigation"]}"><a class="site-round guide-home" href="{e(home_href)}" aria-label="{e(home_label)}" title="{e(home_label)}">{HOME_ICON}</a>'
  for code,name in [('es','Español'),('pt','Português'),('en','English')]:
   current=' aria-current="page"' if code==lang else ''
-  out+=f'<a class="site-round guide-flag" href="{e(destinations[code])}" aria-label="{name}" title="{name}"{current}><img src="/assets/flags/{code}.svg" width="48" height="48" alt="{name}"/></a>'
+  out+=f'<a class="site-round guide-flag" href="{e(destinations[code])}" aria-label="{name}" title="{name}"{current}><img src="{flag_src(code)}" width="48" height="48" alt="{name}"/></a>'
  return out+'</nav>'
 
 
