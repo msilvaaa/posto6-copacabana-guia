@@ -28,10 +28,21 @@ def illustration(name):
                 '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
     if name == 'checkout-clock':
-        return ('<svg class="checkout-clock" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" aria-hidden="true">'
-                '<circle cx="39" cy="39" r="33" fill="white" stroke="#111"/>'
-                '<path d="M39 13v3m26 23h-3M39 65v-3M13 39h3M39 23v16l13 9"/>'
-                '<circle cx="39" cy="39" r="2.5" fill="#173f45" stroke="none"/></svg>')
+        return ('<svg class="checkout-clock" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<path d="M9 23A13 13 0 0 1 29 7Z" fill="#edf5f3"/><path d="M49 7a13 13 0 0 1 20 16Z" fill="#edf5f3"/>'
+                '<path d="M39 13v5M21 65l-5 7m41-7 5 7"/><circle cx="39" cy="43" r="25" fill="white"/>'
+                '<path d="M39 25v3m18 15h-3M39 61v-3M21 43h3M29 34l10 9 10-12"/>'
+                '<circle cx="39" cy="43" r="2" fill="#173f45" stroke="none"/></svg>')
+    if name == 'checkout-check':
+        return ('<svg class="checkout-check" viewBox="0 0 78 78" fill="none" aria-hidden="true">'
+                '<rect x="11" y="11" width="56" height="56" rx="18" fill="#e7f7ed"/>'
+                '<path d="m24 39 11 11 21-23" stroke="#10a65a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    if name == 'checkout-luggage':
+        return ('<svg class="checkout-luggage" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<path d="M30 20V10a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10"/>'
+                '<rect x="20" y="20" width="38" height="47" rx="8" fill="#edf5f3"/>'
+                '<path d="M31 31v24m16-24v24M58 34h5v13h-5M29 67v4m20-4v4"/>'
+                '<path d="M34 13h10" stroke-width="4"/></svg>')
     if name == 'phone-map':
         # Clip to the pictogram itself: the square SVG viewport otherwise reveals the source-page rule above it.
         return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
@@ -274,8 +285,8 @@ def build_native(page, content, upgrades, photos):
                 name=['landmark','mountain','bike','fitness'][section_index]
             elif page['image']['src'].endswith('-13.jpg'):
                 name=(['bag','cart','market'] if index==0 else ['bread','coffee','craft'])[section_index]
-            elif page['image']['src'].endswith('-15.jpg') and section_index==0:
-                name='checkout-clock'
+            elif page['image']['src'].endswith('-15.jpg'):
+                name=['checkout-clock','checkout-check','checkout-luggage'][section_index]
             elif page['image']['src'].endswith('-14.jpg'):
                 name=['samu','shield','hospital','pharmacy','fire'][section_index]
             elif page['image']['src'].endswith('-11.jpg'):
