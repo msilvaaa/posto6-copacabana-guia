@@ -197,6 +197,8 @@ def build_native(page, content, upgrades, photos):
                     descriptions.append(f'<p>{text}</p>')
             if page['image']['src'].endswith('-10.jpg') and section_index == 0:
                 nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>']
+            if page['image']['src'].endswith('-10.jpg') and section_index == 4:
+                nodes = ['<div class="agency-links"><div>' + ''.join(nodes[:3]) + '</div><div>' + ''.join(nodes[3:]) + '</div></div>']
             if page['image']['src'].endswith('-10.jpg') and section_index == 1:
                 nodes.append(exchange_rates(lang))
             if page['image']['src'].endswith('-04.jpg') and section_index == 2:
@@ -292,7 +294,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
