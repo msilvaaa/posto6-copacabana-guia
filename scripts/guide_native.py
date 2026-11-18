@@ -16,6 +16,16 @@ def artwork(source, rect, css=''):
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
 
 
+def signature_art(lang):
+    item = ORIGINAL_ART['_illustrations']['thanks' if lang == 'pt' else f'thanks-{lang}']
+    x,y,w,h = item['ink']
+    pad = h * .06
+    # Equal visible lettering height; keep the original source letterforms and proportions.
+    return (f'<svg class="signature-lettering" viewBox="{x-pad:g} {y-pad:g} {w+2*pad:g} {h+2*pad:g}" '
+            f'data-ink-height="{h}" aria-hidden="true">'
+            f'<image href="{e(item["src"])}" width="1537" height="864"/></svg>')
+
+
 def illustration(name):
     if name == 'fast-clock':
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
@@ -342,8 +352,8 @@ def build_native(page, content, upgrades, photos):
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
             if page['image']['src'].endswith('-15.jpg'):
-                signature = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Muchas gracias'}[lang]
-                navigation=f'<p class="native-thanks">{e(signature)}</p>'+navigation
+                label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
+                navigation=f'<div class="native-thanks signature-original" role="img" aria-label="{e(label)}">{signature_art(lang)}</div>'+navigation
         heading = e(title)
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-14.jpg'):
@@ -365,7 +375,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261118-quality"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261118-signatures"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
