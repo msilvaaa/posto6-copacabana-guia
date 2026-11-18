@@ -130,7 +130,7 @@ def local_clocks(lang):
     zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'Asia/Singapore', 'Europe/London']
     flags = ['/assets/flag-pt.png', '/assets/flag-en.png', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
     clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3><img class="local-clock-flag" src="{flag}" alt="{e(city.split(" — ")[0])}" width="32" height="32"/><span>{e(city.split(" — ")[1])}</span></h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone, flag in zip(cities, zones, flags))
-    return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
+    return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}<div class="airport-plane" aria-hidden="true">{illustration("plane-trail")}</div></div><p>{e(note)}</p></section>'
 
 
 def airport_transfers(lang):
@@ -244,9 +244,8 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
                 weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>Copacabana</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
-            airport = page['image']['src'].endswith('-04.jpg') and section_index==2
-            card_class = ' airport-card' if airport else ''
-            plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail")}</div>' if airport else ''
+            card_class = ''
+            plane = ''
             icon_markup = f'<span class="native-icon original-illustration {e(name)}">{art}</span>'
             if page['image']['src'].endswith('-04.jpg') and section_index==0:
                 address = section['items'][0]
@@ -284,7 +283,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-2" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-3" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
