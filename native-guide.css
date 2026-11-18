@@ -148,3 +148,7 @@
  .airport-card .native-card-copy { padding-right: 0; }
  .airport-card .airport-plane { position: static; grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 70px; transform: translate(-12px,-20px); }
 }
+
+@media(min-width:1301px) {
+ .airport-card .airport-plane { transform: translate(calc(2cm - 12px),-20px); }
+}
