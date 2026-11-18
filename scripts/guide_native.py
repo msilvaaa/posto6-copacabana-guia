@@ -292,7 +292,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-5" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
