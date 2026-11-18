@@ -247,7 +247,12 @@ def build_native(page, content, upgrades, photos):
             airport = page['image']['src'].endswith('-04.jpg') and section_index==2
             card_class = ' airport-card' if airport else ''
             plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail")}</div>' if airport else ''
-            parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading"><span class="native-icon original-illustration {e(name)}">{art}</span>{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
+            icon_markup = f'<span class="native-icon original-illustration {e(name)}">{art}</span>'
+            if page['image']['src'].endswith('-04.jpg') and section_index==0:
+                address = section['items'][0]
+                icon_markup = (f'<a class="native-icon original-illustration {e(name)}" href="{e(address["href"])}" '
+                               f'target="_blank" rel="noopener noreferrer" aria-label="{e(address["text"][lang])}">{art}</a>')
+            parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading">{icon_markup}{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
@@ -257,7 +262,10 @@ def build_native(page, content, upgrades, photos):
                 navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
         title_art=title_word_art(page['image']['src'])
         if page['image']['src'].endswith('-03.jpg'):
-            title_art = title_word_art('/assets/pt-03.jpg', [1260,110,124,38])
+            # Reuse the original handwritten Check- and in glyphs, with an uppercase C.
+            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" aria-hidden="true">'
+                         '<svg x="0" y="0" width="102" height="32" viewBox="1246 132 102 32"><image href="/assets/pt-15.jpg" width="1537" height="864"/></svg>'
+                         '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
@@ -276,7 +284,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-1" if page["image"]["src"].endswith(("-03.jpg", "-04.jpg")) else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-2" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}
 </head>
 <body class="site-page native-guide">
