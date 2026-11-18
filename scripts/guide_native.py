@@ -20,10 +20,14 @@ def signature_art(lang):
     item = ORIGINAL_ART['_illustrations']['thanks' if lang == 'pt' else f'thanks-{lang}']
     x,y,w,h = item['ink']
     pad = h * .06
-    # Equal visible lettering height; keep the original source letterforms and proportions.
+    # Paint only the lettering, excluding neighboring page rules and terminal punctuation.
+    punctuation = ('<ellipse cx="1503" cy="780.5" rx="6" ry="6.5" fill="black"/>' if lang=='en' else
+                   '<rect x="1465" y="754" width="12" height="13" fill="black"/>' if lang=='es' else '')
     return (f'<svg class="signature-lettering" viewBox="{x-pad:g} {y-pad:g} {w+2*pad:g} {h+2*pad:g}" '
             f'data-ink-height="{h}" aria-hidden="true">'
-            f'<image href="{e(item["src"])}" width="1537" height="864"/></svg>')
+            f'<defs><mask id="signature-clean-{lang}" maskUnits="userSpaceOnUse" x="{x-2}" y="{y-2}" width="{w+4}" height="{h+4}">'
+            f'<rect x="{x-2}" y="{y-2}" width="{w+4}" height="{h+4}" fill="white"/>{punctuation}</mask></defs>'
+            f'<image href="{e(item["src"])}" width="1537" height="864" mask="url(#signature-clean-{lang})"/></svg>')
 
 
 def illustration(name):
@@ -211,7 +215,7 @@ def local_clocks(lang):
     }
     heading, cities, note = labels[lang]
     zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'Asia/Singapore', 'Europe/London']
-    flags = ['/assets/flags/pt.svg', '/assets/flags/en.svg', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
+    flags = ['/assets/flags/pt.svg', '/assets/flags/en-round.svg', '/assets/flags/it.svg', '/assets/flags/ar.svg', '/assets/flags/sg.svg', '/assets/flags/gb.svg']
     clocks = ''.join(f'<div class="local-clock" data-time-zone="{zone}"><h3><img class="local-clock-flag" src="{flag}" alt="{e(city.split(" — ")[0])}" width="32" height="32"/><span>{e(city.split(" — ")[1])}</span></h3><time data-clock-time>--:--:--</time><span data-clock-date></span><small data-clock-offset></small></div>' for city, zone, flag in zip(cities, zones, flags))
     return f'<section class="native-card local-clocks" aria-labelledby="local-clocks-title"><h2 id="local-clocks-title">{e(heading)}</h2><div class="local-clocks-grid">{clocks}</div><p>{e(note)}</p></section>'
 
@@ -239,7 +243,7 @@ def exchange_rates(lang):
     }
     heading, names, note, loading, source = labels[lang]
     ids = ['usd-tourism', 'ars', 'eur', 'brl']
-    flags = ['/assets/flags/en.svg', '/assets/flags/ar.svg', '/assets/flags/eu.svg', '/assets/flags/pt.svg']
+    flags = ['/assets/flags/en-round.svg', '/assets/flags/ar.svg', '/assets/flags/eu.svg', '/assets/flags/pt.svg']
     cards = ''.join(f'<div class="exchange-rate" data-exchange-id="{key}"><h4><img class="exchange-flag" src="{flag}" alt="{e(name)}" title="{e(name)}" width="28" height="28"/></h4><output>—</output><small data-exchange-unit></small><time></time></div>' for key, name, flag in zip(ids, names, flags))
     return f'<section class="exchange-rates" data-exchange-rates aria-labelledby="exchange-title"><h3 id="exchange-title">{e(heading)}</h3><div class="exchange-grid">{cards}</div><p data-exchange-status>{e(loading)}</p><p>{e(note)} <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">{e(source)}: AwesomeAPI</a></p></section>'
 

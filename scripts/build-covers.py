@@ -7,7 +7,7 @@ from pathlib import Path
 from string import Template
 from guide_native import PATHS
 from guide_symbols import symbol as sharp_symbol
-from site_components import LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
+from site_components import flag_src,LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
 ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
 page_content=json.loads((ROOT/'templates/apartment-content.json').read_text())
@@ -34,7 +34,7 @@ def navigation(lang):
 
 
 def cover_flags(lang):
- return ''.join(f'<a class="detail-modern-flag'+(' active' if code==lang else '')+f'" href="/{code}/" aria-label="{name}" title="{name}"'+(' aria-current="page"' if code==lang else '')+f'><img src="/assets/flags/{code}.svg" alt="{name}"/></a>' for code,name in [('es','Español'),('pt','Português'),('en','English')])
+ return ''.join(f'<a class="detail-modern-flag'+(' active' if code==lang else '')+f'" href="/{code}/" aria-label="{name}" title="{name}"'+(' aria-current="page"' if code==lang else '')+f'><img src="{flag_src(code)}" alt="{name}"/></a>' for code,name in [('es','Español'),('pt','Português'),('en','English')])
 
 
 def rating_label(lang):
