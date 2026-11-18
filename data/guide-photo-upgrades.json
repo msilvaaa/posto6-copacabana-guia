@@ -52,9 +52,9 @@
     "position": "30% 50%"
   },
   "-03.jpg": {
-    "src": "/assets/checkin/entrada-fechadura.jpg",
-    "width": 2560,
-    "height": 1739,
+    "src": "/assets/checkin/entrada-fechadura-original.jpg",
+    "width": 2088,
+    "height": 1418,
     "rect": [
       0,
       0,
@@ -67,8 +67,8 @@
       "en": "Electronic lock and apartment entrance",
       "es": "Cerradura electrónica y entrada del apartamento"
     },
-    "provenance": "Original higher-resolution version of the exact photo supplied by the host, retrieved from their Airbnb listing.",
-    "source": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aea0a8e2-77e3-4ba3-a00b-36d240d12d9d.jpeg?im_w=2560"
+    "provenance": "Original photo file from the host Airbnb listing, retrieved without CDN upscaling or recompression; authentic room and lock, unchanged image bytes.",
+    "source": "https://a0.muscache.com/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NDgzODIxNzc%3D/original/aea0a8e2-77e3-4ba3-a00b-36d240d12d9d.jpeg"
   },
   "-13.jpg": {
     "src": "/assets/establishments/calcadao-copacabana.webp",

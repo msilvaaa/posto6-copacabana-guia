@@ -119,9 +119,9 @@
         "sections": [
           {
             "title": {
-              "pt": "Self check-in flexível",
-              "en": "Flexible self check-in",
-              "es": "Self check-in flexible"
+              "pt": "Check-in",
+              "en": "Check-in",
+              "es": "Check-in"
             },
             "icon": "key",
             "items": [
