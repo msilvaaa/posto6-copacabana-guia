@@ -166,3 +166,12 @@
 @media(prefers-reduced-motion:reduce) {
  .wifi-scan-group,.wifi-signal-outer,.wifi-signal-inner { animation: none; }
 }
+
+.sea-conditions { padding: 10px 0 12px; border-bottom: 1px solid #e6e9e7; }
+.sea-conditions h2 { font-size: 15px; }
+.sea-values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin: 10px 0 8px; }
+.sea-values dt { font: 400 12px/1.4 Arial,Helvetica,sans-serif; color: #555; }
+.sea-values dd { margin: 2px 0 0; color: #173f45; font: 600 16px/1.4 Arial,Helvetica,sans-serif; }
+.sea-values small { display: inline-block; font: 400 11px/1.4 Arial,Helvetica,sans-serif; }
+.sea-conditions .sea-status,.sea-conditions .sea-note { font-size: 11px; line-height: 1.5; margin: 4px 0; color: #666; }
+.sea-note a { color: inherit; text-underline-offset: 2px; }
