@@ -27,6 +27,14 @@ def illustration(name):
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                 '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
+    if name == 'plane-trail':
+        # Reveal the original right wing beyond the old viewport, without nearby text or bullets.
+        return ('<svg class="original-art plane-trail" viewBox="1137 473 90 188" style="overflow:visible" aria-hidden="true">'
+                '<defs><mask id="airport-plane-art" maskUnits="userSpaceOnUse" x="1137" y="473" width="104" height="188">'
+                '<rect x="1137" y="473" width="104" height="188" fill="white"/>'
+                '<rect x="1223" y="495" width="13" height="13" fill="black"/>'
+                '<rect x="1223" y="586" width="13" height="14" fill="black"/></mask></defs>'
+                '<image href="/assets/pt-04.jpg" width="1537" height="864" mask="url(#airport-plane-art)"/></svg>')
     item=ORIGINAL_ART['_illustrations'].get(name)
     if name=='wifi-monitor':
         # Exclude the overlapping Wi-Fi badge from the original monitor's corner.
