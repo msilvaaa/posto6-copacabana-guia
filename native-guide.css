@@ -199,3 +199,35 @@
 
 /* One shared typeface and size for every localized Check-out signature. */
 .native-thanks { width: 100%; max-width: none; margin: 24px auto 18px; text-align: center; color: #111; font: 400 36px/1.4 'Guide Script',Georgia,serif; }
+
+/* Visual migration: live text and scalable symbols instead of printed page crops. */
+.native-title.original-heading { font: 400 30px/1.25 'Guide Script',Georgia,serif; }
+.native-icon .sharp-symbol { width: 100%; height: 100%; padding: 8px; }
+.native-house-rules>h2 { text-align: center; font-size: 16px; margin: 12px auto 16px; max-width: 380px; }
+.house-rules-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 0 0 20px; padding: 0; list-style: none; }
+.house-rules-grid>li { position: relative; padding: 12px 8px; border-radius: 18px; background: #f3eee7; text-align: center; }
+.house-rules-grid>li:nth-child(even) { background: #edf5f3; }
+.rule-number { display: block; font: 700 19px/1.2 Georgia,serif; }
+.rule-symbol { display: block; width: 34px; height: 34px; margin: 8px auto; }
+.rule-symbol svg { width: 100%; height: 100%; }
+.house-rules-grid p { font-size: 13px; line-height: 1.45; margin: 0; }
+.detail-instructions h2,.detail-references h2 { font: 700 17px/1.4 Arial,Helvetica,sans-serif; margin: 18px 0 12px; }
+.instruction-list { margin: 0 0 20px; padding-left: 23px; font: 400 15px/1.6 Arial,Helvetica,sans-serif; }
+.instruction-list li { padding-left: 3px; margin: 0 0 12px; }
+.instruction-list li::marker { color: #173f45; font-weight: 700; }
+.reference-grid { display: flex; flex-wrap: wrap; align-items: start; gap: 18px; }
+.technical-reference { width: min(100%,250px); margin: 0; }
+.technical-reference svg { display: block; width: 100%; height: auto; }
+.technical-reference figcaption { font: 400 12px/1.4 Arial,Helvetica,sans-serif; margin-top: 6px; color: #555; }
+.detail-video { width: fit-content; border: 1px solid #cbdcd6; padding: 8px 12px; margin: 12px 0; }
+.amenity-detail .native-title { max-width: 95%; }
+.amenity-detail .native-actions { margin-top: 24px; }
+@media(min-width:761px) {
+ .native-photo { position: sticky; inset: auto; top: 0; height: 100dvh; }
+}
+@media(max-width:760px) {
+ .house-rules-grid { gap: 8px; }
+ .house-rules-grid>li { padding: 10px 6px; }
+ .house-rules-grid p { font-size: 12px; }
+ .native-title.original-heading { font-size: 28px; }
+}

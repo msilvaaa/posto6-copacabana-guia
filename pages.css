@@ -59,3 +59,11 @@
 @media(max-width:760px) {
  .section-visual:has(>.section-photo-link) { min-height: max(200px,32dvh); }
 }
+
+/* Titles and amenity cards remain native at every display density. */
+.section-title.original-title { font: 400 30px/1.25 'Guide Script',Georgia,serif; }
+@media(min-width:761px) {
+ .section-visual>.section-photo-link { position: sticky; inset: auto; top: 0; height: 100dvh; }
+}
+
+.section-visual { overflow: clip; }

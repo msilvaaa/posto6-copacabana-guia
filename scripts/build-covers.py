@@ -5,6 +5,8 @@ from decimal import Decimal
 from html import escape
 from pathlib import Path
 from string import Template
+from guide_native import PATHS
+from guide_symbols import symbol as sharp_symbol
 from site_components import LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
 ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
@@ -32,7 +34,7 @@ def navigation(lang):
 
 
 def cover_flags(lang):
- return ''.join(f'<a class="detail-modern-flag'+(' active' if code==lang else '')+f'" href="/{code}/" aria-label="{name}" title="{name}"'+(' aria-current="page"' if code==lang else '')+f'><img src="/assets/flag-{code}.png" alt="{name}"/></a>' for code,name in [('es','Español'),('pt','Português'),('en','English')])
+ return ''.join(f'<a class="detail-modern-flag'+(' active' if code==lang else '')+f'" href="/{code}/" aria-label="{name}" title="{name}"'+(' aria-current="page"' if code==lang else '')+f'><img src="/assets/flags/{code}.svg" alt="{name}"/></a>' for code,name in [('es','Español'),('pt','Português'),('en','English')])
 
 
 def rating_label(lang):
@@ -59,11 +61,8 @@ def amenity_cards(lang):
  links=[p for p in source['links'] if '/comodidades/' in p['href']][:16]
  result=[]
  for i,link in enumerate(links):
-  rect={k:float(v) for k,v in re.findall(r'(left|top|width|height):([\d.]+)%',link['style'])}
-  x=(rect['left']+rect['width']*.1)*1537/100;y=(rect['top']+rect['height']*.07)*864/100
-  w=rect['width']*.8*1537/100;h=rect['height']*.65*864/100
-  style=f"background-image:url('/assets/pt-08.jpg');background-size:{1537/w*100:.4f}% {864/h*100:.4f}%;background-position:{x/(1537-w)*100:.4f}% {y/(864-h)*100:.4f}%"
-  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true" style="{style}"></span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
+  symbols=['bin','tv','snow','fridge','bulb','tv','iron','wash','wash','sofa','safe','water','lamp','car','door','door']
+  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true">{sharp_symbol(symbols[i], PATHS)}</span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
  return '<div class="amenities-grid">'+''.join(result)+'</div>'
 
 
@@ -86,15 +85,14 @@ for lang,values in content.items():
    copy=f'<p>{e(labels["gallery_intro"])}</p><p>{e(labels["open_photo"])}</p>'
   else:
    photo_index=2 if section==2 else 0
-   visual=f'<a class="section-photo-link" href="{e(photos[photo_index].get("full_src",photos[photo_index]["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, max(66vw,150vh)")} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
+   visual=f'<a class="section-photo-link" href="{e(photos[photo_index].get("full_src",photos[photo_index]["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, 50vw")} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
    if section==2:copy=amenity_cards(lang)
    else:copy=(f'<h2>{e(labels["intro"])}</h2><p>{e(labels["description"])}</p><p class="listing-rating">★ {rating_label(lang)}</p><p>{e(labels["amenities_intro"])}</p><div class="content-links"><a href="{values["nav"][2]["href"]}">{e(values["nav"][2]["label"])}</a><a href="{values["nav"][4]["href"]}">{e(labels["view_gallery"])}</a></div>')
   if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{e(labels["view_listing"])}</a></div>'
   previous,following=('/'+lang+'/',values['nav'][2]['href']) if section==1 else (values['nav'][2]['href'],'/'+lang+'/') if section==4 else (next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['previous'],next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['next'])
   title_html=f'<h1 class="section-title">{e(title)}</h1>'
   if section==2:
-   from guide_native import title_word_art
-   title_html=f'<h1 class="section-title original-title"><span class="title-text">{e(title)}</span>{title_word_art(f"/assets/{lang}-08.jpg")}</h1>'
+   title_html=f'<h1 class="section-title original-title">{e(title)}</h1>'
   body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<div class="section-actions"><nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></div></section>'
   destinations={code:content[code]['nav'][section]['href'] for code in content}
   output=page_template.substitute(lang=lang,title=e(title),browser_title=e(page_title(lang,title)),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang,values['nav'][section]['href']),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))

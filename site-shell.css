@@ -165,3 +165,6 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 @media(prefers-reduced-motion:reduce) {
  .site-contact-corner { animation: none; }
 }
+
+/* Vector flags fill the same circular controls at any pixel density. */
+.site-round.guide-flag img { object-fit: cover; }

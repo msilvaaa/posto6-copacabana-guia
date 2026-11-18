@@ -1,0 +1,657 @@
+{
+  "arcondicionado": {
+    "title": {
+      "pt": "Ar-condicionado",
+      "en": "Air conditioning",
+      "es": "Aire acondicionado"
+    },
+    "photo": 2,
+    "copy": {
+      "pt": [
+        "Desligue os aparelhos do quarto e da sala sempre que sair do apartamento. Sem ninguém em casa para identificar um problema, uma falha no equipamento pode aumentar o risco de incêndio.",
+        "Os aparelhos resfriam rapidamente quando você retorna. Caso permaneçam ligados durante sua ausência, recebo notificações para desligá-los pelo aplicativo.",
+        "Para apagar a luz do aparelho durante a noite, pressione LIGHT OFF no controle remoto."
+      ],
+      "en": [
+        "Turn off both the bedroom and living-room air conditioners whenever you leave the apartment. With nobody home to notice a fault, an equipment problem can increase the risk of fire.",
+        "The appliances cool the rooms quickly when you return. If they remain on while you are away, I receive notifications to turn them off through the app.",
+        "To turn off the appliance light at night, press LIGHT OFF on the remote control."
+      ],
+      "es": [
+        "Apaga los aires acondicionados del dormitorio y de la sala al salir del apartamento. Sin nadie en casa para detectar una avería, un problema del equipo puede aumentar el riesgo de incendio.",
+        "Los equipos enfrían rápidamente cuando regresas. Si quedan encendidos durante tu ausencia, recibo notificaciones para apagarlos desde la aplicación.",
+        "Para apagar la luz del equipo por la noche, pulsa LIGHT OFF en el mando."
+      ]
+    },
+    "references": [
+      [
+        180,
+        1015,
+        198,
+        322
+      ]
+    ],
+    "ordered": false
+  },
+  "cofre": {
+    "title": {
+      "pt": "Cofre",
+      "en": "Safe",
+      "es": "Caja fuerte"
+    },
+    "photo": 2,
+    "copy": {
+      "pt": [
+        "A senha do cofre é enviada pelo WhatsApp no check-in.",
+        "Insira a sequência de quatro dígitos e confirme com a tecla #.",
+        "Gire a alavanca para travar o cofre."
+      ],
+      "en": [
+        "The safe code is sent through WhatsApp at check-in.",
+        "Enter the four-digit code and confirm with #.",
+        "Turn the lever to lock the safe."
+      ],
+      "es": [
+        "La clave de la caja fuerte se envía por WhatsApp en el check-in.",
+        "Introduce los cuatro dígitos y confirma con #.",
+        "Gira la manija para cerrar la caja fuerte."
+      ]
+    },
+    "references": [
+      [
+        146,
+        556,
+        384,
+        280
+      ],
+      [
+        380,
+        934,
+        392,
+        234
+      ]
+    ],
+    "ordered": true
+  },
+  "fechadura": {
+    "title": {
+      "pt": "Fechadura",
+      "en": "Door lock",
+      "es": "Cerradura"
+    },
+    "photo": "lock",
+    "copy": {
+      "pt": [
+        "Toque ou deslize o dedo no centro da fechadura para ativar a tela.",
+        "Quando as teclas acenderem, digite a senha de quatro ou seis dígitos recebida para sua estadia.",
+        "Confirme com a tecla de confirmação para abrir a porta."
+      ],
+      "en": [
+        "Touch or slide your finger across the center of the lock to wake the screen.",
+        "When the keypad lights up, enter the four- or six-digit code provided for your stay.",
+        "Press the confirmation key to open the door."
+      ],
+      "es": [
+        "Toca o desliza el dedo por el centro de la cerradura para activar la pantalla.",
+        "Cuando se iluminen las teclas, introduce la clave de cuatro o seis dígitos recibida para tu estancia.",
+        "Pulsa la tecla de confirmación para abrir la puerta."
+      ]
+    },
+    "references": [
+      [
+        158,
+        466,
+        324,
+        424
+      ],
+      [
+        158,
+        908,
+        324,
+        424
+      ]
+    ],
+    "ordered": true
+  },
+  "geladeira": {
+    "title": {
+      "pt": "Geladeira",
+      "en": "Refrigerator",
+      "es": "Nevera"
+    },
+    "photo": 4,
+    "copy": {
+      "pt": [
+        "O protetor de tensão atrás da geladeira pode desligá-la por cerca de 10 minutos quando há uma variação de energia, para proteger o equipamento.",
+        "Se a luz interna estiver apagada após uma oscilação, aguarde esse período. A geladeira volta a funcionar normalmente."
+      ],
+      "en": [
+        "The voltage protector behind the refrigerator may switch it off for about 10 minutes after a power fluctuation to protect the appliance.",
+        "If the interior light is off after a power fluctuation, wait for this period. The refrigerator resumes normal operation."
+      ],
+      "es": [
+        "El protector de tensión situado detrás de la nevera puede apagarla durante unos 10 minutos tras una variación de energía para proteger el equipo.",
+        "Si la luz interior está apagada después de una oscilación, espera ese tiempo. La nevera vuelve a funcionar normalmente."
+      ]
+    },
+    "references": [],
+    "ordered": false
+  },
+  "banheiro": {
+    "title": {
+      "pt": "Banheiro",
+      "en": "Bathroom",
+      "es": "Baño"
+    },
+    "photo": 3,
+    "copy": {
+      "pt": [
+        "Não mexa no registro geral de água, identificado pelo número 1 na foto.",
+        "Para água quente, gire o controle 2 para a direita e aguarde cerca de 10 segundos.",
+        "O controle 3 aciona a duchinha ao girar para a esquerda. O controle 4 aciona a água fria ao girar para a esquerda.",
+        "Na torneira da pia, use os movimentos indicados nas fotos para selecionar água quente ou fria."
+      ],
+      "en": [
+        "Do not adjust the main water valve, marked 1 in the photo.",
+        "For hot water, turn control 2 to the right and wait about 10 seconds.",
+        "Turn control 3 to the left for the hand shower. Turn control 4 to the left for cold water.",
+        "At the basin tap, follow the movements shown in the photos to select hot or cold water."
+      ],
+      "es": [
+        "No manipules la llave general del agua, marcada con el número 1 en la foto.",
+        "Para agua caliente, gira el control 2 a la derecha y espera unos 10 segundos.",
+        "Gira el control 3 a la izquierda para la ducha de mano. Gira el control 4 a la izquierda para el agua fría.",
+        "En el grifo del lavabo, sigue los movimientos de las fotos para seleccionar agua caliente o fría."
+      ]
+    },
+    "references": [
+      [
+        148,
+        498,
+        359,
+        420
+      ],
+      [
+        218,
+        970,
+        450,
+        300
+      ]
+    ],
+    "ordered": false
+  },
+  "lavabo": {
+    "title": {
+      "pt": "Banheiro",
+      "en": "Bathroom",
+      "es": "Baño"
+    },
+    "photo": 3,
+    "copy": {
+      "pt": [
+        "Não mexa no registro geral de água, identificado pelo número 1 na foto.",
+        "Para água quente, gire o controle 2 para a direita e aguarde cerca de 10 segundos.",
+        "O controle 3 aciona a duchinha ao girar para a esquerda. O controle 4 aciona a água fria ao girar para a esquerda.",
+        "Na torneira da pia, use os movimentos indicados nas fotos para selecionar água quente ou fria."
+      ],
+      "en": [
+        "Do not adjust the main water valve, marked 1 in the photo.",
+        "For hot water, turn control 2 to the right and wait about 10 seconds.",
+        "Turn control 3 to the left for the hand shower. Turn control 4 to the left for cold water.",
+        "At the basin tap, follow the movements shown in the photos to select hot or cold water."
+      ],
+      "es": [
+        "No manipules la llave general del agua, marcada con el número 1 en la foto.",
+        "Para agua caliente, gira el control 2 a la derecha y espera unos 10 segundos.",
+        "Gira el control 3 a la izquierda para la ducha de mano. Gira el control 4 a la izquierda para el agua fría.",
+        "En el grifo del lavabo, sigue los movimientos de las fotos para seleccionar agua caliente o fría."
+      ]
+    },
+    "references": [
+      [
+        148,
+        498,
+        359,
+        420
+      ],
+      [
+        218,
+        970,
+        450,
+        300
+      ]
+    ],
+    "ordered": false
+  },
+  "lixeira": {
+    "title": {
+      "pt": "Lixeira",
+      "en": "Trash and recycling",
+      "es": "Basura"
+    },
+    "photo": 4,
+    "copy": {
+      "pt": [
+        "Ao sair do apartamento, siga à direita até a escada em frente ao elevador de serviço. A lixeira fica nessa escada.",
+        "Garrafas, vidro, objetos cortantes e alimentos orgânicos são recolhidos pela equipe do prédio diariamente às 16h, quando tocam as campainhas. Avise se preferir não ser incomodado.",
+        "Se perder a coleta ou preferir descartar diretamente, use a lixeira amarela/laranja no térreo para esses materiais.",
+        "Não deixe lixo nas escadas do edifício."
+      ],
+      "en": [
+        "Leave the apartment and turn right toward the stairs opposite the service elevator. The trash disposal is on that staircase.",
+        "Building staff collect bottles, glass, sharp objects and organic waste daily at 4 pm, ringing the apartment bells. Tell them if you prefer not to be disturbed.",
+        "If you miss collection or prefer to dispose of these materials directly, use the yellow/orange bin on the ground floor.",
+        "Do not leave rubbish in the building stairwells."
+      ],
+      "es": [
+        "Al salir del apartamento, gira a la derecha hacia la escalera frente al ascensor de servicio. Allí está el contenedor de basura.",
+        "El personal recoge botellas, vidrio, objetos cortantes y residuos orgánicos cada día a las 16:00, llamando a los timbres. Avisa si prefieres no ser molestado.",
+        "Si pierdes la recogida o prefieres llevar estos materiales directamente, usa el contenedor amarillo/naranja de la planta baja.",
+        "No dejes basura en las escaleras del edificio."
+      ]
+    },
+    "references": [
+      [
+        148,
+        414,
+        284,
+        412
+      ],
+      [
+        148,
+        920,
+        274,
+        410
+      ]
+    ],
+    "ordered": false
+  },
+  "louca": {
+    "title": {
+      "pt": "Lava-louças",
+      "en": "Dishwasher",
+      "es": "Lavavajillas"
+    },
+    "photo": 4,
+    "copy": {
+      "pt": [
+        "A máquina utiliza produtos próprios para lava-louças. Não use detergente comum nem sabão de lavar roupas.",
+        "O equipamento fica desligado para evitar o uso de produtos inadequados. Entre em contato para que eu o ative remotamente.",
+        "Utilize uma pastilha para lava-louças e líquido secante/abrilhantador. Os exemplos das fotos são FINISH TABS e CIF Secante."
+      ],
+      "en": [
+        "Use products intended specifically for dishwashers. Do not use ordinary dish soap or laundry detergent.",
+        "The appliance is kept switched off to prevent unsuitable products being used. Contact me so I can activate it remotely.",
+        "Use a dishwasher tablet and rinse aid. The products shown are FINISH TABS and CIF rinse aid."
+      ],
+      "es": [
+        "Usa productos específicos para lavavajillas. No uses jabón de platos común ni detergente para ropa.",
+        "El equipo permanece apagado para evitar productos inadecuados. Ponte en contacto para que pueda activarlo a distancia.",
+        "Utiliza una pastilla para lavavajillas y abrillantador. Los ejemplos de las fotos son FINISH TABS y CIF Secante."
+      ]
+    },
+    "references": [
+      [
+        578,
+        474,
+        150,
+        290
+      ],
+      [
+        344,
+        968,
+        258,
+        270
+      ]
+    ],
+    "ordered": false
+  },
+  "luminaria": {
+    "title": {
+      "pt": "Luminária",
+      "en": "Desk lamp",
+      "es": "Lámpara de escritorio"
+    },
+    "photo": 7,
+    "copy": {
+      "pt": [
+        "Para ligar ou desligar a luminária da mesa, pressione o botão na base indicado pela seta na primeira foto.",
+        "O botão na parte superior alterna a cor da luz. Ele não desliga a luminária."
+      ],
+      "en": [
+        "To turn the desk lamp on or off, press the button on the base marked by the arrow in the first photo.",
+        "The button on top changes the light color. It does not turn the lamp off."
+      ],
+      "es": [
+        "Para encender o apagar la lámpara del escritorio, pulsa el botón de la base indicado por la flecha de la primera foto.",
+        "El botón de la parte superior cambia el color de la luz. No apaga la lámpara."
+      ]
+    },
+    "references": [
+      [
+        96,
+        480,
+        244,
+        430
+      ],
+      [
+        488,
+        918,
+        340,
+        392
+      ]
+    ],
+    "ordered": false
+  },
+  "luzquarto": {
+    "title": {
+      "pt": "Luz do quarto",
+      "en": "Bedroom light",
+      "es": "Luz del dormitorio"
+    },
+    "photo": 2,
+    "copy": {
+      "pt": [
+        "A luz do quarto é controlada pelo comando do ventilador de teto, fixado na porta de correr do quarto.",
+        "Use o botão indicado na foto para ligar e desligar a luz. Não use o interruptor da parede."
+      ],
+      "en": [
+        "The bedroom light is operated by the ceiling-fan control attached to the sliding bedroom door.",
+        "Use the button indicated in the photo to turn the light on or off. Do not use the wall switch."
+      ],
+      "es": [
+        "La luz del dormitorio se controla con el mando del ventilador de techo, fijado a la puerta corredera del dormitorio.",
+        "Usa el botón indicado en la foto para encender y apagar la luz. No uses el interruptor de la pared."
+      ]
+    },
+    "references": [
+      [
+        282,
+        786,
+        376,
+        516
+      ]
+    ],
+    "ordered": false
+  },
+  "portao": {
+    "title": {
+      "pt": "Portão do prédio",
+      "en": "Building entrance",
+      "es": "Entrada del edificio"
+    },
+    "photo": "building",
+    "copy": {
+      "pt": [
+        "O prédio tem porteiros 24 horas por dia, todos os dias da semana.",
+        "Há duas entradas na esquina das ruas Raul Pompéia e Júlio de Castilhos: uma em cada rua.",
+        "Pressione a campainha de uma das portas para entrar."
+      ],
+      "en": [
+        "The building has doormen 24 hours a day, every day of the week.",
+        "There are two entrances at the corner of Rua Raul Pompéia and Rua Júlio de Castilhos, one on each street.",
+        "Press the doorbell at either entrance to enter."
+      ],
+      "es": [
+        "El edificio dispone de porteros las 24 horas, todos los días de la semana.",
+        "Hay dos entradas en la esquina de las calles Raul Pompéia y Júlio de Castilhos, una en cada calle.",
+        "Pulsa el timbre de cualquiera de las puertas para entrar."
+      ]
+    },
+    "references": [
+      [
+        164,
+        484,
+        568,
+        388
+      ]
+    ],
+    "ordered": false
+  },
+  "roupas": {
+    "title": {
+      "pt": "Máquina de lavar roupas",
+      "en": "Washing machine",
+      "es": "Lavadora"
+    },
+    "photo": 4,
+    "copy": {
+      "pt": [
+        "Coloque sabão líquido no recipiente e escolha o nível da água.",
+        "Escolha o tipo de lavagem.",
+        "Ligue a máquina no botão laranja INICIAR/DESLIGAR."
+      ],
+      "en": [
+        "Add liquid laundry detergent to the dispenser and select the water level.",
+        "Select the wash type.",
+        "Press the orange INICIAR/DESLIGAR (start/stop) button."
+      ],
+      "es": [
+        "Introduce detergente líquido en el recipiente y selecciona el nivel de agua.",
+        "Selecciona el tipo de lavado.",
+        "Pulsa el botón naranja INICIAR/DESLIGAR (inicio/apagado)."
+      ]
+    },
+    "references": [
+      [
+        152,
+        587,
+        292,
+        218
+      ],
+      [
+        152,
+        842,
+        292,
+        218
+      ],
+      [
+        152,
+        1105,
+        292,
+        218
+      ]
+    ],
+    "ordered": true
+  },
+  "sofacama": {
+    "title": {
+      "pt": "Sofá-cama",
+      "en": "Sofa bed",
+      "es": "Sofá cama"
+    },
+    "photo": 1,
+    "copy": {
+      "pt": [
+        "Segure a parte frontal do assento.",
+        "Puxe suavemente para fora até que a estrutura deslize.",
+        "Prepare lençol, travesseiro e manta para maior conforto."
+      ],
+      "en": [
+        "Hold the front of the seat.",
+        "Pull it out gently until the frame slides open.",
+        "Add a sheet, pillow and blanket for comfort."
+      ],
+      "es": [
+        "Sujeta la parte delantera del asiento.",
+        "Tira suavemente hacia fuera hasta que la estructura se deslice.",
+        "Prepara una sábana, almohada y manta para mayor comodidad."
+      ]
+    },
+    "references": [
+      [
+        154,
+        458,
+        298,
+        460
+      ],
+      [
+        452,
+        918,
+        288,
+        424
+      ]
+    ],
+    "ordered": true
+  },
+  "tabua": {
+    "title": {
+      "pt": "Tábua de passar",
+      "en": "Ironing board",
+      "es": "Tabla de planchar"
+    },
+    "photo": 2,
+    "copy": {
+      "pt": [
+        "Abra a tábua de passar que fica no quarto.",
+        "Una as duas pontas metálicas separadas, encaixando uma dentro da outra, como indicado nas fotos.",
+        "Confira a posição da estrutura montada nas fotos de referência."
+      ],
+      "en": [
+        "Unfold the ironing board in the bedroom.",
+        "Join the two separate metal ends, inserting one into the other as shown in the photos.",
+        "Check the assembled frame against the reference photos."
+      ],
+      "es": [
+        "Abre la tabla de planchar del dormitorio.",
+        "Une los dos extremos metálicos separados, encajando uno dentro del otro como en las fotos.",
+        "Comprueba la posición de la estructura montada en las fotos de referencia."
+      ]
+    },
+    "references": [
+      [
+        186,
+        466,
+        238,
+        322
+      ],
+      [
+        136,
+        924,
+        600,
+        404
+      ]
+    ],
+    "ordered": true
+  },
+  "tvquarto": {
+    "title": {
+      "pt": "TV do quarto",
+      "en": "Bedroom TV",
+      "es": "TV del dormitorio"
+    },
+    "photo": 2,
+    "copy": {
+      "pt": [
+        "Ligue a TV.",
+        "Pressione o botão Home no controle mostrado na foto.",
+        "Selecione a opção BTV na tela."
+      ],
+      "en": [
+        "Turn on the TV.",
+        "Press the Home button on the remote shown in the photo.",
+        "Select BTV on the screen."
+      ],
+      "es": [
+        "Enciende el televisor.",
+        "Pulsa el botón Home del mando que aparece en la foto.",
+        "Selecciona BTV en la pantalla."
+      ]
+    },
+    "references": [
+      [
+        448,
+        558,
+        84,
+        290
+      ],
+      [
+        226,
+        930,
+        502,
+        400
+      ]
+    ],
+    "ordered": true
+  },
+  "tvsala": {
+    "title": {
+      "pt": "TV da sala",
+      "en": "Living-room TV",
+      "es": "TV de la sala"
+    },
+    "photo": 6,
+    "copy": {
+      "pt": [
+        "Ligue a TV.",
+        "Pressione o botão Home no controle mostrado na foto.",
+        "Selecione a opção BTV na tela."
+      ],
+      "en": [
+        "Turn on the TV.",
+        "Press the Home button on the remote shown in the photo.",
+        "Select BTV on the screen."
+      ],
+      "es": [
+        "Enciende el televisor.",
+        "Pulsa el botón Home del mando que aparece en la foto.",
+        "Selecciona BTV en la pantalla."
+      ]
+    },
+    "references": [
+      [
+        448,
+        558,
+        84,
+        290
+      ],
+      [
+        246,
+        912,
+        510,
+        420
+      ]
+    ],
+    "ordered": true
+  },
+  "uber": {
+    "title": {
+      "pt": "Uber no aeroporto",
+      "en": "Airport Uber",
+      "es": "Uber en el aeropuerto"
+    },
+    "photo": 6,
+    "copy": {
+      "pt": [
+        "Saia pela porta A do desembarque doméstico.",
+        "Vire à esquerda na calçada.",
+        "Siga a placa de Estacionamento Administrativo para virar novamente à esquerda."
+      ],
+      "en": [
+        "Exit through door A of domestic arrivals.",
+        "Turn left onto the walkway.",
+        "Follow the Administrative Parking sign and turn left again."
+      ],
+      "es": [
+        "Sal por la puerta A de llegadas nacionales.",
+        "Gira a la izquierda en la acera.",
+        "Sigue la señal de Estacionamiento Administrativo y vuelve a girar a la izquierda."
+      ]
+    },
+    "references": [
+      [
+        90,
+        458,
+        346,
+        466
+      ],
+      [
+        436,
+        860,
+        364,
+        484
+      ]
+    ],
+    "ordered": true
+  }
+}

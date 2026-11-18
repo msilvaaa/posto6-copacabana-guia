@@ -1,0 +1,20 @@
+{
+  "routes": 103,
+  "layouts": 309,
+  "errors": [],
+  "hero_upscale": [],
+  "technical_references": 270,
+  "raster_text_panels": 0,
+  "sticky_photo_top": 0,
+  "detail_home": {
+    "pt": "/pt/comodidades/",
+    "en": "/en/comodidades/",
+    "es": "/es/comodidades/"
+  },
+  "qr_payload_verified": true,
+  "internal_targets_checked": 1621,
+  "missing_internal_targets": 0,
+  "python_tests": 21,
+  "node_tests": 11,
+  "date": "2026-11-18"
+}
