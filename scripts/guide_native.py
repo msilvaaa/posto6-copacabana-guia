@@ -44,6 +44,21 @@ def illustration(name):
     return artwork(item['src'],item['rect'],name) if item else icon(name)
 
 
+def emergency_illustration(name):
+    centers = {'shield': (1117,386), 'hospital': (1117,507), 'pharmacy': (1117,624), 'fire': (1122,778)}
+    if name in centers:
+        x,y = centers[name]
+        drawing = (f'<svg x="7" y="7" width="64" height="64" viewBox="{x-32} {y-32} 64 64">'
+                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
+    else:
+        drawing = ('<svg x="7" y="21" width="64" height="36" viewBox="1350 248 145 77">'
+                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
+    return (f'<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
+            f'<defs><clipPath id="emergency-{name}"><circle cx="39" cy="39" r="28"/></clipPath></defs>'
+            '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>'
+            f'<g clip-path="url(#emergency-{name})">{drawing}</g></svg>')
+
+
 def e(value):
     return escape(str(value), quote=True)
 
@@ -265,7 +280,7 @@ def build_native(page, content, upgrades, photos):
                 image_src=next((v['src'] for v in room.get('variants',[]) if v['width']==720),room['src'])
                 art=f'<img class="native-room-thumb" src="{e(image_src)}" alt="{e(section["title"][lang])}" width="100" height="100"/>'
             else:
-                art=illustration(name)
+                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else illustration(name)
                 if page['image']['src'].endswith('-05.jpg') and section_index==2:
                     art=''
                 if page['image']['src'].endswith('-03.jpg') and section_index==0:
@@ -330,7 +345,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261116-34"/>
-  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-10" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
+  <link rel="stylesheet" href="/native-guide.css?v={"20261118-6" if page["image"]["src"].endswith("-04.jpg") else "20261118-1" if page["image"]["src"].endswith("-03.jpg") else "20261118-7" if page["image"]["src"].endswith("-10.jpg") else "20261118-8" if page["image"]["src"].endswith("-05.jpg") else "20261118-11" if page["image"]["src"].endswith("-14.jpg") else "20261116-34"}"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
