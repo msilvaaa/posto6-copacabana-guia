@@ -144,7 +144,7 @@
 .airport-plane>svg { display: block; width: 100%; height: 100%; }
 .airport-card .native-card-copy { padding-right: 76px; }
 @media(min-width:761px) {
- .illustrated-card.airport-card { grid-template-columns: 76px minmax(0,1fr) 70px; }
+ .illustrated-card.airport-card { grid-template-columns: 76px minmax(0,max-content) 70px; }
  .airport-card .native-card-copy { padding-right: 0; }
  .airport-card .airport-plane { position: static; grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 70px; transform: translate(-12px,-20px); }
 }
