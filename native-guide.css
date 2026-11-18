@@ -175,3 +175,14 @@
 .sea-values small { display: inline-block; font: 400 11px/1.4 Arial,Helvetica,sans-serif; }
 .sea-conditions .sea-status,.sea-conditions .sea-note { font-size: 11px; line-height: 1.5; margin: 4px 0; color: #666; }
 .sea-note a { color: inherit; text-underline-offset: 2px; }
+
+.emergency-services { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+.emergency-services>.illustrated-card { display: grid; grid-template-columns: 76px minmax(0,1fr); gap: 4px 12px; margin: 0; align-content: start; }
+.emergency-services .native-card-heading { display: contents; }
+.emergency-services .native-icon { grid-column: 1; grid-row: 1 / span 2; }
+.emergency-services h2,.emergency-services .native-card-copy { grid-column: 2; padding: 0; }
+@media(max-width:1100px) {
+ .emergency-services>.illustrated-card { grid-template-columns: 56px minmax(0,1fr); column-gap: 10px; }
+ .emergency-services .native-icon { width: 56px; height: 56px; }
+ .emergency-services h2 { font-size: 16px; }
+}
