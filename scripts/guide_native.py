@@ -15,8 +15,8 @@ def artwork(source, rect, css=''):
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
 
 
-def title_word_art(source):
-    x,y,w,h=ORIGINAL_ART[source]['word']
+def title_word_art(source, word=None):
+    x,y,w,h=word or ORIGINAL_ART[source]['word']
     height=2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864
     return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
             f'<image href="{e(source)}" width="1537" height="{height}"/></svg>')
@@ -243,10 +243,10 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-15.jpg') and lang=='pt':
                 navigation=f'<div class="native-art-hero native-thanks">{illustration("thanks")}</div>'+navigation
         title_art=title_word_art(page['image']['src'])
-        checkin = page['image']['src'].endswith('-03.jpg')
-        heading = e(title) if checkin else f'<span class="native-title-text">{e(title)}</span>{title_art}'
-        heading_class = ' checkin-heading' if checkin else ''
-        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading{heading_class}">{heading}</h1>' if index == 0 else ''
+        if page['image']['src'].endswith('-03.jpg'):
+            title_art = title_word_art('/assets/pt-03.jpg', [1260,110,124,38])
+        heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
+        top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{artwork(page["image"]["src"],[1135,180,310,463])}</div>'
         if index==0 and page['image']['src'].endswith('-06.jpg'):
