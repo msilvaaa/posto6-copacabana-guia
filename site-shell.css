@@ -173,3 +173,7 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 .site-weather>span:first-child>.guide-icon-3d { display:block; width:42px; height:42px; }
 .site-round.guide-home>.guide-icon-3d { width:30px; height:30px; }
 .weather-day-icon { display:block; width:40px; height:40px; margin:auto; object-fit:contain; }
+
+/* Owner-selected Home H4: flat colorful house on a white circular button. */
+.site-round.guide-home,.detail-modern-home { background:#fff; color:#253747; border-color:transparent; }
+.site-round.guide-home>.home-icon,.detail-modern-home>.home-icon { display:block; width:30px; height:30px; object-fit:contain; border-radius:0; }
