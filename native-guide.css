@@ -251,3 +251,10 @@
 
 /* Give the Activities weather chip a little more space to the right of the fort title. */
 .native-heading-text>.activity-weather { margin-left:12px; max-width:calc(100% - 12px); }
+
+/* Activities: use the same weather component as the cover; shrink descriptions only. */
+.native-heading-text>.activity-weather-container { margin-left:12px; max-width:calc(100% - 12px); }
+.activities-chapter .native-card-copy p { font-size:13px; line-height:1.45; }
+
+/* Selected telephone T6, kept inline beside all callable numbers. */
+.native-link>.telephone-icon { width:20px; height:20px; flex:0 0 20px; }

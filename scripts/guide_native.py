@@ -7,7 +7,7 @@ from guide_icons_3d import icon_3d
 
 def sharp_symbol(name, paths):
     return icon_3d(name)
-from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title
+from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
 
@@ -251,7 +251,7 @@ def build_native(page, content, upgrades, photos):
                 if item.get('href'):
                     href = item.get('href_by_lang', {}).get(lang, item['href'])
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
-                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
+                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
@@ -319,7 +319,7 @@ def build_native(page, content, upgrades, photos):
                 heading = f'<h2 class="samu-heading">{e(section["title"][lang])}<span class="service-hours">{icon("clock")}{hours}</span></h2>'
 
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
-                weather = f'<button type="button" class="activity-weather" data-weather-open aria-label="{e(LABELS[lang]["weather"])}"><span aria-hidden="true">☀</span><span>Copacabana</span><small data-weather-summary>{e(LABELS[lang]["weather_hint"])}</small></button>'
+                weather = utilities(lang).replace('class="site-utilities"', 'class="activity-weather-container"')
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
             airport = page['image']['src'].endswith('-04.jpg') and section_index==2
             card_class = ' airport-card' if airport else ''
@@ -354,11 +354,11 @@ def build_native(page, content, upgrades, photos):
         if index==0 and page['image']['src'].endswith('-06.jpg'):
             pass
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
-        chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
+        chapters.append(f'<section class="native-chapter{ " activities-chapter" if page["image"]["src"].endswith("-09.jpg") else "" }"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
-    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-entry-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
-    native_style = '20261119-activities' if page['image']['src'].endswith('-09.jpg') else '20261119-theme'
+    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
+    native_style = '20261119-activities-cover-weather' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
