@@ -338,7 +338,7 @@ def build_native(page, content, upgrades, photos):
             parts.append(local_clocks(lang))
         navigation = ''
         if index == len(content['chapters']) - 1:
-            navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], page["next"])}</nav></div>'
+            navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], None if page["image"]["src"].endswith("-15.jpg") else page["next"])}</nav></div>'
             if page['image']['src'].endswith('-15.jpg'):
                 label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
                 navigation=f'<div class="native-thanks signature-original" role="img" aria-label="{e(label)}">{signature_art(lang)}</div>'+navigation
@@ -363,6 +363,8 @@ def build_native(page, content, upgrades, photos):
     native_style = '20261119-activities-descriptions-12' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-pharmacies'
+    if page['image']['src'].endswith('-15.jpg'):
+        native_style = '20261119-checkout-compact-check'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
