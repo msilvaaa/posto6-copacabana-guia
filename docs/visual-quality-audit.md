@@ -20,3 +20,7 @@ As fotos técnicas antigas são registros reais de resolução limitada. Foram m
 Para repetir a varredura: `python scripts/audit-visual-quality.py --base http://127.0.0.1:8000`. O argumento opcional `--fixtures` permite testar as mesmas fotografias originais previamente baixadas quando o navegador local não tem acesso direto ao CDN; a galeria e a abertura da foto original também foram verificadas com acesso real ao CDN.
 
 As bandeiras vetoriais são as versões públicas da Wikimedia Commons (Brasil, Espanha e Estados Unidos). Créditos das fotografias de terceiros já existentes permanecem no guia.
+
+## Preferência visual restaurada — 19/11/2026
+
+A pedido do proprietário, as letras originais dos títulos voltaram a ser exibidas em recortes específicos, preservando as fontes e molduras do projeto. As figuras coloridas das categorias e do menu de Comodidades também foram restauradas. Esses recortes decorativos de títulos não são considerados páginas de texto em imagem pela auditoria. As instruções permanecem em HTML, as fotografias mantêm a proporção, e as correções já aprovadas de QR Code, assinaturas, bandeiras e ícones do Check-out foram preservadas.

@@ -12,8 +12,18 @@ ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-ori
 def artwork(source, rect, css=''):
     x,y,w,h=rect
     # The SVG viewport displays the original artwork without resampling or editing it.
+    crop = f'art-crop-{x}-{y}-{w}-{h}'
     return (f'<svg class="original-art {e(css)}" viewBox="{x} {y} {w} {h}" style="max-width:{w}px" aria-hidden="true">'
-            f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}"/></svg>')
+            f'<defs><clipPath id="{crop}"><rect x="{x}" y="{y}" width="{w}" height="{h}"/></clipPath></defs>'
+            f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}" clip-path="url(#{crop})"/></svg>')
+
+
+def title_word_art(source, word=None, width=1537, height=None):
+    x,y,w,h = word or ORIGINAL_ART[source]['word']
+    height = height or (2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864)
+    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
+            f'<defs><clipPath id="original-title-word"><rect x="{x}" y="{y}" width="{w}" height="{h}"/></clipPath></defs>'
+            f'<image href="{e(source)}" width="{width}" height="{height}" clip-path="url(#original-title-word)"/></svg>')
 
 
 def signature_art(lang):
@@ -33,12 +43,12 @@ def signature_art(lang):
 def illustration(name):
     if name == 'fast-clock':
         return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<circle cx="49" cy="45" r="24" fill="#edf5f3"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
+                '<circle cx="49" cy="45" r="24" fill="#d8edff"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
                 '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
     if name == 'checkout-clock':
         return ('<svg class="checkout-clock" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<path d="M9 23A13 13 0 0 1 29 7Z" fill="#edf5f3"/><path d="M49 7a13 13 0 0 1 20 16Z" fill="#edf5f3"/>'
-                '<path d="M39 13v5M21 65l-5 7m41-7 5 7"/><circle cx="39" cy="43" r="25" fill="white"/>'
+                '<path d="M9 23A13 13 0 0 1 29 7Z" fill="#ffb14d"/><path d="M49 7a13 13 0 0 1 20 16Z" fill="#ffb14d"/>'
+                '<path d="M39 13v5M21 65l-5 7m41-7 5 7"/><circle cx="39" cy="43" r="25" fill="#dceeff"/>'
                 '<path d="M39 25v3m18 15h-3M39 61v-3M21 43h3M29 34l10 9 10-12"/>'
                 '<circle cx="39" cy="43" r="2" fill="#173f45" stroke="none"/></svg>')
     if name == 'checkout-check':
@@ -48,11 +58,13 @@ def illustration(name):
     if name == 'checkout-luggage':
         return ('<svg class="checkout-luggage" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
                 '<path d="M30 20V10a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10"/>'
-                '<rect x="20" y="20" width="38" height="47" rx="8" fill="#edf5f3"/>'
+                '<rect x="20" y="20" width="38" height="47" rx="8" fill="#ffc26c"/>'
                 '<path d="M31 31v24m16-24v24M58 34h5v13h-5M29 67v4m20-4v4"/>'
                 '<path d="M34 13h10" stroke-width="4"/></svg>')
     if name == 'phone-map':
-        return sharp_symbol(name, PATHS)
+        return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
+                '<defs><clipPath id="location-icon-art"><rect x="1298" y="176" width="78" height="74"/></clipPath></defs>'
+                '<image href="/assets/pt-04.jpg" width="1537" height="864" clip-path="url(#location-icon-art)"/></svg>')
     if name == 'plane-trail':
         # Reveal the original right wing beyond the old viewport, without nearby text or bullets.
         return ('<svg class="original-art plane-trail" viewBox="1137 473 90 188" style="overflow:visible" aria-hidden="true">'
@@ -61,17 +73,33 @@ def illustration(name):
                 '<rect x="1223" y="495" width="13" height="13" fill="black"/>'
                 '<rect x="1223" y="586" width="13" height="14" fill="black"/></mask></defs>'
                 '<image href="/assets/pt-04.jpg" width="1537" height="864" mask="url(#airport-plane-art)"/></svg>')
-    return sharp_symbol(name, PATHS)
+    item = ORIGINAL_ART['_illustrations'].get(name)
+    return artwork(item['src'],item['rect'],name) if item else sharp_symbol(name, PATHS)
+
+
+def information_illustration(name):
+    item = ORIGINAL_ART['_illustrations'][name]
+    x,y,w,h = item['rect']
+    cut = ('<path d="M1109 701H1127V713H1137V764H1100V713H1109Z"/>' if name == 'case' else
+           f'<circle cx="{x+39}" cy="{y+h/2}" r="31"/>')
+    return (f'<svg class="information-pictogram" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
+            f'<defs><clipPath id="information-{name}">{cut}</clipPath></defs>'
+            f'<image href="{e(item["src"])}" width="1537" height="864" clip-path="url(#information-{name})"/></svg>')
 
 
 def emergency_illustration(name):
-    glyph = sharp_symbol(name, PATHS)
-    if name == 'pharmacy':
-        glyph = glyph.replace('#d54e55', '#3e9168')
-    return ('<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
+    centers = {'shield': (1117,386), 'hospital': (1117,507), 'pharmacy': (1117,624), 'fire': (1122,778)}
+    if name in centers:
+        x,y = centers[name]
+        drawing = (f'<svg x="7" y="7" width="64" height="64" viewBox="{x-32} {y-32} 64 64">'
+                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
+    else:
+        drawing = ('<svg x="7" y="21" width="64" height="36" viewBox="1350 248 145 77">'
+                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
+    return (f'<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
+            f'<defs><clipPath id="emergency-{name}"><circle cx="39" cy="39" r="28"/></clipPath></defs>'
             '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>'
-            f'<svg x="17" y="17" width="44" height="44" viewBox="0 0 24 24">{glyph}</svg></svg>')
-
+            f'<g clip-path="url(#emergency-{name})">{drawing}</g></svg>')
 
 def e(value):
     return escape(str(value), quote=True)
@@ -314,7 +342,7 @@ def build_native(page, content, upgrades, photos):
                 image_src=next((v['src'] for v in room.get('variants',[]) if v['width']==720),room['src'])
                 art=f'<img class="native-room-thumb" src="{e(image_src)}" alt="{e(section["title"][lang])}" width="100" height="100"/>'
             else:
-                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else illustration(name)
+                art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else information_illustration(name) if page['image']['src'].endswith('-10.jpg') else illustration(name)
                 if page['image']['src'].endswith('-05.jpg') and section_index==2:
                     art=''
                 if page['image']['src'].endswith('-03.jpg') and section_index==0:
@@ -358,7 +386,12 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-15.jpg'):
                 label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
                 navigation=f'<div class="native-thanks signature-original" role="img" aria-label="{e(label)}">{signature_art(lang)}</div>'+navigation
-        heading = e(title)
+        title_art = title_word_art(page['image']['src'])
+        if page['image']['src'].endswith('-03.jpg'):
+            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" aria-hidden="true">'
+                         '<svg x="0" y="0" width="102" height="32" viewBox="1246 132 102 32"><image href="/assets/pt-15.jpg" width="1537" height="864"/></svg>'
+                         '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
+        heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-14.jpg'):
             top+=sea_conditions(lang)
@@ -379,7 +412,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261118-signatures"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261119-original-style"/>
   <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">

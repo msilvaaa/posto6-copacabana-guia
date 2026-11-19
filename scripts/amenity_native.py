@@ -2,14 +2,17 @@
 import json,re
 from pathlib import Path
 from html import escape,unescape
+from guide_native import title_word_art
 from site_components import LABELS,toolbar,pagination,whatsapp,dialogs,page_title,arrow
 ROOT=Path(__file__).resolve().parents[1]
 DATA=json.loads((ROOT/'data/amenity-native.json').read_text())
+TITLES=json.loads((ROOT/'data/detail-title-art.json').read_text())
 
 def e(v):return escape(str(v),quote=True)
 
 def build_detail(page,photos):
  key=page['path'].split('/')[-2];detail=DATA[key];lang=page['lang'];title=detail['title'][lang]
+ title_art=title_word_art(page['image']['src'],TITLES[page['image']['src']]['word'],page['image']['width'],page['image']['height'])
  labels={'pt':('Como usar','Fotos de referência','Assista ao vídeo','Foto de referência'), 'en':('How to use','Reference photos','Watch the video','Reference photo'), 'es':('Cómo usar','Fotos de referencia','Ver el vídeo','Foto de referencia')}[lang]
  photo=detail['photo']
  if isinstance(photo,int):
@@ -31,10 +34,10 @@ def build_detail(page,photos):
  return f'''<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
-<link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/><link rel="stylesheet" href="/native-guide.css?v=20261118-quality"/>
+<link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/><link rel="stylesheet" href="/native-guide.css?v=20261119-original-style"/>
 <script src="/site.js?v=20261116-34" defer></script></head>
 <body class="site-page native-guide amenity-detail"><div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">
 <section class="native-chapter"><div class="native-visual"><div class="native-photo"><img src="{e(src)}" width="{width}" height="{height}" alt="{e(title)}" style="object-position:50% 50%"/></div></div>
-<div class="native-panel"><div class="native-toolbar">{nav}</div><h1 class="native-title original-heading">{e(title)}</h1>{copy}{videos}{refs}
+<div class="native-panel"><div class="native-toolbar">{nav}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>{copy}{videos}{refs}
 <div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]['navigation']}">{navigation}</nav></div>
 </div></section></main></div>{whatsapp(lang,page['path'])}{dialogs(lang)}</body></html>'''
