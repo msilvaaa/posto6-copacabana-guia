@@ -359,6 +359,7 @@ def build_native(page, content, upgrades, photos):
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-entry-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
+    native_style = '20261119-activities' if page['image']['src'].endswith('-09.jpg') else '20261119-theme'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -367,7 +368,7 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261119-home-h4"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261119-theme"/>
+  <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
   <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>

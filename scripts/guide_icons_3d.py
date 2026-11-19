@@ -2,7 +2,7 @@
 from pathlib import Path
 from html import escape
 ROOT=Path(__file__).resolve().parents[1]
-ALIASES={'lamp':'bulb','travel-clock':'clock','rule':'shield','parking':'car','coffee-bars':'coffee','craft':'gift','market':'cart','checkin':'key','uber':'car','wifi-monitor':'tv','wifi-qr':'wifi','plane-trail':'plane','checkout-check':'check','checkout-luggage':'case','samu':'medical'}
+ALIASES={'fitness':'fitness-dumbbell','lamp':'bulb','travel-clock':'clock','rule':'shield','parking':'car','coffee-bars':'coffee','craft':'gift','market':'cart','checkin':'key','uber':'car','wifi-monitor':'tv','wifi-qr':'wifi','plane-trail':'plane','checkout-check':'check','checkout-luggage':'case','samu':'medical'}
 
 def icon_3d(name):
     key=ALIASES.get(name,name)

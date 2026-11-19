@@ -248,3 +248,6 @@
 
 /* The scan arrow and QR remain still; only the monitor signal keeps its animation. */
 .wifi-scan-group { animation:none; }
+
+/* Give the Activities weather chip a little more space to the right of the fort title. */
+.native-heading-text>.activity-weather { margin-left:12px; max-width:calc(100% - 12px); }

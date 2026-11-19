@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="weight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8b6fb"/><stop offset=".45" stop-color="#9c83e0"/><stop offset="1" stop-color="#6750ab"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8d71d2"/><stop offset="1" stop-color="#47367b"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fafcff"/><stop offset=".35" stop-color="#cbd8e7"/><stop offset=".6" stop-color="#a2b2c9"/><stop offset="1" stop-color="#7c8da7"/></linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="1" dy="5" stdDeviation="4" flood-color="#283248" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="14" y="118" width="228" height="24" rx="8" fill="url(#steel)"/>
+    <rect x="25" y="85" width="25" height="90" rx="8" fill="url(#edge)"/>
+    <rect x="206" y="85" width="25" height="90" rx="8" fill="url(#edge)"/>
+    <path d="m48 62 10-7h20l8 9v128l-8 9H58l-10-8Z" fill="url(#edge)"/>
+    <rect x="46" y="62" width="31" height="132" rx="10" fill="url(#weight)"/>
+    <path d="m174 62 10-7h20l8 9v128l-8 9h-20l-10-8Z" fill="url(#edge)"/>
+    <rect x="172" y="62" width="31" height="132" rx="10" fill="url(#weight)"/>
+    <path d="M53 77v91M179 77v91" stroke="#e7ddff" stroke-opacity=".65" stroke-width="3" stroke-linecap="round"/>
+    <path d="M97 124h63" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+    <path d="M108 129v8m8-8v8m8-8v8m8-8v8m8-8v8m8-8v8" stroke="#73839c" stroke-opacity=".7" stroke-width="2"/>
+  </g>
+</svg>
