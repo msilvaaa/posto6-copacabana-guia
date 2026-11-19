@@ -58,3 +58,20 @@ test('page entry bypasses valid sea and wind cache and retains the hourly interv
   assert.equal(Date.parse(data.expiresAt) - now, 3600000);
   await onRequestGet(context()); assert.equal(calls.length, 4);
 });
+
+test('cache-only reads are immediate and never query a provider, even when expired', async () => {
+  const ctx = context(); ctx.request = new Request(ctx.request.url + '?cached=1');
+  assert.equal((await onRequestGet(ctx)).status,202); assert.equal(calls.length,0);
+  await onRequestGet(context()); await Promise.all(pending);
+  now += 7200000;
+  const data = await (await onRequestGet(ctx)).json();
+  assert.equal(data.windSpeed,18); assert.ok(Date.parse(data.expiresAt)<now); assert.equal(calls.length,2);
+});
+test('background failure or degraded partial data keeps the complete saved snapshot', async () => {
+  const original = await (await onRequestGet(context())).json(); await Promise.all(pending);
+  now += 3600001;
+  globalThis.fetch = async () => new Response('',{status:503});
+  assert.deepEqual(await (await onRequestGet(context())).json(),original);
+  globalThis.fetch = async url => url.includes('marine-api') ? new Response('',{status:503}) : Response.json(wind());
+  assert.deepEqual(await (await onRequestGet(context())).json(),original);
+});
