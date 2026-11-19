@@ -5,3 +5,5 @@ The cover now has a sun/moon button in PT, EN and ES. Light is the default. The 
 Dark styling uses black/neutral backgrounds and white text; light styling uses white backgrounds and black text. Actual photos, flags, brands and 3D artwork retain their colors. Original cropped title/signature lettering is inverted and screen-blended so it remains legible without white paper boxes. Wi-Fi credentials have dedicated dark fills; QR stays black on white.
 
 The cover Wi-Fi, Information and Rules symbol buttons use their pre-option-6 artwork again. The desktop cover index moves 12px left while retaining the 70/30 split; mobile remains centered. The Wi-Fi pictogram alongside network credentials is removed. Scan arrow and QR group no longer animate; the monitor signal animation stays active.
+
+The cover appearance control is now centered vertically on the main headline’s Copacabana word and inset 2cm from the photograph’s right edge. The desktop text index ends at the final letter of that same word. `cover-layout.js` observes title/button size and font readiness to keep these alignments across languages and viewport changes; mobile headings wrap to avoid the control.
