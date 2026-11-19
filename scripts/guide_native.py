@@ -370,8 +370,8 @@ def build_native(page, content, upgrades, photos):
   <link rel="stylesheet" href="/native-guide.css?v=20261119-theme"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
   <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}
-<link rel="stylesheet" href="/theme.css?v=20261119-1"/>
-<script src="/theme.js?v=20261119-1"></script>
+<link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
+<script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 </head>
 <body class="site-page native-guide">

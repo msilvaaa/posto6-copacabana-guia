@@ -18,6 +18,8 @@
       button.setAttribute('aria-pressed', String(dark));
       button.setAttribute('aria-label', dark ? words.light : words.dark);
       button.title = dark ? words.light : words.dark;
+      const symbol = button.querySelector('[data-theme-symbol]');
+      if (symbol) symbol.textContent = dark ? '☀' : '☾';
     }
   }
   apply(stored());

@@ -16,9 +16,9 @@ function browser({lang='pt', saved=null, blocked=false}={}) {
 }
 test('saved theme is applied before controls mount, then the button changes and persists it',()=>{
   const page=browser({saved:'dark'});assert.equal(page.root.dataset.theme,'dark');page.setup();
-  assert.equal(page.attributes['aria-pressed'],'true');
+  assert.equal(page.attributes['aria-pressed'],'true');assert.equal(page.icon.textContent,'☀');
   page.click();assert.equal(page.root.dataset.theme,'light');assert.equal(page.storage.value,'light');
-  assert.equal(page.attributes['aria-pressed'],'false');
+  assert.equal(page.attributes['aria-pressed'],'false');assert.equal(page.icon.textContent,'☾');
 });
 test('default is light and the action label follows both the current mode and language',()=>{
   for(const [lang,dark,light] of [['pt','Ativar modo escuro','Ativar modo claro'],['en','Switch to dark mode','Switch to light mode'],['es','Activar modo oscuro','Activar modo claro']]){
