@@ -10,7 +10,7 @@ LABELS = {
  'en': {'weather_close':'Close','home':'Home','back':'Back to the guide','previous':'Previous','next':'Next','navigation':'Guide navigation','zoom':'Enlarge page','close':'Back to the guide','native':'View original size','fit':'Fit to screen','weather':'Copacabana forecast','weather_hint':'View forecast','whatsapp':'Contact on WhatsApp','about':'About the guide','reading':'Guide content'},
  'es': {'weather_close':'Cerrar','home':'Inicio','back':'Volver a la guía','previous':'Anterior','next':'Siguiente','navigation':'Navegación de la guía','zoom':'Ampliar página','close':'Volver a la guía','native':'Ver tamaño original','fit':'Ajustar a la pantalla','weather':'Pronóstico de Copacabana','weather_hint':'Ver pronóstico','whatsapp':'Contacto por WhatsApp','about':'Sobre la guía','reading':'Contenido de la guía'},
 }
-HOME_ICON = icon_3d('home')
+HOME_ICON = '<img class="home-icon" src="/assets/icon-preview/home-flat.svg" width="30" height="30" alt="" aria-hidden="true"/>'
 WHATSAPP = 'https://wa.me/5521981020150'
 WHATSAPP_MESSAGES = {
  'pt': 'Olá, eu gostaria de saber a disponibilidade do apartamento em Copacabana, para aluguel por temporada.',
