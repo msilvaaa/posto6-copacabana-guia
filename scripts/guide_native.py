@@ -7,7 +7,7 @@ from guide_icons_3d import icon_3d
 
 def sharp_symbol(name, paths):
     return icon_3d(name)
-from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon
+from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon, app_icon
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
 
@@ -251,7 +251,7 @@ def build_native(page, content, upgrades, photos):
                 if item.get('href'):
                     href = item.get('href_by_lang', {}).get(lang, item['href'])
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
-                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
+                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')

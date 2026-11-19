@@ -10,7 +10,7 @@ from guide_icons_3d import icon_3d
 
 def sharp_symbol(name, paths):
  return icon_3d(name)
-from site_components import theme_toggle,HOME_ICON,flag_src,LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
+from site_components import theme_toggle,HOME_ICON,flag_src,LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title,app_icon
 ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
 page_content=json.loads((ROOT/'templates/apartment-content.json').read_text())
@@ -91,7 +91,7 @@ for lang,values in content.items():
    visual=f'<a class="section-photo-link" href="{e(photos[photo_index].get("full_src",photos[photo_index]["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, 50vw")} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
    if section==2:copy=amenity_cards(lang)
    else:copy=(f'<h2>{e(labels["intro"])}</h2><p>{e(labels["description"])}</p><p class="listing-rating" data-airbnb-rating data-rating-prefix="★ ">★ {rating_label(lang)}</p><p>{e(labels["amenities_intro"])}</p><div class="content-links"><a href="{values["nav"][2]["href"]}">{e(values["nav"][2]["label"])}</a><a href="{values["nav"][4]["href"]}">{e(labels["view_gallery"])}</a></div>')
-  if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{e(labels["view_listing"])}</a></div>'
+  if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{app_icon(spaced=True)}{e(labels["view_listing"])}</a></div>'
   previous,following=('/'+lang+'/',values['nav'][2]['href']) if section==1 else (values['nav'][2]['href'],'/'+lang+'/') if section==4 else (next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['previous'],next(p for p in guide if p['path']==values['nav'][2]['href'].lstrip('/')+'index.html')['next'])
   title_html=f'<h1 class="section-title">{e(title)}</h1>'
   if section==2:

@@ -50,6 +50,15 @@ def telephone_icon():
          '<path d="M17 4a7 7 0 0 1 7 7M17 8a3 3 0 0 1 3 3" fill="none" stroke="#e5a02d" stroke-width="2" stroke-linecap="round"/></svg>')
 
 
+def app_icon(spaced=False):
+ # A2: colored mobile phone selected from the app/site preview.
+ gap = 'margin-right:8px;' if spaced else ''
+ return (f'<svg class="app-link-icon" viewBox="0 0 32 32" width="20" height="20" style="width:20px;height:20px;flex:0 0 20px;{gap}" aria-hidden="true">'
+         '<rect x="7" y="1" width="18" height="30" rx="4" fill="#238cc6"/><rect x="9" y="5" width="14" height="21" rx="1" fill="#d5f5f6"/>'
+         '<path d="M13 3h6" stroke="#113e5c" stroke-linecap="round"/><rect x="11" y="8" width="4" height="5" rx="1" fill="#f5ac37"/>'
+         '<rect x="17" y="8" width="4" height="5" rx="1" fill="#21a877"/><path d="M14 28h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>')
+
+
 def page_title(lang,name):
  return f'Posto 6 Copacabana — {lang.upper()} — {name}'
 
