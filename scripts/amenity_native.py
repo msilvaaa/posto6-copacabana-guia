@@ -3,7 +3,7 @@ import json,re
 from pathlib import Path
 from html import escape,unescape
 from guide_native import title_word_art
-from site_components import LABELS,toolbar,pagination,whatsapp,dialogs,page_title,arrow
+from site_components import LABELS,toolbar,pagination,whatsapp,dialogs,page_title,arrow,app_icon
 ROOT=Path(__file__).resolve().parents[1]
 DATA=json.loads((ROOT/'data/amenity-native.json').read_text())
 TITLES=json.loads((ROOT/'data/detail-title-art.json').read_text())
@@ -27,7 +27,7 @@ def build_detail(page,photos):
  items=''.join(f'<li>{e(t)}</li>' for t in detail['copy'][lang])
  copy=f'<section class="detail-instructions"><h2>{labels[0]}</h2><'+('ol' if detail['ordered'] else 'ul')+f' class="instruction-list">{items}</'+('ol' if detail['ordered'] else 'ul')+'></section>'
  urls=list(dict.fromkeys(unescape(u) for u in re.findall(r'href="([^"]+)"',page['source_text']) if u.startswith('http')))
- videos=''.join(f'<a class="native-link detail-video" href="{e(u)}" target="_blank" rel="noopener noreferrer">▷ {labels[2]}</a>' for u in urls)
+ videos=''.join(f'<a class="native-link detail-video" href="{e(u)}" target="_blank" rel="noopener noreferrer">{app_icon()}<span>{labels[2]}</span></a>' for u in urls)
  refs=f'<section class="detail-references"><h2>{labels[1]}</h2><div class="reference-grid">{"".join(figures)}</div></section>' if figures else ''
  navigation=pagination(lang,page['previous'],page['next']) if page['previous'] or page['next'] else f'<a class="site-step" href="{e(page["back"]["href"])}">{arrow(True)}<span>{e(page["back"]["label"].removeprefix("← "))}</span></a>'
  nav=toolbar(lang,page['languages'],home_href=page['back']['href'],home_label=page['back']['label'].removeprefix('← '))
