@@ -128,3 +128,6 @@ body.home-page { background: #f8f6f2; }
 }
 
 .detail-modern-flag img { object-fit: cover; }
+
+.detail-modern-home>.guide-icon-3d { width:30px; height:30px; }
+.cover-button-art.art-symbol img[src^="/assets/icons-3d/"] { object-fit:contain; padding:2px; }
