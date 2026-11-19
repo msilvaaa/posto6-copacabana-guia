@@ -7,12 +7,12 @@ from guide_native import PATHS
 ROOT=Path(__file__).resolve().parents[1]
 ICONS=[('bank','Bancos','#357bb9'),('money','Câmbio','#16865d'),('mail','Correios','#4288c6'),('fire','Bombeiros','#e16e35'),('hospital','Hospital','#ce5474'),('wifi','Wi-Fi / sinal','#238cc6'),('bin','Lixeira','#1b9a8c'),('lamp','Iluminação','#9273bd')]
 STYLES=[
- (1,'Colorido preenchido','Padrão atual do guia: traço com áreas de cor.',None),
+ (1,'Colorido preenchido','Desenhos com traço e áreas de cor.',None),
  (2,'Traço colorido','Mais leve: apenas linhas coloridas, sem preenchimento.',None),
  (3,'Cor com fundo suave','Linhas coloridas sobre uma base arredondada clara.',None),
  (4,'Flat','Formas sólidas e simples. Coleção Microsoft Fluent, versão flat.','flat'),
  (5,'Ilustrado','Desenhos expressivos com contorno escuro. Coleção OpenMoji.','openmoji'),
- (6,'3D colorido','Volume, textura e sombras reais da coleção Microsoft Fluent 3D.','fluent'),
+ (6,'3D colorido','Aplicado no guia: volume, textura e sombras da coleção Microsoft Fluent 3D.','fluent'),
  (7,'Adesivo','Contorno branco e sombra, como uma figurinha.',None),
  (8,'Animado suave','O desenho colorido com um movimento leve e contínuo.',None),
  (9,'Degradê colorido','Ilustrações com luz e transições de cor. Microsoft Fluent Color.','gradient'),

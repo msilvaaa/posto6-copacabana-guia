@@ -3,7 +3,10 @@ from html import escape
 import json
 from pathlib import Path
 from urllib.parse import urlencode
-from guide_symbols import symbol as sharp_symbol
+from guide_icons_3d import icon_3d
+
+def sharp_symbol(name, paths):
+    return icon_3d(name)
 from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
@@ -43,40 +46,7 @@ def signature_art(lang):
 
 
 def illustration(name):
-    if name == 'fast-clock':
-        return ('<svg viewBox="0 0 80 80" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<circle cx="49" cy="45" r="24" fill="#d8edff"/><path d="M43 12h12M49 12v9m17 3 4-4M49 30v15l10 6M6 33h17M2 45h18M7 57h16"/>'
-                '<circle cx="49" cy="45" r="2" fill="#173f45" stroke="none"/></svg>')
-    if name == 'checkout-clock':
-        return ('<svg class="checkout-clock" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<path d="M9 23A13 13 0 0 1 29 7Z" fill="#ffb14d"/><path d="M49 7a13 13 0 0 1 20 16Z" fill="#ffb14d"/>'
-                '<path d="M39 13v5M21 65l-5 7m41-7 5 7"/><circle cx="39" cy="43" r="25" fill="#dceeff"/>'
-                '<path d="M39 25v3m18 15h-3M39 61v-3M21 43h3M29 34l10 9 10-12"/>'
-                '<circle cx="39" cy="43" r="2" fill="#173f45" stroke="none"/></svg>')
-    if name == 'checkout-check':
-        return ('<svg class="checkout-check" viewBox="0 0 78 78" fill="none" aria-hidden="true">'
-                '<rect x="11" y="11" width="56" height="56" rx="18" fill="#e7f7ed"/>'
-                '<path d="m24 39 11 11 21-23" stroke="#10a65a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
-    if name == 'checkout-luggage':
-        return ('<svg class="checkout-luggage" viewBox="0 0 78 78" fill="none" stroke="#173f45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-                '<path d="M30 20V10a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10"/>'
-                '<rect x="20" y="20" width="38" height="47" rx="8" fill="#ffc26c"/>'
-                '<path d="M31 31v24m16-24v24M58 34h5v13h-5M29 67v4m20-4v4"/>'
-                '<path d="M34 13h10" stroke-width="4"/></svg>')
-    if name == 'phone-map':
-        return ('<svg class="original-art phone-map" viewBox="1298 176 78 74" aria-hidden="true">'
-                '<defs><clipPath id="location-icon-art"><rect x="1298" y="176" width="78" height="74"/></clipPath></defs>'
-                '<image href="/assets/pt-04.jpg" width="1537" height="864" clip-path="url(#location-icon-art)"/></svg>')
-    if name == 'plane-trail':
-        # Reveal the original right wing beyond the old viewport, without nearby text or bullets.
-        return ('<svg class="original-art plane-trail" viewBox="1137 473 90 188" style="overflow:visible" aria-hidden="true">'
-                '<defs><mask id="airport-plane-art" maskUnits="userSpaceOnUse" x="1137" y="473" width="104" height="188">'
-                '<rect x="1137" y="473" width="104" height="188" fill="white"/>'
-                '<rect x="1223" y="495" width="13" height="13" fill="black"/>'
-                '<rect x="1223" y="586" width="13" height="14" fill="black"/></mask></defs>'
-                '<image href="/assets/pt-04.jpg" width="1537" height="864" mask="url(#airport-plane-art)"/></svg>')
-    item = ORIGINAL_ART['_illustrations'].get(name)
-    return sharp_symbol(name, PATHS)
+    return icon_3d(name)
 
 
 def information_illustration(name):
@@ -145,9 +115,7 @@ PATHS = {
 
 
 def icon(name):
-    return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-            'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '
-            'aria-hidden="true">' + PATHS.get(name, PATHS['info']) + '</svg>')
+    return icon_3d(name)
 
 
 def photograph(page, chapter, upgrades, photos):
@@ -183,8 +151,7 @@ def wifi_access(lang, source):
             '<g clip-path="url(#wifi-screen-photo)"><image class="wifi-original-screen-photo" href="/assets/pt-05.jpg" width="1537" height="864" filter="url(#wifi-photo-detail)"/></g>'
             '<path d="M1173 343h268v20q0 12-12 12h-244q-12 0-12-12Z" fill="#e7e7e7"/>'
             '<path d="M1280 375h54l8 23h-70Z" fill="#c8c8c8"/><path d="M1264 400h86" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>'
-            '<rect x="1139" y="383" width="91" height="46" rx="12" fill="#111"/>'
-            '<text x="1184" y="416" fill="white" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="900">WiFi</text>'
+            '<image href="/assets/icons-3d/wifi.svg" x="1139" y="377" width="78" height="58"/>'
             '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
@@ -400,10 +367,10 @@ def build_native(page, content, upgrades, photos):
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
-  <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261119-colorful"/>
+  <link rel="stylesheet" href="/site-shell.css?v=20261119-option6"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261119-option6"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
-  <script src="/site.js?v=20261119-entry-refresh" defer></script>{clocks_script}{exchange_script}{sea_script}
+  <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>

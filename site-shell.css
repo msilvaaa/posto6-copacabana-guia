@@ -168,3 +168,8 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 
 /* Vector flags fill the same circular controls at any pixel density. */
 .site-round.guide-flag img { object-fit: cover; }
+
+/* Option 6: consistent 3D artwork at existing control sizes. */
+.site-weather>span:first-child>.guide-icon-3d { display:block; width:42px; height:42px; }
+.site-round.guide-home>.guide-icon-3d { width:30px; height:30px; }
+.weather-day-icon { display:block; width:40px; height:40px; margin:auto; object-fit:contain; }

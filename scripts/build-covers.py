@@ -6,8 +6,11 @@ from html import escape
 from pathlib import Path
 from string import Template
 from guide_native import PATHS
-from guide_symbols import symbol as sharp_symbol
-from site_components import flag_src,LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
+from guide_icons_3d import icon_3d
+
+def sharp_symbol(name, paths):
+ return icon_3d(name)
+from site_components import HOME_ICON,flag_src,LABELS,toolbar,pagination,utilities,dialogs,whatsapp,arrow,page_title
 ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
 page_content=json.loads((ROOT/'templates/apartment-content.json').read_text())
@@ -76,7 +79,7 @@ for lang,values in content.items():
   buttons.append(f'<a class="cover-html-button" data-row="{index//3+1}" data-column="{index%3+1}" aria-label="{label}" href="{href}"><span class="cover-button-art art-{e(art["kind"])}"><img src="{e(art["src"])}" style="object-position:{position}" width="70" height="70" alt=""/></span></a>')
  text={k:e(v) for k,v in values.items() if isinstance(v,str)};text['heading']=values['heading']
  stats=values['stats']+[rating_label(lang)]
- output=cover_template.substitute(lang=lang,**text,nav_links=navigation(lang),flags=cover_flags(lang),**{f'stat_{i}':v for i,v in enumerate(stats)},buttons='\n'.join(buttons),next_href=values['buttons'][0]['href'],next_icon=arrow(),utilities=utilities(lang),whatsapp=whatsapp(lang),dialogs=dialogs(lang, cover=True))
+ output=cover_template.substitute(home_icon=HOME_ICON,lang=lang,**text,nav_links=navigation(lang),flags=cover_flags(lang),**{f'stat_{i}':v for i,v in enumerate(stats)},buttons='\n'.join(buttons),next_href=values['buttons'][0]['href'],next_icon=arrow(),utilities=utilities(lang),whatsapp=whatsapp(lang),dialogs=dialogs(lang, cover=True))
  (ROOT/lang/'index.html').write_text(output)
  for section,title_key in [(1,'apartment_title'),(2,'amenities_title'),(4,'gallery_title')]:
   title=labels.get(title_key,values['nav'][section]['label'])

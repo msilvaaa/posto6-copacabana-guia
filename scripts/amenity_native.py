@@ -34,9 +34,9 @@ def build_detail(page,photos):
  return f'''<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
-<link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/><link rel="stylesheet" href="/native-guide.css?v=20261119-colorful"/>
+<link rel="stylesheet" href="/site-shell.css?v=20261119-option6"/><link rel="stylesheet" href="/native-guide.css?v=20261119-option6"/>
 <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
-<script src="/site.js?v=20261119-entry-refresh" defer></script></head>
+<script src="/site.js?v=20261119-option6" defer></script></head>
 <body class="site-page native-guide amenity-detail"><div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">
 <section class="native-chapter"><div class="native-visual"><div class="native-photo"><img src="{e(src)}" width="{width}" height="{height}" alt="{e(title)}" style="object-position:50% 50%"/></div></div>
 <div class="native-panel"><div class="native-toolbar">{nav}</div><h1 class="native-title original-heading"><span class="native-title-text">{e(title)}</span>{title_art}</h1>{copy}{videos}{refs}

@@ -113,7 +113,7 @@
     const card = document.createElement('div'); card.className = 'weather-day';
     const date = new Date(day.date+'T12:00:00-03:00');
     const title = document.createElement('b'); title.textContent = new Intl.DateTimeFormat(locale,{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'America/Sao_Paulo'}).format(date);
-    const icon = document.createElement('span'); icon.textContent = day.rain_probability>=50 ? '🌧' : day.code==='113' ? '☀' : '⛅'; icon.setAttribute('aria-hidden','true');
+    const icon = document.createElement('img'); icon.className = 'weather-day-icon'; icon.src = '/assets/icons-3d/' + (day.rain_probability>=50 ? 'rain' : day.code==='113' ? 'sun' : 'cloud') + '.svg'; icon.alt = ''; icon.width = 40; icon.height = 40;
     const temperature = document.createElement('span'); temperature.textContent = `${day.min}° – ${day.max}°C`;
     const rain = document.createElement('span'); rain.textContent = `${strings.rain}: ${day.rain_probability}%`;
     card.append(title,icon,temperature,rain); grid.append(card);
