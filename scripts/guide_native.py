@@ -358,7 +358,7 @@ def build_native(page, content, upgrades, photos):
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
-    native_style = '20261119-activities-cover-weather' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
+    native_style = '20261119-activities-descriptions-12' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
