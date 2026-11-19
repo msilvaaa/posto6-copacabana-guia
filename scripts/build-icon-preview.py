@@ -44,6 +44,7 @@ html='''<!doctype html>
 <a class="back" href="/pt/">← Voltar ao guia</a>
 <h1>Escolha o estilo dos ícones</h1>
 <p class="intro">Veja os mesmos temas em doze estilos. As opções 9 a 12 são novas. Diga o número ou o nome do estilo que você prefere; também podemos escolher por item. Esta página é apenas uma prévia.</p>
+<p style="margin-top:20px"><a href="/preview-icones/home/">Ver oito opções para o botão Home →</a></p>
 <nav class="options" aria-label="Ir para um estilo">'''+nav+'</nav><main>'+''.join(sections)+'''</main>
 <footer><p>Créditos: <a href="https://github.com/microsoft/fluentui-emoji">Microsoft Fluent Emoji</a> (flat, degradê e 3D, licença MIT); <a href="https://openmoji.org/">OpenMoji</a> — estudantes e docentes da HfG Schwäbisch Gmünd e colaboradores (CC BY-SA 4.0). <a href="https://github.com/jdecked/twemoji">Twemoji</a> (CC BY 4.0); <a href="https://github.com/google/material-design-icons">Google Material Icons</a> (Apache 2.0); <a href="https://pixelarticons.com/">Pixelarticons</a>, Gerrit Halfmann (MIT). As demais opções usam os desenhos do guia.</p><p><a href="/assets/icon-preview/LICENSES.txt">Licenças e fontes das imagens</a></p></footer>
 </body></html>
