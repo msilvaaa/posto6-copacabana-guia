@@ -1,0 +1,9 @@
+/* Only non-interactive content illustrations; buttons, flags and WhatsApp retain their appearance. */
+span.native-icon,
+span.native-icon.original-illustration {
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.wifi-screen-signal { filter:drop-shadow(0 1px 2px #0008); }

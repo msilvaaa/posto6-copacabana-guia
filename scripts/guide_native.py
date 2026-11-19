@@ -54,10 +54,9 @@ def information_illustration(name):
 
 
 def emergency_illustration(name):
-    # Preserve the equal-radius emergency framing around the new artwork.
-    inner = sharp_symbol(name, PATHS).replace('<svg ', '<svg x="10" y="10" width="58" height="58" ', 1)
-    return ('<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
-            '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>' + inner + '</svg>')
+    # Keep the original artwork size/position, removing only its surrounding ring.
+    inner = icon_3d(name).replace('<svg ', '<svg x="10" y="10" width="58" height="58" ', 1)
+    return ('<svg class="emergency-icon" viewBox="0 0 78 78" aria-hidden="true">' + inner + '</svg>')
 
 
 def e(value):
@@ -151,7 +150,7 @@ def wifi_access(lang, source):
             '<g clip-path="url(#wifi-screen-photo)"><image class="wifi-original-screen-photo" href="/assets/pt-05.jpg" width="1537" height="864" filter="url(#wifi-photo-detail)"/></g>'
             '<path d="M1173 343h268v20q0 12-12 12h-244q-12 0-12-12Z" fill="#e7e7e7"/>'
             '<path d="M1280 375h54l8 23h-70Z" fill="#c8c8c8"/><path d="M1264 400h86" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>'
-            '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
+            '<g class="wifi-screen-signal" aria-hidden="true">'
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
             '<path d="M1401 225q3-2 6 0"/></g><circle cx="1404" cy="229" r="1.5" fill="white"/></g>'
@@ -282,7 +281,7 @@ def build_native(page, content, upgrades, photos):
             elif page['image']['src'].endswith('-15.jpg'):
                 name=['checkout-clock','checkout-check','checkout-luggage'][section_index]
             elif page['image']['src'].endswith('-14.jpg'):
-                name=['samu','shield','hospital','pharmacy','fire'][section_index]
+                name=['samu','police-car','hospital','pharmacy','fire'][section_index]
             elif page['image']['src'].endswith('-11.jpg'):
                 name=['glass','coffee-bars'][section_index]
             elif page['image']['src'].endswith('-06.jpg'):
@@ -374,6 +373,7 @@ def build_native(page, content, upgrades, photos):
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
+<link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>

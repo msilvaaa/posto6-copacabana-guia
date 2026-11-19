@@ -39,6 +39,7 @@ def build_detail(page,photos):
 <script src="/site.js?v=20261119-option6" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
+<link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
 </head>
 <body class="site-page native-guide amenity-detail"><div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">
 <section class="native-chapter"><div class="native-visual"><div class="native-photo"><img src="{e(src)}" width="{width}" height="{height}" alt="{e(title)}" style="object-position:50% 50%"/></div></div>
