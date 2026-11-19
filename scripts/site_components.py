@@ -76,6 +76,11 @@ def pagination(lang, previous=None, following=None):
  return ''.join(links)
 
 
+def theme_toggle(lang):
+ label={'pt':'Ativar modo escuro','en':'Switch to dark mode','es':'Activar modo oscuro'}[lang]
+ return f'<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="{label}" title="{label}"><span class="theme-toggle-icons" aria-hidden="true"><img src="/assets/icons-3d/sun.svg" width="18" height="24" alt=""/><img src="/assets/icons-3d/moon.svg" width="18" height="24" alt=""/></span></button>'
+
+
 def utilities(lang):
  labels=LABELS[lang]
  return f'<div class="site-utilities"><button class="site-weather" type="button" data-weather-open aria-label="{labels["weather"]}"><span aria-hidden="true">{icon_3d("sun")}</span><span><b>Copacabana</b><small data-weather-summary>{labels["weather_hint"]}</small></span></button></div>'

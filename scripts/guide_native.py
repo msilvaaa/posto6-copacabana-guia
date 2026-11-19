@@ -151,7 +151,6 @@ def wifi_access(lang, source):
             '<g clip-path="url(#wifi-screen-photo)"><image class="wifi-original-screen-photo" href="/assets/pt-05.jpg" width="1537" height="864" filter="url(#wifi-photo-detail)"/></g>'
             '<path d="M1173 343h268v20q0 12-12 12h-244q-12 0-12-12Z" fill="#e7e7e7"/>'
             '<path d="M1280 375h54l8 23h-70Z" fill="#c8c8c8"/><path d="M1264 400h86" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>'
-            '<image href="/assets/icons-3d/wifi.svg" x="1139" y="377" width="78" height="58"/>'
             '<g class="wifi-screen-signal" aria-hidden="true"><circle cx="1404" cy="219" r="17" fill="#173f45" fill-opacity=".75"/>'
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
@@ -357,7 +356,7 @@ def build_native(page, content, upgrades, photos):
             pass
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
-    clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
+    clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-entry-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
     return f'''<!DOCTYPE html>
@@ -368,9 +367,12 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261119-home-h4"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261119-option6"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261119-theme"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
   <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}
+<link rel="stylesheet" href="/theme.css?v=20261119-1"/>
+<script src="/theme.js?v=20261119-1"></script>
+<script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>

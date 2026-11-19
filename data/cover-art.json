@@ -1,10 +1,10 @@
 {
   "wifi": {
-    "src": "/assets/icons-3d/wifi.svg",
+    "src": "/assets/quality/wifi-blue.svg",
     "kind": "symbol"
   },
   "regras": {
-    "src": "/assets/icons-3d/shield.svg",
+    "src": "/assets/cover-icons/regras-clear.svg",
     "kind": "symbol"
   },
   "transportes": {
@@ -16,7 +16,7 @@
     "kind": "photo"
   },
   "informacoes": {
-    "src": "/assets/icons-3d/info.svg",
+    "src": "/assets/cover-icons/informacoes-clear.svg",
     "kind": "symbol"
   },
   "bares": {

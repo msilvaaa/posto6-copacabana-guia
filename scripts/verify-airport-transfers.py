@@ -24,13 +24,13 @@ with sync_playwright() as p:
                 }
                 import json
                 route.fulfill(body=json.dumps(data), content_type='application/json')
-            page.route('**/api/airport-transfers', respond)
+            page.route('**/api/airport-transfers*', respond)
             page.goto(f'http://127.0.0.1:8000/{lang}/{route}/')
             page.wait_for_function("document.querySelector('[data-transfer-status]').textContent.length>0")
             outputs = page.locator('[data-transfer-time]').all_text_contents()
             if scenario == 'valid':
                 assert all(outputs) and '20 min' in outputs[0] and '50 min' in outputs[1]
-                with page.expect_response('**/api/airport-transfers'):
+                with page.expect_response('**/api/airport-transfers*'):
                     page.clock.run_for(30 * 60 * 1000 + 1000)
                 assert len(requests) == 2, requests
             else:
