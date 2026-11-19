@@ -189,9 +189,9 @@ def wifi_access(lang, source):
     scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
     network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
     return (f'<svg class="original-art wifi-access-art" viewBox="1135 180 310 463" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
-            '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath></defs>'
+            '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath><filter id="wifi-photo-detail" color-interpolation-filters="sRGB"><feConvolveMatrix order="3" kernelMatrix="0 -.12 0 -.12 1.48 -.12 0 -.12 0" edgeMode="duplicate" preserveAlpha="true"/></filter></defs>'
             '<rect x="1173" y="182" width="268" height="173" rx="10" fill="#111"/>'
-            '<image href="/assets/location/copacabana-aerial.webp" x="1183" y="193" width="248" height="139" preserveAspectRatio="xMidYMid slice" clip-path="url(#wifi-screen-photo)"/>'
+            '<g clip-path="url(#wifi-screen-photo)"><image class="wifi-original-screen-photo" href="/assets/pt-05.jpg" width="1537" height="864" filter="url(#wifi-photo-detail)"/></g>'
             '<path d="M1173 343h268v20q0 12-12 12h-244q-12 0-12-12Z" fill="#e7e7e7"/>'
             '<path d="M1280 375h54l8 23h-70Z" fill="#c8c8c8"/><path d="M1264 400h86" stroke="#bbb" stroke-width="3" stroke-linecap="round"/>'
             '<rect x="1139" y="383" width="91" height="46" rx="12" fill="#111"/>'
@@ -402,8 +402,8 @@ def build_native(page, content, upgrades, photos):
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
         chapters.append(f'<section class="native-chapter"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261117-1" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
-    exchange_script = '\n  <script src="/exchange-rates.js?v=20261117-4" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
-    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261118-1"></script>' if page['image']['src'].endswith('-14.jpg') else ''
+    exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
+    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-entry-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -413,7 +413,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
   <link rel="stylesheet" href="/native-guide.css?v=20261119-original-style"/>
-  <script src="/site.js?v=20261116-34" defer></script>{clocks_script}{exchange_script}{sea_script}
+  <script src="/site.js?v=20261119-entry-refresh" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>

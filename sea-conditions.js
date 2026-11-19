@@ -5,9 +5,9 @@ if (panel) {
   const lang = document.documentElement.lang;
   const locale = {pt:'pt-BR', en:'en-US', es:'es-ES'}[lang] || 'pt-BR';
   const words = {
-    pt: {loading:'Consultando previsão…', missing:'Previsão temporariamente indisponível.', forecast:'Previsão para', checked:'Consultado em', refresh:'Consulta automática a cada hora.', directions:['N','NE','L','SE','S','SO','O','NO']},
-    en: {loading:'Checking forecast…', missing:'Forecast temporarily unavailable.', forecast:'Forecast for', checked:'Checked at', refresh:'Automatically checked every hour.', directions:['N','NE','E','SE','S','SW','W','NW']},
-    es: {loading:'Consultando previsión…', missing:'Previsión temporalmente no disponible.', forecast:'Previsión para', checked:'Consultado a las', refresh:'Consulta automática cada hora.', directions:['N','NE','E','SE','S','SO','O','NO']}
+    pt: {loading:'Consultando previsão…', missing:'Previsão temporariamente indisponível.', forecast:'Previsão para', checked:'Consultado em', refresh:'Consulta a cada hora e ao abrir a página.', directions:['N','NE','L','SE','S','SO','O','NO']},
+    en: {loading:'Checking forecast…', missing:'Forecast temporarily unavailable.', forecast:'Forecast for', checked:'Checked at', refresh:'Checked hourly and when opening the page.', directions:['N','NE','E','SE','S','SW','W','NW']},
+    es: {loading:'Consultando previsión…', missing:'Previsión temporalmente no disponible.', forecast:'Previsión para', checked:'Consultado a las', refresh:'Consulta cada hora y al abrir la página.', directions:['N','NE','E','SE','S','SO','O','NO']}
   }[lang] || {};
   const status = panel.querySelector('[data-sea-status]');
   const storageKey = 'posto6-sea-conditions-v1';
@@ -28,8 +28,8 @@ if (panel) {
     expiry = Date.parse(data.expiresAt);
     return true;
   }
-  async function refresh() {
-    if (pending || expiry > Date.now()) return;
+  async function refresh(force = false) {
+    if (pending || (!force && expiry > Date.now())) return;
     pending = true;
     for (const field of panel.querySelectorAll('[data-sea-value]')) field.textContent = '—';
     panel.querySelector('[data-sea-period]').textContent = '';
@@ -38,13 +38,13 @@ if (panel) {
     try {
       let data;
       try {
-        const response = await fetch('/api/sea-conditions', {cache:'no-store', signal:AbortSignal.timeout(15000)});
+        const response = await fetch('/api/sea-conditions' + (force ? '?refresh=1' : ''), {cache:'no-store', signal:AbortSignal.timeout(15000)});
         if (!response.ok) throw new Error('Unavailable');
         data = await response.json();
         if (!data.available) throw new Error('Unavailable');
       } catch {
         const results = await Promise.all([MARINE_URL, WIND_URL].map(async url => {
-          try { const response = await fetch(url, {signal:AbortSignal.timeout(12000)}); return response.ok ? await response.json() : null; }
+          try { const response = await fetch(url, {cache:'no-store', signal:AbortSignal.timeout(12000)}); return response.ok ? await response.json() : null; }
           catch { return null; }
         }));
         data = conditions(...results);
@@ -59,6 +59,7 @@ if (panel) {
     timer = setTimeout(refresh, Math.max(1000, expiry - Date.now()));
   }
   try { render(JSON.parse(localStorage.getItem(storageKey))); } catch {}
-  if (expiry > Date.now()) schedule(); else refresh();
+  refresh(true);
+  window.addEventListener('pageshow', event => {if (event.persisted) refresh(true);});
   document.addEventListener('visibilitychange', () => {if (!document.hidden) refresh();});
 }

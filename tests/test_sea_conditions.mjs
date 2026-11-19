@@ -46,3 +46,15 @@ test('null wave values do not become zero; genuine calm values remain zero', () 
   data.hourly.wave_height[1] = 0;
   assert.equal(conditions(data,null).waveHeight,0);
 });
+
+test('page entry bypasses valid sea and wind cache and retains the hourly interval', async () => {
+  await onRequestGet(context()); await Promise.all(pending);
+  now += 60000;
+  const ctx = context(); ctx.request = new Request(ctx.request.url + '?refresh=1');
+  const response = await onRequestGet(ctx); const data = await response.json(); await Promise.all(pending);
+  assert.equal(calls.length, 4);
+  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  assert.equal(Date.parse(data.checkedAt), now);
+  assert.equal(Date.parse(data.expiresAt) - now, 3600000);
+  await onRequestGet(context()); assert.equal(calls.length, 4);
+});

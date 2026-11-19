@@ -28,10 +28,10 @@ test('tourist dollar comes from USD-BRLT buy quote; each currency has an explici
   assert.equal(data.quotes[1].bid, 1552.23);
   assert.equal(Date.parse(data.expiresAt) - Date.parse(data.checkedAt), 86400000);
 });
-test('rates stay cached for 24 hours and URL queries do not bypass cache', async () => {
+test('rates stay cached for 24 hours for ordinary requests', async () => {
   await onRequestGet(context()); await Promise.all(pending);
   now += 24 * 3600000 - 1;
-  await onRequestGet(context('?refresh=1')); assert.equal(calls.length, 1);
+  await onRequestGet(context('?lang=pt')); assert.equal(calls.length, 1);
   now += 2;
   await onRequestGet(context()); assert.equal(calls.length, 2);
 });
@@ -62,4 +62,16 @@ test('old sale-rate cache is rejected after switching to buy rates and USD basis
   assert.equal(calls.length, 1);
   assert.equal(data.side, 'buy');
   assert.equal(data.basis, 'USD');
+});
+
+test('opening a page bypasses valid cache, checks the source and keeps the daily interval', async () => {
+  await onRequestGet(context()); await Promise.all(pending);
+  now += 60000;
+  const response = await onRequestGet(context('?refresh=1'));
+  const data = await response.json(); await Promise.all(pending);
+  assert.equal(calls.length, 2);
+  assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  assert.equal(Date.parse(data.checkedAt), now);
+  assert.equal(Date.parse(data.expiresAt) - now, 86400000);
+  await onRequestGet(context()); assert.equal(calls.length, 2);
 });
