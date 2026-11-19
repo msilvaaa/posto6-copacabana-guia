@@ -21,7 +21,7 @@ class NativeInstructionTests(unittest.TestCase):
             if page['kind']!='detail':continue
             with self.subTest(page=page['path']):
                 html=(ROOT/page['path']).read_text();data=content[page['path'].split('/')[-2]];heading=Headings();heading.feed(html)
-                self.assertEqual(heading.text,data['title'][page['lang']]);self.assertEqual(heading.images,0)
+                self.assertEqual(heading.text,data['title'][page['lang']]);self.assertEqual(heading.images,1)
                 self.assertNotIn('class="guide-image"',html)
                 self.assertIn(data['copy'][page['lang']][0],html)
                 self.assertIn('href="'+page['back']['href']+'"',html)

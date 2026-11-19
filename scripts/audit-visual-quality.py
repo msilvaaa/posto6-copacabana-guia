@@ -31,7 +31,7 @@ with sync_playwright() as p:
     const distorted=images.filter(e=>{const r=box(e),s=getComputedStyle(e);return !e.src.endsWith('.svg')&&r.width>30&&r.height>30&&s.objectFit==='fill'&&Math.abs(r.width/r.height-e.naturalWidth/e.naturalHeight)>.03;}).map(e=>e.src);
     const heroes=[...document.querySelectorAll('.native-photo>img,.section-photo')].map(e=>{const r=box(e);return {src:e.currentSrc,width:r.width,height:r.height,pixelWidth:e.naturalWidth,pixelHeight:e.naturalHeight}});
     const references=[...document.querySelectorAll('.technical-reference>svg')].map(e=>{const r=box(e);const v=e.viewBox.baseVal;return {scale:Math.max(r.width/v.width,r.height/v.height),ratio:r.width/r.height-v.width/v.height};});
-    return {overflow:document.documentElement.scrollWidth>innerWidth+1,broken:[...document.images].filter(e=>e.complete&&!e.naturalWidth).map(e=>e.src),distorted,heroes,references,rasterText:document.querySelectorAll('.guide-image,.compact-title-art image,.native-rules-grid image,.guide-title-word image').length,headings:[...document.querySelectorAll('h1')].map(e=>e.textContent.trim()),wa:document.querySelectorAll('.site-whatsapp').length};
+    return {overflow:document.documentElement.scrollWidth>innerWidth+1,broken:[...document.images].filter(e=>e.complete&&!e.naturalWidth).map(e=>e.src),distorted,heroes,references,rasterText:document.querySelectorAll('.guide-image,.native-rules-grid image,.guide-title-word image').length,headings:[...document.querySelectorAll('h1')].map(e=>e.textContent.trim()),wa:document.querySelectorAll('.site-whatsapp').length};
    }''')
    issues=[]
    if response.status!=200:issues.append('HTTP '+str(response.status))

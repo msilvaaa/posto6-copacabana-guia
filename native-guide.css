@@ -238,3 +238,9 @@
 @supports(width:1cqw) {
  .signature-original>.signature-lettering { height: calc(min(72px,16cqw) * 1.12); }
 }
+
+/* Original handwritten headings and colorful pictograms, with the approved compact frames. */
+.original-heading>.compact-title-art { display: block; width: auto; height: 34px; max-width: 100%; padding: 0; }
+.native-house-rules { max-width: 420px; margin-left: auto; margin-right: auto; }
+.house-rules-grid>li { background: white; }
+.house-rules-grid>li:nth-child(even) { background: #eee8e1; }
