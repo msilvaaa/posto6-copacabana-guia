@@ -4,7 +4,7 @@ The Emergency page shows regional wave height and period, wind speed/direction, 
 
 `functions/api/sea-conditions.js` queries Open-Meteo Marine near the Copacabana coast (-23.01, -43.17) and the weather forecast at Copacabana (-22.98, -43.19). The selected forecast is the current UTC hour; stale forecast hours older than 90 minutes are rejected. Wind units are km/h, waves metres, period seconds.
 
-Cloudflare and browser storage cache a successful response for one hour. The page refreshes at expiry while open, and checks expiry when returning to the tab. Reloading or switching languages reuses the unexpired browser cache. If the site endpoint is unavailable, the browser can query the same public sources directly. Partial provider failures leave the unavailable fields blank rather than inventing values. Complete failures retry after one hour.
+Cloudflare and browser storage cache a successful response for one hour. The page refreshes at expiry while open, and checks expiry when returning to the tab. Each page entry (including reloads, language switches and back/forward restoration) forces a source query, bypassing browser storage and the Cloudflare endpoint cache with `refresh=1`. Successful entry queries renew the one-hour expiry; the original source forecast timestamps remain visible. If the site endpoint is unavailable, the browser can query the same public sources directly. Partial provider failures leave the unavailable fields blank rather than inventing values. Complete failures retry after one hour.
 
 The forecast time and consultation time are shown separately in Brasília time. The original emergency telephone links remain available regardless of provider status. No private API credential is needed.
 

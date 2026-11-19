@@ -9,3 +9,5 @@ A função Cloudflare `/api/exchange-rates` fica como alternativa, com cache de 
 Não há horário fixo diário nem consultas em segundo plano sem visitantes. Os horários das cotações são os fornecidos pela fonte e podem permanecer iguais quando o mercado não muda. Não é necessária uma chave da Google Routes API para as cotações; essa chave pertence apenas à integração opcional dos tempos de trânsito dos aeroportos.
 
 A legenda uniforme “compra · turismo” indica a finalidade de consulta para viagem. A série específica de dólar turismo continua sendo USD-BRLT; as demais equivalências usam compra comercial da fonte, conforme a observação exibida na página. A padronização visual não aplica margens inventadas de uma casa de câmbio.
+
+Page entry forces a new source query (including reloads and back/forward restoration), bypassing local storage and endpoint cache with `refresh=1` when using the server fallback. The existing daily timer is preserved. Quote timestamps remain the source timestamps; a new consultation does not imply a changed market quote.

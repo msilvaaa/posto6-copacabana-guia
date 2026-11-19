@@ -9,16 +9,17 @@ const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(da
   headers: {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': cacheControl}
 });
 export async function onRequestGet(context) {
+  const force = new URL(context.request.url).searchParams.get('refresh') === '1';
   const {request} = context;
   const cache = globalThis.caches?.default;
   const cacheKey = new Request(new URL('/api/exchange-rates?basis=usd-buy-v2', request.url));
-  const cached = await cache?.match(cacheKey);
+  const cached = force ? null : await cache?.match(cacheKey);
   if (cached) {
     const data = await cached.clone().json();
     if (data.side === 'buy' && data.basis === 'USD' && Date.parse(data.expiresAt) > Date.now()) return cached;
   }
   try {
-    const response = await fetch(SOURCE, {headers: {'Accept': 'application/json'}, signal: AbortSignal.timeout(10000)});
+    const response = await fetch(SOURCE, {cache:'no-store', headers: {'Accept': 'application/json'}, signal: AbortSignal.timeout(10000)});
     if (!response.ok) return json({available: false, reason: `source_http_${response.status}`});
     const raw = await response.json();
     const quotes = PAIRS.map(pair => {
@@ -34,6 +35,11 @@ export async function onRequestGet(context) {
     if (cache) {
       try { context.waitUntil(cache.put(cacheKey, result.clone())); }
       catch { console.warn('Response cache unavailable'); }
+    }
+    if (force) {
+      const fresh = new Response(result.body, result);
+      fresh.headers.set('Cache-Control', 'no-store');
+      return fresh;
     }
     return result;
   } catch {

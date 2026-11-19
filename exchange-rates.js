@@ -5,9 +5,9 @@
   const lang = document.documentElement.lang;
   const locale = {pt: 'pt-BR', en: 'en-US', es: 'es-ES'}[lang] || 'pt-BR';
   const words = {
-    pt: {unavailable: 'Cotações indisponíveis no momento.', unit: 'compra', tourism: 'turismo', checked: 'Consulta em', refresh: 'Consulta automática diária.'},
-    en: {unavailable: 'Exchange rates currently unavailable.', unit: 'buy rate', tourism: 'tourism', checked: 'Checked at', refresh: 'Automatically checked daily.'},
-    es: {unavailable: 'Cotizaciones no disponibles por el momento.', unit: 'compra', tourism: 'turismo', checked: 'Consulta a las', refresh: 'Consulta automática diaria.'}
+    pt: {unavailable: 'Cotações indisponíveis no momento.', unit: 'compra', tourism: 'turismo', checked: 'Consulta em', refresh: 'Consulta diária e ao abrir a página.'},
+    en: {unavailable: 'Exchange rates currently unavailable.', unit: 'buy rate', tourism: 'tourism', checked: 'Checked at', refresh: 'Checked daily and when opening the page.'},
+    es: {unavailable: 'Cotizaciones no disponibles por el momento.', unit: 'compra', tourism: 'turismo', checked: 'Consulta a las', refresh: 'Consulta diaria y al abrir la página.'}
   }[lang];
   const dateFormat = new Intl.DateTimeFormat(locale, {timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'});
   const status = box.querySelector('[data-exchange-status]');
@@ -44,9 +44,9 @@
     try { const data = JSON.parse(localStorage.getItem(cacheKey)); return valid(data) ? data : null; }
     catch { return null; }
   }
-  async function loadQuotes() {
+  async function loadQuotes(force = false) {
     const cached = readCache();
-    if (cached) return cached;
+    if (cached && !force) return cached;
     let data;
     // The public source allows CORS; a direct request avoids shared-server rate limits.
     try {
@@ -58,7 +58,7 @@
         quotes: pairs.map(pair => ({id: pair.id, base: pair.base, target: pair.target, bid: Number(raw[pair.key]?.bid), quotedAt: new Date(Number(raw[pair.key]?.timestamp) * 1000).toISOString()}))};
       if (!valid(data)) throw new Error('Invalid quote');
     } catch {
-      const response = await fetch('/api/exchange-rates', {cache: 'no-store', signal: AbortSignal.timeout(10000)});
+      const response = await fetch('/api/exchange-rates' + (force ? '?refresh=1' : ''), {cache: 'no-store', signal: AbortSignal.timeout(10000)});
       if (!response.ok) throw new Error('Unavailable');
       data = await response.json();
       if (!valid(data)) throw new Error('Unavailable');
@@ -66,11 +66,11 @@
     try {localStorage.setItem(cacheKey, JSON.stringify(data));} catch { /* Storage may be unavailable in private browsing. */ }
     return data;
   }
-  async function refresh() {
+  async function refresh(force = false) {
     if (pending) return;
     pending = true;
     try {
-      const data = await loadQuotes();
+      const data = await loadQuotes(force);
       for (const card of box.querySelectorAll('[data-exchange-id]')) {
         const quote = data.quotes.find(q => q.id === card.dataset.exchangeId);
         if (!quote || !Number.isFinite(quote.bid) || quote.bid <= 0) throw new Error('Invalid quote');
@@ -96,6 +96,7 @@
       schedule();
     }
   }
-  refresh();
+  refresh(true);
+  window.addEventListener('pageshow', event => {if (event.persisted) refresh(true);});
   document.addEventListener('visibilitychange', () => {if (!document.hidden && expiresAt <= Date.now()) refresh();});
 })();
