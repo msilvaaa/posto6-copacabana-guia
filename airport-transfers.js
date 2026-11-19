@@ -19,12 +19,12 @@
     note.textContent = '';
     expiresAt = 0;
   }
-  async function refresh() {
+  async function refresh(force = false) {
     if (pending) return;
     pending = true;
     if (expiresAt <= Date.now()) unavailable();
     try {
-      const response = await fetch('/api/airport-transfers', {cache: 'no-store'});
+      const response = await fetch('/api/airport-transfers' + (force ? '?refresh=1' : ''), {cache: 'no-store', signal:AbortSignal.timeout(15000)});
       if (!response.ok) throw new Error('Unavailable');
       const data = await response.json();
       const expiry = Date.parse(data.expiresAt);
@@ -42,7 +42,8 @@
       pending = false;
     }
   }
-  refresh();
+  refresh(true);
+  window.addEventListener('pageshow', event => {if (event.persisted) refresh(true);});
   setInterval(() => { if (!document.hidden) refresh(); }, 30 * 60 * 1000);
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden && expiresAt <= Date.now()) refresh();

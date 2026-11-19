@@ -157,11 +157,8 @@
 .agency-links>div { min-width: 0; }
 
 /* Keep the original access artwork and QR pixels, with a sharp scan cue. */
-.wifi-scan-group { animation: wifi-scan-nudge 3s ease-in-out infinite; }
-.native-wifi-access:hover .wifi-scan-group { animation-play-state: paused; }
 .wifi-signal-outer { animation: wifi-signal-pulse 3s ease-in-out infinite; }
 .wifi-signal-inner { animation: wifi-signal-pulse 3s ease-in-out .3s infinite; }
-@keyframes wifi-scan-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
 @keyframes wifi-signal-pulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
 @media(prefers-reduced-motion:reduce) {
  .wifi-scan-group,.wifi-signal-outer,.wifi-signal-inner { animation: none; }
@@ -248,3 +245,6 @@
 /* Option 6 keeps each pictogram inside its existing illustration slot. */
 .native-icon .guide-icon-3d { max-width:100%; max-height:100%; }
 .service-hours>.guide-icon-3d { width:20px; height:20px; }
+
+/* The scan arrow and QR remain still; only the monitor signal keeps its animation. */
+.wifi-scan-group { animation:none; }

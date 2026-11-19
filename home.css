@@ -131,3 +131,6 @@ body.home-page { background: #f8f6f2; }
 
 .detail-modern-home>.guide-icon-3d { width:30px; height:30px; }
 .cover-button-art.art-symbol img[src^="/assets/icons-3d/"] { object-fit:contain; padding:2px; }
+
+/* Bring the cover index slightly closer to the photograph, keeping the 70/30 split. */
+@media(min-width:1101px) { .cover-menu { transform:translateX(-12px); } }

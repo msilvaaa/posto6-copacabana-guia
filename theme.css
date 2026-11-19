@@ -1,0 +1,40 @@
+/* An explicit, persistent choice; the existing light appearance remains the default. */
+html[data-theme="light"] { color-scheme:light; }
+html[data-theme="light"] body,html[data-theme="light"] .page-stage { background:#fff; }
+.theme-toggle { display:flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; height:44px; padding:6px; border:0; border-radius:50%; background:white; box-shadow:0 0 0 3px white,0 8px 20px #0003; cursor:pointer; transition:transform .18s ease; }
+.theme-toggle-icons { display:flex; align-items:center; justify-content:center; gap:0; }
+.theme-toggle img { display:block; width:18px; height:24px; object-fit:contain; }
+.theme-toggle:hover { transform:translateY(-3px); }
+.theme-toggle:focus-visible { outline:3px solid #0078ff; outline-offset:5px; }
+@media(min-width:1101px) { .main-html-topbar { gap:10px; align-items:center; } }
+html[data-theme="dark"] { color-scheme:dark; --guide-bg:#000; --guide-panel:#121212; --guide-card:#242424; --guide-text:#fff; --guide-muted:#ccc; --guide-border:#666; background:var(--guide-bg); color:var(--guide-text); }
+html[data-theme="dark"] body { background:var(--guide-bg); color:var(--guide-text); }
+html[data-theme="dark"] :is(.page-stage,.native-panel,.section-panel,.site-dialog,.dialog-bar) { background:var(--guide-panel); color:var(--guide-text); }
+html[data-theme="dark"] :is(.native-card p,.native-link,.native-chapter-title,.section-title,.section-panel h2,.section-panel p,.native-card h2,.detail-instructions,.instruction-list,.native-thanks) { color:var(--guide-text); }
+html[data-theme="dark"] :is(.native-title,.original-heading,.original-title,.section-title) { border-color:#eee; }
+html[data-theme="dark"] :is(.compact-title-art,.signature-lettering) { filter:invert(1); mix-blend-mode:screen; }
+html[data-theme="dark"] :is(.native-card,.section-actions,.dialog-bar,.exchange-rate,.local-clocks,.detail-references) { border-color:var(--guide-border); }
+html[data-theme="dark"] :is(.amenity-card,.service-hours,.activity-weather,.weather-day,.sea-conditions,.house-rules-grid>li:nth-child(even)) { background:var(--guide-card); color:var(--guide-text); border-color:var(--guide-border); }
+html[data-theme="dark"] .house-rules-grid>li:nth-child(odd) { background:var(--guide-panel); }
+html[data-theme="dark"] :is(.amenity-card:hover,.native-link:hover,.native-link:focus-visible,.activity-weather:hover) { background:#333; color:#fff; }
+html[data-theme="dark"] :is(.local-clock time,.airport-transfer output,.airport-route,.exchange-rate output,.exchange-rates>p>a,.sea-values dd,.site-weather,.content-links a) { color:#fff; }
+html[data-theme="dark"] :is(.native-panel small,.exchange-rate small,.exchange-rate time,.local-clock [data-clock-date],.local-clock [data-clock-offset],.airport-transfers .transfer-status,.sea-conditions .sea-status,.sea-conditions .sea-note,.sea-values dt,.technical-reference figcaption,.photo-grid figcaption,.image-credits a) { color:var(--guide-muted); }
+html[data-theme="dark"] .cover-html-button::after { color:var(--guide-text); }
+html[data-theme="dark"] .home-menu-rule { background:#8795a455; }
+html[data-theme="dark"] :is(.home-cover-brand,.home-cover-copy,.home-cover-nav a) { color:#111; }
+html[data-theme="dark"] .home-cover-subtitle { color:#151515; }
+html[data-theme="dark"] .content-links a { border-color:#71968f; }
+html[data-theme="dark"] .content-links a:first-child { background:#315950; color:#fff; }
+html[data-theme="dark"] .dialog-bar button { background:var(--guide-card); color:var(--guide-text); border-color:var(--guide-border); }
+html[data-theme="dark"] .site-about a { color:#fff; }
+html[data-theme="dark"] .wifi-credentials text { fill:var(--guide-text); }
+html[data-theme="dark"] .wifi-credentials rect { fill:#292929; stroke:#ccc; }
+@media(prefers-reduced-motion:reduce) { .theme-toggle { transition:none; } }
+
+html[data-theme="dark"] .native-guide .site-reading { background:var(--guide-panel); }
+html[data-theme="dark"] .instruction-list li::marker { color:#fff; }
+
+html[data-theme="dark"] .theme-toggle { background:#000; box-shadow:0 0 0 3px #fff,0 8px 20px #0003; }
+html[data-theme="dark"] .home-page .site-weather { color:#15383e; }
+html[data-theme="dark"] .content-links a { border-color:#777; }
+html[data-theme="dark"] .content-links a:first-child { background:#333; }

@@ -10,11 +10,12 @@ const json = (data, cacheControl = 'no-store') => new Response(JSON.stringify(da
 
 export async function onRequestGet(context) {
   const {request, env} = context;
+  const force = new URL(request.url).searchParams.get('refresh') === '1';
   const key = env.GOOGLE_MAPS_ROUTES_API_KEY;
   if (!key) return json({available: false, reason: 'not_configured'});
   const cache = globalThis.caches?.default;
   const cacheKey = new Request(new URL('/api/airport-transfers', request.url));
-  const cached = await cache?.match(cacheKey);
+  const cached = force ? null : await cache?.match(cacheKey);
   if (cached) {
     const data = await cached.clone().json();
     if (Date.parse(data.expiresAt) > Date.now()) return cached;
@@ -23,7 +24,7 @@ export async function onRequestGet(context) {
   const routes = await Promise.all(AIRPORTS.map(async airport => {
     try {
       const response = await fetch('https://routes.googleapis.com/directions/v2:computeRoutes', {
-        method: 'POST',
+        method: 'POST', cache:'no-store',
         headers: {'Content-Type': 'application/json', 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'routes.duration,routes.distanceMeters'},
         body: JSON.stringify({
           origin: {address: airport.address}, destination: {address: DESTINATION},
@@ -51,6 +52,11 @@ export async function onRequestGet(context) {
   if (cache) {
     try { context.waitUntil(cache.put(cacheKey, response.clone())); }
     catch { console.warn('Response cache unavailable'); }
+  }
+  if (force) {
+    const fresh = new Response(response.body, response);
+    fresh.headers.set('Cache-Control', 'no-store');
+    return fresh;
   }
   return response;
 }
