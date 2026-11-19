@@ -78,7 +78,7 @@ def pagination(lang, previous=None, following=None):
 
 def theme_toggle(lang):
  label={'pt':'Ativar modo escuro','en':'Switch to dark mode','es':'Activar modo oscuro'}[lang]
- return f'<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="{label}" title="{label}"><span class="theme-toggle-icons" aria-hidden="true"><img src="/assets/icons-3d/sun.svg" width="18" height="24" alt=""/><img src="/assets/icons-3d/moon.svg" width="18" height="24" alt=""/></span></button>'
+ return f'<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="{label}" title="{label}"><span data-theme-symbol aria-hidden="true">☾</span></button>'
 
 
 def utilities(lang):
