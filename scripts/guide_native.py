@@ -18,10 +18,12 @@ def artwork(source, rect, css=''):
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}" clip-path="url(#{crop})"/></svg>')
 
 
+TITLE_INK = json.loads((Path(__file__).resolve().parents[1] / 'data/title-ink-bounds.json').read_text())
+
 def title_word_art(source, word=None, width=1537, height=None):
-    x,y,w,h = word or ORIGINAL_ART[source]['word']
+    x,y,w,h = TITLE_INK.get(source, word or ORIGINAL_ART.get(source, {}).get('word'))
     height = height or (2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864)
-    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" aria-hidden="true">'
+    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" style="--title-ratio:{w/h:.6f}" aria-hidden="true">'
             f'<defs><clipPath id="original-title-word"><rect x="{x}" y="{y}" width="{w}" height="{h}"/></clipPath></defs>'
             f'<image href="{e(source)}" width="{width}" height="{height}" clip-path="url(#original-title-word)"/></svg>')
 
@@ -74,32 +76,19 @@ def illustration(name):
                 '<rect x="1223" y="586" width="13" height="14" fill="black"/></mask></defs>'
                 '<image href="/assets/pt-04.jpg" width="1537" height="864" mask="url(#airport-plane-art)"/></svg>')
     item = ORIGINAL_ART['_illustrations'].get(name)
-    return artwork(item['src'],item['rect'],name) if item else sharp_symbol(name, PATHS)
+    return sharp_symbol(name, PATHS)
 
 
 def information_illustration(name):
-    item = ORIGINAL_ART['_illustrations'][name]
-    x,y,w,h = item['rect']
-    cut = ('<path d="M1109 701H1127V713H1137V764H1100V713H1109Z"/>' if name == 'case' else
-           f'<circle cx="{x+39}" cy="{y+h/2}" r="31"/>')
-    return (f'<svg class="information-pictogram" viewBox="{x} {y} {w} {h}" aria-hidden="true">'
-            f'<defs><clipPath id="information-{name}">{cut}</clipPath></defs>'
-            f'<image href="{e(item["src"])}" width="1537" height="864" clip-path="url(#information-{name})"/></svg>')
+    return sharp_symbol(name, PATHS)
 
 
 def emergency_illustration(name):
-    centers = {'shield': (1117,386), 'hospital': (1117,507), 'pharmacy': (1117,624), 'fire': (1122,778)}
-    if name in centers:
-        x,y = centers[name]
-        drawing = (f'<svg x="7" y="7" width="64" height="64" viewBox="{x-32} {y-32} 64 64">'
-                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
-    else:
-        drawing = ('<svg x="7" y="21" width="64" height="36" viewBox="1350 248 145 77">'
-                   '<image href="/assets/pt-14.jpg" width="1537" height="864"/></svg>')
-    return (f'<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
-            f'<defs><clipPath id="emergency-{name}"><circle cx="39" cy="39" r="28"/></clipPath></defs>'
-            '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>'
-            f'<g clip-path="url(#emergency-{name})">{drawing}</g></svg>')
+    # Preserve the equal-radius emergency framing around the new artwork.
+    inner = sharp_symbol(name, PATHS).replace('<svg ', '<svg x="10" y="10" width="58" height="58" ', 1)
+    return ('<svg class="emergency-round-icon" viewBox="0 0 78 78" aria-hidden="true">'
+            '<circle cx="39" cy="39" r="36" fill="white" stroke="#111" stroke-width="3"/>' + inner + '</svg>')
+
 
 def e(value):
     return escape(str(value), quote=True)
@@ -388,7 +377,7 @@ def build_native(page, content, upgrades, photos):
                 navigation=f'<div class="native-thanks signature-original" role="img" aria-label="{e(label)}">{signature_art(lang)}</div>'+navigation
         title_art = title_word_art(page['image']['src'])
         if page['image']['src'].endswith('-03.jpg'):
-            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" aria-hidden="true">'
+            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" style="--title-ratio:4.15625" aria-hidden="true">'
                          '<svg x="0" y="0" width="102" height="32" viewBox="1246 132 102 32"><image href="/assets/pt-15.jpg" width="1537" height="864"/></svg>'
                          '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
@@ -412,7 +401,8 @@ def build_native(page, content, upgrades, photos):
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261118-quality"/>
-  <link rel="stylesheet" href="/native-guide.css?v=20261119-original-style"/>
+  <link rel="stylesheet" href="/native-guide.css?v=20261119-colorful"/>
+  <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
   <script src="/site.js?v=20261119-entry-refresh" defer></script>{clocks_script}{exchange_script}{sea_script}
 </head>
 <body class="site-page native-guide">

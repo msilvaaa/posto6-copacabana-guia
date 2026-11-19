@@ -1,0 +1,560 @@
+{
+  "/assets/pt-09.jpg": [
+    1238,
+    109,
+    143,
+    27
+  ],
+  "/assets/pt-11.jpg": [
+    1282,
+    124,
+    83,
+    29
+  ],
+  "/assets/pt-02.jpg": [
+    1235,
+    125,
+    178,
+    31
+  ],
+  "/assets/pt-03.jpg": [
+    1196,
+    111,
+    186,
+    35
+  ],
+  "/assets/pt-15.jpg": [
+    1248,
+    133,
+    151,
+    30
+  ],
+  "/assets/pt-08.jpg": [
+    1230,
+    179,
+    183,
+    28
+  ],
+  "/assets/pt-14.jpg": [
+    1218,
+    147,
+    172,
+    37
+  ],
+  "/assets/pt-13.jpg": [
+    1188,
+    129,
+    248,
+    30
+  ],
+  "/assets/pt-10.jpg": [
+    1199,
+    42,
+    199,
+    38
+  ],
+  "/assets/pt-04.jpg": [
+    1240,
+    125,
+    170,
+    35
+  ],
+  "/assets/pt-06.jpg": [
+    1250,
+    148,
+    103,
+    37
+  ],
+  "/assets/pt-12.jpg": [
+    1215,
+    129,
+    190,
+    29
+  ],
+  "/assets/pt-07.jpg": [
+    1250,
+    112,
+    166,
+    35
+  ],
+  "/assets/pt-05.jpg": [
+    1275,
+    120,
+    71,
+    36
+  ],
+  "/assets/en-09.jpg": [
+    1247,
+    109,
+    124,
+    27
+  ],
+  "/assets/en-08.jpg": [
+    1253,
+    179,
+    137,
+    28
+  ],
+  "/assets/en-11.jpg": [
+    1289,
+    124,
+    69,
+    29
+  ],
+  "/assets/en-03.jpg": [
+    1190,
+    111,
+    198,
+    35
+  ],
+  "/assets/en-15.jpg": [
+    1248,
+    133,
+    151,
+    30
+  ],
+  "/assets/en-14.jpg": [
+    1223,
+    147,
+    165,
+    38
+  ],
+  "/assets/en-13.jpg": [
+    1194,
+    125,
+    221,
+    30
+  ],
+  "/assets/en-10.jpg": [
+    1201,
+    42,
+    194,
+    38
+  ],
+  "/assets/en-04.jpg": [
+    1270,
+    110,
+    126,
+    29
+  ],
+  "/assets/en-12.jpg": [
+    1223,
+    129,
+    175,
+    29
+  ],
+  "/assets/en-06.jpg": [
+    1260,
+    148,
+    82,
+    29
+  ],
+  "/assets/en-07.jpg": [
+    1228,
+    112,
+    210,
+    35
+  ],
+  "/assets/en-02.jpg": [
+    1256,
+    126,
+    134,
+    29
+  ],
+  "/assets/en-05.jpg": [
+    1275,
+    120,
+    71,
+    36
+  ],
+  "/assets/es-09.jpg": [
+    1231,
+    109,
+    156,
+    27
+  ],
+  "/assets/es-02.jpg": [
+    1234,
+    125,
+    179,
+    31
+  ],
+  "/assets/es-03.jpg": [
+    1259,
+    127,
+    110,
+    27
+  ],
+  "/assets/es-15.jpg": [
+    1252,
+    133,
+    142,
+    30
+  ],
+  "/assets/es-08.jpg": [
+    1230,
+    179,
+    183,
+    28
+  ],
+  "/assets/es-14.jpg": [
+    1211,
+    147,
+    171,
+    37
+  ],
+  "/assets/es-13.jpg": [
+    1194,
+    123,
+    243,
+    29
+  ],
+  "/assets/es-10.jpg": [
+    1200,
+    42,
+    197,
+    38
+  ],
+  "/assets/es-06.jpg": [
+    1232,
+    126,
+    118,
+    30
+  ],
+  "/assets/es-12.jpg": [
+    1215,
+    129,
+    190,
+    29
+  ],
+  "/assets/es-07.jpg": [
+    1256,
+    112,
+    152,
+    35
+  ],
+  "/assets/es-04.jpg": [
+    1244,
+    102,
+    134,
+    27
+  ],
+  "/assets/es-11.jpg": [
+    1283,
+    124,
+    78,
+    36
+  ],
+  "/assets/es-05.jpg": [
+    1271,
+    122,
+    71,
+    36
+  ],
+  "/comod-assets/pt-arcondicionado-1.jpg": [
+    294,
+    336,
+    340,
+    39
+  ],
+  "/detail-assets/pt-banheiro-1.jpg": [
+    388,
+    341,
+    184,
+    40
+  ],
+  "/comod-assets/pt-cofre-1.jpg": [
+    426,
+    341,
+    106,
+    48
+  ],
+  "/comod-assets/pt-fechadura-1.jpg": [
+    377,
+    342,
+    211,
+    39
+  ],
+  "/comod-assets/pt-geladeira-1.jpg": [
+    359,
+    352,
+    192,
+    46
+  ],
+  "/comod-assets/pt-lavabo-1.jpg": [
+    388,
+    341,
+    184,
+    40
+  ],
+  "/comod-assets/pt-louca-1.jpg": [
+    274,
+    337,
+    376,
+    47
+  ],
+  "/comod-assets/pt-luminaria-1.jpg": [
+    321,
+    313,
+    259,
+    50
+  ],
+  "/comod-assets/pt-luzquarto-1.jpg": [
+    318,
+    313,
+    266,
+    59
+  ],
+  "/comod-assets/pt-portao-1.jpg": [
+    332,
+    341,
+    273,
+    40
+  ],
+  "/comod-assets/pt-roupas-1.jpg": [
+    226,
+    342,
+    488,
+    47
+  ],
+  "/comod-assets/pt-sofacama-1.jpg": [
+    367,
+    342,
+    201,
+    47
+  ],
+  "/comod-assets/pt-tabua-1.jpg": [
+    246,
+    337,
+    448,
+    47
+  ],
+  "/comod-assets/pt-tvquarto-1.jpg": [
+    368,
+    341,
+    201,
+    45
+  ],
+  "/comod-assets/pt-tvsala-1.jpg": [
+    393,
+    341,
+    149,
+    40
+  ],
+  "/comod-assets/pt-uber-1.jpg": [
+    333,
+    342,
+    292,
+    47
+  ],
+  "/comod-assets/en-arcondicionado-1.jpg": [
+    310,
+    335,
+    318,
+    40
+  ],
+  "/detail-assets/en-banheiro-1.jpg": [
+    380,
+    341,
+    201,
+    40
+  ],
+  "/comod-assets/en-cofre-1.jpg": [
+    434,
+    342,
+    89,
+    47
+  ],
+  "/comod-assets/en-fechadura-1.jpg": [
+    347,
+    341,
+    270,
+    50
+  ],
+  "/comod-assets/en-geladeira-1.jpg": [
+    330,
+    351,
+    256,
+    51
+  ],
+  "/comod-assets/en-lavabo-1.jpg": [
+    380,
+    341,
+    201,
+    40
+  ],
+  "/comod-assets/en-louca-1.jpg": [
+    349,
+    336,
+    226,
+    40
+  ],
+  "/comod-assets/en-luminaria-1.jpg": [
+    346,
+    313,
+    209,
+    63
+  ],
+  "/comod-assets/en-luzquarto-1.jpg": [
+    324,
+    337,
+    248,
+    51
+  ],
+  "/comod-assets/en-portao-1.jpg": [
+    330,
+    342,
+    278,
+    46
+  ],
+  "/comod-assets/en-roupas-1.jpg": [
+    294,
+    342,
+    347,
+    50
+  ],
+  "/comod-assets/en-sofacama-1.jpg": [
+    349,
+    342,
+    237,
+    47
+  ],
+  "/comod-assets/en-tabua-1.jpg": [
+    334,
+    337,
+    266,
+    50
+  ],
+  "/comod-assets/en-tvquarto-1.jpg": [
+    287,
+    341,
+    227,
+    40
+  ],
+  "/comod-assets/en-tvsala-1.jpg": [
+    318,
+    341,
+    302,
+    40
+  ],
+  "/comod-assets/en-uber-1.jpg": [
+    300,
+    342,
+    361,
+    47
+  ],
+  "/comod-assets/es-arcondicionado-1.jpg": [
+    272,
+    336,
+    369,
+    39
+  ],
+  "/detail-assets/es-banheiro-1.jpg": [
+    427,
+    341,
+    106,
+    40
+  ],
+  "/comod-assets/es-cofre-1.jpg": [
+    367,
+    341,
+    225,
+    50
+  ],
+  "/comod-assets/es-fechadura-1.jpg": [
+    313,
+    341,
+    348,
+    50
+  ],
+  "/comod-assets/es-geladeira-1.jpg": [
+    325,
+    351,
+    267,
+    51
+  ],
+  "/comod-assets/es-lavabo-1.jpg": [
+    427,
+    341,
+    106,
+    40
+  ],
+  "/comod-assets/es-louca-1.jpg": [
+    347,
+    337,
+    232,
+    49
+  ],
+  "/comod-assets/es-luminaria-1.jpg": [
+    315,
+    313,
+    309,
+    50
+  ],
+  "/comod-assets/es-luzquarto-1.jpg": [
+    260,
+    316,
+    423,
+    51
+  ],
+  "/comod-assets/es-portao-1.jpg": [
+    281,
+    342,
+    376,
+    47
+  ],
+  "/comod-assets/es-roupas-1.jpg": [
+    376,
+    342,
+    183,
+    39
+  ],
+  "/comod-assets/es-sofacama-1.jpg": [
+    362,
+    342,
+    201,
+    47
+  ],
+  "/comod-assets/es-tabua-1.jpg": [
+    327,
+    337,
+    282,
+    47
+  ],
+  "/comod-assets/es-tvquarto-1.jpg": [
+    281,
+    341,
+    362,
+    40
+  ],
+  "/comod-assets/es-tvsala-1.jpg": [
+    338,
+    341,
+    259,
+    40
+  ],
+  "/comod-assets/es-uber-1.jpg": [
+    315,
+    342,
+    328,
+    47
+  ],
+  "/comod-assets/pt-lixeira-1.jpg": [
+    373,
+    314,
+    186,
+    54
+  ],
+  "/comod-assets/en-lixeira-1.jpg": [
+    393,
+    314,
+    152,
+    53
+  ],
+  "/comod-assets/es-lixeira-1.jpg": [
+    368,
+    313,
+    198,
+    55
+  ]
+}
