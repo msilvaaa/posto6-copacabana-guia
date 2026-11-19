@@ -257,7 +257,7 @@
 .activities-chapter .native-card-copy p { font-size:12px; line-height:1.45; }
 
 /* Selected telephone T6, kept inline beside all callable numbers. */
-.native-link>.telephone-icon { width:20px; height:20px; flex:0 0 20px; }
+.native-link>.telephone-icon { width:18px; height:18px; flex:0 0 18px; }
 
 /* Match the SAMU explanatory copy to Activities descriptions. */
 .native-card:has(.samu-heading) .native-card-copy p { font-size:12px; line-height:1.45; }
