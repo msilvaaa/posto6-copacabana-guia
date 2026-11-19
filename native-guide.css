@@ -254,7 +254,12 @@
 
 /* Activities: use the same weather component as the cover; shrink descriptions only. */
 .native-heading-text>.activity-weather-container { margin-left:12px; max-width:calc(100% - 12px); }
-.activities-chapter .native-card-copy p { font-size:13px; line-height:1.45; }
+.activities-chapter .native-card-copy p { font-size:12px; line-height:1.45; }
 
 /* Selected telephone T6, kept inline beside all callable numbers. */
 .native-link>.telephone-icon { width:20px; height:20px; flex:0 0 20px; }
+
+/* Match the SAMU explanatory copy to Activities descriptions. */
+.native-card:has(.samu-heading) .native-card-copy p { font-size:12px; line-height:1.45; }
+
+.pharmacy-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 12px; }
