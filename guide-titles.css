@@ -1,0 +1,31 @@
+/* One compact frame and consistent visible lettering height, based on Welcome / Check-in. */
+.native-title.original-heading,
+.section-title.original-title,
+.section-title {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ width: fit-content;
+ max-width: 90%;
+ min-height: 0;
+ margin: 0 auto 18px;
+ padding: 7px 14px;
+ border: 2px solid #111;
+ border-radius: 999px;
+ line-height: 1;
+}
+.native-title.original-heading>.compact-title-art,
+.section-title.original-title>.compact-title-art {
+ display: block;
+ flex: 0 1 auto;
+ width: calc(34px * var(--title-ratio));
+ height: auto;
+ max-width: 100%;
+ aspect-ratio: var(--title-ratio);
+ padding: 0;
+}
+.section-title:not(.original-title) {
+ font-size: 30px;
+ line-height: 34px;
+}

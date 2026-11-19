@@ -61,11 +61,8 @@ def amenity_cards(lang):
  links=[p for p in source['links'] if '/comodidades/' in p['href']][:16]
  result=[]
  for i,link in enumerate(links):
-  rect={k:float(v) for k,v in re.findall(r'(left|top|width|height):([\d.]+)%',link['style'])}
-  x=(rect['left']+rect['width']*.1)*1537/100;y=(rect['top']+rect['height']*.07)*864/100
-  w=rect['width']*.8*1537/100;h=rect['height']*.65*864/100
-  style=f"background-image:url('/assets/pt-08.jpg');background-size:{1537/w*100:.4f}% {864/h*100:.4f}%;background-position:{x/(1537-w)*100:.4f}% {y/(864-h)*100:.4f}%"
-  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true" style="{style}"></span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
+  names=['bin','tv','snow','fridge','bulb','tv','iron','dishwasher','wash','sofa','safe','water','lamp','car','lock','door']
+  result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true">{sharp_symbol(names[i],PATHS)}</span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
  return '<div class="amenities-grid">'+''.join(result)+'</div>'
 
 
