@@ -43,6 +43,13 @@ def e(value):
  return escape(str(value), quote=True)
 
 
+def telephone_icon():
+ # T6: same blue receiver and yellow ringing marks selected in the preview.
+ return ('<svg class="telephone-icon" viewBox="0 0 28 28" width="20" height="20" aria-hidden="true" fill="#238cc6">'
+         '<g transform="translate(1 3) scale(.85)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.79a2 2 0 0 1-.45 2.11L8.09 9.89a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.33 1.83.57 2.79.7A2 2 0 0 1 22 16.92z"/></g>'
+         '<path d="M17 4a7 7 0 0 1 7 7M17 8a3 3 0 0 1 3 3" fill="none" stroke="#e5a02d" stroke-width="2" stroke-linecap="round"/></svg>')
+
+
 def page_title(lang,name):
  return f'Posto 6 Copacabana — {lang.upper()} — {name}'
 

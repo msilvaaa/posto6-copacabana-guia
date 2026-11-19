@@ -7,7 +7,7 @@ from guide_icons_3d import icon_3d
 
 def sharp_symbol(name, paths):
     return icon_3d(name)
-from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities
+from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
 
@@ -251,7 +251,7 @@ def build_native(page, content, upgrades, photos):
                 if item.get('href'):
                     href = item.get('href_by_lang', {}).get(lang, item['href'])
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
-                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
+                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else ""}<span>{text}</span></a>')
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
@@ -358,7 +358,7 @@ def build_native(page, content, upgrades, photos):
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
-    native_style = '20261119-activities-cover-weather' if page['image']['src'].endswith('-09.jpg') else '20261119-theme'
+    native_style = '20261119-activities-cover-weather' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
