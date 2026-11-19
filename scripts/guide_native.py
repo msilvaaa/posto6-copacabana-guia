@@ -255,6 +255,8 @@ def build_native(page, content, upgrades, photos):
                 else:
                     nodes.append(f'<p>{text}</p>')
                     descriptions.append(f'<p>{text}</p>')
+            if page['image']['src'].endswith('-14.jpg') and section_index == 3:
+                nodes = ['<div class="pharmacy-links">' + ''.join([nodes[0], nodes[2], nodes[1]]) + '</div>']
             if page['image']['src'].endswith('-10.jpg') and section_index == 0:
                 nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>']
             if page['image']['src'].endswith('-10.jpg') and section_index == 4:
@@ -359,6 +361,8 @@ def build_native(page, content, upgrades, photos):
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
     native_style = '20261119-activities-descriptions-12' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-t6' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
+    if page['image']['src'].endswith('-14.jpg'):
+        native_style = '20261119-emergency-pharmacies'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
