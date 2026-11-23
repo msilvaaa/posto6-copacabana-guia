@@ -308,3 +308,16 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 /* Keep the fort and its Colombo cafe links side by side. */
 .fort-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
 .native-card .fort-links+p.native-description { margin-top:-6px; }
+
+/* Place the fort heading and artwork directly above its related links. */
+.activities-chapter .native-card:has(.fort-links) { display:grid; grid-template-columns:76px minmax(0,1fr); gap:4px 14px; }
+.activities-chapter .native-card:has(.fort-links) .native-card-heading,
+.activities-chapter .native-card:has(.fort-links) .native-heading-text { display:contents; }
+.activities-chapter .native-card:has(.fort-links) .activity-weather-container { grid-column:1 / -1; grid-row:1; justify-self:end; margin-left:0; }
+.activities-chapter .native-card:has(.fort-links) .native-icon { grid-column:1; grid-row:2 / span 2; }
+.activities-chapter .native-card:has(.fort-links) .native-heading-text>h2 { grid-column:2; grid-row:2; align-self:end; }
+.activities-chapter .native-card:has(.fort-links) .native-card-copy { grid-column:2; grid-row:3; padding-left:0; }
+@media(max-width:760px) {
+ .activities-chapter .native-card:has(.fort-links) .native-icon { grid-row:2; }
+ .activities-chapter .native-card:has(.fort-links) .native-card-copy { grid-column:1 / -1; }
+}
