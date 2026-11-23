@@ -1,0 +1,26 @@
+{
+  "location": "Copacabana, Rio de Janeiro",
+  "latitude": -22.9842,
+  "longitude": -43.1918,
+  "timezone": "America/Sao_Paulo",
+  "provider": "wttr.in",
+  "source": "https://wttr.in/-22.9842,-43.1918?format=j1",
+  "updated_at": "2026-11-23T12:26:25.791112+00:00",
+  "days": [
+    {
+      "date": "2026-11-23",
+      "sunrise": "2026-11-23T04:59-03:00",
+      "sunset": "2026-11-23T18:19-03:00"
+    },
+    {
+      "date": "2026-11-24",
+      "sunrise": "2026-11-24T04:59-03:00",
+      "sunset": "2026-11-24T18:20-03:00"
+    },
+    {
+      "date": "2026-11-25",
+      "sunrise": "2026-11-25T04:58-03:00",
+      "sunset": "2026-11-25T18:21-03:00"
+    }
+  ]
+}

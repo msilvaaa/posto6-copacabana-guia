@@ -4,6 +4,8 @@ on:
   schedule:
     # Airbnb: 06:23 and 18:23 in Fortaleza (UTC-3).
     - cron: '23 9,21 * * *'
+    # Tomorrow's sun times: every day at20:13 in Rio (UTC-3).
+    - cron: '13 23 * * *'
     # Forecast: every three hours.
     - cron: '23 */3 * * *'
   workflow_dispatch:
@@ -34,11 +36,15 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '23 */3 * * *'
         continue-on-error: true
         run: python scripts/sync-weather.py
+      - name: Prepare tomorrow's sunrise and sunset for Copacabana
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '13 23 * * *'
+        continue-on-error: true
+        run: python scripts/sync-sun-times.py
       - name: Rebuild translated pages
         run: python scripts/build-covers.py
       - name: Save only changed rating and generated pages
         run: |
-          git add data/weather.json data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html pt/comodidades/index.html en/amenities/index.html en/comodidades/index.html es/comodidades/index.html
+          git add data/sun-times.json data/weather.json data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html pt/comodidades/index.html en/amenities/index.html en/comodidades/index.html es/comodidades/index.html
           if git diff --cached --quiet; then
             exit 0
           fi

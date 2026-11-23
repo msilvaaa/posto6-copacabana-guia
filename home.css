@@ -162,3 +162,12 @@ html[data-theme="dark"] .home-cover-hero>.theme-toggle:hover { background:#333; 
 }
 
 @media(min-width:1101px) { .home-cover-heading-row .home-cover-nav a { font-size:var(--cover-index-font-size,14px); } }
+
+/* Compact local sunrise/sunset times; keep the approved cover composition. */
+.cover-sun-times { display:flex; flex-wrap:wrap; gap:6px 18px; width:fit-content; max-width:100%; margin-top:10px; padding:5px 8px; border-radius:6px; background:#ffffffd9; color:#173f45; font:400 12px/1.4 Arial,Helvetica,sans-serif; }
+.cover-sun-event { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+.cover-sun-event svg { flex:0 0 16px; color:#ba6c00; }
+.cover-sun-event time { font-weight:600; font-variant-numeric:tabular-nums; }
+@media(max-width:700px) { .cover-sun-times { font-size:11px; gap:5px 12px; } }
+html[data-theme="dark"] .cover-sun-times { background:#121212e8; color:#fff; }
+html[data-theme="dark"] .cover-sun-event svg { color:#ffbf60; }
