@@ -266,3 +266,11 @@
 
 /* Match the check mark visible width to the narrower luggage illustration. */
 .native-icon.checkout-check>svg { width:64.3%; height:64.3%; }
+
+/* Activities reuses the cover's symbols-only local sunrise/sunset display. */
+.activity-weather-container .cover-sun-times { display:flex; flex-wrap:wrap; gap:6px 12px; width:fit-content; max-width:100%; margin:0; padding:2px 10px 0; background:transparent; color:#000; font:400 12px/1.4 Arial,Helvetica,sans-serif; }
+.activity-weather-container .cover-sun-event { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+.activity-weather-container .cover-sun-event svg { flex:0 0 16px; color:inherit; }
+.activity-weather-container .cover-sun-event time { font-weight:600; font-variant-numeric:tabular-nums; }
+.activity-weather-container .cover-sun-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#fff; }
