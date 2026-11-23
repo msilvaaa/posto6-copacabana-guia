@@ -253,8 +253,8 @@ def build_native(page, content, upgrades, photos):
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
                     nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
                 else:
-                    nodes.append(f'<p>{text}</p>')
-                    descriptions.append(f'<p>{text}</p>')
+                    nodes.append(f'<p class="native-description">{text}</p>')
+                    descriptions.append(f'<p class="native-description">{text}</p>')
             if page['image']['src'].endswith('-14.jpg') and section_index == 3:
                 nodes = ['<div class="pharmacy-links">' + ''.join([nodes[0], nodes[2], nodes[1]]) + '</div>']
             if page['image']['src'].endswith('-10.jpg') and section_index == 0:
@@ -368,6 +368,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261119-checkout-compact-check'
+    native_style += '-description-copy'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
