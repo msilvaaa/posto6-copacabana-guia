@@ -304,3 +304,7 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 /* Use the Activities description style consistently for place and service notes. */
 .native-card p.native-description { margin:0 0 6px; font:400 12px/1.45 Arial,Helvetica,sans-serif; }
 .native-card .native-link+p.native-description { margin-top:-6px; }
+
+/* Keep the fort and its Colombo cafe links side by side. */
+.fort-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
+.native-card .fort-links+p.native-description { margin-top:-6px; }
