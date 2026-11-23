@@ -98,6 +98,28 @@ def theme_toggle(lang):
  return f'<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="{label}" title="{label}"><span data-theme-symbol aria-hidden="true">☾</span></button>'
 
 
+def sun_times(lang):
+ from datetime import datetime
+ from zoneinfo import ZoneInfo
+ path=Path(__file__).resolve().parents[1]/'data/sun-times.json'
+ data=json.loads(path.read_text()) if path.exists() else {'days':[]}
+ today=datetime.now(ZoneInfo('America/Sao_Paulo')).date().isoformat()
+ day=next((row for row in data['days'] if row['date']==today),{})
+ labels={'pt':('Nascer do sol','Pôr do sol','Horários de hoje em Copacabana, no fuso do Rio de Janeiro'),
+         'en':('Sunrise','Sunset',"Today's times in Copacabana, Rio de Janeiro time"),
+         'es':('Amanecer','Atardecer','Horarios de hoy en Copacabana, hora de Río de Janeiro')}[lang]
+ def entry(key,label):
+  stamp=day.get(key,'');time=stamp[11:16] if stamp else '—'
+  arrow='m9 10 3-3 3 3M12 7v8' if key=='sunrise' else 'm9 12 3 3 3-3M12 7v8'
+  symbol=('<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'
+          '<path d="M3 19h18M5 16a7 7 0 0 1 14 0M2 13h2m16 0h2M5 5l2 2m12-2-2 2"/>'
+          f'<path d="{arrow}"/></svg>')
+  return f'<span class="cover-sun-event">{symbol}<span>{e(label)}</span><time data-sun-value="{key}" datetime="{e(stamp)}">{e(time)}</time></span>'
+ markup=f'<div class="cover-sun-times" data-sun-times aria-label="{e(labels[2])}" title="{e(labels[2])}">{entry("sunrise",labels[0])}{entry("sunset",labels[1])}</div>'
+ saved=json.dumps(data,ensure_ascii=False).replace('<',chr(92)+'u003c')
+ return markup+f'<script type="application/json" data-sun-saved>{saved}</script>'
+
+
 def utilities(lang):
  labels=LABELS[lang]
  return f'<div class="site-utilities"><button class="site-weather" type="button" data-weather-open aria-label="{labels["weather"]}"><span aria-hidden="true">{icon_3d("sun")}</span><span><b>Copacabana</b><small data-weather-summary>{labels["weather_hint"]}</small></span></button></div>'
