@@ -177,3 +177,6 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 /* Owner-selected Home H4: flat colorful house on a white circular button. */
 .site-round.guide-home,.detail-modern-home { background:#fff; color:#253747; border-color:transparent; }
 .site-round.guide-home>.home-icon,.detail-modern-home>.home-icon { display:block; width:30px; height:30px; object-fit:contain; border-radius:0; }
+
+/* Keep data-source, consultation and timezone explanations subordinate to the values. */
+:root :is(.exchange-rates>p,.local-clocks>p,.sea-conditions .sea-status,.sea-conditions .sea-note,.airport-transfers .transfer-status,.weather-content>p) { font:400 10px/1.35 Arial,Helvetica,sans-serif; margin:3px 0; }

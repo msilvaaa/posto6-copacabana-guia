@@ -376,7 +376,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
-  <link rel="stylesheet" href="/site-shell.css?v=20261119-home-h4"/>
+  <link rel="stylesheet" href="/site-shell.css?v=20261123-data-captions"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
   <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
