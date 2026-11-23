@@ -31,7 +31,8 @@
       "en": "Tourist information booth beside Posto 5 on Copacabana beach",
       "es": "Puesto de información turística junto al Posto 5, en la playa de Copacabana"
     },
-    "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16. No footer caption; original generated PNG retained in workspace."
+    "provenance": "AI-enhanced version of the photograph supplied by the host on 2026-11-16. No footer caption; original generated PNG retained in workspace.",
+    "position": "var(--information-photo-x, 30%) 50%"
   },
   "-04.jpg": {
     "src": "/assets/location/copacabana-aerial.webp",

@@ -863,56 +863,6 @@
                 }
               }
             ]
-          },
-          {
-            "title": {
-              "pt": "Agências de turismo",
-              "en": "Travel agencies",
-              "es": "Agencias de turismo"
-            },
-            "icon": "case",
-            "items": [
-              {
-                "text": {
-                  "pt": "City Rio Turismo",
-                  "en": "City Rio Turismo",
-                  "es": "City Rio Turismo"
-                },
-                "href": "https://city.rio.br/"
-              },
-              {
-                "text": {
-                  "pt": "Instagram — City Rio Turismo",
-                  "en": "Instagram — City Rio Turismo",
-                  "es": "Instagram — City Rio Turismo"
-                },
-                "href": "https://www.instagram.com/cityrioturismo/"
-              },
-              {
-                "text": {
-                  "pt": "+55 21 3066-0269",
-                  "en": "+55 21 3066-0269",
-                  "es": "+55 21 3066-0269"
-                },
-                "href": "tel:+55213066-0269"
-              },
-              {
-                "text": {
-                  "pt": "Live Rio Tour",
-                  "en": "Live Rio Tour",
-                  "es": "Live Rio Tour"
-                },
-                "href": "https://maps.app.goo.gl/zK2PxtaeeHgbK5Wu7"
-              },
-              {
-                "text": {
-                  "pt": "(21) 7847-4197",
-                  "en": "(21) 7847-4197",
-                  "es": "(21) 7847-4197"
-                },
-                "href": "tel:(21)7847-4197"
-              }
-            ]
           }
         ]
       }

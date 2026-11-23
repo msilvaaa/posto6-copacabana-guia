@@ -32,6 +32,13 @@ class NativeGuideTests(unittest.TestCase):
                 # The original Santos Dumont shortcut incorrectly led to the apartment.
                 expected.discard('https://maps.app.goo.gl/RT7GMYay3J4vLoMr9')
                 expected.add('https://maps.app.goo.gl/iq6CcoLazX9RHe7dA')
+            if page['image']['src'].endswith('-10.jpg'):
+                # The owner removed both travel agencies and their contact links.
+                expected.difference_update({
+                    'https://city.rio.br/', 'https://www.instagram.com/cityrioturismo/',
+                    'tel:+55213066-0269', 'https://maps.app.goo.gl/zK2PxtaeeHgbK5Wu7',
+                    'tel:(21)7847-4197',
+                })
             with self.subTest(page=page['path']):
                 self.assertTrue(expected <= parser.destinations)
 

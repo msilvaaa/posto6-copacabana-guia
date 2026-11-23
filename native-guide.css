@@ -297,3 +297,6 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
  .information-services .native-card-heading { flex-direction:column; align-items:flex-start; gap:8px; }
  .information-services .native-card-copy { padding-left:0; }
 }
+
+/* Keep the information booth centered when the left photo column is narrow. */
+@media(min-width:761px) and (max-width:1200px) { .native-photo>img[src="/assets/information/tourist-information-enhanced.webp"] { --information-photo-x:50%; } }
