@@ -7,7 +7,7 @@ from guide_icons_3d import icon_3d
 
 def sharp_symbol(name, paths):
     return icon_3d(name)
-from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon, app_icon
+from site_components import LABELS, toolbar, pagination, whatsapp, dialogs, page_title, utilities, telephone_icon, app_icon, sun_times
 
 ORIGINAL_ART = json.loads((Path(__file__).resolve().parents[1] / 'data/guide-original-art.json').read_text())
 
@@ -321,7 +321,7 @@ def build_native(page, content, upgrades, photos):
                 heading = f'<h2 class="samu-heading">{e(section["title"][lang])}<span class="service-hours">{icon("clock")}{hours}</span></h2>'
 
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
-                weather = utilities(lang).replace('class="site-utilities"', 'class="activity-weather-container"')
+                weather = utilities(lang).replace('class="site-utilities"', 'class="activity-weather-container"').replace('</div>', sun_times(lang)+'</div>', 1)
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
             airport = page['image']['src'].endswith('-04.jpg') and section_index==2
             card_class = ' airport-card' if airport else ''
@@ -359,8 +359,9 @@ def build_native(page, content, upgrades, photos):
         chapters.append(f'<section class="native-chapter{ " activities-chapter" if page["image"]["src"].endswith("-09.jpg") else "" }"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
+    sun_script = '\n  <script src="/sun-times.js?v=20261123-1" defer></script>' if page['image']['src'].endswith('-09.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
-    native_style = '20261119-activities-descriptions-12' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-18' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
+    native_style = '20261123-activities-sun-times' if page['image']['src'].endswith('-09.jpg') else '20261119-telephone-18' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
@@ -375,7 +376,7 @@ def build_native(page, content, upgrades, photos):
   <link rel="stylesheet" href="/site-shell.css?v=20261119-home-h4"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
-  <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}
+  <script src="/site.js?v=20261119-option6" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
