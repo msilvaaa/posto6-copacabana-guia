@@ -32,6 +32,9 @@ class NativeGuideTests(unittest.TestCase):
                 # The original Santos Dumont shortcut incorrectly led to the apartment.
                 expected.discard('https://maps.app.goo.gl/RT7GMYay3J4vLoMr9')
                 expected.add('https://maps.app.goo.gl/iq6CcoLazX9RHe7dA')
+            if page['image']['src'].endswith('-09.jpg'):
+                # Keep only the first Sugarloaf destination, as requested by the owner.
+                expected.discard('https://maps.app.goo.gl/imZYbmEEZMEBJauH9')
             if page['image']['src'].endswith('-10.jpg'):
                 # The owner removed both travel agencies and their contact links.
                 expected.difference_update({
