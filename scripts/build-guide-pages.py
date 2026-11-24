@@ -5,6 +5,7 @@ from pathlib import Path
 from guide_native import build_native
 from amenity_native import build_detail
 from activities_topics import render as render_activities, url as activities_url
+from chapter_topics import TOPICS, render as render_topics, topic_url
 ROOT=Path(__file__).resolve().parents[1]
 def build():
  pages=json.loads((ROOT/'data/guide-pages.json').read_text())
@@ -26,6 +27,13 @@ def build():
    secondary.parent.mkdir(parents=True,exist_ok=True)
    secondary.write_text(render_activities(output,lang,1));count+=1
    output=render_activities(output,lang)
+  topic_key=next((key for key in TOPICS if page['image']['src'].endswith(key)),None)
+  if topic_key:
+   for topic in range(1,len(TOPICS[topic_key][page['lang']][0])):
+    destination=ROOT/topic_url(page,topic).lstrip('/')/'index.html'
+    destination.parent.mkdir(parents=True,exist_ok=True)
+    destination.write_text(render_topics(output,page,topic));count+=1
+   output=render_topics(output,page)
   (ROOT/page['path']).write_text(output);count+=1
  print(f'Generated {count} native guide routes.')
 if __name__=='__main__':build()

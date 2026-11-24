@@ -214,29 +214,7 @@
               "es": "Cómo llegar"
             },
             "icon": "transport",
-            "items": [
-              {
-                "text": {
-                  "pt": "Uber: estimativa de R$ 60 a R$ 80, conforme o horário e o trânsito.",
-                  "en": "Uber: estimated R$60–R$80, depending on time and traffic.",
-                  "es": "Uber: entre R$60 y R$80 estimados, según el horario y el tráfico."
-                }
-              },
-              {
-                "text": {
-                  "pt": "Ônibus executivo 2024 — Leblon (Intersul): R$ 25, valor do guia. Embarque no portão C, à direita do desembarque nacional.",
-                  "en": "Executive bus 2024 to Leblon (Intersul): listed fare R$25. Board at gate C, right of domestic arrivals.",
-                  "es": "Autobús ejecutivo 2024 a Leblon (Intersul): tarifa indicada R$25. Embarque en la puerta C, a la derecha de llegadas nacionales."
-                }
-              },
-              {
-                "text": {
-                  "pt": "Táxi pelo app Taxi.Rio. Estimativa: R$ 80 a R$ 120. Pague ao motorista em dinheiro ou cartão.",
-                  "en": "Book a taxi through Taxi.Rio. Estimated fare: R$80–R$120. Pay the driver by cash or card.",
-                  "es": "Pide un taxi por Taxi.Rio. Coste estimado: R$80–R$120. Paga al conductor en efectivo o con tarjeta."
-                }
-              }
-            ]
+            "items": []
           },
           {
             "title": {
