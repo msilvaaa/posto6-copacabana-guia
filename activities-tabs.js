@@ -12,6 +12,7 @@
    if (active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
    panels[i].hidden=!active;
   });
+  for (const photo of document.querySelectorAll('[data-topic-photo]')) photo.hidden=Number(photo.dataset.topicPhoto)!==index;
   for (const flag of document.querySelectorAll('.guide-flag')) {
    const destination=flag.getAttribute('data-activities-path-'+index);
    if (destination) flag.href=destination;
