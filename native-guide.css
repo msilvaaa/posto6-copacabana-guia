@@ -324,3 +324,10 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 
 /* Keep the two Smart Fit locations side by side. */
 .gym-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
+
+/* Align descriptions with the reference text, using smaller bold type. */
+:root .native-card p.native-description { font:700 11px/1.4 Arial,Helvetica,sans-serif; text-align:left; padding-inline-start:0; }
+:root .native-card .native-link+p.native-description { padding-inline-start:4px; }
+:root .native-card .native-link:has(>svg)+p.native-description { padding-inline-start:29px; }
+:root .native-card .native-link:has(>.app-link-icon,>.telephone-icon)+p.native-description { padding-inline-start:30px; }
+:root .native-card :is(.fort-links,.bike-links,.gym-links)+p.native-description { padding-inline-start:29px; }

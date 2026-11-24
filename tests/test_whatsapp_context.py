@@ -27,6 +27,11 @@ class WhatsAppContextTests(unittest.TestCase):
         self.assertEqual(whatsapp_message('en', '/en/amenities/'),
                          whatsapp_message('en', '/en/comodidades/'))
 
+    def test_activity_topics_keep_the_activity_context(self):
+        for lang,route in [('pt','atividades/esportes'),('en','activities/sport'),('es','actividades/deporte')]:
+            self.assertEqual(whatsapp_message(lang, f'/{lang}/{route}/'),
+                             whatsapp_message(lang, f'/{lang}/activities/'))
+
     def test_rendered_links_cover_every_route_without_falling_back_to_booking(self):
         for lang in ['pt', 'en', 'es']:
             for page in (ROOT / lang).rglob('index.html'):
