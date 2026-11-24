@@ -357,7 +357,7 @@ def build_native(page, content, upgrades, photos):
                          '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
-        if index==0 and page['image']['src'].endswith('-14.jpg'):
+        if index==0 and page['image']['src'].endswith('-09.jpg'):
             top+=sea_conditions(lang)
         if index==0 and page['image']['src'].endswith('-05.jpg'):
             top+=f'<div class="native-wifi-access">{wifi_access(lang,page["image"]["src"])}</div>'
@@ -368,7 +368,7 @@ def build_native(page, content, upgrades, photos):
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sun_script = '\n  <script src="/sun-times.js?v=20261123-1" defer></script>' if page['image']['src'].endswith('-09.jpg') else ''
-    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-14.jpg') else ''
+    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-09.jpg') else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
