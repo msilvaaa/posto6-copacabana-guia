@@ -42,6 +42,8 @@ class NativeGuideTests(unittest.TestCase):
                 # The owner supplied the updated Santander branch destination.
                 expected.discard('https://maps.app.goo.gl/4mU4g6BEkhpWK7eL9')
                 expected.add('https://maps.app.goo.gl/CCuLTKmBoQ9qnmY48')
+                expected.discard('https://maps.app.goo.gl/NcpfUoFF1y3YV8wv7')
+                expected.add('https://maps.app.goo.gl/7YdxqCtYtB85HQ739')
                 # The owner removed both travel agencies and their contact links.
                 expected.difference_update({
                     'https://city.rio.br/', 'https://www.instagram.com/cityrioturismo/',
