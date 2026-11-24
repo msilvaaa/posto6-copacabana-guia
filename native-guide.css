@@ -321,3 +321,6 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
  .activities-chapter .native-card:has(.fort-links) .native-icon { grid-row:2; }
  .activities-chapter .native-card:has(.fort-links) .native-card-copy { grid-column:1 / -1; }
 }
+
+/* Keep the two Smart Fit locations side by side. */
+.gym-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
