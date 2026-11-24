@@ -120,7 +120,7 @@ def sun_times(lang):
   return f'<span class="cover-sun-event" title="" data-sun-tooltip="{e(label)}" tabindex="0" aria-label="{e(label)}">{symbol}<span class="cover-sun-label">{e(label)}</span><time data-sun-value="{key}" datetime="{e(stamp)}">{e(time)}</time></span>'
  markup=f'<div class="cover-sun-times" data-sun-times aria-label="{e(labels[2])}" title="{e(labels[2])}">{entry("sunrise",labels[0])}{entry("sunset",labels[1])}</div>'
  saved=json.dumps(data,ensure_ascii=False).replace('<',chr(92)+'u003c')
- return '<link rel="stylesheet" href="/sun-times.css?v=20261124-1"/>'+markup+f'<script type="application/json" data-sun-saved>{saved}</script>'
+ return '<link rel="stylesheet" href="/sun-times.css?v=20261124-2"/>'+markup+f'<script type="application/json" data-sun-saved>{saved}</script>'
 
 
 def utilities(lang):
