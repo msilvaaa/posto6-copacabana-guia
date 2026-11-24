@@ -191,9 +191,9 @@ def sea_conditions(lang):
 
 def local_clocks(lang):
     labels = {
-        'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Singapura — Singapura', 'Reino Unido — Londres'], 'Fusos e horário de verão ajustados automaticamente para as cidades indicadas.'),
-        'en': ('Local times', ['Brazil — Brasília', 'USA — Washington, D.C.', 'Italy — Rome', 'Argentina — Buenos Aires', 'Singapore — Singapore', 'United Kingdom — London'], 'Time zones and daylight saving time adjust automatically for the cities shown.'),
-        'es': ('Horas locales', ['Brasil — Brasilia', 'EE. UU. — Washington, D. C.', 'Italia — Roma', 'Argentina — Buenos Aires', 'Singapur — Singapur', 'Reino Unido — Londres'], 'Las zonas horarias y el horario de verano se ajustan automáticamente para las ciudades indicadas.'),
+        'pt': ('Horários locais', ['Brasil — Brasília', 'EUA — Washington, D.C.', 'Itália — Roma', 'Argentina — Buenos Aires', 'Singapura — Singapura', 'Reino Unido — Londres'], 'Ajuste automático de fuso e horário de verão por cidade.'),
+        'en': ('Local times', ['Brazil — Brasília', 'USA — Washington, D.C.', 'Italy — Rome', 'Argentina — Buenos Aires', 'Singapore — Singapore', 'United Kingdom — London'], 'Time zones and daylight saving adjust automatically by city.'),
+        'es': ('Horas locales', ['Brasil — Brasilia', 'EE. UU. — Washington, D. C.', 'Italia — Roma', 'Argentina — Buenos Aires', 'Singapur — Singapur', 'Reino Unido — Londres'], 'Zona horaria y horario de verano ajustados automáticamente por ciudad.'),
     }
     heading, cities, note = labels[lang]
     zones = ['America/Sao_Paulo', 'America/New_York', 'Europe/Rome', 'America/Argentina/Buenos_Aires', 'Asia/Singapore', 'Europe/London']
@@ -219,9 +219,9 @@ def airport_transfers(lang):
 
 def exchange_rates(lang):
     labels = {
-        'pt': ('Cotações', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real'], 'Referências para turismo: dólar turismo; demais moedas, compra comercial. Base: US$ 1. IOF e tarifas podem variar.', 'Carregando cotações…', 'Fonte'),
-        'en': ('Exchange rates', ['Tourist US dollar', 'Argentine peso', 'Euro', 'Brazilian real'], 'Travel references: tourist dollar; other currencies use market buy rates. Base: US$ 1. Taxes and fees may vary.', 'Loading exchange rates…', 'Source'),
-        'es': ('Cotizaciones', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real brasileño'], 'Referencias para turismo: dólar turismo; demás monedas, compra comercial. Base: US$ 1. Los impuestos y las comisiones pueden variar.', 'Cargando cotizaciones…', 'Fuente'),
+        'pt': ('Cotações', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real'], 'Base: US$ 1. Dólar turismo; demais moedas pela cotação de compra comercial. IOF e tarifas podem variar.', 'Carregando cotações…', 'Fonte'),
+        'en': ('Exchange rates', ['Tourist US dollar', 'Argentine peso', 'Euro', 'Brazilian real'], 'Base: US$ 1. Tourist dollar; other currencies use commercial buy rates. Taxes and fees may vary.', 'Loading exchange rates…', 'Source'),
+        'es': ('Cotizaciones', ['Dólar turismo', 'Peso argentino', 'Euro', 'Real brasileño'], 'Base: US$ 1. Dólar turismo; otras monedas con cotización de compra comercial. Impuestos y comisiones pueden variar.', 'Cargando cotizaciones…', 'Fuente'),
     }
     heading, names, note, loading, source = labels[lang]
     ids = ['usd-tourism', 'ars', 'eur', 'brl']
