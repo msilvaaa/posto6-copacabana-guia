@@ -19,7 +19,7 @@ html[data-theme="dark"] .activities-topic-tabs>a[aria-selected="true"] { backgro
 
 .activities-agency-links { display:grid; grid-template-columns:repeat(2,minmax(0,max-content)); gap:0 12px; }
 
-.activities-chapter .native-photo>[data-topic-photo][hidden] { display:none!important; }
+:is(.activities-chapter,.guide-topic-chapter) .native-photo>[data-topic-photo][hidden] { display:none!important; }
 
 /* Tone down the stadium display without resampling or reconstructing the photograph. */
 .activities-chapter .native-photo>[data-topic-photo="0"] { filter:saturate(.72) contrast(.96); }

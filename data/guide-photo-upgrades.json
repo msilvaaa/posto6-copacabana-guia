@@ -133,6 +133,20 @@
       "en": "Inside Boteco Boa Praça, with wooden tables and ceiling nets",
       "es": "Interior del Boteco Boa Praça, con mesas de madera y redes en el techo"
     },
-    "provenance": "Conservative photographic enhancement of the image supplied by the host on 2026-11-24, using the image editing tool."
+    "provenance": "Conservative photographic enhancement of the image supplied by the host on 2026-11-24, using the image editing tool.",
+    "topic_photos": {
+      "1": {
+        "src": "/assets/cafes/breakfast-copacabana-enhanced.png",
+        "width": 1127,
+        "height": 1396,
+        "position": "50% 50%",
+        "alt": {
+          "pt": "Café da manhã à beira-mar, com vista para Copacabana e o Pão de Açúcar",
+          "en": "Breakfast by the sea, overlooking Copacabana and Sugarloaf Mountain",
+          "es": "Desayuno junto al mar, con vistas a Copacabana y al Pan de Azúcar"
+        },
+        "provenance": "Conservative photographic enhancement of the breakfast image supplied by the host on 2026-11-24 using the image editing tool."
+      }
+    }
   }
 }
