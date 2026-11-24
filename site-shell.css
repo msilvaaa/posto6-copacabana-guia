@@ -183,3 +183,24 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 
 /* Center the small explanatory captions within their content areas. */
 :root :is(.native-card p.native-description,.exchange-rates>p,.local-clocks>p,.sea-conditions .sea-status,.sea-conditions .sea-note,.airport-transfers .transfer-status,.weather-content>p,.technical-reference figcaption,.photo-grid figcaption) { text-align:center; }
+
+/* Keep language controls anchored independently of page length and tab content. */
+body.native-guide .native-toolbar .site-toolbar,
+body.content-page .site-controls .site-toolbar {
+ position:fixed; top:max(16px,env(safe-area-inset-top)); right:0; left:auto;
+ display:flex; align-items:flex-start; justify-content:center; gap:16px;
+ width:50%; height:58px; margin:0; z-index:90;
+}
+body.home-page .main-html-topbar {
+ position:fixed; top:max(16px,env(safe-area-inset-top)); right:0; left:auto;
+ display:flex; align-items:flex-start; justify-content:center; gap:16px;
+ width:30%; height:58px; z-index:90;
+}
+@media(max-width:1100px) {
+ body.home-page .main-html-topbar { width:100%; }
+}
+@media(max-width:760px) {
+ body.native-guide .native-toolbar .site-toolbar,
+ body.content-page .site-controls .site-toolbar { width:100%; }
+ body.native-guide .native-toolbar { min-height:0; height:0; margin:0; }
+}
