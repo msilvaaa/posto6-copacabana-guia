@@ -28,7 +28,8 @@ WHATSAPP_GUEST_MESSAGES = {
 def whatsapp_topic_key(context):
  if not context:return None
  parts=str(context).strip('/').split('/')
- if len(parts)>1 and parts[1] in {'atividades','activities','actividades'}:return 'atividades'
+ if len(parts)>1 and parts[1] in {'atividades','activities','actividades','restaurantes','restaurants','bares','bars','verja','estabelecimentos','establishments','establecimientos'}:
+  return WHATSAPP_CONTEXT['aliases'].get(parts[1],parts[1])
  slug=str(context).strip('/').removesuffix('index.html').strip('/').split('/')[-1]
  if slug in LABELS:return None
  return WHATSAPP_CONTEXT['aliases'].get(slug,slug)

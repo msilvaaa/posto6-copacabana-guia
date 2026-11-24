@@ -237,6 +237,7 @@ def build_native(page, content, upgrades, photos):
     for index, chapter in enumerate(content['chapters']):
         parts = []
         for section_index, section in enumerate(chapter['sections']):
+            if not section['items']:continue
             if page['image']['src'].endswith('-05.jpg') and section_index<2:
                 accessible=' '.join(e(item['text'][lang]) for item in section['items'])
                 parts.append(f'<section class="native-card native-wifi-accessible"><h2>{e(section["title"][lang])}</h2><p>{accessible}</p></section>')
