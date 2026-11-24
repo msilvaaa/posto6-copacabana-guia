@@ -26,3 +26,7 @@ html[data-theme="dark"] .activities-topic-tabs>a[aria-selected="true"] { backgro
 
 /* Reuse the approved topic controls for dining and shopping chapters. */
 .guide-topic-chapter .activities-topic-tabs>a { min-width:0; overflow-wrap:anywhere; }
+
+/* Reserve scrollbar space so changing topic cannot resize the photo column. */
+.native-guide .site-reading:has(>.activities-chapter) { scrollbar-gutter:stable; }
+.activities-chapter .native-photo>[data-topic-photo] { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }

@@ -79,6 +79,6 @@ def render(source,page,index=0):
   flag.attrs['href']=topic_url(translated[lang],index)
   for i in range(len(labels)):flag.attrs[f'data-activities-path-{i}']=topic_url(translated[lang],i)
  head=doc.all(lambda n:n.tag=='head')[0]
- head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-9'}))
- head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-9','defer':None}))
+ head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-10'}))
+ head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-10','defer':None}))
  return doc.html()
