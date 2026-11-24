@@ -127,16 +127,16 @@
             "items": [
               {
                 "text": {
-                  "pt": "O edifício possui porteiros 24 horas, todos os dias. Há duas entradas na esquina das ruas Raul Pompéia e Júlio de Castilhos, uma em cada rua. Pressione a campainha em uma das portas para entrar.",
-                  "en": "The building has doormen 24 hours a day. There are two entrances at the corner of Raul Pompéia and Júlio de Castilhos streets, one on each street. Ring either doorbell to enter.",
-                  "es": "El edificio cuenta con porteros las 24 horas. Hay dos entradas en la esquina de las calles Raul Pompéia y Júlio de Castilhos, una en cada calle. Pulsa el timbre de cualquiera de las puertas para entrar."
+                  "pt": "Portaria 24 horas. Duas entradas na esquina: uma na Rua Raul Pompéia e outra na Júlio de Castilhos. Toque uma das campainhas para entrar.",
+                  "en": "24-hour doormen. Two entrances at the corner: one on Raul Pompéia and one on Júlio de Castilhos. Ring either doorbell to enter.",
+                  "es": "Portería las 24 horas. Dos entradas en la esquina: una por Raul Pompéia y otra por Júlio de Castilhos. Toca cualquiera de los timbres para entrar."
                 }
               },
               {
                 "text": {
-                  "pt": "O código da porta será enviado por WhatsApp até 48 horas antes da data do check-in.",
-                  "en": "The door code will be sent by WhatsApp up to 48 hours before your check-in date.",
-                  "es": "El código de la puerta se enviará por WhatsApp hasta 48 horas antes de la fecha de check-in."
+                  "pt": "Você receberá o código da porta por WhatsApp até 48 horas antes do check-in.",
+                  "en": "You will receive the door code by WhatsApp up to 48 hours before check-in.",
+                  "es": "Recibirás el código de la puerta por WhatsApp hasta 48 horas antes del check-in."
                 }
               }
             ]
@@ -217,23 +217,23 @@
             "items": [
               {
                 "text": {
-                  "pt": "Uber: custo estimado entre R$ 60 e R$ 80, conforme o horário e o trânsito.",
-                  "en": "Uber: estimated cost R$60–R$80, depending on time and traffic.",
-                  "es": "Uber: coste estimado entre R$60 y R$80, según el horario y el tráfico."
+                  "pt": "Uber: estimativa de R$ 60 a R$ 80, conforme o horário e o trânsito.",
+                  "en": "Uber: estimated R$60–R$80, depending on time and traffic.",
+                  "es": "Uber: entre R$60 y R$80 estimados, según el horario y el tráfico."
                 }
               },
               {
                 "text": {
-                  "pt": "Ônibus executivo: portão C, à direita do desembarque nacional. Linha 2024 Leblon (Intersul), valor indicado de R$ 25.",
-                  "en": "Executive bus: gate C, to the right of domestic arrivals. Line 2024 Leblon (Intersul), listed fare R$25.",
-                  "es": "Autobús ejecutivo: puerta C, a la derecha de llegadas nacionales. Línea 2024 Leblon (Intersul), tarifa indicada de R$25."
+                  "pt": "Ônibus executivo 2024 — Leblon (Intersul): R$ 25, valor do guia. Embarque no portão C, à direita do desembarque nacional.",
+                  "en": "Executive bus 2024 to Leblon (Intersul): listed fare R$25. Board at gate C, right of domestic arrivals.",
+                  "es": "Autobús ejecutivo 2024 a Leblon (Intersul): tarifa indicada R$25. Embarque en la puerta C, a la derecha de llegadas nacionales."
                 }
               },
               {
                 "text": {
-                  "pt": "Táxi: solicite pelo aplicativo Taxi.Rio. Pagamento em dinheiro ou cartão ao motorista; custo estimado de R$ 80 a R$ 120.",
-                  "en": "Taxi: request through Taxi.Rio. Pay the driver by cash or card; estimated cost R$80–R$120.",
-                  "es": "Taxi: solicita por Taxi.Rio. Paga en efectivo o con tarjeta al conductor; coste estimado de R$80 a R$120."
+                  "pt": "Táxi pelo app Taxi.Rio. Estimativa: R$ 80 a R$ 120. Pague ao motorista em dinheiro ou cartão.",
+                  "en": "Book a taxi through Taxi.Rio. Estimated fare: R$80–R$120. Pay the driver by cash or card.",
+                  "es": "Pide un taxi por Taxi.Rio. Coste estimado: R$80–R$120. Paga al conductor en efectivo o con tarjeta."
                 }
               }
             ]
@@ -331,9 +331,9 @@
               },
               {
                 "text": {
-                  "pt": "Entre em contato comigo para verificar com o provedor se há indisponibilidade no serviço.",
-                  "en": "Contact me so I can check with the provider for a service outage.",
-                  "es": "Ponte en contacto conmigo para que pueda consultar al proveedor si hay una interrupción del servicio."
+                  "pt": "Avise-me para eu verificar com o provedor se há falha no serviço.",
+                  "en": "Contact me; I will check with the provider for a service outage.",
+                  "es": "Avísame para consultar al proveedor si hay una interrupción del servicio."
                 }
               }
             ]
@@ -546,15 +546,15 @@
             "items": [
               {
                 "text": {
-                  "pt": "Galeão (GIG): siga em direção ao desembarque doméstico e às placas de Uber no estacionamento Administrativo.",
-                  "en": "Galeão (GIG): head towards domestic arrivals and follow the Uber signs to the Administrative parking area.",
-                  "es": "Galeão (GIG): dirígete a llegadas nacionales y sigue las señales de Uber al estacionamiento Administrativo."
+                  "pt": "Galeão (GIG): vá ao desembarque doméstico e siga as placas da Uber até o estacionamento Administrativo.",
+                  "en": "Galeão (GIG): go to domestic arrivals, then follow Uber signs to the Administrative parking area.",
+                  "es": "Galeão (GIG): ve a llegadas nacionales y sigue las señales de Uber hasta el estacionamiento Administrativo."
                 }
               },
               {
                 "text": {
-                  "pt": "Santos Dumont (SDU): siga as placas em direção ao Shopping Bossa Nova Mall.",
-                  "en": "Santos Dumont (SDU): follow the signs towards Bossa Nova Mall.",
+                  "pt": "Santos Dumont (SDU): siga as placas para o Shopping Bossa Nova Mall.",
+                  "en": "Santos Dumont (SDU): follow signs to Bossa Nova Mall.",
                   "es": "Santos Dumont (SDU): sigue las señales hacia Bossa Nova Mall."
                 }
               }
@@ -609,9 +609,9 @@
               },
               {
                 "text": {
-                  "pt": "Entrada gratuita às terças-feiras, exceto feriados. Valores indicados no guia: R$ 10 (inteira) e R$ 5 (meia-entrada). Pagamento apenas em dinheiro.",
-                  "en": "Free entry on Tuesdays, except holidays. Listed admission: R$10 (full price) and R$5 (reduced). Cash payment only.",
-                  "es": "Entrada gratuita los martes, excepto festivos. Precios indicados en la guía: R$10 (general) y R$5 (reducida). Pago solo en efectivo."
+                  "pt": "Grátis às terças, exceto feriados. Valores do guia: R$ 10 (inteira) e R$ 5 (meia-entrada). Só dinheiro.",
+                  "en": "Free on Tuesdays, except holidays. Guide prices: R$10 (full) and R$5 (reduced). Cash only.",
+                  "es": "Gratis los martes, excepto festivos. Precios de referencia: R$10 (general) y R$5 (reducida). Solo efectivo."
                 }
               }
             ]
@@ -634,9 +634,9 @@
               },
               {
                 "text": {
-                  "pt": "Segunda a domingo: 8h30 às 20h. Valores indicados: adultos R$ 85 e crianças R$ 42. Pagamento on-line, cartão, PIX e dinheiro.",
-                  "en": "Monday–Sunday: 8:30 am–8 pm. Listed admission: adults R$85, children R$42. Online, card, PIX and cash payments.",
-                  "es": "Lunes a domingo: de 8:30 a 20:00. Precios indicados: adultos R$85 y niños R$42. Pago en línea, tarjeta, PIX y efectivo."
+                  "pt": "Todos os dias, das 8h30 às 20h. Valores do guia: R$ 85 (adultos) e R$ 42 (crianças). Pagamento: on-line, cartão, Pix ou dinheiro.",
+                  "en": "Daily, 8:30 am–8 pm. Guide prices: R$85 (adults), R$42 (children). Pay online, by card, PIX or cash.",
+                  "es": "Todos los días, de 8:30 a 20:00. Precios de referencia: R$85 (adultos), R$42 (niños). Pago en línea, con tarjeta, PIX o efectivo."
                 }
               }
             ]
@@ -716,9 +716,9 @@
               },
               {
                 "text": {
-                  "pt": "Essas academias aceitam pagamentos diários.",
-                  "en": "These gyms accept payment for day passes.",
-                  "es": "Estos gimnasios aceptan pagos diarios."
+                  "pt": "Essas academias oferecem acesso por diária.",
+                  "en": "Day passes are available at these gyms.",
+                  "es": "Estos gimnasios ofrecen pases diarios."
                 }
               }
             ]
@@ -806,9 +806,9 @@
               },
               {
                 "text": {
-                  "pt": "Segunda a sábado: 9h às 21h. Domingo: 14h às 18h.",
+                  "pt": "Segunda a sábado: 9h–21h. Domingo: 14h–18h.",
                   "en": "Monday–Saturday: 9 am–9 pm. Sunday: 2 pm–6 pm.",
-                  "es": "Lunes a sábado: de 9:00 a 21:00. Domingo: de 14:00 a 18:00."
+                  "es": "Lunes a sábado: 9:00–21:00. Domingo: 14:00–18:00."
                 }
               }
             ]
@@ -1008,9 +1008,9 @@
               },
               {
                 "text": {
-                  "pt": "A 60 metros de distância.",
+                  "pt": "A 60 metros.",
                   "en": "60 metres away.",
-                  "es": "A 60 metros de distancia."
+                  "es": "A 60 metros."
                 }
               },
               {
@@ -1242,9 +1242,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Pedidos de restaurantes, farmácias e aplicativos devem ser retirados na portaria. As regras do condomínio não permitem a entrada de entregadores.",
-                  "en": "Collect restaurant, pharmacy and app deliveries at the building entrance. Building rules do not permit delivery personnel inside.",
-                  "es": "Recoge los pedidos de restaurantes, farmacias y aplicaciones en la portería. Las normas del edificio no permiten la entrada de repartidores."
+                  "pt": "Retire na portaria pedidos de restaurantes, farmácias e aplicativos. O condomínio não permite a entrada de entregadores.",
+                  "en": "Collect restaurant, pharmacy and app orders at reception. Delivery personnel may not enter the building.",
+                  "es": "Recoge en la portería los pedidos de restaurantes, farmacias y apps. No se permite la entrada de repartidores al edificio."
                 }
               }
             ]
@@ -1365,9 +1365,9 @@
               },
               {
                 "text": {
-                  "pt": "Domingos, das 8h às 14h, exceto quando a cidade recebe eventos importantes.",
+                  "pt": "Domingos: 8h–14h, exceto durante eventos importantes na cidade.",
                   "en": "Sundays, 8 am–2 pm, except during major city events.",
-                  "es": "Domingos, de 8:00 a 14:00, excepto durante grandes eventos en la ciudad."
+                  "es": "Domingos: 8:00–14:00, excepto durante grandes eventos en la ciudad."
                 }
               }
             ]
@@ -1476,9 +1476,9 @@
               },
               {
                 "text": {
-                  "pt": "Domingos, das 8h às 18h, exceto durante eventos importantes na cidade.",
+                  "pt": "Domingos: 8h–18h, exceto durante eventos importantes na cidade.",
                   "en": "Sundays, 8 am–6 pm, except during major city events.",
-                  "es": "Domingos, de 8:00 a 18:00, excepto durante grandes eventos en la ciudad."
+                  "es": "Domingos: 8:00–18:00, excepto durante grandes eventos en la ciudad."
                 }
               }
             ]
@@ -1516,9 +1516,9 @@
               },
               {
                 "text": {
-                  "pt": "Em caso de emergências e acidentes, ligue imediatamente. Atendimento 24 horas.",
-                  "en": "Call immediately in a medical emergency or accident. Available 24 hours.",
-                  "es": "En caso de emergencia médica o accidente, llama inmediatamente. Atención las 24 horas."
+                  "pt": "Emergências e acidentes: ligue imediatamente. Atendimento 24 horas.",
+                  "en": "Medical emergencies or accidents: call immediately. Available 24 hours.",
+                  "es": "Emergencias y accidentes: llama de inmediato. Atención las 24 horas."
                 }
               }
             ]
@@ -1644,9 +1644,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Se quiser sair mais tarde, entre em contato comigo para verificar a possibilidade de late check-out.",
-                  "en": "If you would like to leave later, contact me to check whether late check-out is possible.",
-                  "es": "Si quieres salir más tarde, ponte en contacto conmigo para comprobar si es posible un late check-out."
+                  "pt": "Para sair mais tarde, fale comigo e consulte a disponibilidade.",
+                  "en": "Contact me to check availability for a later check-out.",
+                  "es": "Consúltame la disponibilidad si necesitas salir más tarde."
                 }
               }
             ]
