@@ -28,6 +28,11 @@ class NativeGuideTests(unittest.TestCase):
             parser = Links()
             parser.feed((ROOT / page['path']).read_text())
             expected = {item['href'] for item in page['links']}
+            if page['image']['src'].endswith(('-09.jpg','-13.jpg')):
+                # The owner moved Colombo, breakfast venues and fairs into Bars > Cafés.
+                cafes={'pt':'pt/bares/cafes/index.html','en':'en/bars/coffee/index.html','es':'es/verja/cafes/index.html'}
+                moved=Links();moved.feed((ROOT/cafes[page['lang']]).read_text())
+                parser.destinations.update(moved.destinations)
             if page['image']['src'].endswith('-04.jpg'):
                 # The original Santos Dumont shortcut incorrectly led to the apartment.
                 expected.discard('https://maps.app.goo.gl/RT7GMYay3J4vLoMr9')

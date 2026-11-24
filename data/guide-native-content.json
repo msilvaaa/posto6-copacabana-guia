@@ -571,18 +571,6 @@
               },
               {
                 "text": {
-                  "pt": "Confeitaria Colombo",
-                  "en": "Confeitaria Colombo",
-                  "es": "Confeitaria Colombo"
-                },
-                "href": "https://maps.app.goo.gl/exM4m8DQCLWNctyCA",
-                "href_by_lang": {
-                  "en": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2",
-                  "es": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2"
-                }
-              },
-              {
-                "text": {
                   "pt": "Grátis às terças, exceto feriados. Valores do guia: R$ 10 (inteira) e R$ 5 (meia-entrada). Só dinheiro.",
                   "en": "Free on Tuesdays, except holidays. Guide prices: R$10 (full) and R$5 (reduced). Cash only.",
                   "es": "Gratis los martes, excepto festivos. Precios de referencia: R$10 (general) y R$5 (reducida). Solo efectivo."
@@ -944,6 +932,154 @@
                 "href": "https://www.instagram.com/apetitecafe.rj/"
               }
             ]
+          },
+          {
+            "title": {
+              "pt": "Confeitaria Colombo",
+              "en": "Confeitaria Colombo",
+              "es": "Confeitaria Colombo"
+            },
+            "icon": "coffee",
+            "items": [
+              {
+                "text": {
+                  "pt": "Confeitaria Colombo",
+                  "en": "Confeitaria Colombo",
+                  "es": "Confeitaria Colombo"
+                },
+                "href": "https://maps.app.goo.gl/exM4m8DQCLWNctyCA",
+                "href_by_lang": {
+                  "en": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2",
+                  "es": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Padarias",
+              "en": "Bakeries",
+              "es": "Panaderías"
+            },
+            "icon": "bread",
+            "items": [
+              {
+                "text": {
+                  "pt": "Padero",
+                  "en": "Padero",
+                  "es": "Padero"
+                },
+                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
+              },
+              {
+                "text": {
+                  "pt": "La Parisiense",
+                  "en": "La Parisiense",
+                  "es": "La Parisiense"
+                },
+                "href": "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Café da manhã",
+              "en": "Breakfast",
+              "es": "Desayuno"
+            },
+            "icon": "coffee",
+            "items": [
+              {
+                "text": {
+                  "pt": "ARP Bar",
+                  "en": "ARP Bar",
+                  "es": "ARP Bar"
+                },
+                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — ARP Bar",
+                  "en": "Instagram — ARP Bar",
+                  "es": "Instagram — ARP Bar"
+                },
+                "href": "https://www.instagram.com/arpbar/"
+              },
+              {
+                "text": {
+                  "pt": "Starbucks",
+                  "en": "Starbucks",
+                  "es": "Starbucks"
+                },
+                "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
+              },
+              {
+                "text": {
+                  "pt": "Apetite Café Copacabana",
+                  "en": "Apetite Café Copacabana",
+                  "es": "Apetite Café Copacabana"
+                },
+                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
+              },
+              {
+                "text": {
+                  "pt": "Instagram — Apetite Café",
+                  "en": "Instagram — Apetite Café",
+                  "es": "Instagram — Apetite Café"
+                },
+                "href": "https://www.instagram.com/apetitecafe.rj/"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Feira de rua",
+              "en": "Street market",
+              "es": "Mercado callejero"
+            },
+            "icon": "market",
+            "items": [
+              {
+                "text": {
+                  "pt": "Rua Rainha Elizabeth, 33",
+                  "en": "Rua Rainha Elizabeth, 33",
+                  "es": "Rua Rainha Elizabeth, 33"
+                },
+                "href": "https://maps.app.goo.gl/dGMnDWpghWgSuNSEA"
+              },
+              {
+                "text": {
+                  "pt": "Domingos: 8h–14h, exceto durante eventos importantes na cidade.",
+                  "en": "Sundays, 8 am–2 pm, except during major city events.",
+                  "es": "Domingos: 8:00–14:00, excepto durante grandes eventos en la ciudad."
+                }
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Feira de artesanato",
+              "en": "Craft fair",
+              "es": "Feria de artesanía"
+            },
+            "icon": "gift",
+            "items": [
+              {
+                "text": {
+                  "pt": "Praça General Osório",
+                  "en": "General Osório Square",
+                  "es": "Plaza General Osório"
+                },
+                "href": "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9"
+              },
+              {
+                "text": {
+                  "pt": "Domingos: 8h–18h, exceto durante eventos importantes na cidade.",
+                  "en": "Sundays, 8 am–6 pm, except during major city events.",
+                  "es": "Domingos: 8:00–18:00, excepto durante grandes eventos en la ciudad."
+                }
+              }
+            ]
           }
         ]
       }
@@ -1255,7 +1391,13 @@
                 "href": "https://maps.app.goo.gl/4oSdAEbpj1TTyMG76"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": null,
+        "tile": 1,
+        "sections": [
           {
             "title": {
               "pt": "Supermercados",
@@ -1318,142 +1460,6 @@
                   "es": "Instagram — Big Market"
                 },
                 "href": "https://www.instagram.com/redebigmarket/"
-              }
-            ]
-          },
-          {
-            "title": {
-              "pt": "Feira de rua",
-              "en": "Street market",
-              "es": "Mercado callejero"
-            },
-            "icon": "leaf",
-            "items": [
-              {
-                "text": {
-                  "pt": "Rua Rainha Elizabeth, 33",
-                  "en": "Rua Rainha Elizabeth, 33",
-                  "es": "Rua Rainha Elizabeth, 33"
-                },
-                "href": "https://maps.app.goo.gl/dGMnDWpghWgSuNSEA"
-              },
-              {
-                "text": {
-                  "pt": "Domingos: 8h–14h, exceto durante eventos importantes na cidade.",
-                  "en": "Sundays, 8 am–2 pm, except during major city events.",
-                  "es": "Domingos: 8:00–14:00, excepto durante grandes eventos en la ciudad."
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": {
-          "pt": "Café da manhã",
-          "en": "Breakfast",
-          "es": "Desayuno"
-        },
-        "tile": 1,
-        "sections": [
-          {
-            "title": {
-              "pt": "Padarias",
-              "en": "Bakeries",
-              "es": "Panaderías"
-            },
-            "icon": "bread",
-            "items": [
-              {
-                "text": {
-                  "pt": "Padero",
-                  "en": "Padero",
-                  "es": "Padero"
-                },
-                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
-              },
-              {
-                "text": {
-                  "pt": "La Parisiense",
-                  "en": "La Parisiense",
-                  "es": "La Parisiense"
-                },
-                "href": "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7"
-              }
-            ]
-          },
-          {
-            "title": {
-              "pt": "Café da manhã",
-              "en": "Breakfast",
-              "es": "Desayuno"
-            },
-            "icon": "coffee",
-            "items": [
-              {
-                "text": {
-                  "pt": "ARP Bar",
-                  "en": "ARP Bar",
-                  "es": "ARP Bar"
-                },
-                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
-              },
-              {
-                "text": {
-                  "pt": "Instagram — ARP Bar",
-                  "en": "Instagram — ARP Bar",
-                  "es": "Instagram — ARP Bar"
-                },
-                "href": "https://www.instagram.com/arpbar/"
-              },
-              {
-                "text": {
-                  "pt": "Starbucks",
-                  "en": "Starbucks",
-                  "es": "Starbucks"
-                },
-                "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
-              },
-              {
-                "text": {
-                  "pt": "Apetite Café Copacabana",
-                  "en": "Apetite Café Copacabana",
-                  "es": "Apetite Café Copacabana"
-                },
-                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
-              },
-              {
-                "text": {
-                  "pt": "Instagram — Apetite Café",
-                  "en": "Instagram — Apetite Café",
-                  "es": "Instagram — Apetite Café"
-                },
-                "href": "https://www.instagram.com/apetitecafe.rj/"
-              }
-            ]
-          },
-          {
-            "title": {
-              "pt": "Feira de artesanato",
-              "en": "Craft fair",
-              "es": "Feria de artesanía"
-            },
-            "icon": "gift",
-            "items": [
-              {
-                "text": {
-                  "pt": "Praça General Osório",
-                  "en": "General Osório Square",
-                  "es": "Plaza General Osório"
-                },
-                "href": "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9"
-              },
-              {
-                "text": {
-                  "pt": "Domingos: 8h–18h, exceto durante eventos importantes na cidade.",
-                  "en": "Sundays, 8 am–6 pm, except during major city events.",
-                  "es": "Domingos: 8:00–18:00, excepto durante grandes eventos en la ciudad."
-                }
               }
             ]
           }
