@@ -1055,31 +1055,6 @@
                 }
               }
             ]
-          },
-          {
-            "title": {
-              "pt": "Feira de artesanato",
-              "en": "Craft fair",
-              "es": "Feria de artesanía"
-            },
-            "icon": "gift",
-            "items": [
-              {
-                "text": {
-                  "pt": "Praça General Osório",
-                  "en": "General Osório Square",
-                  "es": "Plaza General Osório"
-                },
-                "href": "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9"
-              },
-              {
-                "text": {
-                  "pt": "Domingos: 8h–18h, exceto durante eventos importantes na cidade.",
-                  "en": "Sundays, 8 am–6 pm, except during major city events.",
-                  "es": "Domingos: 8:00–18:00, excepto durante grandes eventos en la ciudad."
-                }
-              }
-            ]
           }
         ]
       }
@@ -1389,6 +1364,31 @@
                   "es": "Lojas Americanas"
                 },
                 "href": "https://maps.app.goo.gl/4oSdAEbpj1TTyMG76"
+              }
+            ]
+          },
+          {
+            "title": {
+              "pt": "Feira de artesanato",
+              "en": "Craft fair",
+              "es": "Feria de artesanía"
+            },
+            "icon": "gift",
+            "items": [
+              {
+                "text": {
+                  "pt": "Praça General Osório",
+                  "en": "General Osório Square",
+                  "es": "Plaza General Osório"
+                },
+                "href": "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9"
+              },
+              {
+                "text": {
+                  "pt": "Domingos: 8h–18h, exceto durante eventos importantes na cidade.",
+                  "en": "Sundays, 8 am–6 pm, except during major city events.",
+                  "es": "Domingos: 8:00–18:00, excepto durante grandes eventos en la ciudad."
+                }
               }
             ]
           }
