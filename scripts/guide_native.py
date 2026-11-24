@@ -257,7 +257,8 @@ def build_native(page, content, upgrades, photos):
                     nodes.append(f'<p class="native-description">{text}</p>')
                     descriptions.append(f'<p class="native-description">{text}</p>')
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
-                nodes = ['<div class="fort-links">' + ''.join(nodes[:2]) + '</div>', *nodes[2:]]
+                link_count=sum(bool(item.get('href')) for item in section['items'])
+                nodes = ['<div class="fort-links">' + ''.join(nodes[:link_count]) + '</div>', *nodes[link_count:]]
             if page['image']['src'].endswith('-09.jpg') and section_index == 2:
                 nodes = ['<div class="bike-links">' + nodes[0] + nodes[2] + '</div>', nodes[1], *nodes[3:]]
             if page['image']['src'].endswith('-09.jpg') and section_index == 3:
@@ -286,13 +287,13 @@ def build_native(page, content, upgrades, photos):
             elif page['image']['src'].endswith('-09.jpg'):
                 name=['landmark','mountain','bike','fitness'][section_index]
             elif page['image']['src'].endswith('-13.jpg'):
-                name=(['bag','cart','market'] if index==0 else ['bread','coffee','craft'])[section_index]
+                name=section['icon']
             elif page['image']['src'].endswith('-15.jpg'):
                 name=['checkout-clock','checkout-check','checkout-luggage'][section_index]
             elif page['image']['src'].endswith('-14.jpg'):
                 name=['samu','police-car','hospital','pharmacy','fire'][section_index]
             elif page['image']['src'].endswith('-11.jpg'):
-                name=['glass','coffee-bars'][section_index]
+                name='coffee-bars' if section_index==1 else section['icon']
             elif page['image']['src'].endswith('-06.jpg'):
                 name=['rule','people'][section_index]
             elif page['image']['src'].endswith('-03.jpg') and section_index==1:

@@ -15,9 +15,9 @@ TOPICS={
   'es':(['Recomendaciones','Más sabores','Otras opciones'],['','mas-sabores','otras-opciones']),
  },
  '-13.jpg':{
-  'pt':(['Compras','Café e feiras'],['','cafe-e-feiras']),
-  'en':(['Shopping','Breakfast and fairs'],['','breakfast-and-fairs']),
-  'es':(['Compras','Café y ferias'],['','cafe-y-ferias']),
+  'pt':(['Shoppings','Supermercados'],['','supermercados']),
+  'en':(['Shopping centres','Supermarkets'],['','supermarkets']),
+  'es':(['Centros comerciales','Supermercados'],['','supermercados']),
  },
 }
 
@@ -47,8 +47,9 @@ def render(source,page,index=0):
  footer=doc.all(lambda n:n.has('native-actions'))[0];footer.remove()
  groups=[]
  if suffix=='-11.jpg':
-  groups=[[card] for card in first.all(lambda n:n.tag=='section' and n.has('native-card'))]
-  subtitles=[None]*len(groups)
+  cards=first.all(lambda n:n.tag=='section' and n.has('native-card'))
+  groups=[[cards[0]],cards[1:]]
+  subtitles=[None,None]
  else:
   groups=[chapter.all(lambda n:n.tag=='section' and n.has('native-card')) for chapter in chapters]
   subtitles=[next(iter(chapter.all(lambda n:n.has('native-chapter-title'))),None) for chapter in chapters]
