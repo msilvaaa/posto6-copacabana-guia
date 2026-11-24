@@ -39,6 +39,9 @@ class NativeGuideTests(unittest.TestCase):
                 expected.difference_update({'https://maps.app.goo.gl/qCLcaRsKFsPj7ujY6', 'https://maps.app.goo.gl/usPwAX4m68TupqMs6'})
                 expected.add('https://maps.app.goo.gl/kgNHcDh1MSWXHFaE6')
             if page['image']['src'].endswith('-10.jpg'):
+                # The owner supplied the updated Santander branch destination.
+                expected.discard('https://maps.app.goo.gl/4mU4g6BEkhpWK7eL9')
+                expected.add('https://maps.app.goo.gl/CCuLTKmBoQ9qnmY48')
                 # The owner removed both travel agencies and their contact links.
                 expected.difference_update({
                     'https://city.rio.br/', 'https://www.instagram.com/cityrioturismo/',
