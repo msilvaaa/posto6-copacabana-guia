@@ -24,7 +24,11 @@
       hero.style.setProperty('--cover-sun-shift', `${shift + label.y + label.height / 2 - current.y - current.height / 2}px`);
     }
     hero.style.setProperty('--cover-theme-top', `${word.y + word.height / 2 - area.y - button.height / 2}px`);
-    hero.style.setProperty('--cover-theme-right', `calc(${area.right - image.right}px + 2cm)`);
+    const sunset = sun?.querySelector('[data-sun-value="sunset"]')?.closest('.cover-sun-event');
+    const sunsetBox = sunset?.getBoundingClientRect();
+    const center = sunsetBox ? sunsetBox.x + sunsetBox.width / 2 : image.right - 2 * 96 / 2.54 - button.width / 2;
+    const safeCenter = Math.max(image.left + button.width / 2 + 8, Math.min(center, image.right - button.width / 2 - 8));
+    hero.style.setProperty('--cover-theme-right', `${area.right - safeCenter - button.width / 2}px`);
     if (window.matchMedia('(min-width:1101px)').matches) {
       const range = document.createRange(); range.selectNodeContents(place);
       const end = range.getBoundingClientRect().right;
@@ -43,7 +47,7 @@
   }
   function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(align); }
   const observer = new ResizeObserver(schedule);
-  for (const element of [hero, title, place, toggle, index]) observer.observe(element);
+  for (const element of [hero, title, place, toggle, index, sun].filter(Boolean)) observer.observe(element);
   window.addEventListener('resize', schedule);
   document.fonts?.ready.then(schedule);
   align();
