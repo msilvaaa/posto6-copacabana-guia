@@ -10,4 +10,4 @@ html[data-theme="dark"] .activities-topic-tabs>a { color:#ddd; }
 html[data-theme="dark"] .activities-topic-tabs>a[aria-selected="true"] { background:#fff; color:#111; }
 @media(max-width:760px) { .activities-topic-tabs { font-size:13px; } }
 
-.activities-agency-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; }
+.activities-agency-links { display:grid; grid-template-columns:repeat(2,minmax(0,max-content)); gap:0 12px; }
