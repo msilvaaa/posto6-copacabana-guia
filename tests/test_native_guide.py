@@ -35,6 +35,9 @@ class NativeGuideTests(unittest.TestCase):
             if page['image']['src'].endswith('-09.jpg'):
                 # Keep only the first Sugarloaf destination, as requested by the owner.
                 expected.discard('https://maps.app.goo.gl/imZYbmEEZMEBJauH9')
+                # The owner provided the exact Forte destination, separate from Colombo.
+                expected.difference_update({'https://maps.app.goo.gl/qCLcaRsKFsPj7ujY6', 'https://maps.app.goo.gl/usPwAX4m68TupqMs6'})
+                expected.add('https://maps.app.goo.gl/kgNHcDh1MSWXHFaE6')
             if page['image']['src'].endswith('-10.jpg'):
                 # The owner removed both travel agencies and their contact links.
                 expected.difference_update({
