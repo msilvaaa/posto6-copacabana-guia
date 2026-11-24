@@ -79,19 +79,23 @@ def render(source,lang,index=0,preview=False):
  agencies=[('City Rio Turismo','https://www.instagram.com/cityrioturismo/'),('Lareina Asesoria (Kavila)','https://www.instagram.com/lareina.asesoria?utm_source=ig_web_button_share_sheet&evlk=ZDNlZDc0MzIxNw==')]
  links=''.join(f'<a class="native-link" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer">{app_icon()}<span>{escape(name)}</span></a>' for name,href in agencies)
  panels[0].add(fragment(f'<section class="native-card illustrated-card activities-tour-agencies"><div class="native-card-heading"><span class="native-icon original-illustration case">{icon_3d("case")}</span><h2>{agencies_title}</h2></div><div class="native-card-copy"><div class="activities-agency-links">{links}</div></div></section>'))
- head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-5'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-5','defer':None}))
+ head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-6'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-6','defer':None}))
  activity_title=doc.all(lambda n:n.has('native-title-text'))[0].children[0]
  body.attrs['data-activities-title']='Posto 6 Copacabana — '+lang.upper()+' — '+activity_title
  doc.all(lambda n:n.tag=='title')[0].children=[body.attrs['data-activities-title']+' — '+labels['topics'][index]]
  panel=doc.all(lambda n:n.has('native-panel'))[0]
  if preview:
   head.add(Node('meta',{'name':'robots','content':'noindex,nofollow'}))
-  head.add(Node('link',{'rel':'stylesheet','href':'/preview-atividades/preview.css?v=20261124-5'}))
+  head.add(Node('link',{'rel':'stylesheet','href':'/preview-atividades/preview.css?v=20261124-6'}))
   note=fragment(f'<div class="preview-note"><span>{labels["preview"]}</span><a href="/{labels["source"].removesuffix("index.html")}">{labels["back"]}</a></div>');panel.insert(0,note)
  heading=doc.all(lambda n:n.tag=='h1')[0];position=panel.children.index(heading)+1
  tabs=''.join(f'<a id="activities-tab-{i}" role="tab" data-activities-topic="{i}" aria-controls="activities-panel-{i}" aria-selected="{str(i==index).lower()}" tabindex="{0 if i==index else -1}" href="{url(lang,i,preview)}"'+(' aria-current="page"' if i==index else '')+f'>{escape(labels["topics"][i])}</a>' for i in [0,1])
  panel.insert(position,fragment('<nav class="activities-topic-tabs" role="tablist" aria-label="'+activity_title+'">'+tabs+'</nav>'))
- wrapper=Node('div',{'class':'activities-shared-weather'});wrapper.add(weather);panel.insert(position+1,wrapper)
+ wrapper=Node('div',{'class':'activities-shared-weather'})
+ sun=weather.all(lambda n:n.has('cover-sun-times'))[0];sun.remove()
+ wrapper.add(weather)
+ sun_column=Node('div',{'class':'activities-sun-column'});sun_column.add(sun);wrapper.add(sun_column)
+ panel.insert(position+1,wrapper)
  panel.insert(position+2,panels[0]);panel.insert(position+3,panels[1])
  for flag in doc.all(lambda n:n.tag=='a' and n.has('guide-flag')):
   code=flag.attrs['href'].strip('/').split('/')[0];flag.attrs['href']=url(code,index,preview)
