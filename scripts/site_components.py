@@ -116,10 +116,10 @@ def sun_times(lang):
   symbol=('<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'
           '<path d="M3 19h18M5 16a7 7 0 0 1 14 0M2 13h2m16 0h2M5 5l2 2m12-2-2 2"/>'
           f'<path d="{arrow}"/></svg>')
-  return f'<span class="cover-sun-event" title="{e(label)}">{symbol}<span class="cover-sun-label">{e(label)}</span><time data-sun-value="{key}" datetime="{e(stamp)}">{e(time)}</time></span>'
+  return f'<span class="cover-sun-event" title="" data-sun-tooltip="{e(label)}" tabindex="0" aria-label="{e(label)}">{symbol}<span class="cover-sun-label">{e(label)}</span><time data-sun-value="{key}" datetime="{e(stamp)}">{e(time)}</time></span>'
  markup=f'<div class="cover-sun-times" data-sun-times aria-label="{e(labels[2])}" title="{e(labels[2])}">{entry("sunrise",labels[0])}{entry("sunset",labels[1])}</div>'
  saved=json.dumps(data,ensure_ascii=False).replace('<',chr(92)+'u003c')
- return markup+f'<script type="application/json" data-sun-saved>{saved}</script>'
+ return '<link rel="stylesheet" href="/sun-times.css?v=20261124-1"/>'+markup+f'<script type="application/json" data-sun-saved>{saved}</script>'
 
 
 def utilities(lang):
