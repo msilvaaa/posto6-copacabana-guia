@@ -7,6 +7,8 @@
   const index = hero.querySelector('.home-cover-nav');
   const photo = hero.querySelector('.home-cover-photo');
   const toggle = hero.querySelector('[data-theme-toggle]');
+  const sun = hero.querySelector('[data-sun-times]');
+  const emergency = index?.querySelector('a:last-child');
   if (!title || !place || !index || !photo || !toggle) return;
   let frame;
   function align() {
@@ -14,6 +16,13 @@
     const word = place.getBoundingClientRect();
     const image = photo.getBoundingClientRect();
     const button = toggle.getBoundingClientRect();
+    if (sun && emergency) {
+      const text = document.createRange(); text.selectNodeContents(emergency);
+      const label = text.getBoundingClientRect();
+      const current = sun.getBoundingClientRect();
+      const shift = parseFloat(hero.style.getPropertyValue('--cover-sun-shift')) || 0;
+      hero.style.setProperty('--cover-sun-shift', `${shift + label.y + label.height / 2 - current.y - current.height / 2}px`);
+    }
     hero.style.setProperty('--cover-theme-top', `${word.y + word.height / 2 - area.y - button.height / 2}px`);
     hero.style.setProperty('--cover-theme-right', `calc(${area.right - image.right}px + 2cm)`);
     if (window.matchMedia('(min-width:1101px)').matches) {
@@ -34,7 +43,7 @@
   }
   function schedule() { cancelAnimationFrame(frame); frame = requestAnimationFrame(align); }
   const observer = new ResizeObserver(schedule);
-  for (const element of [hero, title, place, toggle]) observer.observe(element);
+  for (const element of [hero, title, place, toggle, index]) observer.observe(element);
   window.addEventListener('resize', schedule);
   document.fonts?.ready.then(schedule);
   align();
