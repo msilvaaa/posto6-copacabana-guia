@@ -36,7 +36,7 @@ def build_detail(page,photos):
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
 <link rel="stylesheet" href="/site-shell.css?v=20261124-centered-captions"/><link rel="stylesheet" href="/native-guide.css?v=20261119-theme"/>
 <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
-<script src="/site.js?v=20261119-option6" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
+<script src="/site.js?v=20261124-weather-symbol" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 <link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
