@@ -2,3 +2,6 @@
 .cover-sun-event::after { content:attr(data-sun-tooltip); position:absolute; z-index:20; bottom:calc(100% + 7px); left:50%; transform:translateX(-50%); padding:5px 8px; border-radius:5px; background:#171717; color:#fff; font:400 11px/1.3 Arial,Helvetica,sans-serif; white-space:nowrap; pointer-events:none; visibility:hidden; opacity:0; }
 .cover-sun-event:hover::after,.cover-sun-event:focus-visible::after { visibility:visible; opacity:1; }
 .cover-sun-event:focus-visible { outline:1px solid currentColor; outline-offset:3px; border-radius:2px; }
+
+/* Keep the cover explanations below the times, clear of the forecast above. */
+.home-page .cover-sun-event::after { top:calc(100% + 7px); bottom:auto; }

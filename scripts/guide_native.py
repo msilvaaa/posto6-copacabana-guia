@@ -319,8 +319,6 @@ def build_native(page, content, upgrades, photos):
             extra=''
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
                 extra=''
-            elif page['image']['src'].endswith('-11.jpg') and section_index==0:
-                extra='<div class="native-bar-photos">'+''.join(artwork('/assets/pt-11.jpg',rect) for rect in ORIGINAL_ART['_bar_photos'])+'</div>'
             heading = f'<h2>{e(section["title"][lang])}</h2>'
             if page['image']['src'].endswith('-14.jpg') and section_index == 0:
                 art = ''
