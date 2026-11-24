@@ -3,7 +3,8 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
-from site_components import pagination
+import json
+from site_components import pagination,LABELS
 ROOT=Path(__file__).resolve().parents[1]
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Raw(str):pass
@@ -50,30 +51,36 @@ LANGS={
  'es':{'source':'es/actividades/index.html','slugs':['paseos','deporte'],'topics':['Paseos','Deporte y bienestar'],'preview':'Vista previa','back':'Volver a la página actual','counter':'{n} de 2'},
 }
 def url(lang,index):return f'/preview-atividades/{lang}/{LANGS[lang]["slugs"][index]}/'
+guide={page['path']:page for page in json.loads((ROOT/'data/guide-pages.json').read_text())}
 for lang,labels in LANGS.items():
  for index in [0,1]:
   doc=parse((ROOT/labels['source']).read_text());body=doc.all(lambda n:n.tag=='body')[0];body.attrs['class']+=' activities-preview'
   cards=doc.all(lambda n:n.tag=='section' and n.has('native-card'));assert len(cards)==4
-  weather=doc.all(lambda n:n.has('activity-weather-container'))[0].clone()
-  for position,card in enumerate(cards):
-   if (position<2)!=(index==0):card.remove()
-  head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('meta',{'name':'robots','content':'noindex,nofollow'}));head.add(Node('link',{'rel':'stylesheet','href':'/preview-atividades/preview.css?v=20261124-1'}))
-  doc.all(lambda n:n.tag=='title')[0].children=[labels['preview']+' — Atividades — '+labels['topics'][index]]
+  original_weather=doc.all(lambda n:n.has('activity-weather-container'))[0];weather=original_weather.clone();original_weather.remove()
+  panels=[]
+  for topic in [0,1]:
+   attrs={'class':'preview-topic-panel','id':f'preview-panel-{topic}','role':'tabpanel','aria-labelledby':f'preview-tab-{topic}','tabindex':'0'}
+   if topic!=index:attrs['hidden']=None
+   panel_topic=Node('section',attrs)
+   for card in cards[topic*2:topic*2+2]:card.remove();panel_topic.add(card)
+   panels.append(panel_topic)
+  head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('meta',{'name':'robots','content':'noindex,nofollow'}));head.add(Node('link',{'rel':'stylesheet','href':'/preview-atividades/preview.css?v=20261124-2'}));head.add(Node('script',{'src':'/preview-atividades/preview.js?v=20261124-2','defer':None}))
+  activity_title=doc.all(lambda n:n.has('native-title-text'))[0].children[0]
+  body.attrs['data-preview-title']=labels['preview']+' — '+activity_title
+  doc.all(lambda n:n.tag=='title')[0].children=[body.attrs['data-preview-title']+' — '+labels['topics'][index]]
   panel=doc.all(lambda n:n.has('native-panel'))[0]
   note=fragment(f'<div class="preview-note"><span>{labels["preview"]}</span><a href="/{labels["source"].removesuffix("index.html")}">{labels["back"]}</a></div>');panel.insert(0,note)
   heading=doc.all(lambda n:n.tag=='h1')[0];position=panel.children.index(heading)+1
-  tabs=''.join(f'<a href="{url(lang,i)}"'+(' aria-current="page"' if i==index else '')+f'>{i+1}. {escape(labels["topics"][i])}</a>' for i in [0,1])
-  panel.insert(position,fragment('<nav class="preview-pages" aria-label="'+labels['preview']+'">'+tabs+'</nav>'))
-  if index==1:
-   wrapper=Node('div',{'class':'preview-weather'});wrapper.add(weather);panel.insert(position+1,wrapper)
+  tabs=''.join(f'<a id="preview-tab-{i}" role="tab" data-preview-topic="{i}" aria-controls="preview-panel-{i}" aria-selected="{str(i==index).lower()}" tabindex="{0 if i==index else -1}" href="{url(lang,i)}"'+(' aria-current="page"' if i==index else '')+f'>{escape(labels["topics"][i])}</a>' for i in [0,1])
+  panel.insert(position,fragment('<nav class="preview-pages" role="tablist" aria-label="'+activity_title+'">'+tabs+'</nav>'))
+  wrapper=Node('div',{'class':'preview-weather'});wrapper.add(weather);panel.insert(position+1,wrapper)
+  panel.insert(position+2,panels[0]);panel.insert(position+3,panels[1])
   for flag in doc.all(lambda n:n.tag=='a' and n.has('guide-flag')):
    code=flag.attrs['href'].strip('/').split('/')[0];flag.attrs['href']=url(code,index)
-  footer=doc.all(lambda n:n.has('native-actions'))[0]
-  nav=fragment('<nav class="site-pagination guide-pagination" aria-label="'+labels['preview']+'">'+pagination(lang,url(lang,0) if index else None,url(lang,1) if index==0 else None)+'</nav>')
-  counter=Node('span',{'class':'preview-page-count'},[labels['counter'].format(n=index+1)]);counter.parent=nav
-  if index==0:nav.children.insert(0,counter)
-  else:nav.children.append(counter)
+   for topic in [0,1]:flag.attrs[f'data-preview-path-{topic}']=url(code,topic)
+  footer=doc.all(lambda n:n.has('native-actions'))[0];original=guide[labels['source']]
+  nav=fragment('<nav class="site-pagination guide-pagination" aria-label="'+LABELS[lang]['navigation']+'">'+pagination(lang,original['previous'],original['next'])+'</nav>')
   footer.children=[nav];nav.parent=footer
   destination=ROOT/url(lang,index).lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(doc.html())
 folder=ROOT/'preview-atividades';(folder/'index.html').write_text('<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url='+url('pt',0)+'"><title>Prévia de Atividades</title></head><body><a href="'+url('pt',0)+'">Ver a prévia das duas páginas de Atividades</a></body></html>')
-print('Built separate Activities preview: two pages in three languages; live Activities split unchanged.')
+print('Built Activities preview with internal topic tabs and preserved main-guide navigation, in three languages.')
