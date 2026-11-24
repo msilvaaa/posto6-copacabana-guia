@@ -92,6 +92,7 @@
  let weatherRequest;
  let weatherReadAt = 0;
  const weatherRefreshMs = 3 * 60 * 60 * 1000;
+ const weatherSymbol = day => day.rain_probability>=50 ? 'rain' : String(day.code)==='113' ? 'sun' : 'cloud';
  async function loadWeather(force = false) {
   if (!force && weatherRequest && Date.now() - weatherReadAt < weatherRefreshMs) return weatherRequest;
   weatherReadAt = Date.now();
@@ -113,7 +114,7 @@
     const card = document.createElement('div'); card.className = 'weather-day';
     const date = new Date(day.date+'T12:00:00-03:00');
     const title = document.createElement('b'); title.textContent = new Intl.DateTimeFormat(locale,{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'America/Sao_Paulo'}).format(date);
-    const icon = document.createElement('img'); icon.className = 'weather-day-icon'; icon.src = '/assets/icons-3d/' + (day.rain_probability>=50 ? 'rain' : day.code==='113' ? 'sun' : 'cloud') + '.svg'; icon.alt = ''; icon.width = 40; icon.height = 40;
+    const icon = document.createElement('img'); icon.className = 'weather-day-icon'; icon.src = '/assets/icons-3d/' + weatherSymbol(day) + '.svg'; icon.alt = ''; icon.width = 40; icon.height = 40;
     const temperature = document.createElement('span'); temperature.textContent = `${day.min}° – ${day.max}°C`;
     const rain = document.createElement('span'); rain.textContent = `${strings.rain}: ${day.rain_probability}%`;
     card.append(title,icon,temperature,rain); grid.append(card);
@@ -125,6 +126,11 @@
    const old = Date.now()-Date.parse(data.updated_at)>24*60*60*1000;
    if (old || data.liveCheckFailed) { const warning=document.createElement('p'); warning.textContent=strings.stale; content.append(warning); }
    for (const summary of document.querySelectorAll('[data-weather-summary]')) summary.textContent = old ? strings.stale : `${upcoming[0].min}° – ${upcoming[0].max}°C`;
+   for (const holder of document.querySelectorAll('[data-weather-icon]')) {
+    const symbol=weatherSymbol(upcoming[0]);
+    holder.querySelector('image')?.setAttribute('href','/assets/icons-3d/'+symbol+'.svg');
+    holder.querySelector('svg')?.setAttribute('data-symbol',symbol);
+   }
    return data;
   }).catch(() => {
    weatherRequest = null;

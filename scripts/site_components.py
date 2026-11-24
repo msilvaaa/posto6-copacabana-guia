@@ -124,7 +124,16 @@ def sun_times(lang):
 
 def utilities(lang):
  labels=LABELS[lang]
- return f'<div class="site-utilities"><button class="site-weather" type="button" data-weather-open aria-label="{labels["weather"]}"><span aria-hidden="true">{icon_3d("sun")}</span><span><b>Copacabana</b><small data-weather-summary>{labels["weather_hint"]}</small></span></button></div>'
+ from datetime import datetime
+ from zoneinfo import ZoneInfo
+ symbol='cloud'
+ try:
+  saved=json.loads((Path(__file__).resolve().parents[1]/'data/weather.json').read_text())
+  today=datetime.now(ZoneInfo('America/Sao_Paulo')).date().isoformat()
+  day=next(day for day in saved['days'] if day['date']>=today)
+  symbol='rain' if day['rain_probability']>=50 else 'sun' if str(day['code'])=='113' else 'cloud'
+ except (OSError,ValueError,KeyError,TypeError,StopIteration):pass
+ return f'<div class="site-utilities"><button class="site-weather" type="button" data-weather-open aria-label="{labels["weather"]}"><span aria-hidden="true" data-weather-icon>{icon_3d(symbol)}</span><span><b>Copacabana</b><small data-weather-summary>{labels["weather_hint"]}</small></span></button></div>'
 
 
 def whatsapp(lang,context=None):
