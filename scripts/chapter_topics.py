@@ -33,6 +33,16 @@ def render(source,page,index=0):
  body=doc.all(lambda n:n.tag=='body')[0]
  chapters=doc.all(lambda n:n.has('native-chapter'))
  first=chapters[0];first.attrs['class']+=' guide-topic-chapter'
+ topic_photos=json.loads((ROOT/'data/guide-photo-upgrades.json').read_text()).get(suffix,{}).get('topic_photos',{})
+ if topic_photos:
+  photo=first.all(lambda n:n.has('native-photo'))[0]
+  original=photo.all(lambda n:n.tag=='img')[0];original.attrs['data-topic-photo']='0'
+  selected=str(index) if str(index) in topic_photos else '0'
+  if selected!='0':original.attrs['hidden']=None
+  for key,variant in topic_photos.items():
+   attrs={'src':variant['src'],'width':str(variant['width']),'height':str(variant['height']),'alt':variant['alt'][page['lang']],'style':'object-position:'+variant.get('position','50% 50%'),'data-topic-photo':key}
+   if key!=selected:attrs['hidden']=None
+   photo.add(Node('img',attrs))
  panel=first.all(lambda n:n.has('native-panel'))[0]
  footer=doc.all(lambda n:n.has('native-actions'))[0];footer.remove()
  groups=[]
@@ -68,6 +78,6 @@ def render(source,page,index=0):
   flag.attrs['href']=topic_url(translated[lang],index)
   for i in range(len(labels)):flag.attrs[f'data-activities-path-{i}']=topic_url(translated[lang],i)
  head=doc.all(lambda n:n.tag=='head')[0]
- head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-7'}))
- head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-7','defer':None}))
+ head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-8'}))
+ head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-8','defer':None}))
  return doc.html()
