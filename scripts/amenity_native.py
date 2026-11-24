@@ -6,13 +6,12 @@ from guide_native import title_word_art
 from site_components import LABELS,toolbar,pagination,whatsapp,dialogs,page_title,arrow,app_icon
 ROOT=Path(__file__).resolve().parents[1]
 DATA=json.loads((ROOT/'data/amenity-native.json').read_text())
-TITLES=json.loads((ROOT/'data/detail-title-art.json').read_text())
 
 def e(v):return escape(str(v),quote=True)
 
 def build_detail(page,photos):
  key=page['path'].split('/')[-2];detail=DATA[key];lang=page['lang'];title=detail['title'][lang]
- title_art=title_word_art(page['image']['src'],TITLES[page['image']['src']]['word'],page['image']['width'],page['image']['height'])
+ title_art=title_word_art(page['image']['src'])
  labels={'pt':('Como usar','Fotos de referência','Assista ao vídeo','Foto de referência'), 'en':('How to use','Reference photos','Watch the video','Reference photo'), 'es':('Cómo usar','Fotos de referencia','Ver el vídeo','Foto de referencia')}[lang]
  photo=detail['photo']
  if isinstance(photo,int):
@@ -35,7 +34,7 @@ def build_detail(page,photos):
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
 <link rel="stylesheet" href="/site-shell.css?v=20261124-larger-home"/><link rel="stylesheet" href="/native-guide.css?v=20261119-theme"/>
-<link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
+<link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
 <script src="/site.js?v=20261124-weather-symbol" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>

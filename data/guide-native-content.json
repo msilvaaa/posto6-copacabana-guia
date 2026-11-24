@@ -191,9 +191,9 @@
         "sections": [
           {
             "title": {
-              "pt": "Rua Raul Pompéia, 131",
-              "en": "Rua Raul Pompéia, 131",
-              "es": "Rua Raul Pompéia, 131"
+              "pt": "Endereço Copacabana",
+              "en": "Copacabana address",
+              "es": "Dirección de Copacabana"
             },
             "icon": "pin",
             "items": [
