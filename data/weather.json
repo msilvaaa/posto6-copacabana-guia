@@ -4,28 +4,28 @@
   "longitude": -43.1918,
   "provider": "wttr.in",
   "source": "https://wttr.in/-22.9842,-43.1918?format=j1",
-  "updated_at": "2026-11-23T13:16:46.350560+00:00",
+  "updated_at": "2026-11-24T02:23:03.734964+00:00",
   "days": [
     {
       "date": "2026-11-23",
       "min": 24,
-      "max": 27,
-      "rain_probability": 53,
-      "code": "176"
+      "max": 32,
+      "rain_probability": 71,
+      "code": "200"
     },
     {
       "date": "2026-11-24",
-      "min": 25,
-      "max": 27,
-      "rain_probability": 84,
-      "code": "176"
+      "min": 24,
+      "max": 32,
+      "rain_probability": 85,
+      "code": "119"
     },
     {
       "date": "2026-11-25",
       "min": 25,
-      "max": 30,
-      "rain_probability": 78,
-      "code": "149"
+      "max": 31,
+      "rain_probability": 85,
+      "code": "200"
     }
   ]
 }
