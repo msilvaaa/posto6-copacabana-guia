@@ -180,3 +180,6 @@ body.site-page .site-contact-corner .site-whatsapp,body.home-page .site-contact-
 
 /* Keep data-source, consultation and timezone explanations subordinate to the values. */
 :root :is(.exchange-rates>p,.local-clocks>p,.sea-conditions .sea-status,.sea-conditions .sea-note,.airport-transfers .transfer-status,.weather-content>p) { font:400 10px/1.35 Arial,Helvetica,sans-serif; margin:3px 0; }
+
+/* Center the small explanatory captions within their content areas. */
+:root :is(.native-card p.native-description,.exchange-rates>p,.local-clocks>p,.sea-conditions .sea-status,.sea-conditions .sea-note,.airport-transfers .transfer-status,.weather-content>p,.technical-reference figcaption,.photo-grid figcaption) { text-align:center; }
