@@ -76,7 +76,7 @@ def render(source,lang,index=0,preview=False):
   for card in cards[topic*2:topic*2+2]:card.remove();panel_topic.add(card)
   panels.append(panel_topic)
  agencies_title={'pt':'Agências de turismo','en':'Tour agencies','es':'Agencias de turismo'}[lang]
- agencies=[('City Rio Turismo','https://www.instagram.com/cityrioturismo/'),('Lareina Asesoria (Kavila)','https://www.instagram.com/lareina.asesoria?utm_source=ig_web_button_share_sheet&evlk=ZDNlZDc0MzIxNw==')]
+ agencies=[('City Rio Turismo','https://www.instagram.com/cityrioturismo/'),('La Reina Asesoria','https://www.instagram.com/lareina.asesoria?utm_source=ig_web_button_share_sheet&evlk=ZDNlZDc0MzIxNw==')]
  links=''.join(f'<a class="native-link" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer">{app_icon()}<span>{escape(name)}</span></a>' for name,href in agencies)
  panels[0].add(fragment(f'<section class="native-card illustrated-card activities-tour-agencies"><div class="native-card-heading"><span class="native-icon original-illustration case">{icon_3d("case")}</span><h2>{agencies_title}</h2></div><div class="native-card-copy"><div class="activities-agency-links">{links}</div></div></section>'))
  head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-6'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-6','defer':None}))
