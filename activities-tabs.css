@@ -3,8 +3,15 @@
 .activities-topic-tabs>a[aria-selected="true"] { background:#171717; color:#fff; font-weight:700; }
 .activities-topic-tabs>a:focus-visible { outline:2px solid #238cc6; outline-offset:3px; }
 .activities-topic-panel[hidden] { display:none!important; }
-.activities-shared-weather { display:flex; justify-content:flex-end; padding-right:calc(2cm - var(--activity-panel-padding)); margin-bottom:18px; }
-.activities-shared-weather>.activity-weather-container { display:flex; flex-direction:column; align-items:flex-end; max-width:100%; }
+.activities-shared-weather { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; align-items:center; width:min(100%,430px); margin:0 auto 18px; padding:0 5px; }
+.activities-shared-weather>.activity-weather-container { display:flex; justify-content:center; align-items:center; min-width:0; max-width:100%; }
+.activities-sun-column { display:flex; justify-content:center; min-width:0; }
+.activities-sun-column .cover-sun-times { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 8px; margin:0; padding:0; max-width:100%; background:transparent; color:#000; font:400 12px/1.4 Arial,Helvetica,sans-serif; }
+.activities-sun-column .cover-sun-event { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+.activities-sun-column .cover-sun-event svg { flex:0 0 16px; }
+.activities-sun-column time { font-weight:600; font-variant-numeric:tabular-nums; }
+.activities-sun-column .cover-sun-label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+html[data-theme="dark"] .activities-sun-column .cover-sun-times { color:#fff; }
 html[data-theme="dark"] .activities-topic-tabs { background:#222; border-color:#555; }
 html[data-theme="dark"] .activities-topic-tabs>a { color:#ddd; }
 html[data-theme="dark"] .activities-topic-tabs>a[aria-selected="true"] { background:#fff; color:#111; }
