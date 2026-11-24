@@ -47,7 +47,7 @@ jobs:
         run: python scripts/build-covers.py
       - name: Save only changed rating and generated pages
         run: |
-          git add pt/atividades/index.html en/activities/index.html es/actividades/index.html data/sun-times.json data/weather.json data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html pt/comodidades/index.html en/amenities/index.html en/comodidades/index.html es/comodidades/index.html
+          git add pt/atividades/esportes/index.html en/activities/sport/index.html es/actividades/deporte/index.html pt/atividades/index.html en/activities/index.html es/actividades/index.html data/sun-times.json data/weather.json data/airbnb-rating.json pt/index.html en/index.html es/index.html pt/apartamento/index.html en/apartment/index.html es/apartamento/index.html pt/galeria/index.html en/gallery/index.html es/galeria/index.html pt/comodidades/index.html en/amenities/index.html en/comodidades/index.html es/comodidades/index.html
           if git diff --cached --quiet; then
             exit 0
           fi
