@@ -4,7 +4,8 @@ from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
 import json
-from site_components import pagination,LABELS
+from site_components import pagination,LABELS,app_icon
+from guide_icons_3d import icon_3d
 ROOT=Path(__file__).resolve().parents[1]
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Raw(str):pass
@@ -67,7 +68,11 @@ def render(source,lang,index=0,preview=False):
   panel_topic=Node('section',attrs)
   for card in cards[topic*2:topic*2+2]:card.remove();panel_topic.add(card)
   panels.append(panel_topic)
- head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-1'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-1','defer':None}))
+ agencies_title={'pt':'Agências de turismo','en':'Tour agencies','es':'Agencias de turismo'}[lang]
+ agencies=[('City Rio Turismo','https://www.instagram.com/cityrioturismo/'),('Lareina Asesoria (Kavila)','https://www.instagram.com/lareina.asesoria?utm_source=ig_web_button_share_sheet&evlk=ZDNlZDc0MzIxNw==')]
+ links=''.join(f'<a class="native-link" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer">{app_icon()}<span>{escape(name)}</span></a>' for name,href in agencies)
+ panels[0].add(fragment(f'<section class="native-card illustrated-card activities-tour-agencies"><div class="native-card-heading"><span class="native-icon original-illustration case">{icon_3d("case")}</span><h2>{agencies_title}</h2></div><div class="native-card-copy"><div class="activities-agency-links">{links}</div></div></section>'))
+ head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-2'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-2','defer':None}))
  activity_title=doc.all(lambda n:n.has('native-title-text'))[0].children[0]
  body.attrs['data-activities-title']='Posto 6 Copacabana — '+lang.upper()+' — '+activity_title
  doc.all(lambda n:n.tag=='title')[0].children=[body.attrs['data-activities-title']+' — '+labels['topics'][index]]

@@ -15,7 +15,7 @@ class ActivitiesTopicsTests(unittest.TestCase):
      panels=doc.all(lambda n:n.has('activities-topic-panel'))
      self.assertEqual(len(panels),2)
      self.assertEqual(['hidden' in n.attrs for n in panels],[topic!=0,topic!=1])
-     self.assertEqual([len(n.all(lambda c:c.has('native-card'))) for n in panels],[2,2])
+     self.assertEqual([len(n.all(lambda c:c.has('native-card'))) for n in panels],[3,2])
      self.assertEqual(len(doc.all(lambda n:n.has('activity-weather-container'))),1)
      self.assertFalse(doc.all(lambda n:n.has('preview-note')))
      self.assertFalse(doc.all(lambda n:n.tag=='meta' and n.attrs.get('name')=='robots' and 'noindex' in n.attrs.get('content','')))
