@@ -341,7 +341,7 @@ def build_native(page, content, upgrades, photos):
         if page['image']['src'].endswith('-10.jpg'):
             parts = [*parts[:2], '<div class="information-services">' + parts[3] + parts[2] + '</div>', *parts[4:]]
         if page['image']['src'].endswith('-14.jpg'):
-            parts = ['<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4], parts[0]]
+            parts = ['<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4], parts[0], sea_conditions(lang)]
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
         navigation = ''
@@ -368,7 +368,7 @@ def build_native(page, content, upgrades, photos):
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sun_script = '\n  <script src="/sun-times.js?v=20261123-1" defer></script>' if page['image']['src'].endswith('-09.jpg') else ''
-    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith('-09.jpg') else ''
+    sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
