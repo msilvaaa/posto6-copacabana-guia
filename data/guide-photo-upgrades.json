@@ -122,5 +122,17 @@
       "es": "Fachada del edificio del apartamento en Copacabana"
     },
     "provenance": "Photo supplied by the host on 2026-11-18, enhanced for clarity and balanced daylight; original generated PNG retained in workspace."
+  },
+  "-11.jpg": {
+    "src": "/assets/bars/boa-praca-enhanced.png",
+    "width": 1448,
+    "height": 1086,
+    "position": "50% 50%",
+    "alt": {
+      "pt": "Interior do Boteco Boa Praça, com mesas de madeira e redes no teto",
+      "en": "Inside Boteco Boa Praça, with wooden tables and ceiling nets",
+      "es": "Interior del Boteco Boa Praça, con mesas de madera y redes en el techo"
+    },
+    "provenance": "Conservative photographic enhancement of the image supplied by the host on 2026-11-24, using the image editing tool."
   }
 }
