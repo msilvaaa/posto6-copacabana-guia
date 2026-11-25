@@ -330,7 +330,7 @@ def build_native(page, content, upgrades, photos):
             extra=''
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
                 extra=''
-            heading = f'<h2>{e(section["title"][lang])}</h2>'
+            heading = '' if section.get("hide_heading") else f'<h2>{e(section["title"][lang])}</h2>'
             if page['image']['src'].endswith('-14.jpg') and section_index == 0:
                 art = ''
                 hours = {'pt': '24 horas', 'en': '24 hours', 'es': '24 horas'}[lang]

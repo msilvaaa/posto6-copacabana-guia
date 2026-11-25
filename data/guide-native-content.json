@@ -839,7 +839,7 @@
               "en": "My recommendations",
               "es": "Mis recomendaciones"
             },
-            "icon": "glass",
+            "icon": "beer",
             "items": [
               {
                 "text": {
@@ -897,7 +897,8 @@
                 },
                 "href": "https://maps.app.goo.gl/fHc9zuFndJz7P8VA6"
               }
-            ]
+            ],
+            "hide_heading": true
           },
           {
             "title": {
