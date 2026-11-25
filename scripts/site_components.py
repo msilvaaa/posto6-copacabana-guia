@@ -64,7 +64,7 @@ def app_icon(spaced=False):
 
 
 def page_title(lang,name):
- return f'Posto 6 Copacabana — {lang.upper()} — {name}'
+ return f'Posto 6 Copacabana — {name}'
 
 
 def flag_src(code):

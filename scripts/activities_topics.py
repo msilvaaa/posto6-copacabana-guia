@@ -4,7 +4,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
 import json
-from site_components import pagination,LABELS,app_icon
+from site_components import pagination,LABELS,app_icon,page_title
 from guide_icons_3d import icon_3d
 ROOT=Path(__file__).resolve().parents[1]
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
@@ -81,7 +81,7 @@ def render(source,lang,index=0,preview=False):
  panels[0].add(fragment(f'<section class="native-card illustrated-card activities-tour-agencies"><div class="native-card-heading"><span class="native-icon original-illustration case">{icon_3d("case")}</span><h2>{agencies_title}</h2></div><div class="native-card-copy"><div class="activities-agency-links">{links}</div></div></section>'))
  head=doc.all(lambda n:n.tag=='head')[0];head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-10'}));head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-10','defer':None}))
  activity_title=doc.all(lambda n:n.has('native-title-text'))[0].children[0]
- body.attrs['data-activities-title']='Posto 6 Copacabana — '+lang.upper()+' — '+activity_title
+ body.attrs['data-activities-title']=page_title(lang,activity_title)
  doc.all(lambda n:n.tag=='title')[0].children=[body.attrs['data-activities-title']+' — '+labels['topics'][index]]
  panel=doc.all(lambda n:n.has('native-panel'))[0]
  if preview:
