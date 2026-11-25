@@ -15,6 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 content=json.loads((ROOT/'templates/cover-content.json').read_text())
 page_content=json.loads((ROOT/'templates/apartment-content.json').read_text())
 photos=json.loads((ROOT/'data/apartment-photos.json').read_text())
+amenities_photo=json.loads((ROOT/'data/amenities-photo.json').read_text())
 cover_art=json.loads((ROOT/'data/cover-art.json').read_text())
 guide=json.loads((ROOT/'data/guide-pages.json').read_text())
 rating=json.loads((ROOT/'data/airbnb-rating.json').read_text())
@@ -46,8 +47,8 @@ def rating_label(lang):
  return content[lang]['rating_template'].format(rating=value,review_count=rating['review_count'])
 
 
-def photo_attrs(index,sizes):
- photo=photos[index]
+def photo_attrs(index,sizes,photo=None):
+ photo=photos[index] if photo is None else photo
  variants=photo.get('variants',[{'src':photo['src'],'width':photo.get('width',1200)}])
  srcset=', '.join(f'{e(p["src"])} {p["width"]}w' for p in variants)
  return f'src="{e(photo["src"])}" srcset="{srcset}" sizes="{sizes}" width="{photo.get("width",1200)}" height="{photo.get("height",800)}"'
@@ -88,7 +89,8 @@ for lang,values in content.items():
    copy=f'<p>{e(labels["gallery_intro"])}</p><p>{e(labels["open_photo"])}</p>'
   else:
    photo_index=2 if section==2 else 0
-   visual=f'<a class="section-photo-link" href="{e(photos[photo_index].get("full_src",photos[photo_index]["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, 50vw")} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
+   section_photo=amenities_photo if section==2 else photos[photo_index]
+   visual=f'<a class="section-photo-link" href="{e(section_photo.get("full_src",section_photo["src"]))}" data-photo-open><img class="section-photo" {photo_attrs(photo_index,"(max-width:760px) 100vw, 50vw",section_photo)} alt="{e(labels["photo_label"].format(number=photo_index+1))}"/></a>'
    if section==2:copy=amenity_cards(lang)
    else:copy=(f'<h2>{e(labels["intro"])}</h2><p>{e(labels["description"])}</p><p class="listing-rating" data-airbnb-rating data-rating-prefix="★ ">★ {rating_label(lang)}</p><p>{e(labels["amenities_intro"])}</p><div class="content-links"><a href="{values["nav"][2]["href"]}">{e(values["nav"][2]["label"])}</a><a href="{values["nav"][4]["href"]}">{e(labels["view_gallery"])}</a></div>')
   if section!=2:copy+=f'<div class="content-links"><a href="{e(rating["source_url"])}" target="_blank" rel="noopener noreferrer">{app_icon(spaced=True)}{e(labels["view_listing"])}</a></div>'

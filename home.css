@@ -8,7 +8,7 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff66,#ffffff26 45%,transparent 75%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.jpg'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
 .home-cover-copy { position: absolute; left: 4.7%; top: calc(7.4% + 36px); width: 65%; }
 .home-cover-brand { position: absolute; left: 4.7%; top: 2%; display: flex; align-items: flex-start; gap: 10px; width: max-content; margin: 0 0 4px; text-transform: uppercase; }
-.home-cover-logo-text { display: flex; flex-direction: column; }
+.home-cover-logo-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .home-cover-logo-text strong { font: 700 clamp(24px,2.35vw,38px)/.9 Georgia,"Times New Roman",serif; letter-spacing: -.04em; }
 .home-cover-logo-text span { margin-top: 7px; font-size: clamp(9px,.8vw,13px); line-height: 1; letter-spacing: .42em; }
 .home-cover-logo-text small { margin-top: 7px; font-size: clamp(7px,.58vw,10px); line-height: 1; letter-spacing: .22em; }
