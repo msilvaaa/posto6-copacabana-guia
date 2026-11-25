@@ -171,5 +171,21 @@
       "es": "Espacio de trabajo y mesa de comedor del apartamento junto a la ventana"
     },
     "provenance": "Light enhancement of the host-supplied real workspace photograph on 2026-11-25; original vertical 2:3 composition retained, natural colours, proportional full-column display."
+  },
+  "-12.jpg": {
+    "topic_photos": {
+      "2": {
+        "src": "/assets/restaurants/outras-opcoes-mesa-vertical.png",
+        "width": 1024,
+        "height": 1536,
+        "position": "50% 50%",
+        "alt": {
+          "pt": "Mesa de restaurante com pratos variados e brinde entre amigos",
+          "en": "Restaurant table with assorted dishes and friends sharing a toast",
+          "es": "Mesa de restaurante con platos variados y brindis entre amigos"
+        },
+        "provenance": "Host photograph rotated 90 degrees clockwise and lightly enhanced on 2026-11-25; portrait 2:3, natural food colours."
+      }
+    }
   }
 }

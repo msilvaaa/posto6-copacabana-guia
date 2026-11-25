@@ -117,6 +117,8 @@ def icon(name):
 def photograph(page, chapter, upgrades, photos):
     image = page['image']
     upgrade = next((p for suffix, p in upgrades.items() if image['src'].endswith(suffix)), None)
+    if upgrade and not upgrade.get('src'):
+        upgrade = None
     if image['src'].endswith('-02.jpg') and upgrade is None:
         upgrade = photos[0]
     if upgrade:

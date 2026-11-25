@@ -37,7 +37,7 @@ def render(source,page,index=0):
  topic_photos=json.loads((ROOT/'data/guide-photo-upgrades.json').read_text()).get(suffix,{}).get('topic_photos',{})
  if topic_photos:
   photo=first.all(lambda n:n.has('native-photo'))[0]
-  original=photo.all(lambda n:n.tag=='img')[0];original.attrs['data-topic-photo']='0'
+  original=photo.all(lambda n:n.tag in ('img','svg'))[0];original.attrs['data-topic-photo']='0'
   selected=str(index) if str(index) in topic_photos else '0'
   if selected!='0':original.attrs['hidden']=None
   for key,variant in topic_photos.items():
@@ -84,6 +84,6 @@ def render(source,page,index=0):
  if suffix=='-11.jpg':
   head.add(Node('link',{'rel':'stylesheet','href':'/rio-football.css?v=20261125-crests-left'}))
   head.add(Node('script',{'src':'/rio-football.js?v=20261125-1','defer':None}))
- head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261125-tab-order'}))
- head.add(Node('script',{'src':'/activities-tabs.js?v=20261125-tab-order','defer':None}))
+ head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261125-topic-photo-fallback'}))
+ head.add(Node('script',{'src':'/activities-tabs.js?v=20261125-topic-photo-fallback','defer':None}))
  return doc.html()
