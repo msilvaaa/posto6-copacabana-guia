@@ -1,7 +1,8 @@
 (() => {
  const bar=document.querySelector('.activities-topic-tabs');
  if (!bar) return;
- const tabs=[...bar.querySelectorAll('[data-activities-topic]')];
+ const visualTabs=[...bar.querySelectorAll('[data-activities-topic]')];
+ const tabs=[...visualTabs].sort((a,b)=>Number(a.dataset.activitiesTopic)-Number(b.dataset.activitiesTopic));
  const panels=[...document.querySelectorAll('.activities-topic-panel')];
  function select(index,remember=false,focus=false) {
   if (!tabs[index] || !panels[index]) return;
@@ -30,13 +31,13 @@
  bar.addEventListener('keydown',event=>{
   const tab=event.target.closest('[data-activities-topic]');
   if (!tab) return;
-  let index=Number(tab.dataset.activitiesTopic);
+  let index=visualTabs.indexOf(tab);
   if (event.key==='ArrowRight') index=(index+1)%tabs.length;
   else if (event.key==='ArrowLeft') index=(index+tabs.length-1)%tabs.length;
   else if (event.key==='Home') index=0;
   else if (event.key==='End') index=tabs.length-1;
   else return;
-  event.preventDefault();select(index,true,true);
+  event.preventDefault();select(Number(visualTabs[index].dataset.activitiesTopic),true,true);
  });
  window.addEventListener('popstate',()=>select(current()));
  select(current());

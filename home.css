@@ -5,7 +5,7 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .page-stage { position: relative; width: 100%; min-height: 100dvh; aspect-ratio: 1537 / 864; background: #f8f6f2; }
 .page-stage::after { content: ""; position: absolute; inset: 0 0 0 72.1%; box-shadow: -15px 0 34px #00000014; pointer-events: none; }
 .home-cover-hero { position: absolute; inset: 0; pointer-events: none; }
-.home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff66,#ffffff26 45%,transparent 75%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.jpg'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
+.home-cover-photo { position: absolute; inset: 0 auto 0 0; width: 72.1%; background-image: linear-gradient(90deg,#ffffff66,#ffffff26 45%,transparent 75%),linear-gradient(0deg,#00000057, #0000000f 24%,transparent 52%),url('/assets/copacabana-drummond.webp'); background-size: 100% 100%,100% 100%,cover; background-position: center; background-repeat: no-repeat; }
 .home-cover-copy { position: absolute; left: 4.7%; top: calc(7.4% + 36px); width: 65%; }
 .home-cover-brand { position: absolute; left: 4.7%; top: 2%; display: flex; align-items: flex-start; gap: 10px; width: max-content; margin: 0 0 4px; text-transform: uppercase; }
 .home-cover-logo-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -62,7 +62,7 @@ a:focus-visible { outline: 2px solid #0078ff; outline-offset: 5px; }
   .page-stage { min-height: 0; aspect-ratio: auto; }
   .page-stage::after, .home-menu-rule { display: none; }
   .home-cover-hero { position: relative; padding: 156px 6% 30px; }
-  .home-cover-photo { width: 100%; background-image: linear-gradient(90deg,#ffffffb3,transparent 90%),linear-gradient(0deg,#0009,transparent 60%),url('/assets/copacabana-drummond.jpg'); }
+  .home-cover-photo { width: 100%; background-image: linear-gradient(90deg,#ffffffb3,transparent 90%),linear-gradient(0deg,#0009,transparent 60%),url('/assets/copacabana-drummond.webp'); }
   .home-cover-copy { position: relative; left: auto; top: auto; width: 100%; max-width: 650px; }
   .home-cover-brand { position: static; margin: 0 0 12px; }
   .home-cover-copy h1 { font-size: clamp(22px,5.6vw,48px); line-height: clamp(26px,6.1vw,58px); min-height: 0; }

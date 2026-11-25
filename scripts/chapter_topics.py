@@ -67,7 +67,8 @@ def render(source,page,index=0):
  body.attrs['data-activities-title']=''.join(str(x) for x in title.children)
  title.children=[body.attrs['data-activities-title']+' — '+labels[index]]
  heading=panel.all(lambda n:n.tag=='h1')[0];position=panel.children.index(heading)+1
- tabs=''.join(f'<a id="activities-tab-{i}" role="tab" data-activities-topic="{i}" aria-controls="activities-panel-{i}" aria-selected="{str(i==index).lower()}" tabindex="{0 if i==index else -1}" href="{topic_url(page,i)}"'+(' aria-current="page"' if i==index else '')+f'>{escape(label)}</a>' for i,label in enumerate(labels))
+ tab_order=[1,0] if suffix=='-11.jpg' else range(len(labels))
+ tabs=''.join(f'<a id="activities-tab-{i}" role="tab" data-activities-topic="{i}" aria-controls="activities-panel-{i}" aria-selected="{str(i==index).lower()}" tabindex="{0 if i==index else -1}" href="{topic_url(page,i)}"'+(' aria-current="page"' if i==index else '')+f'>{escape(label)}</a>' for i in tab_order for label in [labels[i]])
  nav=fragment(f'<nav class="activities-topic-tabs" style="--topic-count:{len(labels)}" role="tablist" aria-label="{escape(body.attrs["data-activities-title"],quote=True)}">{tabs}</nav>')
  panel.insert(position,nav)
  for i,topic in enumerate(panels):panel.insert(position+i+1,topic)
@@ -79,6 +80,6 @@ def render(source,page,index=0):
   flag.attrs['href']=topic_url(translated[lang],index)
   for i in range(len(labels)):flag.attrs[f'data-activities-path-{i}']=topic_url(translated[lang],i)
  head=doc.all(lambda n:n.tag=='head')[0]
- head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261124-10'}))
- head.add(Node('script',{'src':'/activities-tabs.js?v=20261124-10','defer':None}))
+ head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261125-tab-order'}))
+ head.add(Node('script',{'src':'/activities-tabs.js?v=20261125-tab-order','defer':None}))
  return doc.html()
