@@ -79,7 +79,6 @@
     "src": "/assets/transport/onibus-rio.webp",
     "width": 1123,
     "height": 1401,
-    "preserve_ratio": true,
     "alt": {
       "pt": "Ônibus do Rio de Janeiro com coqueiros e o Morro Dois Irmãos ao fundo",
       "en": "Rio de Janeiro bus with palm trees and Dois Irmãos mountain in the background",
@@ -138,16 +137,16 @@
     }
   },
   "-02.jpg": {
-    "src": "/assets/welcome/porta-apartamento-706-natural.png",
+    "src": "/assets/welcome/porta-apartamento-sem-numero.png",
     "width": 1024,
     "height": 1536,
     "position": "50% 15%",
     "alt": {
-      "pt": "Porta de entrada do apartamento 706 entreaberta, com fechadura digital e corredor ao fundo",
-      "en": "Open entrance door of apartment 706, with digital lock and hallway in the background",
-      "es": "Puerta de entrada entreabierta del apartamento 706, con cerradura digital y pasillo al fondo"
+      "pt": "Porta de entrada entreaberta, com fechadura digital e corredor ao fundo",
+      "en": "Open entrance door with digital lock and hallway in the background",
+      "es": "Puerta de entrada entreabierta con cerradura digital y pasillo al fondo"
     },
-    "provenance": "Light enhancement of the host-supplied real entrance photograph on 2026-11-25. Vertical 2:3 framing and architectural details preserved; proportional cover display."
+    "provenance": "Edited the host-supplied entrance photograph on 2026-11-25 to remove only the apartment number from the door. Same vertical composition, natural wood texture, proportional full-column display."
   },
   "-15.jpg": {
     "src": "/assets/checkout/rede-cinza-natural.png",
