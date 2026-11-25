@@ -72,8 +72,12 @@ class NativeGuideTests(unittest.TestCase):
                 for section in chapter['sections']:
                     for node in [section['title']] + [item['text'] for item in section['items']]:
                         self.assertTrue(all(node.get(lang, '').strip() for lang in ['pt', 'en', 'es']))
-        for image in upgrades.values():
-            self.assertTrue((ROOT / image['src'].lstrip('/')).is_file())
+        for upgrade in upgrades.values():
+            images=([upgrade] if upgrade.get('src') else [])+list(upgrade.get('topic_photos',{}).values())
+            self.assertTrue(images)
+            for image in images:
+                self.assertTrue((ROOT / image['src'].lstrip('/')).is_file())
+                self.assertEqual(set(image['alt']),{'pt','en','es'})
 
 
 if __name__ == '__main__':
