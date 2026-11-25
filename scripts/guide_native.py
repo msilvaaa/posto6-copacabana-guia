@@ -117,7 +117,7 @@ def icon(name):
 def photograph(page, chapter, upgrades, photos):
     image = page['image']
     upgrade = next((p for suffix, p in upgrades.items() if image['src'].endswith(suffix)), None)
-    if image['src'].endswith('-02.jpg'):
+    if image['src'].endswith('-02.jpg') and upgrade is None:
         upgrade = photos[0]
     if upgrade:
         label = upgrade.get('alt', {})
@@ -373,7 +373,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-matched-clock'
-    native_style += '-readable-body-20261125'
+    native_style += '-welcome-full-photo-20261125'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
