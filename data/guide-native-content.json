@@ -902,9 +902,9 @@
           },
           {
             "title": {
-              "pt": "Precisa de um café?",
-              "en": "Time for coffee?",
-              "es": "¿Te apetece un café?"
+              "pt": "Café da manhã",
+              "en": "Breakfast",
+              "es": "Desayuno"
             },
             "icon": "coffee",
             "items": [
@@ -923,17 +923,7 @@
                   "es": "Apetite Café"
                 },
                 "href": "https://maps.app.goo.gl/EZtzSazB4E8xd2AaA"
-              }
-            ]
-          },
-          {
-            "title": {
-              "pt": "Confeitaria Colombo",
-              "en": "Confeitaria Colombo",
-              "es": "Confeitaria Colombo"
-            },
-            "icon": "coffee",
-            "items": [
+              },
               {
                 "text": {
                   "pt": "Confeitaria Colombo",
@@ -945,6 +935,30 @@
                   "en": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2",
                   "es": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2"
                 }
+              },
+              {
+                "text": {
+                  "pt": "Instagram — ARP Bar",
+                  "en": "Instagram — ARP Bar",
+                  "es": "Instagram — ARP Bar"
+                },
+                "href": "https://www.instagram.com/arpbar/"
+              },
+              {
+                "text": {
+                  "pt": "ARP Bar",
+                  "en": "ARP Bar",
+                  "es": "ARP Bar"
+                },
+                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
+              },
+              {
+                "text": {
+                  "pt": "Starbucks",
+                  "en": "Starbucks",
+                  "es": "Starbucks"
+                },
+                "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
               }
             ]
           },
@@ -976,61 +990,11 @@
           },
           {
             "title": {
-              "pt": "Café da manhã",
-              "en": "Breakfast",
-              "es": "Desayuno"
-            },
-            "icon": "coffee",
-            "items": [
-              {
-                "text": {
-                  "pt": "Instagram — ARP Bar",
-                  "en": "Instagram — ARP Bar",
-                  "es": "Instagram — ARP Bar"
-                },
-                "href": "https://www.instagram.com/arpbar/"
-              },
-              {
-                "text": {
-                  "pt": "ARP Bar",
-                  "en": "ARP Bar",
-                  "es": "ARP Bar"
-                },
-                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
-              },
-              {
-                "text": {
-                  "pt": "Starbucks",
-                  "en": "Starbucks",
-                  "es": "Starbucks"
-                },
-                "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
-              },
-              {
-                "text": {
-                  "pt": "Instagram — Apetite Café",
-                  "en": "Instagram — Apetite Café",
-                  "es": "Instagram — Apetite Café"
-                },
-                "href": "https://www.instagram.com/apetitecafe.rj/"
-              },
-              {
-                "text": {
-                  "pt": "Apetite Café Copacabana",
-                  "en": "Apetite Café Copacabana",
-                  "es": "Apetite Café Copacabana"
-                },
-                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
-              }
-            ]
-          },
-          {
-            "title": {
               "pt": "Feira de rua",
               "en": "Street market",
               "es": "Mercado callejero"
             },
-            "icon": "market",
+            "icon": "fruit-cart",
             "items": [
               {
                 "text": {

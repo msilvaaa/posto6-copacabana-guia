@@ -27,3 +27,5 @@ https://github.com/microsoft/fluentui-emoji
 Original appliance illustrations: fridge, wash, dishwasher, iron, safe, lock, door, fitness. Created specifically for the Posto 6 guide.
 
 Amenity-specific vector illustrations (amenity-*.svg): original artwork created for the Posto 6 guest guide, with colored gradients and relief.
+
+fruit-cart.svg: fruit-filled adaptation of the Microsoft Fluent 3D shopping cart, created for the Posto 6 guide.
