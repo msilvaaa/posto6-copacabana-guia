@@ -78,11 +78,11 @@
  background:transparent; border-radius:12px; font-size:12px; font-weight:700;
 }
 .amenities-grid .amenity-icon {
- flex:0 0 68px; width:68px; height:68px; border-radius:50%; background:white;
+ flex:0 0 var(--guide-menu-button-size); width:var(--guide-menu-button-size); height:var(--guide-menu-button-size); border-radius:50%; background:white;
  box-shadow:0 0 0 3px white,0 8px 20px #0003;
  transition:transform .18s ease,box-shadow .18s ease;
 }
-.amenities-grid .amenity-icon svg { width:50px; height:50px; }
+.amenities-grid .amenity-icon svg { width:73.53%; height:73.53%; }
 .amenities-grid>.amenity-card:hover .amenity-icon,
 .amenities-grid>.amenity-card:focus-visible .amenity-icon {
  transform:translateY(-3px); box-shadow:0 12px 28px #00000047;

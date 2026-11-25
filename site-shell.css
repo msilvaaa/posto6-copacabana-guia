@@ -241,3 +241,7 @@ body.home-page::after { left:70%; }
  body.home-page .page-stage { padding-bottom:160px; }
 }
 @media print { body:is(.site-page,.home-page)::after { display:none; } }
+
+/* Cover and Amenities use the same responsive circle diameter. */
+:root { --guide-menu-button-size:clamp(66px,5vw,84px); }
+@media(max-width:1100px) { :root { --guide-menu-button-size:clamp(60px,12vw,84px); } }
