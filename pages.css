@@ -14,7 +14,7 @@
 .photo-grid a { display: block; border-radius: 10px; }
 .photo-grid img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; border-radius: 10px; }
 .photo-grid figcaption { padding: 8px 4px; color: #444; font-size: 12px; line-height: 1.3; }
-.amenities-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px 8px; }
+.amenities-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px 12px; }
 .amenity-card { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; min-height: 96px; padding: 8px 3px; border-radius: 12px; background: #f2ede7; color: #111; text-align: center; text-decoration: none; font-size: 11px; line-height: 1.3; }
 .amenity-card:hover { background: #e5eeeb; }
 .amenity-icon { display: block; flex: 0 0 52px; width: 52px; height: 52px; border-radius: 8px; background-repeat: no-repeat; }
@@ -71,3 +71,21 @@
 /* Filled, colorful amenity illustrations without cropping or raster enlargement. */
 .amenity-icon { background: transparent; border: 0; border-radius: 0; }
 .amenity-icon svg { display: block; width: 46px; height: 46px; }
+
+/* Amenities reuse the language buttons' circular relief and gentle hover lift. */
+.amenities-grid>.amenity-card {
+ min-width:0; min-height:112px; padding:8px 3px; gap:12px;
+ background:transparent; border-radius:12px; font-size:12px;
+}
+.amenities-grid .amenity-icon {
+ flex:0 0 68px; width:68px; height:68px; border-radius:50%; background:white;
+ box-shadow:0 0 0 3px white,0 8px 20px #0003;
+ transition:transform .18s ease,box-shadow .18s ease;
+}
+.amenities-grid .amenity-icon svg { width:50px; height:50px; }
+.amenities-grid>.amenity-card:hover .amenity-icon,
+.amenities-grid>.amenity-card:focus-visible .amenity-icon {
+ transform:translateY(-3px); box-shadow:0 12px 28px #00000047;
+}
+html[data-theme="dark"] .content-page .amenities-grid>.amenity-card { background:transparent; color:var(--guide-text); }
+@media(prefers-reduced-motion:reduce) { .amenities-grid .amenity-icon { transition:none; } }
