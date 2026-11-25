@@ -148,5 +148,17 @@
       "es": "Puerta de entrada entreabierta del apartamento 706, con cerradura digital y pasillo al fondo"
     },
     "provenance": "Light enhancement of the host-supplied real entrance photograph on 2026-11-25. Vertical 2:3 framing and architectural details preserved; proportional cover display."
+  },
+  "-15.jpg": {
+    "src": "/assets/checkout/rede-cinza-natural.png",
+    "width": 1024,
+    "height": 1536,
+    "position": "50% 50%",
+    "alt": {
+      "pt": "Rede cinza com franjas laranjas e cadeira branca junto à janela do apartamento",
+      "en": "Grey hammock with orange tassels and white chair beside the apartment window",
+      "es": "Hamaca gris con flecos naranjas y silla blanca junto a la ventana del apartamento"
+    },
+    "provenance": "Light photographic enhancement of the host-supplied grey-and-orange hammock photo on 2026-11-25; original vertical 2:3 scene retained with natural colours and proportional full-column display."
   }
 }
