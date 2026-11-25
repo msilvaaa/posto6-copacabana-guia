@@ -150,14 +150,15 @@
     }
   },
   "-02.jpg": {
-    "src": "/assets/welcome/sala-ampla-natural.png",
-    "width": 1536,
-    "height": 1024,
+    "src": "/assets/welcome/porta-apartamento-706-natural.png",
+    "width": 1024,
+    "height": 1536,
+    "position": "50% 15%",
     "alt": {
-      "pt": "Sala do apartamento com mesa, planta, sofá e rede ao fundo",
-      "en": "Apartment living room with dining table, plant, sofa and hammock in the background",
-      "es": "Sala del apartamento con mesa, planta, sofá y hamaca al fondo"
+      "pt": "Porta de entrada do apartamento 706 entreaberta, com fechadura digital e corredor ao fundo",
+      "en": "Open entrance door of apartment 706, with digital lock and hallway in the background",
+      "es": "Puerta de entrada entreabierta del apartamento 706, con cerradura digital y pasillo al fondo"
     },
-    "provenance": "Light enhancement of the host-supplied real living-room photograph on 2026-11-25; full open framing and depth preserved, no zoom."
+    "provenance": "Light enhancement of the host-supplied real entrance photograph on 2026-11-25. Vertical 2:3 framing and architectural details preserved; proportional cover display."
   }
 }
