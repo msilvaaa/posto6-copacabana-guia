@@ -338,3 +338,6 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .native-link { font-size:16px; }
 .instruction-list { font-size:16px; }
 .house-rules-grid p { font-size:16px; line-height:1.5; }
+
+/* Show the complete welcome photograph without zooming or cutting its depth. */
+.native-photo>img[data-preserve-ratio] { object-fit:contain; }
