@@ -263,11 +263,18 @@ def build_native(page, content, upgrades, photos):
                 link_count=sum(bool(item.get('href')) for item in section['items'])
                 nodes = ['<div class="fort-links">' + ''.join(nodes[:link_count]) + '</div>', *nodes[link_count:]]
             if page['image']['src'].endswith('-09.jpg') and section_index == 2:
-                nodes = ['<div class="bike-links">' + nodes[0] + nodes[2] + '</div>', nodes[1], *nodes[3:]]
+                nodes = ['<div class="bike-links">' + nodes[0] + nodes[1] + '</div>', *nodes[2:]]
             if page['image']['src'].endswith('-09.jpg') and section_index == 3:
                 nodes = ['<div class="gym-links">' + ''.join(nodes[:2]) + '</div>', *nodes[2:]]
             if page['image']['src'].endswith('-14.jpg') and section_index == 3:
                 nodes = ['<div class="pharmacy-links">' + ''.join([nodes[0], nodes[2], nodes[1]]) + '</div>']
+            if page['image']['src'].endswith('-11.jpg') and section_index == 0:
+                branch_urls=['https://maps.app.goo.gl/Us8V4UhyPFq7CxSw9','https://maps.app.goo.gl/sCiVkZfR1Fatwhdy9']
+                branch_nodes=[node for node in nodes if any(url in node for url in branch_urls)]
+                if len(branch_nodes)==2:
+                    first=nodes.index(branch_nodes[0])
+                    nodes=[node for node in nodes if node not in branch_nodes]
+                    nodes.insert(first,'<div class="belmonte-branches">'+''.join(branch_nodes)+'</div>')
             if page['image']['src'].endswith('-10.jpg') and section_index == 0:
                 nodes = ['<div class="bank-links">' + ''.join(nodes) + '</div>']
             if page['image']['src'].endswith('-10.jpg') and section_index == 4:
@@ -373,7 +380,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-matched-clock'
-    native_style += '-welcome-full-photo-20261125'
+    native_style += '-venue-link-order-20261125'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>

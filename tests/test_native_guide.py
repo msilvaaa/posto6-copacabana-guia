@@ -33,6 +33,9 @@ class NativeGuideTests(unittest.TestCase):
                 cafes={'pt':'pt/bares/cafes/index.html','en':'en/bars/coffee/index.html','es':'es/verja/cafes/index.html'}
                 moved=Links();moved.feed((ROOT/cafes[page['lang']]).read_text())
                 parser.destinations.update(moved.destinations)
+            if page['image']['src'].endswith('-11.jpg'):
+                # The owner removed the generic Belmonte location, retaining its two branches.
+                expected.discard('https://maps.app.goo.gl/w6MaQtLco1SCjhwC7')
             if page['image']['src'].endswith('-04.jpg'):
                 # The original Santos Dumont shortcut incorrectly led to the apartment.
                 expected.discard('https://maps.app.goo.gl/RT7GMYay3J4vLoMr9')

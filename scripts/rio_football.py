@@ -23,7 +23,7 @@ def render(lang):
    stamp=weekdays[when.weekday()]+' · '+stamp
    league=LEAGUES.get(game['league'],game['competition'])
    fixtures.append(f'<li class="football-fixture" data-match-start="{escape(game["date"])}"><time datetime="{escape(game["date"])}">{escape(stamp)}</time><a href="{escape(game["url"])}" target="_blank" rel="noopener noreferrer">{escape(game["home"])} × {escape(game["away"])}</a><small>{escape(league)}</small></li>')
-  cards.append(f'<article class="football-club" data-club="{club["id"]}"><h3><img class="football-crest" src="/assets/football/{club["id"]}.png" alt="{escape(club["name"])}" title="{escape(club["name"])}" width="40" height="40" loading="lazy" decoding="async"/></h3><ul>{"".join(fixtures)}</ul><p class="football-empty"'+(' hidden' if fixtures else '')+f'>{escape(none)}</p></article>')
+  cards.append(f'<article class="football-club" data-club="{club["id"]}"><h3><img class="football-crest" src="/assets/football/{club["id"]}.svg" alt="{escape(club["name"])}" title="{escape(club["name"])}" width="40" height="40" loading="lazy" decoding="async"/></h3><ul>{"".join(fixtures)}</ul><p class="football-empty"'+(' hidden' if fixtures else '')+f'>{escape(none)}</p></article>')
  checked=datetime.fromisoformat(data['updated_at']).astimezone(zone).strftime('%d/%m, %H:%M')
  start=datetime.fromisoformat(data['window_start']).strftime('%d/%m');end=datetime.fromisoformat(data['window_end']).strftime('%d/%m')
  return (f'<section class="native-card rio-football" data-football-schedule><h2>{escape(title)}</h2><p class="football-period">{escape(period)} · {start}–{end}</p>'

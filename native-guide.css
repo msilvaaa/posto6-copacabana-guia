@@ -341,3 +341,5 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 
 /* Show the complete welcome photograph without zooming or cutting its depth. */
 .native-photo>img[data-preserve-ratio] { object-fit:contain; }
+
+.belmonte-branches { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
