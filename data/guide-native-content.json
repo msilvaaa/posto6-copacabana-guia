@@ -613,6 +613,14 @@
             "items": [
               {
                 "text": {
+                  "pt": "Bike Itaú — Tembici",
+                  "en": "Bike Itaú — Tembici",
+                  "es": "Bike Itaú — Tembici"
+                },
+                "href": "https://www.tembici.com.br/"
+              },
+              {
+                "text": {
                   "pt": "Estação de bicicletas Itaú",
                   "en": "Itaú bike station",
                   "es": "Estación de bicicletas Itaú"
@@ -625,14 +633,6 @@
                   "en": "Listed hours: 8 am–10 pm.",
                   "es": "Horario indicado: de 8:00 a 22:00."
                 }
-              },
-              {
-                "text": {
-                  "pt": "Bike Itaú — Tembici",
-                  "en": "Bike Itaú — Tembici",
-                  "es": "Bike Itaú — Tembici"
-                },
-                "href": "https://www.tembici.com.br/"
               }
             ]
           },
@@ -843,11 +843,11 @@
             "items": [
               {
                 "text": {
-                  "pt": "Boteco Belmonte",
-                  "en": "Boteco Belmonte",
-                  "es": "Boteco Belmonte"
+                  "pt": "Instagram — Boteco Belmonte",
+                  "en": "Instagram — Boteco Belmonte",
+                  "es": "Instagram — Boteco Belmonte"
                 },
-                "href": "https://maps.app.goo.gl/w6MaQtLco1SCjhwC7"
+                "href": "https://www.instagram.com/boteco_belmonte/?hl=pt-br"
               },
               {
                 "text": {
@@ -867,11 +867,11 @@
               },
               {
                 "text": {
-                  "pt": "Instagram — Boteco Belmonte",
-                  "en": "Instagram — Boteco Belmonte",
-                  "es": "Instagram — Boteco Belmonte"
+                  "pt": "Instagram — Boteco Boa Praça",
+                  "en": "Instagram — Boteco Boa Praça",
+                  "es": "Instagram — Boteco Boa Praça"
                 },
-                "href": "https://www.instagram.com/boteco_belmonte/?hl=pt-br"
+                "href": "https://www.instagram.com/botecoboapraca?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               },
               {
                 "text": {
@@ -883,11 +883,11 @@
               },
               {
                 "text": {
-                  "pt": "Instagram — Boteco Boa Praça",
-                  "en": "Instagram — Boteco Boa Praça",
-                  "es": "Instagram — Boteco Boa Praça"
+                  "pt": "Site — Sindicato do Chopp",
+                  "en": "Website — Sindicato do Chopp",
+                  "es": "Web — Sindicato do Chopp"
                 },
-                "href": "https://www.instagram.com/botecoboapraca?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                "href": "https://www.sindicatodochopp.com.br/"
               },
               {
                 "text": {
@@ -896,14 +896,6 @@
                   "es": "Sindicato do Chopp"
                 },
                 "href": "https://maps.app.goo.gl/fHc9zuFndJz7P8VA6"
-              },
-              {
-                "text": {
-                  "pt": "Site — Sindicato do Chopp",
-                  "en": "Website — Sindicato do Chopp",
-                  "es": "Web — Sindicato do Chopp"
-                },
-                "href": "https://www.sindicatodochopp.com.br/"
               }
             ]
           },
@@ -917,19 +909,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Apetite Café",
-                  "en": "Apetite Café",
-                  "es": "Apetite Café"
-                },
-                "href": "https://maps.app.goo.gl/EZtzSazB4E8xd2AaA"
-              },
-              {
-                "text": {
                   "pt": "Instagram — Apetite Café",
                   "en": "Instagram — Apetite Café",
                   "es": "Instagram — Apetite Café"
                 },
                 "href": "https://www.instagram.com/apetitecafe.rj/"
+              },
+              {
+                "text": {
+                  "pt": "Apetite Café",
+                  "en": "Apetite Café",
+                  "es": "Apetite Café"
+                },
+                "href": "https://maps.app.goo.gl/EZtzSazB4E8xd2AaA"
               }
             ]
           },
@@ -991,19 +983,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "ARP Bar",
-                  "en": "ARP Bar",
-                  "es": "ARP Bar"
-                },
-                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
-              },
-              {
-                "text": {
                   "pt": "Instagram — ARP Bar",
                   "en": "Instagram — ARP Bar",
                   "es": "Instagram — ARP Bar"
                 },
                 "href": "https://www.instagram.com/arpbar/"
+              },
+              {
+                "text": {
+                  "pt": "ARP Bar",
+                  "en": "ARP Bar",
+                  "es": "ARP Bar"
+                },
+                "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
               },
               {
                 "text": {
@@ -1015,19 +1007,19 @@
               },
               {
                 "text": {
-                  "pt": "Apetite Café Copacabana",
-                  "en": "Apetite Café Copacabana",
-                  "es": "Apetite Café Copacabana"
-                },
-                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
-              },
-              {
-                "text": {
                   "pt": "Instagram — Apetite Café",
                   "en": "Instagram — Apetite Café",
                   "es": "Instagram — Apetite Café"
                 },
                 "href": "https://www.instagram.com/apetitecafe.rj/"
+              },
+              {
+                "text": {
+                  "pt": "Apetite Café Copacabana",
+                  "en": "Apetite Café Copacabana",
+                  "es": "Apetite Café Copacabana"
+                },
+                "href": "https://maps.app.goo.gl/hLs5ywFp32u4TgAu8"
               }
             ]
           },
@@ -1085,6 +1077,14 @@
             "items": [
               {
                 "text": {
+                  "pt": "Site — Galetos Copa Rio",
+                  "en": "Website — Galetos Copa Rio",
+                  "es": "Web — Galetos Copa Rio"
+                },
+                "href": "https://www.galetoscopario.com.br/"
+              },
+              {
+                "text": {
                   "pt": "Galetos Copa Rio",
                   "en": "Galetos Copa Rio",
                   "es": "Galetos Copa Rio"
@@ -1097,14 +1097,6 @@
                   "en": "60 metres away.",
                   "es": "A 60 metros."
                 }
-              },
-              {
-                "text": {
-                  "pt": "Site — Galetos Copa Rio",
-                  "en": "Website — Galetos Copa Rio",
-                  "es": "Web — Galetos Copa Rio"
-                },
-                "href": "https://www.galetoscopario.com.br/"
               }
             ]
           },
@@ -1118,19 +1110,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Famiglia Marinho",
-                  "en": "Famiglia Marinho",
-                  "es": "Famiglia Marinho"
-                },
-                "href": "https://maps.app.goo.gl/rEdZu1CFr3dMucoeA"
-              },
-              {
-                "text": {
                   "pt": "Site — Famiglia Marinho",
                   "en": "Website — Famiglia Marinho",
                   "es": "Web — Famiglia Marinho"
                 },
                 "href": "https://www.famigliamarinho.com/"
+              },
+              {
+                "text": {
+                  "pt": "Famiglia Marinho",
+                  "en": "Famiglia Marinho",
+                  "es": "Famiglia Marinho"
+                },
+                "href": "https://maps.app.goo.gl/rEdZu1CFr3dMucoeA"
               }
             ]
           },
@@ -1144,19 +1136,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Pasta & Vino",
-                  "en": "Pasta & Vino",
-                  "es": "Pasta & Vino"
-                },
-                "href": "https://maps.app.goo.gl/QSqNE4KcNhkpK4nY9"
-              },
-              {
-                "text": {
                   "pt": "Site — Pasta & Vino",
                   "en": "Website — Pasta & Vino",
                   "es": "Web — Pasta & Vino"
                 },
                 "href": "https://pastaevino.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "Pasta & Vino",
+                  "en": "Pasta & Vino",
+                  "es": "Pasta & Vino"
+                },
+                "href": "https://maps.app.goo.gl/QSqNE4KcNhkpK4nY9"
               }
             ]
           },
@@ -1197,19 +1189,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "TT Burger",
-                  "en": "TT Burger",
-                  "es": "TT Burger"
-                },
-                "href": "https://maps.app.goo.gl/ZRR6PTDNYgW7uhH58"
-              },
-              {
-                "text": {
                   "pt": "Site — TT Burger",
                   "en": "Website — TT Burger",
                   "es": "Web — TT Burger"
                 },
                 "href": "https://ttburger.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "TT Burger",
+                  "en": "TT Burger",
+                  "es": "TT Burger"
+                },
+                "href": "https://maps.app.goo.gl/ZRR6PTDNYgW7uhH58"
               }
             ]
           },
@@ -1223,19 +1215,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Restaurante e Bar Garota de Ipanema",
-                  "en": "Restaurante e Bar Garota de Ipanema",
-                  "es": "Restaurante e Bar Garota de Ipanema"
-                },
-                "href": "https://maps.app.goo.gl/J4ZBPwMZKUXwW47f9"
-              },
-              {
-                "text": {
                   "pt": "Instagram — Garota de Ipanema",
                   "en": "Instagram — Garota de Ipanema",
                   "es": "Instagram — Garota de Ipanema"
                 },
                 "href": "https://www.instagram.com/restaurantesgarota/"
+              },
+              {
+                "text": {
+                  "pt": "Restaurante e Bar Garota de Ipanema",
+                  "en": "Restaurante e Bar Garota de Ipanema",
+                  "es": "Restaurante e Bar Garota de Ipanema"
+                },
+                "href": "https://maps.app.goo.gl/J4ZBPwMZKUXwW47f9"
               }
             ]
           },
@@ -1247,6 +1239,14 @@
             },
             "icon": "food",
             "items": [
+              {
+                "text": {
+                  "pt": "Site — Eclipse",
+                  "en": "Website — Eclipse",
+                  "es": "Web — Eclipse"
+                },
+                "href": "https://www.bareclipse.com.br/"
+              },
               {
                 "text": {
                   "pt": "Eclipse Gastronomia",
@@ -1261,14 +1261,6 @@
                   "en": "Open 24 hours.",
                   "es": "Abierto las 24 horas."
                 }
-              },
-              {
-                "text": {
-                  "pt": "Site — Eclipse",
-                  "en": "Website — Eclipse",
-                  "es": "Web — Eclipse"
-                },
-                "href": "https://www.bareclipse.com.br/"
               }
             ]
           }
@@ -1292,19 +1284,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Venga",
-                  "en": "Venga",
-                  "es": "Venga"
-                },
-                "href": "https://maps.app.goo.gl/DMedjYZGDtrSosbU7"
-              },
-              {
-                "text": {
                   "pt": "Site — Venga",
                   "en": "Website — Venga",
                   "es": "Web — Venga"
                 },
                 "href": "https://venga.com.br/restaurantes/"
+              },
+              {
+                "text": {
+                  "pt": "Venga",
+                  "en": "Venga",
+                  "es": "Venga"
+                },
+                "href": "https://maps.app.goo.gl/DMedjYZGDtrSosbU7"
               }
             ]
           },
@@ -1318,19 +1310,19 @@
             "items": [
               {
                 "text": {
-                  "pt": "Teva Deli — restaurante vegano",
-                  "en": "Teva Deli — vegan restaurant",
-                  "es": "Teva Deli — restaurante vegano"
-                },
-                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
-              },
-              {
-                "text": {
                   "pt": "Instagram — Teva Deli",
                   "en": "Instagram — Teva Deli",
                   "es": "Instagram — Teva Deli"
                 },
                 "href": "https://www.instagram.com/tevadelivegetal/"
+              },
+              {
+                "text": {
+                  "pt": "Teva Deli — restaurante vegano",
+                  "en": "Teva Deli — vegan restaurant",
+                  "es": "Teva Deli — restaurante vegano"
+                },
+                "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
               }
             ]
           }
@@ -1415,6 +1407,14 @@
               },
               {
                 "text": {
+                  "pt": "Site — Zona Sul",
+                  "en": "Website — Zona Sul",
+                  "es": "Web — Zona Sul"
+                },
+                "href": "https://www.zonasul.com.br/"
+              },
+              {
+                "text": {
                   "pt": "Rua Francisco Sá, 35 — Copacabana",
                   "en": "Rua Francisco Sá, 35 — Copacabana",
                   "es": "Rua Francisco Sá, 35 — Copacabana"
@@ -1439,11 +1439,11 @@
               },
               {
                 "text": {
-                  "pt": "Site — Zona Sul",
-                  "en": "Website — Zona Sul",
-                  "es": "Web — Zona Sul"
+                  "pt": "Instagram — Big Market",
+                  "en": "Instagram — Big Market",
+                  "es": "Instagram — Big Market"
                 },
-                "href": "https://www.zonasul.com.br/"
+                "href": "https://www.instagram.com/redebigmarket/"
               },
               {
                 "text": {
@@ -1452,14 +1452,6 @@
                   "es": "Big Market"
                 },
                 "href": "https://maps.app.goo.gl/F61cWQLUyK8P9T6X9"
-              },
-              {
-                "text": {
-                  "pt": "Instagram — Big Market",
-                  "en": "Instagram — Big Market",
-                  "es": "Instagram — Big Market"
-                },
-                "href": "https://www.instagram.com/redebigmarket/"
               }
             ]
           }
