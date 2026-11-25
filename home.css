@@ -80,7 +80,7 @@ a:focus-visible { outline: 2px solid #0078ff; outline-offset: 5px; }
   .main-html-topbar .detail-modern-flag { left: auto; }
   .detail-modern-flag img { width: 44px; height: 44px; }
   .detail-modern-home svg { width: 22px; height: 22px; }
-  .cover-menu { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 44px 10px; padding: 38px 14px 50px; pointer-events: auto; }
+  .cover-menu { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 34px 10px; width:100%; max-width:560px; margin:0 auto; padding: 32px 14px 44px; pointer-events: auto; }
   .cover-menu .cover-html-button { position: relative; left: auto; top: auto; width: clamp(60px,12vw,84px); height: clamp(60px,12vw,84px); margin: 0 auto; transform: none; }
   .cover-html-button::after { top: calc(100% + 10px); font-size: clamp(9px,2.4vw,12px); }
   .cover-menu .cover-html-button:hover, .cover-menu .cover-html-button:focus-visible { transform: translateY(-3px); }
@@ -180,3 +180,14 @@ html[data-theme="dark"] .home-cover-hero>.theme-toggle:hover { background:#333; 
 
 /* Align solar times with the Emergency entry while leaving the forecast in place. */
 .home-cover-hero>.site-utilities .cover-sun-times { position:relative; top:var(--cover-sun-shift,0px); }
+
+/* Keep the cover menu comfortably spaced in a more compact group. */
+@media(min-width:1101px) {
+ .cover-html-button[data-column="1"] { left:76.3%; }
+ .cover-html-button[data-column="3"] { left:93.7%; }
+ .cover-html-button[data-row="1"] { top:23%; }
+ .cover-html-button[data-row="2"] { top:36%; }
+ .cover-html-button[data-row="3"] { top:49%; }
+ .cover-html-button[data-row="4"] { top:62%; }
+ .cover-html-button[data-row="5"] { top:75%; }
+}
