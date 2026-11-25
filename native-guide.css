@@ -332,3 +332,9 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 :root .native-card .native-link:has(>svg)+p.native-description { padding-inline-start:29px; }
 :root .native-card .native-link:has(>.app-link-icon,>.telephone-icon)+p.native-description { padding-inline-start:30px; }
 :root .native-card :is(.fort-links,.bike-links,.gym-links)+p.native-description { padding-inline-start:29px; }
+
+/* Keep guest instructions readable; only reference notes use compact caption type. */
+:root .native-card p.native-body-copy { margin:4px 0 10px; font:400 16px/1.6 Arial,Helvetica,sans-serif; text-align:left; }
+.native-link { font-size:16px; }
+.instruction-list { font-size:16px; }
+.house-rules-grid p { font-size:16px; line-height:1.5; }

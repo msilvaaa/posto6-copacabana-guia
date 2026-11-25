@@ -242,6 +242,12 @@ def build_native(page, content, upgrades, photos):
             if page['image']['src'].endswith('-06.jpg') and section_index==0:
                 parts.append(native_rules(lang, section))
                 continue
+            # Primary guest instructions are body copy; venue notes remain captions.
+            primary_copy = (page['image']['src'].endswith(('-02.jpg','-03.jpg','-05.jpg','-06.jpg'))
+                            or (page['image']['src'].endswith('-07.jpg') and section_index==3)
+                            or (page['image']['src'].endswith('-15.jpg') and section_index<2)
+                            or section['title']['pt']=='Serviço de entrega')
+            copy_class='native-body-copy' if primary_copy else 'native-description'
             nodes = []
             descriptions=[]
             for item in section['items']:
@@ -251,8 +257,8 @@ def build_native(page, content, upgrades, photos):
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
                     nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
                 else:
-                    nodes.append(f'<p class="native-description">{text}</p>')
-                    descriptions.append(f'<p class="native-description">{text}</p>')
+                    nodes.append(f'<p class="{copy_class}">{text}</p>')
+                    descriptions.append(f'<p class="{copy_class}">{text}</p>')
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
                 link_count=sum(bool(item.get('href')) for item in section['items'])
                 nodes = ['<div class="fort-links">' + ''.join(nodes[:link_count]) + '</div>', *nodes[link_count:]]
@@ -367,7 +373,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-matched-clock'
-    native_style += '-left-bold-descriptions'
+    native_style += '-readable-body-20261125'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>

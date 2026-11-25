@@ -44,7 +44,7 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .cover-button-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .cover-button-art.art-symbol img { object-fit: contain; }
 .cover-button-art img[src="/assets/cover-icons/wifi-azul.webp"] { transform: scale(1.36); }
-.cover-html-button::after { content: attr(aria-label); position: absolute; left: 50%; top: calc(100% + 9px); transform: translateX(-50%); color: #171717; font: 400 clamp(10px,.95vw,13px)/1.05 Arial,Helvetica,sans-serif; letter-spacing: -.02em; white-space: nowrap; text-align: center; }
+.cover-html-button::after { content: attr(aria-label); position: absolute; left: 50%; top: calc(100% + 9px); transform: translateX(-50%); color: #171717; font: 700 clamp(10px,.95vw,13px)/1.05 Arial,Helvetica,sans-serif; letter-spacing: -.02em; white-space: nowrap; text-align: center; }
 .cover-html-button:hover, .cover-html-button:focus-visible { transform: translate(-50%,calc(-50% - 3px)); box-shadow: 0 12px 28px #00000047; }
 .cover-html-button:active { transform: translate(-50%,calc(-50% - 1px)) scale(.985); }
 .cover-html-button[data-column="1"] { left: 77.35%; }
