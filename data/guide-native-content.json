@@ -1159,6 +1159,23 @@
                 "href": "https://pastaevino.com.br/"
               }
             ]
+          },
+          {
+            "title": {
+              "pt": "Serviço de entrega",
+              "en": "Delivery services",
+              "es": "Servicio de entrega"
+            },
+            "icon": "bag",
+            "items": [
+              {
+                "text": {
+                  "pt": "Retire na portaria pedidos de restaurantes, farmácias e aplicativos. O condomínio não permite a entrada de entregadores.",
+                  "en": "Collect restaurant, pharmacy and app orders at reception. Delivery personnel may not enter the building.",
+                  "es": "Recoge en la portería los pedidos de restaurantes, farmacias y apps. No se permite la entrada de repartidores al edificio."
+                }
+              }
+            ]
           }
         ]
       },
@@ -1314,23 +1331,6 @@
                   "es": "Instagram — Teva Deli"
                 },
                 "href": "https://www.instagram.com/tevadelivegetal/"
-              }
-            ]
-          },
-          {
-            "title": {
-              "pt": "Serviço de entrega",
-              "en": "Delivery services",
-              "es": "Servicio de entrega"
-            },
-            "icon": "bag",
-            "items": [
-              {
-                "text": {
-                  "pt": "Retire na portaria pedidos de restaurantes, farmácias e aplicativos. O condomínio não permite a entrada de entregadores.",
-                  "en": "Collect restaurant, pharmacy and app orders at reception. Delivery personnel may not enter the building.",
-                  "es": "Recoge en la portería los pedidos de restaurantes, farmacias y apps. No se permite la entrada de repartidores al edificio."
-                }
               }
             ]
           }
