@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs>
+<linearGradient id="blue" x2=".8" y2="1"><stop stop-color="#b0eaff"/><stop offset=".5" stop-color="#65baf0"/><stop offset="1" stop-color="#3c81c3"/></linearGradient>
+<linearGradient id="teal" x2=".8" y2="1"><stop stop-color="#9debd8"/><stop offset=".5" stop-color="#48c9bc"/><stop offset="1" stop-color="#218b9f"/></linearGradient>
+<linearGradient id="purple" x2=".8" y2="1"><stop stop-color="#d6caff"/><stop offset=".5" stop-color="#ac90de"/><stop offset="1" stop-color="#7763aa"/></linearGradient>
+<linearGradient id="metal" x2=".8" y2="1"><stop stop-color="#b3c7d8"/><stop offset=".5" stop-color="#627d98"/><stop offset="1" stop-color="#35495f"/></linearGradient>
+<linearGradient id="white" x2=".8" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#e9f2f8"/><stop offset="1" stop-color="#b7cedf"/></linearGradient>
+<linearGradient id="screen" x2=".8" y2="1"><stop stop-color="#5bcede"/><stop offset=".5" stop-color="#317dad"/><stop offset="1" stop-color="#304c7c"/></linearGradient>
+<linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff2a7"/><stop offset=".5" stop-color="#ffd170"/><stop offset="1" stop-color="#f6a54e"/></linearGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="2" dy="5" stdDeviation="3" flood-color="#253b62" flood-opacity=".18"/></filter>
+</defs><g filter="url(#shadow)"><path d="M61 130 81 91h94l24 39z" fill="url(#blue)"/><rect x="39" y="126" width="178" height="67" rx="18" fill="url(#teal)"/><path d="m92 99-14 28h97l-14-28z" fill="url(#screen)"/><circle cx="78" cy="190" r="20" fill="url(#metal)"/><circle cx="179" cy="190" r="20" fill="url(#metal)"/><circle cx="78" cy="190" r="9" fill="#b9d5df"/><circle cx="179" cy="190" r="9" fill="#b9d5df"/><rect x="48" y="144" width="26" height="12" rx="5" fill="url(#gold)"/><rect x="181" y="144" width="26" height="12" rx="5" fill="url(#gold)"/><path d="m150 28 13 27 49 7 6 11-54 4-13 21-10-1 2-22-25-10 1-8 28 1-7-28z" fill="url(#white)"/></g></svg>
