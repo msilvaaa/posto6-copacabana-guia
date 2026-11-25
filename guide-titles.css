@@ -1,3 +1,7 @@
+/* One shared lettering height; scale every title together to fit the longest original word. */
+:root { --guide-title-height:min(34px,calc((45vw - 83px) / 10.4)); }
+@media(min-width:761px) and (max-width:1100px) { :root { --guide-title-height:min(34px,calc((45vw - 72px) / 10.4)); } }
+@media(max-width:760px) { :root { --guide-title-height:min(34px,calc((90vw - 82px) / 10.4)); } }
 /* One compact frame and consistent visible lettering height, based on Welcome / Check-in. */
 .native-title.original-heading,
 .section-title.original-title,
@@ -19,13 +23,13 @@
 .section-title.original-title>.compact-title-art {
  display: block;
  flex: 0 1 auto;
- width: calc(34px * var(--title-ratio));
- height: auto;
+ width: calc(var(--guide-title-height) * var(--title-ratio));
+ height: var(--guide-title-height);
  max-width: 100%;
  aspect-ratio: var(--title-ratio);
  padding: 0;
 }
 .section-title:not(.original-title) {
- font-size: 30px;
- line-height: 34px;
+ font-size:calc(var(--guide-title-height) * .882353);
+ line-height:var(--guide-title-height);
 }

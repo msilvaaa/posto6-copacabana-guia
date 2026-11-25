@@ -90,6 +90,7 @@ class AirbnbRatingTests(unittest.TestCase):
             shutil.copy(ROOT / 'scripts/guide_symbols.py', root / 'scripts/guide_symbols.py')
             shutil.copy(ROOT / 'scripts/guide_icons_3d.py', root / 'scripts/guide_icons_3d.py')
             shutil.copytree(ROOT / 'assets/icons-3d', root / 'assets/icons-3d')
+            shutil.copytree(ROOT / 'assets/title-vectors', root / 'assets/title-vectors')
             for lang in ['pt', 'en', 'es']:
                 (root / lang).mkdir()
             html = root / 'changed.html'

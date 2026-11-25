@@ -21,14 +21,11 @@ def artwork(source, rect, css=''):
             f'<image href="{e(source)}" width="1537" height="{2592 if source.endswith("-12.jpg") else 1728 if source.endswith("-13.jpg") else 864}" clip-path="url(#{crop})"/></svg>')
 
 
-TITLE_INK = json.loads((Path(__file__).resolve().parents[1] / 'data/title-ink-bounds.json').read_text())
-
-def title_word_art(source, word=None, width=1537, height=None):
-    x,y,w,h = TITLE_INK.get(source, word or ORIGINAL_ART.get(source, {}).get('word'))
-    height = height or (2592 if source.endswith('-12.jpg') else 1728 if source.endswith('-13.jpg') else 864)
-    return (f'<svg class="compact-title-art" viewBox="{x} {y} {w} {h}" width="{w}" height="{h}" style="--title-ratio:{w/h:.6f}" aria-hidden="true">'
-            f'<defs><clipPath id="original-title-word"><rect x="{x}" y="{y}" width="{w}" height="{h}"/></clipPath></defs>'
-            f'<image href="{e(source)}" width="{width}" height="{height}" clip-path="url(#original-title-word)"/></svg>')
+def title_word_art(source):
+    # Preserve the original lettering as resolution-independent outlines.
+    name=source.lstrip('/').rsplit('.',1)[0].replace('/','--')+'.svg'
+    path=Path(__file__).resolve().parents[1]/'assets/title-vectors'/name
+    return path.read_text().replace('<svg ', '<svg class="compact-title-art" aria-hidden="true" ', 1)
 
 
 def signature_art(lang):
@@ -351,10 +348,6 @@ def build_native(page, content, upgrades, photos):
                 label = {'pt': 'Muito obrigado', 'en': 'Thank you very much', 'es': 'Gracias'}[lang]
                 navigation=f'<div class="native-thanks signature-original" role="img" aria-label="{e(label)}">{signature_art(lang)}</div>'+navigation
         title_art = title_word_art(page['image']['src'])
-        if page['image']['src'].endswith('-03.jpg'):
-            title_art = ('<svg class="compact-title-art" viewBox="0 0 133 32" width="133" height="32" style="--title-ratio:4.15625" aria-hidden="true">'
-                         '<svg x="0" y="0" width="102" height="32" viewBox="1246 132 102 32"><image href="/assets/pt-15.jpg" width="1537" height="864"/></svg>'
-                         '<svg x="102" y="0" width="31" height="32" viewBox="1353 108 31 32"><image href="/assets/pt-03.jpg" width="1537" height="864"/></svg></svg>')
         heading = f'<span class="native-title-text">{e(title)}</span>{title_art}'
         top = f'<div class="native-toolbar">{toolbar(lang, page["languages"])}</div><h1 class="native-title original-heading">{heading}</h1>' if index == 0 else ''
         if index==0 and page['image']['src'].endswith('-09.jpg'):
@@ -384,7 +377,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261124-larger-home"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
-  <link rel="stylesheet" href="/guide-titles.css?v=20261119-colorful"/>
+  <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
   <script src="/site.js?v=20261124-weather-symbol" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
