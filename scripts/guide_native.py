@@ -179,9 +179,9 @@ def sea_conditions(lang):
         'es': ('Mar y viento · Copacabana', 'Olas', 'Viento', 'Ráfagas', 'Consultando previsión…', 'Previsión regional para la costa. Sigue las banderas e indicaciones de los socorristas.'),
     }[lang]
     return (f'<section class="sea-conditions native-card" data-sea-conditions aria-labelledby="sea-title"><h2 id="sea-title">{e(title)}</h2>'
-            f'<dl class="sea-values"><div><dt>{e(waves)}</dt><dd><strong data-sea-value="waveHeight">—</strong> <small data-sea-period></small></dd></div>'
-            f'<div><dt>{e(wind)}</dt><dd><strong data-sea-value="windSpeed">—</strong> <small data-sea-direction></small></dd></div>'
-            f'<div><dt>{e(gusts)}</dt><dd><strong data-sea-value="windGusts">—</strong></dd></div></dl>'
+            f'<dl class="sea-values"><div><dt><span class="sea-condition-icon">{icon_3d("sea-wave")}</span><span>{e(waves)}</span></dt><dd><strong data-sea-value="waveHeight">—</strong> <small data-sea-period></small></dd></div>'
+            f'<div><dt><span class="sea-condition-icon">{icon_3d("sea-wind")}</span><span>{e(wind)}</span></dt><dd><strong data-sea-value="windSpeed">—</strong> <small data-sea-direction></small></dd></div>'
+            f'<div><dt><span class="sea-condition-icon">{icon_3d("sea-gust")}</span><span>{e(gusts)}</span></dt><dd><strong data-sea-value="windGusts">—</strong></dd></div></dl>'
             f'<p class="sea-status" data-sea-status role="status">{e(loading)}</p><p class="sea-note">{e(note)} '
             '<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p></section>')
 
@@ -380,7 +380,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-matched-clock'
-    native_style += '-venue-link-order-20261125'
+    native_style += '-sea-symbols-20261125'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
