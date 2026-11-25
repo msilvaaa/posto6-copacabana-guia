@@ -2,6 +2,7 @@
 import json
 from activities_topics import ROOT, Node, parse, fragment
 from html import escape
+from rio_football import render as render_football
 
 TOPICS={
  '-11.jpg':{
@@ -48,7 +49,7 @@ def render(source,page,index=0):
  groups=[]
  if suffix=='-11.jpg':
   cards=first.all(lambda n:n.tag=='section' and n.has('native-card'))
-  groups=[[cards[0]],cards[1:]]
+  groups=[[cards[0],fragment(render_football(page['lang']))],cards[1:]]
   subtitles=[None,None]
  else:
   groups=[chapter.all(lambda n:n.tag=='section' and n.has('native-card')) for chapter in chapters]
@@ -80,6 +81,9 @@ def render(source,page,index=0):
   flag.attrs['href']=topic_url(translated[lang],index)
   for i in range(len(labels)):flag.attrs[f'data-activities-path-{i}']=topic_url(translated[lang],i)
  head=doc.all(lambda n:n.tag=='head')[0]
+ if suffix=='-11.jpg':
+  head.add(Node('link',{'rel':'stylesheet','href':'/rio-football.css?v=20261125-1'}))
+  head.add(Node('script',{'src':'/rio-football.js?v=20261125-1','defer':None}))
  head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261125-tab-order'}))
  head.add(Node('script',{'src':'/activities-tabs.js?v=20261125-tab-order','defer':None}))
  return doc.html()

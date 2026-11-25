@@ -1,0 +1,37 @@
+name: Update Rio club fixtures
+on:
+  schedule:
+    # Mondays and Thursdays at 09:00 Brasília (UTC-3).
+    - cron: '0 12 * * 1,4'
+  workflow_dispatch:
+permissions:
+  contents: write
+# Serialize with the existing data updater so generated pages never overwrite newer data.
+concurrency:
+  group: sync-airbnb-rating
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch confirmed fixtures and preserve saved data on failure
+        run: python scripts/sync-rio-football.py
+      - name: Rebuild translated schedules
+        run: python scripts/build-guide-pages.py
+      - name: Save schedule and generated Bars pages
+        run: |
+          git add data/rio-football.json pt/bares/index.html pt/bares/cafes/index.html en/bars/index.html en/bars/coffee/index.html es/verja/index.html es/verja/cafes/index.html
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Atualizar próximos jogos dos clubes do Rio'
+          git push origin HEAD:main

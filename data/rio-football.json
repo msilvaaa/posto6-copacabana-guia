@@ -1,0 +1,78 @@
+{
+  "updated_at": "2026-11-25T17:30:02.607748+00:00",
+  "window_start": "2026-11-25",
+  "window_end": "2026-12-01",
+  "timezone": "America/Sao_Paulo",
+  "source": "ESPN",
+  "source_url": "https://www.espn.com.br/futebol/calendario",
+  "clubs": [
+    {
+      "id": "819",
+      "name": "Flamengo",
+      "games": [
+        {
+          "id": "401841333",
+          "date": "2026-11-29T19:00:00+00:00",
+          "time_confirmed": true,
+          "home": "Coritiba",
+          "away": "Flamengo",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Couto Pereira",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841333"
+        }
+      ]
+    },
+    {
+      "id": "3445",
+      "name": "Fluminense",
+      "games": [
+        {
+          "id": "401841337",
+          "date": "2026-11-27T23:00:00+00:00",
+          "time_confirmed": true,
+          "home": "Fluminense",
+          "away": "Cruzeiro",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Estadio do Maracana",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841337"
+        }
+      ]
+    },
+    {
+      "id": "3454",
+      "name": "Vasco da Gama",
+      "games": [
+        {
+          "id": "401841328",
+          "date": "2026-11-29T22:30:00+00:00",
+          "time_confirmed": true,
+          "home": "Atlético-MG",
+          "away": "Vasco da Gama",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Arena MRV",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841328"
+        }
+      ]
+    },
+    {
+      "id": "6086",
+      "name": "Botafogo",
+      "games": [
+        {
+          "id": "401841336",
+          "date": "2026-11-29T00:00:00+00:00",
+          "time_confirmed": true,
+          "home": "Botafogo",
+          "away": "Bahia",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Joao Havelange Stadium",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841336"
+        }
+      ]
+    }
+  ]
+}
