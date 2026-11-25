@@ -160,5 +160,17 @@
       "es": "Hamaca gris con flecos naranjas y silla blanca junto a la ventana del apartamento"
     },
     "provenance": "Light photographic enhancement of the host-supplied grey-and-orange hammock photo on 2026-11-25; original vertical 2:3 scene retained with natural colours and proportional full-column display."
+  },
+  "-05.jpg": {
+    "src": "/assets/wifi/sala-trabalho-natural.png",
+    "width": 1024,
+    "height": 1536,
+    "position": "50% 50%",
+    "alt": {
+      "pt": "Mesa de trabalho e mesa de jantar do apartamento junto à janela",
+      "en": "Apartment workspace and dining table beside the window",
+      "es": "Espacio de trabajo y mesa de comedor del apartamento junto a la ventana"
+    },
+    "provenance": "Light enhancement of the host-supplied real workspace photograph on 2026-11-25; original vertical 2:3 composition retained, natural colours, proportional full-column display."
   }
 }
