@@ -366,7 +366,7 @@ def build_native(page, content, upgrades, photos):
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
-        native_style = '20261119-checkout-compact-check'
+        native_style = '20261125-checkout-matched-clock'
     native_style += '-left-bold-descriptions'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
