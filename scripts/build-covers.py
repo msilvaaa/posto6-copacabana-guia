@@ -65,7 +65,7 @@ def amenity_cards(lang):
  links=[p for p in source['links'] if '/comodidades/' in p['href']][:16]
  result=[]
  for i,link in enumerate(links):
-  names=['bin','tv','snow','fridge','bulb','tv','iron','dishwasher','wash','sofa','safe','water','lamp','car','lock','door']
+  names=['amenity-bin','amenity-tv','amenity-aircon','amenity-fridge','bulb','amenity-tv','amenity-ironing','amenity-dishwasher','amenity-washer','amenity-sofabed','amenity-safe','amenity-shower','amenity-lamp','amenity-airport-car','amenity-digital-lock','amenity-gate']
   result.append(f'<a class="amenity-card" href="{e(link["href"])}"><span class="amenity-icon" aria-hidden="true">{sharp_symbol(names[i],PATHS)}</span><span>{e(AMENITY_NAMES[lang][i])}</span></a>')
  return '<div class="amenities-grid">'+''.join(result)+'</div>'
 
