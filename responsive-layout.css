@@ -42,7 +42,7 @@ html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,
 html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space):last-child { margin-left:calc(var(--fluid-arrow-gap) - 6px); }
 html[data-fluid-frame] .guide-heading-row { display:grid; grid-template-columns:minmax(0,1fr); align-items:center; min-height:56px; padding-right:68px; margin-bottom:16px; }
 html[data-fluid-frame] .guide-heading-row>h1 { max-width:100%; margin:0 auto; }
-html[data-fluid-frame] body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:calc(var(--fluid-content-side) + 12px); bottom:auto; animation:none; }
+html[data-fluid-frame] body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:calc(var(--fluid-content-side) + 12px); bottom:auto; }
 html[data-fluid-frame] .native-card { margin-bottom:14px; }
 html[data-fluid-frame] .native-card h2 { font-size:17px; text-align:left; }
 html[data-fluid-frame] .native-card-heading { margin-bottom:4px; }

@@ -404,8 +404,8 @@ def build_native(page, content, upgrades, photos):
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 <link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
-<link rel="stylesheet" href="/desktop-layout.css?v=20261126-cover-contact-2"/>
-<link rel="stylesheet" href="/responsive-layout.css?v=20261126-1"/>
+<link rel="stylesheet" href="/desktop-layout.css?v=20261126-whatsapp-compact-motion"/>
+<link rel="stylesheet" href="/responsive-layout.css?v=20261126-whatsapp-motion"/>
 </head>
 <body class="site-page native-guide">
   <div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">{''.join(chapters)}</main></div>
