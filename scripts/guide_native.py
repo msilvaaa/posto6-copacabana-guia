@@ -270,6 +270,9 @@ def build_native(page, content, upgrades, photos):
                 nodes = ['<div class="gym-links">' + ''.join(nodes[:2]) + '</div>', *nodes[2:]]
             if page['image']['src'].endswith('-14.jpg') and section_index == 3:
                 nodes = ['<div class="pharmacy-links">' + ''.join([nodes[0], nodes[2], nodes[1]]) + '</div>']
+                if section.get('delivery'):
+                    delivery=section['delivery']
+                    nodes.append(f'<section class="pharmacy-delivery"><h3>{e(delivery["title"][lang])}</h3>'+''.join(f'<p class="native-body-copy">{e(item["text"][lang])}</p>' for item in delivery['items'])+'</section>')
             if page['image']['src'].endswith('-11.jpg') and section_index == 0:
                 branch_urls=['https://maps.app.goo.gl/Us8V4UhyPFq7CxSw9','https://maps.app.goo.gl/sCiVkZfR1Fatwhdy9']
                 branch_nodes=[node for node in nodes if any(url in node for url in branch_urls)]
@@ -382,7 +385,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-thanks-spacing'
-    native_style += '-sea-symbols-20261125'
+    native_style += '-pharmacy-delivery-20261125'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -390,7 +393,7 @@ def build_native(page, content, upgrades, photos):
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
-  <link rel="stylesheet" href="/site-shell.css?v=20261125-shared-menu-size"/>
+  <link rel="stylesheet" href="/site-shell.css?v=20261125-navigation-under-title"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
   <script src="/site.js?v=20261124-weather-symbol" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
