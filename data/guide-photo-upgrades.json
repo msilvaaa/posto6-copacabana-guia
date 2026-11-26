@@ -76,16 +76,16 @@
     "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders.",
     "topic_photos": {
       "1": {
-        "src": "/assets/establishments/supermercado-zona-sul-natural.png",
-        "width": 1536,
-        "height": 1024,
+        "src": "/assets/establishments/zona-sul-entrada-natural.png",
+        "width": 1085,
+        "height": 1449,
         "position": "50% 50%",
         "alt": {
-          "pt": "Fachada do supermercado Zona Sul com a escultura de coração e RIO",
-          "en": "Zona Sul supermarket exterior with the heart and RIO sculpture",
-          "es": "Fachada del supermercado Zona Sul con la escultura del corazón y RIO"
+          "pt": "Entrada do supermercado Zona Sul com flores e carrinhos junto à calçada",
+          "en": "Zona Sul supermarket entrance with flowers and shopping carts beside the pavement",
+          "es": "Entrada del supermercado Zona Sul con flores y carritos junto a la acera"
         },
-        "provenance": "Light photographic cleanup of the host-supplied Zona Sul supermarket photo on 2026-11-26, preserving natural colours, original landscape proportions, branding and composition."
+        "provenance": "Conservative restoration and upscale of the replacement supermarket entrance photo supplied by the host on 2026-11-26. Original portrait proportions, branding and scene retained with natural colours and balanced light."
       }
     }
   },
