@@ -141,7 +141,7 @@ def photograph(page, chapter, upgrades, photos):
 
 
 def wifi_access(lang, source):
-    scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
+    scan = {'pt': 'Aponte a câmera', 'en': 'Point your camera', 'es': 'Apunta la cámara'}[lang]
     network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
     return (f'<svg class="original-art wifi-monitor-art" viewBox="1173 180 268 224" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
             '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath></defs>'
@@ -156,11 +156,11 @@ def wifi_access(lang, source):
             '</svg><div class="wifi-connection">'
             f'<dl class="wifi-credentials"><dt>{network}</dt><dd>Marcus Silva</dd>'
             f'<dt>{password}</dt><dd>braziliansoul</dd></dl>'
-            f'<svg class="wifi-scan-arrow" viewBox="0 0 84 40" role="img" aria-label="{scan}">'
-            '<path d="M0 11h60V2l24 18-24 18v-9H0Z" fill="#f0273e"/>'
-            f'<text x="31" y="23" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700">{scan}</text></svg>'
-            '<img class="wifi-qr" src="/assets/quality/wifi-qr.svg" width="120" height="120" alt="QR Code Wi-Fi"/>'
-            '</div>')
+            '<div class="wifi-scan"><span class="wifi-scan-label">'
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
+            f'{scan}</span><div class="wifi-qr-frame">'
+            '<img class="wifi-qr" src="/assets/quality/wifi-qr.svg" width="100" height="100" alt="QR Code Wi-Fi"/>'
+            '</div></div></div>')
 
 
 def native_rules(lang, section):
