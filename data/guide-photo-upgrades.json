@@ -114,17 +114,16 @@
     "provenance": "Exposure and clarity enhanced from the host supplied rescue photograph on 2026-11-18; original generated PNG retained in workspace."
   },
   "-06.jpg": {
-    "src": "/assets/rules/placa-regras-praias.webp",
-    "width": 1122,
-    "height": 1402,
-    "position": "50% 50%",
-    "enlarge": true,
+    "src": "/assets/rules/edificio-copacabana.webp",
+    "width": 1001,
+    "height": 1570,
+    "position": "50% 0%",
     "alt": {
-      "pt": "Placa de regras das praias do Rio: proibidas garrafas de vidro na areia, caixas de som e comércio ambulante não autorizado",
-      "en": "Rio beach rules sign prohibiting glass bottles on the sand, loudspeakers and unauthorized street trading",
-      "es": "Cartel de normas de las playas de Río: prohibidas las botellas de vidrio en la arena, los altavoces y la venta ambulante no autorizada"
+      "pt": "Fachada do prédio do apartamento em Copacabana",
+      "en": "Exterior of the apartment building in Copacabana",
+      "es": "Fachada del edificio del apartamento en Copacabana"
     },
-    "provenance": "Host-supplied beach rules sign photo, reframed with focus on the whole sign and natural surrounding wall on 2026-11-26. Opens in the existing photo viewer for full-size reading."
+    "provenance": "Photo supplied by the host on 2026-11-18, enhanced for clarity and balanced daylight; original generated PNG retained in workspace."
   },
   "-11.jpg": {
     "src": "/assets/bars/boa-praca-enhanced.png",

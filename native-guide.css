@@ -373,8 +373,3 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
  body[data-whatsapp-title] .local-clocks-grid { grid-template-columns:repeat(2,max-content); width:max-content; max-width:100%; gap:2px 14px; margin-top:6px; }
  body[data-whatsapp-title] .local-clock { padding:3px 0; gap:1px 6px; }
 }
-
-/* Text-bearing signs use the existing full-size photo viewer. */
-.native-photo>.native-photo-open,.native-photo>.native-photo-open>img { display:block; width:100%; height:100%; object-fit:cover; border:0; margin:0; }
-.native-photo-open { cursor:zoom-in; }
-.native-photo-open:focus-visible { outline:3px solid #238cc6; outline-offset:-3px; }
