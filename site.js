@@ -189,10 +189,12 @@
   } else if (originalMaxWidth) heading.style.maxWidth=originalMaxWidth;
   else heading.style.removeProperty('max-width');
   const title=reference.getBoundingClientRect();
-  document.body.style.setProperty('--whatsapp-title-top',`${title.y+(title.height-button.height)/2}px`);
+  const divider=cover && desktop.matches ? document.querySelector('.home-menu-rule')?.getBoundingClientRect() : null;
+  const top=divider ? divider.bottom-button.height : title.y+(title.height-button.height)/2;
+  document.body.style.setProperty('--whatsapp-title-top',`${top}px`);
   const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
   const toolbarBottom=toolbar?.getBoundingClientRect().bottom || 0;
-  contact.style.visibility=title.y+title.height/2-button.height/2 < toolbarBottom ? 'hidden' : 'visible';
+  contact.style.visibility=top < toolbarBottom-(cover ? 4 : 0) ? 'hidden' : 'visible';
  }
  function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
  const observer=new ResizeObserver(schedule);

@@ -52,3 +52,11 @@ html[data-guide-layout] body :is(.section-panel h2,.dialog-bar h2) { font-family
 html[data-guide-layout] body :is(.native-chapter-title,.native-thanks:not(.signature-original)) { font-family:'Guide Script',Georgia,serif!important; }
 
 html[data-guide-layout] body.home-page .cover-html-button::after { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
+
+/* The cover contact sits at the outer edge, with its base on the divider. */
+html[data-desktop-frame] body.home-page[data-whatsapp-title] .site-contact-corner { right:calc(var(--desktop-frame-side) + 16px); }
+html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner { animation:whatsapp-soft-float 2.6s ease-in-out infinite; }
+html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner:is(:hover,:focus-within) { animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce) {
+ html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner { animation:none; }
+}
