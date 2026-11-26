@@ -350,3 +350,19 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .sea-condition-icon>svg { display:block; width:100%; height:100%; }
 
 .pharmacy-delivery h3 { margin:14px 0 6px; font:700 17px/1.4 Arial,Helvetica,sans-serif; }
+
+/* Apply the approved organization to desktop only; preserve phone/tablet layouts. */
+@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+ body[data-whatsapp-title] .native-card { margin-bottom:14px; }
+ body[data-whatsapp-title] .native-card-heading { margin-bottom:4px; }
+ body[data-whatsapp-title] .illustrated-card { column-gap:12px; }
+ body[data-whatsapp-title] .illustrated-card .native-card-heading { gap:12px; }
+ :root body[data-whatsapp-title] .native-card .native-card-copy>p.native-body-copy { margin:0 0 6px; }
+ body[data-whatsapp-title] .native-card h2 { text-align:left; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card { display:grid; grid-template-columns:76px minmax(0,1fr); gap:4px 12px; align-items:start; min-height:76px; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-heading { display:contents; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-icon { grid-column:1; grid-row:1 / span 2; align-self:start; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card h2 { grid-column:2; grid-row:1; align-self:end; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy { grid-column:2; grid-row:2; padding:0; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy p { margin:0; }
+}

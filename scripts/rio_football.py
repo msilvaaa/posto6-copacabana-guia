@@ -9,9 +9,9 @@ LEAGUES={'bra.1':'Brasileirão Série A','bra.2':'Brasileirão Série B','bra.co
 def render(lang):
  data=json.loads((ROOT/'data/rio-football.json').read_text());zone=ZoneInfo(data['timezone'])
  title,period,none,tbd,updated,note={
-  'pt':('Confrontos cariocas','Próximos 7 dias','Nenhum jogo confirmado nesta agenda.','Horário a confirmar','Consulta','Horários de Brasília. Atualização às segundas e quintas, às 9h. A programação pode mudar.'),
-  'en':('Rio club matchups','Next 7 days','No confirmed match in this schedule.','Time to be confirmed','Checked','Brasília time. Updated Mondays and Thursdays at 9 am. Fixtures may change.'),
-  'es':('Encuentros cariocas','Próximos 7 días','Ningún partido confirmado en esta agenda.','Horario por confirmar','Consulta','Hora de Brasilia. Actualización los lunes y jueves a las 9 h. La programación puede cambiar.')
+  'pt':('Jogos da semana','Próximos 7 dias','Nenhum jogo confirmado nesta agenda.','Horário a confirmar','Consulta','Horários de Brasília. Atualização às segundas e quintas, às 9h. A programação pode mudar.'),
+  'en':('Weekly matches','Next 7 days','No confirmed match in this schedule.','Time to be confirmed','Checked','Brasília time. Updated Mondays and Thursdays at 9 am. Fixtures may change.'),
+  'es':('Partidos de la semana','Próximos 7 días','Ningún partido confirmado en esta agenda.','Horario por confirmar','Consulta','Hora de Brasilia. Actualización los lunes y jueves a las 9 h. La programación puede cambiar.')
  }[lang]
  weekdays={'pt':['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],'en':['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],'es':['Lun','Mar','Mié','Jue','Vie','Sáb','Dom']}[lang]
  cards=[]

@@ -149,3 +149,51 @@
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') loadWeather(); });
  }
 })();
+
+(() => {
+ 'use strict';
+ // Published mockups retain their own comparison controls and positioning.
+ if (location.pathname.startsWith('/preview-')) return;
+ const heading=document.querySelector('h1');
+ const contact=document.querySelector('.site-contact-corner');
+ if (!heading || !contact) return;
+ const desktop=matchMedia('(min-width:1101px) and (hover:hover) and (pointer:fine)');
+ const originalMaxWidth=heading.style.maxWidth;
+ const cover=document.body.classList.contains('home-page');
+ let frame;
+ function align() {
+  if (!desktop.matches || navigator.maxTouchPoints > 0) {
+   document.body.removeAttribute('data-whatsapp-title');
+   document.body.style.removeProperty('--whatsapp-title-top');
+   if (originalMaxWidth) heading.style.maxWidth=originalMaxWidth;
+   else heading.style.removeProperty('max-width');
+   contact.style.removeProperty('visibility');
+   return;
+  }
+  document.body.dataset.whatsappTitle='';
+  const container=heading.parentElement;
+  const parent=container.getBoundingClientRect();
+  const padding=getComputedStyle(container);
+  const button=contact.getBoundingClientRect();
+  const inner=parent.width-parseFloat(padding.paddingLeft)-parseFloat(padding.paddingRight);
+  if (!cover) {
+   const available=2*(button.left-(parent.left+parent.width/2)-12);
+   heading.style.maxWidth=`${Math.max(48,Math.min(inner*.9,available))}px`;
+  } else heading.style.removeProperty('max-width');
+  const title=heading.getBoundingClientRect();
+  document.body.style.setProperty('--whatsapp-title-top',`${title.y+(title.height-button.height)/2}px`);
+  const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
+  const toolbarBottom=toolbar?.getBoundingClientRect().bottom || 0;
+  contact.style.visibility=title.y+title.height/2-button.height/2 < toolbarBottom ? 'hidden' : 'visible';
+ }
+ function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
+ const observer=new ResizeObserver(schedule);
+ observer.observe(heading);observer.observe(contact);observer.observe(heading.parentElement);
+ window.addEventListener('resize',schedule);
+ window.addEventListener('pageshow',schedule);
+ desktop.addEventListener('change',schedule);
+ document.querySelector('.site-reading')?.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('scroll',schedule,{passive:true});
+ document.fonts?.ready.then(schedule);
+ schedule();
+})();
