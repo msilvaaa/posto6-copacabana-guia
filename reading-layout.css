@@ -4,6 +4,7 @@
 /* Side illustrations align with the complete topic, including its links and copy. */
 html[data-guide-layout] .native-panel .guide-content .illustrated-card .native-icon.original-illustration { align-self:center; }
 .guide-content .emergency-services { align-items:start; }
+.guide-content .information-services { align-items:center; }
 @media(max-width:1100px) {
  html[data-fluid-frame] .guide-content .native-card:has(.fort-links,.bike-links,.gym-links) .native-card-copy { grid-column:2; grid-row:auto; }
  html[data-fluid-frame] .guide-content .native-card:has(.fort-links) .native-icon { grid-row:1 / span 2; }
