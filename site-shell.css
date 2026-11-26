@@ -252,3 +252,13 @@ body.home-page .main-html-topbar { align-items:center; gap:6px; }
 @media(min-width:1101px) and (hover:hover) and (pointer:fine) {
  :root body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:2cm; bottom:auto; animation:none; }
 }
+
+/* Keep the cover clock and its WhatsApp button below the flags on shorter desktops. */
+@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+ body.home-page[data-whatsapp-title] .home-menu-rule { top:max(14.1%,126px); }
+ body.home-page[data-whatsapp-title] .cover-html-button[data-row="1"] { top:max(23%,184px); }
+ body.home-page[data-whatsapp-title] .cover-html-button[data-row="2"] { top:max(36%,280px); }
+ body.home-page[data-whatsapp-title] .cover-html-button[data-row="3"] { top:max(49%,376px); }
+ body.home-page[data-whatsapp-title] .cover-html-button[data-row="4"] { top:max(62%,472px); }
+ body.home-page[data-whatsapp-title] .cover-html-button[data-row="5"] { top:max(75%,568px); }
+}

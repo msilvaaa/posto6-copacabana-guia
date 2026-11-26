@@ -20,8 +20,8 @@ html[data-theme="dark"] .football-crest { filter:drop-shadow(0 0 2px #fff8); }
 
 .football-club>.football-empty { grid-column:2; min-width:0; margin:0; }
 
-/* Desktop cards hug their fixture text instead of stretching to equal-width columns. */
+/* Compact desktop cards share the width required by the longest matchup. */
 @media(min-width:1101px) and (hover:hover) and (pointer:fine) {
- body[data-whatsapp-title] .football-clubs { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:10px; }
- body[data-whatsapp-title] .football-club { flex:0 1 auto; width:max-content; max-width:100%; grid-template-columns:40px minmax(0,max-content); padding:10px; }
+ body[data-whatsapp-title] .football-clubs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:max-content; max-width:100%; align-items:stretch; justify-content:start; gap:10px; }
+ body[data-whatsapp-title] .football-club { width:auto; max-width:100%; grid-template-columns:40px minmax(0,1fr); padding:10px; }
 }
