@@ -348,3 +348,5 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .sea-values dt { display:flex; align-items:center; flex-wrap:wrap; gap:5px; }
 .sea-condition-icon { display:inline-flex; flex:0 0 24px; width:24px; height:24px; }
 .sea-condition-icon>svg { display:block; width:100%; height:100%; }
+
+.pharmacy-delivery h3 { margin:14px 0 6px; font:700 17px/1.4 Arial,Helvetica,sans-serif; }
