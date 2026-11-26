@@ -16,8 +16,9 @@
     "kind": "photo"
   },
   "informacoes": {
-    "src": "/assets/cover-icons/informacoes-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/bancos-reais.webp",
+    "kind": "photo",
+    "position": "50% 50%"
   },
   "bares": {
     "src": "/assets/cover-photos/bares-copacabana.webp",

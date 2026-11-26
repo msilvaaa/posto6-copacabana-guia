@@ -6,7 +6,7 @@ import json
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
     now = datetime(2026, 11, 17, 12, tzinfo=timezone.utc)
-    for lang, route in [('pt', 'informacoes'), ('en', 'information'), ('es', 'informacion')]:
+    for lang, route in [('pt', 'bancos'), ('en', 'banks'), ('es', 'bancos')]:
         page = browser.new_page()
         page.clock.install(time=now)
         page.clock.pause_at(now)
@@ -45,7 +45,7 @@ with sync_playwright() as p:
     page = browser.new_page()
     page.route('**/economia.awesomeapi.com.br/**', lambda route: route.fulfill(status=429, body='', headers={'Access-Control-Allow-Origin':'*'}))
     page.route('**/api/exchange-rates', lambda route: route.fulfill(content_type='application/json', body='{"available":false}'))
-    page.goto('http://127.0.0.1:8000/pt/informacoes/')
+    page.goto('http://127.0.0.1:8000/pt/bancos/')
     page.wait_for_function("document.querySelector('[data-exchange-status]').textContent.includes('indisponíveis')")
     assert all(text == '—' for text in page.locator('.exchange-rate output').all_text_contents())
     page = browser.new_page()
@@ -57,7 +57,7 @@ with sync_playwright() as p:
         raw = {key: {'bid': str(bid), 'ask': str(bid+1), 'timestamp': str(int(now.timestamp()))} for key, bid in [('USDBRLT',5.7),('USDARS',1552.23),('USDEUR',0.90911),('USDBRL',5.7792)]}
         route.fulfill(content_type='application/json', body=json.dumps(raw), headers={'Access-Control-Allow-Origin':'*'})
     page.route('**/economia.awesomeapi.com.br/**', direct_reply)
-    page.goto('http://127.0.0.1:8000/pt/informacoes/')
+    page.goto('http://127.0.0.1:8000/pt/bancos/')
     page.wait_for_function("document.querySelector('[data-exchange-unit]').textContent.length>0")
     assert '5,70' in page.locator('[data-exchange-id="usd-tourism"] .exchange-value').inner_text()
     page.reload()

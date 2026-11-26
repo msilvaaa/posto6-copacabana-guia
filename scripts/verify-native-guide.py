@@ -24,13 +24,13 @@ async def main():
       gaps=[buttons[i+1]['x']-buttons[i]['x']-buttons[i]['w'] for i in range(len(buttons)-1)]
       assert max(gaps)-min(gaps)<.1,('menu gaps',path,gaps)
       assert all(abs(x['x'])<.1 for x in result['photos']),('photo left gutter',path)
-    if width in [390,1440] and str(path) in ['pt/informacoes/index.html','pt/localizacao/index.html','pt/comodidades/index.html','pt/checkin/index.html','pt/restaurantes/index.html','pt/estabelecimentos/index.html']:
+    if width in [390,1440] and str(path) in ['pt/bancos/index.html','pt/localizacao/index.html','pt/comodidades/index.html','pt/checkin/index.html','pt/restaurantes/index.html','pt/estabelecimentos/index.html']:
      await page.screenshot(path=str(OUT/(str(path).split('/')[1]+f'-{width}.png')),full_page=True)
     report['layouts']+=1
    print('Verified',width,len(allpaths),'pages',flush=True)
   report['pages']=len(allpaths)
   # Verify links through their visible text, including entire click targets.
-  for path in ['pt/informacoes/','pt/estabelecimentos/','pt/restaurantes/','en/transportation/','es/actividades/']:
+  for path in ['pt/bancos/','pt/estabelecimentos/','pt/restaurantes/','en/transportation/','es/actividades/']:
    await page.goto('http://127.0.0.1:8000/'+path)
    for a in await page.locator('.native-link').all():await a.click(trial=True,timeout=3000)
   # Amenity navigation is centred in the description column.
