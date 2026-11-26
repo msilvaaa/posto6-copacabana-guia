@@ -35,6 +35,7 @@ def build():
     destination.parent.mkdir(parents=True,exist_ok=True)
     destination.write_text(with_toolbar_navigation(render_topics(output,page,topic)));count+=1
    output=render_topics(output,page)
-  (ROOT/page['path']).write_text(with_toolbar_navigation(output));count+=1
+  destination=ROOT/page['path'];destination.parent.mkdir(parents=True,exist_ok=True)
+  destination.write_text(with_toolbar_navigation(output));count+=1
  print(f'Generated {count} native guide routes.')
 if __name__=='__main__':build()

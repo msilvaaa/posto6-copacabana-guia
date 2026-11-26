@@ -43,7 +43,7 @@
       {
         "key": "informacoes",
         "label": "BANCOS",
-        "href": "/pt/informacoes/"
+        "href": "/pt/bancos/"
       },
       {
         "key": "bares",
@@ -175,7 +175,7 @@
       {
         "key": "informacoes",
         "label": "BANKS",
-        "href": "/en/information/"
+        "href": "/en/banks/"
       },
       {
         "key": "bares",
@@ -307,7 +307,7 @@
       {
         "key": "informacoes",
         "label": "BANCOS",
-        "href": "/es/informacion/"
+        "href": "/es/bancos/"
       },
       {
         "key": "bares",

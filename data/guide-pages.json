@@ -81,7 +81,7 @@
       }
     ],
     "previous": "/pt/comodidades/",
-    "next": "/pt/informacoes/",
+    "next": "/pt/bancos/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -184,7 +184,7 @@
         "style": "left:78.70033%;top:83.58064%;width:20.57102%;height:1.95312%"
       }
     ],
-    "previous": "/pt/informacoes/",
+    "previous": "/pt/bancos/",
     "next": "/pt/restaurantes/",
     "back": null,
     "source_text": "",
@@ -1238,17 +1238,17 @@
     }
   },
   {
-    "path": "pt/informacoes/index.html",
+    "path": "pt/bancos/index.html",
     "lang": "pt",
-    "title": "Posto 6 Copacabana — PT — página 10",
+    "title": "Posto 6 Copacabana — Bancos",
     "description": "Guia online Posto 6 Copacabana",
     "heading": null,
     "kind": "category",
     "home": "/pt/",
     "languages": {
-      "es": "/es/informacion/",
-      "pt": "/pt/informacoes/",
-      "en": "/en/information/"
+      "es": "/es/bancos/",
+      "pt": "/pt/bancos/",
+      "en": "/en/banks/"
     },
     "image": {
       "src": "/assets/pt-10.jpg",
@@ -1790,7 +1790,7 @@
       }
     ],
     "previous": "/en/amenities/",
-    "next": "/en/information/",
+    "next": "/en/banks/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -2012,7 +2012,7 @@
         "style": "left:78.10431%;top:82.14835%;width:20.35140%;height:1.95312%"
       }
     ],
-    "previous": "/en/information/",
+    "previous": "/en/banks/",
     "next": "/en/restaurants/",
     "back": null,
     "source_text": "",
@@ -2909,17 +2909,17 @@
     }
   },
   {
-    "path": "en/information/index.html",
+    "path": "en/banks/index.html",
     "lang": "en",
-    "title": "Posto 6 Copacabana — EN — página 10",
+    "title": "Posto 6 Copacabana — Banks",
     "description": "Guia online Posto 6 Copacabana",
     "heading": null,
     "kind": "category",
     "home": "/en/",
     "languages": {
-      "es": "/es/informacion/",
-      "pt": "/pt/informacoes/",
-      "en": "/en/information/"
+      "es": "/es/bancos/",
+      "pt": "/pt/bancos/",
+      "en": "/en/banks/"
     },
     "image": {
       "src": "/assets/en-10.jpg",
@@ -3504,7 +3504,7 @@
       }
     ],
     "previous": "/es/comodidades/",
-    "next": "/es/informacion/",
+    "next": "/es/bancos/",
     "back": null,
     "source_text": "",
     "masks": [
@@ -4562,17 +4562,17 @@
     }
   },
   {
-    "path": "es/informacion/index.html",
+    "path": "es/bancos/index.html",
     "lang": "es",
-    "title": "Posto 6 Copacabana — ES — página 10",
+    "title": "Posto 6 Copacabana — Bancos",
     "description": "Guia online Posto 6 Copacabana",
     "heading": null,
     "kind": "category",
     "home": "/es/",
     "languages": {
-      "es": "/es/informacion/",
-      "pt": "/pt/informacoes/",
-      "en": "/en/information/"
+      "es": "/es/bancos/",
+      "pt": "/pt/bancos/",
+      "en": "/en/banks/"
     },
     "image": {
       "src": "/assets/es-10.jpg",
@@ -5059,7 +5059,7 @@
         "style": "left:78.67589%;top:81.62751%;width:20.35139%;height:1.95312%"
       }
     ],
-    "previous": "/es/informacion/",
+    "previous": "/es/bancos/",
     "next": "/es/restaurantes/",
     "back": null,
     "source_text": "",

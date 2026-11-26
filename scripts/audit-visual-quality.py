@@ -52,7 +52,7 @@ with sync_playwright() as p:
    report['layouts']+=1
   print(f'Checked {len(paths)} pages at {width}px / DPR 2',flush=True)
  # A reference photograph must remain stationary while reading long instructions.
- page.set_viewport_size({'width':1440,'height':900});page.goto(args.base+'/pt/informacoes/');page.evaluate("document.querySelector('.site-reading').scrollTop=100");page.wait_for_timeout(100)
+ page.set_viewport_size({'width':1440,'height':900});page.goto(args.base+'/pt/bancos/');page.evaluate("document.querySelector('.site-reading').scrollTop=100");page.wait_for_timeout(100)
  report['sticky_photo_top']=page.locator('.native-photo').bounding_box()['y']
  if abs(report['sticky_photo_top'])>1:report['errors'].append('Main photo failed sticky positioning')
  # All technical Home controls return to the amenities section in their language.
