@@ -67,15 +67,16 @@ html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner .site-wha
 html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp { padding:11px; }
 html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp svg { width:26px; height:26px; }
 
-/* Reserve space for the theme control beside the longer English cover title. */
-html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy { top:max(calc(7.4% + 36px),116px); }
-html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy h1 {
- font-size:clamp(36px,calc(var(--desktop-frame-width) * .03055),44px);
- max-width:calc(100% - 72px); line-height:1.12;
-}
 /* English uses the same readable body/section hierarchy across page types. */
 html[lang="en"][data-guide-layout] body :is(.native-card h2,.section-panel h2,.detail-instructions h2,.detail-references h2) {
  font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; font-size:17px; line-height:1.35;
 }
 html[lang="en"][data-guide-layout] body :is(.native-card-copy,.native-link>span,.section-panel,.instruction-list) { min-width:0; }
 html[lang="en"][data-guide-layout] body :is(.native-link,.native-card p,.native-card h2,.instruction-list) { overflow-wrap:break-word; word-break:normal; }
+
+/* Keep PT/EN cover text clear of the index and theme control, like the ES cover. */
+html:is([lang="pt"],[lang="en"])[data-desktop-frame] body.home-page .home-cover-copy { top:max(calc(7.4% + 36px),104px); }
+html:is([lang="pt"],[lang="en"])[data-desktop-frame] body.home-page .home-cover-copy h1 { max-width:calc(100% - 64px); line-height:1.22; }
+html[lang="pt"][data-desktop-frame] body.home-page .home-cover-copy h1 { font-size:clamp(44px,min(calc(var(--desktop-frame-width) * .038),calc(var(--desktop-frame-height) * .0608)),54.72px); }
+html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy h1 { font-size:clamp(40px,min(calc(var(--desktop-frame-width) * .033333),calc(var(--desktop-frame-height) * .053333)),48px); }
+html:is([lang="pt"],[lang="en"])[data-guide-layout] body.home-page .home-cover-subtitle { margin-top:6px; }
