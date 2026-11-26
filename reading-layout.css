@@ -7,7 +7,7 @@
 .wifi-connection { display:grid; grid-template-columns:minmax(0,1fr) 76px 120px; gap:12px; align-items:center; }
 .wifi-credentials { min-width:0; margin:0; }
 .wifi-credentials dt { margin:0 0 6px; font-size:14px; font-weight:700; text-align:center; }
-.wifi-credentials dd { margin:0 0 14px; padding:7px 12px; border:2px solid currentColor; border-radius:22px; background:#eae3da; color:#111; font-size:18px; text-align:center; overflow-wrap:anywhere; }
+.wifi-credentials dd { margin:0 0 14px; padding:7px 12px; border:2px solid currentColor; border-radius:22px; background:#eae3da; color:#111; font-size:18px; font-weight:700; text-align:center; overflow-wrap:anywhere; }
 .wifi-credentials dd:last-child { margin-bottom:0; background:#e3d5c6; }
 .wifi-qr { display:block; width:120px; height:120px; max-width:100%; }
 .wifi-scan-arrow { display:block; width:76px; height:auto; }
