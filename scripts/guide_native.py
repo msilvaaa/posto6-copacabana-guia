@@ -294,7 +294,7 @@ def build_native(page, content, upgrades, photos):
                 continue
             name=section['icon']
             if page['image']['src'].endswith('-04.jpg'):
-                name=['phone-map','plane-trail','fast-clock'][section_index]
+                name=['phone-map','plane-trail','plane'][section_index]
             elif page['image']['src'].endswith('-05.jpg'):
                 name=['wifi','wifi-qr','info'][section_index]
             elif page['image']['src'].endswith('-07.jpg') and section_index==3:
@@ -346,13 +346,12 @@ def build_native(page, content, upgrades, photos):
                 heading = f'<div class="native-heading-text">{heading}{weather}</div>'
             airport = page['image']['src'].endswith('-04.jpg') and section_index==2
             card_class = ' airport-card' if airport else ''
-            plane = f'<div class="airport-plane" aria-hidden="true">{illustration("plane-trail")}</div>' if airport else ''
             icon_markup = f'<span class="native-icon original-illustration {e(name)}">{art}</span>'
             if page['image']['src'].endswith('-04.jpg') and section_index==0:
                 address = section['items'][0]
                 icon_markup = (f'<a class="native-icon original-illustration {e(name)}" href="{e(address["href"])}" '
                                f'target="_blank" rel="noopener noreferrer" aria-label="{e(address["text"][lang])}">{art}</a>')
-            parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading">{icon_markup}{heading}</div><div class="native-card-copy">{"".join(nodes)}</div>{plane}</section>')
+            parts.append(f'<section class="native-card illustrated-card{card_class}">{extra}<div class="native-card-heading">{icon_markup}{heading}</div><div class="native-card-copy">{"".join(nodes)}</div></section>')
         if page['image']['src'].endswith('-10.jpg'):
             parts = [*parts[:2], '<div class="information-services">' + parts[3] + parts[2] + '</div>', *parts[4:]]
         if page['image']['src'].endswith('-14.jpg'):
@@ -383,6 +382,8 @@ def build_native(page, content, upgrades, photos):
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
         native_style = '20261126-rules-building-photo'
+    if page['image']['src'].endswith('-04.jpg'):
+        native_style = '20261126-location-plane-heading'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
