@@ -68,7 +68,7 @@ def render(source,page,index=0):
  body.attrs['data-activities-title']=''.join(str(x) for x in title.children)
  title.children=[body.attrs['data-activities-title']+' — '+labels[index]]
  heading=panel.all(lambda n:n.tag=='h1')[0];position=panel.children.index(heading)+1
- tab_order=[1,0] if suffix=='-11.jpg' else range(len(labels))
+ tab_order=[1,0] if suffix=='-11.jpg' else [0,2,1] if suffix=='-12.jpg' else range(len(labels))
  tabs=''.join(f'<a id="activities-tab-{i}" role="tab" data-activities-topic="{i}" aria-controls="activities-panel-{i}" aria-selected="{str(i==index).lower()}" tabindex="{0 if i==index else -1}" href="{topic_url(page,i)}"'+(' aria-current="page"' if i==index else '')+f'>{escape(label)}</a>' for i in tab_order for label in [labels[i]])
  nav=fragment(f'<nav class="activities-topic-tabs" style="--topic-count:{len(labels)}" role="tablist" aria-label="{escape(body.attrs["data-activities-title"],quote=True)}">{tabs}</nav>')
  panel.insert(position,nav)

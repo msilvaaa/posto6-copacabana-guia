@@ -174,7 +174,7 @@
   },
   "-12.jpg": {
     "topic_photos": {
-      "2": {
+      "1": {
         "src": "/assets/restaurants/outras-opcoes-mesa-vertical.png",
         "width": 1024,
         "height": 1536,
@@ -185,6 +185,18 @@
           "es": "Mesa de restaurante con platos variados y brindis entre amigos"
         },
         "provenance": "Host photograph rotated 90 degrees clockwise and lightly enhanced on 2026-11-25; portrait 2:3, natural food colours."
+      },
+      "2": {
+        "src": "/assets/restaurants/outras-opcoes-pizza-vista-natural.png",
+        "width": 1024,
+        "height": 1536,
+        "position": "50% 50%",
+        "alt": {
+          "pt": "Pizza e pratos à mesa com vista para o Pão de Açúcar",
+          "en": "Pizza and dishes at a table overlooking Sugarloaf Mountain",
+          "es": "Pizza y platos en una mesa con vistas al Pan de Azúcar"
+        },
+        "provenance": "Conservative enhancement of the host-supplied portrait photo on 2026-11-26, preserving natural colours, original composition and photographic background depth of field."
       }
     }
   }
