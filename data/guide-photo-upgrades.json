@@ -73,7 +73,21 @@
       "en": "Aerial view of the Copacabana wave-pattern promenade and palm trees",
       "es": "Vista aérea del paseo de Copacabana con ondas blancas y negras y palmeras"
     },
-    "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders."
+    "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders.",
+    "topic_photos": {
+      "1": {
+        "src": "/assets/establishments/supermercado-zona-sul-natural.png",
+        "width": 1536,
+        "height": 1024,
+        "position": "50% 50%",
+        "alt": {
+          "pt": "Fachada do supermercado Zona Sul com a escultura de coração e RIO",
+          "en": "Zona Sul supermarket exterior with the heart and RIO sculpture",
+          "es": "Fachada del supermercado Zona Sul con la escultura del corazón y RIO"
+        },
+        "provenance": "Light photographic cleanup of the host-supplied Zona Sul supermarket photo on 2026-11-26, preserving natural colours, original landscape proportions, branding and composition."
+      }
+    }
   },
   "-07.jpg": {
     "src": "/assets/transport/onibus-rio.webp",
