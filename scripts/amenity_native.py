@@ -39,7 +39,7 @@ def build_detail(page,photos):
  return f'''<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
-<link rel="stylesheet" href="/site-shell.css?v=20261126-p1-toolbar"/><link rel="stylesheet" href="/native-guide.css?v=20261125-readable-body"/>
+<link rel="stylesheet" href="/site-shell.css?v=20261126-compact-p1"/><link rel="stylesheet" href="/native-guide.css?v=20261125-readable-body"/>
 <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
 <script src="/site.js?v=20261124-weather-symbol" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
