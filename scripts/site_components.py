@@ -84,15 +84,15 @@ def toolbar(lang, destinations, home_href=None, home_label=None):
 
 def arrow(previous=False):
  transform=' transform="translate(64 0) scale(-1 1)"' if previous else ''
- return f'<svg class="page-turn-arrow" aria-hidden="true" viewBox="0 0 64 64"><path{transform} d="M6 45c0-20 13-27 30-27V7l23 23-23 22V39C23 37 13 39 6 52z" fill="#000"/></svg>'
+ return f'<svg class="page-turn-arrow" aria-hidden="true" viewBox="0 0 64 64"><path{transform} d="M6 45c0-20 13-27 30-27V7l23 23-23 22V39C23 37 13 39 6 52z" fill="currentColor"/></svg>'
 
 
 def pagination(lang, previous=None, following=None):
  labels=LABELS[lang]
  links=[]
- if previous: links.append(f'<a class="site-step guide-previous" rel="prev" href="{e(previous)}">{arrow(True)}<span>{labels["previous"]}</span></a>')
- if following: links.append(f'<a class="site-step guide-next" rel="next" href="{e(following)}"><span>{labels["next"]}</span>{arrow()}</a>')
- if not links: links.append(f'<a class="site-step" href="/{lang}/">{arrow(True)}<span>{labels["back"]}</span></a>')
+ if previous: links.append(f'<a class="site-step guide-previous" rel="prev" aria-label="{e(labels["previous"])}" href="{e(previous)}">{arrow(True)}</a>')
+ if following: links.append(f'<a class="site-step guide-next" rel="next" aria-label="{e(labels["next"])}" href="{e(following)}">{arrow()}</a>')
+ if not links: links.append(f'<a class="site-step" aria-label="{e(labels["back"])}" href="/{lang}/">{arrow(True)}</a>')
  return ''.join(links)
 
 

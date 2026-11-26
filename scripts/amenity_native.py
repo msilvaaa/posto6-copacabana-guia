@@ -34,12 +34,12 @@ def build_detail(page,photos):
  urls=list(dict.fromkeys(unescape(u) for u in re.findall(r'href="([^"]+)"',page['source_text']) if u.startswith('http')))
  videos=''.join(f'<a class="native-link detail-video" href="{e(u)}" target="_blank" rel="noopener noreferrer">{youtube_icon()}<span>{labels[2]}</span></a>' for u in urls)
  refs=f'<section class="detail-references"><h2>{labels[1]}</h2><div class="reference-grid">{"".join(figures)}</div></section>' if figures else ''
- navigation=pagination(lang,page['previous'],page['next']) if page['previous'] or page['next'] else f'<a class="site-step" href="{e(page["back"]["href"])}">{arrow(True)}<span>{e(page["back"]["label"].removeprefix("← "))}</span></a>'
+ navigation=pagination(lang,page['previous'],page['next']) if page['previous'] or page['next'] else f'<a class="site-step" aria-label="{e(page["back"]["label"].removeprefix("← "))}" href="{e(page["back"]["href"])}">{arrow(True)}</a>'
  nav=toolbar(lang,page['languages'],home_href=page['back']['href'],home_label=page['back']['label'].removeprefix('← '))
  return f'''<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
-<link rel="stylesheet" href="/site-shell.css?v=20261126-black-c3-arrows"/><link rel="stylesheet" href="/native-guide.css?v=20261125-readable-body"/>
+<link rel="stylesheet" href="/site-shell.css?v=20261126-theme-c3-no-captions"/><link rel="stylesheet" href="/native-guide.css?v=20261125-readable-body"/>
 <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
 <script src="/site.js?v=20261124-weather-symbol" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
