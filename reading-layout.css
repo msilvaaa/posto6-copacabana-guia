@@ -1,19 +1,26 @@
 /* Shared lateral spacing, approved first on Location. */
 .guide-content { display:flow-root; width:100%; max-width:480px; margin-inline:auto; }
 
+/* Side illustrations align with the complete topic, including its links and copy. */
+html[data-guide-layout] .native-panel .guide-content .illustrated-card .native-icon.original-illustration { align-self:center; }
+.guide-content .emergency-services { align-items:start; }
+@media(max-width:1100px) {
+ html[data-fluid-frame] .guide-content .native-card:has(.fort-links,.bike-links,.gym-links) .native-card-copy { grid-column:2; grid-row:auto; }
+ html[data-fluid-frame] .guide-content .native-card:has(.fort-links) .native-icon { grid-row:1 / span 2; }
+}
+
 /* The monitor stays above the connection details; the QR sits beside them. */
 .native-wifi-access { width:100%; max-width:100%; }
 .native-wifi-access>.wifi-monitor-art { display:block; width:268px; max-width:100%; height:auto; margin:0 auto 20px; }
-.wifi-connection { display:grid; grid-template-columns:minmax(0,1fr) 76px 120px; gap:12px; align-items:center; }
+.wifi-connection { display:grid; grid-template-columns:minmax(0,170px) 112px; gap:18px; align-items:center; width:300px; max-width:100%; margin-inline:auto; }
 .wifi-credentials { min-width:0; margin:0; }
-.wifi-credentials dt { margin:0 0 6px; font-size:14px; font-weight:700; text-align:center; }
-.wifi-credentials dd { margin:0 0 14px; padding:7px 12px; border:2px solid currentColor; border-radius:22px; background:#eae3da; color:#111; font-size:18px; font-weight:700; text-align:center; overflow-wrap:anywhere; }
-.wifi-credentials dd:last-child { margin-bottom:0; background:#e3d5c6; }
-.wifi-qr { display:block; width:120px; height:120px; max-width:100%; }
-.wifi-scan-arrow { display:block; width:76px; height:auto; }
-@media(max-width:480px) {
- .wifi-connection { grid-template-columns:minmax(0,1fr) 52px 100px; gap:8px; }
- .wifi-scan-arrow { width:52px; }
- .wifi-qr { width:100px; height:100px; }
- .wifi-credentials dd { font-size:16px; padding-inline:8px; }
-}
+.wifi-credentials dt { margin:0 0 5px; font-size:13px; font-weight:700; text-align:center; }
+.wifi-credentials dd { margin:0 0 12px; padding:5px 8px; border:1px solid #b5a99d; border-radius:8px; background:#faf8f4; color:#111; font-size:16px; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+.wifi-credentials dd:last-child { margin-bottom:0; }
+.wifi-scan { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.wifi-scan-label { display:flex; align-items:center; justify-content:center; gap:5px; font-size:11px; font-weight:700; text-align:center; line-height:1.35; }
+.wifi-scan-label svg { flex:0 0 16px; width:16px; height:16px; color:#176b55; }
+.wifi-qr-frame { padding:5px; border:1px solid #176b55; border-radius:8px; background:#fff; }
+.wifi-qr { display:block; width:100px; height:100px; max-width:100%; }
+html[data-theme="dark"] .wifi-credentials dd { background:#242424; border-color:#71685f; color:#f2f2f2; }
+html[data-theme="dark"] .wifi-scan-label svg { color:#5ccea3; }
