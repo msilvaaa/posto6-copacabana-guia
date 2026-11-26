@@ -1,5 +1,6 @@
 """Place C3 previous/next links at the two ends of the Home/language toolbar."""
 import re
+from content_layout import with_centered_content
 
 
 def with_toolbar_navigation(source):
@@ -20,4 +21,4 @@ def with_toolbar_navigation(source):
     placeholder = '<span class="navigation-space" aria-hidden="true"></span>'
     controls = (previous[0] if previous else placeholder) + source[toolbar.end():end] + (following[0] if following else placeholder)
     source = source[:toolbar.end()] + controls + source[end:]
-    return re.sub(r'(?m)^[ \t]+$', '', source)
+    return with_centered_content(re.sub(r'(?m)^[ \t]+$', '', source))

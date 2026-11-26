@@ -141,9 +141,8 @@ def photograph(page, chapter, upgrades, photos):
 
 
 def wifi_access(lang, source):
-    scan = {'pt': 'ESCANEIE', 'en': 'SCAN ME', 'es': 'ESCANEA'}[lang]
     network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
-    return (f'<svg class="original-art wifi-access-art" viewBox="1135 180 310 463" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
+    return (f'<svg class="original-art wifi-monitor-art" viewBox="1173 180 268 224" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
             '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath><filter id="wifi-photo-detail" color-interpolation-filters="sRGB"><feConvolveMatrix order="3" kernelMatrix="0 -.12 0 -.12 1.48 -.12 0 -.12 0" edgeMode="duplicate" preserveAlpha="true"/></filter></defs>'
             '<rect x="1173" y="182" width="268" height="173" rx="10" fill="#111"/>'
             '<g clip-path="url(#wifi-screen-photo)"><image class="wifi-original-screen-photo" href="/assets/pt-05.jpg" width="1537" height="864" filter="url(#wifi-photo-detail)"/></g>'
@@ -153,18 +152,11 @@ def wifi_access(lang, source):
             '<g fill="none" stroke="white" stroke-width="2" stroke-linecap="round">'
             '<path class="wifi-signal-outer" d="M1393 216q11-10 22 0"/><path class="wifi-signal-inner" d="M1397 221q7-6 14 0"/>'
             '<path d="M1401 225q3-2 6 0"/></g><circle cx="1404" cy="229" r="1.5" fill="white"/></g>'
-            '<g class="wifi-credentials" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" fill="#111">'
-            f'<text x="1305" y="431" font-size="17" font-weight="700">{network}</text>'
-            '<rect x="1180" y="441" width="250" height="31" rx="15.5" fill="#eae3da" stroke="#111" stroke-width="2"/>'
-            '<text x="1305" y="463" font-size="20">Marcus Silva</text>'
-            f'<text x="1305" y="495" font-size="17" font-weight="700">{password}</text>'
-            '<rect x="1180" y="505" width="250" height="31" rx="15.5" fill="#e3d5c6" stroke="#111" stroke-width="2"/>'
-            '<text x="1305" y="527" font-size="20">braziliansoul</text></g>'
-            '<g class="wifi-scan-group">'
-            '<image href="/assets/quality/wifi-qr.svg" x="1258" y="548" width="95" height="95"/>'
-            '<path d="M1162 582h59v-7l18 16-18 16v-7h-59Z" fill="#f0273e"/>'
-            f'<text x="1191" y="594" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="700">{scan}</text>'
-            '</g></svg>')
+            '</svg><div class="wifi-connection">'
+            f'<dl class="wifi-credentials"><dt>{network}</dt><dd>Marcus Silva</dd>'
+            f'<dt>{password}</dt><dd>braziliansoul</dd></dl>'
+            '<img class="wifi-qr" src="/assets/quality/wifi-qr.svg" width="120" height="120" alt="QR Code Wi-Fi"/>'
+            '</div>')
 
 
 def native_rules(lang, section):
