@@ -133,7 +133,7 @@ body.home-page { background: #f8f6f2; }
 .cover-button-art.art-symbol img[src^="/assets/icons-3d/"] { object-fit:contain; padding:2px; }
 
 /* Bring the cover index slightly closer to the photograph, keeping the 70/30 split. */
-@media(min-width:1101px) { .cover-menu { transform:translateX(-12px); } }
+@media(min-width:1101px) { .cover-menu { transform:none; } }
 
 /* Keep the text index beside the brand; align the appearance control to the title below. */
 @media(min-width:1101px) {
@@ -184,6 +184,7 @@ html[data-theme="dark"] .home-cover-hero>.theme-toggle:hover { background:#333; 
 /* Keep the cover menu comfortably spaced in a more compact group. */
 @media(min-width:1101px) {
  .cover-html-button[data-column="1"] { left:76.3%; }
+ .cover-html-button[data-column="2"] { left:85%; }
  .cover-html-button[data-column="3"] { left:93.7%; }
  .cover-html-button[data-row="1"] { top:23%; }
  .cover-html-button[data-row="2"] { top:36%; }
