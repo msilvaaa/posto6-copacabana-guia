@@ -152,12 +152,23 @@
 
 (() => {
  'use strict';
+ if (location.pathname.startsWith('/preview-')) return;
+ const desktop=matchMedia('(min-width:1101px)');
+ const sync=()=>document.documentElement.toggleAttribute('data-desktop-frame',desktop.matches && navigator.maxTouchPoints===0);
+ desktop.addEventListener('change',sync);
+ window.addEventListener('resize',sync);
+ window.addEventListener('pageshow',sync);
+ sync();
+})();
+
+(() => {
+ 'use strict';
  // Published mockups retain their own comparison controls and positioning.
  if (location.pathname.startsWith('/preview-')) return;
  const heading=document.querySelector('h1');
  const contact=document.querySelector('.site-contact-corner');
  if (!heading || !contact) return;
- const desktop=matchMedia('(min-width:1101px) and (hover:hover) and (pointer:fine)');
+ const desktop=matchMedia('(min-width:1101px)');
  const originalMaxWidth=heading.style.maxWidth;
  const cover=document.body.classList.contains('home-page');
  const reference=cover ? document.querySelector('[data-cover-clock]') || heading : heading;
@@ -195,6 +206,7 @@
  desktop.addEventListener('change',schedule);
  document.querySelector('.site-reading')?.addEventListener('scroll',schedule,{passive:true});
  window.addEventListener('scroll',schedule,{passive:true});
+ document.addEventListener('scroll',schedule,true);
  document.fonts?.ready.then(schedule);
  schedule();
 })();

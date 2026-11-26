@@ -1,0 +1,54 @@
+/* A centered reference layout keeps wide desktop screens from stretching the guide. */
+html[data-desktop-frame] {
+ --desktop-frame-width:min(1440px,100vw);
+ --desktop-frame-height:min(900px,100dvh);
+ --desktop-frame-side:calc((100vw - var(--desktop-frame-width)) / 2);
+ --desktop-arrow-gap:1cm;
+ --guide-menu-button-size:72px;
+ --guide-title-height:34px;
+}
+html[data-desktop-frame] body { overflow:hidden; }
+html[data-desktop-frame] body.home-page .page-shell,
+html[data-desktop-frame] body.site-page .site-frame {
+ position:fixed; top:0; left:var(--desktop-frame-side); width:var(--desktop-frame-width);
+ max-width:none; height:var(--desktop-frame-height); margin:0;
+}
+html[data-desktop-frame] body.home-page .page-shell { overflow-x:hidden; overflow-y:auto; }
+html[data-desktop-frame] body.home-page .page-stage { width:100%; height:100%; min-height:760px; aspect-ratio:auto; }
+html[data-desktop-frame] body.native-guide .native-chapter { min-height:var(--desktop-frame-height); }
+html[data-desktop-frame] body.native-guide .native-photo,
+html[data-desktop-frame] body.content-page .section-visual>.section-photo-link { height:var(--desktop-frame-height); }
+html[data-desktop-frame] body.native-guide .native-toolbar .site-toolbar,
+html[data-desktop-frame] body.content-page .site-controls .site-toolbar {
+ top:16px; right:var(--desktop-frame-side); left:auto; width:calc(var(--desktop-frame-width) / 2);
+}
+html[data-desktop-frame] body.home-page .main-html-topbar {
+ top:16px; right:var(--desktop-frame-side); left:auto; width:calc(var(--desktop-frame-width) * .3);
+ --desktop-arrow-gap:clamp(8px,calc((var(--desktop-frame-width) * .3 - 322px) / 2),1cm);
+}
+html[data-desktop-frame] body[data-whatsapp-title] .site-contact-corner { right:calc(var(--desktop-frame-side) + 2cm); }
+html[data-desktop-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space):first-child { margin-right:calc(var(--desktop-arrow-gap) - 6px); }
+html[data-desktop-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space):last-child { margin-left:calc(var(--desktop-arrow-gap) - 6px); }
+/* Keep the approved 1440px composition's type and button sizes on wider screens. */
+html[data-desktop-frame] body.home-page .home-cover-logo-text strong { font-size:33.84px; }
+html[data-desktop-frame] body.home-page .home-cover-logo-text span { font-size:11.52px; }
+html[data-desktop-frame] body.home-page .home-cover-logo-text small { font-size:8.352px; }
+html[data-desktop-frame] body.home-page .home-cover-copy h1 { font-size:54.72px; }
+html[data-desktop-frame] body.home-page .home-cover-subtitle { font-size:15.552px; }
+html[data-desktop-frame] body.home-page .home-cover-stats span { font-size:11.232px; }
+html[data-desktop-frame] body.home-page .cover-local-clock { font-size:13px; }
+html[data-desktop-frame] body.home-page .cover-html-button::after { font-size:13px; }
+
+/* Self-hosted, metrically compatible fonts prevent device-specific substitutions. */
+@font-face { font-family:'Guide Sans'; src:url('/assets/fonts/desktop-ui/guide-sans.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
+@font-face { font-family:'Guide Serif'; src:url('/assets/fonts/desktop-ui/guide-serif.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
+html[data-desktop-frame] body,
+html[data-desktop-frame] body :is(p,a,b,strong,button,small,time,li,h2,h3,h4,h5,h6,dt,dd,figcaption,summary),
+html[data-desktop-frame] body :is(.cover-local-clock,.service-hours),
+html[data-desktop-frame] body .local-clock :is([data-clock-date],[data-clock-offset]) { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
+html[data-desktop-frame] body.home-page .home-cover-copy h1,
+html[data-desktop-frame] body.home-page .home-cover-logo-text strong,
+html[data-desktop-frame] body :is(.section-panel h2,.dialog-bar h2) { font-family:'Guide Serif',Georgia,'Times New Roman',serif!important; }
+html[data-desktop-frame] body :is(.native-chapter-title,.native-thanks:not(.signature-original)) { font-family:'Guide Script',Georgia,serif!important; }
+
+html[data-desktop-frame] body.home-page .cover-html-button::after { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }

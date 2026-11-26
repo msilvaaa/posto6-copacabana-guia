@@ -249,12 +249,12 @@ body.home-page .main-html-topbar { align-items:center; gap:6px; }
 }
 
 /* Approved WhatsApp position applies only to desktop, preserving mobile and iPad. */
-@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+@media(min-width:1101px) {
  :root body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:2cm; bottom:auto; animation:none; }
 }
 
 /* Keep the cover clock and its WhatsApp button below the flags on shorter desktops. */
-@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+@media(min-width:1101px) {
  body.home-page[data-whatsapp-title] .home-menu-rule { top:max(14.1%,126px); }
  body.home-page[data-whatsapp-title] .cover-html-button[data-row="1"] { top:max(23%,184px); }
  body.home-page[data-whatsapp-title] .cover-html-button[data-row="2"] { top:max(36%,280px); }
