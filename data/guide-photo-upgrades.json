@@ -175,7 +175,7 @@
   "-12.jpg": {
     "topic_photos": {
       "1": {
-        "src": "/assets/restaurants/outras-opcoes-mesa-vertical.png",
+        "src": "/assets/restaurants/mais-sabores-mesa-natural.png",
         "width": 1024,
         "height": 1536,
         "position": "50% 50%",
@@ -184,7 +184,7 @@
           "en": "Restaurant table with assorted dishes and friends sharing a toast",
           "es": "Mesa de restaurante con platos variados y brindis entre amigos"
         },
-        "provenance": "Host photograph rotated 90 degrees clockwise and lightly enhanced on 2026-11-25; portrait 2:3, natural food colours."
+        "provenance": "Reduced the orange cast, saturation, contrast and over-sharpened appearance of the existing dining-table photograph on 2026-11-26 at the host request. Same portrait orientation, composition and proportional display."
       },
       "2": {
         "src": "/assets/restaurants/outras-opcoes-pizza-vista-natural.png",
