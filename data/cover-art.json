@@ -4,8 +4,9 @@
     "kind": "symbol"
   },
   "regras": {
-    "src": "/assets/cover-icons/regras-clear.svg",
-    "kind": "symbol"
+    "src": "/assets/cover-photos/regras-placa.webp",
+    "kind": "photo",
+    "position": "50% 50%"
   },
   "transportes": {
     "src": "/assets/cover-photos/transporte-vlt.webp",

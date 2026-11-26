@@ -139,19 +139,8 @@
 
 .exchange-base,.exchange-value { white-space: nowrap; }
 
-/* Keep the airport illustration in the free space beside the route details. */
-.airport-plane { position: absolute; right: 0; top: 88px; width: 60px; height: 145px; transform: translateX(-12px); pointer-events: none; }
-.airport-plane>svg { display: block; width: 100%; height: 100%; }
-.airport-card .native-card-copy { padding-right: 76px; }
-@media(min-width:761px) {
- .illustrated-card.airport-card { grid-template-columns: 76px minmax(0,max-content) 70px; }
- .airport-card .native-card-copy { padding-right: 0; }
- .airport-card .airport-plane { position: static; grid-column: 3; grid-row: 1 / span 2; align-self: center; width: 70px; transform: translate(-12px,-20px); }
-}
-
-@media(min-width:1301px) {
- .airport-card .airport-plane { transform: translate(calc(2cm - 12px),-20px); }
-}
+/* The existing plane now occupies the heading icon slot instead of a right column. */
+.airport-card .native-icon.plane>svg { width:min(100%,70px); height:min(100%,70px); }
 
 .agency-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px 12px; align-items: start; }
 .agency-links>div { min-width: 0; }
@@ -373,8 +362,3 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
  body[data-whatsapp-title] .local-clocks-grid { grid-template-columns:repeat(2,max-content); width:max-content; max-width:100%; gap:2px 14px; margin-top:6px; }
  body[data-whatsapp-title] .local-clock { padding:3px 0; gap:1px 6px; }
 }
-
-/* Text-bearing signs use the existing full-size photo viewer. */
-.native-photo>.native-photo-open,.native-photo>.native-photo-open>img { display:block; width:100%; height:100%; object-fit:cover; border:0; margin:0; }
-.native-photo-open { cursor:zoom-in; }
-.native-photo-open:focus-visible { outline:3px solid #238cc6; outline-offset:-3px; }
