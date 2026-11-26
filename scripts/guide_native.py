@@ -386,6 +386,8 @@ def build_native(page, content, upgrades, photos):
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-thanks-spacing'
     native_style += '-organized-copy-20261126'
+    if page['image']['src'].endswith('-04.jpg'):
+        native_style += '-compact-clocks-20261126'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
