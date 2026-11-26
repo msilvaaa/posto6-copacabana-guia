@@ -55,8 +55,14 @@ html[data-guide-layout] body.home-page .cover-html-button::after { font-family:'
 
 /* The cover contact sits at the outer edge, with its base on the divider. */
 html[data-desktop-frame] body.home-page[data-whatsapp-title] .site-contact-corner { right:calc(var(--desktop-frame-side) + 16px); }
-html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner { animation:whatsapp-soft-float 2.6s ease-in-out infinite; }
-html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner:is(:hover,:focus-within) { animation-play-state:paused; }
+html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner { animation:whatsapp-soft-float 2.6s ease-in-out infinite; }
+html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner:is(:hover,:focus-within) { animation-play-state:paused; }
 @media(prefers-reduced-motion:reduce) {
- html[data-guide-layout] body.home-page[data-whatsapp-title] .site-contact-corner { animation:none; }
+ html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner { animation:none; }
 }
+
+/* Keep the contact button compact and consistent throughout the guide. */
+html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner,
+html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner .site-whatsapp { width:48px; height:48px; flex-basis:48px; }
+html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp { padding:11px; }
+html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp svg { width:26px; height:26px; }
