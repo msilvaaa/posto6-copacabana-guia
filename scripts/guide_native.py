@@ -311,7 +311,7 @@ def build_native(page, content, upgrades, photos):
                 name='coffee-bars' if section_index==1 else section['icon']
             elif page['image']['src'].endswith('-06.jpg'):
                 name=['rule','people'][section_index]
-            elif page['image']['src'].endswith('-03.jpg') and section_index==1:
+            elif page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Estacionamento':
                 name='parking'
             room_index=None
             if page['image']['src'].endswith('-02.jpg'):
@@ -324,11 +324,11 @@ def build_native(page, content, upgrades, photos):
                 art=emergency_illustration(name) if page['image']['src'].endswith('-14.jpg') else information_illustration(name) if page['image']['src'].endswith('-10.jpg') else illustration(name)
                 if page['image']['src'].endswith('-05.jpg') and section_index==2:
                     art=''
-                if page['image']['src'].endswith('-03.jpg') and section_index==0:
+                if page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Check-in':
                     art='<img class="native-room-thumb" src="/assets/checkin/porta-miniatura-sem-tarja.png" width="76" height="76" alt=""/>'
                 elif page['image']['src'].endswith('-13.jpg') and index==0 and section_index==0:
                     art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
-            if page['image']['src'].endswith('-02.jpg') and section_index==0:
+            if (page['image']['src'].endswith('-02.jpg') and section_index==0) or (page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Sua estadia no Rio'):
                 art=''
             if page['image']['src'].endswith('-04.jpg') and section_index==1:
                 art=''

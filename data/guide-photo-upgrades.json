@@ -53,16 +53,16 @@
     "position": "30% 50%"
   },
   "-03.jpg": {
-    "src": "/assets/checkin/rede-apartamento-natural.png",
+    "src": "/assets/welcome/porta-apartamento-sem-numero.png",
     "width": 1024,
     "height": 1536,
-    "position": "50% 50%",
+    "position": "50% 15%",
     "alt": {
-      "pt": "Rede colorida e cadeira branca junto à janela do apartamento",
-      "en": "Colourful hammock and white chair beside the apartment window",
-      "es": "Hamaca de colores y silla blanca junto a la ventana del apartamento"
+      "pt": "Porta de entrada entreaberta, com fechadura digital e corredor ao fundo",
+      "en": "Open entrance door with digital lock and hallway in the background",
+      "es": "Puerta de entrada entreabierta con cerradura digital y pasillo al fondo"
     },
-    "provenance": "Light photographic enhancement of the host-supplied hammock photograph on 2026-11-25; original vertical 2:3 composition retained, natural colour and proportional full-column display."
+    "provenance": "Edited the host-supplied entrance photograph on 2026-11-25 to remove only the apartment number from the door. Same vertical composition, natural wood texture, proportional full-column display."
   },
   "-13.jpg": {
     "src": "/assets/establishments/calcadao-copacabana.webp",
@@ -149,16 +149,16 @@
     "provenance": "Edited the host-supplied entrance photograph on 2026-11-25 to remove only the apartment number from the door. Same vertical composition, natural wood texture, proportional full-column display."
   },
   "-15.jpg": {
-    "src": "/assets/checkout/rede-cinza-natural.png",
+    "src": "/assets/checkin/rede-apartamento-natural.png",
     "width": 1024,
     "height": 1536,
     "position": "50% 50%",
     "alt": {
-      "pt": "Rede cinza com franjas laranjas e cadeira branca junto à janela do apartamento",
-      "en": "Grey hammock with orange tassels and white chair beside the apartment window",
-      "es": "Hamaca gris con flecos naranjas y silla blanca junto a la ventana del apartamento"
+      "pt": "Rede colorida e cadeira branca junto à janela do apartamento",
+      "en": "Colourful hammock and white chair beside the apartment window",
+      "es": "Hamaca de colores y silla blanca junto a la ventana del apartamento"
     },
-    "provenance": "Light photographic enhancement of the host-supplied grey-and-orange hammock photo on 2026-11-25; original vertical 2:3 scene retained with natural colours and proportional full-column display."
+    "provenance": "Light photographic enhancement of the host-supplied hammock photograph on 2026-11-25; original vertical 2:3 composition retained, natural colour and proportional full-column display."
   },
   "-05.jpg": {
     "src": "/assets/wifi/sala-trabalho-natural.png",
