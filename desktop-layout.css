@@ -42,13 +42,13 @@ html[data-desktop-frame] body.home-page .cover-html-button::after { font-size:13
 /* Self-hosted, metrically compatible fonts prevent device-specific substitutions. */
 @font-face { font-family:'Guide Sans'; src:url('/assets/fonts/desktop-ui/guide-sans.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
 @font-face { font-family:'Guide Serif'; src:url('/assets/fonts/desktop-ui/guide-serif.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
-html[data-desktop-frame] body,
-html[data-desktop-frame] body :is(p,a,b,strong,button,small,time,li,h2,h3,h4,h5,h6,dt,dd,figcaption,summary),
-html[data-desktop-frame] body :is(.cover-local-clock,.service-hours),
-html[data-desktop-frame] body .local-clock :is([data-clock-date],[data-clock-offset]) { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
-html[data-desktop-frame] body.home-page .home-cover-copy h1,
-html[data-desktop-frame] body.home-page .home-cover-logo-text strong,
-html[data-desktop-frame] body :is(.section-panel h2,.dialog-bar h2) { font-family:'Guide Serif',Georgia,'Times New Roman',serif!important; }
-html[data-desktop-frame] body :is(.native-chapter-title,.native-thanks:not(.signature-original)) { font-family:'Guide Script',Georgia,serif!important; }
+html[data-guide-layout] body,
+html[data-guide-layout] body :is(p,a,b,strong,button,small,time,li,h2,h3,h4,h5,h6,dt,dd,figcaption,summary),
+html[data-guide-layout] body :is(.cover-local-clock,.service-hours),
+html[data-guide-layout] body .local-clock :is([data-clock-date],[data-clock-offset]) { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
+html[data-guide-layout] body.home-page .home-cover-copy h1,
+html[data-guide-layout] body.home-page .home-cover-logo-text strong,
+html[data-guide-layout] body :is(.section-panel h2,.dialog-bar h2) { font-family:'Guide Serif',Georgia,'Times New Roman',serif!important; }
+html[data-guide-layout] body :is(.native-chapter-title,.native-thanks:not(.signature-original)) { font-family:'Guide Script',Georgia,serif!important; }
 
-html[data-desktop-frame] body.home-page .cover-html-button::after { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
+html[data-guide-layout] body.home-page .cover-html-button::after { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }

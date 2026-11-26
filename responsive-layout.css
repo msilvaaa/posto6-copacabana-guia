@@ -1,0 +1,120 @@
+/* Phone and tablet layouts share the desktop identity and fit their available space. */
+.guide-heading-row { display:flow-root; }
+html[data-fluid-frame] {
+ --fluid-content-width:min(100vw,840px);
+ --fluid-content-side:calc((100vw - var(--fluid-content-width)) / 2);
+ --fluid-arrow-gap:clamp(8px,calc((var(--fluid-content-width) - 290px) / 2),1cm);
+ --guide-menu-button-size:72px;
+ --guide-title-height:min(34px,calc((var(--fluid-content-width) - 132px) / 10.4));
+ overflow-x:hidden;
+}
+html[data-fluid-frame] body { height:auto; min-height:100dvh; overflow-x:hidden; overflow-y:auto; }
+html[data-fluid-frame] body.home-page .page-shell,
+html[data-fluid-frame] body.site-page .site-frame { position:relative; inset:auto; display:block; width:var(--fluid-content-width); max-width:none; height:auto; margin:0 auto; }
+html[data-fluid-frame] .page-stage { min-height:0; aspect-ratio:auto; }
+html[data-fluid-frame] body.site-page .site-reading { overflow:visible; width:100%; height:auto; padding-top:80px; scrollbar-gutter:auto; }
+html[data-fluid-frame] .native-chapter,
+html[data-fluid-frame] .section-layout { display:flex; flex-direction:column; min-height:0; }
+html[data-fluid-frame] .native-visual,
+html[data-fluid-frame] .section-visual { position:relative; width:100%; min-height:0; }
+html[data-fluid-frame] .native-photo,
+html[data-fluid-frame] .section-visual>.section-photo-link,
+html[data-fluid-frame] .section-visual>.section-photo { position:relative; inset:auto; display:block; width:100%; height:clamp(240px,66.667vw,400px); min-height:0; }
+html[data-fluid-frame] .native-photo>img,
+html[data-fluid-frame] .native-photo>svg,
+html[data-fluid-frame] .section-photo-link>.section-photo { width:100%; height:100%; min-height:0; object-fit:cover; }
+html[data-fluid-frame] .native-panel,
+html[data-fluid-frame] body.content-page .section-panel { width:100%; min-width:0; padding:16px; }
+html[data-fluid-frame] .native-toolbar { min-height:0; height:0; margin:0; }
+html[data-fluid-frame] .site-controls { position:static; top:auto; height:0; }
+html[data-fluid-frame] body.native-guide .native-toolbar .site-toolbar,
+html[data-fluid-frame] body.content-page .site-controls .site-toolbar,
+html[data-fluid-frame] body.home-page .main-html-topbar {
+ position:fixed; top:max(8px,env(safe-area-inset-top)); right:var(--fluid-content-side); left:auto;
+ display:flex; align-items:center; justify-content:center; gap:6px; width:var(--fluid-content-width); height:56px; margin:0; background:var(--guide-panel,#fff); z-index:90;
+}
+html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>.site-round,
+html[data-fluid-frame] body.home-page .main-html-topbar>:is(.detail-modern-home,.detail-modern-flag) { position:relative; inset:auto; flex:0 0 44px; width:44px; height:44px; }
+html[data-fluid-frame] body.home-page .detail-modern-flag img { width:44px; height:44px; }
+html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space) { flex:0 0 44px; min-width:44px; width:44px; height:56px; min-height:56px; }
+html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>.site-step .page-turn-arrow { width:26px; height:34px; }
+html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space):first-child { margin-right:calc(var(--fluid-arrow-gap) - 6px); }
+html[data-fluid-frame] body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space):last-child { margin-left:calc(var(--fluid-arrow-gap) - 6px); }
+html[data-fluid-frame] .guide-heading-row { display:grid; grid-template-columns:minmax(0,1fr); align-items:center; min-height:56px; padding-right:68px; margin-bottom:16px; }
+html[data-fluid-frame] .guide-heading-row>h1 { max-width:100%; margin:0 auto; }
+html[data-fluid-frame] body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:calc(var(--fluid-content-side) + 12px); bottom:auto; animation:none; }
+html[data-fluid-frame] .native-card { margin-bottom:14px; }
+html[data-fluid-frame] .native-card h2 { font-size:17px; text-align:left; }
+html[data-fluid-frame] .native-card-heading { margin-bottom:4px; }
+html[data-fluid-frame] .illustrated-card { display:grid; grid-template-columns:56px minmax(0,1fr); gap:4px 12px; align-items:start; }
+html[data-fluid-frame] .illustrated-card .native-card-heading { display:contents; }
+html[data-fluid-frame] .illustrated-card .native-icon { grid-column:1; grid-row:1 / span 2; width:56px; height:56px; }
+html[data-fluid-frame] .native-room-thumb { width:56px; height:56px; }
+html[data-fluid-frame] .illustrated-card h2,
+html[data-fluid-frame] .illustrated-card .native-card-copy { grid-column:2; padding:0; }
+html[data-fluid-frame] .illustrated-card:has(.native-icon:empty) { grid-template-columns:minmax(0,1fr); }
+html[data-fluid-frame] .illustrated-card:has(.native-icon:empty) h2,
+html[data-fluid-frame] .illustrated-card:has(.native-icon:empty) .native-card-copy { grid-column:1; }
+html[data-fluid-frame] .native-card .native-card-copy>p.native-body-copy { margin:0 0 6px; font-size:16px; }
+html[data-fluid-frame] .native-link { min-height:44px; align-items:flex-start; }
+html[data-fluid-frame] .native-link>span { min-width:0; }
+html[data-fluid-frame] :is(.information-services,.emergency-services)>.native-card { margin:0; }
+html[data-fluid-frame] .airport-card .airport-plane { position:static; grid-column:2; grid-row:3; justify-self:end; width:48px; height:64px; transform:none; }
+html[data-fluid-frame] :is(.fort-links,.bike-links,.gym-links) { grid-template-columns:repeat(2,minmax(0,1fr)); }
+html[data-fluid-frame] .activities-chapter .native-card:has(.fort-links) { grid-template-columns:56px minmax(0,1fr); gap:4px 12px; }
+html[data-fluid-frame] .activities-chapter .native-card:has(.fort-links) .native-icon { grid-row:1; }
+html[data-fluid-frame] .activities-chapter .native-card:has(.fort-links) .native-heading-text>h2 { grid-column:2; grid-row:1; align-self:center; }
+html[data-fluid-frame] .native-card:has(.fort-links,.bike-links,.gym-links) .native-card-copy { grid-column:1 / -1; grid-row:2; }
+html[data-fluid-frame] .activities-topic-tabs { max-width:100%; margin-bottom:16px; }
+html[data-fluid-frame] .activities-topic-tabs>a { min-height:44px; padding:6px 8px; font-size:clamp(11px,3.2vw,13px); }
+html[data-fluid-frame] .local-clocks { width:min(100%,380px); }
+html[data-fluid-frame] .local-clocks-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:2px 12px; margin-top:6px; }
+html[data-fluid-frame] .local-clock { gap:1px 6px; padding:3px 0; }
+html[data-fluid-frame] .local-clock h3>span { min-width:0; overflow-wrap:anywhere; }
+html[data-fluid-frame] .football-clubs { grid-template-columns:1fr; width:min(100%,276px); max-width:100%; gap:10px; }
+html[data-fluid-frame] .football-club { padding:10px; }
+html[data-fluid-frame] .photo-grid { gap:10px; padding:0; }
+html[data-fluid-frame] .amenities-grid { gap:8px 6px; }
+html[data-fluid-frame] .weather-dialog .dialog-bar h2 { font-size:18px; }
+html[data-fluid-frame] .weather-dialog [data-weather-close] { min-height:44px; }
+/* The compact cover keeps clock/WhatsApp in a dedicated row beneath the controls. */
+html[data-fluid-frame] body.home-page .home-menu-rule { display:flex; align-items:center; position:fixed; top:72px; left:var(--fluid-content-side); width:var(--fluid-content-width); height:56px; background:var(--guide-panel,#fff); z-index:90; }
+html[data-fluid-frame] .cover-local-clock { position:static; width:calc(100% - 80px); margin:0; padding:0 12px; line-height:18px; }
+html[data-fluid-frame] body.home-page .home-cover-hero { position:relative; padding:144px 20px 24px; }
+html[data-fluid-frame] .home-cover-logo-text strong { font-size:28px; }
+html[data-fluid-frame] .home-cover-logo-text span { font-size:10px; }
+html[data-fluid-frame] .home-cover-logo-text small { font-size:8px; }
+html[data-fluid-frame] .home-cover-heading-row .home-cover-brand { max-width:calc(100% - 80px); }
+html[data-fluid-frame] .home-cover-heading-row .home-cover-nav { width:100%; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px 8px; }
+html[data-fluid-frame] .home-cover-nav a { display:flex; align-items:center; min-height:44px; max-width:100%; padding:6px 0; font-size:11px; }
+html[data-fluid-frame] .home-cover-copy h1 { max-width:calc(100% - 68px); font-size:28px; line-height:1.15; }
+html[data-fluid-frame] .home-cover-subtitle { max-width:100%; min-height:0; font-size:14px; line-height:1.5; }
+html[data-fluid-frame] body.home-page .page-stage .home-cover-hero>.site-utilities { top:144px; right:20px; }
+html[data-fluid-frame] .home-cover-stats { margin-top:24px; gap:10px 0; }
+html[data-fluid-frame] .home-cover-stats>div { min-height:44px; padding:0 8px; }
+html[data-fluid-frame] .home-cover-stats span { font-size:11px; }
+html[data-fluid-frame] .home-cover-cta { margin-top:20px; }
+html[data-fluid-frame] .cover-menu { gap:28px 10px; padding:28px 12px 40px; }
+html[data-fluid-frame] .cover-html-button::after,
+html[data-fluid-frame] .cover-local-clock { font-size:12px; }
+@media(max-width:520px) {
+ html[data-fluid-frame] .activities-agency-links,
+ html[data-fluid-frame] .agency-links { grid-template-columns:1fr; }
+}
+@media(max-width:420px) {
+ html[data-fluid-frame] .local-clock h3>span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ html[data-fluid-frame] .local-clock [data-clock-date] { padding-left:0; font-size:9px; }
+ html[data-fluid-frame] .local-clock [data-clock-offset] { font-size:9px; }
+}
+@media(max-width:380px) {
+ html[data-fluid-frame] .information-services,
+ html[data-fluid-frame] .emergency-services { grid-template-columns:1fr; }
+}
+@media(min-width:640px) {
+ html[data-fluid-frame] .football-clubs { grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,562px); }
+}
+@media(max-width:640px) {
+ html[data-fluid-frame] .house-rules-grid { grid-template-columns:1fr; }
+}
+/* Keep the bus, rather than the upper mountain, inside the shallow photo banner. */
+html[data-fluid-frame] .native-photo>img[src="/assets/transport/onibus-rio.webp"] { object-position:50% 90%!important; }
