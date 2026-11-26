@@ -83,8 +83,8 @@ def toolbar(lang, destinations, home_href=None, home_label=None):
 
 
 def arrow(previous=False):
- path='m14.5 5-7 7 7 7' if previous else 'm9.5 5 7 7-7 7'
- return f'<svg aria-hidden="true" viewBox="0 0 24 24"><path d="{path}" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>'
+ transform=' transform="translate(64 0) scale(-1 1)"' if previous else ''
+ return f'<svg class="page-turn-arrow" aria-hidden="true" viewBox="0 0 64 64"><path{transform} d="M6 45c0-20 13-27 30-27V7l23 23-23 22V39C23 37 13 39 6 52z" fill="#000"/></svg>'
 
 
 def pagination(lang, previous=None, following=None):

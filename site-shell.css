@@ -128,12 +128,15 @@ a:focus-visible,button:focus-visible { outline: 3px solid #0078ff; outline-offse
 .weather-dialog .dialog-bar h2 { min-width: 0; }
 .weather-dialog [data-weather-close] { flex: 0 0 auto; min-height: 28px; padding: 5px 8px; border-radius: 7px; font-size: 11px; line-height: 16px; white-space: nowrap; }
 
-/* One shared visual style for every previous/next control, matching the cover. */
-.site-step { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 84px; gap: 4px; width: 84px; min-width: 84px; height: 27px; min-height: 27px; padding: 0; border-radius: 12px; background: linear-gradient(#2a2a2c,#111112); color: white; border: 1px solid #ffffff2e; box-shadow: 0 0 0 5px white,0 8px 18px #0000003d; font: 700 10px/1 Arial,Helvetica,sans-serif; text-transform: uppercase; text-decoration: none; transition: transform .18s ease,box-shadow .18s ease; }
-.site-step svg { width: 10px; height: 10px; flex-shrink: 0; }
-.site-step:hover,.site-step:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 28px #00000047; }
-.site-step:active { transform: translateY(-1px) scale(.985); }
-@media(prefers-reduced-motion:reduce) { .site-step { transition: none; } }
+/* C3: black curved page-turn arrows, shared by all previous/next controls. */
+.site-step { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; flex:0 0 70px; gap:2px; width:70px; min-width:70px; height:52px; min-height:52px; padding:0; border:0; border-radius:6px; background:transparent; color:#111; box-shadow:none; font:700 10px/1 Arial,Helvetica,sans-serif; text-transform:uppercase; text-decoration:none; transition:transform .18s ease; }
+.site-step .page-turn-arrow { order:0; width:44px; height:38px; flex-shrink:0; filter:drop-shadow(0 2px 1px #0002); }
+.site-step>span { order:1; }
+.site-step:hover,.site-step:focus-visible { transform:translateY(-3px); box-shadow:none; }
+.site-step:active { transform:translateY(-1px) scale(.985); }
+html[data-theme="dark"] .site-step { color:#fff; }
+html[data-theme="dark"] .site-step .page-turn-arrow { filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff); }
+@media(prefers-reduced-motion:reduce) { .site-step { transition:none; } }
 
 .site-about a { display: inline-block; padding: 6px 2px; margin: -2px 0; }
 
@@ -208,8 +211,8 @@ body.home-page .main-html-topbar {
 /* Approved navigation placement: directly below the page title. */
 body:is(.site-page,.home-page) .site-pagination {
  position:static; inset:auto; display:flex; align-items:center; justify-content:center;
- transform:none; width:max-content; max-width:calc(100% - 12px); height:44px;
- min-height:44px; margin:0 auto 16px; padding:0; gap:16px;
+ transform:none; width:max-content; max-width:calc(100% - 12px); height:56px;
+ min-height:56px; margin:0 auto 16px; padding:0; gap:16px;
 }
 body:is(.site-page,.home-page) .cover-pagination>.cover-next { position:static; margin:0; transform:none; }
 body:is(.site-page,.home-page) .cover-pagination>.cover-next:hover { transform:translateY(-3px); }
