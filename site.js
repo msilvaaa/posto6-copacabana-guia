@@ -202,5 +202,6 @@
  desktop.addEventListener('change',schedule);
  document.addEventListener('scroll',schedule,true);
  document.fonts?.ready.then(schedule);
- schedule();
+ // Align before the first animation frame, including on busy tablet browsers.
+ align();
 })();
