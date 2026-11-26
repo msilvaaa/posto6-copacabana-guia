@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-25T17:30:02.607748+00:00",
-  "window_start": "2026-11-25",
-  "window_end": "2026-12-01",
+  "updated_at": "2026-11-26T21:13:49.486370+00:00",
+  "window_start": "2026-11-26",
+  "window_end": "2026-12-02",
   "timezone": "America/Sao_Paulo",
   "source": "ESPN",
   "source_url": "https://www.espn.com.br/futebol/calendario",
@@ -20,6 +20,17 @@
           "league": "bra.1",
           "venue": "Couto Pereira",
           "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841333"
+        },
+        {
+          "id": "401841341",
+          "date": "2026-12-03T00:30:00+00:00",
+          "time_confirmed": true,
+          "home": "Flamengo",
+          "away": "Chapecoense",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Estadio do Maracana",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841341"
         }
       ]
     },
@@ -37,6 +48,17 @@
           "league": "bra.1",
           "venue": "Estadio do Maracana",
           "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841337"
+        },
+        {
+          "id": "401841344",
+          "date": "2026-12-03T00:30:00+00:00",
+          "time_confirmed": true,
+          "home": "Red Bull Bragantino",
+          "away": "Fluminense",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Estádio Municipal Cicero de Souza Marques",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841344"
         }
       ]
     },
@@ -54,6 +76,17 @@
           "league": "bra.1",
           "venue": "Arena MRV",
           "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841328"
+        },
+        {
+          "id": "401841342",
+          "date": "2026-12-03T00:30:00+00:00",
+          "time_confirmed": true,
+          "home": "Vasco da Gama",
+          "away": "Vitória",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Estádio São Januário",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841342"
         }
       ]
     },
@@ -71,6 +104,17 @@
           "league": "bra.1",
           "venue": "Joao Havelange Stadium",
           "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841336"
+        },
+        {
+          "id": "401841346",
+          "date": "2026-12-03T00:30:00+00:00",
+          "time_confirmed": true,
+          "home": "Santos",
+          "away": "Botafogo",
+          "competition": "Brazilian Serie A",
+          "league": "bra.1",
+          "venue": "Estádio Vila Belmiro (Urbano Caldeira)",
+          "url": "https://www.espn.com.br/futebol/partida/_/jogoId/401841346"
         }
       ]
     }
