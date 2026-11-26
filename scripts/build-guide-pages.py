@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build every guide route with readable native content; never fall back to a page image."""
 import json
-from page_navigation import below_title
+from page_navigation import with_toolbar_navigation
 from pathlib import Path
 from guide_native import build_native
 from amenity_native import build_detail
@@ -26,15 +26,15 @@ def build():
    lang=page['lang']
    secondary=ROOT/activities_url(lang,1).lstrip('/')/'index.html'
    secondary.parent.mkdir(parents=True,exist_ok=True)
-   secondary.write_text(below_title(render_activities(output,lang,1)));count+=1
+   secondary.write_text(with_toolbar_navigation(render_activities(output,lang,1)));count+=1
    output=render_activities(output,lang)
   topic_key=next((key for key in TOPICS if page['image']['src'].endswith(key)),None)
   if topic_key:
    for topic in range(1,len(TOPICS[topic_key][page['lang']][0])):
     destination=ROOT/topic_url(page,topic).lstrip('/')/'index.html'
     destination.parent.mkdir(parents=True,exist_ok=True)
-    destination.write_text(below_title(render_topics(output,page,topic)));count+=1
+    destination.write_text(with_toolbar_navigation(render_topics(output,page,topic)));count+=1
    output=render_topics(output,page)
-  (ROOT/page['path']).write_text(below_title(output));count+=1
+  (ROOT/page['path']).write_text(with_toolbar_navigation(output));count+=1
  print(f'Generated {count} native guide routes.')
 if __name__=='__main__':build()

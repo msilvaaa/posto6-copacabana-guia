@@ -3,7 +3,15 @@ from pathlib import Path
 import re
 ROOT=Path(__file__).resolve().parents[1]
 source=(ROOT/'pt/bem-vindos/index.html').read_text()
-nav=re.search(r'<nav class="site-pagination[^>]*>.*?</nav>',source,re.S).group()
+match=re.search(r'<nav class="site-pagination[^>]*>.*?</nav>',source,re.S)
+if match:
+ nav=match.group()
+else:
+ # Production P1 already has links in the toolbar; recover them for the archived mockups.
+ controls=re.findall(r'<a\b[^>]*class="[^"]*\bsite-step\b[^"]*"[^>]*>.*?</a>',source,re.S)
+ nav='<nav class="site-pagination guide-pagination" aria-label="Navegação">'+''.join(controls)+'</nav>'
+ for control in controls:source=source.replace(control,'',1)
+ source=re.sub(r'<span class="navigation-space"[^>]*></span>','',source)
 links=re.findall(r'<a\b[^>]*>.*?</a>',nav,re.S)
 assert len(links)==2
 previous,following=links

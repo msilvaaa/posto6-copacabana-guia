@@ -191,14 +191,3 @@ html[data-theme="dark"] .home-cover-hero>.theme-toggle:hover { background:#333; 
  .cover-html-button[data-row="4"] { top:62%; }
  .cover-html-button[data-row="5"] { top:75%; }
 }
-
-/* Make the cover's next step easy to find directly below the main title. */
-:root body.home-page .home-cover-copy .cover-pagination {
- float:none; position:relative; z-index:2; justify-self:start; margin:4px 0 8px;
-}
-
-/* Keep the cover's icon-only next arrow prominent over the photo. */
-:root body.home-page .home-cover-copy .cover-pagination { height:60px; min-height:60px; }
-:root body.home-page .cover-next { height:56px; min-height:56px; color:#000; }
-:root body.home-page .cover-next .page-turn-arrow { width:56px; height:48px; }
-html[data-theme="dark"] body.home-page .cover-next { color:#fff; }

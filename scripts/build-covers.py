@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build covers and the shared Apartment, Amenities and Gallery sections."""
 import json,re
-from page_navigation import below_title
+from page_navigation import with_toolbar_navigation
 from decimal import Decimal
 from html import escape
 from pathlib import Path
@@ -82,7 +82,7 @@ for lang,values in content.items():
  text={k:e(v) for k,v in values.items() if isinstance(v,str)};text['heading']=values['heading'].replace('Copacabana','<span class="cover-place-name">Copacabana</span>')
  stats=values['stats']+[rating_label(lang)]
  output=cover_template.substitute(theme_toggle=theme_toggle(lang),home_icon=HOME_ICON,lang=lang,**text,nav_links=navigation(lang),flags=cover_flags(lang),**{f'stat_{i}':v for i,v in enumerate(stats)},buttons='\n'.join(buttons),next_href=values['buttons'][0]['href'],next_icon=arrow(),utilities=utilities(lang).replace('</div>',sun_times(lang)+'</div>',1),whatsapp=whatsapp(lang),dialogs=dialogs(lang, cover=True))
- (ROOT/lang/'index.html').write_text(below_title(output))
+ (ROOT/lang/'index.html').write_text(with_toolbar_navigation(output))
  for section,title_key in [(1,'apartment_title'),(2,'amenities_title'),(4,'gallery_title')]:
   title=labels.get(title_key,values['nav'][section]['label'])
   if section==4:
@@ -103,6 +103,6 @@ for lang,values in content.items():
   body=f'<section class="section-layout"><div class="section-visual">{visual}</div><div class="section-panel">{title_html}{copy}<div class="section-actions"><nav class="site-pagination guide-pagination" aria-label="{common["navigation"]}">{pagination(lang,previous,following)}</nav></div></div></section>'
   destinations={code:content[code]['nav'][section]['href'] for code in content}
   output=page_template.substitute(lang=lang,title=e(title),browser_title=e(page_title(lang,title)),description=e(labels['description']),back_label=common['back'],toolbar=toolbar(lang,destinations),utilities=utilities(lang),whatsapp=whatsapp(lang,values['nav'][section]['href']),reading_label=common['reading'],body=body,nav_label=common['navigation'],pagination=pagination(lang,previous,following),dialogs=dialogs(lang))
-  destination=ROOT/values['nav'][section]['href'].lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(below_title(output))
+  destination=ROOT/values['nav'][section]['href'].lstrip('/')/'index.html';destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(with_toolbar_navigation(output))
   if lang=='en' and section==2:
-   alias=ROOT/'en/comodidades/index.html';alias.parent.mkdir(parents=True,exist_ok=True);alias.write_text(below_title(output))
+   alias=ROOT/'en/comodidades/index.html';alias.parent.mkdir(parents=True,exist_ok=True);alias.write_text(with_toolbar_navigation(output))
