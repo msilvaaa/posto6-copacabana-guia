@@ -374,7 +374,10 @@ def build_native(page, content, upgrades, photos):
         if index==0 and page['image']['src'].endswith('-06.jpg'):
             pass
         subtitle = f'<h2 class="native-chapter-title">{e(chapter["title"][lang])}</h2>' if chapter.get('title') else ''
-        chapters.append(f'<section class="native-chapter{ " activities-chapter" if page["image"]["src"].endswith("-09.jpg") else "" }"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{"".join(parts)}{navigation}</div></section>')
+        chapter_content = ''.join(parts)
+        if page['image']['src'].endswith('-04.jpg'):
+            chapter_content = f'<div class="location-content">{chapter_content}</div>'
+        chapters.append(f'<section class="native-chapter{ " activities-chapter" if page["image"]["src"].endswith("-09.jpg") else "" }"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{chapter_content}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sun_script = '\n  <script src="/sun-times.js?v=20261123-1" defer></script>' if page['image']['src'].endswith('-09.jpg') else ''
@@ -383,7 +386,7 @@ def build_native(page, content, upgrades, photos):
     if page['image']['src'].endswith('-06.jpg'):
         native_style = '20261126-rules-building-photo'
     if page['image']['src'].endswith('-04.jpg'):
-        native_style = '20261126-location-plane-heading'
+        native_style = '20261126-location-centered-content'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
