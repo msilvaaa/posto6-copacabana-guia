@@ -230,3 +230,31 @@ body.home-page .cover-pagination { pointer-events:auto; }
 /* Keep cached-forecast notices within the compact cover weather area. */
 :root body.home-page .home-cover-hero>.site-utilities .site-weather>span:last-child { min-width:0; max-width:100%; }
 :root body.home-page .home-cover-hero>.site-utilities .site-weather [data-weather-summary] { max-width:130px; white-space:normal; }
+
+/* Approved P1 placement: previous, Home, languages, next. Empty slots keep flags centered. */
+body.native-guide .native-toolbar .site-toolbar,
+body.content-page .site-controls .site-toolbar,
+body.home-page .main-html-topbar { align-items:center; }
+:root body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space) {
+ position:static; inset:auto; display:inline-flex; flex:0 0 52px; width:52px;
+ min-width:52px; height:58px; min-height:58px; margin:0; padding:0; transform:none;
+ background:transparent; border:0; border-radius:6px; box-shadow:none;
+}
+:root body :is(.site-toolbar,.main-html-topbar)>.site-step:hover { transform:translateY(-3px); }
+:root body :is(.site-toolbar,.main-html-topbar)>.site-step:active { transform:translateY(-1px) scale(.985); }
+@media(max-width:900px) {
+ body.native-guide .native-toolbar .site-toolbar,
+ body.content-page .site-controls .site-toolbar,
+ body.home-page .main-html-topbar { gap:4px; }
+ :root body :is(.site-toolbar,.main-html-topbar)>:is(.site-step,.navigation-space) { flex-basis:32px; width:32px; min-width:32px; }
+ :root body :is(.site-toolbar,.main-html-topbar)>.site-step .page-turn-arrow { width:28px; }
+}
+@media(min-width:1101px) and (max-width:1399px) {
+ body.home-page .main-html-topbar { gap:4px; }
+ :root body.home-page .main-html-topbar>:is(.site-step,.navigation-space) { flex-basis:32px; width:32px; min-width:32px; }
+ :root body.home-page .main-html-topbar>.site-step .page-turn-arrow { width:28px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ :root body :is(.site-toolbar,.main-html-topbar)>.site-step:hover,
+ :root body :is(.site-toolbar,.main-html-topbar)>.site-step:active { transform:none; }
+}
