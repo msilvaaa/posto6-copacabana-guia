@@ -160,6 +160,7 @@
  const desktop=matchMedia('(min-width:1101px) and (hover:hover) and (pointer:fine)');
  const originalMaxWidth=heading.style.maxWidth;
  const cover=document.body.classList.contains('home-page');
+ const reference=cover ? document.querySelector('[data-cover-clock]') || heading : heading;
  let frame;
  function align() {
   if (!desktop.matches || navigator.maxTouchPoints > 0) {
@@ -180,7 +181,7 @@
    const available=2*(button.left-(parent.left+parent.width/2)-12);
    heading.style.maxWidth=`${Math.max(48,Math.min(inner*.9,available))}px`;
   } else heading.style.removeProperty('max-width');
-  const title=heading.getBoundingClientRect();
+  const title=reference.getBoundingClientRect();
   document.body.style.setProperty('--whatsapp-title-top',`${title.y+(title.height-button.height)/2}px`);
   const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
   const toolbarBottom=toolbar?.getBoundingClientRect().bottom || 0;
@@ -188,7 +189,7 @@
  }
  function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
  const observer=new ResizeObserver(schedule);
- observer.observe(heading);observer.observe(contact);observer.observe(heading.parentElement);
+ observer.observe(heading);observer.observe(reference);observer.observe(contact);observer.observe(heading.parentElement);
  window.addEventListener('resize',schedule);
  window.addEventListener('pageshow',schedule);
  desktop.addEventListener('change',schedule);

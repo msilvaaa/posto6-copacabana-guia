@@ -82,7 +82,7 @@ def render(source,page,index=0):
   for i in range(len(labels)):flag.attrs[f'data-activities-path-{i}']=topic_url(translated[lang],i)
  head=doc.all(lambda n:n.tag=='head')[0]
  if suffix=='-11.jpg':
-  head.add(Node('link',{'rel':'stylesheet','href':'/rio-football.css?v=20261126-compact-fixtures'}))
+  head.add(Node('link',{'rel':'stylesheet','href':'/rio-football.css?v=20261126-uniform-fixtures'}))
   head.add(Node('script',{'src':'/rio-football.js?v=20261125-1','defer':None}))
  head.add(Node('link',{'rel':'stylesheet','href':'/activities-tabs.css?v=20261125-topic-photo-fallback'}))
  head.add(Node('script',{'src':'/activities-tabs.js?v=20261125-topic-photo-fallback','defer':None}))
