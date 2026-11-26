@@ -149,3 +149,42 @@
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') loadWeather(); });
  }
 })();
+
+(() => {
+ 'use strict';
+ // Published mockups retain their own comparison controls and positioning.
+ if (location.pathname.startsWith('/preview-')) return;
+ const heading=document.querySelector('h1');
+ const contact=document.querySelector('.site-contact-corner');
+ if (!heading || !contact) return;
+ document.body.dataset.whatsappTitle='';
+ const cover=document.body.classList.contains('home-page');
+ let frame;
+ function align() {
+  const container=heading.parentElement;
+  const parent=container.getBoundingClientRect();
+  const padding=getComputedStyle(container);
+  const button=contact.getBoundingClientRect();
+  const narrow=matchMedia('(max-width:1100px)').matches;
+  const left=parent.left+parseFloat(padding.paddingLeft);
+  const inner=parent.width-parseFloat(padding.paddingLeft)-parseFloat(padding.paddingRight);
+  if (!cover || narrow) {
+   const available=narrow ? button.left-left-12 : 2*(button.left-(parent.left+parent.width/2)-12);
+   heading.style.maxWidth=`${Math.max(48,Math.min(inner*(cover?1:.9),available))}px`;
+  } else heading.style.removeProperty('max-width');
+  const title=heading.getBoundingClientRect();
+  document.body.style.setProperty('--whatsapp-title-top',`${title.y+(title.height-button.height)/2}px`);
+  const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
+  const toolbarBottom=toolbar?.getBoundingClientRect().bottom || 0;
+  contact.style.visibility=title.y+title.height/2-button.height/2 < toolbarBottom ? 'hidden' : 'visible';
+ }
+ function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
+ const observer=new ResizeObserver(schedule);
+ observer.observe(heading);observer.observe(contact);observer.observe(heading.parentElement);
+ window.addEventListener('resize',schedule);
+ window.addEventListener('pageshow',schedule);
+ document.querySelector('.site-reading')?.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('scroll',schedule,{passive:true});
+ document.fonts?.ready.then(schedule);
+ schedule();
+})();

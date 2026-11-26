@@ -385,7 +385,7 @@ def build_native(page, content, upgrades, photos):
         native_style = '20261119-emergency-icons-18'
     if page['image']['src'].endswith('-15.jpg'):
         native_style = '20261125-checkout-thanks-spacing'
-    native_style += '-pharmacy-delivery-20261125'
+    native_style += '-organized-copy-20261126'
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -393,10 +393,10 @@ def build_native(page, content, upgrades, photos):
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
-  <link rel="stylesheet" href="/site-shell.css?v=20261126-compact-p1"/>
+  <link rel="stylesheet" href="/site-shell.css?v=20261126-organized-title-contact"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
-  <script src="/site.js?v=20261124-weather-symbol" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
+  <script src="/site.js?v=20261126-title-contact" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
