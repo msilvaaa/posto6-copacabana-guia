@@ -89,7 +89,7 @@ html[data-fluid-frame] .home-cover-heading-row .home-cover-nav { width:100%; dis
 html[data-fluid-frame] .home-cover-nav a { display:flex; align-items:center; min-height:44px; max-width:100%; padding:6px 0; font-size:11px; }
 html[data-fluid-frame] .home-cover-copy h1 { max-width:calc(100% - 68px); font-size:28px; line-height:1.15; }
 html[data-fluid-frame] .home-cover-subtitle { max-width:100%; min-height:0; font-size:14px; line-height:1.5; }
-html[data-fluid-frame] body.home-page .page-stage .home-cover-hero>.site-utilities { top:144px; right:20px; }
+html[data-fluid-frame] body.home-page .page-stage .home-cover-hero>.site-utilities { top:136px; right:20px; }
 html[data-fluid-frame] .home-cover-stats { margin-top:24px; gap:10px 0; }
 html[data-fluid-frame] .home-cover-stats>div { min-height:44px; padding:0 8px; }
 html[data-fluid-frame] .home-cover-stats span { font-size:11px; }

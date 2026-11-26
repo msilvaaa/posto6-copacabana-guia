@@ -66,3 +66,16 @@ html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner,
 html[data-guide-layout] body[data-whatsapp-title] .site-contact-corner .site-whatsapp { width:48px; height:48px; flex-basis:48px; }
 html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp { padding:11px; }
 html[data-guide-layout] body[data-whatsapp-title] .site-whatsapp svg { width:26px; height:26px; }
+
+/* Reserve space for the theme control beside the longer English cover title. */
+html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy { top:max(calc(7.4% + 36px),116px); }
+html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy h1 {
+ font-size:clamp(36px,calc(var(--desktop-frame-width) * .03055),44px);
+ max-width:calc(100% - 72px); line-height:1.12;
+}
+/* English uses the same readable body/section hierarchy across page types. */
+html[lang="en"][data-guide-layout] body :is(.native-card h2,.section-panel h2,.detail-instructions h2,.detail-references h2) {
+ font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; font-size:17px; line-height:1.35;
+}
+html[lang="en"][data-guide-layout] body :is(.native-card-copy,.native-link>span,.section-panel,.instruction-list) { min-width:0; }
+html[lang="en"][data-guide-layout] body :is(.native-link,.native-card p,.native-card h2,.instruction-list) { overflow-wrap:break-word; word-break:normal; }

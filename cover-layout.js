@@ -8,7 +8,6 @@
   const photo = hero.querySelector('.home-cover-photo');
   const toggle = hero.querySelector('[data-theme-toggle]');
   const sun = hero.querySelector('[data-sun-times]');
-  const emergency = index?.querySelector('a:last-child');
   if (!title || !place || !index || !photo || !toggle) return;
   let frame;
   function align() {
@@ -16,13 +15,7 @@
     const word = place.getBoundingClientRect();
     const image = photo.getBoundingClientRect();
     const button = toggle.getBoundingClientRect();
-    if (sun && emergency) {
-      const text = document.createRange(); text.selectNodeContents(emergency);
-      const label = text.getBoundingClientRect();
-      const current = sun.getBoundingClientRect();
-      const shift = parseFloat(hero.style.getPropertyValue('--cover-sun-shift')) || 0;
-      hero.style.setProperty('--cover-sun-shift', `${shift + label.y + label.height / 2 - current.y - current.height / 2}px`);
-    }
+    hero.style.setProperty('--cover-sun-shift', '0px');
     hero.style.setProperty('--cover-theme-top', `${word.y + word.height / 2 - area.y - button.height / 2}px`);
     const sunset = sun?.querySelector('[data-sun-value="sunset"]')?.closest('.cover-sun-event');
     const sunsetBox = sunset?.getBoundingClientRect();

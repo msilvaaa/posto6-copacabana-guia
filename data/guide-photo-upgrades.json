@@ -65,15 +65,15 @@
     "provenance": "Edited the host-supplied entrance photograph on 2026-11-25 to remove only the apartment number from the door. Same vertical composition, natural wood texture, proportional full-column display."
   },
   "-13.jpg": {
-    "src": "/assets/establishments/calcadao-copacabana.webp",
-    "width": 1537,
-    "height": 1023,
+    "src": "/assets/establishments/shopping-terraco-botafogo-natural.png",
+    "width": 1536,
+    "height": 1024,
     "alt": {
-      "pt": "Vista aérea do calçadão de Copacabana com ondas em preto e branco e coqueiros",
-      "en": "Aerial view of the Copacabana wave-pattern promenade and palm trees",
-      "es": "Vista aérea del paseo de Copacabana con ondas blancas y negras y palmeras"
+      "pt": "Terraço de shopping com mesas e vista para a Baía de Guanabara e o Pão de Açúcar",
+      "en": "Shopping terrace with tables overlooking Guanabara Bay and Sugarloaf Mountain",
+      "es": "Terraza de un centro comercial con mesas y vistas a la bahía de Guanabara y al Pan de Azúcar"
     },
-    "provenance": "AI-enhanced adaptation of the photograph supplied by the host on 2026-11-17; original generated PNG retained in workspace. Full-bleed without white borders.",
+    "provenance": "Conservative enhancement of the shopping terrace photo supplied by the host on 2026-11-26, gently lifting foreground shadows while preserving natural daylight colours, original framing and proportions.",
     "topic_photos": {
       "1": {
         "src": "/assets/establishments/zona-sul-entrada-natural.png",
@@ -87,7 +87,8 @@
         },
         "provenance": "Conservative restoration and upscale of the replacement supermarket entrance photo supplied by the host on 2026-11-26. Original portrait proportions, branding and scene retained with natural colours and balanced light."
       }
-    }
+    },
+    "position": "50% 50%"
   },
   "-07.jpg": {
     "src": "/assets/transport/onibus-rio.webp",
