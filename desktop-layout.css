@@ -43,7 +43,7 @@ html[data-desktop-frame] body.home-page .cover-html-button::after { font-size:13
 @font-face { font-family:'Guide Sans'; src:url('/assets/fonts/desktop-ui/guide-sans.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
 @font-face { font-family:'Guide Serif'; src:url('/assets/fonts/desktop-ui/guide-serif.woff') format('woff'); font-weight:400 700; font-style:normal; font-display:swap; }
 html[data-guide-layout] body,
-html[data-guide-layout] body :is(p,a,b,strong,button,small,time,li,h2,h3,h4,h5,h6,dt,dd,figcaption,summary),
+html[data-guide-layout] body :is(p,a,b,strong,button:not(.theme-toggle),small,time,li,h2,h3,h4,h5,h6,dt,dd,figcaption,summary),
 html[data-guide-layout] body :is(.cover-local-clock,.service-hours),
 html[data-guide-layout] body .local-clock :is([data-clock-date],[data-clock-offset]) { font-family:'Guide Sans',Arial,Helvetica,sans-serif!important; }
 html[data-guide-layout] body.home-page .home-cover-copy h1,
