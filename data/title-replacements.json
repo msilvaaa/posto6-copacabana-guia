@@ -1,0 +1,29 @@
+{
+  "/assets/pt-10.jpg": {
+    "src": "/assets/title-source/banks-brush.png",
+    "box": [
+      93,
+      69,
+      1378,
+      390
+    ]
+  },
+  "/assets/en-10.jpg": {
+    "src": "/assets/title-source/banks-brush.png",
+    "box": [
+      157,
+      574,
+      1242,
+      398
+    ]
+  },
+  "/assets/es-10.jpg": {
+    "src": "/assets/title-source/banks-brush.png",
+    "box": [
+      93,
+      69,
+      1378,
+      390
+    ]
+  }
+}
