@@ -4,14 +4,16 @@
 /* The monitor stays above the connection details; the QR sits beside them. */
 .native-wifi-access { width:100%; max-width:100%; }
 .native-wifi-access>.wifi-monitor-art { display:block; width:268px; max-width:100%; height:auto; margin:0 auto 20px; }
-.wifi-connection { display:grid; grid-template-columns:minmax(0,1fr) 120px; gap:24px; align-items:center; }
+.wifi-connection { display:grid; grid-template-columns:minmax(0,1fr) 76px 120px; gap:12px; align-items:center; }
 .wifi-credentials { min-width:0; margin:0; }
-.wifi-credentials dt { margin:0 0 6px; font-size:14px; font-weight:700; }
+.wifi-credentials dt { margin:0 0 6px; font-size:14px; font-weight:700; text-align:center; }
 .wifi-credentials dd { margin:0 0 14px; padding:7px 12px; border:2px solid currentColor; border-radius:22px; background:#eae3da; color:#111; font-size:18px; text-align:center; overflow-wrap:anywhere; }
 .wifi-credentials dd:last-child { margin-bottom:0; background:#e3d5c6; }
 .wifi-qr { display:block; width:120px; height:120px; max-width:100%; }
+.wifi-scan-arrow { display:block; width:76px; height:auto; }
 @media(max-width:480px) {
- .wifi-connection { grid-template-columns:minmax(0,1fr) 100px; gap:14px; }
+ .wifi-connection { grid-template-columns:minmax(0,1fr) 52px 100px; gap:8px; }
+ .wifi-scan-arrow { width:52px; }
  .wifi-qr { width:100px; height:100px; }
  .wifi-credentials dd { font-size:16px; padding-inline:8px; }
 }
