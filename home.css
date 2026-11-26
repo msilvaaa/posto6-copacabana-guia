@@ -191,3 +191,8 @@ html[data-theme="dark"] .home-cover-hero>.theme-toggle:hover { background:#333; 
  .cover-html-button[data-row="4"] { top:62%; }
  .cover-html-button[data-row="5"] { top:75%; }
 }
+
+/* Make the cover's next step easy to find directly below the main title. */
+:root body.home-page .home-cover-copy .cover-pagination {
+ float:none; position:relative; z-index:2; justify-self:start; margin:4px 0 8px;
+}
