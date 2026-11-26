@@ -23,16 +23,10 @@
     const safeCenter = Math.max(image.left + button.width / 2 + 8, Math.min(center, image.right - button.width / 2 - 8));
     hero.style.setProperty('--cover-theme-right', `${area.right - safeCenter - button.width / 2}px`);
     if (window.matchMedia('(min-width:1101px)').matches) {
-      const range = document.createRange(); range.selectNodeContents(place);
-      const end = range.getBoundingClientRect().right;
       const start = index.getBoundingClientRect().left;
-      hero.style.setProperty('--cover-index-font-size', '14px');
-      const links = [...index.querySelectorAll('a')];
-      const naturalWidth = links.reduce((sum, link) => sum + link.getBoundingClientRect().width, 0);
-      const minimumWidth = naturalWidth + Math.max(0, links.length - 1) * 16;
       const available = Math.max(0, image.right - start - 20);
-      const width = Math.min(available, Math.max(minimumWidth, end - start));
-      hero.style.setProperty('--cover-index-width', `${width}px`);
+      hero.style.setProperty('--cover-index-font-size', '14px');
+      hero.style.setProperty('--cover-index-width', `${Math.min(493.375,available)}px`);
     } else {
       hero.style.removeProperty('--cover-index-width');
       hero.style.removeProperty('--cover-index-font-size');

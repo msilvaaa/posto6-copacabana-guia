@@ -74,9 +74,14 @@ html[lang="en"][data-guide-layout] body :is(.native-card h2,.section-panel h2,.d
 html[lang="en"][data-guide-layout] body :is(.native-card-copy,.native-link>span,.section-panel,.instruction-list) { min-width:0; }
 html[lang="en"][data-guide-layout] body :is(.native-link,.native-card p,.native-card h2,.instruction-list) { overflow-wrap:break-word; word-break:normal; }
 
-/* Keep PT/EN cover text clear of the index and theme control, like the ES cover. */
-html:is([lang="pt"],[lang="en"])[data-desktop-frame] body.home-page .home-cover-copy { top:max(calc(7.4% + 36px),104px); }
-html:is([lang="pt"],[lang="en"])[data-desktop-frame] body.home-page .home-cover-copy h1 { max-width:calc(100% - 64px); line-height:1.22; }
-html[lang="pt"][data-desktop-frame] body.home-page .home-cover-copy h1 { font-size:clamp(44px,min(calc(var(--desktop-frame-width) * .038),calc(var(--desktop-frame-height) * .0608)),54.72px); }
-html[lang="en"][data-desktop-frame] body.home-page .home-cover-copy h1 { font-size:clamp(40px,min(calc(var(--desktop-frame-width) * .033333),calc(var(--desktop-frame-height) * .053333)),48px); }
-html:is([lang="pt"],[lang="en"])[data-guide-layout] body.home-page .home-cover-subtitle { margin-top:6px; }
+/* One title size and index grid for all three cover languages. */
+html[data-desktop-frame] body.home-page .home-cover-copy { top:max(calc(7.4% + 36px),104px); }
+html[data-desktop-frame] body.home-page .home-cover-copy h1 {
+ max-width:calc(100% - 64px); line-height:1.22;
+ font-size:clamp(40px,min(calc(var(--desktop-frame-width) * .038),calc(var(--desktop-frame-height) * .0608)),54.72px);
+}
+html[data-guide-layout] body.home-page .home-cover-subtitle { margin-top:6px; }
+html[data-desktop-frame] .home-cover-heading-row { grid-template-columns:209px minmax(0,1fr); }
+html[data-desktop-frame] .home-cover-heading-row .home-cover-brand { width:209px; justify-content:center; }
+html[data-desktop-frame] .home-cover-heading-row .home-cover-nav { display:grid; grid-template-columns:56px 48px 112px 104px 100px; gap:16px; justify-content:space-between; }
+html[data-desktop-frame] .home-cover-nav a { justify-self:center; width:max-content; }
