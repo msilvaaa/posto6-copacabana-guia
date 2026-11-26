@@ -9,8 +9,8 @@
 .native-toolbar .site-toolbar { justify-content: center; margin: 0; gap: 16px; }
 .native-title { border: 2px solid #111; border-radius: 999px; padding: 13px 8px; margin: 0 0 28px; text-align: center; font: 400 clamp(28px,2.3vw,38px)/1.25 'Guide Script',Georgia,serif; overflow-wrap: anywhere; }
 .native-chapter-title { margin: 16px 0 26px; text-align: center; font: 400 27px/1.3 'Guide Script',Georgia,serif; }
-.native-card { margin: 0 0 14px; break-inside: avoid; }
-.native-card-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+.native-card { margin: 0 0 16px; break-inside: avoid; }
+.native-card-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .native-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 42px; width: 42px; height: 42px; border: 1.5px solid #171717; border-radius: 50%; color: #173f45; background: white; }
 .native-icon svg { width: 25px; height: 25px; }
 .native-card h2 { margin: 0; font: 700 17px/1.3 Arial,Helvetica,sans-serif; overflow-wrap: anywhere; }
@@ -41,8 +41,8 @@
 .native-icon.original-illustration { flex-basis: 76px; width: 76px; height: 76px; border: 0; border-radius: 0; background: transparent; color: #111; }
 .native-icon.original-illustration>svg { display: block; width: 100%; height: 100%; }
 .native-room-thumb { width: 76px; height: 76px; object-fit: cover; border-radius: 50%; }
-.illustrated-card .native-card-heading { gap: 12px; }
-.illustrated-card .native-card-copy { padding-left: 88px; }
+.illustrated-card .native-card-heading { gap: 14px; }
+.illustrated-card .native-card-copy { padding-left: 90px; }
 .native-art-hero { width: 78%; max-width: 300px; margin: 0 auto 18px; }
 .native-art-hero>svg,.native-art-strip>svg { display: block; width: 100%; height: auto; }
 .native-art-strip { margin: 0 0 20px; }
@@ -86,7 +86,7 @@
 
 /* Keep illustrations beside their text instead of adding an empty row. */
 @media(min-width:761px) {
- .illustrated-card { display: grid; grid-template-columns: 76px minmax(0,1fr); column-gap: 12px; row-gap: 4px; align-items: start; }
+ .illustrated-card { display: grid; grid-template-columns: 76px minmax(0,1fr); column-gap: 14px; row-gap: 4px; align-items: start; }
  .illustrated-card .native-card-heading { display: contents; }
  .illustrated-card .native-icon { grid-column: 1; grid-row: span 2; }
  .illustrated-card h2,.illustrated-card .native-card-copy { grid-column: 2; padding-left: 0; }
@@ -351,13 +351,18 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 
 .pharmacy-delivery h3 { margin:14px 0 6px; font:700 17px/1.4 Arial,Helvetica,sans-serif; }
 
-/* Compact left-aligned copy; keep specialized two-column service layouts intact. */
-:root .native-card .native-card-copy>p.native-body-copy { margin:0 0 6px; }
-.native-card h2 { text-align:left; }
-/* The approved Welcome arrangement pairs every room photo with its title and copy. */
-.native-panel:has(.native-room-thumb) .illustrated-card { display:grid; grid-template-columns:76px minmax(0,1fr); gap:4px 12px; align-items:start; min-height:76px; }
-.native-panel:has(.native-room-thumb) .illustrated-card .native-card-heading { display:contents; }
-.native-panel:has(.native-room-thumb) .illustrated-card .native-icon { grid-column:1; grid-row:1 / span 2; align-self:start; }
-.native-panel:has(.native-room-thumb) .illustrated-card h2 { grid-column:2; grid-row:1; align-self:end; }
-.native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy { grid-column:2; grid-row:2; padding:0; }
-.native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy p { margin:0; }
+/* Apply the approved organization to desktop only; preserve phone/tablet layouts. */
+@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+ body[data-whatsapp-title] .native-card { margin-bottom:14px; }
+ body[data-whatsapp-title] .native-card-heading { margin-bottom:4px; }
+ body[data-whatsapp-title] .illustrated-card { column-gap:12px; }
+ body[data-whatsapp-title] .illustrated-card .native-card-heading { gap:12px; }
+ :root body[data-whatsapp-title] .native-card .native-card-copy>p.native-body-copy { margin:0 0 6px; }
+ body[data-whatsapp-title] .native-card h2 { text-align:left; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card { display:grid; grid-template-columns:76px minmax(0,1fr); gap:4px 12px; align-items:start; min-height:76px; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-heading { display:contents; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-icon { grid-column:1; grid-row:1 / span 2; align-self:start; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card h2 { grid-column:2; grid-row:1; align-self:end; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy { grid-column:2; grid-row:2; padding:0; }
+ body[data-whatsapp-title] .native-panel:has(.native-room-thumb) .illustrated-card .native-card-copy p { margin:0; }
+}

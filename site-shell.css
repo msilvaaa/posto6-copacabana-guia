@@ -248,8 +248,7 @@ body.home-page .main-html-topbar { align-items:center; gap:6px; }
  :root body :is(.site-toolbar,.main-html-topbar)>.site-step:active { transform:none; }
 }
 
-/* Approved WhatsApp position: on the title's row, 2 cm from the right page edge. */
-:root body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:2cm; bottom:auto; animation:none; }
-@media(max-width:1100px) {
- body[data-whatsapp-title] :is(.native-title,.section-title) { margin-left:0; }
+/* Approved WhatsApp position applies only to desktop, preserving mobile and iPad. */
+@media(min-width:1101px) and (hover:hover) and (pointer:fine) {
+ :root body[data-whatsapp-title] .site-contact-corner { top:var(--whatsapp-title-top,90px); right:2cm; bottom:auto; animation:none; }
 }
