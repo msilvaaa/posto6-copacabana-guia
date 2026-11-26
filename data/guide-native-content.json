@@ -119,6 +119,30 @@
         "sections": [
           {
             "title": {
+              "pt": "Sua estadia no Rio",
+              "en": "Your stay in Rio",
+              "es": "Tu estancia en Río"
+            },
+            "icon": "home",
+            "items": [
+              {
+                "text": {
+                  "pt": "Tenho o prazer de recebê-lo em minha acomodação e espero que você tenha uma estadia inesquecível.",
+                  "en": "I am delighted to host you and hope you have a memorable stay.",
+                  "es": "Es un placer recibirte en mi alojamiento y espero que tengas una estancia inolvidable."
+                }
+              },
+              {
+                "text": {
+                  "pt": "Desejo uma excelente estadia no Rio de Janeiro e espero vê-lo em breve novamente!",
+                  "en": "Enjoy your stay in Rio de Janeiro. I look forward to welcoming you again!",
+                  "es": "¡Te deseo una excelente estancia en Río de Janeiro y espero volver a recibirte pronto!"
+                }
+              }
+            ]
+          },
+          {
+            "title": {
               "pt": "Check-in",
               "en": "Check-in",
               "es": "Check-in"

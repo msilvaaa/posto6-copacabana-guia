@@ -6,11 +6,6 @@
     "next_label": "PRÓXIMA",
     "buttons": [
       {
-        "key": "bem-vindos",
-        "label": "BEM-VINDOS",
-        "href": "/pt/bem-vindos/"
-      },
-      {
         "key": "checkin",
         "label": "CHECK-IN",
         "href": "/pt/checkin/"
@@ -143,11 +138,6 @@
     "next_label": "NEXT",
     "buttons": [
       {
-        "key": "bem-vindos",
-        "label": "WELCOME",
-        "href": "/en/welcome/"
-      },
-      {
         "key": "checkin",
         "label": "CHECK-IN",
         "href": "/en/check-in/"
@@ -279,11 +269,6 @@
     "menu_label": "Guía del huésped",
     "next_label": "SIGUIENTE",
     "buttons": [
-      {
-        "key": "bem-vindos",
-        "label": "BIENVENIDO",
-        "href": "/es/bienvenido/"
-      },
       {
         "key": "checkin",
         "label": "CHECK-IN",
