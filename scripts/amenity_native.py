@@ -38,13 +38,16 @@ def build_detail(page,photos):
  nav=toolbar(lang,page['languages'],home_href=page['back']['href'],home_label=page['back']['label'].removeprefix('← '))
  return f'''<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <script>document.documentElement.toggleAttribute('data-guide-layout',!location.pathname.startsWith('/preview-'));document.documentElement.toggleAttribute('data-desktop-frame',!location.pathname.startsWith('/preview-') && matchMedia('(min-width:1101px)').matches);document.documentElement.toggleAttribute('data-fluid-frame',!location.pathname.startsWith('/preview-') && !matchMedia('(min-width:1101px)').matches);</script>
 <title>{e(page_title(lang,title))}</title><meta name="description" content="{e(page['description'])}"/>
-<link rel="stylesheet" href="/site-shell.css?v=20261126-clock-contact-row"/><link rel="stylesheet" href="/native-guide.css?v=20261126-organized-copy"/>
+<link rel="stylesheet" href="/site-shell.css?v=20261126-desktop-reference"/><link rel="stylesheet" href="/native-guide.css?v=20261126-desktop-reference"/>
 <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
-<script src="/site.js?v=20261126-cover-clock-contact" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
+<script src="/site.js?v=20261126-responsive-layout" defer></script><link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 <link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
+<link rel="stylesheet" href="/desktop-layout.css?v=20261126-responsive-1"/>
+<link rel="stylesheet" href="/responsive-layout.css?v=20261126-1"/>
 </head>
 <body class="site-page native-guide amenity-detail"><div class="site-frame"><main class="site-reading" aria-label="{LABELS[lang]['reading']}">
 <section class="native-chapter"><div class="native-visual"><div class="native-photo"><img src="{e(src)}" width="{width}" height="{height}" alt="{e(title)}" style="object-position:50% 50%"/></div></div>

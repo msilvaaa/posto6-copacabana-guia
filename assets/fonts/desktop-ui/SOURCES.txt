@@ -1,0 +1,7 @@
+Guide Sans: renamed Latin subset of Arimo, a metrically compatible alternative to Arial.
+https://github.com/google/fonts/tree/main/ofl/arimo
+
+Guide Serif: renamed Latin subset of Gelasio, a metrically compatible alternative to Georgia.
+https://github.com/google/fonts/tree/main/ofl/gelasio
+
+Both font families are distributed under their included SIL Open Font License 1.1. Copyright and license name records are preserved. Subsets include Latin, Portuguese/Spanish accents, punctuation, currency signs and arrows.

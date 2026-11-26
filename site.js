@@ -152,35 +152,42 @@
 
 (() => {
  'use strict';
- // Published mockups retain their own comparison controls and positioning.
+ if (location.pathname.startsWith('/preview-')) return;
+ const desktop=matchMedia('(min-width:1101px)');
+ const sync=()=>{document.documentElement.setAttribute('data-guide-layout','');document.documentElement.toggleAttribute('data-desktop-frame',desktop.matches);document.documentElement.toggleAttribute('data-fluid-frame',!desktop.matches);};
+ desktop.addEventListener('change',sync);
+ window.addEventListener('resize',sync);
+ window.addEventListener('pageshow',sync);
+ sync();
+})();
+
+(() => {
+ 'use strict';
  if (location.pathname.startsWith('/preview-')) return;
  const heading=document.querySelector('h1');
  const contact=document.querySelector('.site-contact-corner');
  if (!heading || !contact) return;
- const desktop=matchMedia('(min-width:1101px) and (hover:hover) and (pointer:fine)');
+ const desktop=matchMedia('(min-width:1101px)');
  const originalMaxWidth=heading.style.maxWidth;
+ const container=heading.parentElement;
  const cover=document.body.classList.contains('home-page');
  const reference=cover ? document.querySelector('[data-cover-clock]') || heading : heading;
+ if (!cover) {
+  const row=document.createElement('div');row.className='guide-heading-row';
+  heading.before(row);row.append(heading);
+ }
+ document.body.dataset.whatsappTitle='';
  let frame;
  function align() {
-  if (!desktop.matches || navigator.maxTouchPoints > 0) {
-   document.body.removeAttribute('data-whatsapp-title');
-   document.body.style.removeProperty('--whatsapp-title-top');
-   if (originalMaxWidth) heading.style.maxWidth=originalMaxWidth;
-   else heading.style.removeProperty('max-width');
-   contact.style.removeProperty('visibility');
-   return;
-  }
-  document.body.dataset.whatsappTitle='';
-  const container=heading.parentElement;
   const parent=container.getBoundingClientRect();
   const padding=getComputedStyle(container);
   const button=contact.getBoundingClientRect();
   const inner=parent.width-parseFloat(padding.paddingLeft)-parseFloat(padding.paddingRight);
-  if (!cover) {
+  if (desktop.matches && !cover) {
    const available=2*(button.left-(parent.left+parent.width/2)-12);
    heading.style.maxWidth=`${Math.max(48,Math.min(inner*.9,available))}px`;
-  } else heading.style.removeProperty('max-width');
+  } else if (originalMaxWidth) heading.style.maxWidth=originalMaxWidth;
+  else heading.style.removeProperty('max-width');
   const title=reference.getBoundingClientRect();
   document.body.style.setProperty('--whatsapp-title-top',`${title.y+(title.height-button.height)/2}px`);
   const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
@@ -189,12 +196,12 @@
  }
  function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
  const observer=new ResizeObserver(schedule);
- observer.observe(heading);observer.observe(reference);observer.observe(contact);observer.observe(heading.parentElement);
+ for(const e of new Set([heading,reference,contact,container,heading.parentElement]))observer.observe(e);
  window.addEventListener('resize',schedule);
  window.addEventListener('pageshow',schedule);
  desktop.addEventListener('change',schedule);
- document.querySelector('.site-reading')?.addEventListener('scroll',schedule,{passive:true});
- window.addEventListener('scroll',schedule,{passive:true});
+ document.addEventListener('scroll',schedule,true);
  document.fonts?.ready.then(schedule);
- schedule();
+ // Align before the first animation frame, including on busy tablet browsers.
+ align();
 })();
