@@ -253,7 +253,8 @@ def build_native(page, content, upgrades, photos):
                 if item.get('href'):
                     href = item.get('href_by_lang', {}).get(lang, item['href'])
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
-                    nodes.append(f'<a class="native-link" href="{e(href)}"{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
+                    location_count = f' data-location-count="{int(item["location_count"])}"' if item.get('location_count') else ''
+                    nodes.append(f'<a class="native-link" href="{e(href)}"{location_count}{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
                 else:
                     nodes.append(f'<p class="{copy_class}">{text}</p>')
                     descriptions.append(f'<p class="{copy_class}">{text}</p>')
@@ -288,6 +289,8 @@ def build_native(page, content, upgrades, photos):
                 links=''.join(node for node in nodes if node.startswith('<a '))
                 parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2>{links}{"".join(descriptions)}</section>')
                 continue
+            if page['image']['src'].endswith('-11.jpg') and section['icon']=='bread' and len(nodes)>2:
+                nodes=['<div class="bakery-links">'+''.join(nodes)+'</div>']
             name=section['icon']
             if page['image']['src'].endswith('-04.jpg'):
                 name=['phone-map','plane-trail','plane'][section_index]
@@ -322,7 +325,7 @@ def build_native(page, content, upgrades, photos):
                     art=''
                 if page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Check-in':
                     art='<img class="native-room-thumb" src="/assets/checkin/porta-miniatura-sem-tarja.png" width="76" height="76" alt=""/>'
-                elif page['image']['src'].endswith('-13.jpg') and index==0 and section_index==0:
+                elif page['image']['src'].endswith('-13.jpg') and index==0 and section['title']['pt']=='Lojas Americanas':
                     art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
             if (page['image']['src'].endswith('-02.jpg') and section_index==0) or (page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Sua estadia no Rio'):
                 art=''
@@ -381,6 +384,8 @@ def build_native(page, content, upgrades, photos):
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
         native_style = '20261127-compact-house-rules'
+    if page['image']['src'].endswith('-11.jpg'):
+        native_style = '20261127-alva-bakery'
     if page['image']['src'].endswith('-04.jpg'):
         native_style = '20261126-location-centered-content'
     if page['image']['src'].endswith('-14.jpg'):
