@@ -770,19 +770,21 @@
             "items": [
               {
                 "text": {
-                  "pt": "Caixa 24 horas — Shopping Cassino Atlântico",
-                  "en": "24-hour ATM — Shopping Cassino Atlântico",
-                  "es": "Cajero 24 horas — Shopping Cassino Atlântico"
+                  "pt": "Caixa 24 horas",
+                  "en": "24-hour ATM",
+                  "es": "Cajero 24 horas"
                 },
-                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98"
+                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98",
+                "address": "Shopping Cassino Atlântico"
               },
               {
                 "text": {
-                  "pt": "Casa de câmbio — Shopping Cassino Atlântico",
-                  "en": "Currency exchange — Shopping Cassino Atlântico",
-                  "es": "Casa de cambio — Shopping Cassino Atlântico"
+                  "pt": "Casa de câmbio",
+                  "en": "Currency exchange",
+                  "es": "Casa de cambio"
                 },
-                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98"
+                "href": "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98",
+                "address": "Shopping Cassino Atlântico"
               },
               {
                 "text": {
