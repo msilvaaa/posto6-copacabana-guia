@@ -164,9 +164,9 @@ def wifi_access(lang, source):
 
 
 def native_rules(lang, section):
-    symbols = ['snow', 'moon', 'dog', 'people', 'smoke', 'shield']
+    symbols = ['warning', 'moon', 'dog', 'people', 'smoke', 'shield']
     intro = {'pt':'Agradeço sua adesão às regras da casa, por favor', 'en':'Thank you for following the house rules', 'es':'Gracias por respetar las normas de la casa'}[lang]
-    cards = ''.join(f'<li><span class="rule-number">{i+1:02d}</span><span class="rule-symbol">{sharp_symbol(symbols[i], PATHS)}</span><p>{e(item["text"][lang])}</p></li>' for i,item in enumerate(section['items']))
+    cards = ''.join(f'<li'+(' class="rule-attention"' if i==0 else '')+f'><span class="rule-number">{i+1:02d}</span><span class="rule-symbol">{sharp_symbol(symbols[i], PATHS)}</span><p>{e(item["text"][lang])}</p></li>' for i,item in enumerate(section['items']))
     return f'<section class="native-card native-house-rules"><h2>{intro}</h2><ol class="house-rules-grid">{cards}</ol></section>'
 
 
@@ -383,7 +383,7 @@ def build_native(page, content, upgrades, photos):
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
-        native_style = '20261127-compact-house-rules'
+        native_style = '20261127-air-conditioning-attention'
     if page['image']['src'].endswith('-11.jpg'):
         native_style = '20261127-alva-bakery'
     if page['image']['src'].endswith('-04.jpg'):

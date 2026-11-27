@@ -1,6 +1,7 @@
 """Keep the reading column centered without moving page titles or navigation."""
 from activities_topics import Node, parse
 from urllib.parse import urlparse
+import re
 
 
 def is_map_link(node):
@@ -38,6 +39,13 @@ def pair_place_links(doc):
             for location in locations:
                 location.remove(); map_column.add(location)
             parent.insert(position, pair)
+            for link in pair.all(lambda node: node.tag == 'a' and node.has('native-link')):
+                for label in link.all(lambda node: node.tag == 'span'):
+                    text = ''.join(str(child) for child in label.children if not isinstance(child, Node))
+                    # Address details may wrap; venue names remain a single readable label.
+                    if is_map_link(link) and (re.search(r'\d', text) or re.match(r'^(Rua|R\.|Av\.|Avenida|Praça|Praia|Rodovia|Estação)\b', text, re.I)):
+                        continue
+                    label.attrs['class'] = (label.attrs.get('class', '') + ' venue-name').strip()
 
 
 def with_centered_content(source):
@@ -54,8 +62,10 @@ def with_centered_content(source):
             content.add(child)
         panel.add(content)
     head = doc.all(lambda node: node.tag == 'head')[0]
-    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261127-site-map-columns'
+    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261127-venue-names-one-line'
     if 'class="information-services"' in source:
         version = '20261126-stationery-centered-row'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))
+    if doc.all(lambda node: node.has('place-link-pair')):
+        head.add(Node('script', {'src': '/venue-labels.js?v=20261127-one-line', 'defer': None}))
     return doc.html()

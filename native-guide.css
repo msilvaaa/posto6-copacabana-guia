@@ -337,6 +337,9 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .house-rules-grid>li { padding:8px 6px; border-radius:14px; }
 .house-rules-grid .rule-number { font-size:17px; }
 .house-rules-grid .rule-symbol { width:30px; height:30px; margin:6px auto; }
+.house-rules-grid>.rule-attention { background:#fff6dd; box-shadow:inset 0 0 0 1px #e9c66f; }
+.house-rules-grid>.rule-attention p { font-size:13px; line-height:1.35; font-weight:700; }
+html[data-theme="dark"] .native-house-rules .house-rules-grid>.rule-attention { background:#3a3019; box-shadow:inset 0 0 0 1px #947b3d; }
 
 /* Show the complete welcome photograph without zooming or cutting its depth. */
 .native-photo>img[data-preserve-ratio] { object-fit:contain; }
