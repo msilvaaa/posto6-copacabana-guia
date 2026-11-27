@@ -365,9 +365,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Desligue o ar-condicionado sempre que sair do apartamento.",
-                  "en": "Turn off the air conditioning whenever you leave the apartment.",
-                  "es": "Apaga el aire acondicionado cada vez que salgas del apartamento."
+                  "pt": "DESLIGAR O AR CONDICIONADO TODA VEZ QUE SAIR DO APARTAMENTO.",
+                  "en": "TURN OFF THE AIR CONDITIONER EVERY TIME YOU LEAVE THE APARTMENT.",
+                  "es": "APAGA EL AIRE ACONDICIONADO CADA VEZ QUE SALGAS DEL APARTAMENTO."
                 }
               },
               {
@@ -1052,9 +1052,9 @@
               },
               {
                 "text": {
-                  "pt": "Localização",
-                  "en": "Location",
-                  "es": "Ubicación"
+                  "pt": "Alva Padaria Artesanal",
+                  "en": "Alva Padaria Artesanal",
+                  "es": "Alva Padaria Artesanal"
                 },
                 "href": "https://maps.app.goo.gl/pQ1YUo9494iZn4rHA"
               }
@@ -1114,9 +1114,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — Galetos Copa Rio",
-                  "en": "Website — Galetos Copa Rio",
-                  "es": "Web — Galetos Copa Rio"
+                  "pt": "Galetos Copa Rio",
+                  "en": "Galetos Copa Rio",
+                  "es": "Galetos Copa Rio"
                 },
                 "href": "https://www.galetoscopario.com.br/"
               },
@@ -1147,9 +1147,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — Famiglia Marinho",
-                  "en": "Website — Famiglia Marinho",
-                  "es": "Web — Famiglia Marinho"
+                  "pt": "Famiglia Marinho",
+                  "en": "Famiglia Marinho",
+                  "es": "Famiglia Marinho"
                 },
                 "href": "https://www.famigliamarinho.com/"
               },
@@ -1173,9 +1173,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — Pasta & Vino",
-                  "en": "Website — Pasta & Vino",
-                  "es": "Web — Pasta & Vino"
+                  "pt": "Pasta & Vino",
+                  "en": "Pasta & Vino",
+                  "es": "Pasta & Vino"
                 },
                 "href": "https://pastaevino.com.br/"
               },
@@ -1226,9 +1226,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — TT Burger",
-                  "en": "Website — TT Burger",
-                  "es": "Web — TT Burger"
+                  "pt": "TT Burger",
+                  "en": "TT Burger",
+                  "es": "TT Burger"
                 },
                 "href": "https://ttburger.com.br/"
               },
@@ -1252,17 +1252,17 @@
             "items": [
               {
                 "text": {
-                  "pt": "Instagram — Garota de Ipanema",
-                  "en": "Instagram — Garota de Ipanema",
-                  "es": "Instagram — Garota de Ipanema"
+                  "pt": "Garota de Ipanema",
+                  "en": "Garota de Ipanema",
+                  "es": "Garota de Ipanema"
                 },
                 "href": "https://www.instagram.com/restaurantesgarota/"
               },
               {
                 "text": {
-                  "pt": "Restaurante e Bar Garota de Ipanema",
-                  "en": "Restaurante e Bar Garota de Ipanema",
-                  "es": "Restaurante e Bar Garota de Ipanema"
+                  "pt": "Garota de Ipanema",
+                  "en": "Garota de Ipanema",
+                  "es": "Garota de Ipanema"
                 },
                 "href": "https://maps.app.goo.gl/J4ZBPwMZKUXwW47f9"
               }
@@ -1278,9 +1278,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — Eclipse",
-                  "en": "Website — Eclipse",
-                  "es": "Web — Eclipse"
+                  "pt": "Eclipse Gastronomia",
+                  "en": "Eclipse Gastronomia",
+                  "es": "Eclipse Gastronomia"
                 },
                 "href": "https://www.bareclipse.com.br/"
               },
@@ -1321,9 +1321,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Site — Venga",
-                  "en": "Website — Venga",
-                  "es": "Web — Venga"
+                  "pt": "Venga",
+                  "en": "Venga",
+                  "es": "Venga"
                 },
                 "href": "https://venga.com.br/restaurantes/"
               },
@@ -1347,19 +1347,26 @@
             "items": [
               {
                 "text": {
-                  "pt": "Instagram — Teva Deli",
-                  "en": "Instagram — Teva Deli",
-                  "es": "Instagram — Teva Deli"
+                  "pt": "Teva Deli",
+                  "en": "Teva Deli",
+                  "es": "Teva Deli"
                 },
                 "href": "https://www.instagram.com/tevadelivegetal/"
               },
               {
                 "text": {
-                  "pt": "Teva Deli — restaurante vegano",
-                  "en": "Teva Deli — vegan restaurant",
-                  "es": "Teva Deli — restaurante vegano"
+                  "pt": "Teva Deli",
+                  "en": "Teva Deli",
+                  "es": "Teva Deli"
                 },
                 "href": "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8"
+              },
+              {
+                "text": {
+                  "pt": "Restaurante vegano.",
+                  "en": "Vegan restaurant.",
+                  "es": "Restaurante vegano."
+                }
               }
             ]
           }

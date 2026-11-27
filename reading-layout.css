@@ -5,6 +5,10 @@
 .place-locations>.belmonte-branches { grid-template-columns:1fr; }
 :is(.bakery-links,.bike-links)>.place-link-pair { grid-column:1 / -1; }
 .place-link-pair .native-link>span { min-width:0; }
+.place-link-pair .native-link { padding-inline:0; gap:4px; }
+.place-link-pair .venue-name { white-space:nowrap; font-size:var(--venue-label-size,16px); }
+.place-link-pair[data-stack-names] { grid-template-columns:1fr; }
+.guide-content .native-restaurant-card { width:100%; max-width:none; }
 
 /* Side illustrations align with the complete topic, including its links and copy. */
 html[data-guide-layout] .native-panel .guide-content .illustrated-card .native-icon.original-illustration { align-self:center; }
