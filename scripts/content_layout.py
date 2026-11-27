@@ -53,6 +53,13 @@ def with_centered_content(source):
         return source
     doc = parse(source)
     pair_place_links(doc)
+    for link in doc.all(is_map_link):
+        for label in link.all(lambda node: node.tag == 'span'):
+            text = ''.join(str(child) for child in label.children if not isinstance(child, Node))
+            if re.search(r'\d| — ', text) or re.match(r'^(Rua|R\.|Av\.|Avenida|Praça|Praia|Rodovia|Estação|Aeroporto|Estacionamento|Estacionamiento|Parking|Aparcamiento)\b', text, re.I):
+                continue
+            if not label.has('venue-name'):
+                label.attrs['class'] = (label.attrs.get('class', '') + ' venue-name').strip()
     for panel in doc.all(lambda node: node.has('native-panel') or node.has('section-panel')):
         content = Node('div', {'class': 'guide-content'})
         for child in list(panel.children):
@@ -62,10 +69,10 @@ def with_centered_content(source):
             content.add(child)
         panel.add(content)
     head = doc.all(lambda node: node.tag == 'head')[0]
-    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261127-venue-names-one-line'
+    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261127-all-venue-names'
     if 'class="information-services"' in source:
-        version = '20261126-stationery-centered-row'
+        version = '20261127-bank-names-one-line'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))
-    if doc.all(lambda node: node.has('place-link-pair')):
-        head.add(Node('script', {'src': '/venue-labels.js?v=20261127-one-line', 'defer': None}))
+    if doc.all(lambda node: node.has('venue-name')):
+        head.add(Node('script', {'src': '/venue-labels.js?v=20261127-all-names', 'defer': None}))
     return doc.html()
