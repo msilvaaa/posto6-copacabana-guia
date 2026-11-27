@@ -11,6 +11,9 @@
 html[data-guide-layout] .guide-content :is(.bank-links,.pharmacy-links,.fort-links,.gym-links,.bakery-links)[data-stack-venue-names] { grid-template-columns:1fr; }
 .bank-links[data-stack-venue-names] { grid-template-rows:none; grid-auto-flow:row; }
 .guide-content .native-restaurant-card { width:100%; max-width:none; }
+/* Center each restaurant site/map pair around its text, avoiding empty half-columns. */
+.native-restaurant-card .place-link-pair { grid-template-columns:repeat(2,minmax(0,max-content)); justify-content:center; column-gap:32px; }
+.native-restaurant-card .place-link-pair[data-stack-names] { grid-template-columns:minmax(0,1fr); }
 @media(min-width:1101px) {
  .guide-content .information-services>.illustrated-card { grid-template-columns:64px minmax(0,1fr); }
 }
@@ -60,3 +63,10 @@ html[data-theme="dark"] .wifi-scan-label svg { color:#5ccea3; }
 html[data-guide-layout] .guide-content .bank-links:not([data-stack-venue-names]) { grid-template-columns:44% minmax(0,1fr); }
 
 .guide-content .information-services { column-gap:8px; }
+
+/* Give the three Zona Sul addresses the larger column beside its website. */
+.place-link-pair:has([data-location-count="3"]):not([data-stack-names]) { grid-template-columns:max-content minmax(0,1fr); }
+@media(max-width:600px) {
+ html[data-fluid-frame] .guide-content .illustrated-card:has([data-location-count="3"]) .native-card-copy { grid-column:1 / -1; grid-row:2; }
+ html[data-fluid-frame] .guide-content .illustrated-card:has([data-location-count="3"]) .native-icon { grid-row:1; }
+}

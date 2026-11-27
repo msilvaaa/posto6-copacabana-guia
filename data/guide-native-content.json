@@ -1515,19 +1515,31 @@
               },
               {
                 "text": {
+                  "pt": "R. Francisco Sá, 35",
+                  "en": "R. Francisco Sá, 35",
+                  "es": "R. Francisco Sá, 35"
+                },
+                "href": "https://maps.app.goo.gl/14bbzSfMGoZmZEFn7",
+                "full_label": {
                   "pt": "Rua Francisco Sá, 35 — Copacabana",
                   "en": "Rua Francisco Sá, 35 — Copacabana",
                   "es": "Rua Francisco Sá, 35 — Copacabana"
                 },
-                "href": "https://maps.app.goo.gl/14bbzSfMGoZmZEFn7"
+                "single_line": true
               },
               {
                 "text": {
+                  "pt": "Av. N. Sra. de Copacabana, 1369",
+                  "en": "Av. N. Sra. de Copacabana, 1369",
+                  "es": "Av. N. Sra. de Copacabana, 1369"
+                },
+                "href": "https://maps.app.goo.gl/SvBjNeQGZ3u6SFXw8",
+                "full_label": {
                   "pt": "Av. Nossa Senhora de Copacabana, 1369",
                   "en": "Av. Nossa Senhora de Copacabana, 1369",
                   "es": "Av. Nossa Senhora de Copacabana, 1369"
                 },
-                "href": "https://maps.app.goo.gl/SvBjNeQGZ3u6SFXw8"
+                "single_line": true
               },
               {
                 "text": {
@@ -1535,7 +1547,13 @@
                   "en": "Av. Rainha Elisabeth, 325",
                   "es": "Av. Rainha Elisabeth, 325"
                 },
-                "href": "https://maps.app.goo.gl/fw5pwaBFojaXjtzg9"
+                "href": "https://maps.app.goo.gl/fw5pwaBFojaXjtzg9",
+                "full_label": {
+                  "pt": "Av. Rainha Elisabeth, 325",
+                  "en": "Av. Rainha Elisabeth, 325",
+                  "es": "Av. Rainha Elisabeth, 325"
+                },
+                "single_line": true
               },
               {
                 "text": {

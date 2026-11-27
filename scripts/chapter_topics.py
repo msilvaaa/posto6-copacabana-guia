@@ -60,7 +60,9 @@ def render(source,page,index=0):
   attrs={'class':'activities-topic-panel','id':f'activities-panel-{i}','role':'tabpanel','aria-labelledby':f'activities-tab-{i}','tabindex':'0'}
   if i!=index:attrs['hidden']=None
   topic=Node('section',attrs)
-  if subtitles[i]:subtitles[i].remove();topic.add(subtitles[i])
+  if subtitles[i]:
+   subtitles[i].remove()
+   if suffix!='-12.jpg':topic.add(subtitles[i])
   for card in cards:card.remove();topic.add(card)
   panels.append(topic)
  for chapter in chapters[1:]:chapter.remove()
