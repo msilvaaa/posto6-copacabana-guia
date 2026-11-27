@@ -105,6 +105,8 @@ def with_centered_content(source):
         version = '20261127-supermarket-shopping-spacing'
     if 'class="information-services"' in source:
         version = '20261127-bank-walking-symbols'
+    if doc.all(lambda node: node.has('walking-distance-symbol')):
+        version += '-p3-dark'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))
     if doc.all(lambda node: node.has('venue-name')):
         head.add(Node('script', {'src': '/venue-labels.js?v=20261127-walking-symbols', 'defer': None}))
