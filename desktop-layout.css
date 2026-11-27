@@ -1,13 +1,15 @@
-/* A centered reference layout keeps wide desktop screens from stretching the guide. */
+/* Fill desktop screens while scaling the approved composition uniformly. */
 html[data-desktop-frame] {
- --desktop-frame-width:min(1440px,100vw);
- --desktop-frame-height:min(900px,100dvh);
- --desktop-frame-side:calc((100vw - var(--desktop-frame-width)) / 2);
+ --desktop-frame-width:100vw;
+ --desktop-frame-height:100dvh;
+ --desktop-frame-side:0px;
  --desktop-arrow-gap:1cm;
  --guide-menu-button-size:72px;
  --guide-title-height:34px;
 }
-html[data-desktop-frame] body { overflow:hidden; }
+html[data-desktop-frame] body { width:var(--desktop-frame-width); height:var(--desktop-frame-height); overflow:hidden; }
+html[data-desktop-frame] .photo-viewer { width:calc(var(--desktop-frame-width) - 24px); height:calc(var(--desktop-frame-height) - 24px); }
+html[data-desktop-frame] .weather-dialog { width:min(600px,calc(var(--desktop-frame-width) - 24px)); max-height:calc(var(--desktop-frame-height) - 24px); }
 html[data-desktop-frame] body.home-page .page-shell,
 html[data-desktop-frame] body.site-page .site-frame {
  position:fixed; top:0; left:var(--desktop-frame-side); width:var(--desktop-frame-width);

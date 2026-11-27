@@ -9,22 +9,23 @@ LEAGUES={'bra.1':'Brasileirão Série A','bra.2':'Brasileirão Série B','bra.co
 def render(lang):
  data=json.loads((ROOT/'data/rio-football.json').read_text());zone=ZoneInfo(data['timezone'])
  title,period,none,tbd,updated,note={
-  'pt':('Jogos da semana','Próximos 7 dias','Nenhum jogo confirmado nesta agenda.','Horário a confirmar','Consulta','Horários de Brasília. Atualização às segundas e quintas, às 9h. A programação pode mudar.'),
-  'en':('Weekly matches','Next 7 days','No confirmed match in this schedule.','Time to be confirmed','Checked','Brasília time. Updated Mondays and Thursdays at 9 am. Fixtures may change.'),
-  'es':('Partidos de la semana','Próximos 7 días','Ningún partido confirmado en esta agenda.','Horario por confirmar','Consulta','Hora de Brasilia. Actualización los lunes y jueves a las 9 h. La programación puede cambiar.')
+  'pt':('Jogos da semana','Próximos 7 dias','Nenhum jogo confirmado nesta agenda.','Horário a confirmar','Consulta','Horários de Brasília. Consulta ao abrir e a cada minuto. Agenda salva às segundas e quintas, às 9h. A programação pode mudar.'),
+  'en':('Weekly matches','Next 7 days','No confirmed match in this schedule.','Time to be confirmed','Checked','Brasília time. Checked on opening and every minute. Schedule saved Mondays and Thursdays at 9 am. Fixtures may change.'),
+  'es':('Partidos de la semana','Próximos 7 días','Ningún partido confirmado en esta agenda.','Horario por confirmar','Consulta','Hora de Brasilia. Consulta al abrir y cada minuto. Agenda guardada los lunes y jueves a las 9 h. La programación puede cambiar.')
  }[lang]
  weekdays={'pt':['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],'en':['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],'es':['Lun','Mar','Mié','Jue','Vie','Sáb','Dom']}[lang]
  cards=[]
  for club in data['clubs']:
   fixtures=[]
-  for game in club['games']:
+  for game_index,game in enumerate(sorted(club['games'],key=lambda game:datetime.fromisoformat(game['date']))):
    when=datetime.fromisoformat(game['date']).astimezone(zone)
    stamp=when.strftime('%d/%m · %H:%M') if game['time_confirmed'] else when.strftime('%d/%m')+' · '+tbd
    stamp=weekdays[when.weekday()]+' · '+stamp
    league=LEAGUES.get(game['league'],game['competition'])
-   fixtures.append(f'<li class="football-fixture" data-match-start="{escape(game["date"])}"><time datetime="{escape(game["date"])}">{escape(stamp)}</time><a href="{escape(game["url"])}" target="_blank" rel="noopener noreferrer">{escape(game["home"])} × {escape(game["away"])}</a><small>{escape(league)}</small></li>')
+   hidden = ' hidden' if game_index else ''
+   fixtures.append(f'<li class="football-fixture" data-match-start="{escape(game["date"])}"{hidden}><time datetime="{escape(game["date"])}">{escape(stamp)}</time><a href="{escape(game["url"])}" target="_blank" rel="noopener noreferrer">{escape(game["home"])} × {escape(game["away"])}</a><small>{escape(league)}</small></li>')
   cards.append(f'<article class="football-club" data-club="{club["id"]}"><h3><img class="football-crest" src="/assets/football/{club["id"]}.svg" alt="{escape(club["name"])}" title="{escape(club["name"])}" width="40" height="40" loading="lazy" decoding="async"/></h3><ul>{"".join(fixtures)}</ul><p class="football-empty"'+(' hidden' if fixtures else '')+f'>{escape(none)}</p></article>')
  checked=datetime.fromisoformat(data['updated_at']).astimezone(zone).strftime('%d/%m, %H:%M')
  start=datetime.fromisoformat(data['window_start']).strftime('%d/%m');end=datetime.fromisoformat(data['window_end']).strftime('%d/%m')
- return (f'<section class="native-card rio-football" data-football-schedule><h2>{escape(title)}</h2><p class="football-period">{escape(period)} · {start}–{end}</p>'
-         f'<div class="football-clubs">{"".join(cards)}</div><p class="football-note">{escape(note)}<br>{escape(updated)}: {checked} · <a href="{escape(data["source_url"])}" target="_blank" rel="noopener noreferrer">ESPN</a></p></section>')
+ return (f'<section class="native-card rio-football" data-football-schedule><h2>{escape(title)}</h2><p class="football-period">{escape(period)} · <span data-football-window>{start}–{end}</span></p>'
+         f'<div class="football-clubs">{"".join(cards)}</div><p class="football-note">{escape(note)}<br>{escape(updated)}: <span data-football-checked>{checked}</span> · <a href="{escape(data["source_url"])}" target="_blank" rel="noopener noreferrer">ESPN</a></p></section>')

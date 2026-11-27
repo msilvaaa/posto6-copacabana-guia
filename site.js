@@ -179,21 +179,24 @@
  document.body.dataset.whatsappTitle='';
  let frame;
  function align() {
-  const parent=container.getBoundingClientRect();
+  const scale=Number(document.documentElement.dataset.guideScale)||1;
+  const box=element=>{const r=element.getBoundingClientRect();return {left:r.left/scale,y:r.y/scale,width:r.width/scale,height:r.height/scale,bottom:r.bottom/scale};};
+  const parent=box(container);
   const padding=getComputedStyle(container);
-  const button=contact.getBoundingClientRect();
+  const button=box(contact);
   const inner=parent.width-parseFloat(padding.paddingLeft)-parseFloat(padding.paddingRight);
   if (desktop.matches && !cover) {
    const available=2*(button.left-(parent.left+parent.width/2)-12);
    heading.style.maxWidth=`${Math.max(48,Math.min(inner*.9,available))}px`;
   } else if (originalMaxWidth) heading.style.maxWidth=originalMaxWidth;
   else heading.style.removeProperty('max-width');
-  const title=reference.getBoundingClientRect();
-  const divider=cover && desktop.matches ? document.querySelector('.home-menu-rule')?.getBoundingClientRect() : null;
+  const title=box(reference);
+  const dividerElement=cover && desktop.matches ? document.querySelector('.home-menu-rule') : null;
+  const divider=dividerElement ? box(dividerElement) : null;
   const top=divider ? divider.bottom-button.height : title.y+(title.height-button.height)/2;
   document.body.style.setProperty('--whatsapp-title-top',`${top}px`);
   const toolbar=document.querySelector('.site-toolbar,.main-html-topbar');
-  const toolbarBottom=toolbar?.getBoundingClientRect().bottom || 0;
+  const toolbarBottom=toolbar ? box(toolbar).bottom : 0;
   contact.style.visibility=top < toolbarBottom-(cover ? 4 : 0) ? 'hidden' : 'visible';
  }
  function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(align);}
