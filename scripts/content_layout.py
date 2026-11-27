@@ -2,6 +2,9 @@
 from activities_topics import Node, parse
 from urllib.parse import urlparse
 import re
+import json
+from pathlib import Path
+from functools import lru_cache
 
 
 def is_map_link(node):
@@ -48,11 +51,36 @@ def pair_place_links(doc):
                     label.attrs['class'] = (label.attrs.get('class', '') + ' venue-name').strip()
 
 
+@lru_cache(maxsize=1)
+def walking_distances():
+    path = Path(__file__).resolve().parents[1] / 'data/walking-distances.json'
+    return json.loads(path.read_text())['destinations'] if path.exists() else {}
+
+
+def add_walking_symbols(doc):
+    html = doc.all(lambda node: node.tag == 'html')[0]
+    lang = html.attrs.get('lang', 'pt').split('-')[0]
+    label = {'pt': 'A pé', 'en': 'On foot', 'es': 'A pie'}.get(lang, 'On foot')
+    for link in doc.all(is_map_link):
+        entry = walking_distances().get(link.attrs.get('href'), {})
+        distance = entry.get('walking_m')
+        if entry.get('status') != 'walking' or not isinstance(distance, (int, float)) or not 0 < distance < 1000:
+            continue
+        if link.all(lambda node: node.has('walking-distance-symbol')):
+            continue
+        title = f'{label} · ≈ {distance} m · © OpenStreetMap contributors'
+        link.add(Node('img', {'class': 'walking-distance-symbol',
+                             'src': '/assets/icons-3d/footprints.svg',
+                             'width': '16', 'height': '16', 'alt': label,
+                             'title': title, 'data-walking-m': str(distance)}))
+
+
 def with_centered_content(source):
     if 'class="native-panel"' not in source and 'class="section-panel"' not in source:
         return source
     doc = parse(source)
     pair_place_links(doc)
+    add_walking_symbols(doc)
     for link in doc.all(is_map_link):
         for label in link.all(lambda node: node.tag == 'span'):
             text = ''.join(str(child) for child in label.children if not isinstance(child, Node))
@@ -69,10 +97,10 @@ def with_centered_content(source):
             content.add(child)
         panel.add(content)
     head = doc.all(lambda node: node.tag == 'head')[0]
-    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261127-all-venue-names'
+    version = '20261127-wifi-copy-walking' if 'class="wifi-connection"' in source else '20261127-walking-symbols-sport'
     if 'class="information-services"' in source:
-        version = '20261127-bank-names-one-line'
+        version = '20261127-bank-walking-symbols'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))
     if doc.all(lambda node: node.has('venue-name')):
-        head.add(Node('script', {'src': '/venue-labels.js?v=20261127-all-names', 'defer': None}))
+        head.add(Node('script', {'src': '/venue-labels.js?v=20261127-walking-symbols', 'defer': None}))
     return doc.html()

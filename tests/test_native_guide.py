@@ -48,6 +48,9 @@ class NativeGuideTests(unittest.TestCase):
                 # The owner provided the exact Forte destination, separate from Colombo.
                 expected.difference_update({'https://maps.app.goo.gl/qCLcaRsKFsPj7ujY6', 'https://maps.app.goo.gl/usPwAX4m68TupqMs6'})
                 expected.add('https://maps.app.goo.gl/kgNHcDh1MSWXHFaE6')
+                # EN/ES reused a Bodytech marker for both Smart Fit branches.
+                expected.discard('https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8')
+                expected.update({'https://maps.app.goo.gl/infS3pCMii5sRV3M6', 'https://maps.app.goo.gl/5vWSPofpSnwqATEY6'})
             if page['image']['src'].endswith('-10.jpg'):
                 # The owner supplied the updated Santander branch destination.
                 expected.discard('https://maps.app.goo.gl/4mU4g6BEkhpWK7eL9')
