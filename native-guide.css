@@ -330,7 +330,12 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 :root .native-card p.native-body-copy { margin:4px 0 10px; font:400 16px/1.6 Arial,Helvetica,sans-serif; text-align:left; }
 .native-link { font-size:16px; }
 .instruction-list { font-size:16px; }
-.house-rules-grid p { font-size:16px; line-height:1.5; }
+.house-rules-grid p { font-size:14px; line-height:1.4; }
+.native-house-rules>h2 { margin:8px auto 12px; }
+.house-rules-grid { gap:8px; margin-bottom:14px; }
+.house-rules-grid>li { padding:8px 6px; border-radius:14px; }
+.house-rules-grid .rule-number { font-size:17px; }
+.house-rules-grid .rule-symbol { width:30px; height:30px; margin:6px auto; }
 
 /* Show the complete welcome photograph without zooming or cutting its depth. */
 .native-photo>img[data-preserve-ratio] { object-fit:contain; }
