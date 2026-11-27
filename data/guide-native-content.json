@@ -823,7 +823,7 @@
               "en": "Post office",
               "es": "Correos"
             },
-            "icon": "mail",
+            "icon": "outbox",
             "items": [
               {
                 "text": {
