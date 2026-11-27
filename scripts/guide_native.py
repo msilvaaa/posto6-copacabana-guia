@@ -395,18 +395,18 @@ def build_native(page, content, upgrades, photos):
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <script>document.documentElement.toggleAttribute('data-guide-layout',!location.pathname.startsWith('/preview-'));document.documentElement.toggleAttribute('data-desktop-frame',!location.pathname.startsWith('/preview-') && matchMedia('(min-width:1101px)').matches);document.documentElement.toggleAttribute('data-fluid-frame',!location.pathname.startsWith('/preview-') && !matchMedia('(min-width:1101px)').matches);</script>
+  <script src="/desktop-fit.js?v=20261127-screen-fill"></script>
   <title>{e(page_title(lang,title))}</title>
   <meta name="description" content="{e(page['description'])}"/>
   <link rel="stylesheet" href="/site-shell.css?v=20261126-desktop-reference"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
-  <script src="/site.js?v=20261126-cover-divider-contact" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
+  <script src="/site.js?v=20261127-screen-fill" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
 <link rel="stylesheet" href="/icon-frames.css?v=20261119-1"/>
-<link rel="stylesheet" href="/desktop-layout.css?v=20261126-english-type-fit"/>
+<link rel="stylesheet" href="/desktop-layout.css?v=20261127-screen-fill"/>
 <link rel="stylesheet" href="/responsive-layout.css?v=20261126-sun-english-fit"/>
 </head>
 <body class="site-page native-guide">

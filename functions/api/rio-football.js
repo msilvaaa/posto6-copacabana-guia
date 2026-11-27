@@ -6,7 +6,7 @@ export async function onRequestGet() {
   try {
    // Upcoming and recent schedules together retain a match while it is in progress.
    const payloads = await Promise.all(['true','false'].map(async fixture => {
-    const response = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/${id}/schedule?fixture=${fixture}`, {cache:'no-store',signal:AbortSignal.timeout(12000),headers:{Accept:'application/json'}});
+    const response = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/${id}/schedule?fixture=${fixture}`, {cache:'no-store',signal:AbortSignal.timeout(12000),headers:{Accept:'application/json','User-Agent':'Posto6GuestGuide/1.0'}});
     if (!response.ok) throw new Error('Unavailable');
     return response.json();
    }));

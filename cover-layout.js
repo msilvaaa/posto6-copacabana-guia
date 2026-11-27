@@ -11,19 +11,21 @@
   if (!title || !place || !index || !photo || !toggle) return;
   let frame;
   function align() {
-    const area = hero.getBoundingClientRect();
-    const word = place.getBoundingClientRect();
-    const image = photo.getBoundingClientRect();
-    const button = toggle.getBoundingClientRect();
+    const scale=Number(document.documentElement.dataset.guideScale)||1;
+    const box=element=>{const r=element.getBoundingClientRect();return {x:r.x/scale,y:r.y/scale,left:r.left/scale,right:r.right/scale,width:r.width/scale,height:r.height/scale};};
+    const area = box(hero);
+    const word = box(place);
+    const image = box(photo);
+    const button = box(toggle);
     hero.style.setProperty('--cover-sun-shift', '0px');
     hero.style.setProperty('--cover-theme-top', `${word.y + word.height / 2 - area.y - button.height / 2}px`);
     const sunset = sun?.querySelector('[data-sun-value="sunset"]')?.closest('.cover-sun-event');
-    const sunsetBox = sunset?.getBoundingClientRect();
+    const sunsetBox = sunset ? box(sunset) : null;
     const center = sunsetBox ? sunsetBox.x + sunsetBox.width / 2 : image.right - 2 * 96 / 2.54 - button.width / 2;
     const safeCenter = Math.max(image.left + button.width / 2 + 8, Math.min(center, image.right - button.width / 2 - 8));
     hero.style.setProperty('--cover-theme-right', `${area.right - safeCenter - button.width / 2}px`);
     if (window.matchMedia('(min-width:1101px)').matches) {
-      const start = index.getBoundingClientRect().left;
+      const start = box(index).left;
       const available = Math.max(0, image.right - start - 20);
       hero.style.setProperty('--cover-index-font-size', '14px');
       hero.style.setProperty('--cover-index-width', `${Math.min(493.375,available)}px`);
