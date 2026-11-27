@@ -58,6 +58,8 @@ html[data-theme="dark"] .wifi-scan-label svg { color:#5ccea3; }
 
 .venue-reference .venue-address { padding-inline-start:21px; margin-top:2px; }
 
+/* Dark monochrome indicators need a white silhouette against the dark panel. */
+html[data-theme="dark"] :is(.walking-distance-symbol,.native-card .guide-icon-3d[data-symbol="people"],.native-card .guide-icon-3d[data-symbol="footprints"]) { filter:brightness(0) invert(1); }
 .walking-distance-symbol { flex:0 0 16px; width:16px; height:16px; object-fit:contain; margin-inline-start:4px; vertical-align:middle; }
 /* Keep the longer Caixa name readable alongside the small walking symbol. */
 html[data-guide-layout] .guide-content .bank-links:not([data-stack-venue-names]) { grid-template-columns:44% minmax(0,1fr); }

@@ -340,7 +340,7 @@ def build_native(page, content, upgrades, photos):
                 if page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Check-in':
                     art='<img class="native-room-thumb" src="/assets/checkin/porta-miniatura-sem-tarja.png" width="76" height="76" alt=""/>'
                 elif page['image']['src'].endswith('-13.jpg') and index==0 and section['title']['pt']=='Lojas Americanas':
-                    art='<img class="original-brand" src="/assets/brands/americanas.svg" alt="" width="76" height="24"/>'
+                    art=''
             if (page['image']['src'].endswith('-02.jpg') and section_index==0) or (page['image']['src'].endswith('-03.jpg') and section['title']['pt']=='Sua estadia no Rio'):
                 art=''
             if page['image']['src'].endswith('-04.jpg') and section_index==1:
