@@ -352,6 +352,8 @@ html[data-theme="dark"] .native-house-rules .house-rules-grid>.rule-attention { 
 .sea-condition-icon>svg { display:block; width:100%; height:100%; }
 
 .pharmacy-delivery h3 { margin:14px 0 6px; font:700 17px/1.4 Arial,Helvetica,sans-serif; }
+.pharmacy-delivery h3 { display:flex; align-items:center; gap:8px; }
+.pharmacy-delivery h3>.guide-icon-3d { flex:0 0 28px; width:28px; height:28px; }
 
 /* Apply the approved organization to desktop only; preserve phone/tablet layouts. */
 @media(min-width:1101px) {
