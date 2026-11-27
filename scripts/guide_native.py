@@ -380,7 +380,7 @@ def build_native(page, content, upgrades, photos):
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
-        native_style = '20261126-rules-building-photo'
+        native_style = '20261127-compact-house-rules'
     if page['image']['src'].endswith('-04.jpg'):
         native_style = '20261126-location-centered-content'
     if page['image']['src'].endswith('-14.jpg'):
