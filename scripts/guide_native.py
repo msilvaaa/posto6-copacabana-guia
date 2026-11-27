@@ -258,7 +258,10 @@ def build_native(page, content, upgrades, photos):
                     href = item.get('href_by_lang', {}).get(lang, item['href'])
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
                     location_count = f' data-location-count="{int(item["location_count"])}"' if item.get('location_count') else ''
-                    nodes.append(f'<a class="native-link" href="{e(href)}"{location_count}{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
+                    full_label = item.get('full_label', {}).get(lang)
+                    label_attributes = f' title="{e(full_label)}" aria-label="{e(full_label)}"' if full_label else ''
+                    label_class = ' class="venue-name"' if item.get('single_line') else ''
+                    nodes.append(f'<a class="native-link" href="{e(href)}"{location_count}{label_attributes}{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span{label_class}>{text}</span></a>')
                     if item.get('address'):
                         nodes[-1] = '<div class="venue-reference">' + nodes[-1] + f'<p class="native-description venue-address">{e(item["address"])}</p></div>'
                 else:
