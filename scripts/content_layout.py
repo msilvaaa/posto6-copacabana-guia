@@ -25,7 +25,7 @@ def pair_place_links(doc):
             count = int(website.attrs.get('data-location-count', '1'))
             locations, found = [], 0
             for sibling in children[i + 1:]:
-                maps = [sibling] if is_map_link(sibling) else sibling.all(is_map_link) if sibling.has('belmonte-branches') else []
+                maps = [sibling] if is_map_link(sibling) else sibling.all(is_map_link) if sibling.has('belmonte-branches') or sibling.has('venue-reference') else []
                 if not maps:
                     break
                 locations.append(sibling)
@@ -102,7 +102,7 @@ def with_centered_content(source):
     if 'native-restaurant-card' in source:
         version = '20261127-restaurants-compact-pairs'
     if 'data-location-count="3"' in source:
-        version = '20261127-supermarket-addresses-single-line'
+        version = '20261127-supermarket-shopping-spacing'
     if 'class="information-services"' in source:
         version = '20261127-bank-walking-symbols'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))

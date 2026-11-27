@@ -1515,9 +1515,9 @@
               },
               {
                 "text": {
-                  "pt": "R. Francisco Sá, 35",
-                  "en": "R. Francisco Sá, 35",
-                  "es": "R. Francisco Sá, 35"
+                  "pt": "Zona Sul",
+                  "en": "Zona Sul",
+                  "es": "Zona Sul"
                 },
                 "href": "https://maps.app.goo.gl/14bbzSfMGoZmZEFn7",
                 "full_label": {
@@ -1525,13 +1525,14 @@
                   "en": "Rua Francisco Sá, 35 — Copacabana",
                   "es": "Rua Francisco Sá, 35 — Copacabana"
                 },
-                "single_line": true
+                "single_line": true,
+                "address": "R. Francisco Sá, 35"
               },
               {
                 "text": {
-                  "pt": "Av. N. Sra. de Copacabana, 1369",
-                  "en": "Av. N. Sra. de Copacabana, 1369",
-                  "es": "Av. N. Sra. de Copacabana, 1369"
+                  "pt": "Zona Sul",
+                  "en": "Zona Sul",
+                  "es": "Zona Sul"
                 },
                 "href": "https://maps.app.goo.gl/SvBjNeQGZ3u6SFXw8",
                 "full_label": {
@@ -1539,13 +1540,14 @@
                   "en": "Av. Nossa Senhora de Copacabana, 1369",
                   "es": "Av. Nossa Senhora de Copacabana, 1369"
                 },
-                "single_line": true
+                "single_line": true,
+                "address": "Av. N. Sra. de Copacabana, 1369"
               },
               {
                 "text": {
-                  "pt": "Av. Rainha Elisabeth, 325",
-                  "en": "Av. Rainha Elisabeth, 325",
-                  "es": "Av. Rainha Elisabeth, 325"
+                  "pt": "Zona Sul",
+                  "en": "Zona Sul",
+                  "es": "Zona Sul"
                 },
                 "href": "https://maps.app.goo.gl/fw5pwaBFojaXjtzg9",
                 "full_label": {
@@ -1553,7 +1555,8 @@
                   "en": "Av. Rainha Elisabeth, 325",
                   "es": "Av. Rainha Elisabeth, 325"
                 },
-                "single_line": true
+                "single_line": true,
+                "address": "Av. Rainha Elisabeth, 325"
               },
               {
                 "text": {
