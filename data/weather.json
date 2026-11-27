@@ -4,7 +4,7 @@
   "longitude": -43.1918,
   "provider": "wttr.in",
   "source": "https://wttr.in/-22.9842,-43.1918?format=j1",
-  "updated_at": "2026-11-26T17:06:55.458377+00:00",
+  "updated_at": "2026-11-27T01:49:44.988910+00:00",
   "days": [
     {
       "date": "2026-11-26",
@@ -17,7 +17,7 @@
       "date": "2026-11-27",
       "min": 22,
       "max": 23,
-      "rain_probability": 21,
+      "rain_probability": 22,
       "code": "119"
     },
     {
