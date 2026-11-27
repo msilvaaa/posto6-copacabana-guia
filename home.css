@@ -13,7 +13,7 @@ html, body { margin: 0; padding: 0; background: #f3f1ed; color: #111; font-famil
 .home-cover-logo-text span { margin-top: 7px; font-size: clamp(9px,.8vw,13px); line-height: 1; letter-spacing: .42em; }
 .home-cover-logo-text small { margin-top: 7px; font-size: clamp(7px,.58vw,10px); line-height: 1; letter-spacing: .22em; }
 .home-cover-copy h1 { margin: 0; font: 600 clamp(24px,3.8vw,60px)/1.1 Georgia,"Times New Roman",serif; letter-spacing: -.05em; white-space: nowrap; text-shadow: 0 1px 1px #ffffff47; }
-.home-cover-subtitle { margin: 2px 0 0; max-width: 80%; font-size: clamp(12px,1.08vw,17px); line-height: 1.25; letter-spacing: -.015em; font-weight: 500; color: #151515; }
+.home-cover-subtitle { transform:translateY(-4px); margin: 2px 0 0; max-width: 80%; font-size: clamp(12px,1.08vw,17px); line-height: 1.25; letter-spacing: -.015em; font-weight: 500; color: #151515; }
 .home-cover-cta { position: absolute; left: 4.7%; bottom: 11%; display: inline-flex; align-items: center; justify-content: center; gap: 18px; margin-top: 4.2%; min-width: 220px; height: 62px; padding: 0 20px; border-radius: 999px; background: #0c3b34; color: white; text-decoration: none; font-size: 15px; font-weight: 700; line-height: 1; letter-spacing: .12em; box-shadow: 0 10px 24px #0003; pointer-events: auto; transition: transform .18s ease,box-shadow .18s ease,background .18s ease; }
 .home-cover-cta:hover, .home-cover-cta:focus-visible { transform: translateY(-2px); background: #0a302b; box-shadow: 0 14px 30px #0000003d; }
 .home-cover-nav { position: absolute; left: 25.8%; top: 7.4%; width: 43.4%; display: flex; align-items: center; justify-content: space-between; gap: 18px; pointer-events: auto; }
