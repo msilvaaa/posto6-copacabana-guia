@@ -64,9 +64,10 @@ html[data-guide-layout] .guide-content .bank-links:not([data-stack-venue-names])
 
 .guide-content .information-services { column-gap:8px; }
 
-/* Give the three Zona Sul addresses the larger column beside its website. */
-.place-link-pair:has([data-location-count="3"]):not([data-stack-names]) { grid-template-columns:max-content minmax(0,1fr); }
+/* Match Shopping site/map columns, with branch details below each map name. */
+:root .native-card .place-link-pair:has([data-location-count="3"]) .venue-address { padding-inline-start:21px; white-space:nowrap; }
 @media(max-width:600px) {
+ .place-link-pair:has([data-location-count="3"]) { grid-template-columns:1fr; }
  html[data-fluid-frame] .guide-content .illustrated-card:has([data-location-count="3"]) .native-card-copy { grid-column:1 / -1; grid-row:2; }
  html[data-fluid-frame] .guide-content .illustrated-card:has([data-location-count="3"]) .native-icon { grid-row:1; }
 }
