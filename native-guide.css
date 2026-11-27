@@ -335,13 +335,16 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .instruction-list { font-size:16px; }
 .house-rules-grid p { font-size:14px; line-height:1.4; }
 .native-house-rules>h2 { margin:8px auto 12px; }
-.house-rules-grid { gap:8px; margin-bottom:14px; }
+.native-panel .native-house-rules .house-rules-grid { grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; margin-bottom:14px; }
+.house-rules-grid>li { grid-column:span 2; }
+.house-rules-grid>li:nth-child(4) { grid-column:2 / span 2; }
+.house-rules-grid>li:nth-child(5) { grid-column:4 / span 2; }
 .house-rules-grid>li { padding:8px 6px; border-radius:14px; }
 .house-rules-grid .rule-number { font-size:17px; }
 .house-rules-grid .rule-symbol { width:30px; height:30px; margin:6px auto; }
 .house-ac-attention { display:flex; align-items:center; gap:12px; padding:12px; border-radius:12px; background:#fff6dd; box-shadow:inset 0 0 0 1px #e9c66f; }
 .house-ac-attention>.guide-icon-3d { flex:0 0 40px; width:40px; height:40px; }
-.native-card.house-ac-attention p { margin:0; font-size:13px; line-height:1.4; font-weight:700; }
+.native-card.house-ac-attention p { flex:1; min-width:0; margin:0; font-size:10px; line-height:1.4; font-weight:700; white-space:nowrap; overflow-x:auto; }
 html[data-theme="dark"] .house-ac-attention { background:#3a3019; box-shadow:inset 0 0 0 1px #947b3d; }
 
 /* Show the complete welcome photograph without zooming or cutting its depth. */
