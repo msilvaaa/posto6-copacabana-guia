@@ -1195,7 +1195,7 @@
               "en": "Delivery services",
               "es": "Servicio de entrega"
             },
-            "icon": "bag",
+            "icon": "parcel",
             "items": [
               {
                 "text": {
@@ -1681,7 +1681,7 @@
                 "en": "Delivery services",
                 "es": "Servicio de entrega"
               },
-              "icon": "bag",
+              "icon": "parcel",
               "items": [
                 {
                   "text": {
