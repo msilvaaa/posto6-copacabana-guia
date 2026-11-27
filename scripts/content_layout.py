@@ -61,8 +61,9 @@ def add_walking_symbols(doc):
     html = doc.all(lambda node: node.tag == 'html')[0]
     lang = html.attrs.get('lang', 'pt').split('-')[0]
     label = {'pt': 'A pé', 'en': 'On foot', 'es': 'A pie'}.get(lang, 'On foot')
-    for link in doc.all(is_map_link):
-        entry = walking_distances().get(link.attrs.get('href'), {})
+    for link in doc.all(lambda node: is_map_link(node) or 'data-walking-destination' in node.attrs):
+        destination = link.attrs.get('data-walking-destination') or link.attrs.get('href')
+        entry = walking_distances().get(destination, {})
         distance = entry.get('walking_m')
         if entry.get('status') != 'walking' or not isinstance(distance, (int, float)) or not 0 < distance < 1000:
             continue

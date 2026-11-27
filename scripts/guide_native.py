@@ -262,7 +262,8 @@ def build_native(page, content, upgrades, photos):
                     if item.get('address'):
                         nodes[-1] = '<div class="venue-reference">' + nodes[-1] + f'<p class="native-description venue-address">{e(item["address"])}</p></div>'
                 else:
-                    description=f'<p class="{copy_class}">{text}</p>'
+                    walking_attr = f' data-walking-destination="{e(item["walking_destination"])}"' if item.get("walking_destination") else ""
+                    description=f'<p class="{copy_class}"{walking_attr}>{text}</p>'
                     if item.get('hours24'):
                         hours={'pt':'24 horas','en':'24 hours','es':'24 horas'}[lang]
                         description=f'<p class="native-description venue-hours"><span class="service-hours">{icon("clock")}{hours}</span></p>'
@@ -397,7 +398,7 @@ def build_native(page, content, upgrades, photos):
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
-        native_style = '20261127-air-conditioning-smaller'
+        native_style = '20261127-rules-centered-single-line'
     if page['image']['src'].endswith('-11.jpg'):
         native_style = '20261127-alva-bakery'
     if page['image']['src'].endswith('-04.jpg'):
