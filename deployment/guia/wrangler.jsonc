@@ -1,0 +1,7 @@
+{
+  "name": "posto6-guia-router",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-27",
+  "workers_dev": true,
+  "routes": [{"pattern": "posto6copacabana.com.br/guia*", "zone_name": "posto6copacabana.com.br"}]
+}
