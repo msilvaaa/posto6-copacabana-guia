@@ -867,33 +867,33 @@
             "items": [
               {
                 "text": {
-                  "pt": "Instagram — Boteco Belmonte",
-                  "en": "Instagram — Boteco Belmonte",
-                  "es": "Instagram — Boteco Belmonte"
+                  "pt": "Boteco Belmonte",
+                  "en": "Boteco Belmonte",
+                  "es": "Boteco Belmonte"
                 },
                 "href": "https://www.instagram.com/boteco_belmonte/?hl=pt-br"
               },
               {
                 "text": {
-                  "pt": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema",
-                  "en": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema",
-                  "es": "Boteco Belmonte — Av. Vieira Souto, 236, Ipanema"
+                  "pt": "Belmonte Ipanema",
+                  "en": "Belmonte Ipanema",
+                  "es": "Belmonte Ipanema"
                 },
                 "href": "https://maps.app.goo.gl/Us8V4UhyPFq7CxSw9"
               },
               {
                 "text": {
-                  "pt": "Boteco Belmonte — Rua Domingos Ferreira, 242",
-                  "en": "Boteco Belmonte — Rua Domingos Ferreira, 242",
-                  "es": "Boteco Belmonte — Rua Domingos Ferreira, 242"
+                  "pt": "Belmonte Copacabana",
+                  "en": "Belmonte Copacabana",
+                  "es": "Belmonte Copacabana"
                 },
                 "href": "https://maps.app.goo.gl/sCiVkZfR1Fatwhdy9"
               },
               {
                 "text": {
-                  "pt": "Instagram — Boteco Boa Praça",
-                  "en": "Instagram — Boteco Boa Praça",
-                  "es": "Instagram — Boteco Boa Praça"
+                  "pt": "Boteco Boa Praça",
+                  "en": "Boteco Boa Praça",
+                  "es": "Boteco Boa Praça"
                 },
                 "href": "https://www.instagram.com/botecoboapraca?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               },
@@ -907,9 +907,9 @@
               },
               {
                 "text": {
-                  "pt": "Site — Sindicato do Chopp",
-                  "en": "Website — Sindicato do Chopp",
-                  "es": "Web — Sindicato do Chopp"
+                  "pt": "Sindicato do Chopp",
+                  "en": "Sindicato do Chopp",
+                  "es": "Sindicato do Chopp"
                 },
                 "href": "https://www.sindicatodochopp.com.br/"
               },
@@ -920,6 +920,22 @@
                   "es": "Sindicato do Chopp"
                 },
                 "href": "https://maps.app.goo.gl/fHc9zuFndJz7P8VA6"
+              },
+              {
+                "text": {
+                  "pt": "Rio Scenarium",
+                  "en": "Rio Scenarium",
+                  "es": "Rio Scenarium"
+                },
+                "href": "https://www.rioscenarium.com.br"
+              },
+              {
+                "text": {
+                  "pt": "Rio Scenarium",
+                  "en": "Rio Scenarium",
+                  "es": "Rio Scenarium"
+                },
+                "href": "https://maps.google.com/?q=Rio+Scenarium%2C+Rua+do+Lavradio%2C+20%2C+Centro%2C+Rio+de+Janeiro%2C+RJ"
               }
             ],
             "hide_heading": true
@@ -934,9 +950,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Instagram — Apetite Café",
-                  "en": "Instagram — Apetite Café",
-                  "es": "Instagram — Apetite Café"
+                  "pt": "Apetite Café",
+                  "en": "Apetite Café",
+                  "es": "Apetite Café"
                 },
                 "href": "https://www.instagram.com/apetitecafe.rj/"
               },
@@ -954,6 +970,14 @@
                   "en": "Confeitaria Colombo",
                   "es": "Confeitaria Colombo"
                 },
+                "href": "https://www.confeitariacolomboforte.com.br"
+              },
+              {
+                "text": {
+                  "pt": "Confeitaria Colombo",
+                  "en": "Confeitaria Colombo",
+                  "es": "Confeitaria Colombo"
+                },
                 "href": "https://maps.app.goo.gl/exM4m8DQCLWNctyCA",
                 "href_by_lang": {
                   "en": "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2",
@@ -962,9 +986,9 @@
               },
               {
                 "text": {
-                  "pt": "Instagram — ARP Bar",
-                  "en": "Instagram — ARP Bar",
-                  "es": "Instagram — ARP Bar"
+                  "pt": "ARP Bar",
+                  "en": "ARP Bar",
+                  "es": "ARP Bar"
                 },
                 "href": "https://www.instagram.com/arpbar/"
               },
@@ -975,6 +999,14 @@
                   "es": "ARP Bar"
                 },
                 "href": "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66"
+              },
+              {
+                "text": {
+                  "pt": "Starbucks",
+                  "en": "Starbucks",
+                  "es": "Starbucks"
+                },
+                "href": "https://www.starbucks.com.br/"
               },
               {
                 "text": {
@@ -1009,6 +1041,22 @@
                   "es": "La Parisiense"
                 },
                 "href": "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7"
+              },
+              {
+                "text": {
+                  "pt": "Alva Padaria Artesanal",
+                  "en": "Alva Padaria Artesanal",
+                  "es": "Alva Padaria Artesanal"
+                },
+                "href": "https://alvapadariaartesanal.com.br"
+              },
+              {
+                "text": {
+                  "pt": "Localização",
+                  "en": "Location",
+                  "es": "Ubicación"
+                },
+                "href": "https://maps.app.goo.gl/pQ1YUo9494iZn4rHA"
               }
             ]
           },
@@ -1332,6 +1380,64 @@
         "sections": [
           {
             "title": {
+              "pt": "Shoppings",
+              "en": "Shopping centres",
+              "es": "Centros comerciales"
+            },
+            "icon": "bag",
+            "items": [
+              {
+                "text": {
+                  "pt": "Shopping Rio Sul",
+                  "en": "Shopping Rio Sul",
+                  "es": "Shopping Rio Sul"
+                },
+                "href": "https://iguatemi.com.br/riosul"
+              },
+              {
+                "text": {
+                  "pt": "Shopping Rio Sul",
+                  "en": "Shopping Rio Sul",
+                  "es": "Shopping Rio Sul"
+                },
+                "href": "https://maps.google.com/?q=Shopping+Rio+Sul%2C+Rua+Lauro+M%C3%BCller%2C+116%2C+Botafogo%2C+Rio+de+Janeiro%2C+RJ"
+              },
+              {
+                "text": {
+                  "pt": "Shopping Leblon",
+                  "en": "Shopping Leblon",
+                  "es": "Shopping Leblon"
+                },
+                "href": "https://shoppingleblon.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "Shopping Leblon",
+                  "en": "Shopping Leblon",
+                  "es": "Shopping Leblon"
+                },
+                "href": "https://maps.google.com/?q=Shopping+Leblon%2C+Avenida+Afr%C3%A2nio+de+Melo+Franco%2C+290%2C+Leblon%2C+Rio+de+Janeiro%2C+RJ"
+              },
+              {
+                "text": {
+                  "pt": "Botafogo Praia Shopping",
+                  "en": "Botafogo Praia Shopping",
+                  "es": "Botafogo Praia Shopping"
+                },
+                "href": "https://www.botafogopraiashopping.com.br/"
+              },
+              {
+                "text": {
+                  "pt": "Botafogo Praia Shopping",
+                  "en": "Botafogo Praia Shopping",
+                  "es": "Botafogo Praia Shopping"
+                },
+                "href": "https://maps.google.com/?q=Botafogo+Praia+Shopping%2C+Praia+de+Botafogo%2C+400%2C+Rio+de+Janeiro%2C+RJ"
+              }
+            ]
+          },
+          {
+            "title": {
               "pt": "Lojas Americanas",
               "en": "Lojas Americanas",
               "es": "Lojas Americanas"
@@ -1400,7 +1506,8 @@
                   "en": "Zona Sul",
                   "es": "Zona Sul"
                 },
-                "href": "https://www.zonasul.com.br/"
+                "href": "https://www.zonasul.com.br/",
+                "location_count": 3
               },
               {
                 "text": {

@@ -302,6 +302,7 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 /* Keep the fort and its Colombo cafe links side by side. */
 .fort-links,.bike-links { display:grid; grid-template-columns:repeat(2,minmax(0,max-content)); gap:0 12px; align-items:start; }
 .native-card :is(.fort-links,.bike-links)+p.native-description { margin-top:-6px; }
+.bakery-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; align-items:start; }
 
 /* Place the fort heading and artwork directly above its related links. */
 .activities-chapter .native-card:has(.fort-links) { display:grid; grid-template-columns:76px minmax(0,1fr); gap:4px 14px; }
