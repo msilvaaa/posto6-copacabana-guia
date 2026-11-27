@@ -1,8 +1,8 @@
 name: Update Rio club fixtures
 on:
   schedule:
-    # Mondays and Thursdays at 09:00 Brasília (UTC-3).
-    - cron: '0 12 * * 1,4'
+    # Mondays and Thursdays at 07:00 Brasília (UTC-3).
+    - cron: '0 10 * * 1,4'
   workflow_dispatch:
 permissions:
   contents: write
