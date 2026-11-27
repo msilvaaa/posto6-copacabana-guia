@@ -29,7 +29,11 @@
   for(const label of singles) {
    if(!label.getBoundingClientRect().width) continue;
    const size=sizeFor(label);
-   if(size<14) label.closest(groupSelector)?.setAttribute('data-stack-venue-names','');
+   if(size<14) {
+    const group=label.closest(groupSelector);
+    if(group) group.setAttribute('data-stack-venue-names','');
+    else label.style.setProperty('--venue-label-size','14px');
+   }
    else if(size<16) label.style.setProperty('--venue-label-size',`${size}px`);
   }
   for(const group of groups.filter(group=>group.hasAttribute('data-stack-venue-names'))) {

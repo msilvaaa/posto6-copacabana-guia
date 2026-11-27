@@ -140,7 +140,9 @@
 .exchange-base,.exchange-value { white-space: nowrap; }
 
 /* The existing plane now occupies the heading icon slot instead of a right column. */
-.airport-card .native-icon.plane>svg { width:min(100%,70px); height:min(100%,70px); }
+.airport-card .native-icon.plane>svg { width:min(100%,70px); height:min(100%,70px); animation:original-map-float 2.6s ease-in-out infinite; }
+.native-panel:has(.airport-card) .native-icon.phone-map>svg { animation:none; }
+@media(prefers-reduced-motion:reduce) { .airport-card .native-icon.plane>svg { animation:none; } }
 
 /* Center the Location information within its half of the page. */
 .location-content { width:100%; max-width:480px; margin-inline:auto; }
@@ -339,7 +341,7 @@ html[data-theme="dark"] .activity-weather-container .cover-sun-times { color:#ff
 .house-rules-grid .rule-symbol { width:30px; height:30px; margin:6px auto; }
 .house-ac-attention { display:flex; align-items:center; gap:12px; padding:12px; border-radius:12px; background:#fff6dd; box-shadow:inset 0 0 0 1px #e9c66f; }
 .house-ac-attention>.guide-icon-3d { flex:0 0 40px; width:40px; height:40px; }
-.native-card.house-ac-attention p { margin:0; font-size:14px; line-height:1.4; font-weight:700; }
+.native-card.house-ac-attention p { margin:0; font-size:13px; line-height:1.4; font-weight:700; }
 html[data-theme="dark"] .house-ac-attention { background:#3a3019; box-shadow:inset 0 0 0 1px #947b3d; }
 
 /* Show the complete welcome photograph without zooming or cutting its depth. */

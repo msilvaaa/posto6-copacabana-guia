@@ -1,0 +1,541 @@
+{
+  "updated_at": "2026-11-27T19:24:33.480945+00:00",
+  "origin": [
+    -43.1919094,
+    -22.9841532
+  ],
+  "threshold_m": 1000,
+  "mode": "foot",
+  "source": "https://routing.openstreetmap.de/",
+  "attribution": "© OpenStreetMap contributors",
+  "destinations": {
+    "https://maps.app.goo.gl/X4f2KwakruPqYVuEA": {
+      "label": "Rio2 Parking — Rua Raul Pompéia, 94",
+      "status": "walking",
+      "coordinates": [
+        -43.1912885,
+        -22.9847596
+      ],
+      "straight_line_m": 93,
+      "walking_m": 126
+    },
+    "https://maps.app.goo.gl/borefrxJ8uMDKGyLA": {
+      "label": "Estacionamiento Shopping Cassino Atlântico",
+      "status": "walking",
+      "coordinates": [
+        -43.1897978,
+        -22.9861692
+      ],
+      "straight_line_m": 311,
+      "walking_m": 423
+    },
+    "https://maps.app.goo.gl/kgNHcDh1MSWXHFaE6": {
+      "label": "Forte de Copacabana",
+      "status": "walking",
+      "coordinates": [
+        -43.1876757,
+        -22.9861713
+      ],
+      "straight_line_m": 488,
+      "walking_m": 714
+    },
+    "https://maps.app.goo.gl/qX3YfpSo3CTeh9Ee7": {
+      "label": "Pan de Azúcar",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.166952,
+        -22.954654
+      ],
+      "straight_line_m": 4158
+    },
+    "https://maps.app.goo.gl/RTW3dHe7SXRDCPxb6": {
+      "label": "Bike Itaú",
+      "status": "walking",
+      "coordinates": [
+        -43.1903759,
+        -22.983726
+      ],
+      "straight_line_m": 164,
+      "walking_m": 197
+    },
+    "https://maps.app.goo.gl/infS3pCMii5sRV3M6": {
+      "label": "Smart Fit",
+      "status": "walking",
+      "coordinates": [
+        -43.1916661,
+        -22.9833761
+      ],
+      "straight_line_m": 90,
+      "walking_m": 197
+    },
+    "https://maps.app.goo.gl/5vWSPofpSnwqATEY6": {
+      "label": "Smart Fit",
+      "status": "walking",
+      "coordinates": [
+        -43.1991249,
+        -22.9842981
+      ],
+      "straight_line_m": 739,
+      "walking_m": 986
+    },
+    "https://maps.app.goo.gl/HQUu7pJ1jCzC9VyT7": {
+      "label": "Bodytech",
+      "status": "walking",
+      "coordinates": [
+        -43.1912616,
+        -22.9801324
+      ],
+      "straight_line_m": 452,
+      "walking_m": 600
+    },
+    "https://maps.app.goo.gl/oHfNoJEv7JXWGAo18": {
+      "label": "Abrir ubicación en Google Maps",
+      "status": "origin",
+      "coordinates": [
+        -43.1919094,
+        -22.9841532
+      ],
+      "straight_line_m": 0
+    },
+    "https://maps.app.goo.gl/iq6CcoLazX9RHe7dA": {
+      "label": "Aeropuerto Santos Dumont — SDU",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.1638162,
+        -22.9097959
+      ],
+      "straight_line_m": 8754
+    },
+    "https://maps.app.goo.gl/fYKyHM98FECg4Rh37": {
+      "label": "Aeropuerto Internacional de Galeão — GIG",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.2566277,
+        -22.8052698
+      ],
+      "straight_line_m": 20967
+    },
+    "https://maps.app.goo.gl/bmj4Y2QBSSyNWCKF8": {
+      "label": "Banco Itaú",
+      "status": "walking",
+      "coordinates": [
+        -43.1905508,
+        -22.985025
+      ],
+      "straight_line_m": 170,
+      "walking_m": 296
+    },
+    "https://maps.app.goo.gl/CCuLTKmBoQ9qnmY48": {
+      "label": "Banco Santander",
+      "status": "outside-walking-radius",
+      "coordinates": [
+        -43.1998075,
+        -22.9843298
+      ],
+      "straight_line_m": 809,
+      "walking_m": 1047
+    },
+    "https://maps.app.goo.gl/LfBjDrsDpUoKh34t6": {
+      "label": "Banco do Brasil",
+      "status": "walking",
+      "coordinates": [
+        -43.1910039,
+        -22.9830915
+      ],
+      "straight_line_m": 150,
+      "walking_m": 259
+    },
+    "https://maps.app.goo.gl/6voiU2QM6yEgBB7SA": {
+      "label": "Caixa Econômica Federal",
+      "status": "walking",
+      "coordinates": [
+        -43.1907695,
+        -22.9800583
+      ],
+      "straight_line_m": 470,
+      "walking_m": 773
+    },
+    "https://maps.app.goo.gl/Y66yZSYg1aVzcmH98": {
+      "label": "Casa de cambio — Shopping Cassino Atlântico",
+      "status": "walking",
+      "coordinates": [
+        -43.1893309,
+        -22.9856074
+      ],
+      "straight_line_m": 310,
+      "walking_m": 433
+    },
+    "https://maps.app.goo.gl/kmV2KPYovArY2sfZ6": {
+      "label": "Oficina de Correos",
+      "status": "walking",
+      "coordinates": [
+        -43.1981313,
+        -22.9858268
+      ],
+      "straight_line_m": 664,
+      "walking_m": 816
+    },
+    "https://maps.app.goo.gl/YvRL6gWupeCMPs3S7": {
+      "label": "Papelaria Da Bela",
+      "status": "walking",
+      "coordinates": [
+        -43.1917598,
+        -22.9845081
+      ],
+      "straight_line_m": 42,
+      "walking_m": 87
+    },
+    "https://maps.google.com/?q=Shopping+Rio+Sul%2C+Rua+Lauro+M%C3%BCller%2C+116%2C+Botafogo%2C+Rio+de+Janeiro%2C+RJ": {
+      "label": "Shopping Rio Sul",
+      "status": "unresolved"
+    },
+    "https://maps.google.com/?q=Shopping+Leblon%2C+Avenida+Afr%C3%A2nio+de+Melo+Franco%2C+290%2C+Leblon%2C+Rio+de+Janeiro%2C+RJ": {
+      "label": "Shopping Leblon",
+      "status": "unresolved"
+    },
+    "https://maps.google.com/?q=Botafogo+Praia+Shopping%2C+Praia+de+Botafogo%2C+400%2C+Rio+de+Janeiro%2C+RJ": {
+      "label": "Botafogo Praia Shopping",
+      "status": "unresolved"
+    },
+    "https://maps.app.goo.gl/4oSdAEbpj1TTyMG76": {
+      "label": "Lojas Americanas",
+      "status": "walking",
+      "coordinates": [
+        -43.1912869,
+        -22.9847609
+      ],
+      "straight_line_m": 93,
+      "walking_m": 126
+    },
+    "https://maps.app.goo.gl/phxiYuzzk6YsTrVg9": {
+      "label": "Plaza General Osório",
+      "status": "walking",
+      "coordinates": [
+        -43.1977855,
+        -22.9851939
+      ],
+      "straight_line_m": 613,
+      "walking_m": 852
+    },
+    "https://maps.app.goo.gl/14bbzSfMGoZmZEFn7": {
+      "label": "Rua Francisco Sá, 35 — Copacabana",
+      "status": "walking",
+      "coordinates": [
+        -43.1915368,
+        -22.9832505
+      ],
+      "straight_line_m": 107,
+      "walking_m": 204
+    },
+    "https://maps.app.goo.gl/SvBjNeQGZ3u6SFXw8": {
+      "label": "Av. Nossa Senhora de Copacabana, 1369",
+      "status": "walking",
+      "coordinates": [
+        -43.1900475,
+        -22.9852501
+      ],
+      "straight_line_m": 226,
+      "walking_m": 455
+    },
+    "https://maps.app.goo.gl/fw5pwaBFojaXjtzg9": {
+      "label": "Av. Rainha Elisabeth, 325",
+      "status": "walking",
+      "coordinates": [
+        -43.1926613,
+        -22.9855132
+      ],
+      "straight_line_m": 170,
+      "walking_m": 331
+    },
+    "https://maps.app.goo.gl/F61cWQLUyK8P9T6X9": {
+      "label": "Big Market",
+      "status": "walking",
+      "coordinates": [
+        -43.1903885,
+        -22.9835443
+      ],
+      "straight_line_m": 170,
+      "walking_m": 222
+    },
+    "https://maps.app.goo.gl/XGKp1kRCJ7QPTxHF8": {
+      "label": "Acceso D — Sá Ferreira",
+      "status": "walking",
+      "coordinates": [
+        -43.1949597,
+        -22.9819146
+      ],
+      "straight_line_m": 399,
+      "walking_m": 561
+    },
+    "https://maps.app.goo.gl/ticXHBt5opGRzxQU9": {
+      "label": "Acceso A — Plaza General Osório",
+      "status": "walking",
+      "coordinates": [
+        -43.1977855,
+        -22.9851939
+      ],
+      "straight_line_m": 613,
+      "walking_m": 852
+    },
+    "https://maps.app.goo.gl/V2A5v8iFr4Ffr9KR9": {
+      "label": "Terminal Novo Rio",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.2083466,
+        -22.8989167
+      ],
+      "straight_line_m": 9626
+    },
+    "https://maps.app.goo.gl/Us8V4UhyPFq7CxSw9": {
+      "label": "Belmonte Ipanema",
+      "status": "outside-walking-radius",
+      "coordinates": [
+        -43.2007764,
+        -22.9864627
+      ],
+      "straight_line_m": 943,
+      "walking_m": 1124
+    },
+    "https://maps.app.goo.gl/sCiVkZfR1Fatwhdy9": {
+      "label": "Belmonte Copacabana",
+      "status": "outside-walking-radius",
+      "coordinates": [
+        -43.1889891,
+        -22.9757964
+      ],
+      "straight_line_m": 976,
+      "walking_m": 1222
+    },
+    "https://maps.app.goo.gl/nLWZqoGuUGa5NCgU9": {
+      "label": "Boteco Boa Praça",
+      "status": "walking",
+      "coordinates": [
+        -43.1971478,
+        -22.9868559
+      ],
+      "straight_line_m": 615,
+      "walking_m": 870
+    },
+    "https://maps.app.goo.gl/fHc9zuFndJz7P8VA6": {
+      "label": "Sindicato do Chopp",
+      "status": "walking",
+      "coordinates": [
+        -43.1901352,
+        -22.9824045
+      ],
+      "straight_line_m": 266,
+      "walking_m": 390
+    },
+    "https://maps.google.com/?q=Rio+Scenarium%2C+Rua+do+Lavradio%2C+20%2C+Centro%2C+Rio+de+Janeiro%2C+RJ": {
+      "label": "Rio Scenarium",
+      "status": "unresolved"
+    },
+    "https://maps.app.goo.gl/EZtzSazB4E8xd2AaA": {
+      "label": "Apetite Café",
+      "status": "walking",
+      "coordinates": [
+        -43.1910964,
+        -22.9848698
+      ],
+      "straight_line_m": 115,
+      "walking_m": 159
+    },
+    "https://maps.app.goo.gl/exM4m8DQCLWNctyCA": {
+      "label": "Confeitaria Colombo",
+      "status": "walking",
+      "coordinates": [
+        -43.1866951,
+        -22.9857406
+      ],
+      "straight_line_m": 562,
+      "walking_m": 835
+    },
+    "https://maps.app.goo.gl/78tRiKTBMk1Lfzj66": {
+      "label": "ARP Bar",
+      "status": "walking",
+      "coordinates": [
+        -43.1938663,
+        -22.9878319
+      ],
+      "straight_line_m": 455,
+      "walking_m": 659
+    },
+    "https://maps.app.goo.gl/jprnGXMRgvfriahh6": {
+      "label": "Starbucks",
+      "status": "walking",
+      "coordinates": [
+        -43.1908383,
+        -22.9783099
+      ],
+      "straight_line_m": 659,
+      "walking_m": 964
+    },
+    "https://maps.app.goo.gl/pQ1YUo9494iZn4rHA": {
+      "label": "Alva Padaria Artesanal",
+      "status": "walking",
+      "coordinates": [
+        -43.1933994,
+        -22.983707
+      ],
+      "straight_line_m": 160,
+      "walking_m": 271
+    },
+    "https://maps.app.goo.gl/icJQ7DifDgEB9HAk8": {
+      "label": "Teva Deli",
+      "status": "walking",
+      "coordinates": [
+        -43.1908699,
+        -22.9844383
+      ],
+      "straight_line_m": 111,
+      "walking_m": 236
+    },
+    "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7": {
+      "label": "La Parisiense",
+      "status": "walking",
+      "coordinates": [
+        -43.1922326,
+        -22.9835094
+      ],
+      "straight_line_m": 79,
+      "walking_m": 211
+    },
+    "https://maps.app.goo.gl/dGMnDWpghWgSuNSEA": {
+      "label": "Rua Rainha Elizabeth, 33",
+      "status": "walking",
+      "coordinates": [
+        -43.1894907,
+        -22.9846243
+      ],
+      "straight_line_m": 253,
+      "walking_m": 546
+    },
+    "https://maps.app.goo.gl/Ln3fcou14Pt2jr8n8": {
+      "label": "Hospital Copa D’Or — privado",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.1904952,
+        -22.9652784
+      ],
+      "straight_line_m": 2104
+    },
+    "https://maps.app.goo.gl/aWzNQkcHLEEktidVA": {
+      "label": "Hospital Municipal Miguel Couto — público",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.2235881,
+        -22.9777284
+      ],
+      "straight_line_m": 3321
+    },
+    "https://maps.app.goo.gl/MUDvFesuZq94ubQt5": {
+      "label": "Drogaria Pacheco",
+      "status": "walking",
+      "coordinates": [
+        -43.190687,
+        -22.9841284
+      ],
+      "straight_line_m": 125,
+      "walking_m": 180
+    },
+    "https://maps.app.goo.gl/gbWD5TnKaqUZj29e9": {
+      "label": "Drogaria Drogasmil",
+      "status": "walking",
+      "coordinates": [
+        -43.1906052,
+        -22.9847227
+      ],
+      "straight_line_m": 148,
+      "walking_m": 257
+    },
+    "https://maps.app.goo.gl/eTyuY5Lw5uzm5bmc8": {
+      "label": "Drogaria Cristal",
+      "status": "walking",
+      "coordinates": [
+        -43.1918293,
+        -22.9830917
+      ],
+      "straight_line_m": 118,
+      "walking_m": 180
+    },
+    "https://maps.app.goo.gl/BRMtrQuKAoKnMoR3A": {
+      "label": "Galetos Copa Rio",
+      "status": "walking",
+      "coordinates": [
+        -43.1910416,
+        -22.9842932
+      ],
+      "straight_line_m": 90,
+      "walking_m": 121
+    },
+    "https://maps.app.goo.gl/rEdZu1CFr3dMucoeA": {
+      "label": "Famiglia Marinho",
+      "status": "walking",
+      "coordinates": [
+        -43.1898147,
+        -22.9855232
+      ],
+      "straight_line_m": 263,
+      "walking_m": 377
+    },
+    "https://maps.app.goo.gl/QSqNE4KcNhkpK4nY9": {
+      "label": "Pasta &amp; Vino",
+      "status": "walking",
+      "coordinates": [
+        -43.1916572,
+        -22.9832614
+      ],
+      "straight_line_m": 102,
+      "walking_m": 190
+    },
+    "https://maps.app.goo.gl/ZRR6PTDNYgW7uhH58": {
+      "label": "TT Burger",
+      "status": "walking",
+      "coordinates": [
+        -43.1910094,
+        -22.9873963
+      ],
+      "straight_line_m": 372,
+      "walking_m": 427
+    },
+    "https://maps.app.goo.gl/J4ZBPwMZKUXwW47f9": {
+      "label": "Garota de Ipanema",
+      "status": "outside-radius",
+      "coordinates": [
+        -43.2030501,
+        -22.9852626
+      ],
+      "straight_line_m": 1147
+    },
+    "https://maps.app.goo.gl/RTr1c8roFyWEHoP67": {
+      "label": "Eclipse Gastronomia",
+      "status": "walking",
+      "coordinates": [
+        -43.1903407,
+        -22.9840176
+      ],
+      "straight_line_m": 161,
+      "walking_m": 188
+    },
+    "https://maps.app.goo.gl/DMedjYZGDtrSosbU7": {
+      "label": "Venga",
+      "status": "walking",
+      "coordinates": [
+        -43.1900944,
+        -22.9828892
+      ],
+      "straight_line_m": 233,
+      "walking_m": 329
+    },
+    "https://www.google.com/maps/place/Confeitaria+Colombo+Caf%C3%A9+do+Forte/@-22.9857406,-43.1892754,17z/data=!4m6!3m5!1s0x9bd53b79e1f099:0x73e72ea34289d9a6!8m2!3d-22.9857406!4d-43.1866951!16s%2Fg%2F1ptwt7kll?entry=tts&g_ep=EgoyMDI1MTEwNS4wIPu8ASoASAFQAw%3D%3D&skid=737ba8e3-700d-4ab0-a43a-ef25ca7384f2": {
+      "label": "Confeitaria Colombo",
+      "status": "walking",
+      "coordinates": [
+        -43.1866951,
+        -22.9857406
+      ],
+      "straight_line_m": 562,
+      "walking_m": 835
+    }
+  }
+}

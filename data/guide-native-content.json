@@ -645,9 +645,9 @@
               },
               {
                 "text": {
-                  "pt": "Estação de bicicletas Itaú",
-                  "en": "Itaú bike station",
-                  "es": "Estación de bicicletas Itaú"
+                  "pt": "Bike Itaú",
+                  "en": "Bike Itaú",
+                  "es": "Bike Itaú"
                 },
                 "href": "https://maps.app.goo.gl/RTW3dHe7SXRDCPxb6"
               },
@@ -670,27 +670,21 @@
             "items": [
               {
                 "text": {
-                  "pt": "Smart Fit — Rua Francisco Sá, 41",
-                  "en": "Smart Fit — Rua Francisco Sá, 41",
-                  "es": "Smart Fit — Rua Francisco Sá, 41"
+                  "pt": "Smart Fit",
+                  "en": "Smart Fit",
+                  "es": "Smart Fit"
                 },
                 "href": "https://maps.app.goo.gl/infS3pCMii5sRV3M6",
-                "href_by_lang": {
-                  "en": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8",
-                  "es": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8"
-                }
+                "address": "Rua Francisco Sá, 41"
               },
               {
                 "text": {
-                  "pt": "Smart Fit — Rua Visconde de Pirajá, 138",
-                  "en": "Smart Fit — Rua Visconde de Pirajá, 138",
-                  "es": "Smart Fit — Rua Visconde de Pirajá, 138"
+                  "pt": "Smart Fit",
+                  "en": "Smart Fit",
+                  "es": "Smart Fit"
                 },
                 "href": "https://maps.app.goo.gl/5vWSPofpSnwqATEY6",
-                "href_by_lang": {
-                  "en": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8",
-                  "es": "https://maps.app.goo.gl/V8Pnoz79Ebj6DoRB8"
-                }
+                "address": "Rua Visconde de Pirajá, 138"
               },
               {
                 "text": {
@@ -827,9 +821,9 @@
             "items": [
               {
                 "text": {
-                  "pt": "Agência dos Correios",
-                  "en": "Post office",
-                  "es": "Oficina de Correos"
+                  "pt": "Correios",
+                  "en": "Correios",
+                  "es": "Correios"
                 },
                 "href": "https://maps.app.goo.gl/kmV2KPYovArY2sfZ6"
               },

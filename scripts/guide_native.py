@@ -143,6 +143,7 @@ def photograph(page, chapter, upgrades, photos):
 def wifi_access(lang, source):
     scan = {'pt': 'Aponte a câmera', 'en': 'Point your camera', 'es': 'Apunta la cámara'}[lang]
     network, password = {'pt': ('REDE', 'SENHA'), 'en': ('NETWORK', 'PASSWORD'), 'es': ('RED', 'CONTRASEÑA')}[lang]
+    copy_password = {'pt':'Copiar senha','en':'Copy password','es':'Copiar contraseña'}[lang]
     return (f'<svg class="original-art wifi-monitor-art" viewBox="1173 180 268 224" role="img" aria-label="{e(LABELS[lang].get("wifi", "Wi-Fi"))}">'
             '<defs><clipPath id="wifi-screen-photo"><rect x="1183" y="193" width="248" height="139"/></clipPath></defs>'
             '<rect x="1173" y="182" width="268" height="173" rx="10" fill="#111"/>'
@@ -155,7 +156,10 @@ def wifi_access(lang, source):
             '<path d="M1401 225q3-2 6 0"/></g><circle cx="1404" cy="229" r="1.5" fill="white"/></g>'
             '</svg><div class="wifi-connection">'
             f'<dl class="wifi-credentials"><dt>{network}</dt><dd>Marcus Silva</dd>'
-            f'<dt>{password}</dt><dd>braziliansoul</dd></dl>'
+            f'<dt>{password}</dt><dd class="wifi-password-value"><button class="wifi-copy-button" type="button" data-copy-wifi aria-label="{copy_password}" title="{copy_password}">'
+            '<span data-wifi-password>braziliansoul</span><svg class="wifi-copy-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
+            '<svg class="wifi-copied-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            '</button><span class="wifi-copy-status" data-wifi-copy-status role="status" aria-live="polite"></span></dd></dl>'
             '<div class="wifi-scan"><span class="wifi-scan-label">'
             '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
             f'{scan}</span><div class="wifi-qr-frame">'
@@ -255,6 +259,8 @@ def build_native(page, content, upgrades, photos):
                     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith(('https://', 'http://')) else ''
                     location_count = f' data-location-count="{int(item["location_count"])}"' if item.get('location_count') else ''
                     nodes.append(f'<a class="native-link" href="{e(href)}"{location_count}{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
+                    if item.get('address'):
+                        nodes[-1] = '<div class="venue-reference">' + nodes[-1] + f'<p class="native-description venue-address">{e(item["address"])}</p></div>'
                 else:
                     description=f'<p class="{copy_class}">{text}</p>'
                     if item.get('hours24'):
@@ -385,16 +391,17 @@ def build_native(page, content, upgrades, photos):
             chapter_content = f'<div class="location-content">{chapter_content}</div>'
         chapters.append(f'<section class="native-chapter{ " activities-chapter" if page["image"]["src"].endswith("-09.jpg") else "" }"><div class="native-visual"><div class="native-photo">{photograph(page, chapter, upgrades, photos)}</div></div><div class="native-panel">{top}{subtitle}{chapter_content}{navigation}</div></section>')
     clocks_script = '\n  <script src="/world-clocks.js?v=20261117-1" defer></script>\n  <script src="/airport-transfers.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-04.jpg') else ''
+    wifi_script = '\n  <script src="/wifi-copy.js?v=20261127-1" defer></script>' if page['image']['src'].endswith('-05.jpg') else ''
     exchange_script = '\n  <script src="/exchange-rates.js?v=20261119-entry-refresh" defer></script>' if page['image']['src'].endswith('-10.jpg') else ''
     sun_script = '\n  <script src="/sun-times.js?v=20261123-1" defer></script>' if page['image']['src'].endswith('-09.jpg') else ''
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
-        native_style = '20261127-air-conditioning-below-visitors'
+        native_style = '20261127-air-conditioning-smaller'
     if page['image']['src'].endswith('-11.jpg'):
         native_style = '20261127-alva-bakery'
     if page['image']['src'].endswith('-04.jpg'):
-        native_style = '20261126-location-centered-content'
+        native_style = '20261127-location-plane-animation'
     if page['image']['src'].endswith('-14.jpg'):
         native_style = '20261127-delivery-parcel-icon'
     if page['image']['src'].endswith('-15.jpg'):
@@ -413,7 +420,7 @@ def build_native(page, content, upgrades, photos):
   <link rel="stylesheet" href="/site-shell.css?v=20261126-desktop-reference"/>
   <link rel="stylesheet" href="/native-guide.css?v={native_style}"/>
   <link rel="stylesheet" href="/guide-titles.css?v=20261124-crisp-consistent"/>
-  <script src="/site.js?v=20261127-screen-fill" defer></script>{clocks_script}{exchange_script}{sea_script}{sun_script}
+  <script src="/site.js?v=20261127-screen-fill" defer></script>{wifi_script}{clocks_script}{exchange_script}{sea_script}{sun_script}
 <link rel="stylesheet" href="/theme.css?v=20261119-dashboard-toggle"/>
 <script src="/theme.js?v=20261119-dashboard-toggle"></script>
 <script src="/airbnb-rating.js?v=20261119-entry-refresh" defer></script>
