@@ -15,7 +15,7 @@ def with_centered_content(source):
             content.add(child)
         panel.add(content)
     head = doc.all(lambda node: node.tag == 'head')[0]
-    version = '20261126-wifi-model-b-centered-icons' if 'class="wifi-connection"' in source else '20261126-centered-icons'
+    version = '20261127-wifi-camera-one-line' if 'class="wifi-connection"' in source else '20261126-centered-icons'
     if 'class="information-services"' in source:
         version = '20261126-stationery-centered-row'
     head.add(Node('link', {'rel': 'stylesheet', 'href': '/reading-layout.css?v=' + version}))

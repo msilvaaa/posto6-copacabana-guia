@@ -1,27 +1,22 @@
-.rio-football { margin-top:24px; padding-top:16px; border-top:1px solid #ddd; }
-.rio-football .football-period { margin:6px 0 12px; font:400 12px/1.4 Arial,Helvetica,sans-serif; }
-.football-clubs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-.football-club { display:grid; grid-template-columns:40px minmax(0,1fr); column-gap:12px; align-items:start; min-width:0; padding:12px; border:1px solid #e2e4e6; border-radius:12px; background:#fafafa; }
-.football-club h3 { grid-column:1; grid-row:1 / span 2; margin:0; font:700 16px/1.3 Arial,Helvetica,sans-serif; }
+/* Use the same compact two-column rows as the local clocks. */
+.rio-football { width:min(100%,380px); margin:24px auto 0; padding-top:16px; border-top:1px solid #ddd; }
+.rio-football .football-period { margin:6px 0 8px; font:400 12px/1.4 Arial,Helvetica,sans-serif; }
+.football-clubs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2px 14px; width:100%; align-items:start; }
+.football-club { display:grid; grid-template-columns:24px minmax(0,1fr); gap:1px 6px; align-items:start; min-width:0; padding:3px 0; border:0; border-bottom:1px solid #e6e9e7; border-radius:0; background:transparent; }
+.football-club h3 { grid-column:1; grid-row:1 / span 2; align-self:center; margin:0; font:700 12px/1.3 Arial,Helvetica,sans-serif; }
 .football-club ul { grid-column:2; min-width:0; list-style:none; padding:0; margin:0; }
-.football-fixture+.football-fixture { margin-top:12px; padding-top:10px; border-top:1px solid #ddd; }
-.football-fixture time { display:block; font:700 13px/1.5 Arial,Helvetica,sans-serif; }
-.football-fixture a { display:block; padding:4px 0; color:inherit; font:400 15px/1.5 Arial,Helvetica,sans-serif; text-underline-offset:3px; overflow-wrap:anywhere; }
-.football-fixture small { display:block; font:400 11px/1.4 Arial,Helvetica,sans-serif; color:#555; }
-.rio-football p.football-note,.rio-football p.football-empty { font:400 10px/1.5 Arial,Helvetica,sans-serif; color:#666; }
-.rio-football p.football-note { margin:12px 0 0; }
+.football-fixture+.football-fixture { margin-top:6px; padding-top:6px; border-top:1px solid #e6e9e7; }
+.football-fixture time { display:block; color:#173f45; font:600 12px/1.3 Arial,Helvetica,sans-serif; font-variant-numeric:tabular-nums; }
+.football-fixture a { display:block; padding:2px 0; color:inherit; font:400 12px/1.4 Arial,Helvetica,sans-serif; text-underline-offset:3px; overflow-wrap:anywhere; }
+.football-fixture small { display:block; font:400 10px/1.3 Arial,Helvetica,sans-serif; color:#666; }
+.rio-football p.football-note,.rio-football p.football-empty { font:400 10px/1.3 Arial,Helvetica,sans-serif; color:#666; }
+.rio-football p.football-note { margin:8px 0 0; }
 .rio-football [hidden] { display:none!important; }
-html[data-theme="dark"] .football-club { background:#242424; border-color:#555; }
-html[data-theme="dark"] .rio-football :is(.football-note,.football-empty,small) { color:#ccc; }
-@media(max-width:1100px) { .football-clubs { grid-template-columns:1fr; } }
-
-.football-crest { display:block; width:40px; height:40px; object-fit:contain; }
-html[data-theme="dark"] .football-crest { filter:drop-shadow(0 0 2px #fff8); }
-
+.football-crest { display:block; width:24px; height:24px; object-fit:contain; }
 .football-club>.football-empty { grid-column:2; min-width:0; margin:0; }
-
-/* Compact desktop cards share the width required by the longest matchup. */
-@media(min-width:1101px) {
- body[data-whatsapp-title] .football-clubs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:max-content; max-width:100%; align-items:stretch; justify-content:start; gap:10px; }
- body[data-whatsapp-title] .football-club { width:auto; max-width:100%; grid-template-columns:40px minmax(0,1fr); padding:10px; }
-}
+html[data-fluid-frame] .rio-football .football-clubs { grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; gap:2px 14px; }
+html[data-fluid-frame] .rio-football .football-club { padding:3px 0; }
+html[data-theme="dark"] .football-club { border-bottom-color:#555; }
+html[data-theme="dark"] .football-fixture time { color:#c4e3dd; }
+html[data-theme="dark"] .rio-football :is(.football-note,.football-empty,small) { color:#ccc; }
+html[data-theme="dark"] .football-crest { filter:drop-shadow(0 0 2px #fff8); }
