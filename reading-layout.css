@@ -4,11 +4,19 @@
 .place-website,.place-locations { min-width:0; }
 .place-locations>.belmonte-branches { grid-template-columns:1fr; }
 :is(.bakery-links,.bike-links)>.place-link-pair { grid-column:1 / -1; }
-.place-link-pair .native-link>span { min-width:0; }
-.place-link-pair .native-link { padding-inline:0; gap:4px; }
-.place-link-pair .venue-name { white-space:nowrap; font-size:var(--venue-label-size,16px); }
+.place-link-pair .native-link>span,.native-link>.venue-name { min-width:0; }
+.place-link-pair .native-link,.native-link:has(>.venue-name) { padding-inline:0; gap:4px; }
+.native-link>.venue-name { white-space:nowrap; font-size:var(--venue-label-size,16px); }
 .place-link-pair[data-stack-names] { grid-template-columns:1fr; }
+html[data-guide-layout] .guide-content :is(.bank-links,.pharmacy-links,.fort-links,.gym-links,.bakery-links)[data-stack-venue-names] { grid-template-columns:1fr; }
+.bank-links[data-stack-venue-names] { grid-template-rows:none; grid-auto-flow:row; }
 .guide-content .native-restaurant-card { width:100%; max-width:none; }
+@media(min-width:1101px) {
+ .guide-content .information-services>.illustrated-card { grid-template-columns:64px minmax(0,1fr); }
+}
+@media(max-width:600px) {
+ html[data-fluid-frame] .guide-content .information-services { grid-template-columns:1fr; }
+}
 
 /* Side illustrations align with the complete topic, including its links and copy. */
 html[data-guide-layout] .native-panel .guide-content .illustrated-card .native-icon.original-illustration { align-self:center; }

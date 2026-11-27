@@ -1015,6 +1015,22 @@
                   "es": "Starbucks"
                 },
                 "href": "https://maps.app.goo.gl/jprnGXMRgvfriahh6"
+              },
+              {
+                "text": {
+                  "pt": "Alva Padaria Artesanal",
+                  "en": "Alva Padaria Artesanal",
+                  "es": "Alva Padaria Artesanal"
+                },
+                "href": "https://alvapadariaartesanal.com.br"
+              },
+              {
+                "text": {
+                  "pt": "Alva Padaria Artesanal",
+                  "en": "Alva Padaria Artesanal",
+                  "es": "Alva Padaria Artesanal"
+                },
+                "href": "https://maps.app.goo.gl/pQ1YUo9494iZn4rHA"
               }
             ]
           },
@@ -1041,22 +1057,6 @@
                   "es": "La Parisiense"
                 },
                 "href": "https://maps.app.goo.gl/iEN7XJfTT9w6AtVo7"
-              },
-              {
-                "text": {
-                  "pt": "Alva Padaria Artesanal",
-                  "en": "Alva Padaria Artesanal",
-                  "es": "Alva Padaria Artesanal"
-                },
-                "href": "https://alvapadariaartesanal.com.br"
-              },
-              {
-                "text": {
-                  "pt": "Alva Padaria Artesanal",
-                  "en": "Alva Padaria Artesanal",
-                  "es": "Alva Padaria Artesanal"
-                },
-                "href": "https://maps.app.goo.gl/pQ1YUo9494iZn4rHA"
               }
             ]
           },
@@ -1297,7 +1297,8 @@
                   "pt": "Aberto 24 horas.",
                   "en": "Open 24 hours.",
                   "es": "Abierto las 24 horas."
-                }
+                },
+                "hours24": true
               }
             ]
           }

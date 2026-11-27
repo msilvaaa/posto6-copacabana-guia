@@ -164,9 +164,9 @@ def wifi_access(lang, source):
 
 
 def native_rules(lang, section):
-    symbols = ['warning', 'moon', 'dog', 'people', 'smoke', 'shield']
+    symbols = ['moon', 'dog', 'people', 'smoke', 'shield']
     intro = {'pt':'Agradeço sua adesão às regras da casa, por favor', 'en':'Thank you for following the house rules', 'es':'Gracias por respetar las normas de la casa'}[lang]
-    cards = ''.join(f'<li'+(' class="rule-attention"' if i==0 else '')+f'><span class="rule-number">{i+1:02d}</span><span class="rule-symbol">{sharp_symbol(symbols[i], PATHS)}</span><p>{e(item["text"][lang])}</p></li>' for i,item in enumerate(section['items']))
+    cards = ''.join(f'<li><span class="rule-number">{i+1:02d}</span><span class="rule-symbol">{sharp_symbol(symbols[i], PATHS)}</span><p>{e(item["text"][lang])}</p></li>' for i,item in enumerate(section['items'][1:]))
     return f'<section class="native-card native-house-rules"><h2>{intro}</h2><ol class="house-rules-grid">{cards}</ol></section>'
 
 
@@ -256,8 +256,12 @@ def build_native(page, content, upgrades, photos):
                     location_count = f' data-location-count="{int(item["location_count"])}"' if item.get('location_count') else ''
                     nodes.append(f'<a class="native-link" href="{e(href)}"{location_count}{external}>{telephone_icon() if href.startswith("tel:") else icon("pin") if href.startswith("https://maps") else app_icon() if href.startswith(("https://", "http://")) else ""}<span>{text}</span></a>')
                 else:
-                    nodes.append(f'<p class="{copy_class}">{text}</p>')
-                    descriptions.append(f'<p class="{copy_class}">{text}</p>')
+                    description=f'<p class="{copy_class}">{text}</p>'
+                    if item.get('hours24'):
+                        hours={'pt':'24 horas','en':'24 hours','es':'24 horas'}[lang]
+                        description=f'<p class="native-description venue-hours"><span class="service-hours">{icon("clock")}{hours}</span></p>'
+                    nodes.append(description)
+                    descriptions.append(description)
             if page['image']['src'].endswith('-09.jpg') and section_index == 0:
                 link_count=sum(bool(item.get('href')) for item in section['items'])
                 nodes = ['<div class="fort-links">' + ''.join(nodes[:link_count]) + '</div>', *nodes[link_count:]]
@@ -289,7 +293,7 @@ def build_native(page, content, upgrades, photos):
                 links=''.join(node for node in nodes if node.startswith('<a '))
                 parts.append(f'<section class="native-card native-restaurant-card"><h2 class="native-title-text">{e(section["title"][lang])}</h2>{links}{"".join(descriptions)}</section>')
                 continue
-            if page['image']['src'].endswith('-11.jpg') and section['icon']=='bread' and len(nodes)>2:
+            if page['image']['src'].endswith('-11.jpg') and section['icon']=='bread' and len(nodes)>1:
                 nodes=['<div class="bakery-links">'+''.join(nodes)+'</div>']
             name=section['icon']
             if page['image']['src'].endswith('-04.jpg'):
@@ -357,6 +361,9 @@ def build_native(page, content, upgrades, photos):
             parts = ['<div class="emergency-services">' + parts[1] + parts[4] + '</div>', *parts[2:4], parts[0], sea_conditions(lang)]
         if page['image']['src'].endswith('-04.jpg'):
             parts.append(local_clocks(lang))
+        if page['image']['src'].endswith('-06.jpg'):
+            warning=chapter['sections'][0]['items'][0]['text'][lang]
+            parts.append(f'<aside class="native-card house-ac-attention" role="note">{illustration("warning")}<p>{e(warning)}</p></aside>')
         navigation = ''
         if index == len(content['chapters']) - 1:
             navigation = f'<div class="native-actions"><nav class="site-pagination guide-pagination" aria-label="{LABELS[lang]["navigation"]}">{pagination(lang, page["previous"], None if page["image"]["src"].endswith("-15.jpg") else page["next"])}</nav></div>'
@@ -383,7 +390,7 @@ def build_native(page, content, upgrades, photos):
     sea_script = '\n  <script type="module" src="/sea-conditions.js?v=20261119-background-refresh"></script>' if page['image']['src'].endswith(('-09.jpg','-14.jpg')) else ''
     native_style = '20261124-activities-compact-links' if page['image']['src'].endswith('-09.jpg') else '20261123-information-reframe' if page['image']['src'].endswith(('-10.jpg','-14.jpg')) else '20261119-theme'
     if page['image']['src'].endswith('-06.jpg'):
-        native_style = '20261127-air-conditioning-attention'
+        native_style = '20261127-air-conditioning-below-visitors'
     if page['image']['src'].endswith('-11.jpg'):
         native_style = '20261127-alva-bakery'
     if page['image']['src'].endswith('-04.jpg'):

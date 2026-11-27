@@ -9,6 +9,13 @@ def link(href,label,extra=''):
 def document(content):
  return '<html><head></head><body><div class="native-panel"><h1>Places</h1><div class="native-card-copy">'+content+'</div></div></body></html>'
 class PlaceLinkLayoutTests(unittest.TestCase):
+ def test_bank_names_load_the_single_line_fitter_without_a_website_pair(self):
+  doc=parse(with_centered_content(document(link('https://maps.app.goo.gl/bank','Caixa Econômica Federal'))))
+  self.assertEqual(len(doc.all(lambda n:n.has('venue-name'))),1)
+  self.assertTrue(doc.all(lambda n:n.tag=='script' and n.attrs.get('src','').startswith('/venue-labels.js')))
+ def test_street_addresses_remain_wrappable(self):
+  doc=parse(with_centered_content(document(link('https://maps.app.goo.gl/address','Rua Francisco Sá, 35'))))
+  self.assertFalse(doc.all(lambda n:n.has('venue-name')))
  def test_does_not_attach_the_next_unrelated_map_to_a_website(self):
   source=document(link('https://apetite.example','Apetite')+link('https://maps.app.goo.gl/apetite','Apetite')+link('https://maps.app.goo.gl/colombo','Colombo'))
   doc=parse(with_centered_content(source));pairs=doc.all(lambda n:n.has('place-link-pair'))
